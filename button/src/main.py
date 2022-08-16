@@ -19,10 +19,10 @@ text_num = sly.app.widgets.Text(text="0", status="text")
 
 
 @button_add.click
-def start_progress():
+def add():
     text_num.text = str(int(text_num.text) + 1)
 
 
 @button_subtract.click
-def start_progress():
+def subtract():
     text_num.text = str(int(text_num.text) - 1)
