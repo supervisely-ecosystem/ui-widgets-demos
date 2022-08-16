@@ -1,6 +1,6 @@
 # UI Widgets demos
 
-- [Introduction](#1-progress-bar)
+- [Progress Bar](#1-progress-bar)
 - [Button](#2-button)
 - [Text](#3-text)
 - [Heatmap Chart](#4-heatmap-chart)
