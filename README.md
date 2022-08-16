@@ -1,21 +1,21 @@
 # UI Widgets demos
 
-- [Introduction](#progress-bar)
-- [Button](#button)
-- [Text](#text)
-- [Heatmap Chart](#heatmap-chart)
-- [Project Thumbnail](#project-thumbnail)
-- [Table](#table)
-- [Notification Box](#notification-box)
-- [Labeled Image](#labeled-image)
+- [Introduction](#1-progress-bar)
+- [Button](#2-button)
+- [Text](#3-text)
+- [Heatmap Chart](#4-heatmap-chart)
+- [Project Thumbnail](#5-project-thumbnail)
+- [Table](#6-table)
+- [Notification Box](#7-notification-box)
+- [Labeled Image](#8-labeled-image)
 
 ## 1. Progress Bar
 
-<img src="">
+<img src="https://user-images.githubusercontent.com/48913536/184925928-c035b6bd-6716-4080-9fac-d01967b01126.png">
 
 ## 2. Button
 
-<img src="">
+<img src="https://user-images.githubusercontent.com/48913536/184925932-732c1efe-6db1-421b-a91d-8ae73926dc57.png">
 
  ## 3. Text
 
