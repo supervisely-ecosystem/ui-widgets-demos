@@ -26,6 +26,6 @@ app = sly.Application(templates_dir=os.path.join(os.getcwd(), "009_video", "temp
 # )
 
 
-video_id = 25598
+video_id = 3267370 # 25598
 
 video = sly.app.widgets.Video(video_id=video_id)
