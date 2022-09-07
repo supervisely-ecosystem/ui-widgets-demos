@@ -5,7 +5,7 @@ import supervisely as sly
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
-load_dotenv(os.path.expanduser("~/supervisely.env"))
+load_dotenv(os.path.expanduser("~/supervisely-umar.env"))
 
 api = sly.Api()
 app = sly.Application(templates_dir=os.path.join(os.getcwd(), "009_video", "templates"))
@@ -25,7 +25,9 @@ app = sly.Application(templates_dir=os.path.join(os.getcwd(), "009_video", "temp
 #     allow_headers=["*"],
 # )
 
-
-video_id = 3267370 # 25598
+# 25598 - pavel
+# 3267370 - max dev
+# 25598 - umar
+video_id = 25598
 
 video = sly.app.widgets.Video(video_id=video_id)
