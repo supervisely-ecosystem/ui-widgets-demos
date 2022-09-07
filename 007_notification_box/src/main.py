@@ -8,7 +8,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 app = sly.Application(
-    templates_dir=os.path.join(os.getcwd(), "notification_box", "templates")
+    templates_dir=os.path.join(os.getcwd(), "007_notification_box", "templates")
 )
 
 note_box_desc = "Lorem ipsum dolor sit amet... anim id est laborum."

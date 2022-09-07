@@ -8,7 +8,7 @@ load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(templates_dir=os.path.join(os.getcwd(), "10_video", "templates"))
+app = sly.Application(templates_dir=os.path.join(os.getcwd(), "009_video", "templates"))
 
 
 # from fastapi import FastAPI

@@ -8,7 +8,7 @@ load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(templates_dir=os.path.join(os.getcwd(), "text", "templates"))
+app = sly.Application(templates_dir=os.path.join(os.getcwd(), "003_text", "templates"))
 
 
 # initialize widgets we will use in UI

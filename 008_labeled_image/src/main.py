@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 app = sly.Application(
-    templates_dir=os.path.join(os.getcwd(), "labeled_image", "templates")
+    templates_dir=os.path.join(os.getcwd(), "008_labeled_image", "templates")
 )
 
 
