@@ -9,6 +9,8 @@
   - [6. Table](#6-table)
   - [7. Notification Box](#7-notification-box)
   - [8. Labeled Image](#8-labeled-image)
+  - [9. Video](#9-video)
+  - [10. Compare Images](#10-compare-images)
 
 ## 1. Progress Bar
 
@@ -41,3 +43,11 @@
 ## 8. Labeled Image
 
 <img src="https://user-images.githubusercontent.com/48913536/185367681-f00b42aa-c73a-42cd-b366-cffa91e83242.png">
+
+## 9. Video
+
+<img src="">
+
+## 10. Compare Images
+
+<img src="https://user-images.githubusercontent.com/48913536/189123021-9ebaeb67-9262-46b4-aaea-7f5a9de2f7c8.png">
