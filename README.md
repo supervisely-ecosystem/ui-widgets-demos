@@ -11,6 +11,7 @@
   - [8. Labeled Image](#8-labeled-image)
   - [9. Video](#9-video)
   - [10. Compare Images](#10-compare-images)
+  - [11. Input Number](#11-input-number)
 
 ## 1. Progress Bar
 
@@ -51,3 +52,7 @@
 ## 10. Compare Images
 
 <img src="https://user-images.githubusercontent.com/48913536/189123021-9ebaeb67-9262-46b4-aaea-7f5a9de2f7c8.png">
+
+## 11. Input Number
+
+<img src="https://user-images.githubusercontent.com/48913536/189334399-d71095a3-ae34-4685-a868-fb7a332cca90.png">
