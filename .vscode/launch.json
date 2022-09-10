@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "011_input_number.src.main:app",
+                "009_video.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
