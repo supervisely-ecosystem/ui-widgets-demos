@@ -12,6 +12,7 @@
   - [9. Video](#9-video)
   - [10. Compare Images](#10-compare-images)
   - [11. Input Number](#11-input-number)
+  - [12. Input Number](#12-input-number)
 
 ## 1. Progress Bar
 
@@ -56,3 +57,7 @@
 ## 11. Input Number
 
 <img src="https://user-images.githubusercontent.com/48913536/189334399-d71095a3-ae34-4685-a868-fb7a332cca90.png">
+
+## 12. Input Number
+
+<img src="https://user-images.githubusercontent.com/48913536/189653947-391c4e74-6e2b-4fad-8ba3-9cae373c7792.png">
