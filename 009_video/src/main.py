@@ -19,6 +19,7 @@ video = sly.app.widgets.Video(video_id=video_id)
 button_random_frame = sly.app.widgets.Button(text="Random", icon="zmdi zmdi-tv")
 button_play = sly.app.widgets.Button(text="Play", icon="zmdi zmdi-play")
 button_pause = sly.app.widgets.Button(text="Pause", icon="zmdi zmdi-pause")
+button_loading = sly.app.widgets.Button(text="Loading", icon="zmdi zmdi-refresh")
 
 
 @video.play_clicked
@@ -63,3 +64,13 @@ def set_random_frame():
 @button_pause.click
 def pause_video():
     video.frame = video.get_current_frame()
+
+
+@button_loading.click
+def video_loading():
+    if video.loading:
+        video.loading = False
+    else:
+        video.loading = True
+    print(f"Loading: {video.loading}")
+
