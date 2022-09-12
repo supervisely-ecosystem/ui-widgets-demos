@@ -31,14 +31,14 @@ def pause(current_frame: int):
     print(f"Pause frame: {current_frame}")
 
 
-@video.frame_change_start
+@video.frame_change_started
 def change_frame_start(current_frame: int):
-    print(f"Frame change start: {current_frame}")
+    print(f"Frame change started: {current_frame}")
 
 
-@video.frame_change_end
+@video.frame_change_finished
 def change_frame_end(current_frame: int):
-    print(f"Frame change end: {current_frame}")
+    print(f"Frame change finished: {current_frame}")
 
 
 @button_random_frame.click
@@ -62,5 +62,4 @@ def set_random_frame():
 
 @button_pause.click
 def pause_video():
-    video.playing = False
     video.frame = video.get_current_frame()
