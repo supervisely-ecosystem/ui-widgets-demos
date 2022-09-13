@@ -44,7 +44,7 @@ def change_frame_end(current_frame: int):
 
 @button_random_frame.click
 def set_random_frame():
-    video.frame = randint(0, video_info.frames_count - 1)
+    video.set_current_frame(randint(0, video_info.frames_count - 1))
 
 
 # @button_play.click
@@ -63,7 +63,7 @@ def set_random_frame():
 
 @button_pause.click
 def pause_video():
-    video.frame = video.get_current_frame()
+    video.set_current_frame(value=video.get_current_frame())
 
 
 @button_loading.click

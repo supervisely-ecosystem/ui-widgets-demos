@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 app = sly.Application(templates_dir=os.path.join(os.getcwd(), "012_input", "templates"))
 
-input_text = sly.app.widgets.Input(placeholder="Type: Text")
+input_text = sly.app.widgets.Input(value="AACCXX", placeholder="Type: Text")
 button_random_planet = sly.app.widgets.Button(text="Random planet name")
 button_clean_input = sly.app.widgets.Button(text="Clean input")
 button_set_readonly = sly.app.widgets.Button(text="Set readonly")
@@ -19,14 +19,25 @@ button_set_readonly = sly.app.widgets.Button(text="Set readonly")
 
 @button_random_planet.click
 def random_planet():
-    input_text.value = choice(
-        ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    input_text.set_value(
+        choice(
+            [
+                "Mercury",
+                "Venus",
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Saturn",
+                "Uranus",
+                "Neptune",
+            ]
+        )
     )
 
 
 @button_clean_input.click
 def random_word():
-    input_text.value = ""
+    input_text.set_value("")
 
 
 @button_set_readonly.click
