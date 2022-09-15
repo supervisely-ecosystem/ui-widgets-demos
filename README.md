@@ -13,6 +13,10 @@
   - [10. Compare Images](#10-compare-images)
   - [11. Input Number](#11-input-number)
   - [12. Input](#12-input)
+  - [13. Select list](#13-select-list)
+  - [14. Tag](#14-tag)
+  - [15. Slider](#15-slider)
+  - [16. Switch](#16-switch)
 
 ## 1. Progress Bar
 
@@ -61,3 +65,19 @@
 ## 12. Input
 
 <img src="https://user-images.githubusercontent.com/48913536/189709892-66d5d27d-774d-4db0-bdbd-41c229be6ba3.png">
+
+## 13. Select list
+
+<img src="">
+
+## 14. Tag
+
+<img src="https://user-images.githubusercontent.com/48913536/190472158-8028568f-8b6d-4297-ac17-99f14ea96fc7.png">
+
+## 15. Slider
+
+<img src="https://user-images.githubusercontent.com/48913536/190472152-766fc9be-b0ac-4707-9c8b-ffeeb0a90c6b.png">
+
+## 16. Switch
+
+<img src="https://user-images.githubusercontent.com/48913536/190472145-e5caeb57-b059-46f5-88bb-e479a5f3b3b5.png">
