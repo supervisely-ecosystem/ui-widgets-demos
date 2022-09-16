@@ -36,12 +36,10 @@ def turn_switch():
 def set_text():
     if switch.get_on_text() is None and switch.get_off_text() is None:
         set_text_switch_button.text = "Remove text"
-        # switch.set_width(58)
         switch.set_on_text("ON")
         switch.set_off_text("OFF")
     else:
         set_text_switch_button.text = "Set text"
-        # switch.set_width(46)
         switch.set_on_text(None)
         switch.set_off_text(None)
 
@@ -56,4 +54,3 @@ def color_switch():
         color_switch_button.text = "Set color"
         switch.set_on_color("#20a0ff")
         switch.set_off_color("#bfcbd9")
-
