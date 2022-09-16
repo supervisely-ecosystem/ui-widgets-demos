@@ -15,7 +15,7 @@ app = sly.Application(
 )
 
 
-default_slider = sly.app.widgets.Slider()
+default_slider = sly.app.widgets.Slider(value=[210, 110], range=True)
 
 value_button = sly.app.widgets.Button(text="Set random value")
 show_steps_button = sly.app.widgets.Button(text="Show steps")

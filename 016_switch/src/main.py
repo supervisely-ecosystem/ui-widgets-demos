@@ -25,10 +25,10 @@ color_switch_button = sly.app.widgets.Button("Set colors")
 def turn_switch():
     if switch.is_switched():
         turn_switch_button.text = "Turn ON"
-        switch.set_off()
+        switch.off()
     else:
         turn_switch_button.text = "Turn OFF"
-        switch.set_on()
+        switch.on()
     print(f"Switched: {switch.is_switched()}")
 
 
