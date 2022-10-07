@@ -90,7 +90,7 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![App](https://user-images.githubusercontent.com/48913536/194579949-d66dd6c9-a832-4b4a-af9d-ce381ee88c84.png)
+![App](https://user-images.githubusercontent.com/48913536/194583142-06d801c8-fe97-4429-9d9a-6bac720eefda.png)
 
 ### Handle button clicks
 
