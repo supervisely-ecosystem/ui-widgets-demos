@@ -2,26 +2,24 @@ import os
 import names  # requires
 from dotenv import load_dotenv
 import supervisely as sly
-from supervisely.app.widgets import Card, Container
-
+from supervisely.app.widgets import Button, Card, Container, Text
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
-
 api = sly.Api()
 
-# initialize widgets we will use in UI
-hello_msg = sly.app.widgets.Text(text="Hello, World!", status="text")
-start_btn = sly.app.widgets.Button(text="Generate Name", icon="zmdi zmdi-play")
+# initialize widgets that we will use in UI
+hello_msg = Text(text="Hello, World!", status="text")
+start_btn = Button(text="Generate Name", icon="zmdi zmdi-play")
 
-# create sly-card object
-card = Card(title="Hello, World!", content=Container([hello_msg, start_btn]))
-layout = Container(widgets=[card], direction="vertical")
+# create layout using Card widget
+layout = Card(title="Hello, World!", content=Container([hello_msg, start_btn]))
 
+# create an app object with layout
 app = sly.Application(layout=layout)
 
-
+# add action to button
 @start_btn.click
 def generate_name():
     hello_msg.text = f"Hello, {names.get_first_name()}!"
