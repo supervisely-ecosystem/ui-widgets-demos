@@ -1,7 +1,6 @@
+# Hello, World!
 
 ![App](https://user-images.githubusercontent.com/48913536/194531508-52ae0e99-144f-49ec-a4fc-7e99b549eac0.png)
-
-# Hello, World!
 
 [Read this tutorial in developer portal.](#)
 
