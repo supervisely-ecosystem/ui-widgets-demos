@@ -96,4 +96,4 @@ To assign name generation function on our button widget on click use decorator a
 def generate_name():
     hello_msg.text = f"Hello, {names.get_first_name()}!"
 ```
-![App demo](https://user-images.githubusercontent.com/48913536/194531332-8c5c1ffb-e781-4c2f-9a1b-9fb1e9f03745.gif)
+![App demo](https://user-images.githubusercontent.com/48913536/194533336-6983fbd9-c6dc-4f44-867d-aec8526d9a64.gif)
