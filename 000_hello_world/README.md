@@ -5,7 +5,7 @@
 # Introduction
 
 In this tutorial you will learn how to create Supervisely apps with UI on pure python using Supervisely app engine and widgets.
-We will create a simple "Hello, World!" app that will generate names using `Text` and `Button` widget. [Supervisely widget collection](https://github.com/supervisely/supervisely/tree/master/supervisely/app/widgets) is growing everyday, as of version `v6.66.10` - 42 widgets are available.
+We will create a simple "Hello, World!" app that will generate names using `Text` and `Button` widget. [Supervisely widget collection](https://github.com/supervisely/supervisely/tree/master/supervisely/app/widgets) is growing everyday, as of version `v6.66.10` - 40+ widgets are available.
 
 # Requirements
 
