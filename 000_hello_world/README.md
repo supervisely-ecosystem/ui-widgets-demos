@@ -1,6 +1,9 @@
+<div align="center" markdown>
+<img src="https://user-images.githubusercontent.com/12828725/182181033-d0d1a690-8388-472e-8862-e0cacbd4f082.png"/>  
+
 # Hello, World!
 
-![App](https://user-images.githubusercontent.com/48913536/194531508-52ae0e99-144f-49ec-a4fc-7e99b549eac0.png)
+</div>
 
 [Read this tutorial in developer portal.](#)
 
@@ -9,14 +12,13 @@
 In this tutorial you will learn how to create Supervisely apps with UI on pure python using Supervisely app engine and widgets.
 We will create a simple "Hello, World!" app that will generate names using `Text` and `Button` widgets.
 
-[Supervisely widget collection](https://github.com/supervisely/supervisely/tree/master/supervisely/app/widgets) is growing everyday, as of version `v6.66.10` - 40+ widgets are available.
-
 ## Requirements
 
-UI Widgets and new no-html app engine has been integrated in Supervisely version 6.63.0
+Install latest `supervisely` version to have access to all [available widgets](https://ecosystem.supervise.ly/docs/table) and `names` library for names generation
 
-```requirements.txt
-supervisely>=6.63.0
+```
+names # requires for names generation
+supervisely
 ```
 
 ## How to debug this tutorial
@@ -46,7 +48,7 @@ code -r .
 
 ```python
 import os
-import names  # requires for names generation
+import names
 from dotenv import load_dotenv
 import supervisely as sly
 from supervisely.app.widgets import Button, Card, Container, Text
@@ -74,9 +76,10 @@ start_btn = Button(text="Generate Name", icon="zmdi zmdi-play")
 Prepare a layout for app using `Card` widget with the `content` parameter and place 2 widgets that we've just created in the `Container` widget. Place order in the `Container` is also important, we want the "hello text" to be above the name generation button.
 
 ```python
-card = Card(
+layout = Card(
     title="Hello, World!", 
-    content=Container([hello_msg, start_btn]))
+    content=Container([hello_msg, start_btn])
+    )
 ```
 
 ### Create app using layout
@@ -87,9 +90,13 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-### Add button functionality
+![App](https://user-images.githubusercontent.com/48913536/194579949-d66dd6c9-a832-4b4a-af9d-ce381ee88c84.png)
 
-To assign name generation function on our button widget on click use decorator as shown below.
+### Handle button clicks
+
+Use the decorator as shown below to handle button click. 
+When we change `hello_msg.text` value, data will be pushed to web browser via web sockets.
+
 
 ```python
 @start_btn.click
