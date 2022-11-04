@@ -1,9 +1,9 @@
-from curses import meta
 import os
+from curses import meta
 from time import sleep
-from dotenv import load_dotenv
-import supervisely as sly
 
+import supervisely as sly
+from dotenv import load_dotenv
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")

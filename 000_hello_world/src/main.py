@@ -1,7 +1,8 @@
 import os
+
 import names  # requires
-from dotenv import load_dotenv
 import supervisely as sly
+from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, Text
 
 # for convenient debug, has no effect in production

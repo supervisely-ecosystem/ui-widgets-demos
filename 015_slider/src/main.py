@@ -1,9 +1,9 @@
-import os
 import math
-from dotenv import load_dotenv
-from random import randint, choice
-import supervisely as sly
+import os
+from random import choice, randint
 
+import supervisely as sly
+from dotenv import load_dotenv
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")

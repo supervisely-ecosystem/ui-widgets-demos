@@ -1,9 +1,9 @@
 import os
 from re import T
 from tkinter import N
-from dotenv import load_dotenv
-import supervisely as sly
 
+import supervisely as sly
+from dotenv import load_dotenv
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")

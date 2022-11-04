@@ -1,9 +1,9 @@
 import os
 from time import sleep
-from dotenv import load_dotenv
-import supervisely as sly
-from supervisely.app.widgets import Card, Container
 
+import supervisely as sly
+from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Container
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")

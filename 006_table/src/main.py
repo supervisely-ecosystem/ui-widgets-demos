@@ -1,6 +1,7 @@
 import os
-from dotenv import load_dotenv
+
 import supervisely as sly
+from dotenv import load_dotenv
 from table.src.generate import multiplication_table
 
 # for convenient debug, has no effect in production

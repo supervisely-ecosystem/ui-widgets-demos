@@ -1,8 +1,8 @@
 import os
-from dotenv import load_dotenv
-import supervisely as sly
-from heatmap_chart.src.generate import multiplication_chart
 
+import supervisely as sly
+from dotenv import load_dotenv
+from heatmap_chart.src.generate import multiplication_chart
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
