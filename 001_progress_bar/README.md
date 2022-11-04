@@ -77,7 +77,7 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-Our app layout is ready
+Our app layout is ready. Progress bar will appear after pressing the `Start` button.
 
 ![base](https://user-images.githubusercontent.com/48913536/200022344-6af73cce-3960-45ee-bc44-9bd3145e3f3d.png)
 
