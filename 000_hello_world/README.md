@@ -5,7 +5,7 @@
 
 </div>
 
-[Read this tutorial in developer portal.](#)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/hello-world)
 
 ## Introduction
 
@@ -14,7 +14,7 @@ We will create a simple "Hello, World!" app that will generate names using `Text
 
 ## Requirements
 
-Install latest `supervisely` version to have access to all [available widgets](https://ecosystem.supervise.ly/docs/table) and `names` library for names generation
+Install latest [`supervisely`](https://pypi.org/project/supervisely/) version to have access to all [available widgets](https://ecosystem.supervise.ly/docs/table) and [`names`](https://pypi.org/project/names/) library for names generation
 
 ```
 names # requires for names generation
@@ -40,7 +40,7 @@ cd ui-widgets-demos
 code -r .
 ```
 
-**Step 4.** Start debugging `000_hello_world/src/main.py`&#x20;
+**Step 4.** Start debugging [`000_hello_world/src/main.py`](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/000_hello_world/src/main.py)
 
 ## Hello, World! app
 
