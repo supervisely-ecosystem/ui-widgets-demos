@@ -10,9 +10,6 @@ load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-# app = sly.Application(
-#     templates_dir=os.path.join(os.getcwd(), "001_progress_bar", "templates")
-# )
 
 # initialize widgets we will use in UI
 progress_bar = sly.app.widgets.Progress(hide_on_finish=False)
@@ -25,7 +22,6 @@ sly.app.widgets.Progress(
 
 card = Card("Progress Bar", content=Container([progress_bar, start_btn, finish_msg]))
 layout = Container(widgets=[card], direction="vertical")
-
 app = sly.Application(layout=layout)
 
 
