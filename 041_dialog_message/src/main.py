@@ -15,36 +15,36 @@ api = sly.Api()
 info_btn = Button("Show info")
 warning_btn = Button("Show warning")
 error_btn = Button("Show error")
-
-DataJson()["slyAppShowDialog"] = False
-StateJson()["slyAppDialogOpened"] = False
-DataJson()["slyAppDialogMessage"] = ""
+success_btn = Button("Show success")
 
 card = Card(
     title="Dialog message demo",
     description="click button to show dialog window",
-    content=Flexbox([info_btn, warning_btn, error_btn]),
+    content=Flexbox([info_btn, success_btn, warning_btn, error_btn]),
 )
 
 app = sly.Application(layout=card)
 
-# @TODO: umar change info icon on error
-
 
 @info_btn.click
 def show_info():
-    DataJson()["slyAppShowDialog"] = True
-    DataJson()["slyAppDialogMessage"] = "info"
-    DataJson().send_changes()
+    sly.app.show_dialog(title="Hello", description="some message", status="info")
 
-    # raise sly.app.DialogWindowError(title="My info", description="Info description")
+
+@success_btn.click
+def show_success():
+    sly.app.show_dialog(title="My success", description="Success description", status="success")
 
 
 @warning_btn.click
 def show_waring():
-    raise sly.app.DialogWindowError(title="My warning", description="Warning description")
+    sly.app.show_dialog(title="My warning", description="some warning", status="warning")
+    # or
+    # raise sly.app.DialogWindowWarning(title="My warning", description="Warning description")
 
 
 @error_btn.click
 def show_error():
-    raise sly.app.DialogWindowError(title="My error", description="Error description")
+    sly.app.show_dialog(title="My error", description="Error description", status="error")
+    # or
+    # raise sly.app.DialogWindowError(title="My error", description="Error description")
