@@ -1,10 +1,10 @@
 import os
 
+import pandas as pd
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ConfusionMatrix
+from supervisely.app.widgets import Card, ConfusionMatrix, Container
 
-import pandas as pd
 
 # function that creates example pandas table
 def multiplication_table():

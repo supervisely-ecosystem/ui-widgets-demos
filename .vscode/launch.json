@@ -7,7 +7,11 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
+<<<<<<< HEAD
                 "041_dialog_message.src.main:app",
+=======
+                "040_video.src.main:app",
+>>>>>>> origin/HEAD
                 "--host",
                 "0.0.0.0",
                 "--port",
