@@ -2,6 +2,7 @@ import os
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, Button, Flexbox
+from supervisely.app import DataJson, StateJson
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -15,6 +16,9 @@ info_btn = Button("Show info")
 warning_btn = Button("Show warning")
 error_btn = Button("Show error")
 
+DataJson()["slyAppShowDialog"] = False
+StateJson()["slyAppDialogOpened"] = False
+DataJson()["slyAppDialogMessage"] = ""
 
 card = Card(
     title="Dialog message demo",
@@ -25,16 +29,22 @@ card = Card(
 app = sly.Application(layout=card)
 
 # @TODO: umar change info icon on error
+
+
 @info_btn.click
-def add():
-    raise sly.app.DialogWindowError(title="My info", description="Info description")
+def show_info():
+    DataJson()["slyAppShowDialog"] = True
+    DataJson()["slyAppDialogMessage"] = "info"
+    DataJson().send_changes()
+
+    # raise sly.app.DialogWindowError(title="My info", description="Info description")
 
 
 @warning_btn.click
-def add():
+def show_waring():
     raise sly.app.DialogWindowError(title="My warning", description="Warning description")
 
 
 @error_btn.click
-def add():
+def show_error():
     raise sly.app.DialogWindowError(title="My error", description="Error description")
