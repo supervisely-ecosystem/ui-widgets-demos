@@ -1,4 +1,5 @@
 import os
+
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Empty, Menu, Select, Text

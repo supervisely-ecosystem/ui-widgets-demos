@@ -5,7 +5,6 @@ import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, Video
 
-
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
