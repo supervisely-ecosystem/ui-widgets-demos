@@ -15,21 +15,35 @@ project_meta_json = api.project.get_meta(id=project_id)
 project_meta = sly.ProjectMeta.from_json(data=project_meta_json)
 
 dataset_id = int(os.environ["modal.state.slyDatasetId"])
-anns_infos = api.annotation.get_list(dataset_id=dataset_id)
-anns_jsons = [ann_info.annotation for ann_info in anns_infos]
-anns = [
-    sly.Annotation.from_json(data=ann_json, project_meta=project_meta)
-    for ann_json in anns_jsons
-]
 
 # initialize widgets we will use in UI
-select = Select(
-    items=anns,
+animals_domestic = [
+    Select.Item(value="cat", label="cat"),
+    Select.Item(value="dog", label="dog"),
+    Select.Item(value="horse", label="horse"),
+    Select.Item(value="sheep", label="sheep"),
+]
+
+animals_wild = [
+    Select.Item(value="squirrel", label="squirrel"),
+]
+
+select_items = Select(
+    items=animals_domestic + animals_wild,
     filterable=True,
 )
+
+groups = [
+    Select.Group(label="domestic", items=animals_domestic),
+    Select.Group(label="wild", items=animals_wild),
+]
+
+select_groups = Select(groups=groups)
+
 card = Card(
     title="Select",
-    content=Container(widgets=[select]),
+    content=Container(widgets=[select_items, select_groups]),
 )
+
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)

@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "015_select_tag_meta.src.main:app",
+                "017_one_of.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",

@@ -22,8 +22,3 @@ card = Card(
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
-
-
-# line 101, in _set_limit
-# DataJson()[self.widget_id]["limit_message"] = self._limit_message
-# AttributeError: 'SelectItem' object has no attribute 'widget_id'
