@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # get video info from server
-video_id = 8484362
+video_id = int(os.environ["modal.state.slyVideoId"])
 video_info = api.video.get_info_by_id(id=video_id)
 
 # initialize widgets we will use in UI
