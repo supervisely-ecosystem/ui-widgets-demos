@@ -2,20 +2,25 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from heatmap_chart.src.generate import multiplication_chart
+from supervisely.app.widgets import Card, Container, HeatmapChart
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(
-    templates_dir=os.path.join(os.getcwd(), "004_heatmap_chart", "templates")
-)
+
+# function to build example chart
+def multiplication_chart():
+    data = []
+    for row in list(range(1, 11)):
+        temp = [round(row * number, 1) for number in list(range(1, 11))]
+        data.append(temp)
+    return data
 
 
-# get project info from server
-chart = sly.app.widgets.HeatmapChart(
+# initialize widgets we will use in UI
+chart = HeatmapChart(
     title="Multiplication Table",
     xaxis_title="",
     color_range="row",
@@ -24,7 +29,15 @@ chart = sly.app.widgets.HeatmapChart(
 
 data = multiplication_chart()
 
-lines = []
-for idx, line in enumerate(data):
-    lines.append({"name": idx + 1, "x": list(range(1, 11)), "y": line})
+lines = [
+    {"name": idx + 1, "x": list(range(1, 11)), "y": line}
+    for idx, line in enumerate(data)
+]
+
 chart.add_series_batch(lines)
+card = Card(
+    title="Heatmap Chart",
+    content=chart,
+)
+layout = Container(widgets=[card])
+app = sly.Application(layout=layout)

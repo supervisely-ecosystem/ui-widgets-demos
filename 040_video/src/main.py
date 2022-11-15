@@ -3,23 +3,35 @@ from random import randint
 
 import supervisely as sly
 from dotenv import load_dotenv
+from supervisely.app.widgets import Button, Card, Container, Video
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(templates_dir=os.path.join(os.getcwd(), "009_video", "templates"))
 
-
-video_id = 25598
+video_id = int(os.environ["modal.state.slyVideoId"])
 video_info = api.video.get_info_by_id(id=video_id)
-video = sly.app.widgets.Video(video_id=video_id)
+video = Video(video_id=video_id)
 
-button_random_frame = sly.app.widgets.Button(text="Random", icon="zmdi zmdi-tv")
-button_play = sly.app.widgets.Button(text="Play", icon="zmdi zmdi-play")
-button_pause = sly.app.widgets.Button(text="Pause", icon="zmdi zmdi-pause")
-button_loading = sly.app.widgets.Button(text="Loading", icon="zmdi zmdi-refresh")
+button_random_frame = Button(text="Random", icon="zmdi zmdi-tv")
+button_play = Button(text="Play", icon="zmdi zmdi-play")
+button_pause = Button(text="Pause", icon="zmdi zmdi-pause")
+button_loading = Button(text="Loading", icon="zmdi zmdi-refresh")
+
+buttons_container = Container(
+    widgets=[button_random_frame, button_play, button_pause, button_loading],
+    direction="horizontal",
+)
+
+card = Card(
+    title="Video",
+    content=Container(widgets=[video, buttons_container]),
+)
+
+layout = Container(widgets=[card])
+app = sly.Application(layout=layout)
 
 
 @video.play_clicked
@@ -73,4 +85,3 @@ def video_loading():
     else:
         video.loading = True
     print(f"Loading: {video.loading}")
-

@@ -1,8 +1,8 @@
 import os
-from supervisely.app.widgets import Card, Container, DatasetThumbnail
 
 import supervisely as sly
 from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Container, DatasetThumbnail
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")

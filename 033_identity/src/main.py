@@ -1,3 +1,15 @@
-import supervisely as sly
+import os
 
-# File will be populated with widget example soon
+import supervisely as sly
+from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Empty, Identity
+
+# for convenient debug, has no effect in production
+load_dotenv("local.env")
+load_dotenv(os.path.expanduser("~/supervisely.env"))
+
+api = sly.Api()
+
+identity = Identity(content=Empty())
+card = Card(title="Identity", content=identity)
+app = sly.Application(layout=card)
