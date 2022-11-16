@@ -31,8 +31,10 @@ plain=False, show_loading=True, icon=None, icon_gap=5, widget_id=None)
 ### text
 
 Determine text that will be displayed on the button.
-type: `str`
-default value: `Button`
+
+**type:** `str`
+
+**default value:** `Button`
 
 ```python
 button = Button(text="My text on the button")
@@ -43,8 +45,10 @@ button = Button(text="My text on the button")
 ### button_type
 
 Button type.
-type: `Literal["primary", "info", "warning", "danger", "success", "text"]`
-default value: `"primary"`
+
+**type:** `Literal["primary", "info", "warning", "danger", "success", "text"]`
+
+**default value:** `"primary"`
 
 ```python
 button_primary = Button(text="primary", button_type="primary")
@@ -65,26 +69,28 @@ button_text = Button(text="text", button_type="text")
 ### button_size
 
 Button size.
-type: `Literal["mini", "small", "large"]`
-default value: `None`
+
+**type:** `Literal["mini", "small", "large"]`
+
+**default value:** `None`
 
 ```python
 button_mini = Button(text="mini", button_size="mini")
 button_small = Button(text="small", button_size="small")
-button_default = Button(text="default")
 button_large = Button(text="large", button_size="large")
 ```
 
 ![size_mini](https://user-images.githubusercontent.com/48913536/202175806-908797f7-f17a-49e1-bb52-935b5a1789f1.png)
 ![size_small](https://user-images.githubusercontent.com/48913536/202175804-bb9711af-d372-4e81-ae1d-2d905d2dcaa0.png)
-![size_default](https://user-images.githubusercontent.com/48913536/202175802-f7083c9c-1e1c-43ac-b0aa-fc1e398b01ec.png)
 ![size_large](https://user-images.githubusercontent.com/48913536/202175800-ae6d2b9d-6b1c-45a9-b5ca-5b4a055f67e1.png)
 
 ### plain
 
 Determine whether button is a plain button.
-type: `bool`
-default value: `False`
+
+**type:** `bool`
+
+**default value:** `False`
 
 ```python
 button_plain = Button(plain=True)
@@ -95,20 +101,24 @@ button_plain = Button(plain=True)
 ### show_loading
 
 Determine whether button is loading.
-type: `bool`
-default value: `False`
+
+**type:** `bool`
+
+**default value:** `False`
 
 ```python
 button = Button(show_loading=True)
 ```
 
-![loading](https://user-images.githubusercontent.com/48913536/202175896-9a999d2b-aeca-4512-9291-7308bba26e9b.gif)
+![loading](https://user-images.githubusercontent.com/48913536/202188914-41937dfc-4613-49d5-8e12-377429501055.gif)
 
 ### icon
 
 Button icon, accepts an icon name of Element icon component.
-type: `str`
-default value: `None`
+
+**type:** `str`
+
+**default value:** `None`
 
 ```python
 button_icon = Button(text="icon", icon="zmdi zmdi-play")
@@ -119,8 +129,10 @@ button_icon = Button(text="icon", icon="zmdi zmdi-play")
 ### icon_gap
 
 Gap between icon and button text.
-type: `int`
-default value: `5`
+
+**type:** `int`
+
+**default value:** `5`
 
 ```python
 button_icon_gap_5 = Button(text="icon gap 5", icon="zmdi zmdi-play", icon_gap=5)
@@ -133,6 +145,10 @@ button_icon_gap_50 = Button(text="icon gap 50", icon="zmdi zmdi-play", icon_gap=
 ### widget_id
 
 ID of the widget.
+
+**type:** `int`
+
+**default value:** `None`
 
 ### Mini App Example
 
