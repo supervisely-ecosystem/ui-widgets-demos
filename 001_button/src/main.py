@@ -1,6 +1,4 @@
 import os
-from time import sleep
-
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, Text
@@ -8,7 +6,6 @@ from supervisely.app.widgets import Button, Card, Container, Text
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
-
 api = sly.Api()
 
 # initialize widgets we will use in UI
@@ -28,7 +25,6 @@ app = sly.Application(layout=layout)
 @button_add.click
 def add():
     text_num.text = str(int(text_num.text) + 1)
-
 
 @button_subtract.click
 def subtract():
