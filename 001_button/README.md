@@ -1,12 +1,10 @@
-<div align="center" markdown>
-    <img src="https://user-images.githubusercontent.com/48913536/184925928-c035b6bd-6716-4080-9fac-d01967b01126.png"/>  
-</div>
-
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
+# Button
 
 ## Introduction
 
 In this tutorial you will learn how to use `Button` widget in Supervisely app.
+
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/button)
 
 ## Function signature
 
