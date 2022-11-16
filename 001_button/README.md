@@ -110,7 +110,7 @@ Determine whether button is loading.
 button = Button(show_loading=True)
 ```
 
-![loading](https://user-images.githubusercontent.com/48913536/202191894-28458d40-690f-43ca-83da-d3c594078ce9.gif)
+![loading](https://user-images.githubusercontent.com/48913536/202196364-f6677a65-5c51-4333-8632-56a5cce270ac.gif)
 
 ### icon
 
