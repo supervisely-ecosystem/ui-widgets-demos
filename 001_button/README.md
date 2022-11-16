@@ -17,16 +17,16 @@ plain=False, show_loading=True, icon=None, icon_gap=5, widget_id=None)
 
 ## Parameters
 
-|  Parameters  |                                Type                                |                         Description                         |
-| :----------: | :----------------------------------------------------------------: | :---------------------------------------------------------: |
-|     text     |                                str                                 |         determine text that displayed on the button         |
-| button_type  | Literal["primary", "info", "warning", "danger", "success", "text"] |                         button type                         |
-| button_size  |                 Literal["mini", "small", "large"]                  |                         button size                         |
-|    plain     |                                bool                                |         determine whether button is a plain button          |
-| show_loading |                                bool                                |             determine whether button is loading             |
-|     icon     |                                str                                 | button icon, accepts an icon name of Element icon component |
-|   icon_gap   |                                int                                 |              gap between icon and button text               |
-|  widget_id   |                                int                                 |                      id of the widget                       |
+|  Parameters  |                                Type                                |                     Description                     |
+| :----------: | :----------------------------------------------------------------: | :-------------------------------------------------: |
+|     text     |                                str                                 |     determine text that displayed on the button     |
+| button_type  | Literal["primary", "info", "warning", "danger", "success", "text"] |                     button type                     |
+| button_size  |                 Literal["mini", "small", "large"]                  |                     button size                     |
+|    plain     |                                bool                                |     determine whether button is a plain button      |
+| show_loading |                                bool                                |         determine whether button is loading         |
+|     icon     |                                str                                 | button icon, accepts an icon name of icon component |
+|   icon_gap   |                                int                                 |          gap between icon and button text           |
+|  widget_id   |                                int                                 |                  id of the widget                   |
 
 ### text
 
@@ -114,7 +114,11 @@ button = Button(show_loading=True)
 
 ### icon
 
-Button icon, accepts an icon name of Element icon component.
+Button icon, accepts an icon name of icon component. Icons can be found at [zavoloklom.github.io](http://zavoloklom.github.io/material-design-iconic-font/icons.html).
+
+Open any icon at [zavoloklom.github.io](http://zavoloklom.github.io/material-design-iconic-font/icons.html) and copy it's name (see example below).
+
+![icon2](https://user-images.githubusercontent.com/48913536/202219207-e04801c2-84a0-4c0a-9c42-bc26a5b7cb65.png)
 
 **type:** `str`
 
@@ -151,6 +155,10 @@ ID of the widget.
 **default value:** `None`
 
 ### Mini App Example
+
+You can find this example in our Github repository:
+
+[supervisely-ecosystem/ui-widgets-demos/001_button/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/001_button/src/main.py)
 
 ```python
 import os
