@@ -214,3 +214,5 @@ def add():
 def subtract():
     text_num.text = str(int(text_num.text) - 1)
 ```
+
+![demo](https://user-images.githubusercontent.com/48913536/202197687-5b2b4cdc-66ef-4d88-b47e-48a1556bd56e.gif)
