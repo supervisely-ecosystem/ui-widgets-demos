@@ -54,7 +54,7 @@ progress = Progress(show_percents=True)
 
 ### hide_on_finish
 
-Button size.
+Hide progress bar on finish
 
 **type:** `bool`
 
