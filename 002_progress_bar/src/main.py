@@ -27,7 +27,7 @@ app = sly.Application(layout=layout)
 
 @start_btn.click
 def start_progress():
-    with progress_bar(message=f"Processing items...", total=10) as pbar:
+    with progress_bar(message="Processing items...", total=10) as pbar:
         for _ in range(10):
             sleep(0.5)
             pbar.update(1)
