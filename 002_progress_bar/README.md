@@ -1,35 +1,84 @@
-<div align="center" markdown>
-    <img src="https://user-images.githubusercontent.com/48913536/184925928-c035b6bd-6716-4080-9fac-d01967b01126.png"/>  
-</div>
-
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
+# Progress Bar
 
 ## Introduction
 
 In this tutorial you will learn how to use `Progress Bar` widget in Supervisely app.
-We will create a simple app with progress bar using `Progress Bar`, `Text` and `Button` widgets.
 
-## How to debug this tutorial
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
 
-**Step 1.** Prepare `~/supervisely.env` file with credentials. [Learn more here.](https://developer.supervise.ly/getting-started/basics-of-authentication#how-to-use-in-python)
+## Function signature
 
-**Step 2.** Clone [repository](https://github.com/supervisely-ecosystem/ui-widgets-demos) with source code and create [Virtual Environment](https://docs.python.org/3/library/venv.html).
-
-```bash
-git clone https://github.com/supervisely-ecosystem/ui-widgets-demos
-cd ui-widgets-demos
-./create_venv.sh
+```python
+Progress(message=None, show_percents=False, hide_on_finish=True, widget_id=None)
 ```
 
-**Step 3.** Open repository directory in Visual Studio Code
+![default](https://user-images.githubusercontent.com/48913536/202434648-cda78cff-0796-498b-b77e-8eb6e8909e9c.gif)
 
-```bash
-code -r .
+## Parameters
+
+|   Parameters   | Type  |                Description                 |
+| :------------: | :---: | :----------------------------------------: |
+|    message     |  str  |            progress bar message            |
+| show_percents  | bool  |         show progress in percents          |
+| hide_on_finish | bool  |        hide progress bar on finish         |
+|   widget_id    |  int  | determine whether button is a plain button |
+
+### message
+
+Progress bar message.
+
+**type:** `str`
+
+**default value:** `None`
+
+```python
+progress = Progress(message="My progress message")
 ```
 
-**Step 4.** Start debugging [`001_progress_bar/src/main.py`](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/001_progress_bar/src/main.py)
+![message](https://user-images.githubusercontent.com/48913536/202434664-fe8b7fd5-78e9-433d-a73b-14b4c1ceeae1.gif)
 
-## Progress Bar
+### show_percents
+
+Show progress in percents.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+progress = Progress(show_percents=True)
+
+```
+
+![show_percent](https://user-images.githubusercontent.com/48913536/202434656-3785abb8-b05b-46c1-a57f-e88349670300.gif)
+
+### hide_on_finish
+
+Button size.
+
+**type:** `bool`
+
+**default value:** `True`
+
+```python
+progress = Progress(hide_on_finish=True)
+```
+
+![hide_on_finish](https://user-images.githubusercontent.com/48913536/202434654-f2846a23-4bfd-4319-9cdd-3e047281a663.gif)
+
+### widget_id
+
+ID of the widget.
+
+**type:** `int`
+
+**default value:** `None`
+
+## Mini App Example
+
+You can find this example in our Github repository:
+
+[supervisely-ecosystem/ui-widgets-demos/002_progress_bar/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/002_progress_bar/src/main.py)
 
 ### Import libraries
 
@@ -55,7 +104,7 @@ api = sly.Api()
 ### Initialize `Progress Bar`, `Text` and `Button` widgets
 
 ```python
-progress_bar = sly.app.widgets.Progress(hide_on_finish=False)
+progress_bar = sly.app.widgets.Progress()
 start_btn = sly.app.widgets.Button(text="Start", icon="zmdi zmdi-play")
 finish_msg = sly.app.widgets.Text(status="success")
 ```
@@ -65,7 +114,11 @@ finish_msg = sly.app.widgets.Text(status="success")
 Prepare a layout for app using `Card` widget with the `content` parameter and place 3 widgets that we've just created in the `Container` widget. Place order in the `Container` is important, we want the finish message text to be displayed below the progress bar button.
 
 ```python
-card = Card(title="Progress Bar", content=Container([progress_bar, start_btn, finish_msg]))
+card = Card(
+    title="Progress Bar",
+    description="👉 Click on the button to start",
+    content=Container([progress_bar, start_btn, finish_msg]),
+)
 layout = Container(widgets=[card], direction="vertical")
 ```
 
@@ -81,20 +134,20 @@ Our app layout is ready. Progress bar will appear after pressing the `Start` but
 
 ![base](https://user-images.githubusercontent.com/48913536/200022344-6af73cce-3960-45ee-bc44-9bd3145e3f3d.png)
 
-### Handle button clicks
+### Start progress with button click
 
 Use the decorator as shown below to handle button click.
-`Progress Bar` will be updating itself (`pbar.update(1)`) every second by 1 point as specified in `sleep` function until it reaches `total` 20.
+`Progress Bar` will be updating itself (`pbar.update(1)`) every half second by 1 point as specified in `sleep` function until it reaches `total` 10.
 
 ```python
 @start_btn.click
 def start_progress():
-    with progress_bar(message=f"Processing items...", total=20) as pbar:
-        for _ in range(20):
-            sleep(1)
+    with progress_bar(message=f"Processing items...", total=10) as pbar:
+        for _ in range(10):
+            sleep(0.5)
             pbar.update(1)
 
     finish_msg.text = "Finished"
 ```
 
-![App demo](https://user-images.githubusercontent.com/48913536/200021813-27816552-fa3c-4ba0-bffb-14f7948ac3cf.gif)
+![demo](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)

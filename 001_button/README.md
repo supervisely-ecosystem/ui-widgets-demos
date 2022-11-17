@@ -154,7 +154,7 @@ ID of the widget.
 
 **default value:** `None`
 
-### Mini App Example
+## Mini App Example
 
 You can find this example in our Github repository:
 
