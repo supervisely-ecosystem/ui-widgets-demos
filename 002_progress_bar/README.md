@@ -35,7 +35,7 @@ Progress bar message.
 progress = Progress(message="My progress message")
 ```
 
-![message](https://user-images.githubusercontent.com/48913536/202434664-fe8b7fd5-78e9-433d-a73b-14b4c1ceeae1.gif)
+![message](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
 
 ### show_percents
 
@@ -132,7 +132,7 @@ app = sly.Application(layout=layout)
 
 Our app layout is ready. Progress bar will appear after pressing the `Start` button.
 
-![base](https://user-images.githubusercontent.com/48913536/200022344-6af73cce-3960-45ee-bc44-9bd3145e3f3d.png)
+![layout](https://user-images.githubusercontent.com/48913536/202438081-552d2ba1-c682-42aa-9010-064b460f3ce4.png)
 
 ### Start progress with button click
 
