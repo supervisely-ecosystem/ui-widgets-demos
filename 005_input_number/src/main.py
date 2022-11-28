@@ -2,14 +2,18 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Container, InputNumber
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(
-    templates_dir=os.path.join(os.getcwd(), "011_input_number", "templates")
+input_number = InputNumber()
+card = Card(
+    title="Input Number",
+    content=Container(widgets=[input_number]),
 )
 
-input_number = sly.app.widgets.InputNumber()
+layout = Container(widgets=[card], direction="vertical")
+app = sly.Application(layout=layout)

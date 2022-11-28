@@ -3,18 +3,35 @@ from random import choice
 
 import supervisely as sly
 from dotenv import load_dotenv
+from supervisely.app.widgets import Button, Card, Container, Input
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-app = sly.Application(templates_dir=os.path.join(os.getcwd(), "012_input", "templates"))
 
-input_text = sly.app.widgets.Input(placeholder="Please input")
-button_random_planet = sly.app.widgets.Button(text="Random planet name")
-button_clean_input = sly.app.widgets.Button(text="Clean input")
-button_set_readonly = sly.app.widgets.Button(text="Set readonly")
+input_text = Input(placeholder="Please input")
+button_random_planet = Button(text="Random planet name")
+button_clean_input = Button(text="Clean input")
+button_set_readonly = Button(text="Set readonly")
+
+buttons_container = Container(
+    widgets=[
+        button_random_planet,
+        button_clean_input,
+        button_set_readonly,
+    ],
+    direction="horizontal",
+)
+
+card = Card(
+    title="Input",
+    content=Container(widgets=[input_text, buttons_container]),
+)
+
+layout = Container(widgets=[card], direction="vertical")
+app = sly.Application(layout=layout)
 
 
 @button_random_planet.click
