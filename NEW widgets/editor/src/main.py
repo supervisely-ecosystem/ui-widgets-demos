@@ -13,7 +13,7 @@ show_lines_button = Button('Show line numbers', button_type='success')
 hide_lines_button = Button('Hide line numbers', button_type='danger')
 readonly_true_button = Button('Set readonly=True', button_type='success')
 readonly_false_button = Button('Set readonly=False', button_type='danger')
-get_code_button = Button('Get Code')
+get_text_button = Button('Get Text')
 label = Text("")
 label.hide()
 
@@ -21,7 +21,7 @@ card = Card(
     title="Editor",
     content=Container([editor, Container([
         show_lines_button, hide_lines_button, readonly_true_button, readonly_false_button
-    ], direction='horizontal'), get_code_button, label], gap=5)
+    ], direction='horizontal'), get_text_button, label], gap=5)
 )
 layout = Container(widgets=[card])
 
@@ -39,13 +39,13 @@ def hide_lines():
 
 @readonly_true_button.click
 def readonly_true():
-    editor.set_readonly()
+    editor.readonly = True
 
 @readonly_false_button.click
 def readonly_false():
-    editor.set_readonly(False)
+    editor.readonly = False
 
-@get_code_button.click
-def get_code():
+@get_text_button.click
+def get_text():
     label.show()
-    label.text = editor.get_code()
+    label.text = editor.get_text()
