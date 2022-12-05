@@ -14,7 +14,7 @@ api = sly.Api()
 
 
 # initialize widgets we will use in UI
-button_add = Button(text="Add", icon="zmdi zmdi-plus-1")
+button_add = Button(text="Add", icon="zmdi zmdi-plus-1", show_loading=False)
 button_subtract = Button(text="Subtract", icon="zmdi zmdi-neg-1")
 text_num = Text(text="0", status="text")
 
@@ -28,6 +28,7 @@ app = sly.Application(layout=layout)
 
 
 def long_function(steps: int):
+    button_add.loading = True
     for i in range(steps):
         sleep(1)
         print(f"step {i}")
@@ -40,6 +41,7 @@ def callback(future):
         print(repr(future.exception()))
     else:
         print(future.result())
+    button_add.loading = False
 
 
 import asyncio
