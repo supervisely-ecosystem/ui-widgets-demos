@@ -5,8 +5,6 @@ import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, Text
 
-from awaits.awaitable import awaitable
-import asyncio
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -29,18 +27,35 @@ layout = Container(widgets=[card], direction="vertical")
 app = sly.Application(layout=layout)
 
 
-@awaitable
 def long_function(steps: int):
     for i in range(steps):
         sleep(1)
         print(f"step {i}")
+    # raise ValueError(123)
     return 123
+
+
+def callback(future):
+    if future.exception():
+        print(repr(future.exception()))
+    else:
+        print(future.result())
+
+
+import asyncio
+import concurrent
+
+executor = concurrent.futures.ThreadPoolExecutor()
+loop = asyncio.get_event_loop()
 
 
 @button_add.click
 def add():
-    res = asyncio.run(long_function(5))
-    print(f"!!! res: {res}")
+    my_future = loop.run_in_executor(executor, long_function, 5)
+    task = asyncio.ensure_future(my_future, loop=loop)
+    task.add_done_callback(callback)
+    # res = long_function(5)
+    # print(f"!!! res: {res}")
     text_num.text = str(int(text_num.text) + 1)
 
 
