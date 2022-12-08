@@ -4,7 +4,6 @@ import numpy as np
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, LinePlot
-from math import exp
 
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
