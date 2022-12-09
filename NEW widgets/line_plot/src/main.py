@@ -1,12 +1,13 @@
 import os
 import uuid
+import asyncio
+import concurrent
 from time import sleep
 
 import numpy as np
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Container, Card, LinePlot, Button
-
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
@@ -57,13 +58,9 @@ button_run_generation = Button('Run series generation')
 @button_run_generation.click
 def add_new_point_to_series():
     print('Generation running')
-    series_id, series_data = line_chart2.get_series_by_name(name="Accuracy")
-    x_max = max(series_data['data'], key=lambda point: point['x'])['x']
-    generate['val'] = True
-    while generate['val']:
-        line_chart2.add_to_series(name_or_id=series_id, data=get_points(1, x_counter=x_max, increasing=True))
-        x_max += 1
-        sleep(0.1)
+    my_future = loop.run_in_executor(executor, long_task)
+    task = asyncio.ensure_future(my_future, loop=loop)
+    task.add_done_callback(callback)
 
 button_stop_generation = Button('Stop series generation')
 @button_stop_generation.click
@@ -75,6 +72,26 @@ button_print_random = Button('Print random')
 @button_print_random.click
 def add_new_point_to_series():
     print(f"random: {uuid.uuid4()}")
+
+executor = concurrent.futures.ThreadPoolExecutor()
+loop = asyncio.get_event_loop()
+
+def long_task():
+    series_id, series_data = line_chart2.get_series_by_name(name="Accuracy")
+    x_max = max(series_data['data'], key=lambda point: point['x'])['x']
+    generate['val'] = True
+    while generate['val']:
+        line_chart2.add_to_series(name_or_id=series_id, data=get_points(1, x_counter=x_max, increasing=True))
+        x_max += 1
+        sleep(0.1)
+    return 'success'
+
+def callback(future):
+    if future.exception():
+        print(repr(future.exception()))
+    else:
+        print(future.result())
+    button_run_generation.loading = False
 
 
 manage_container2 = Container([button_run_generation, button_stop_generation, button_print_random], direction='horizontal')
