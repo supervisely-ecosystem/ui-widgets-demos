@@ -44,7 +44,7 @@ grid_plot = GridPlot(widgets=[line_plot_1, line_plot_2, line_plot_3, line_plot_4
 card = Card(title="Card with grid of lineplots", content=grid_plot)
 
 generate = {'val': False}
-button_run_generation = Button('Run series generation for 1 and 4 chart (0.1 sec)')
+button_run_generation = Button('Run losses generation (Freq = 0.1 sec)')
 @button_run_generation.click
 def add_new_point_to_series():
     print('Generation running')
@@ -60,7 +60,7 @@ def add_new_point_to_series():
         sleep(0.1)
 
 generate2 = {'val': False}
-button_run_generation2 = Button('Run series generation for 2 and 3 chart (5 sec)')
+button_run_generation2 = Button('Run metrics generation (Freq = 5 sec)')
 @button_run_generation2.click
 def add_new_point_to_series():
     print('Generation running')
