@@ -1,81 +1,87 @@
 import os
+from time import sleep
 
 import numpy as np
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Grid, LinePlot, GridPlot
-
+from supervisely.app.content import StateJson, DataJson
+from supervisely.app.widgets import Card, Container, LinePlot, GridPlot, Button
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-def get_points(size: int=10):
-    x = list(range(size))
-    y = sorted(np.random.exponential(scale=0.7, size=size).tolist(), reverse=True)
-    return [{"x": x_, "y": y_} for x_, y_ in zip(x, y)]
+def get_points(size: int=10, x_counter = -1, increasing=False):
+    if increasing:
+        return [{"x": x + x_counter + 1, "y": np.random.normal(loc=0.5, scale=1.0) + np.sqrt(x + x_counter + 1)} for x in range(size)]
+    else:
+        return [{"x": x + x_counter + 1, "y": np.random.normal(loc=0.5, scale=1.0) - np.sqrt(x + x_counter + 1)} for x in range(size)]
 
-line_chart = LinePlot(
-    title="Model losses",
-    series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
+
+
+line_plot_1 = LinePlot(
+    title="Box loss",
+    series=[{"name": "Train", "data": []}, {"name": "Val", "data": []}],
 )
-card1 = Card(title="Card with line plot", content=line_chart)
+line_plot_2 = LinePlot(
+    title="Obj loss",
+    series=[{"name": "Train", "data": []}, {"name": "Val", "data": []}],
+)
+line_plot_3 = LinePlot(
+    title="Cls loss",
+    series=[{"name": "Train", "data": []}, {"name": "Val", "data": []}],
+)
+line_plot_4 = LinePlot(
+    title="PR + Rec",
+    series=[{"name": "Train", "data": []}, {"name": "Val", "data": []}],
+)
+line_plot_5 = LinePlot(
+    title="mAP",
+    series=[{"name": "Train", "data": []}, {"name": "Val", "data": []}],
+)
 
+grid_plot = GridPlot(widgets=[line_plot_1, line_plot_2, line_plot_3, line_plot_4, line_plot_5], columns=3)
+card = Card(title="Card with grid of lineplots", content=grid_plot)
 
-grid_plot2 = GridPlot(widgets=[
-    LinePlot(
-        title="Model losses 1",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ), 
-    LinePlot(
-        title="Model losses 2",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 3",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 4",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    ], 
-    columns=2)
-card2 = Card(title="Card with 2 columns grid for the 4 line plots", content=grid_plot2)
+generate = {'val': False}
+button_run_generation = Button('Run series generation for 1 and 4 chart (0.1 sec)')
+@button_run_generation.click
+def add_new_point_to_series():
+    print('Generation running')
+    generate['val'] = True
+    while generate['val']:
+        for line_plot in (line_plot_1, line_plot_2, line_plot_3):
+            for series in DataJson()[line_plot.widget_id]['series']:
+                if len(series['data']) > 0:
+                    x_max = max(series['data'], key=lambda point: point['x'])['x']
+                else:
+                    x_max = 0
+                line_plot.add_to_series(name_or_id=series['name'], data=get_points(1, x_counter=x_max, increasing=False))
+        sleep(0.1)
 
+generate2 = {'val': False}
+button_run_generation2 = Button('Run series generation for 2 and 3 chart (5 sec)')
+@button_run_generation2.click
+def add_new_point_to_series():
+    print('Generation running')
+    generate2['val'] = True
+    while generate2['val']:
+        for line_plot in (line_plot_4, line_plot_5):
+            for series in DataJson()[line_plot.widget_id]['series']:
+                if len(series['data']) > 0:
+                    x_max = max(series['data'], key=lambda point: point['x'])['x']
+                else:
+                    x_max = 0
+                line_plot.add_to_series(name_or_id=series['name'], data=get_points(1, x_counter=x_max, increasing=True))
+        sleep(5)
 
-grid_plot3 = GridPlot(widgets=[
-    LinePlot(
-        title="Model losses 1",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ), 
-    LinePlot(
-        title="Model losses 2",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 3",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 4",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 5",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 6",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    LinePlot(
-        title="Model losses 7",
-        series=[{"name": "Train loss", "data": get_points(10)}, {"name": "Test loss", "data": get_points(15)}],
-    ),
-    ], 
-    columns=3)
-card3 = Card(title="Card with 3 columns grid for 7 line plots", content=grid_plot3)
+button_stop_generation = Button('Stop series generation')
+@button_stop_generation.click
+def add_new_point_to_series():
+    generate['val'] = False
+    generate2['val'] = False
+    print('Generation stopped')
 
-container = Container(widgets=[card1, card2, card3])
+buttons_container = Container([button_run_generation, button_run_generation2, button_stop_generation], direction='horizontal')
+container = Container([card, buttons_container])
 app = sly.Application(layout=container)
