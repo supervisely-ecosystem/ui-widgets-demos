@@ -23,14 +23,16 @@ def get_points(size: int=10, x_counter = -1, increasing=False):
     else:
         return [{"x": x + x_counter + 1, "y": get_y(x, increasing)} for x in range(size)]
 
+plots_list_of_dicts = [
+    {"title":"Box loss", "series":[]},
+    {"title":"Obj loss", "series":[]},
+    {"title":"Cls loss", "series":[]},
+    {"title":"Pr + Rec", "series":[]},
+    {"title":"mAP",      "series":[]},
+]
+plots_list_of_names = ["Box loss", "Obj loss", "Cls loss", "Pr + Rec", "mAP"]
 
-grid_plot = GridPlot([
-    {"title":"Box loss", "series":[{"name": "Train", "data": []}, {"name": "Val", "data": []}]},
-    {"title":"Obj loss", "series":[{"name": "Train", "data": []}, {"name": "Val", "data": []}]},
-    {"title":"Cls loss", "series":[{"name": "Train", "data": []}, {"name": "Val", "data": []}]},
-    {"title":"Pr + Rec", "series":[{"name": "Train", "data": []}, {"name": "Val", "data": []}]},
-    {"title":"mAP", "series":[{"name": "Train", "data": []}]},
-    ], columns=3)
+grid_plot = GridPlot(plots_list_of_names, columns=3)
 
 card = Card(title="Card with grid of lineplots", content=grid_plot)
 
@@ -66,18 +68,6 @@ def stop_generation():
     generate['val'] = False
     print('Generation stopped')
 
-button_add_point = Button('Add point')
-@button_add_point.click
-def add_new_point_to_plot():
-    line_plot = grid_plot._widgets['Box loss']
-    series = next((series for series in DataJson()[line_plot.widget_id]['series'] if series['name'] == 'Train'), (None, None))
-    if len(series['data']) > 0:
-        x_max = max(series['data'], key=lambda point: point['x'])['x'] + 1
-    else:
-        x_max = 0
-    grid_plot.add_scalar('Box loss/Train', np.random.random(), x_max)
-    print(f"\nAdded new x: {x_max}\n with random value")
-
-buttons_container = Container([button_run_generation, button_run_generation2, button_stop_generation, button_add_point], direction='horizontal')
+buttons_container = Container([button_run_generation, button_run_generation2, button_stop_generation], direction='horizontal')
 container = Container([card, buttons_container])
 app = sly.Application(layout=container)
