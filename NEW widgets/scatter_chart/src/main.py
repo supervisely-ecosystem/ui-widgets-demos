@@ -18,14 +18,18 @@ scatter_chart = ScatterChart(
     xaxis_type="numeric",
 )
 
+
 @scatter_chart.click
 def on_click(datapoint: ScatterChart.ClickedDataPoint):
     print(f"Line: {datapoint.series_name}")
     print(f"x = {datapoint.x}")
     print(f"y = {datapoint.y}")
-    text.set(f"x = {datapoint.x}, y = {datapoint.y}", 'info')
+    text.set(f"x = {datapoint.x}, y = {datapoint.y}", "info")
+    scatter_chart.add_points_to_serie("Max", [51, 52], [51, 52])
+    scatter_chart.add_points_to_serie("Denis", 59, 40)
 
-text = Text('Try clicking on point!')
-layout = Container([scatter_chart, text], 'vertical')
-card = Card(title="Line Chart", content=layout)
+
+text = Text("Try clicking on point!")
+layout = Container([scatter_chart, text], "vertical")
+card = Card(title="Scatter Chart", content=layout)
 app = sly.Application(layout=card)
