@@ -3,6 +3,7 @@ import os
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, InputNumber, Text, VideoRaw
+from supervisely._utils import abs_url
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -10,14 +11,17 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-video_id = 17546759
+video_id = 17546937
 
 # get video info from server
 video_info = api.video.get_info_by_id(video_id)
+video_url = abs_url(video_info.path_original)
+video_type = video_info.file_meta["mime"]
 
 # initialize widgets we will use in UI
-video1 = VideoRaw(video_id=video_id)
-video2 = VideoRaw(video_id=video_id)
+video1 = VideoRaw(video_url=video_url, video_type=video_type)
+video2 = VideoRaw()
+video2.set_video(url=video_url, video_type=video_type)
 
 # create control form
 input_timestamp = InputNumber(value=0, min=0, max=video_info.duration)
