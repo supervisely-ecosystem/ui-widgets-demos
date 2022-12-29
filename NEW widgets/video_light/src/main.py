@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, InputNumber, Text, VideoRaw
+from supervisely.app.widgets import Button, Card, Container, InputNumber, Text, VideoLight
 from supervisely._utils import abs_url
 
 # for convenient debug, has no effect in production
@@ -19,9 +19,9 @@ video_url = abs_url(video_info.path_original)
 video_type = video_info.file_meta["mime"]
 
 # initialize widgets we will use in UI
-video1 = VideoRaw(video_url=video_url, video_type=video_type)
-video2 = VideoRaw()
-video2.set_video(url=video_url, video_type=video_type)
+video1 = VideoLight(url=video_url, mime_type=video_type)
+video2 = VideoLight()
+video2.set_video(url=video_url, mime_type=video_type)
 
 # create control form
 input_timestamp = InputNumber(value=0, min=0, max=video_info.duration)
