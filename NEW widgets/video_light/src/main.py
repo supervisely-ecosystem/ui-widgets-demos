@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, InputNumber, Text, VideoLight
+from supervisely.app.widgets import Button, Card, Container, Flexbox, InputNumber, Text, VideoPlayer
 from supervisely._utils import abs_url
 
 # for convenient debug, has no effect in production
@@ -19,42 +19,40 @@ video_url = abs_url(video_info.path_original)
 video_type = video_info.file_meta["mime"]
 
 # initialize widgets we will use in UI
-video1 = VideoLight(url=video_url, mime_type=video_type)
-video2 = VideoLight()
+video1 = VideoPlayer(url=video_url, mime_type=video_type)
+video2 = VideoPlayer()
 video2.set_video(url=video_url, mime_type=video_type)
 
 # create control form
-input_timestamp = InputNumber(value=0, min=0, max=video_info.duration)
-button_jump = Button(text="Jump")
-button_get_time = Button(text="Show timestamp")
-info_timestamp = Text(status="info")
+get_time_btn = Button(text="Get timestamp", button_size="mini")
+input_time = InputNumber(value=0, min=0, max=video_info.duration)
+set_time_btn = Button(text="Set timestamp", button_size="mini")
 
 # create containers for control form
-set_container = Container(widgets=[button_jump, input_timestamp])
-get_container = Container(widgets=[button_get_time, info_timestamp])
-controls_container = Container(widgets=[set_container, get_container], direction="horizontal")
+controls_container = Flexbox(widgets=[get_time_btn, input_time, set_time_btn], center_content=True)
 
 # create new cards
 card1 = Card(
-    title="Video",
-    content=Container(widgets=[video1, controls_container]),
+    title="Video widget",
+    content=video1,
 )
 card2 = Card(
-    title="Video",
-    content=video2,
+    title="Get or set current video timestamp",
+    content=Container(widgets=[video2, controls_container]),
 )
 
 layout = Container(widgets=[card1, card2], direction="horizontal", fractions=[1, 1])
 app = sly.Application(layout=layout)
 
 
-# set current timestamp
-@button_jump.click
-def set_current_timestamp():
-    video1.set_current_timestamp(input_timestamp.get_value())
-
-
 # get current timestamp
-@button_get_time.click
+@get_time_btn.click
 def get_current_timestamp():
-    info_timestamp.text = str(video1.get_current_timestamp())
+    input_time.value = video2.get_current_timestamp()
+
+
+# set current timestamp
+@set_time_btn.click
+def set_current_timestamp():
+    time_to_set = input_time.get_value()
+    video2.set_current_timestamp(time_to_set)
