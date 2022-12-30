@@ -27,12 +27,12 @@ video2.set_video(url=video_url, mime_type=video_type)
 get_time_btn = Button(text="Get timestamp", button_size="mini")
 input_time = InputNumber(value=0, min=0, max=video_info.duration)
 set_time_btn = Button(text="Set timestamp", button_size="mini")
-play_time_btn = Button(text="Play", button_size="mini")
-pause_time_btn = Button(text="Pause", button_size="mini")
+play_btn = Button(text="Play", button_size="mini", icon="zmdi zmdi-play")
+pause_btn = Button(text="Pause", button_size="mini", icon="zmdi zmdi-pause")
 
 # create containers for control form
 controls_container = Flexbox(
-    widgets=[get_time_btn, input_time, set_time_btn, play_time_btn, pause_time_btn],
+    widgets=[play_btn, pause_btn, get_time_btn, input_time, set_time_btn],
     center_content=True,
 )
 
@@ -51,13 +51,13 @@ app = sly.Application(layout=layout)
 
 
 # start playing video
-@play_time_btn.click
+@play_btn.click
 def play():
     video2.play()
 
 
 # pause video
-@pause_time_btn.click
+@pause_btn.click
 def pause():
     video2.pause()
 
