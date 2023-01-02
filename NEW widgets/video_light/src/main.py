@@ -2,8 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, Flexbox, InputNumber, Text, VideoPlayer
-from supervisely._utils import abs_url
+from supervisely.app.widgets import Button, Card, Container, Flexbox, InputNumber, VideoPlayer
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
