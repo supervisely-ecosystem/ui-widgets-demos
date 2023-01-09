@@ -1,7 +1,7 @@
 import os
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import FileViewer, Container, Card
+from supervisely.app.widgets import FileViewer, Container, Card, Button, Text
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -20,6 +20,12 @@ for file in files:
 
 
 file_viewer = FileViewer(files_list=tree_items)
+text = Text()
 
-layout = Card(content=file_viewer, title="File Viewer")
+layout = Card(content=Container(widgets=[text, file_viewer]), title="File Viewer")
 app = sly.Application(layout=layout)
+
+
+@file_viewer.value_changed
+def print_selected(selected_items):
+    text.set(text=f"Selected items: {', '.join(selected_items)}", status="text")
