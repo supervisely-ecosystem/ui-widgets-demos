@@ -43,7 +43,7 @@ app = sly.Application(layout=layout)
 
 
 @table.download_as_csv
-def get_clicked_cell():
+def download_as_csv():
     df = table.to_pandas()
     # set table name without ext
     df.index.name = "my_table"
