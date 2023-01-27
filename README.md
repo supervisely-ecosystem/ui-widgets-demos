@@ -42,6 +42,13 @@
   - [38. Menu](/038_menu/README.md)
   - [39. Labeled Image](/039_labeled_image/README.md)
   - [40. Video](/040_video/README.md)
+  - [41. Dialog message](/041_dialog_message/README.md)
+  - [42. Image](/042_image/README.md)
+  - [43. Video Player](/043_video_player/README.md)
+  - [44. Radio Group](/044_radio_group/README.md)
+  - [45. Folder Thumbnail](/045_folder_thumbnail/README.md)
+  - [46. File Thumbnail](/046_file_thumbnail/README.md)
+  - [47. Input Tag](/047_input_tag/README.md)
 
 # How to debug widgets
 
