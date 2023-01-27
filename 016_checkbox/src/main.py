@@ -22,3 +22,8 @@ card = Card(
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
+
+
+@checkbox.value_changed
+def show_message(value):
+    print(f"Checkbox value has been changed: value={value}")
