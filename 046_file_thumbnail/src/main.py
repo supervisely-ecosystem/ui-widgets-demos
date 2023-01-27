@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, FolderThumbnail
+from supervisely.app.widgets import Card, Container, FileThumbnail
 import supervisely.io.env as env
 
 # for convenient debug, has no effect in production
@@ -17,7 +17,7 @@ team_id = env.team_id()
 local_filepath = "/Users/almaz/job/text.txt"
 
 # remote path in Team files
-remote_filepath = "/folder_thumbnail_demo/text.txt"
+remote_filepath = "/file_thumbnail_demo/text.txt"
 
 if api.file.exists(team_id, remote_filepath):
     api.file.remove(team_id, remote_filepath)
@@ -29,12 +29,11 @@ api.file.upload(team_id, local_filepath, remote_filepath)
 fileinfo = api.file.get_info_by_path(team_id, remote_filepath)
 
 # initialize widgets we will use in UI and set FileInfo
-# widget will display a link to file in folder in Team files
-folder_thumbnail = FolderThumbnail(info=fileinfo)
+file_thumbnail = FileThumbnail(info=fileinfo)
 
 card = Card(
-    title="Folder Thumbnail",
-    content=Container(widgets=[folder_thumbnail]),
+    title="File Thumbnail",
+    content=Container(widgets=[file_thumbnail]),
 )
 
 layout = Container(widgets=[card])
