@@ -49,6 +49,7 @@
   - [45. Folder Thumbnail](/045_folder_thumbnail/README.md)
   - [46. File Thumbnail](/046_file_thumbnail/README.md)
   - [47. Input Tag](/047_input_tag/README.md)
+  - [48. Select App Session](/048_select_app_session/README.md)
 
 # How to debug widgets
 
