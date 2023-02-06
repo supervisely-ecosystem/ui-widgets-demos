@@ -147,7 +147,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/002_progress_bar/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/004_input/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/004_input/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/004_input/src/main.py)
 
 ### Import libraries
 
