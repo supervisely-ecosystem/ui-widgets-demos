@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 import supervisely as sly
@@ -29,11 +30,21 @@ image_1 = Image(image_url_1)
 image_2 = Image(image_url_2)
 image_3 = Image(image_url_3)
 
+# add local image
+# declare static files directory path
+static_dir = Path('042_image/images')
+
+# get image url
+local_image_url = "/static/my-cats.jpg"
+
+# initialize widget
+local_image = Image(local_image_url)
+
 # create new card
 card = Card(
     title="Image Preview",
-    content=Container([image_1, image_2, image_3], direction="horizontal"),
+    content=Container([image_1, image_2, image_3, local_image], direction="horizontal"),
 )
 
 layout = Container(widgets=[card])
-app = sly.Application(layout=layout)
+app = sly.Application(layout=layout, static_dir=static_dir)
