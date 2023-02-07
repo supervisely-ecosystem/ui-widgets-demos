@@ -28,7 +28,7 @@ SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[
 
 ### default_id
 
-Determine Project will be selected by default.
+Determine `Project` will be selected by default.
 
 **type:** `int`
 
@@ -42,7 +42,7 @@ select_project = SelectProject(default_id=project_id)
 
 ### workspace_id
 
-Determine workspace will be selected by default.
+Determine `Workspace` will be selected by default.
 
 **type:** `int`
 
@@ -56,7 +56,7 @@ select_project = SelectProject(workspace_id=workspace_id)
 
 ### compact
 
-Show only project select.
+Show only `Project` select.
 
 **type:** `bool`
 
