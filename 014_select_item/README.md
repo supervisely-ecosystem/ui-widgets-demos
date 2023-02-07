@@ -1,3 +1,157 @@
 # Select Item
 
-Widget description and detailed instruction will be added soon.
+## Introduction
+
+This widget is a select `Item` input(image, video, volume, point_cloud or point_cloud_episode), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
+
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectItem)
+
+## Function signature
+
+```python
+SelectItem(dataset_id=None, compact=False, show_label=True, size=None, widget_id=None)
+```
+
+![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+
+## Parameters
+
+| Parameters |               Type                |           Description            |
+| :--------: | :-------------------------------: | :------------------------------: |
+| dataset_id |                int                |            Dataset ID            |
+|  compact   |               bool                |     Show only dataset select     |
+| show_label |               bool                |            Show label            |
+|    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
+| widget_id  |                int                |         Id of the widget         |
+
+### dataset_id
+
+Determine `Dataset` from which `Items` will be selected.
+
+**type:** `int`
+
+**default value:** `None`
+
+```python
+select_item = SelectItem(dataset_id=dataset_id)
+```
+
+![dataset_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+
+### compact
+
+Show only `Dataset` select.
+
+**type:** `bool`
+
+**default value:** `true`
+
+```python
+select_item = SelectItem(dataset_id=dataset_id, compact=False)
+```
+
+![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+
+### show_label
+
+Determine show text `Item` on widget or not.
+
+**type:** `bool`
+
+**default value:** `True`
+
+```python
+select_item = SelectItem(dataset_id=dataset_id, show_label=False)
+```
+
+![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+
+### size
+
+Size of input.
+
+**type:** `Literal["large", "small", "mini"]`
+
+**default value:** `None`
+
+### disabled
+
+Determine dataset select ability.
+
+**type:** `bool`
+
+**default value:** `false`
+
+```python
+select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, disabled=True)
+```
+
+![disabled](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+
+### widget_id
+
+ID of the widget.
+
+**type:** `int`
+
+**default value:** `None`
+
+## Mini App Example
+
+You can find this example in our Github repository:
+
+[supervisely-ecosystem/ui-widgets-demos/014_select_item/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/014_select_item/src/main.py)
+
+### Import libraries
+
+```python
+import os
+
+import supervisely as sly
+from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Container, SelectItem
+```
+
+### Init API client
+
+First, we load environment variables with credentials and init API for communicating with Supervisely Instance:
+
+```python
+load_dotenv("local.env")
+load_dotenv(os.path.expanduser("~/supervisely.env"))
+
+api = sly.Api()
+```
+
+### Prepare dataset_id
+
+```python
+dataset_id = int(os.environ["modal.state.slyDatasetId"])
+```
+
+### Initialize `SelectDataset` widget
+
+```python
+select_item = SelectItem(dataset_id=dataset_id)
+```
+
+### Create app layout
+
+Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+
+```python
+card = Card(
+    title="Select Item",
+    content=Container(widgets=[select_item]),
+)
+
+layout = Container(widgets=[card])
+```
+
+### Create app using layout
+
+Create an app object with layout parameter.
+
+```python
+app = sly.Application(layout=layout)
+```
