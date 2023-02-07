@@ -18,8 +18,8 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 
 | Parameters  |               Type                |             Description              |
 | :---------: | :-------------------------------: | :----------------------------------: |
-|    items    |         List[Select.Item]         |     list of Select.Item widgets      |
-|   groups    |        List[Select.Group]         |     list of Select.Group widgets     |
+|    items    |         List[Select.Item]         |    list of `Select.Item` widgets     |
+|   groups    |        List[Select.Group]         |    list of `Select.Group` widgets    |
 | filterable  |               bool                |     whether Select is filterable     |
 | placeholder |                str                |             placeholder              |
 |    size     | Literal["large", "small", "mini"] |            size of input             |
