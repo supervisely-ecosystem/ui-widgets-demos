@@ -24,7 +24,7 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 | placeholder |                str                |             placeholder              |
 |    size     | Literal["large", "small", "mini"] |            size of input             |
 |  multiple   |               bool                | whether multiple-select is activated |
-|  widget_id  |                str                |           id of the widget           |
+|  widget_id  |                int                |           id of the widget           |
 
 ### items
 
