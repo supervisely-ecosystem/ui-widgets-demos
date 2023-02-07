@@ -29,7 +29,7 @@ SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False
 
 ### default_id
 
-Determine Dataset will be selected by default.
+Determine `Dataset` will be selected by default.
 
 **type:** `int`
 
@@ -43,7 +43,7 @@ select_project = SelectDataset(default_id=dataset_id)
 
 ### project_id
 
-Determine project will be selected by default.
+Determine `Project` will be selected by default.
 
 **type:** `int`
 
@@ -71,7 +71,7 @@ select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, mul
 
 ### compact
 
-Show only dataset select.
+Show only `Dataset` select.
 
 **type:** `bool`
 
