@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select project input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectProject` widget in Supervisely app.
+This widget is a select `Project` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectProject` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectProject)
 
