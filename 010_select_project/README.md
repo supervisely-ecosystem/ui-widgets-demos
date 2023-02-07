@@ -52,7 +52,7 @@ Determine workspace will be selected by default.
 select_project = SelectProject(workspace_id=workspace_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![workspace_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### compact
 
@@ -66,7 +66,7 @@ Show only project select.
 select_project = SelectProject(default_id=project_id, workspace_id=workspace_id, compact=True)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### allowed_types
 
@@ -90,7 +90,7 @@ select_project = SelectProject(
 )
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### size
 
