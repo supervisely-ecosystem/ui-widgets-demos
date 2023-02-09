@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `Input` widget in Supervisely app.
 Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly=False, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
+![default](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
 
 ## Parameters
 
@@ -38,7 +38,7 @@ Binding value.
 input = Input(value="Start input value")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![value](https://user-images.githubusercontent.com/120389559/217822714-62e392c0-6cfe-4b81-af72-b47a91470a14.png)
 
 ### minlength
 
@@ -76,7 +76,7 @@ Placeholder of input.
 input = Input(placeholder="Please input")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![placeholder](https://user-images.githubusercontent.com/120389559/217822992-b29d20f9-5a87-43f1-852d-90bba98151a6.png)
 
 ### size
 
@@ -90,25 +90,25 @@ Size of input.
 input = Input()
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
 
 ```python
-input = Input(input="mini")
+input = Input(size="mini")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size_mini](https://user-images.githubusercontent.com/120389559/217823655-6be929d3-186b-434a-81a3-f142d9d244ce.png)
 
 ```python
-input = Input(input="small")
+input = Input(size="small")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size_small](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
 
 ```python
-input = Input(input="large")
+input = Input(size="large")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size_large](https://user-images.githubusercontent.com/120389559/217824086-7d608970-e185-4764-a994-eb64a3c495e2.png)
 
 ### readonly
 
@@ -121,8 +121,6 @@ Same as readonlyin native input.
 ```python
 input = Input(readonly=True)
 ```
-
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
 
 ### widget_id
 
@@ -216,6 +214,8 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
+![layout](https://user-images.githubusercontent.com/120389559/217825407-728302cf-6647-41b0-adda-519f17411d01.png)
+
 ### Add functions to control widget from python code
 
 ```python
@@ -236,7 +236,6 @@ def random_planet():
         )
     )
 
-
 @button_clean_input.click
 def random_word():
     input_text.set_value("")
@@ -251,3 +250,5 @@ def set_readonly():
         input_text.enable_readonly()
         print("Readonly: Enabled")
 ```
+
+![random_click](https://user-images.githubusercontent.com/120389559/217825761-cd7e6063-c374-4d15-8fec-a6f00eca2ffb.png)
