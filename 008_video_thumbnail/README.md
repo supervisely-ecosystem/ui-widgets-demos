@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `VideoThumbnail` widget in Supervisel
 VideoThumbnail(info=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
+![default](https://user-images.githubusercontent.com/120389559/217834448-44807559-f3b8-482b-a9e8-c3f95b1c0f3f.png)
 
 ## Parameters
 
