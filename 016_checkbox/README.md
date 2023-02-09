@@ -4,7 +4,7 @@
 
 This widget is a checkbox type input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Checkbox` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Checkbox)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/checkbox)
 
 ## Function signature
 
@@ -43,6 +43,7 @@ Whether Select is checked.
 ```python
 checkbox = Checkbox(content="Enable", checked=True)
 ```
+![checkbox-checked](https://user-images.githubusercontent.com/79905215/217864130-e7c5bd4b-8f11-43bb-8b18-289dec5b3dbf.png)
 
 ### widget_id
 
