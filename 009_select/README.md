@@ -12,7 +12,7 @@ This widget is a select type input, clicking on it can be processed from python 
 Select(items=None, groups=None, filterable=False, placeholder="select", size=None, multiple=False, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
 
 ## Parameters
 
@@ -60,10 +60,12 @@ Initialize widget with given items:
 
 ```python
 select_items = Select(
-    items=animals_domestic,
+    items=animals_domestic + animals_wild,
     filterable=True,
 )
 ```
+
+![items](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
 
 or initialize widget with given groups of items:
 
@@ -75,6 +77,8 @@ groups = [
 
 select_groups = Select(groups=groups)
 ```
+
+![groups](https://user-images.githubusercontent.com/120389559/217837265-105f89c7-3c12-4232-94c8-59692bfb160a.png)
 
 ### filterable
 
@@ -107,6 +111,8 @@ Whether multiple-select is activated.
 **type:** `bool`
 
 **default value:** `false`
+
+![multiple](https://user-images.githubusercontent.com/120389559/217837848-e7f9c91d-51b1-4e80-93f3-9ddb35266ad6.png)
 
 ### widget_id
 
@@ -206,3 +212,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/217838203-6cb2777b-fcd7-437e-83c7-e8c21770e147.png)
