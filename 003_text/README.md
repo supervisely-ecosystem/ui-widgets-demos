@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `Text` widget in Supervisely app.
 Text(text=None, status="text", widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![default](https://user-images.githubusercontent.com/120389559/217816296-b03edf40-8ac1-42f7-ac6e-d0c319bad783.png)
 
 ## Parameters
 
@@ -46,31 +46,31 @@ Text status.
 text = Text(text="My text", status="text")
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![text](https://user-images.githubusercontent.com/120389559/217818651-10a968df-60f7-45f2-a019-d1828bb6cf28.png)
 
 ```python
 text_info = Text(text="My info text", status="info")
 ```
 
-![info](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![info](https://user-images.githubusercontent.com/120389559/217818910-2f027556-adbf-47ea-8a9a-9042a315d813.png)
 
 ```python
 text_success = Text(text="My success text", status="success")
 ```
 
-![success](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![success](https://user-images.githubusercontent.com/120389559/217819084-42736f03-d71f-499b-95a2-af7eadbdaff7.png)
 
 ```python
 text_warning = Text(text="My warning text", status="warning")
 ```
 
-![warning](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![warning](https://user-images.githubusercontent.com/120389559/217819327-4f843414-0ff9-4d81-a03e-6c795141e93a.png)
 
 ```python
 text_error = Text(text="My error text", status="error")
 ```
 
-![error](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![error](https://user-images.githubusercontent.com/120389559/217819527-b9762a5c-59a5-4d4e-a1f6-17ec65aef080.png)
 
 ### widget_id
 
@@ -181,7 +181,7 @@ app = sly.Application(layout=layout)
 
 Our app layout is ready.
 
-![layout](https://user-images.githubusercontent.com/48913536/202438081-552d2ba1-c682-42aa-9010-064b460f3ce4.png)
+![layout](https://user-images.githubusercontent.com/120389559/217820070-ddb06396-ee61-42f9-96e0-3a92e99c268c.png)
 
 ### Start text status change with button click
 
@@ -194,7 +194,7 @@ def show_text():
     text.status = "text"
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)
+![text_click](https://user-images.githubusercontent.com/120389559/217820070-ddb06396-ee61-42f9-96e0-3a92e99c268c.png)
 
 ```python
 @button_show_info.click
@@ -202,7 +202,7 @@ def show_info():
     text.status = "info"
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)
+![info_click](https://user-images.githubusercontent.com/120389559/217820638-d9770fc3-626f-4908-afaf-ba539c739e2e.png)
 
 ```python
 @button_show_success.click
@@ -210,7 +210,7 @@ def show_success():
     text.status = "success"
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)
+![success_click](https://user-images.githubusercontent.com/120389559/217820791-854538ed-d388-4ab0-bfb4-d516ba0753ca.png)
 
 ```python
 @button_show_warning.click
@@ -218,7 +218,7 @@ def show_warning():
     text.status = "warning"
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)
+![warning_click](https://user-images.githubusercontent.com/120389559/217820912-fe79f9b8-e003-4663-836f-50bc9e48b783.png)
 
 ```python
 @button_show_error.click
@@ -226,4 +226,4 @@ def show_error():
     text.status = "error"
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202436155-e9721f44-916d-48c2-9c30-f43f41f4c9ba.gif)
+![error_click](https://user-images.githubusercontent.com/120389559/217821073-b896b175-dfa5-4b83-834f-ef30d0cd84ed.png)
