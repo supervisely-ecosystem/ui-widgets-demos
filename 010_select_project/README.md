@@ -12,7 +12,7 @@ This widget is a select `Project` input, clicking on it can be processed from py
 SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[], show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/217844120-65f36676-0e42-4a75-a74b-3ae2f8d18167.png)
 
 ## Parameters
 
@@ -38,8 +38,6 @@ Determine `Project` will be selected by default.
 select_project = SelectProject(default_id=project_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
-
 ### workspace_id
 
 Determine `Workspace` will be selected by default.
@@ -51,8 +49,6 @@ Determine `Workspace` will be selected by default.
 ```python
 select_project = SelectProject(workspace_id=workspace_id)
 ```
-
-![workspace_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### compact
 
@@ -66,7 +62,7 @@ Show only `Project` select.
 select_project = SelectProject(default_id=project_id, workspace_id=workspace_id, compact=True)
 ```
 
-![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![compact](https://user-images.githubusercontent.com/120389559/217844837-4b142a81-b456-4f1d-a57f-500e7f38adb8.png)
 
 ### allowed_types
 
@@ -90,7 +86,7 @@ select_project = SelectProject(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/217845166-41f15aae-febf-4c27-9084-ba88e9e5550a.png)
 
 ### size
 
