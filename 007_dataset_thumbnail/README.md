@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `DatasetThumbnail` widget in Supervis
 DatasetThumbnail(project_info=None, dataset_info=None, show_project_name=True, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
+![default](https://user-images.githubusercontent.com/120389559/217832111-9a9640fc-ee64-4164-a3ab-f2e18e47a65c.png)
 
 ## Parameters
 
@@ -49,8 +49,6 @@ dataset = api.dataset.get_info_by_id(id=dataset_id)
 dataset_thumbnail = DatasetThumbnail(dataset_info=dataset)
 ```
 
-![dataset_info](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
-
 ### show_project_name
 
 Determines to display project name.
@@ -65,7 +63,7 @@ dataset = api.dataset.get_info_by_id(dataset_id)
 dataset_thumbnail = DatasetThumbnail(project_info=project, dataset_info=dataset, show_project_name=False)
 ```
 
-![show_project_name](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
+![show_project_name](https://user-images.githubusercontent.com/120389559/217832612-748b980d-d3af-40b4-aa51-c0e00226bf02.png)
 
 ### widget_id
 
