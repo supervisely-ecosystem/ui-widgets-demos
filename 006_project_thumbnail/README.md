@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `ProjectThumbnail` widget in Supervis
 ProjectThumbnail(info=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213988894-d4420e3e-5003-431b-8be1-01b1ddbf98df.png)
+![default](https://user-images.githubusercontent.com/120389559/217830022-e16f1cac-83e6-4caf-aa1b-097116b68058.png)
 
 ## Parameters
 
