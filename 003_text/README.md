@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `Text` widget in Supervisely app.
 Text(text=None, status="text", widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/217816296-b03edf40-8ac1-42f7-ac6e-d0c319bad783.png)
+![default](https://user-images.githubusercontent.com/120389559/217817133-5d90a597-64c8-4555-ab77-4aca594e39e6.png)
 
 ## Parameters
 
