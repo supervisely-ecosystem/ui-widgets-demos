@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `InputNumber` widget in Supervisely a
 InputNumber(value=1, min=None, max=None, step=1, size="small", controls=True, debounce=300, precision=0, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213990508-35222186-0bee-4e08-8c97-60e37f702346.png)
+![default](https://user-images.githubusercontent.com/120389559/217827984-b1b33d3e-2dfd-43de-9c2e-9558a5d15bbb.png)
 
 ## Parameters
 
@@ -40,7 +40,7 @@ Binding value.
 input_number = InputNumber(value=7)
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![value](https://user-images.githubusercontent.com/120389559/217828155-7a8ef55a-defb-48f9-9d8e-ff0d592c0a87.png)
 
 ### min
 
@@ -78,8 +78,6 @@ Incremental steps.
 input = InputNumber(step=2)
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
-
 ### size
 
 Size of the component.
@@ -92,13 +90,13 @@ Size of the component.
 input = InputNumber(size="small")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size_small](https://user-images.githubusercontent.com/120389559/217827984-b1b33d3e-2dfd-43de-9c2e-9558a5d15bbb.png)
 
 ```python
 input = InputNumber(size="large")
 ```
 
-![value](https://user-images.githubusercontent.com/48913536/202438044-1b805dec-7e29-4969-867e-b9fc1d28cea4.gif)
+![size_large](https://user-images.githubusercontent.com/120389559/217828834-813332ec-0e31-47dc-a645-a68629c733e0.png)
 
 ### controls
 
