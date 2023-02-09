@@ -4,7 +4,7 @@
 
 This widget allows to display an element corresponding to selected item in a conditional type widget (e. g. `Select`, `RadioButton`, `Switch`). Clicking on it can be processed from python code. In this tutorial you will learn how to use **`OneOf`** widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/OneOf)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/one-of)
 
 ## Function signature
 
@@ -28,8 +28,11 @@ Conditional widget with preset items.
 **type:** `ConditionalWidget`
 
 ```python
-one_of = OneOf(conditional_widget=Select(items=animals))
+# prepare "animals" using RadioGroup.Item
+one_of = OneOf(conditional_widget=RadioGroup(items=animals))
 ```
+
+![horse-one-of](https://user-images.githubusercontent.com/79905215/217866143-a6748df5-0a2a-4f98-908c-6a98e0ea0720.png)
 
 ### widget_id
 
@@ -132,3 +135,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![default](https://user-images.githubusercontent.com/79905215/217235567-e6b0c581-8cac-4a36-9286-58ea331db051.png)
