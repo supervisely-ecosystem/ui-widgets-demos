@@ -12,7 +12,7 @@ This widget is a select `Dataset` input, clicking on it can be processed from py
 SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False, show_label=True, size=None, disabled=False, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/217846091-eb9b97a2-8a11-4e61-b8fe-2387b8a3137c.png)
 
 ## Parameters
 
@@ -39,8 +39,6 @@ Determine `Dataset` will be selected by default.
 select_project = SelectDataset(default_id=dataset_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
-
 ### project_id
 
 Determine `Project` will be selected by default.
@@ -52,8 +50,6 @@ Determine `Project` will be selected by default.
 ```python
 select_project = SelectDataset(project_id=project_id)
 ```
-
-![project_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### multiselect
 
@@ -67,7 +63,7 @@ Allow to select all datasets in current project.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, multiselect=True)
 ```
 
-![multiselect](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![multiselect](https://user-images.githubusercontent.com/120389559/217848588-3c18ce1b-66a1-4be0-90c8-e8cfe1740c34.png)
 
 ### compact
 
@@ -81,7 +77,7 @@ Show only `Dataset` select.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, compact=True)
 ```
 
-![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![compact](https://user-images.githubusercontent.com/120389559/217848891-7caf3883-fcb2-48d0-b0bb-4393a159ba6a.png)
 
 ### show_label
 
@@ -97,7 +93,7 @@ select_dataset = SelectDataset(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/217849159-d53c6dbd-520a-410a-b0bc-7e1fbc064f8d.png)
 
 ### size
 
@@ -119,7 +115,7 @@ Determine dataset select ability.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, disabled=True)
 ```
 
-![disabled](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![disabled](https://user-images.githubusercontent.com/120389559/217849459-1944a41a-df7a-4cac-ba77-3519fb67c734.png)
 
 ### widget_id
 
@@ -128,6 +124,16 @@ ID of the widget.
 **type:** `int`
 
 **default value:** `None`
+
+## Methods and attributes
+
+| Attributes and Methods | Description                                                                            |
+| :--------------------: | -------------------------------------------------------------------------------------- |
+|  `get_selected_id()`   | Return List with selected `dataset ID`, if `multiselect` is `True` raise ValueError.   |
+|  `get_selected_ids()`  | Return List with selected `dataset IDs`, if `multiselect` is `False` raise ValueError. |
+|      `disable()`       | Set `disabled` attribute == True.                                                      |
+|       `enable()`       | Set `disabled` attribute == False.                                                     |
+|    `value_changed`     | Function is handled when selected `dataset ID` is changed.                             |
 
 ## Mini App Example
 
