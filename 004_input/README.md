@@ -108,7 +108,7 @@ input = Input(size="small")
 input = Input(size="large")
 ```
 
-![size_large](https://user-images.githubusercontent.com/120389559/217824086-7d608970-e185-4764-a994-eb64a3c495e2.png)
+![size_large](https://user-images.githubusercontent.com/120389559/217843381-690e4e94-f1cb-47bf-9cb4-ff89a3b8fac3.png)
 
 ### readonly
 
