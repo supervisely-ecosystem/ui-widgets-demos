@@ -12,7 +12,7 @@ This widget is a select `TagMeta` input, clicking on it can be processed from py
 SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/218047319-9e4b681c-ee63-4709-b5c1-24c94f457e7a.png)
 
 ## Parameters
 
@@ -115,7 +115,7 @@ Determine show text `Tag` on widget or not.
 select_tag_meta = SelectTagMeta(project_id=project_id, show_label=False)
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/218049460-041e2086-548c-4961-8245-33847900b59c.png)
 
 ### size
 
