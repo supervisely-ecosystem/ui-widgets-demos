@@ -12,7 +12,7 @@ This widget is a select `Item` input(image, video, volume, point_cloud or point_
 SelectItem(dataset_id=None, compact=False, show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/218035492-9a07432d-8fb0-4dad-b5ff-ccd8ce03a137.png)
 
 ## Parameters
 
@@ -36,7 +36,7 @@ Determine `Dataset` from which `Items` will be selected.
 select_item = SelectItem(dataset_id=dataset_id)
 ```
 
-![dataset_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![dataset_id](https://user-images.githubusercontent.com/120389559/218035699-aa403402-6a7d-41af-a93c-ffb0b4f2df7c.png)
 
 ### compact
 
@@ -50,8 +50,6 @@ Show only `Dataset` select.
 select_item = SelectItem(dataset_id=dataset_id, compact=False)
 ```
 
-![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
-
 ### show_label
 
 Determine show text `Item` on widget or not.
@@ -64,7 +62,7 @@ Determine show text `Item` on widget or not.
 select_item = SelectItem(dataset_id=dataset_id, show_label=False)
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/218035951-70b5d164-d7f4-44a2-85f8-4da65c112cae.png)
 
 ### size
 
@@ -73,20 +71,6 @@ Size of input.
 **type:** `Literal["large", "small", "mini"]`
 
 **default value:** `None`
-
-### disabled
-
-Determine dataset select ability.
-
-**type:** `bool`
-
-**default value:** `false`
-
-```python
-select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, disabled=True)
-```
-
-![disabled](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
 
 ### widget_id
 
@@ -155,3 +139,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/218036360-09d6f530-42c7-43bd-a2f7-05d7d3f6f252.png)
