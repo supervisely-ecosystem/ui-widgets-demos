@@ -154,7 +154,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-# Initialize project_id and dataset_id we will use in UI
+### Initialize project_id and dataset_id we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
@@ -168,7 +168,7 @@ project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id
 grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
 ```
 
-# Fill GridGallery with data
+### Fill GridGallery with data
 
 ```python
 grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
