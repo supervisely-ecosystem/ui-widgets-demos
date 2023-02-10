@@ -93,7 +93,7 @@ input_small = InputNumber(size="small")
 input_large = InputNumber(size="large")
 ```
 
-![size](https://user-images.githubusercontent.com/120389559/218094408-043e393d-58c9-4721-9aa2-6ed11dd05f38.png)
+![size](https://user-images.githubusercontent.com/120389559/218095519-b8293718-490f-4101-9781-3607bd607a4f.png)
 
 ### controls
 
