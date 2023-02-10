@@ -161,8 +161,6 @@ app = sly.Application(layout=layout)
 
 Our app layout is ready.
 
-![layout](https://user-images.githubusercontent.com/120389559/217820070-ddb06396-ee61-42f9-96e0-3a92e99c268c.png)
-
 ### Start text status change with button click
 
 Use the decorator as shown below to handle button click.
@@ -174,15 +172,11 @@ def show_text():
     text.status = "text"
 ```
 
-![text_click](https://user-images.githubusercontent.com/120389559/217820070-ddb06396-ee61-42f9-96e0-3a92e99c268c.png)
-
 ```python
 @button_show_info.click
 def show_info():
     text.status = "info"
 ```
-
-![info_click](https://user-images.githubusercontent.com/120389559/217820638-d9770fc3-626f-4908-afaf-ba539c739e2e.png)
 
 ```python
 @button_show_success.click
@@ -190,15 +184,11 @@ def show_success():
     text.status = "success"
 ```
 
-![success_click](https://user-images.githubusercontent.com/120389559/217820791-854538ed-d388-4ab0-bfb4-d516ba0753ca.png)
-
 ```python
 @button_show_warning.click
 def show_warning():
     text.status = "warning"
 ```
-
-![warning_click](https://user-images.githubusercontent.com/120389559/217820912-fe79f9b8-e003-4663-836f-50bc9e48b783.png)
 
 ```python
 @button_show_error.click
@@ -206,6 +196,4 @@ def show_error():
     text.status = "error"
 ```
 
-![error_click](https://user-images.githubusercontent.com/120389559/217821073-b896b175-dfa5-4b83-834f-ef30d0cd84ed.png)
-
-![layout](https://user-images.githubusercontent.com/120389559/218088402-d806ff0a-5c82-4767-a220-02e42a71e752.gif)
+![layout](https://user-images.githubusercontent.com/120389559/218090541-30f6b8f6-90e0-4785-8491-455a7d4b6635.gif)
