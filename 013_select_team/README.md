@@ -12,7 +12,7 @@ This widget is a select `Team` input, clicking on it can be processed from pytho
 SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/218033566-7b4babed-9dfd-4bc6-ba14-19666afb2e1d.png)
 
 ## Parameters
 
@@ -35,7 +35,7 @@ Determine `Team` will be selected by default.
 select_team = SelectTeam(default_id=team_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default_id](https://user-images.githubusercontent.com/120389559/218033755-a0449ce0-141e-4769-b11a-311bd2be7dfb.png)
 
 ### show_label
 
@@ -49,7 +49,7 @@ Determine show text `Team` on widget or not.
 select_team = SelectTeam(default_id=team_id, show_label=False)
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/218034036-b9a1bd07-62f4-4787-a8f9-847d94ee3cf0.png)
 
 ### size
 
@@ -128,3 +128,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/218034207-b7bc95cd-351c-44c0-a6ae-0023c8a2f303.png)
