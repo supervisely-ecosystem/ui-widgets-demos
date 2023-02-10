@@ -101,7 +101,7 @@ Allows to select multiple `Tags`.
 select_tag_meta = SelectTagMeta(project_id=project_id, multiselect=True)
 ```
 
-![multiselect](https://user-images.githubusercontent.com/120389559/218049015-9a3f0fd0-36e5-41b8-9f4f-3e32f6afeb0a.png)
+![multiselect](https://user-images.githubusercontent.com/120389559/218099610-e36e6221-74d3-4271-89d4-da7edf088f80.gif)
 
 ### show_label
 
