@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a checkbox type input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Checkbox` widget in Supervisely app.
+In this tutorial you will learn how to use `Checkbox` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/checkbox)
 
