@@ -108,7 +108,7 @@ classic_table = ClassicTable(data=df, fixed_columns_num=2)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

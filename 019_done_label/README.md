@@ -39,7 +39,7 @@ done_label = DoneLabel(text="Some text")
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

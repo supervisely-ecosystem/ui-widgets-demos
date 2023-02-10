@@ -75,7 +75,7 @@ note_box = NotificationBox(
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

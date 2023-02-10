@@ -49,7 +49,7 @@ checkbox = Checkbox(content="Enable", checked=True)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

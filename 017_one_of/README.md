@@ -38,7 +38,7 @@ one_of = OneOf(conditional_widget=RadioGroup(items=animals))
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
