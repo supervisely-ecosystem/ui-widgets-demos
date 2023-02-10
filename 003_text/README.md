@@ -44,33 +44,13 @@ Text status.
 
 ```python
 text = Text(text="My text", status="text")
-```
-
-![text](https://user-images.githubusercontent.com/120389559/217818651-10a968df-60f7-45f2-a019-d1828bb6cf28.png)
-
-```python
 text_info = Text(text="My info text", status="info")
-```
-
-![info](https://user-images.githubusercontent.com/120389559/217818910-2f027556-adbf-47ea-8a9a-9042a315d813.png)
-
-```python
 text_success = Text(text="My success text", status="success")
-```
-
-![success](https://user-images.githubusercontent.com/120389559/217819084-42736f03-d71f-499b-95a2-af7eadbdaff7.png)
-
-```python
 text_warning = Text(text="My warning text", status="warning")
-```
-
-![warning](https://user-images.githubusercontent.com/120389559/217819327-4f843414-0ff9-4d81-a03e-6c795141e93a.png)
-
-```python
 text_error = Text(text="My error text", status="error")
 ```
 
-![error](https://user-images.githubusercontent.com/120389559/217819527-b9762a5c-59a5-4d4e-a1f6-17ec65aef080.png)
+![status](https://user-images.githubusercontent.com/120389559/218086875-c6990527-44f2-44a3-9367-c79d3c6717e9.png)
 
 ### widget_id
 
@@ -227,3 +207,5 @@ def show_error():
 ```
 
 ![error_click](https://user-images.githubusercontent.com/120389559/217821073-b896b175-dfa5-4b83-834f-ef30d0cd84ed.png)
+
+![layout](https://user-images.githubusercontent.com/120389559/218088402-d806ff0a-5c82-4767-a220-02e42a71e752.gif)
