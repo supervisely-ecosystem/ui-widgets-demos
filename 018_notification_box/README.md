@@ -83,10 +83,8 @@ ID of the widget.
 
 |       Attributes and Methods        | Description                                |
 | :---------------------------------: | ------------------------------------------ |
-|               `title`               | Get notification box title property.       |
-|         `title(value: str)`         | Set notification box title.                |
-|            `description`            | Get notification box description property. |
-|      `description(value: str)`      | Set notification box description.          |
+|               `title`               | Get or set notification box `title` property.       |
+|            `description`            | Get or set notification box `description` property. |
 | `set(title: str, description: str)` | Set `title` and `description` properties.  |
 
 ## Mini App Example

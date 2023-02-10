@@ -47,8 +47,7 @@ ID of the widget.
 
 |       Attributes and Methods        | Description                                |
 | :---------------------------------: | ------------------------------------------ |
-|               `text`               | Get `text` property.       |
-|         `text(value: str)`         | Set `text` property.                |
+|               `text`               | Get or set `text` property.       |
 
 
 ## Mini App Example

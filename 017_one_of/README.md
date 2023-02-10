@@ -71,7 +71,7 @@ api = sly.Api()
 
 ### Prepare conditional widget content
 
-You can use `RadioGroup`, `Select` or `Switch` widgets to set in `conditional_widget` property.
+You can use `RadioGroup`, `Select` or `Switch` widgets to set in `conditional_widget` parameter.
 In this tutorial we will use `Select` widget. 
 
 Prepare images we will use in `Select.Items`
@@ -122,10 +122,10 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 ```python
 card = Card(
     title="One of",
-    content=one_of,
+    content=Container(widgets=[select_items, one_of]),
 )
 
-layout = Container(widgets=[select_items, card])
+layout = Container(widgets=[card])
 ```
 
 ### Create app using layout

@@ -27,7 +27,7 @@ obj_classes_list = ObjectClassesList(
 
 ### object_classes
 
-ObjClassCollection object or list of ObjClass objects.
+`ObjClassCollection` or list of `ObjClass`.
 
 **type:** `Union[ObjClassCollection, List[ObjClass]]`
 
@@ -41,7 +41,7 @@ obj_classes_list = ObjectClassesList(
 
 Enable classes selection.
 
-**type:** `Union[ObjClassCollection, List[ObjClass]]`
+**type:** `bool`
 
 **default** `False`
 
@@ -58,7 +58,7 @@ obj_classes_list = ObjectClassesList(
 
 Number of columns.
 
-**type:** `Union[ObjClassCollection, List[ObjClass]]`
+**type:** `int`
 
 ```python
 obj_classes_list = ObjectClassesList(
