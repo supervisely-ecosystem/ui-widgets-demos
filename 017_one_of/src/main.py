@@ -34,7 +34,7 @@ select_items = Select(items=animals)
 one_of = OneOf(conditional_widget=select_items)
 card = Card(
     title="One of",
-    content=one_of,
+    content=Container(widgets=[select_items, one_of]),
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
