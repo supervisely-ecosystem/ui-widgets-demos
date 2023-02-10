@@ -63,7 +63,7 @@ Allow to select all datasets in current project.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, multiselect=True)
 ```
 
-![multiselect](https://user-images.githubusercontent.com/120389559/217848588-3c18ce1b-66a1-4be0-90c8-e8cfe1740c34.png)
+![multiselect](https://user-images.githubusercontent.com/120389559/218098518-60cce7a0-d9d9-404e-af60-9310993296a8.gif)
 
 ### compact
 
