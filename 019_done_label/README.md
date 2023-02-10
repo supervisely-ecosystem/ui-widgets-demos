@@ -12,7 +12,7 @@ This widget display message with done label. In this tutorial you will learn how
 done_label = DoneLabel(text="Task has been successfully finished")
 ```
 
-![default-done-label](https://user-images.githubusercontent.com/79905215/217868944-f67172f9-7845-4f94-93ed-4184555f548e.png)
+![label-default](https://user-images.githubusercontent.com/79905215/218078545-53840478-4f2d-4b74-a4c7-2838efba93b9.png)
 
 ## Parameters
 
@@ -33,7 +33,7 @@ Description text of widget
 done_label = DoneLabel(text="Some text")
 ```
 
-![label-text](https://user-images.githubusercontent.com/79905215/217869730-2ace7121-8bfa-442e-ae84-d0ef6a1b8088.png)
+![label-text](https://user-images.githubusercontent.com/79905215/218078983-94449c90-3436-4da8-8107-cbdc29c416c0.png)
 
 ### widget_id
 
@@ -108,4 +108,4 @@ app = sly.Application(layout=layout)
 ```
 
 
-![done-label](https://user-images.githubusercontent.com/79905215/217868616-b2dcc497-a424-4126-b4aa-0e03c4e09e23.png)
+![label-default](https://user-images.githubusercontent.com/79905215/218078545-53840478-4f2d-4b74-a4c7-2838efba93b9.png)
