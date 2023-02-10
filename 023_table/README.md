@@ -37,13 +37,13 @@ table = Table(data=pd.DataFrame(data=data, index=b, columns=a))
 
 Data of table in different formats:
 
-1. Pandas Dataframe
+1. Pandas Dataframe:
 
 ```python
 pd.DataFrame(data=data, columns=columns)
 ```
 
-2. Python dict with structure
+2. Python dict with structure:
 
 ```python
  {
