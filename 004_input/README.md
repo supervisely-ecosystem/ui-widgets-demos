@@ -88,27 +88,12 @@ Size of input.
 
 ```python
 input = Input()
+input_mini = Input(size="mini", placeholder="input mini")
+input_small = Input(size="small", placeholder="input small")
+input_large = Input(size="large", placeholder="input large")
 ```
 
-![size](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
-
-```python
-input = Input(size="mini")
-```
-
-![size_mini](https://user-images.githubusercontent.com/120389559/217823655-6be929d3-186b-434a-81a3-f142d9d244ce.png)
-
-```python
-input = Input(size="small")
-```
-
-![size_small](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
-
-```python
-input = Input(size="large")
-```
-
-![size_large](https://user-images.githubusercontent.com/120389559/217843381-690e4e94-f1cb-47bf-9cb4-ff89a3b8fac3.png)
+![size](https://user-images.githubusercontent.com/120389559/218092559-c423e7f8-f7cb-4a17-8975-920c2f33a5f8.png)
 
 ### readonly
 
@@ -214,8 +199,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/217825407-728302cf-6647-41b0-adda-519f17411d01.png)
-
 ### Add functions to control widget from python code
 
 ```python
@@ -251,4 +234,4 @@ def set_readonly():
         print("Readonly: Enabled")
 ```
 
-![random_click](https://user-images.githubusercontent.com/120389559/217825761-cd7e6063-c374-4d15-8fec-a6f00eca2ffb.png)
+![layout](https://user-images.githubusercontent.com/120389559/218093184-15b038b9-6b26-4ce1-bc24-64905e4e5c52.gif)
