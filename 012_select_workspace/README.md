@@ -12,7 +12,7 @@ This widget is a select `Workspace` input, clicking on it can be processed from 
 SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/218031710-7976257f-b358-4392-970b-51b38f53255d.png)
 
 ## Parameters
 
@@ -37,7 +37,7 @@ Determine `Workspace` will be selected by default.
 select_workspace = SelectWorkspace(default_id=workspace_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default_id](https://user-images.githubusercontent.com/120389559/218031925-1f70bb32-5a44-4ee2-9c9b-813fa88ac8a7.png)
 
 ### team_id
 
@@ -51,8 +51,6 @@ Determine `Team` will be selected by default.
 select_workspace = SelectWorkspace(team_id=team_id)
 ```
 
-![team_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
-
 ### compact
 
 Show only `Workspace` select.
@@ -65,7 +63,7 @@ Show only `Workspace` select.
 select_workspace = SelectWorkspace(default_id=workspace_id, team_id=team_id, compact=True)
 ```
 
-![compact](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![compact](https://user-images.githubusercontent.com/120389559/218032327-61a184cc-cc6b-4d94-8bdf-c1bd8d3926b6.png)
 
 ### show_label
 
@@ -81,7 +79,7 @@ select_workspace = SelectWorkspace(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![show_label](https://user-images.githubusercontent.com/120389559/218032520-111c307b-1147-4483-b5f5-592e96533dff.png)
 
 ### size
 
@@ -162,3 +160,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/218032788-64ba31fc-65b1-4194-99cb-0668b48e80d0.png)
