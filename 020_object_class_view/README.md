@@ -16,7 +16,7 @@ obj_class_view = ObjectClassView(
 )
 ```
 
-![objclass](https://user-images.githubusercontent.com/79905215/217872710-d76db90a-6a40-4b0d-b996-117d266ee428.png)
+![objclass-default](https://user-images.githubusercontent.com/79905215/218079475-c5c5c032-8420-4850-b3fc-19dfc19c266a.png)
 
 ## Parameters
 
@@ -51,7 +51,7 @@ Display object class text
 obj_class_view = ObjectClassView(obj_class=obj_class, show_shape_text=False)
 ```
 
-![objclassview-1](https://user-images.githubusercontent.com/79905215/217877106-ff5c6e11-aeb9-46be-9c9c-fa6b5bb69fc3.png)
+![objclass-show-text](https://user-images.githubusercontent.com/79905215/218081019-0d0d2ebe-69a8-4e7d-b1ce-e647b005dd7b.png)
 
 ### show_shape_icon
 
@@ -65,7 +65,7 @@ Display object class icon
 obj_class_view = ObjectClassView(obj_class=obj_class, show_shape_icon=True)
 ```
 
-![objclassview-2](https://user-images.githubusercontent.com/79905215/217877828-4dca32d7-3eac-4a87-8f1e-8b92dac26e54.png)
+![objclass-show-icon](https://user-images.githubusercontent.com/79905215/218080581-9344eb4a-3696-4c75-b9ff-8f1ec96722b7.png)
 
 ### widget_id
 
@@ -139,4 +139,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![objclassview-3](https://user-images.githubusercontent.com/79905215/217878550-8b6f1be8-6acd-4df7-92dd-3ff2736d3ab3.png)
+![objclass-default](https://user-images.githubusercontent.com/79905215/218079475-c5c5c032-8420-4850-b3fc-19dfc19c266a.png)
