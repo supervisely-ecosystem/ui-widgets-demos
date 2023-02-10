@@ -31,7 +31,7 @@ Determine list of Widgets to display on Grid.
 
 ### columns
 
-Determine gap between Widgets on Flexbox.
+Number of columns on Grid.
 
 **type:** `int`
 
