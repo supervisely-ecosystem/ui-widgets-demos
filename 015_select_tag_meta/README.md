@@ -9,7 +9,7 @@ This widget is a select `TagMeta` input, clicking on it can be processed from py
 ## Function signature
 
 ```python
-SelectTagMeta(default=None, project_id=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
+SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
 ```
 
 ![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
@@ -36,10 +36,10 @@ Determine `Tag` will be selected by default.
 **default value:** `None`
 
 ```python
-select_tag_meta = SelectTagMeta(default="cat", project_id=project_id)
+select_tag_meta = SelectTagMeta(default="rust", project_id=project_id)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![default](https://user-images.githubusercontent.com/120389559/218047689-6236f160-b0f9-43da-b0b8-f44e3a9eacbb.png)
 
 ### project_id
 
@@ -53,7 +53,7 @@ Determine `Project` from which `Tags` will be selected.
 select_tag_meta = SelectTagMeta(project_id=project_id)
 ```
 
-![project_id](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![project_id](https://user-images.githubusercontent.com/120389559/218047909-e3433e3b-a6b9-42cb-b7d7-3fc37788a481.png)
 
 ### project_meta
 
@@ -71,7 +71,7 @@ project_meta = sly.ProjectMeta.from_json(meta_json)
 select_tag_meta = SelectTagMeta(project_meta=project_meta)
 ```
 
-![project_meta](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![project_meta](https://user-images.githubusercontent.com/120389559/218048143-452ccdd9-0573-494c-af19-d427585ee2bd.png)
 
 ### allowed_types
 
@@ -87,7 +87,7 @@ allowed_types = [TagValueType.ANY_STRING, TagValueType.NONE]
 select_tag_meta = SelectTagMeta(project_id=project_id, allowed_types=allowed_types)
 ```
 
-![allowed_types](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![allowed_types](https://user-images.githubusercontent.com/120389559/218048774-60b853c8-a597-4e8b-8eeb-216687b7d416.png)
 
 ### multiselect
 
@@ -101,7 +101,7 @@ Allows to select multiple `Tags`.
 select_tag_meta = SelectTagMeta(project_id=project_id, multiselect=True)
 ```
 
-![multiselect](https://user-images.githubusercontent.com/79905215/216376305-1556627a-ef61-4df7-900c-ac2ffbb9c8d0.png)
+![multiselect](https://user-images.githubusercontent.com/120389559/218049015-9a3f0fd0-36e5-41b8-9f4f-3e32f6afeb0a.png)
 
 ### show_label
 
@@ -132,6 +132,18 @@ ID of the widget.
 **type:** `int`
 
 **default value:** `None`
+
+**Methods and attributes**
+
+|  Attributes and Methods  | Description                                                                                         |
+| :----------------------: | --------------------------------------------------------------------------------------------------- |
+|  `get_selected_name()`   | Return selected tag name. If multiselect is True raise RuntimeError.                                |
+|  `get_selected_names()`  | Return `List` with selected tags names. If multiselect is False raise RuntimeError.                 |
+| `get_tag_meta_by_name()` | Return `TagMeta` by tag name.                                                                       |
+|  `get_selected_item()`   | Return `TagMeta` for selected tag.                                                                  |
+|  `get_selected_items()`  | Return `List`, containing `TagMeta` for selected tags.                                              |
+|       `set_name()`       | Set `Tag` with given name as `selected`.                                                            |
+|      `set_names()`       | Set `Tags` from given list of tags names as `selected`. If multiselect is False raise RuntimeError. |
 
 ## Mini App Example
 
@@ -192,3 +204,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/218049706-c4b125c8-bc0d-49e4-b829-cde852f008ef.png)
