@@ -19,7 +19,7 @@ or
 table = Table(data=pd.DataFrame(data=data, index=b, columns=a))
 ```
 
-![table](https://user-images.githubusercontent.com/79905215/217889725-26eeb63e-b3a5-49e4-8b7d-b96f6bc7144d.png)
+![table-new](https://user-images.githubusercontent.com/79905215/218051109-136fdb07-eccf-420f-ae9d-67dd7f195f21.png)
 
 ## Parameters
 
@@ -74,8 +74,6 @@ data = pd.DataFrame(data=data, index=b, columns=a)
 table = Table(data=df)
 ```
 
-![table](https://user-images.githubusercontent.com/79905215/217889725-26eeb63e-b3a5-49e4-8b7d-b96f6bc7144d.png)
-
 ### columns
 
 List of columns names.
@@ -85,13 +83,13 @@ List of columns names.
 **default value:** `None`
 
 ```python
-columns = [f"Column #{i}" for i in range(1, 11)]
+columns = [f"Col#{i}" for i in range(1, 11)]
 data = pd.DataFrame(data=data, index=b, columns=columns)
 
 table = Table(data=df)
 ```
 
-![table-2](https://user-images.githubusercontent.com/79905215/217929530-fff3c5dc-0f0d-4f2d-ad3d-b65c336dd364.png)
+![table-new](https://user-images.githubusercontent.com/79905215/218051109-136fdb07-eccf-420f-ae9d-67dd7f195f21.png)
 
 ### fixed_cols
 
