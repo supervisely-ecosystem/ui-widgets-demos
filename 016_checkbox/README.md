@@ -16,11 +16,11 @@ checkbox = Checkbox(content="Enable")
 
 ## Parameters
 
-| Parameters |        Type        |         Description         |
-| :--------: | :----------------: | :-------------------------: |
-|  content   | Union[Widget, str] | content of string or widget |
-|  checked   |        bool        |  whether Select is checked  |
-| widget_id  |        str         |      id of the widget       |
+| Parameters  |         Type         |         Description         |
+| :---------: | :------------------: | :-------------------------: |
+|  `content`  | `Union[Widget, str]` | content of string or widget |
+|  `checked`  |        `bool`        | whether Checkbox is checked |
+| `widget_id` |        `str`         |      id of the widget       |
 
 ### content
 
@@ -34,7 +34,7 @@ checkbox = Checkbox(content="Enable")
 
 ### checked
 
-Whether Select is checked.
+Whether Checkbox is checked.
 
 **type:** `bool`
 
@@ -43,6 +43,7 @@ Whether Select is checked.
 ```python
 checkbox = Checkbox(content="Enable", checked=True)
 ```
+
 ![checkbox-checked](https://user-images.githubusercontent.com/79905215/218074377-5c0ceb1e-dc3d-4405-92e2-e3b0b0602d59.png)
 
 ### widget_id
@@ -62,6 +63,7 @@ ID of the widget.
 |      `uncheck()`       | Disable `checked` property.                                   |
 |    `@value_changed`    | Decorator function is handled when checkbox value is changed. |
 
+
 ## Mini App Example
 
 You can find this example in our Github repository:
@@ -75,7 +77,14 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Checkbox, Container
+from supervisely.app.widgets import (
+    Button,
+    Card,
+    Checkbox,
+    Container,
+    NotificationBox,
+    SelectDataset,
+)
 ```
 
 ### Init API client
@@ -89,6 +98,13 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
+### Get environment variables
+
+```python
+project_id = int(os.environ["modal.state.slyProjectId"])
+workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+```
+
 ### Initialize `Checkbox` widget
 
 ```python
@@ -98,6 +114,22 @@ checkbox = Checkbox(
 )
 ```
 
+### Create more widgets
+
+In this tutorial we will use `SelectDataset`, `Button`, `NotificationBox` widgets to show how to control `Checkbox` widget from python code.
+
+```python
+select_dataset = SelectDataset(
+    project_id=project_id,
+    compact=True,
+)
+
+show_btn = Button(text="Show info")
+
+note = NotificationBox()
+note.hide()
+```
+
 ### Create app layout
 
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
@@ -105,10 +137,9 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 ```python
 # create new cards
 card = Card(
-    title="Checkbox",
-    content=checkbox,
+    title="Checkbox demo",
+    content=Container(widgets=[select_dataset, checkbox, show_btn, note]),
 )
-
 layout = Container(widgets=[card])
 ```
 
@@ -123,8 +154,35 @@ app = sly.Application(layout=layout)
 ### Add functions to control widget from python code
 
 ```python
-@checkbox.value_changed
-def show_message(value):
-    print(f"Checkbox value has been changed: value={value}")
 
+@checkbox.value_changed
+def hide_notification(value):
+    if value is True:
+        select_dataset.disable()
+    else:
+        select_dataset.enable()
+
+    note.hide()
+
+
+@show_btn.click
+def show_info():
+    images_count = 0
+
+    # check if checkbox is enabled
+    if checkbox.is_checked():
+        datasets_list = api.dataset.get_list(project_id=project_id)
+        select_dataset.disable()
+        for dataset in datasets_list:
+            images_count += dataset.images_count if dataset.images_count is not None else 0
+
+    else:
+        ds_id = select_dataset.get_selected_id()
+        dataset = api.dataset.get_info_by_id(ds_id)
+        images_count = dataset.images_count
+
+    note.title = f"Total count of images in selected datasets: {images_count}."
+    note.show()
 ```
+
+<figure><img src="https://user-images.githubusercontent.com/79905215/218137018-56ad2e50-aee0-4c84-aafd-d510af804bc7.gif" alt=""><figcaption><p> </p></figcaption></figure>
