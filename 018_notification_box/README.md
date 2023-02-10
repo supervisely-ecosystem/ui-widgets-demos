@@ -15,7 +15,7 @@ note_box = NotificationBox(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/217855739-8303283a-f541-4172-880b-8afd7d5d867c.png)
+![notification-box-default](https://user-images.githubusercontent.com/79905215/218077227-b81d577e-e6a7-49d9-b2f5-4ac0429727c0.png)
 
 ## Parameters
 
@@ -38,7 +38,7 @@ Main title of notification box
 note_box = NotificationBox(title="Notification Box")
 ```
 
-![note-title](https://user-images.githubusercontent.com/79905215/217857459-677008e8-a300-45d0-a06d-44f7c1650aa0.png)
+![notification-box-title](https://user-images.githubusercontent.com/79905215/218077496-ef53205d-cb1f-47a6-93f6-9a330493670b.png)
 
 ### description
 
@@ -52,7 +52,7 @@ Description text
 note_box = NotificationBox(description="Lorem ipsum dolor sit amet...")
 ```
 
-![note-desc](https://user-images.githubusercontent.com/79905215/217858292-929ad1e6-26e9-4433-8f37-f45b24684483.png)
+![notification-box-desc](https://user-images.githubusercontent.com/79905215/218077562-40876bd1-68ea-4fab-9a31-b30c74a3b822.png)
 
 ### box_type
 
@@ -69,7 +69,7 @@ note_box = NotificationBox(
 )
 ```
 
-![note-success](https://user-images.githubusercontent.com/79905215/217859149-3b603ada-f2b6-45dc-8890-5f569cdb40c1.png)
+![notification-box-success](https://user-images.githubusercontent.com/79905215/218077786-707c9015-a0e1-4efe-b9bd-72c2a465d0b6.png)
 
 ### widget_id
 
@@ -163,4 +163,4 @@ app = sly.Application(layout=layout)
 ```
 
 
-![default](https://user-images.githubusercontent.com/79905215/217855760-cd7ce373-1f1e-4cd8-8ab2-3b86414b104d.png)
+![notification-box-app](https://user-images.githubusercontent.com/79905215/218076686-43d2e536-6231-4d66-8582-4e94376035c0.png)
