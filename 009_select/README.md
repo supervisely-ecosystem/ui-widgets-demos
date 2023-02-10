@@ -112,7 +112,14 @@ Whether multiple-select is activated.
 
 **default value:** `false`
 
-![multiple](https://user-images.githubusercontent.com/120389559/217837848-e7f9c91d-51b1-4e80-93f3-9ddb35266ad6.png)
+```python
+select_items = Select(
+    items=animals_domestic + animals_wild,
+    multiple=True,
+)
+```
+
+![multiple](https://user-images.githubusercontent.com/120389559/218096915-b300c3d6-7a17-4cca-befe-36a2ee4828de.gif)
 
 ### widget_id
 
@@ -213,4 +220,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/217838203-6cb2777b-fcd7-437e-83c7-e8c21770e147.png)
+![layout](https://user-images.githubusercontent.com/120389559/218097482-c5d94009-036c-43dd-85c4-f8f6c413f984.gif)
