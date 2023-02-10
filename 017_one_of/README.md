@@ -12,7 +12,7 @@ This widget allows to display an element corresponding to selected item in a con
 one_of = OneOf(conditional_widget=Select(items=animals))
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/217235567-e6b0c581-8cac-4a36-9286-58ea331db051.png)
+![sheeps-one-of](https://user-images.githubusercontent.com/79905215/218075609-0428af83-0ef1-492b-8623-fa7a7bd0d3de.png)
 
 ## Parameters
 
@@ -32,7 +32,7 @@ Conditional widget with preset items.
 one_of = OneOf(conditional_widget=RadioGroup(items=animals))
 ```
 
-![horse-one-of](https://user-images.githubusercontent.com/79905215/217866143-a6748df5-0a2a-4f98-908c-6a98e0ea0720.png)
+![horse-one-of](https://user-images.githubusercontent.com/79905215/218075942-d2754ba6-0b9c-4572-b619-9363a2eecaf3.png)
 
 ### widget_id
 
@@ -136,4 +136,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/217235567-e6b0c581-8cac-4a36-9286-58ea331db051.png)
+![sheeps-one-of](https://user-images.githubusercontent.com/79905215/218075609-0428af83-0ef1-492b-8623-fa7a7bd0d3de.png)
