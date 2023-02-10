@@ -12,7 +12,7 @@ This widget is a checkbox type input, clicking on it can be processed from pytho
 checkbox = Checkbox(content="Enable")
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/213662318-4cd628b0-b123-4ac4-8c1f-4f92fe01ab2a.png)
+![checkbox-default](https://user-images.githubusercontent.com/79905215/218074113-182c113e-5ac4-47ce-96b2-ace63dc59564.png)
 
 ## Parameters
 
@@ -43,7 +43,7 @@ Whether Select is checked.
 ```python
 checkbox = Checkbox(content="Enable", checked=True)
 ```
-![checkbox-checked](https://user-images.githubusercontent.com/79905215/217864130-e7c5bd4b-8f11-43bb-8b18-289dec5b3dbf.png)
+![checkbox-checked](https://user-images.githubusercontent.com/79905215/218074377-5c0ceb1e-dc3d-4405-92e2-e3b0b0602d59.png)
 
 ### widget_id
 
