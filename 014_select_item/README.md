@@ -9,7 +9,7 @@ This widget is a select `Item` input(image, video, volume, point_cloud or point_
 ## Function signature
 
 ```python
-SelectItem(dataset_id=None, compact=False, show_label=True, size=None, widget_id=None)
+SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218035492-9a07432d-8fb0-4dad-b5ff-ccd8ce03a137.png)
