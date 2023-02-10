@@ -9,47 +9,53 @@ This widget is a select `Grid` input, clicking on it can be processed from pytho
 ## Function signature
 
 ```python
-Grid(widgets, gap=10, center_content=False, widget_id=None)
+Grid(widgets, columns=1, gap=10, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218078423-ef63be35-8c0e-4674-8071-4ed8a1f66a1c.png)
+![default](https://user-images.githubusercontent.com/120389559/218113232-54061027-c0c2-4c9a-abc6-199808da9755.png)
 
 ## Parameters
 
-|   Parameters   |     Type     |                           Description                           |
-| :------------: | :----------: | :-------------------------------------------------------------: |
-|    widgets     | List[Widget] |              List if Widgets to display on Flexbox              |
-|      gap       |     int      |                 Gap between Widgets on Flexbox                  |
-| center_content |     bool     | Determines whether to place widgets in the center of the window |
-|   widget_id    |     int      |                        Id of the widget                         |
+| Parameters |     Type     |            Description             |
+| :--------: | :----------: | :--------------------------------: |
+|  widgets   | List[Widget] | List if Widgets to display on Grid |
+|  columns   |     int      |     Number of columns on Grid      |
+|    gap     |     int      |    Gap between Widgets on Grid     |
+| widget_id  |     int      |          Id of the widget          |
 
 ### widgets
 
-Determine list if Widgets to display on Flexbox.
+Determine list of Widgets to display on Grid.
 
 **type:** `List[Widget]`
 
-### gap
+### columns
 
 Determine gap between Widgets on Flexbox.
+
+**type:** `int`
+
+**default value:** `1`
+
+```python
+grid = Grid(widgets=obj_class_view_widgets, columns=3)
+```
+
+![columns](https://user-images.githubusercontent.com/120389559/218115665-afdff2fd-ff83-417f-8637-894627ea70c8.png)
+
+### gap
+
+Determine gap between Widgets on Grid.
 
 **type:** `int`
 
 **default value:** `10`
 
 ```python
-flexbox = Flexbox(widgets=obj_class_view_widgets, gap=25)
+grid = Grid(widgets=obj_class_view_widgets, columns=3, gap=50)
 ```
 
-![gap](https://user-images.githubusercontent.com/120389559/218081572-1f7f6fd6-e518-4651-8373-d107304275f7.png)
-
-### center_content
-
-Determines whether to place widgets in the center of the window.
-
-**type:** `bool`
-
-**default value:** `false`
+![gap](https://user-images.githubusercontent.com/120389559/218116106-778e8c3e-8663-4b9a-96d7-3aef82190be8.png)
 
 ### widget_id
 
@@ -63,7 +69,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/027_flexbox/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/027_flexbox/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/028_grid/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/028_grid/src/main.py)
 
 ### Import libraries
 
@@ -72,7 +78,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Flexbox, ObjectClassView
+from supervisely.app.widgets import Card, Container, Grid, ObjectClassView
 ```
 
 ### Init API client
@@ -96,23 +102,23 @@ obj_class_horse = sly.ObjClass(name="horse", geometry_type=sly.Bitmap, color=[25
 obj_class_squirrel = sly.ObjClass(name="squirrel", geometry_type=sly.Bitmap, color=[255, 0, 255])
 
 obj_classes = [
-obj_class_cat,
-obj_class_dog,
-obj_class_sheep,
-obj_class_horse,
-obj_class_squirrel,
+    obj_class_cat,
+    obj_class_dog,
+    obj_class_sheep,
+    obj_class_horse,
+    obj_class_squirrel,
 ]
 
 obj_class_view_widgets = [ObjectClassView(obj_class=obj_class) for obj_class in obj_classes]
 ```
 
-### Initialize `Flexbox` widget
+### Initialize `Grid` widget
 
 ```python
-flexbox = Flexbox(
+grid = Grid(
     widgets=obj_class_view_widgets,
-    gap=100,
-    center_content=True,
+    columns=3,
+    gap=50,
 )
 ```
 
@@ -122,8 +128,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    title="Flexbox",
-    content=flexbox,
+    title="Grid",
+    content=grid,
 )
 
 layout = Container(widgets=[card])
@@ -137,4 +143,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218082231-76e037ec-095f-42f9-8f89-e387aed00360.png)
+![layout](https://user-images.githubusercontent.com/120389559/218116106-778e8c3e-8663-4b9a-96d7-3aef82190be8.png)

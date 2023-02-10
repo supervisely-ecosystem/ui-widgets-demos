@@ -25,7 +25,7 @@ Flexbox(widgets, gap=10, center_content=False, widget_id=None)
 
 ### widgets
 
-Determine list if Widgets to display on Flexbox.
+Determine list of Widgets to display on Flexbox.
 
 **type:** `List[Widget]`
 
