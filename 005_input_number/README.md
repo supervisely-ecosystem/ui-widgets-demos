@@ -75,8 +75,10 @@ Incremental steps.
 **default value:** `1`
 
 ```python
-input = InputNumber(step=2)
+input = InputNumber(step=3)
 ```
+
+![step](https://user-images.githubusercontent.com/120389559/218094932-18d8e080-3bda-48e7-92f4-1fc8f65db643.gif)
 
 ### size
 
@@ -87,16 +89,11 @@ Size of the component.
 **default value:** `small`
 
 ```python
-input = InputNumber(size="small")
+input_small = InputNumber(size="small")
+input_large = InputNumber(size="large")
 ```
 
-![size_small](https://user-images.githubusercontent.com/120389559/217827984-b1b33d3e-2dfd-43de-9c2e-9558a5d15bbb.png)
-
-```python
-input = InputNumber(size="large")
-```
-
-![size_large](https://user-images.githubusercontent.com/120389559/217828834-813332ec-0e31-47dc-a645-a68629c733e0.png)
+![size](https://user-images.githubusercontent.com/120389559/218094408-043e393d-58c9-4721-9aa2-6ed11dd05f38.png)
 
 ### controls
 
