@@ -22,91 +22,88 @@ HeatmapChart(title, data_labels=True, xaxis_title=None, color_range="row", toolt
 | data_labels |          bool           | Determines whether the values ​​in the HeatmapChart cells are displayed |
 | xaxis_title |           str           |                               X axe title                               |
 | color_range | Literal["table", "row"] |            Determines the color distribution on HeatmapChart            |
-|   tooltip   |           str           |               Determines the displayed value in the cells               |
+|   tooltip   |           str           |        Determines the displayed value in the HeatmapChart cells         |
 
 ### title
 
-Determines number of columns on GridGallery.
+Determines HeatmapChart title .
 
-**type:** `int`
+**type:** `str`
 
-**default value:** `1`
+### data_labels
 
-```python
-grid_gallery = GridGallery(columns_number=4)
-```
-
-![columns](https://user-images.githubusercontent.com/120389559/218127708-13c6f79e-fd51-4ea8-9f7e-a6a6889f71d5.png)
-
-### annotations_opacity
-
-Figures opacity.
-
-**type:** `float`
-
-**default value:** `0.5`
-
-```python
-grid_gallery = GridGallery(columns_number=3, annotations_opacity=1)
-```
-
-![annotations_opacity](https://user-images.githubusercontent.com/120389559/218128278-925a8f65-5505-43ec-a3a0-1eb34bc6dc2d.png)
-
-### show_opacity_slider
-
-Determines the presence of opacity slider on GridGallery.
+Determines whether the values ​​in the HeatmapChart cells are displayed.
 
 **type:** `bool`
 
 **default value:** `true`
 
 ```python
-grid_gallery = GridGallery(columns_number=3, show_opacity_slider=False)
+chart = HeatmapChart(
+    title="Multiplication Table",
+    xaxis_title="",
+    data_labels='False'
+    color_range="row",
+    tooltip="Result multiplication of {x} * {series_name}",
+)
 ```
 
-![show_opacity_slider](https://user-images.githubusercontent.com/120389559/218129356-d3dc9c92-3d00-4e5f-a361-1a5b0c97a120.png)
+![data_labels](https://user-images.githubusercontent.com/120389559/218247687-c27fcc47-16ab-40a5-a025-df8766dc5f42.gif)
 
-### enable_zoom
+### xaxis_title
 
-Enable zoom on GridGallery.
+Determines X axe title.
 
-**type:** `bool`
-
-**default value:** `false`
-
-```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=True)
-```
-
-![enable_zoom](https://user-images.githubusercontent.com/120389559/218130261-31160ede-13c4-4a08-8998-3949678ed943.gif)
-
-### resize_on_zoom
-
-Resize card to fit figure.
-
-**type:** `bool`
-
-**default value:** `false`
-
-### sync_views
-
-Sync pan & zoom between views.
-
-**type:** `bool`
-
-**default value:** `false`
-
-```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
-```
-
-![sync_views](https://user-images.githubusercontent.com/120389559/218132098-3b799735-2494-4eb5-9489-fae636e9d2c5.gif)
-
-ID of the widget.
-
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
+
+```python
+chart = HeatmapChart(
+    title="Multiplication Table",
+    xaxis_title="xaxis_title",
+    color_range="row",
+    tooltip="Result multiplication of {x} * {series_name}",
+)
+```
+
+![xaxis_title](https://user-images.githubusercontent.com/120389559/218247762-ea5506e9-c029-41cf-b976-d9d80aee8b09.png)
+
+### color_range
+
+Determines the color distribution on HeatmapChart.
+
+**type:** `Literal["table", "row"]`
+
+**default value:** `row`
+
+```python
+chart = HeatmapChart(
+    title="Multiplication Table",
+    xaxis_title="xaxis_title",
+    color_range="table",
+    tooltip="Result multiplication of {x} * {series_name}",
+)
+```
+
+![color_range](https://user-images.githubusercontent.com/120389559/218247863-836b4834-fe1d-499c-a324-9db938ef9f3c.png)
+
+### tooltip
+
+Determines the displayed value in the HeatmapChart cells.
+
+**type:** `str`
+
+**default value:** `None`
+
+```python
+chart = HeatmapChart(
+    title="Multiplication Table",
+    tooltip="Result multiplication of {x} * {series_name}",
+)
+```
+
+![tooltip](https://user-images.githubusercontent.com/120389559/218247998-6d6503a6-d5b4-4565-a4de-7aa0e96d52e1.gif)
 
 **Methods and attributes**
 
