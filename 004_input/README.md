@@ -24,7 +24,7 @@ Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly
 | placeholder |                int                |      placeholder of input       |
 |    size     | Literal["mini", "small", "large"] |          size of input          |
 |  readonly   |               bool                | same as readonlyin native input |
-|  widget_id  |                int                |        id of the widget         |
+|  widget_id  |                str                |        id of the widget         |
 
 ### value
 
@@ -111,7 +111,7 @@ input = Input(readonly=True)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
