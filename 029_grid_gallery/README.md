@@ -34,7 +34,7 @@ GridGallery(
 |     enable_zoom     | bool  |                Enable zoom on GridGallery                |
 |   resize_on_zoom    | bool  |                Resize card to fit figure                 |
 |     sync_views      | bool  |              Sync pan & zoom between views               |
-|      widget_id      |  int  |                     Id of the widget                     |
+|      widget_id      |  str  |                     Id of the widget                     |
 
 ### columns_number
 
@@ -116,7 +116,7 @@ grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

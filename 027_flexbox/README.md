@@ -21,7 +21,7 @@ Flexbox(widgets, gap=10, center_content=False, widget_id=None)
 |    widgets     | List[Widget] |              List if Widgets to display on Flexbox              |
 |      gap       |     int      |                 Gap between Widgets on Flexbox                  |
 | center_content |     bool     | Determines whether to place widgets in the center of the window |
-|   widget_id    |     int      |                        Id of the widget                         |
+|   widget_id    |     str      |                        Id of the widget                         |
 
 ### widgets
 
@@ -55,7 +55,7 @@ Determines whether to place widgets in the center of the window.
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

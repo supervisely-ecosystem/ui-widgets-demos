@@ -21,7 +21,7 @@ Grid(widgets, columns=1, gap=10, widget_id=None)
 |  widgets   | List[Widget] | List if Widgets to display on Grid |
 |  columns   |     int      |     Number of columns on Grid      |
 |    gap     |     int      |    Gap between Widgets on Grid     |
-| widget_id  |     int      |          Id of the widget          |
+| widget_id  |     str      |          Id of the widget          |
 
 ### widgets
 
@@ -61,7 +61,7 @@ grid = Grid(widgets=obj_class_view_widgets, columns=3, gap=50)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

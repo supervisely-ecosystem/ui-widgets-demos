@@ -22,7 +22,7 @@ RadioTable(columns, rows, subtitles={}, column_formatters={}, widget_id=None)
 |       rows        | List[List[str]] |           Table rows content            |
 |     subtitles     |      dict       |     Determine subtitles for columns     |
 | column_formatters |      dict       | Determine format of output `RadioTable` |
-|     widget_id     |       int       |            Id of the widget             |
+|     widget_id     |       str       |            Id of the widget             |
 
 ### columns
 
@@ -86,7 +86,7 @@ Determine format of output `RadioTable`.
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
