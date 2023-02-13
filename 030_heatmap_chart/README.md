@@ -26,7 +26,7 @@ HeatmapChart(title, data_labels=True, xaxis_title=None, color_range="row", toolt
 
 ### title
 
-Determines HeatmapChart title .
+Determines HeatmapChart title.
 
 **type:** `str`
 
