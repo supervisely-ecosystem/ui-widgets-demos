@@ -45,7 +45,7 @@ sidebar = Sidebar(left_content=l, right_content=r)
 
 ### width_percent
 
-Determines Field title.
+Determines width of the left part of Siderbar in %.
 
 **type:** `int`
 
