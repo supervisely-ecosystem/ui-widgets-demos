@@ -19,7 +19,7 @@ ProjectThumbnail(info=None, widget_id=None)
 | Parameters |    Type     |                   Description                    |
 | :--------: | :---------: | :----------------------------------------------: |
 |    info    | ProjectInfo | NamedTuple, containing information about project |
-| widget_id  |     int     |                 id of the widget                 |
+| widget_id  |     str     |                 id of the widget                 |
 
 ### info
 
@@ -38,7 +38,7 @@ project_thumbnail = ProjectThumbnail(project)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
