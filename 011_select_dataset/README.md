@@ -25,7 +25,7 @@ SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False
 | show_label  |               bool                |                   Show label                    |
 |    size     | Literal["large", "small", "mini"] |        Selector size (large/small/mini)         |
 |  disabled   |               bool                |             Disable dataset select              |
-|  widget_id  |                int                |                Id of the widget                 |
+|  widget_id  |                str                |                Id of the widget                 |
 
 ### default_id
 
@@ -121,7 +121,7 @@ select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, dis
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
