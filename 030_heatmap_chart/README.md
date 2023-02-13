@@ -52,7 +52,7 @@ chart = HeatmapChart(
 
 ### xaxis_title
 
-Determines X axe title.
+Determines `X` axe title.
 
 **type:** `str`
 
@@ -107,16 +107,17 @@ chart = HeatmapChart(
 
 **Methods and attributes**
 
-| Attributes and Methods | Description                       |
-| :--------------------: | --------------------------------- |
-|       `append()`       | Add item in GridGallery.          |
-|      `clean_up()`      | Clean GridGallery from all items. |
+|  Attributes and Methods   | Description                                  |
+| :-----------------------: | -------------------------------------------- |
+|   `add_series_batch()`    | Add series of data in HeatmapChart by batch. |
+|      `add_series()`       | Add series of data in HeatmapChart.          |
+| `get_clicked_datapoint()` | Return data clicked in HeatmapChart.         |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/029_grid_gallery/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/029_grid_gallery/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/030_heatmap_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/030_heatmap_chart/src/main.py)
 
 ### Import libraries
 
@@ -125,7 +126,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, GridGallery
+from supervisely.app.widgets import Card, Container, HeatmapChart
 ```
 
 ### Init API client
@@ -139,39 +140,39 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize project_id and dataset_id we will use in UI
+### Initialize function to build example chart
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
-project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id))
+def multiplication_chart():
+    data = []
+    for row in list(range(1, 11)):
+        temp = [round(row * number, 1) for number in list(range(1, 11))]
+        data.append(temp)
+    return data
 ```
 
-### Initialize `GridGallery` widget
+### Initialize HeatmapChart widget
 
 ```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
-```
-
-### Fill GridGallery with data
-
-```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
-
-images_infos = api.image.get_list(dataset_id=dataset_id)[: grid_gallery.columns_number]
-anns_infos = api.annotation.get_list(dataset_id=dataset_id)[
-: grid_gallery.columns_number
-]
-for idx, (image_info, ann_info) in enumerate(zip(images_infos, anns_infos)):
-image_name = image_info.name
-image_url = image_info.full_storage_url
-image_ann = sly.Annotation.from_json(
-data=ann_info.annotation, project_meta=project_meta
+chart = HeatmapChart(
+    title="Multiplication Table",
+    xaxis_title="",
+    color_range="row",
+    tooltip="Result multiplication of {x} * {series_name}",
 )
+```
 
-    grid_gallery.append(
-        title=image_name, image_url=image_url, annotation=image_ann, column_index=idx
-    )
+### Fill HeatmapChart with data
+
+```python
+data = multiplication_chart()
+
+lines = [
+    {"name": idx + 1, "x": list(range(1, 11)), "y": line}
+    for idx, line in enumerate(data)
+]
+
+chart.add_series_batch(lines)
 ```
 
 ### Create app layout
@@ -180,8 +181,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    title="Grid Gallery",
-    content=grid_gallery,
+    title="Heatmap Chart",
+    content=chart,
 )
 
 layout = Container(widgets=[card])
