@@ -26,7 +26,7 @@ InputNumber(value=1, min=None, max=None, step=1, size="small", controls=True, de
 |  controls  |    bool    |   whether to enable the control buttons    |
 |  debounce  |    int     | debounce delay when typing, in millisecond |
 | precision  |    int     |                 precision                  |
-| widget_id  |    int     |              id of the widget              |
+| widget_id  |    str     |              id of the widget              |
 
 ### value
 
@@ -135,7 +135,7 @@ input = InputNumber(precision=2)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
