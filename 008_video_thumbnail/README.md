@@ -19,7 +19,7 @@ VideoThumbnail(info=None, widget_id=None)
 | Parameters |   Type    |                      Description                       |
 | :--------: | :-------: | :----------------------------------------------------: |
 |    info    | VideoInfo | NamedTuple, containing information about video project |
-| widget_id  |    int    |                    id of the widget                    |
+| widget_id  |    str    |                    id of the widget                    |
 
 ### info
 
@@ -38,7 +38,7 @@ video_thumbnail = VideoThumbnail(info=video_info)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
