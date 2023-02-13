@@ -25,7 +25,7 @@ SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=F
 |  multiselect  |         List[ProjectType]         |                             Allows to select multiple `Tags`                              |
 |  show_label   |               bool                |                                        Show label                                         |
 |     size      | Literal["large", "small", "mini"] |                             Selector size (large/small/mini)                              |
-|   widget_id   |                int                |                                     Id of the widget                                      |
+|   widget_id   |                str                |                                     Id of the widget                                      |
 
 ### default
 
@@ -129,7 +129,7 @@ Size of input.
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
