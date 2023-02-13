@@ -21,7 +21,7 @@ DatasetThumbnail(project_info=None, dataset_info=None, show_project_name=True, w
 |   project_info    | ProjectInfo | NamedTuple, containing information about project |
 |   dataset_info    | DatasetInfo | NamedTuple, containing information about dataset |
 | show_project_name |    bool     |        determines to display project name        |
-|     widget_id     |     int     |                 id of the widget                 |
+|     widget_id     |     str     |                 id of the widget                 |
 
 ### project_info
 
@@ -69,7 +69,7 @@ dataset_thumbnail = DatasetThumbnail(project_info=project, dataset_info=dataset,
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
