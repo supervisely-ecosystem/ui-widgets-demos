@@ -63,13 +63,38 @@ Parameter to change notification style
 **default value:** `"info"`
 
 ```python
-note_box = NotificationBox(
-    title="Notification Box",
+note_box_success = NotificationBox(
+    title="Box type: SUCCESS",
+    description="Lorem ipsum dolor sit amet... anim id est laborum.",
     box_type="success"
 )
 ```
 
-![notification-box-success](https://user-images.githubusercontent.com/79905215/218077786-707c9015-a0e1-4efe-b9bd-72c2a465d0b6.png)
+```python
+note_box_info = NotificationBox(
+    title="Box type: INFO",
+    description="Lorem ipsum dolor sit amet... anim id est laborum.",
+    box_type="info"
+)
+```
+
+```python
+note_box_warning = NotificationBox(
+    title="Box type: WARNING",
+    description="Lorem ipsum dolor sit amet... anim id est laborum.",
+    box_type="warning"
+)
+```
+
+```python
+note_box_error = NotificationBox(
+    title="Box type: ERROR",
+    description="Lorem ipsum dolor sit amet... anim id est laborum.",
+    box_type="error"
+)
+```
+
+![notification-box-app](https://user-images.githubusercontent.com/79905215/218076686-43d2e536-6231-4d66-8582-4e94376035c0.png)
 
 ### widget_id
 
@@ -81,11 +106,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-|       Attributes and Methods        | Description                                |
-| :---------------------------------: | ------------------------------------------ |
+|       Attributes and Methods        | Description                                         |
+| :---------------------------------: | --------------------------------------------------- |
 |               `title`               | Get or set notification box `title` property.       |
 |            `description`            | Get or set notification box `description` property. |
-| `set(title: str, description: str)` | Set `title` and `description` properties.  |
+| `set(title: str, description: str)` | Set `title` and `description` properties.           |
 
 ## Mini App Example
 
@@ -97,10 +122,11 @@ You can find this example in our Github repository:
 
 ```python
 import os
+from time import sleep
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, NotificationBox
+from supervisely.app.widgets import Button, Card, Container, Flexbox, NotificationBox
 ```
 
 ### Init API client
@@ -119,35 +145,68 @@ api = sly.Api()
 In this tutorial we will use 4 types of notification box.
 
 ```python
-note_box_desc = "Lorem ipsum dolor sit amet... anim id est laborum."
+note_box_info = NotificationBox()
+note_box_info.hide() # hide widget (you can show it later)
 
-# initialize widgets we will use in UI
-note_box_success = NotificationBox(
-    title="Box type: SUCCESS", description=note_box_desc, box_type="success"
-)
-note_box_info = NotificationBox(
-    title="Box type: INFO", description=note_box_desc, box_type="info"
-)
-note_box_warning = NotificationBox(
-    title="Box type: WARNING", description=note_box_desc, box_type="warning"
-)
-note_box_error = NotificationBox(
-    title="Box type: ERROR", description=note_box_desc, box_type="error"
-)
+note_box_success = NotificationBox(title="Finished.", box_type="success")
+note_box_success.hide()
+
+note_box_error = NotificationBox(title="Error.", box_type="error")
+note_box_error.hide()
+
+note_box_warning = NotificationBox(title="Warning.", box_type="warning")
+note_box_warning.hide()
+
 ```
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` widget.
+For 1 example we will create project and show notication with `info` box type
 
 ```python
-notification_container = Container(
-    widgets=[note_box_success, note_box_info, note_box_warning, note_box_error]
+step_1_btn = Button(text="INFO", button_type="info")
+```
+
+For 2 example we will use `Progress` widget and show `success` box type notification.
+
+```python
+progress_bar = sly.app.widgets.Progress()
+
+step_2_btn = Button(text="SUCCESS", button_type="success")
+step_2 = Container(widgets=[note_box_success, step_2_btn])
+```
+
+Create buttons for `error` and `warning` box type notifications.
+
+```python
+step_3_btn = Button(text="ERROR", button_type="danger")
+step_3 = Container(widgets=[note_box_error, step_3_btn])
+
+step_4_btn = Button(text="WARNING", button_type="warning")
+step_4 = Container(widgets=[note_box_warning, step_4_btn])
+```
+
+Prepare a layout for app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` or `Flexbox` widgets.
+
+```python
+step_1_container = Container(widgets=[step_1_btn, note_box_info])
+
+notes_container = Flexbox(widgets=[note_box_success, note_box_error, note_box_warning])
+btns_container = Container(
+    widgets=[step_2_btn, step_3_btn, step_4_btn],
+    direction="horizontal",
+)
+
+progress_container = Container(widgets=[btns_container, progress_bar, notes_container])
+
+container = Container(
+    widgets=[step_1_container, progress_container],
+    direction="horizontal",
 )
 
 card = Card(
     title="Notification Box",
-    content=notification_container,
+    content=container,
 )
 layout = Container(widgets=[card])
 ```
@@ -160,5 +219,51 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
+### Add functions to control widgets from python code
 
-![notification-box-app](https://user-images.githubusercontent.com/79905215/218076686-43d2e536-6231-4d66-8582-4e94376035c0.png)
+```python
+
+@step_1_btn.click
+def create_project_and_dataset():
+    project = api.project.create(
+        workspace_id=workspace_id,
+        name="New project",
+        type=sly.ProjectType.IMAGES,
+        change_name_if_conflict=True,
+    )
+
+    if project is not None:
+        note_box_info.set(
+            title="New project and dataset created.",
+            description=f"Project ID: {project.id}).",
+        )
+        note_box_info.show()
+
+
+@step_2_btn.click
+def start_progress():
+    note_box_warning.hide()
+    note_box_error.hide()
+    with progress_bar(message="Processing items...", total=5) as pbar:
+        for _ in range(5):
+            sleep(1)
+            pbar.update(1)
+
+    note_box_success.show()
+
+
+@step_3_btn.click
+def show_error():
+    note_box_success.hide()
+    note_box_warning.hide()
+    note_box_error.show()
+
+
+@step_4_btn.click
+def show_warning():
+    note_box_success.hide()
+    note_box_error.hide()
+    note_box_warning.show()
+```
+
+![note-gif](https://user-images.githubusercontent.com/79905215/218417029-28c397a9-dab0-4b5f-9ea2-a230c722538b.gif)
