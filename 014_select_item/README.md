@@ -22,7 +22,7 @@ SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 |  compact   |               bool                |     Show only dataset select     |
 | show_label |               bool                |            Show label            |
 |    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
-| widget_id  |                int                |         Id of the widget         |
+| widget_id  |                str                |         Id of the widget         |
 
 ### dataset_id
 
@@ -76,7 +76,7 @@ Size of input.
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
