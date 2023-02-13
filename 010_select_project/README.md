@@ -24,7 +24,7 @@ SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[
 | allowed_types |         List[ProjectType]         | List of project types witch will be available to select |
 |  show_label   |               bool                |                       Show label                        |
 |     size      | Literal["large", "small", "mini"] |            Selector size (large/small/mini)             |
-|   widget_id   |                int                |                    Id of the widget                     |
+|   widget_id   |                str                |                    Id of the widget                     |
 
 ### default_id
 
@@ -100,7 +100,7 @@ Size of input.
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
