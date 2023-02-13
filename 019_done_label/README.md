@@ -16,10 +16,10 @@ done_label = DoneLabel(text="Task has been successfully finished")
 
 ## Parameters
 
-| Parameters  |                      Type                      |          Description           |
-| :---------: | :--------------------------------------------: | :----------------------------: |
-|    text    |                      str                       | Description text of widget |
-|  widget_id  |                      str                       |        ID of the widget        |
+| Parameters | Type |        Description         |
+| :--------: | :--: | :------------------------: |
+|    text    | str  | Description text of widget |
+| widget_id  | str  |      ID of the widget      |
 
 ### text
 
@@ -45,10 +45,9 @@ ID of the widget.
 
 ## Methods and attributes
 
-|       Attributes and Methods        | Description                                |
-| :---------------------------------: | ------------------------------------------ |
-|               `text`               | Get or set `text` property.       |
-
+| Attributes and Methods | Description                 |
+| :--------------------: | --------------------------- |
+|         `text`         | Get or set `text` property. |
 
 ## Mini App Example
 
@@ -60,10 +59,11 @@ You can find this example in our Github repository:
 
 ```python
 import os
+from time import sleep
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, DoneLabel
+from supervisely.app.widgets import Button, Card, Container, DoneLabel
 ```
 
 ### Init API client
@@ -79,7 +79,6 @@ api = sly.Api()
 
 ### Initialize `DoneLabel` widget
 
-
 ```python
 done_label = DoneLabel(
     text="Task has been successfully finished",
@@ -88,14 +87,26 @@ done_label = DoneLabel(
 
 ### Create app layout
 
+Prepare some widgets for demo.
+In this tutorial we will use `Button`, `Progress` widgets
+
+```python
+done_label.hide()
+
+progress = sly.app.widgets.Progress()
+start_btn = Button(text="START")
+```
+
 Prepare a layout for app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` widget.
 
 ```python
+container = Container(widgets=[start_btn, progress, done_label])
+
 card = Card(
     title="Done Label",
-    content=done_label,
+    content=container,
 )
-layout = Container(widgets=[done_label])
+layout = Container(widgets=[card])
 ```
 
 ### Create app using layout
@@ -106,5 +117,19 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
+### Add functions to control widgets from python code
 
-![label-default](https://user-images.githubusercontent.com/79905215/218078545-53840478-4f2d-4b74-a4c7-2838efba93b9.png)
+```python
+@start_btn.click
+def start_progress():
+    done_label.hide()
+
+    with progress(message="Processing...", total=5) as pbar:
+        for _ in range(5):
+            sleep(1)
+            pbar.update(1)
+
+    done_label.show()
+```
+
+![done-gif](https://user-images.githubusercontent.com/79905215/218423940-5b178198-06e2-4d4e-8d99-1154f5c3889b.gif)
