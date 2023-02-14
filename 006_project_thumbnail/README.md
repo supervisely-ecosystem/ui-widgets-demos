@@ -16,10 +16,10 @@ ProjectThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |    Type     |                   Description                    |
-| :--------: | :---------: | :----------------------------------------------: |
-|    info    | ProjectInfo | NamedTuple, containing information about project |
-| widget_id  |     str     |                 id of the widget                 |
+| Parameters |     Type      |                   Description                    |
+| :--------: | :-----------: | :----------------------------------------------: |
+|    info    | `ProjectInfo` | NamedTuple, containing information about project |
+| widget_id  |      str      |                 id of the widget                 |
 
 ### info
 
@@ -30,6 +30,7 @@ NamedTuple, containing information about project.
 **default value:** `None`
 
 ```python
+# get project info from server
 project = api.project.get_info_by_id(project_id)
 project_thumbnail = ProjectThumbnail(project)
 ```
@@ -42,11 +43,11 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-|  Attributes and Methods  | Description             |
-| :----------------------: | ----------------------- |
-| `set(info: ProjectInfo)` | Set input project data. |
+| Attributes and Methods | Description             |
+| :--------------------: | ----------------------- |
+|        `set()`         | Set input project data. |
 
 ## Mini App Example
 
