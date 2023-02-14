@@ -12,14 +12,14 @@ This widget is a select `Workspace` input, clicking on it can be processed from 
 SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, size=None, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218031710-7976257f-b358-4392-970b-51b38f53255d.png)
+![default](https://user-images.githubusercontent.com/120389559/218714865-879144d5-9567-4560-a49b-e3c8ee0154b7.png)
 
 ## Parameters
 
 | Parameters |               Type                |           Description            |
 | :--------: | :-------------------------------: | :------------------------------: |
-| default_id |                int                |           Workspace ID           |
-|  team_id   |                int                |             Team ID              |
+| default_id |                int                |          `Workspace` ID          |
+|  team_id   |                int                |            `Team` ID             |
 |  compact   |               bool                |    Show only workspace select    |
 | show_label |               bool                |            Show label            |
 |    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
@@ -124,7 +124,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare team_id and workspace_id
+### Prepare `team_id` and `workspace_id`
 
 ```python
 team_id = int(os.environ["modal.state.slyTeamId"])
