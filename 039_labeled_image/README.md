@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `LabeledImage` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `LabeledImage` widget in Supervisely app.
+In this tutorial you will learn how to use `LabeledImage` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/LabeledImage)
 
@@ -16,15 +16,15 @@ LabeledImage(annotations_opacity=0.5, show_opacity_slider=True, enable_zoom=Fals
 
 ## Parameters
 
-|     Parameters      | Type  |                        Description                        |
-| :-----------------: | :---: | :-------------------------------------------------------: |
-| annotations_opacity | float |                      Figures opacity                      |
-| show_opacity_slider | bool  | Determines the presence of opacity slider on LabeledImage |
-|     enable_zoom     | bool  |                Enable zoom on LabeledImage                |
-|    esize_on_zoom    | bool  |                 Resize card to fit figure                 |
-|   fill_rectangle    | bool  |                       Fill rectange                       |
-|    border_width     |  int  |                       Border width                        |
-|      widget_id      |  str  |                     Id of the widget                      |
+|     Parameters      | Type  |                         Description                         |
+| :-----------------: | :---: | :---------------------------------------------------------: |
+| annotations_opacity | float |                       Figures opacity                       |
+| show_opacity_slider | bool  | Determines the presence of opacity slider on `LabeledImage` |
+|     enable_zoom     | bool  |                Enable zoom on `LabeledImage`                |
+|    esize_on_zoom    | bool  |                  Resize card to fit figure                  |
+|   fill_rectangle    | bool  |                        Fill rectange                        |
+|    border_width     |  int  |                        Border width                         |
+|      widget_id      |  str  |                      Id of the widget                       |
 
 ### annotations_opacity
 
@@ -43,7 +43,7 @@ labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 
 ### show_opacity_slider
 
-Determines the presence of opacity slider on LabeledImage.
+Determines the presence of opacity slider on `LabeledImage`.
 
 **type:** `bool`
 
@@ -58,7 +58,7 @@ labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 
 ### enable_zoom
 
-Enable zoom on LabeledImage.
+Enable zoom on `LabeledImage`.
 
 **type:** `bool`
 
@@ -85,13 +85,13 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-| Attributes and Methods | Description                   |
-| :--------------------: | ----------------------------- |
-|        `set()`         | Set item in LabeledImage.     |
-|      `clean_up()`      | Clean LabeledImage from item. |
-|      `is_empty()`      | Check LabeledImage is empty.  |
+| Attributes and Methods | Description                     |
+| :--------------------: | ------------------------------- |
+|        `set()`         | Set item in `LabeledImage`.     |
+|      `clean_up()`      | Clean `LabeledImage` from item. |
+|      `is_empty()`      | Check `LabeledImage` is empty.  |
 
 ## Mini App Example
 
@@ -120,7 +120,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `project_id` and `meta` we will use in UI
+### Initialize `Project` ID and `Meta` we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
@@ -129,7 +129,7 @@ meta_json = api.project.get_meta(id=project_id)
 meta = sly.ProjectMeta.from_json(data=meta_json)
 ```
 
-### Initialize `image_id` and `annotation` we will use in UI
+### Initialize `Image` ID and `Annotation` we will use in UI
 
 ```python
 image_id = int(os.environ["modal.state.slyImageId"])
