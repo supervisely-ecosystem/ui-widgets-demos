@@ -104,8 +104,10 @@ Whether to enable the control buttons.
 **default value:** `true`
 
 ```python
-input = InputNumber(controls=True)
+input = InputNumber(controls=False)
 ```
+
+![controls](https://user-images.githubusercontent.com/120389559/218687285-6d56cbb0-1bda-41a5-b8c4-742a8daac5cd.png)
 
 ### debounce
 
@@ -139,7 +141,7 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
 | Attributes and Methods | Description                                                |
 | :--------------------: | ---------------------------------------------------------- |
