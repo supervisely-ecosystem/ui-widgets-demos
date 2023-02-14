@@ -120,12 +120,12 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-| Attributes and Methods | Description                       |
-| :--------------------: | --------------------------------- |
-|       `append()`       | Add item in GridGallery.          |
-|      `clean_up()`      | Clean GridGallery from all items. |
+| Attributes and Methods | Description                         |
+| :--------------------: | ----------------------------------- |
+|       `append()`       | Add item in `GridGallery`.          |
+|      `clean_up()`      | Clean `GridGallery` from all items. |
 
 ## Mini App Example
 
@@ -154,7 +154,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Project` ID and `Dataset` ID` we will use in UI
+### Initialize `Project` ID and `Dataset` ID we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
@@ -168,7 +168,7 @@ project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id
 grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
 ```
 
-### Fill GridGallery with data
+### Fill `GridGallery` with data
 
 ```python
 grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
