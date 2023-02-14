@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Flexbox` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Flexbox` widget in Supervisely app.
+In this tutorial you will learn how to use `Flexbox` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Flexbox)
 
@@ -18,20 +18,20 @@ Flexbox(widgets, gap=10, center_content=False, widget_id=None)
 
 |   Parameters   |     Type     |                           Description                           |
 | :------------: | :----------: | :-------------------------------------------------------------: |
-|    widgets     | List[Widget] |              List if Widgets to display on Flexbox              |
-|      gap       |     int      |                 Gap between Widgets on Flexbox                  |
-| center_content |     bool     | Determines whether to place widgets in the center of the window |
+|    widgets     | List[Widget] |             List if Widgets to display on `Flexbox`             |
+|      gap       |     int      |                Gap between Widgets on `Flexbox`                 |
+| center_content |     bool     | Determines whether to place Widgets in the center of the window |
 |   widget_id    |     str      |                        Id of the widget                         |
 
 ### widgets
 
-Determine list of Widgets to display on Flexbox.
+Determine list of `Widgets` to display on `Flexbox`.
 
 **type:** `List[Widget]`
 
 ### gap
 
-Determine gap between Widgets on Flexbox.
+Determine gap between `Widgets` on `Flexbox`.
 
 **type:** `int`
 
@@ -86,7 +86,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-# Initialize widgets we will use in UI
+### Initialize widgets we will use in UI
 
 ```python
 obj_class_cat = sly.ObjClass(name="cat", geometry_type=sly.Bitmap, color=[255, 0, 0])
