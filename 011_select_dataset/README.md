@@ -18,8 +18,8 @@ SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False
 
 | Parameters  |               Type                |                   Description                   |
 | :---------: | :-------------------------------: | :---------------------------------------------: |
-| default_id  |                int                |                   Dataset ID                    |
-| project_id  |                int                |                   Project ID                    |
+| default_id  |                int                |                  `Dataset` ID                   |
+| project_id  |                int                |                  `Project` ID                   |
 | multiselect |               bool                | Allow to select all datasets in current project |
 |   compact   |               bool                |            Show only dataset select             |
 | show_label  |               bool                |                   Show label                    |
@@ -103,6 +103,27 @@ Size of input.
 
 **default value:** `None`
 
+```python
+select_dataset = SelectDataset(
+    default_id=dataset_id, project_id=project_id, compact=True, show_label=False
+)
+select_mini = SelectDataset(
+    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="mini"
+)
+select_small = SelectDataset(
+    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="small"
+)
+select_large = SelectDataset(
+    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="large"
+)
+card = Card(
+    title="Select Dataset",
+    content=Container(widgets=[select_dataset, select_mini, select_small, select_large]),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/218713836-2e03438c-2ce3-49be-8a9c-292c617cca14.png)
+
 ### disabled
 
 Determine dataset select ability.
@@ -131,8 +152,8 @@ ID of the widget.
 | :--------------------: | -------------------------------------------------------------------------------------- |
 |  `get_selected_id()`   | Return List with selected `dataset ID`, if `multiselect` is `True` raise ValueError.   |
 |  `get_selected_ids()`  | Return List with selected `dataset IDs`, if `multiselect` is `False` raise ValueError. |
-|      `disable()`       | Set `disabled` attribute == True.                                                      |
-|       `enable()`       | Set `disabled` attribute == False.                                                     |
+|      `disable()`       | Set `disabled` attribute == `True`.                                                    |
+|       `enable()`       | Set `disabled` attribute == `False`.                                                   |
 |    `value_changed`     | Function is handled when selected `dataset ID` is changed.                             |
 
 ## Mini App Example
@@ -162,7 +183,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare project_id and dataset_id
+### Prepare `project_id` and `dataset_id`
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
