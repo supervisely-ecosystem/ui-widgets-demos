@@ -21,7 +21,7 @@ LabeledImage(annotations_opacity=0.5, show_opacity_slider=True, enable_zoom=Fals
 | annotations_opacity | float |                       Figures opacity                       |
 | show_opacity_slider | bool  | Determines the presence of opacity slider on `LabeledImage` |
 |     enable_zoom     | bool  |                Enable zoom on `LabeledImage`                |
-|    esize_on_zoom    | bool  |                  Resize card to fit figure                  |
+|   resize_on_zoom    | bool  |                  Resize card to fit figure                  |
 |   fill_rectangle    | bool  |                        Fill rectange                        |
 |    border_width     |  int  |                        Border width                         |
 |      widget_id      |  str  |                      Id of the widget                       |
@@ -120,7 +120,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Project` ID and `Meta` we will use in UI
+### Initialize `Project` ID and `ProjectMeta` we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
