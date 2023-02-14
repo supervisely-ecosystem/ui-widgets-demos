@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Menu` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Menu` widget in Supervisely app.
+In this tutorial you will learn how to use `Menu` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Menu)
 
@@ -16,17 +16,17 @@ Menu(items=None, groups=None, index=None, width_percent=25, widget_id=None)
 
 ## Parameters
 
-|  Parameters   |       Type       |               Description               |
-| :-----------: | :--------------: | :-------------------------------------: |
-|     items     | List[Menu.Item]  |           List of menu Items            |
-|    groups     | List[Menu.Group] |           List of menu Groups           |
-|     index     |       str        | Sets the active menu at the given index |
-| width_percent |       int        |   Width of the left part of Menu in %   |
-|   widget_id   |       str        |            Id of the widget             |
+|  Parameters   |       Type       |                Description                |
+| :-----------: | :--------------: | :---------------------------------------: |
+|     items     | List[Menu.Item]  |          List of `Menu` `Items`           |
+|    groups     | List[Menu.Group] |          List of `Menu` `Groups`          |
+|     index     |       str        | Sets the active `Menu` at the given index |
+| width_percent |       int        |   Width of the left part of `Menu` in %   |
+|   widget_id   |       str        |             Id of the widget              |
 
 ### items
 
-Determine list of menu Items.
+Determine list of menu `Items`.
 
 **type:** `List[Menu.Item]`
 
@@ -52,7 +52,7 @@ menu = Menu(items=items)
 
 ### groups
 
-Determine list of menu Groups.
+Determine list of menu `Groups`.
 
 **type:** `List[Menu.Group]`
 
@@ -84,7 +84,7 @@ menu = Menu(groups=[g1, g2])
 
 ### index
 
-Sets the active menu at the given index.
+Sets the active `Menu` at the given index.
 
 **type:** `str`
 
@@ -110,7 +110,7 @@ menu = Menu(items=items, index="m2")
 
 ### width_percent
 
-Determines width of the left part of Menu in %.
+Determines width of the left part of `Menu` in %.
 
 **type:** `int`
 
@@ -169,7 +169,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize menu items
+### Initialize `Menu` items
 
 ```python
 l = Text(text="left part", status="success")
@@ -190,7 +190,7 @@ g2_items = [
 ]
 ```
 
-### Initialize menu groups
+### Initialize `Menu` groups
 
 ```python
 g1 = Menu.Group("g1", g1_items)
