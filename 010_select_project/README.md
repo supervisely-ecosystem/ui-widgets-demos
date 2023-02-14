@@ -66,7 +66,7 @@ select_project = SelectProject(default_id=project_id, workspace_id=workspace_id,
 
 ### allowed_types
 
-List of project types witch will be available to select. Possible project types: images, videos, volumes, point_clouds, point_cloud_episodes.
+List of project types witch will be available to select. Possible project types: `images`, `videos`, `volumes`, `point_clouds`, `point_cloud_episodes`.
 
 **type:** `List[ProjectType]`
 
