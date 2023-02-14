@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Grid` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Grid` widget in Supervisely app.
+In this tutorial you will learn how to use `Grid` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Grid)
 
@@ -16,22 +16,22 @@ Grid(widgets, columns=1, gap=10, widget_id=None)
 
 ## Parameters
 
-| Parameters |     Type     |            Description             |
-| :--------: | :----------: | :--------------------------------: |
-|  widgets   | List[Widget] | List if Widgets to display on Grid |
-|  columns   |     int      |     Number of columns on Grid      |
-|    gap     |     int      |    Gap between Widgets on Grid     |
-| widget_id  |     str      |          Id of the widget          |
+| Parameters |     Type     |             Description              |
+| :--------: | :----------: | :----------------------------------: |
+|  widgets   | List[Widget] | List if widgets to display on `Grid` |
+|  columns   |     int      |     Number of columns on `Grid`      |
+|    gap     |     int      |    Gap between widgets on `Grid`     |
+| widget_id  |     str      |           Id of the widget           |
 
 ### widgets
 
-Determine list of Widgets to display on Grid.
+Determine list of `Widgets` to display on `Grid`.
 
 **type:** `List[Widget]`
 
 ### columns
 
-Number of columns on Grid.
+Number of columns on `Grid`.
 
 **type:** `int`
 
@@ -45,7 +45,7 @@ grid = Grid(widgets=obj_class_view_widgets, columns=3)
 
 ### gap
 
-Determine gap between Widgets on Grid.
+Determine gap between `Widgets` on `Grid`.
 
 **type:** `int`
 
