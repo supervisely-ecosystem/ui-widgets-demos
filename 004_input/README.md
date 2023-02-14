@@ -20,8 +20,8 @@ Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly
 | :---------: | :-------------------------------: | :-----------------------------: |
 |    value    |                str                |          binding value          |
 |  minlength  |                int                |    minimum input text length    |
-|  maxlength  |               bool                |    maximum input text length    |
-| placeholder |                int                |      placeholder of input       |
+|  maxlength  |                int                |    maximum input text length    |
+| placeholder |                str                |      placeholder of input       |
 |    size     | Literal["mini", "small", "large"] |          size of input          |
 |  readonly   |               bool                | same as readonlyin native input |
 |  widget_id  |                str                |        id of the widget         |
@@ -97,7 +97,7 @@ input_large = Input(size="large", placeholder="input large")
 
 ### readonly
 
-Same as readonlyin native input.
+Same as readonly in native input.
 
 **type:** `bool`
 
@@ -115,7 +115,7 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
 | Attributes and Methods  | Description                                                |
 | :---------------------: | ---------------------------------------------------------- |
@@ -160,7 +160,7 @@ api = sly.Api()
 input_text = Input(placeholder="Please input")
 ```
 
-### Create buttons to control Input widget values.
+### Create buttons to control `Input` widget values.
 
 ```python
 button_random_planet = Button(text="Random planet name")
