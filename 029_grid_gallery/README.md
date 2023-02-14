@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `GridGallery` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `GridGallery` widget in Supervisely app.
+In this tutorial you will learn how to use `GridGallery` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/GridGallery)
 
@@ -26,19 +26,19 @@ GridGallery(
 
 ## Parameters
 
-|     Parameters      | Type  |                       Description                        |
-| :-----------------: | :---: | :------------------------------------------------------: |
-|   columns_number    |  int  |       Determines number of columns on GridGallery        |
-| annotations_opacity | float |                     Figures opacity                      |
-| show_opacity_slider | bool  | Determines the presence of opacity slider on GridGallery |
-|     enable_zoom     | bool  |                Enable zoom on GridGallery                |
-|   resize_on_zoom    | bool  |                Resize card to fit figure                 |
-|     sync_views      | bool  |              Sync pan & zoom between views               |
-|      widget_id      |  str  |                     Id of the widget                     |
+|     Parameters      | Type  |                        Description                         |
+| :-----------------: | :---: | :--------------------------------------------------------: |
+|   columns_number    |  int  |       Determines number of columns on `GridGallery`        |
+| annotations_opacity | float |                      Figures opacity                       |
+| show_opacity_slider | bool  | Determines the presence of opacity slider on `GridGallery` |
+|     enable_zoom     | bool  |                Enable zoom on `GridGallery`                |
+|   resize_on_zoom    | bool  |                 Resize card to fit figure                  |
+|     sync_views      | bool  |               Sync pan & zoom between views                |
+|      widget_id      |  str  |                      Id of the widget                      |
 
 ### columns_number
 
-Determines number of columns on GridGallery.
+Determines number of columns on `GridGallery`.
 
 **type:** `int`
 
@@ -66,7 +66,7 @@ grid_gallery = GridGallery(columns_number=3, annotations_opacity=1)
 
 ### show_opacity_slider
 
-Determines the presence of opacity slider on GridGallery.
+Determines the presence of opacity slider on `GridGallery`.
 
 **type:** `bool`
 
@@ -80,7 +80,7 @@ grid_gallery = GridGallery(columns_number=3, show_opacity_slider=False)
 
 ### enable_zoom
 
-Enable zoom on GridGallery.
+Enable zoom on `GridGallery`.
 
 **type:** `bool`
 
@@ -154,7 +154,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize project_id and dataset_id we will use in UI
+### Initialize `Project` ID and `Dataset` ID` we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
