@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Siderbar` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Siderbar` widget in Supervisely app.
+In this tutorial you will learn how to use `Siderbar` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Siderbar)
 
@@ -16,22 +16,22 @@ Siderbar(left_content, right_content, width_percent=25, widget_id=None)
 
 ## Parameters
 
-|  Parameters   |  Type  |                 Description                 |
-| :-----------: | :----: | :-----------------------------------------: |
-| left_content  | Widget | Widget to display in left part of Siderbar  |
-| right_content | Widget | Widget to display in right part of Siderbar |
-| width_percent |  int   |   Width of the left part of Siderbar in %   |
-|   widget_id   |  str   |              Id of the widget               |
+|  Parameters   |  Type  |                  Description                  |
+| :-----------: | :----: | :-------------------------------------------: |
+| left_content  | Widget | Widget to display in left part of `Siderbar`  |
+| right_content | Widget | Widget to display in right part of `Siderbar` |
+| width_percent |  int   |   Width of the left part of `Siderbar` in %   |
+|   widget_id   |  str   |               Id of the widget                |
 
 ### left_content
 
-Determine Widget to display in left part of Siderbar.
+Determine `Widget` to display in left part of `Siderbar`.
 
 **type:** `Widget`
 
 ### right_content
 
-Determine Widget to display in right part of Siderbar.
+Determine `Widget` to display in right part of `Siderbar`.
 
 **type:** `Widget`
 
@@ -45,7 +45,7 @@ sidebar = Sidebar(left_content=l, right_content=r)
 
 ### width_percent
 
-Determines width of the left part of Siderbar in %.
+Determines width of the left part of `Siderbar` in %.
 
 **type:** `int`
 
