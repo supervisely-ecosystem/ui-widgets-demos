@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `RadioTable` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `RadioTable` widget in Supervisely app.
+In this tutorial you will learn how to use `RadioTable` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/RadioTable)
 
@@ -18,21 +18,21 @@ RadioTable(columns, rows, subtitles={}, column_formatters={}, widget_id=None)
 
 |    Parameters     |      Type       |               Description               |
 | :---------------: | :-------------: | :-------------------------------------: |
-|      columns      |    List[str]    |           Table columns names           |
-|       rows        | List[List[str]] |           Table rows content            |
+|      columns      |    List[str]    |       `RadioTable` columns names        |
+|       rows        | List[List[str]] |        `RadioTable` rows content        |
 |     subtitles     |      dict       |     Determine subtitles for columns     |
 | column_formatters |      dict       | Determine format of output `RadioTable` |
 |     widget_id     |       str       |            Id of the widget             |
 
 ### columns
 
-Determine table columns names.
+Determine `RadioTable` columns names.
 
 **type:** `List[str]`
 
 ### rows
 
-Determine table rows content.
+Determine `RadioTable` rows content.
 
 **type:** `List[List[str]]`
 
@@ -90,12 +90,12 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-| Attributes and Methods | Description                                                                                 |
-| :--------------------: | ------------------------------------------------------------------------------------------- |
-|  `get_selected_row()`  | Return selected row data.                                                                   |
-|     `select_row()`     | Set row with given index selected. If row with given index does not exist raise ValueError. |
+| Attributes and Methods | Description                                                                                   |
+| :--------------------: | --------------------------------------------------------------------------------------------- |
+|  `get_selected_row()`  | Return selected row data.                                                                     |
+|     `select_row()`     | Set row with given index selected. If row with given index does not exist raise `ValueError`. |
 
 ## Mini App Example
 
