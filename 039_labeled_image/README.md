@@ -106,7 +106,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, GridGallery
+from supervisely.app.widgets import Card, Container, LabeledImage
 ```
 
 ### Init API client
@@ -120,39 +120,29 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize project_id and dataset_id we will use in UI
+### Initialize project_id and meta we will use in UI
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
-project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id))
+project = api.project.get_info_by_id(project_id)
+meta_json = api.project.get_meta(id=project_id)
+meta = sly.ProjectMeta.from_json(data=meta_json)
 ```
 
-### Initialize `GridGallery` widget
+### Initialize image_id and annotation we will use in UI
 
 ```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
+image_id = int(os.environ["modal.state.slyImageId"])
+image = api.image.get_info_by_id(id=image_id)
+ann_json = api.annotation.download_json(image_id=image_id)
+ann = sly.Annotation.from_json(data=ann_json, project_meta=meta)
 ```
 
-### Fill GridGallery with data
+### Initialize `LabeledImage` widget and fill it with image data
 
 ```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
-
-images_infos = api.image.get_list(dataset_id=dataset_id)[: grid_gallery.columns_number]
-anns_infos = api.annotation.get_list(dataset_id=dataset_id)[
-: grid_gallery.columns_number
-]
-for idx, (image_info, ann_info) in enumerate(zip(images_infos, anns_infos)):
-image_name = image_info.name
-image_url = image_info.full_storage_url
-image_ann = sly.Annotation.from_json(
-data=ann_info.annotation, project_meta=project_meta
-)
-
-    grid_gallery.append(
-        title=image_name, image_url=image_url, annotation=image_ann, column_index=idx
-    )
+labeled_image = LabeledImage()
+labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
 ### Create app layout
@@ -161,8 +151,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    title="Grid Gallery",
-    content=grid_gallery,
+    title="Labeled Image",
+    content=labeled_image,
 )
 
 layout = Container(widgets=[card])
@@ -175,3 +165,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![layout](https://user-images.githubusercontent.com/120389559/218667990-6d41e1b9-a053-4942-9bae-fbe12254fb3c.png)
