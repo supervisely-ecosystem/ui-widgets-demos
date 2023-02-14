@@ -16,10 +16,10 @@ VideoThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |   Type    |                      Description                       |
-| :--------: | :-------: | :----------------------------------------------------: |
-|    info    | VideoInfo | NamedTuple, containing information about video project |
-| widget_id  |    str    |                    id of the widget                    |
+| Parameters |    Type     |                      Description                       |
+| :--------: | :---------: | :----------------------------------------------------: |
+|    info    | `VideoInfo` | NamedTuple, containing information about video project |
+| widget_id  |     str     |                    id of the widget                    |
 
 ### info
 
@@ -42,12 +42,12 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-|    Attributes and Methods    | Description                                      |
-| :--------------------------: | ------------------------------------------------ |
-| `set_video(info: VideoInfo)` | Set input video project data                     |
-|   `set_video_id(id: int)`    | Set input video project data by video project id |
+| Attributes and Methods | Description                                      |
+| :--------------------: | ------------------------------------------------ |
+|     `set_video()`      | Set input video project data                     |
+|    `set_video_id()`    | Set input video project data by video project id |
 
 ## Mini App Example
 
