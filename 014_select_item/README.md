@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Item` input(image, video, volume, point_cloud or point_cloud_episode), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
+This widget is a select `Item` input(`image`, `video`, `volume`, `point_cloud` or `point_cloud_episode`), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectItem)
 
@@ -18,7 +18,7 @@ SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 
 | Parameters |               Type                |           Description            |
 | :--------: | :-------------------------------: | :------------------------------: |
-| dataset_id |                int                |            Dataset ID            |
+| dataset_id |                int                |           `Dataset` ID           |
 |  compact   |               bool                |     Show only dataset select     |
 | show_label |               bool                |            Show label            |
 |    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
@@ -72,6 +72,19 @@ Size of input.
 
 **default value:** `None`
 
+```python
+select_item = SelectItem(dataset_id=dataset_id, show_label=False)
+select_mini = SelectItem(dataset_id=dataset_id, show_label=False, size="mini")
+select_small = SelectItem(dataset_id=dataset_id, show_label=False, size="small")
+select_large = SelectItem(dataset_id=dataset_id, show_label=False, size="large")
+card = Card(
+    title="Select Item",
+    content=Container(widgets=[select_item, select_mini, select_small, select_large]),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/218725835-a36971d3-cc88-4169-9366-b7b5b383486e.png)
+
 ### widget_id
 
 ID of the widget.
@@ -107,7 +120,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare dataset_id
+### Prepare `Dataset` ID
 
 ```python
 dataset_id = int(os.environ["modal.state.slyDatasetId"])
