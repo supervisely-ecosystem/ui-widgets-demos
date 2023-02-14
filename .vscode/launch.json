@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "043_video_player.src.main:app",
+                "044_radio_group.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
