@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Video` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Video` widget in Supervisely app.
+In this tutorial you will learn how to use `Video` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Video)
 
@@ -18,12 +18,12 @@ Video(video_id=None, widget_id=None)
 
 | Parameters | Type |   Description    |
 | :--------: | :--: | :--------------: |
-|  video_id  | int  |     Video ID     |
+|  video_id  | int  |    `Video` ID    |
 | widget_id  | str  | Id of the widget |
 
 ### video_id
 
-Determines video id, used in `Video` widget.
+Determines `Video` ID, used in `Video` widget.
 
 **type:** `int`
 
@@ -39,7 +39,7 @@ ID of the widget.
 
 |  Attributes and Methods   | Description                                                         |
 | :-----------------------: | ------------------------------------------------------------------- |
-|       `set_video()`       | Set video in Video widget by ID.                                    |
+|       `set_video()`       | Set video in `Video` widget by ID.                                  |
 |   `set_current_frame()`   | Set video player to given frame.                                    |
 |   `get_current_frame()`   | Get current video player frame.                                     |
 |     `play_clicked()`      | Called when video start to play.                                    |
@@ -77,7 +77,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `video_id` and `video_info` we will use in UI
+### Initialize `Video` ID and `VideoInfo` we will use in UI
 
 ```python
 video_id = int(os.environ["modal.state.slyVideoId"])
