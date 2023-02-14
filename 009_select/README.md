@@ -20,7 +20,7 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 | :---------: | :-------------------------------: | :----------------------------------: |
 |    items    |         List[Select.Item]         |    list of `Select.Item` widgets     |
 |   groups    |        List[Select.Group]         |    list of `Select.Group` widgets    |
-| filterable  |               bool                |     whether Select is filterable     |
+| filterable  |               bool                |    whether `Select` is filterable    |
 | placeholder |                str                |             placeholder              |
 |    size     | Literal["large", "small", "mini"] |            size of input             |
 |  multiple   |               bool                | whether multiple-select is activated |
@@ -82,7 +82,7 @@ select_groups = Select(groups=groups)
 
 ### filterable
 
-Whether Select is filterable.
+Whether `Select` is filterable.
 
 **type:** `bool`
 
@@ -103,6 +103,17 @@ Size of input.
 **type:** `Literal["large", "small", "mini"]`
 
 **default value:** `None`
+
+```python
+select = Select(items=animals_domestic)
+select_mini = Select(items=animals_domestic, size="mini")
+select_small = Select(items=animals_domestic, size="small")
+select_large = Select(items=animals_domestic, size="large")
+
+card = Card(content=Container(widgets=[select, select_mini, select_small, select_large]))
+```
+
+![size](https://user-images.githubusercontent.com/120389559/218707061-ce71b019-7db3-4de6-bdcf-06f7b3ca72d7.png)
 
 ### multiple
 
@@ -129,14 +140,14 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-|                          Attributes and Methods                           | Description                                                      |
-| :-----------------------------------------------------------------------: | ---------------------------------------------------------------- |
-|                               `get_value()`                               | Return selected item value.                                      |
-| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set select input items or group of items. items.                 |
-|                               `get_items()`                               | Return list of items from widget.                                |
-|                             `@value_changed`                              | Decorator function is handled when radio input value is changed. |
+| Attributes and Methods | Description                                                |
+| :--------------------: | ---------------------------------------------------------- |
+|     `get_value()`      | Return selected item value.                                |
+|        `set()`         | Set select input items or group of items.                  |
+|     `get_items()`      | Return list of items from widget.                          |
+|    `@value_changed`    | Decorator function is handled when input value is changed. |
 
 ## Mini App Example
 
