@@ -18,7 +18,7 @@ SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=F
 
 |  Parameters   |               Type                |                                        Description                                        |
 | :-----------: | :-------------------------------: | :---------------------------------------------------------------------------------------: |
-|    default    |                str                |                                         Tag name                                          |
+|    default    |                str                |                                        `Tag` name                                         |
 |  project_id   |                int                |                  Determine `Project` from which `Tags` will be selected.                  |
 | project_meta  |            ProjectMeta            |                Determine `ProjectMeta` from which `Tags` will be selected                 |
 | allowed_types |             List[str]             | Determine `Tags` types witch will be available to select from all the `Tags` in `Project` |
@@ -75,7 +75,7 @@ select_tag_meta = SelectTagMeta(project_meta=project_meta)
 
 ### allowed_types
 
-Determine `Tags` types witch will be available to select from all the `Tags` in `Project`.
+Determine `Tags` types witch will be available to select from all the `Tags` in `Project`. Possible `Tag` types: `any_number`, `any_string`, `one_of_string`, `none`.
 
 **type:** `List[str]`
 
@@ -125,6 +125,20 @@ Size of input.
 
 **default value:** `None`
 
+```python
+select_tag_meta = SelectTagMeta(default="cat", project_id=project_id, show_label=False)
+select_mini = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="mini")
+select_small = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="small")
+select_large = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="large")
+
+card = Card(
+    title="Select TagMeta",
+    content=Container(widgets=[select_tag_meta, select_mini, select_small, select_large]),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/218728869-7b0f787e-e09b-4c72-9353-93f6398611b9.png)
+
 ### widget_id
 
 ID of the widget.
@@ -133,17 +147,17 @@ ID of the widget.
 
 **default value:** `None`
 
-**Methods and attributes**
+## Methods and attributes
 
-|  Attributes and Methods  | Description                                                                                         |
-| :----------------------: | --------------------------------------------------------------------------------------------------- |
-|  `get_selected_name()`   | Return selected tag name. If multiselect is True raise RuntimeError.                                |
-|  `get_selected_names()`  | Return `List` with selected tags names. If multiselect is False raise RuntimeError.                 |
-| `get_tag_meta_by_name()` | Return `TagMeta` by tag name.                                                                       |
-|  `get_selected_item()`   | Return `TagMeta` for selected tag.                                                                  |
-|  `get_selected_items()`  | Return `List`, containing `TagMeta` for selected tags.                                              |
-|       `set_name()`       | Set `Tag` with given name as `selected`.                                                            |
-|      `set_names()`       | Set `Tags` from given list of tags names as `selected`. If multiselect is False raise RuntimeError. |
+|  Attributes and Methods  | Description                                                                                              |
+| :----------------------: | -------------------------------------------------------------------------------------------------------- |
+|  `get_selected_name()`   | Return selected tag name. If multiselect is `True` raise `RuntimeError`.                                 |
+|  `get_selected_names()`  | Return `List` with selected `Tag` names. If multiselect is `False` raise `RuntimeError`.                 |
+| `get_tag_meta_by_name()` | Return `TagMeta` by `Tag` name.                                                                          |
+|  `get_selected_item()`   | Return `TagMeta` for selected `Tag`.                                                                     |
+|  `get_selected_items()`  | Return `List`, containing `TagMeta` for selected tags.                                                   |
+|       `set_name()`       | Set `Tag` with given name as `selected`.                                                                 |
+|      `set_names()`       | Set `Tags` from given list of `Tag` names as `selected`. If multiselect is `False` raise `RuntimeError`. |
 
 ## Mini App Example
 
@@ -172,7 +186,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare project_id
+### Prepare `Project` ID
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
