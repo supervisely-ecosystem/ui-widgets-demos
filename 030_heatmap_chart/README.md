@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `HeatmapChart` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `HeatmapChart` widget in Supervisely app.
+In this tutorial you will learn how to use `HeatmapChart` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/HeatmapChart)
 
@@ -16,23 +16,23 @@ HeatmapChart(title, data_labels=True, xaxis_title=None, color_range="row", toolt
 
 ## Parameters
 
-| Parameters  |          Type           |                               Description                               |
-| :---------: | :---------------------: | :---------------------------------------------------------------------: |
-|    title    |           str           |                           HeatmapChart title                            |
-| data_labels |          bool           | Determines whether the values ​​in the HeatmapChart cells are displayed |
-| xaxis_title |           str           |                               X axe title                               |
-| color_range | Literal["table", "row"] |            Determines the color distribution on HeatmapChart            |
-|   tooltip   |           str           |        Determines the displayed value in the HeatmapChart cells         |
+| Parameters  |          Type           |                                Description                                |
+| :---------: | :---------------------: | :-----------------------------------------------------------------------: |
+|    title    |           str           |                           `HeatmapChart` title                            |
+| data_labels |          bool           | Determines whether the values ​​in the `HeatmapChart` cells are displayed |
+| xaxis_title |           str           |                                X axe title                                |
+| color_range | Literal["table", "row"] |            Determines the color distribution on `HeatmapChart`            |
+|   tooltip   |           str           |        Determines the displayed value in the `HeatmapChart` cells         |
 
 ### title
 
-Determines HeatmapChart title.
+Determines `HeatmapChart` title.
 
 **type:** `str`
 
 ### data_labels
 
-Determines whether the values ​​in the HeatmapChart cells are displayed.
+Determines whether the values ​​in the `HeatmapChart` cells are displayed.
 
 **type:** `bool`
 
@@ -71,7 +71,7 @@ chart = HeatmapChart(
 
 ### color_range
 
-Determines the color distribution on HeatmapChart.
+Determines the color distribution on `HeatmapChart`.
 
 **type:** `Literal["table", "row"]`
 
@@ -90,7 +90,7 @@ chart = HeatmapChart(
 
 ### tooltip
 
-Determines the displayed value in the HeatmapChart cells.
+Determines the displayed value in the `HeatmapChart` cells.
 
 **type:** `str`
 
@@ -105,13 +105,13 @@ chart = HeatmapChart(
 
 ![tooltip](https://user-images.githubusercontent.com/120389559/218247998-6d6503a6-d5b4-4565-a4de-7aa0e96d52e1.gif)
 
-**Methods and attributes**
+## Methods and attributes
 
-|  Attributes and Methods   | Description                                  |
-| :-----------------------: | -------------------------------------------- |
-|   `add_series_batch()`    | Add series of data in HeatmapChart by batch. |
-|      `add_series()`       | Add series of data in HeatmapChart.          |
-| `get_clicked_datapoint()` | Return data clicked in HeatmapChart.         |
+|  Attributes and Methods   | Description                                    |
+| :-----------------------: | ---------------------------------------------- |
+|   `add_series_batch()`    | Add series of data in `HeatmapChart` by batch. |
+|      `add_series()`       | Add series of data in `HeatmapChart`.          |
+| `get_clicked_datapoint()` | Return data clicked in `HeatmapChart`.         |
 
 ## Mini App Example
 
@@ -151,7 +151,7 @@ def multiplication_chart():
     return data
 ```
 
-### Initialize HeatmapChart widget
+### Initialize `HeatmapChart` widget
 
 ```python
 chart = HeatmapChart(
@@ -162,7 +162,7 @@ chart = HeatmapChart(
 )
 ```
 
-### Fill HeatmapChart with data
+### Fill `HeatmapChart` with data
 
 ```python
 data = multiplication_chart()
