@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Field` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Field` widget in Supervisely app.
+In this tutorial you will learn how to use `Field` widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Field)
 
@@ -16,19 +16,19 @@ Field(content, title, description=None, title_url=None, description_url=None, ic
 
 ## Parameters
 
-|   Parameters    |    Type    |               Description                |
-| :-------------: | :--------: | :--------------------------------------: |
-|     content     |   Widget   |        Widget to display on Field        |
-|      title      |    str     |          Determines Field title          |
-|   description   |    str     |       Determines Field description       |
-|    title_url    |    str     |    Determines url used on Field title    |
-| description_url |    str     | Determines url used on Field description |
-|      icon       | Field.Icon |          Determines Field icon           |
-|    widget_id    |    str     |             Id of the widget             |
+|   Parameters    |    Type    |                Description                 |
+| :-------------: | :--------: | :----------------------------------------: |
+|     content     |   Widget   |        Widget to display on `Field`        |
+|      title      |    str     |          Determines `Field` title          |
+|   description   |    str     |       Determines `Field` description       |
+|    title_url    |    str     |    Determines url used on `Field` title    |
+| description_url |    str     | Determines url used on `Field` description |
+|      icon       | Field.Icon |          Determines `Field` icon           |
+|    widget_id    |    str     |              Id of the widget              |
 
 ### content
 
-Determine Widget to display on Field.
+Determine `Widget` to display on `Field`.
 
 **type:** `Widget`
 
@@ -41,7 +41,7 @@ field = Field(content=Button(), title="Field with button")
 
 ### title
 
-Determines Field title.
+Determines `Field` title.
 
 **type:** `str`
 
@@ -53,7 +53,7 @@ field = Field(content=Empty(), title="Field title")
 
 ### description
 
-Determines Field description.
+Determines `Field` description.
 
 **type:** `str`
 
@@ -67,7 +67,7 @@ field = Field(content=Empty(), title="Field title", description="Field descripti
 
 ### title_url
 
-Determines url used on Field title.
+Determines url used on `Field` title.
 
 **type:** `str`
 
@@ -81,7 +81,7 @@ field = Field(content=Empty(), title="Field title", title_url="https://i.imgur.c
 
 ### description_url
 
-Determines url used on Field description.
+Determines url used on `Field` description.
 
 **type:** `str`
 
@@ -95,7 +95,7 @@ field = Field(content=Empty(), title="Field title", title_url="https://i.imgur.c
 
 ### icon
 
-Determines Field icon.
+Determines `Field` icon. Icons can be found at [zavoloklom.github.io](http://zavoloklom.github.io/material-design-iconic-font/icons.html).
 
 **type:** `Field.Icon`
 
