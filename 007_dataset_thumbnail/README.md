@@ -16,12 +16,12 @@ DatasetThumbnail(project_info=None, dataset_info=None, show_project_name=True, w
 
 ## Parameters
 
-|    Parameters     |    Type     |                   Description                    |
-| :---------------: | :---------: | :----------------------------------------------: |
-|   project_info    | ProjectInfo | NamedTuple, containing information about project |
-|   dataset_info    | DatasetInfo | NamedTuple, containing information about dataset |
-| show_project_name |    bool     |        determines to display project name        |
-|     widget_id     |     str     |                 id of the widget                 |
+|    Parameters     |     Type      |                   Description                    |
+| :---------------: | :-----------: | :----------------------------------------------: |
+|   project_info    | `ProjectInfo` | NamedTuple, containing information about project |
+|   dataset_info    | `DatasetInfo` | NamedTuple, containing information about dataset |
+| show_project_name |     bool      |        determines to display project name        |
+|     widget_id     |      str      |                 id of the widget                 |
 
 ### project_info
 
@@ -100,7 +100,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ProjectThumbnail` widget
+### Initialize `DatasetThumbnail` widget
 
 ```python
 # get project and dataset info from server
