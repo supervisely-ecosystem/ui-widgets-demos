@@ -18,7 +18,7 @@ SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
 
 | Parameters |               Type                |           Description            |
 | :--------: | :-------------------------------: | :------------------------------: |
-| default_id |                int                |             Team ID              |
+| default_id |                int                |            `Team` ID             |
 | show_label |               bool                |            Show label            |
 |    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
 | widget_id  |                str                |         Id of the widget         |
@@ -59,6 +59,19 @@ Size of input.
 
 **default value:** `None`
 
+```python
+select_team = SelectTeam(default_id=team_id, show_label=False)
+select_mini = SelectTeam(default_id=team_id, show_label=False, size="mini")
+select_small = SelectTeam(default_id=team_id, show_label=False, size="small")
+select_large = SelectTeam(default_id=team_id, show_label=False, size="large")
+card = Card(
+    title="Select Team",
+    content=Container(widgets=[select_team, select_mini, select_small, select_large]),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/218723907-e80e8122-f1be-493e-afb2-5bdce23725c2.png)
+
 ### widget_id
 
 ID of the widget.
@@ -94,7 +107,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare team_id
+### Prepare `Team` ID
 
 ```python
 team_id = int(os.environ["modal.state.slyTeamId"])
