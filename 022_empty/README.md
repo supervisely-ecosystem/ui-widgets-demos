@@ -95,7 +95,5 @@ app = sly.Application(layout=layout)
 
 In this video demonstrated `Empty` (invisible) and `Text` widgets that we used in `Select` widget.
 
-<video width="860" controls>
-   <source src="https://user-images.githubusercontent.com/79905215/217886738-d6ad77a5-05cc-49ec-9739-8e091875a2f7.mp4" type="video/mp4">
- </video>
+![empty-app](https://user-images.githubusercontent.com/79905215/219017739-1dc185a9-bb16-489a-b412-2dda94294398.gif)
 
