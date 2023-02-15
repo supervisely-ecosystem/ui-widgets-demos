@@ -23,7 +23,7 @@ obj_classes_list = ObjectClassesList(
 | `object_classes` | `Union[ObjClassCollection, List[ObjClass]]` | collection or list of classes |
 |   `selectable`   |                   `bool`                    |   Enable classes selection    |
 |    `columns`     |                    `int`                    |       Number of columns       |
-|    widget_id     |                     str                     |       id of the widget        |
+|   `widget_id`    |                    `str`                    |       id of the widget        |
 
 ### object_classes
 
@@ -79,8 +79,8 @@ ID of the widget.
 
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                               |
-| :----------------------: | ----------------------------------------- |
+|  Attributes and Methods  | Description                      |
+| :----------------------: | -------------------------------- |
 | `get_selected_classes()` | Return list of selected classes. |
 
 ## Mini App Example
@@ -93,10 +93,12 @@ You can find this example in our Github repository:
 
 ```python
 import os
+from random import randint
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ObjectClassesList
+from supervisely.app.widgets import Button, Card, Container
+from supervisely.app.widgets import Image, ObjectClassesList, ProjectThumbnail
 ```
 
 ### Init API client
@@ -110,22 +112,29 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get Project ID from environment variables
+### Get Project ID and Dataset ID from environment variables
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
+dataset_id = int(os.environ["modal.state.slyDatasetId"])
 ```
 
-### Get Project meta
+### Get Project info and meta
 
 ```python
+project_info = api.project.get_info_by_id(id=project_id)
+
 project_meta = sly.ProjectMeta.from_json(api.project.get_meta(project_id))
 ```
 
 ### Initialize `ObjectClassesList` widget
 
 ```python
-obj_classes_list = ObjectClassesList(object_classes=project_meta.obj_classes)
+obj_classes_list = ObjectClassesList(
+    object_classes=project_meta.obj_classes,
+    selectable=True,
+    columns=3,
+)
 ```
 
 ### Create app layout
@@ -133,9 +142,22 @@ obj_classes_list = ObjectClassesList(object_classes=project_meta.obj_classes)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
+project_thumbnail = ProjectThumbnail(project_info)
+
+cls_select_btn = Button(text="PREVIEW")
+
+select_class_container = Container(widgets=[obj_classes_list, cls_select_btn])
+image = Image()
+
+preview_container = Container(
+    widgets=[select_class_container, image],
+    direction="horizontal",
+    fractions=[2, 1],
+)
+
 card = Card(
     title="Object Classes List",
-    content=Container(widgets=[obj_classes_list]),
+    content=Container(widgets=[project_thumbnail, preview_container]),
 )
 layout = Container(widgets=[card])
 ```
@@ -148,4 +170,25 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![objclass-list-default](https://user-images.githubusercontent.com/79905215/218096273-0a52cc67-0ba8-4886-95a0-660e61d6a4eb.png)
+### Add functions to control widgets from python code
+
+```python
+@cls_select_btn.click
+def show_info():
+    classes = obj_classes_list.get_selected_classes()
+    obj_classes = api.object_class.get_list(
+        project_id=project_id, filters=[{"field": "name", "operator": "in", "value": classes}]
+    )
+
+    imgs = api.image.get_filtered_list(
+        dataset_id=dataset_id,
+        filters=[{"type": "objects_class", "data": {"classId": obj.id}} for obj in obj_classes],
+    )
+    if len(imgs) == 0:
+        image.clean_up()
+        return
+    index = randint(0, len(imgs) - 1)
+    image.set(imgs[index].full_storage_url)
+```
+
+![objclasslist-app](https://user-images.githubusercontent.com/79905215/219017000-0bbcdeaa-bd99-459b-908a-4269b4c8e074.gif)
