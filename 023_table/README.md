@@ -266,7 +266,4 @@ def handle_table_button(datapoint: sly.app.widgets.Table.ClickedDataPoint):
         table.delete_row("Col#1", row_num)
 ```
 
-<video width="860" controls>
-   <source src="https://user-images.githubusercontent.com/79905215/218036177-103cd676-4464-482b-b942-1643bec3cb2a.mp4
-" type="video/mp4">
- </video>
+![table-app](https://user-images.githubusercontent.com/79905215/219018134-14fd350a-b5b0-49d5-8649-fa1a8956a7ad.gif)
