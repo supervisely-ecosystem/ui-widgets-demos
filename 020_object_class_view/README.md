@@ -75,7 +75,6 @@ ID of the widget.
 
 **default value:** `None`
 
-
 ## Mini App Example
 
 You can find this example in our Github repository:
@@ -89,7 +88,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ObjectClassView
+from supervisely.app.widgets import Card, Container, Field, ObjectClassView, ProjectThumbnail
 ```
 
 ### Init API client
@@ -103,30 +102,84 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare `sly.ObjClass` object
+### Get Project ID from environment variables
 
 ```python
-obj_class = sly.ObjClass(name="cat", geometry_type=sly.Bitmap, color=[255, 0, 0])
+project_id = int(os.environ["modal.state.slyProjectId"])
+```
+
+### Get Project info and meta from server
+
+```python
+project_info = api.project.get_info_by_id(id=project_id)
+project_meta = api.project.get_meta(id=project_id)
+```
+
+### Prepare `ObjClass` for each class in project
+
+Prepare dictionary to get geometry type by geometry name
+
+```python
+SHAPES_TYPES = {
+    "any": sly.AnyGeometry,
+    "bitmap": sly.Bitmap,
+    "point": sly.Point,
+    "polygon": sly.Polygon,
+    "rectangle": sly.Rectangle,
+    "line": sly.Polyline,
+}
+```
+
+create ObjClass for each class in project
+
+```python
+classes = [
+    sly.ObjClass(
+        name=obj["title"],
+        geometry_type=SHAPES_TYPES[obj["shape"]],
+    )
+    for obj in project_meta["classes"]
+]
+```
+
+### Create `sly.ObjClassCollection` from ObjClasses
+
+```python
+classes = sly.ObjClassCollection(classes)
 ```
 
 ### Initialize `ObjectClassView` widget
 
+In this tutorial we will create list of `ObjectClassView` objects for each class in project.
+
 ```python
-obj_class_view = ObjectClassView(
-    obj_class=obj_class,
-    show_shape_text=True,
-    show_shape_icon=True,
-)
+obj_class_view = [
+    ObjectClassView(
+        obj_class=obj_class,
+        show_shape_text=True,
+        show_shape_icon=True,
+    )
+    for obj_class in classes
+]
 ```
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` widget.
+Prepare a layout for app using `Card`, `Field` widgets with the `content` parameter and place widgets that we've just created in the `Container` widget.
 
 ```python
+obj_class_container = Container(widgets=obj_class_view)
+obj_class_field = Field(
+    content=obj_class_container,
+    title="Project classes:",
+)
+
+# create widget ProjectThumbnail
+project_thumbnail = ProjectThumbnail(project_info)
+
 card = Card(
-    title="ObjClass View",
-    content=obj_class_view,
+    title="ObjectClassView",
+    content=Container(widgets=[project_thumbnail, obj_class_field]),
 )
 layout = Container(widgets=[card])
 ```
@@ -139,4 +192,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![objclass-default](https://user-images.githubusercontent.com/79905215/218079475-c5c5c032-8420-4850-b3fc-19dfc19c266a.png)
+![objclassview-app](https://user-images.githubusercontent.com/79905215/218984921-7bad1e0e-5600-4230-b069-9c457961b49b.png)
