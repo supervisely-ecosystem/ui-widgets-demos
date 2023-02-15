@@ -113,4 +113,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218789546-34054150-6e4d-44cf-8673-f2e9e112b2e4.gif)
+![layout](https://user-images.githubusercontent.com/120389559/218971785-137c437e-5a9f-47e3-a292-a0114532dc5c.png)
