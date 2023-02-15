@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "046_file_thumbnail.src.main:app",
+                "047_input_tag.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
