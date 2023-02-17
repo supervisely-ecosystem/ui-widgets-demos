@@ -65,7 +65,7 @@ select_app_small = SelectAppSession(team_id=team_id, tags=["deployed_nn"], size=
 select_app_large = SelectAppSession(team_id=team_id, tags=["deployed_nn"], size="large")
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/219651794-16c3d78d-d3fe-49c2-ada5-1c5039c1e761.png)
+![size](https://user-images.githubusercontent.com/120389559/219652377-cd8392d6-09b7-432b-94a4-ef91ca64f864.png)
 
 ### widget_id
 
