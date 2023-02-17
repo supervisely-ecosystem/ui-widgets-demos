@@ -16,15 +16,15 @@ SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[
 
 ## Parameters
 
-|  Parameters   |               Type                |                       Description                       |
-| :-----------: | :-------------------------------: | :-----------------------------------------------------: |
-|  default_id   |                int                |                      `Project` ID                       |
-| workspace_id  |                int                |                     `Workspace` ID                      |
-|    compact    |               bool                |            Check `Workspace` ID is not None             |
-| allowed_types |         List[ProjectType]         | List of project types witch will be available to select |
-|  show_label   |               bool                |                       Show label                        |
-|     size      | Literal["large", "small", "mini"] |            Selector size (large/small/mini)             |
-|   widget_id   |                str                |                    Id of the widget                     |
+|  Parameters   |                  Type                   |                       Description                       |
+| :-----------: | :-------------------------------------: | :-----------------------------------------------------: |
+|  default_id   |                   int                   |                      `Project` ID                       |
+| workspace_id  |                   int                   |                     `Workspace` ID                      |
+|    compact    |                  bool                   |            Check `Workspace` ID is not None             |
+| allowed_types |            List[ProjectType]            | List of project types witch will be available to select |
+|  show_label   |                  bool                   |                       Show label                        |
+|     size      | Literal["large", "small", "mini", None] |            Selector size (large/small/mini)             |
+|   widget_id   |                   str                   |                    Id of the widget                     |
 
 ### default_id
 
@@ -92,7 +92,7 @@ select_project = SelectProject(
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
