@@ -16,16 +16,16 @@ SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False
 
 ## Parameters
 
-| Parameters  |               Type                |                   Description                   |
-| :---------: | :-------------------------------: | :---------------------------------------------: |
-| default_id  |                int                |                  `Dataset` ID                   |
-| project_id  |                int                |                  `Project` ID                   |
-| multiselect |               bool                | Allow to select all datasets in current project |
-|   compact   |               bool                |            Show only dataset select             |
-| show_label  |               bool                |                   Show label                    |
-|    size     | Literal["large", "small", "mini"] |        Selector size (large/small/mini)         |
-|  disabled   |               bool                |             Disable dataset select              |
-|  widget_id  |                str                |                Id of the widget                 |
+| Parameters  |                  Type                   |                   Description                   |
+| :---------: | :-------------------------------------: | :---------------------------------------------: |
+| default_id  |                   int                   |                  `Dataset` ID                   |
+| project_id  |                   int                   |                  `Project` ID                   |
+| multiselect |                  bool                   | Allow to select all datasets in current project |
+|   compact   |                  bool                   |            Show only dataset select             |
+| show_label  |                  bool                   |                   Show label                    |
+|    size     | Literal["large", "small", "mini", None] |        Selector size (large/small/mini)         |
+|  disabled   |                  bool                   |             Disable dataset select              |
+|  widget_id  |                   str                   |                Id of the widget                 |
 
 ### default_id
 
@@ -99,7 +99,7 @@ select_dataset = SelectDataset(
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
