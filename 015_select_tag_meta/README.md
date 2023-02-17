@@ -16,16 +16,16 @@ SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=F
 
 ## Parameters
 
-|  Parameters   |               Type                |                                        Description                                        |
-| :-----------: | :-------------------------------: | :---------------------------------------------------------------------------------------: |
-|    default    |                str                |                                        `Tag` name                                         |
-|  project_id   |                int                |                  Determine `Project` from which `Tags` will be selected.                  |
-| project_meta  |            ProjectMeta            |                Determine `ProjectMeta` from which `Tags` will be selected                 |
-| allowed_types |             List[str]             | Determine `Tags` types witch will be available to select from all the `Tags` in `Project` |
-|  multiselect  |         List[ProjectType]         |                             Allows to select multiple `Tags`                              |
-|  show_label   |               bool                |                                        Show label                                         |
-|     size      | Literal["large", "small", "mini"] |                             Selector size (large/small/mini)                              |
-|   widget_id   |                str                |                                     Id of the widget                                      |
+|  Parameters   |                  Type                   |                                        Description                                        |
+| :-----------: | :-------------------------------------: | :---------------------------------------------------------------------------------------: |
+|    default    |                   str                   |                                        `Tag` name                                         |
+|  project_id   |                   int                   |                  Determine `Project` from which `Tags` will be selected.                  |
+| project_meta  |               ProjectMeta               |                Determine `ProjectMeta` from which `Tags` will be selected                 |
+| allowed_types |                List[str]                | Determine `Tags` types witch will be available to select from all the `Tags` in `Project` |
+|  multiselect  |            List[ProjectType]            |                             Allows to select multiple `Tags`                              |
+|  show_label   |                  bool                   |                                        Show label                                         |
+|     size      | Literal["large", "small", "mini", None] |                             Selector size (large/small/mini)                              |
+|   widget_id   |                   str                   |                                     Id of the widget                                      |
 
 ### default
 
@@ -121,7 +121,7 @@ select_tag_meta = SelectTagMeta(project_id=project_id, show_label=False)
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
