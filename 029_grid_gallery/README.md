@@ -114,6 +114,8 @@ grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 
 ![sync_views](https://user-images.githubusercontent.com/120389559/218132098-3b799735-2494-4eb5-9489-fae636e9d2c5.gif)
 
+### widget_id
+
 ID of the widget.
 
 **type:** `str`

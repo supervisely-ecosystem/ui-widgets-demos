@@ -92,7 +92,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-# Initialize widgets we will use in UI
+### Initialize widgets we will use in UI
 
 ```python
 obj_class_cat = sly.ObjClass(name="cat", geometry_type=sly.Bitmap, color=[255, 0, 0])
