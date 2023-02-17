@@ -115,7 +115,7 @@ Create an app object with card parameter.
 app = sly.Application(layout=card)
 ```
 
-### Add functions to control `Button` widgets from python code
+### Add functions to control `Button` widgets from python code and use `show_dialog` widget
 
 ```python
 @info_btn.click
@@ -138,7 +138,6 @@ def show_waring():
 @error_btn.click
 def show_error():
     sly.app.show_dialog(title="My error", description="Error description", status="error")
-
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219677600-a2b3c36c-ed72-4b18-9cb1-07e8a2ca4966.gif)
+![layout](https://user-images.githubusercontent.com/120389559/219678145-110212d9-2dfb-4977-acaf-4b4f92b933ba.gif)
