@@ -96,7 +96,7 @@ error_btn = Button("Show error", button_type="danger")
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
 # create new cards

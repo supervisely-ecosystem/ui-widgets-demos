@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `RadioGroup` widget in Supervisely app.
+In this tutorial you will learn how to use `RadioGroup`, `RadioGroup.Item` widgets in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/RadioGroup)
 
@@ -18,7 +18,7 @@ RadioGroup(items, size=None, direction="horizontal", gap=10, widget_id=None)
 
 | Parameters |                  Type                   |             Description              |
 | :--------: | :-------------------------------------: | :----------------------------------: |
-|   items    |          List[RadioGroup.Item]          |     List of `RadioGroup` content     |
+|   items    |         List[`RadioGroup.Item`]         |     List of `RadioGroup` content     |
 |    size    | Literal["large", "small", "mini", None] | `RadioGroup` size (large/small/mini) |
 | direction  |    Literal["vertical", "horizontal"]    |     `RadioGroup` items direction     |
 |    gap     |                   int                   |    Gap between `RadioGroup` items    |
@@ -132,7 +132,7 @@ one_of = OneOf(radio_group)
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
 widgets = Container(

@@ -141,7 +141,7 @@ app = sly.Application(layout=layout)
 
 ### Handle button clicks
 
-Use the decorator as shown below to handle button click. We have 6 buttons: to play video, to stop video, to get timestamp, to set timestamp.
+Use the decorator as shown below to handle button click. We have 4 buttons: to play video, to stop video, to get timestamp, to set timestamp.
 
 ```python
 # start playing video

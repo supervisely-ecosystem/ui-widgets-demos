@@ -109,7 +109,7 @@ tag_metas = project_meta.tag_metas
 tag_inputs = [InputTag(t) for t in tag_metas]
 ```
 
-### Initialize list of `Button` and `Text` widgets we will use
+### Initialize `Button` and `Text` widgets we will use
 
 ```python
 toggle_btn = Button("Toggle")

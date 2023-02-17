@@ -74,7 +74,7 @@ from supervisely.app.widgets import Card, Container, ModelInfo
 session_id = int(os.environ["context.sessionId"])
 ```
 
-### Initialize `ModelInfo` widget and set `session_id` in it
+### Initialize `ModelInfo` widget and set `session_id`
 
 ```python
 model_stats = ModelInfo()

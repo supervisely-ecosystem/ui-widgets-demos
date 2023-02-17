@@ -20,7 +20,7 @@ SelectAppSession(team_id, tags, show_label=False, size="mini", widget_id=None, o
 | :--------: | :-------------------------------: | :------------------------------: |
 |  team_id   |                int                |            `Team` ID             |
 |    tags    |             List[str]             |      List of possible tags       |
-| show_label |               bool                |            Show label            |
+| show_label |               bool                |         Show label text          |
 |    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
 | widget_id  |                str                |         Id of the widget         |
 | operation  |                str                |          Operation type          |

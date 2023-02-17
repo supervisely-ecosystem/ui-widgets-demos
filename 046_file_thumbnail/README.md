@@ -87,7 +87,7 @@ api.file.upload(team_id, local_filepath, remote_filepath)
 fileinfo = api.file.get_info_by_path(team_id, remote_filepath)
 ```
 
-### Initialize `FolderThumbnail` widget
+### Initialize `FileThumbnail` widget
 
 ```python
 file_thumbnail = FileThumbnail(info=fileinfo)
