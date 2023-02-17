@@ -28,7 +28,7 @@ app = sly.Application(layout=card)
 
 @info_btn.click
 def show_info():
-    sly.app.show_dialog(title="Hello", description="some message", status="info")
+    sly.app.show_dialog(title="Hello", description="Info description", status="info")
 
 
 @success_btn.click
@@ -38,13 +38,12 @@ def show_success():
 
 @warning_btn.click
 def show_waring():
-    sly.app.show_dialog(title="My warning", description="some warning", status="warning")
+    sly.app.show_dialog(title="My warning", description="Warning description", status="warning")
     # or
     # raise sly.app.DialogWindowWarning(title="My warning", description="Warning description")
 
 
 @error_btn.click
 def show_error():
-    sly.app.show_dialog(title="My error", description="Error description", status="error")
-    # or
+    sly.app.show_dialog(title="My error", description="Error description", status="error")  # or
     # raise sly.app.DialogWindowError(title="My error", description="Error description")
