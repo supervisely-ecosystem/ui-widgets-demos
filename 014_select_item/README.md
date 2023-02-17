@@ -16,13 +16,13 @@ SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |               Type                |           Description            |
-| :--------: | :-------------------------------: | :------------------------------: |
-| dataset_id |                int                |           `Dataset` ID           |
-|  compact   |               bool                |     Show only dataset select     |
-| show_label |               bool                |            Show label            |
-|    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
-| widget_id  |                str                |         Id of the widget         |
+| Parameters |                  Type                   |           Description            |
+| :--------: | :-------------------------------------: | :------------------------------: |
+| dataset_id |                   int                   |           `Dataset` ID           |
+|  compact   |                  bool                   |     Show only dataset select     |
+| show_label |                  bool                   |            Show label            |
+|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
+| widget_id  |                   str                   |         Id of the widget         |
 
 ### dataset_id
 
@@ -68,7 +68,7 @@ select_item = SelectItem(dataset_id=dataset_id, show_label=False)
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
