@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "048_switch.src.main:app",
+                "049_model_info.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
