@@ -16,13 +16,13 @@ RadioGroup(items, size=None, direction="horizontal", gap=10, widget_id=None)
 
 ## Parameters
 
-| Parameters |               Type                |             Description              |
-| :--------: | :-------------------------------: | :----------------------------------: |
-|   items    |       List[RadioGroup.Item]       |     List of `RadioGroup` content     |
-|    size    | Literal["large", "small", "mini"] | `RadioGroup` size (large/small/mini) |
-| direction  | Literal["vertical", "horizontal"] |     `RadioGroup` items direction     |
-|    gap     |                int                |    Gap between `RadioGroup` items    |
-| widget_id  |                str                |           Id of the widget           |
+| Parameters |                  Type                   |             Description              |
+| :--------: | :-------------------------------------: | :----------------------------------: |
+|   items    |          List[RadioGroup.Item]          |     List of `RadioGroup` content     |
+|    size    | Literal["large", "small", "mini", None] | `RadioGroup` size (large/small/mini) |
+| direction  |    Literal["vertical", "horizontal"]    |     `RadioGroup` items direction     |
+|    gap     |                   int                   |    Gap between `RadioGroup` items    |
+| widget_id  |                   str                   |           Id of the widget           |
 
 ### items
 
@@ -34,7 +34,7 @@ Determine list of `RadioGroup` items.
 
 Determine `RadioGroup` size.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
