@@ -16,15 +16,15 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 
 ## Parameters
 
-| Parameters  |               Type                |             Description              |
-| :---------: | :-------------------------------: | :----------------------------------: |
-|    items    |         List[Select.Item]         |    list of `Select.Item` widgets     |
-|   groups    |        List[Select.Group]         |    list of `Select.Group` widgets    |
-| filterable  |               bool                |    whether `Select` is filterable    |
-| placeholder |                str                |             placeholder              |
-|    size     | Literal["large", "small", "mini"] |            size of input             |
-|  multiple   |               bool                | whether multiple-select is activated |
-|  widget_id  |                str                |           id of the widget           |
+| Parameters  |                  Type                   |             Description              |
+| :---------: | :-------------------------------------: | :----------------------------------: |
+|    items    |            List[Select.Item]            |    list of `Select.Item` widgets     |
+|   groups    |           List[Select.Group]            |    list of `Select.Group` widgets    |
+| filterable  |                  bool                   |    whether `Select` is filterable    |
+| placeholder |                   str                   |             placeholder              |
+|    size     | Literal["large", "small", "mini", None] |            size of input             |
+|  multiple   |                  bool                   | whether multiple-select is activated |
+|  widget_id  |                   str                   |           id of the widget           |
 
 ### items
 
@@ -100,7 +100,7 @@ Placeholder.
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
