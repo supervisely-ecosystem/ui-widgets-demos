@@ -16,12 +16,12 @@ SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |               Type                |           Description            |
-| :--------: | :-------------------------------: | :------------------------------: |
-| default_id |                int                |            `Team` ID             |
-| show_label |               bool                |            Show label            |
-|    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
-| widget_id  |                str                |         Id of the widget         |
+| Parameters |                  Type                   |           Description            |
+| :--------: | :-------------------------------------: | :------------------------------: |
+| default_id |                   int                   |            `Team` ID             |
+| show_label |                  bool                   |            Show label            |
+|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
+| widget_id  |                   str                   |         Id of the widget         |
 
 ### default_id
 
@@ -55,7 +55,7 @@ select_team = SelectTeam(default_id=team_id, show_label=False)
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
