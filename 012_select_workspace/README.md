@@ -16,14 +16,14 @@ SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, s
 
 ## Parameters
 
-| Parameters |               Type                |           Description            |
-| :--------: | :-------------------------------: | :------------------------------: |
-| default_id |                int                |          `Workspace` ID          |
-|  team_id   |                int                |            `Team` ID             |
-|  compact   |               bool                |    Show only workspace select    |
-| show_label |               bool                |            Show label            |
-|    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
-| widget_id  |                str                |         Id of the widget         |
+| Parameters |                  Type                   |           Description            |
+| :--------: | :-------------------------------------: | :------------------------------: |
+| default_id |                   int                   |          `Workspace` ID          |
+|  team_id   |                   int                   |            `Team` ID             |
+|  compact   |                  bool                   |    Show only workspace select    |
+| show_label |                  bool                   |            Show label            |
+|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
+| widget_id  |                   str                   |         Id of the widget         |
 
 ### default_id
 
@@ -85,7 +85,7 @@ select_workspace = SelectWorkspace(
 
 Size of input.
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
 
