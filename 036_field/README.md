@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Field` widget in Supervisely app.
+In this tutorial you will learn how to use `Field`, `Field.Icon` widgets in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Field)
 
@@ -88,7 +88,7 @@ Determines url used on `Field` description.
 **default value:** `None`
 
 ```python
-field = Field(content=Empty(), title="Field title", title_url="https://i.imgur.com/0E8d8bB.png")
+field = Field(content=Empty(), title="Field title", description="Field description", description_url="https://i.imgur.com/0E8d8bB.png")
 ```
 
 ![description_url](https://user-images.githubusercontent.com/120389559/218452085-13c262f2-373d-40f0-8167-6d27b391825a.png)

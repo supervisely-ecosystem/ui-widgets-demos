@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Menu` widget in Supervisely app.
+In this tutorial you will learn how to use `Menu`, `Menu.Item`, `Menu.Group` widgets in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Menu)
 
