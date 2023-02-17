@@ -16,15 +16,15 @@ Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly
 
 ## Parameters
 
-| Parameters  |               Type                |           Description           |
-| :---------: | :-------------------------------: | :-----------------------------: |
-|    value    |                str                |          binding value          |
-|  minlength  |                int                |    minimum input text length    |
-|  maxlength  |                int                |    maximum input text length    |
-| placeholder |                str                |      placeholder of input       |
-|    size     | Literal["mini", "small", "large"] |          size of input          |
-|  readonly   |               bool                | same as readonlyin native input |
-|  widget_id  |                str                |        id of the widget         |
+| Parameters  |                  Type                   |           Description           |
+| :---------: | :-------------------------------------: | :-----------------------------: |
+|    value    |                   str                   |          binding value          |
+|  minlength  |                   int                   |    minimum input text length    |
+|  maxlength  |                   int                   |    maximum input text length    |
+| placeholder |                   str                   |      placeholder of input       |
+|    size     | Literal["mini", "small", "large", None] |          size of input          |
+|  readonly   |                  bool                   | same as readonlyin native input |
+|  widget_id  |                   str                   |        id of the widget         |
 
 ### value
 
@@ -82,7 +82,7 @@ input = Input(placeholder="Please input")
 
 Size of input.
 
-**type:** `str`
+**type:** `Literal["mini", "small", "large", None]`
 
 **default value:** `None`
 
