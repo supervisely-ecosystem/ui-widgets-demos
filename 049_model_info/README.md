@@ -18,13 +18,13 @@ ModelInfo(session_id=None, team_id=None, widget_id=None)
 
 | Parameters | Type |   Description    |
 | :--------: | :--: | :--------------: |
-| session_id | int  |    Session ID    |
-|  team_id   | int  |     Team ID      |
+| session_id | int  |   `Session` ID   |
+|  team_id   | int  |    `Team` ID     |
 | widget_id  | str  | Id of the widget |
 
-### switched
+### session_id
 
-Determines `session_id` for which model data will be displayed.
+Determines session ID for which model data will be displayed.
 
 **type:** `int`
 
@@ -32,7 +32,7 @@ Determines `session_id` for which model data will be displayed.
 
 ### team_id
 
-Determines `team_id` for which model data will be displayed.
+Determines team ID for which model data will be displayed.
 
 **type:** `int`
 
