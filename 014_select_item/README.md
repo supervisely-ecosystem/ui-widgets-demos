@@ -126,7 +126,7 @@ api = sly.Api()
 dataset_id = int(os.environ["modal.state.slyDatasetId"])
 ```
 
-### Initialize `SelectDataset` widget
+### Initialize `SelectItem` widget
 
 ```python
 select_item = SelectItem(dataset_id=dataset_id)
