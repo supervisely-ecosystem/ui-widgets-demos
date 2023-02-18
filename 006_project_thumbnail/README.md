@@ -30,7 +30,6 @@ NamedTuple, containing information about project.
 **default value:** `None`
 
 ```python
-# get project info from server
 project = api.project.get_info_by_id(project_id)
 project_thumbnail = ProjectThumbnail(project)
 ```
@@ -79,7 +78,6 @@ api = sly.Api()
 ### Initialize `ProjectThumbnail` widget
 
 ```python
-# get project info from server
 project_id = int(os.environ["modal.state.slyProjectId"])
 project = api.project.get_info_by_id(project_id)
 
