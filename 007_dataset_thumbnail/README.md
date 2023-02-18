@@ -103,7 +103,6 @@ api = sly.Api()
 ### Initialize `DatasetThumbnail` widget
 
 ```python
-# get project and dataset info from server
 project_id = int(os.environ["modal.state.slyProjectId"])
 project = api.project.get_info_by_id(project_id)
 dataset_id = int(os.environ["modal.state.slyDatasetId"])
@@ -117,7 +116,6 @@ dataset_thumbnail = DatasetThumbnail(project_info=project, dataset_info=dataset)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-# create new cards
 card = Card(
     title="Dataset Thumbnail",
     content=Container(widgets=[dataset_thumbnail]),
