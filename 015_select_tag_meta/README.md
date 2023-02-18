@@ -9,23 +9,23 @@ This widget is a select `TagMeta` input, clicking on it can be processed from py
 ## Function signature
 
 ```python
-SelectTagMeta(default=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
+SelectTagMeta(default=None, project_id=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218047319-9e4b681c-ee63-4709-b5c1-24c94f457e7a.png)
 
 ## Parameters
 
-|  Parameters   |                  Type                   |                                        Description                                        |
-| :-----------: | :-------------------------------------: | :---------------------------------------------------------------------------------------: |
-|    default    |                   str                   |                                        `Tag` name                                         |
-|  project_id   |                   int                   |                  Determine `Project` from which `Tags` will be selected.                  |
-| project_meta  |               ProjectMeta               |                Determine `ProjectMeta` from which `Tags` will be selected                 |
-| allowed_types |                List[str]                | Determine `Tags` types witch will be available to select from all the `Tags` in `Project` |
-|  multiselect  |            List[ProjectType]            |                             Allows to select multiple `Tags`                              |
-|  show_label   |                  bool                   |                                        Show label                                         |
-|     size      | Literal["large", "small", "mini", None] |                             Selector size (large/small/mini)                              |
-|   widget_id   |                   str                   |                                     Id of the widget                                      |
+|  Parameters   |                  Type                   |                                    Description                                     |
+| :-----------: | :-------------------------------------: | :--------------------------------------------------------------------------------: |
+|    default    |                   str                   |                                     `Tag` name                                     |
+|  project_id   |                   int                   |              Determine `Project` from which `Tags` will be selected.               |
+| project_meta  |               ProjectMeta               |             Determine `ProjectMeta` from which `Tags` will be selected             |
+| allowed_types |                List[str]                | Determine `Tags` types witch will be available to select from all `Project` `Tags` |
+|  multiselect  |                  bool                   |                          Allows to select multiple `Tags`                          |
+|  show_label   |                  bool                   |                                     Show label                                     |
+|     size      | Literal["large", "small", "mini", None] |                          Selector size (large/small/mini)                          |
+|   widget_id   |                   str                   |                                  Id of the widget                                  |
 
 ### default
 
@@ -64,10 +64,8 @@ Determine `ProjectMeta` from which `Tags` will be selected.
 **default value:** `None`
 
 ```python
-# Get ProjectMeta
 meta_json = api.project.get_meta(project_id)
 project_meta = sly.ProjectMeta.from_json(meta_json)
-# Create widget
 select_tag_meta = SelectTagMeta(project_meta=project_meta)
 ```
 
@@ -75,7 +73,7 @@ select_tag_meta = SelectTagMeta(project_meta=project_meta)
 
 ### allowed_types
 
-Determine `Tags` types witch will be available to select from all the `Tags` in `Project`. Possible `Tag` types: `any_number`, `any_string`, `one_of_string`, `none`.
+Determine `Tags` types witch will be available to select from all `Project` `Tags`. Possible `Tag` types: `any_number`, `any_string`, `one_of_string`, `none`.
 
 **type:** `List[str]`
 
