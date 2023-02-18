@@ -148,13 +148,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                                            |
-| :--------------------: | -------------------------------------------------------------------------------------- |
-|  `get_selected_id()`   | Return List with selected `dataset ID`, if `multiselect` is `True` raise ValueError.   |
-|  `get_selected_ids()`  | Return List with selected `dataset IDs`, if `multiselect` is `False` raise ValueError. |
-|      `disable()`       | Set `disabled` attribute == `True`.                                                    |
-|       `enable()`       | Set `disabled` attribute == `False`.                                                   |
-|    `value_changed`     | Function is handled when selected `dataset ID` is changed.                             |
+| Attributes and Methods | Description                                                                  |
+| :--------------------: | ---------------------------------------------------------------------------- |
+|  `get_selected_id()`   | Return selected `dataset ID`, if `multiselect` is `True` raise ValueError.   |
+|  `get_selected_ids()`  | Return selected `dataset IDs`, if `multiselect` is `False` raise ValueError. |
+|      `disable()`       | Set `disabled` attribute == `True`.                                          |
+|       `enable()`       | Set `disabled` attribute == `False`.                                         |
+|    `value_changed`     | Function is handled when selected `dataset ID` is changed.                   |
 
 ## Mini App Example
 
