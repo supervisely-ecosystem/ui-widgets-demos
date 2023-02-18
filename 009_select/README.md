@@ -176,7 +176,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare items or group of items for `Select` widget using `Select.Item` and `Select.Group`
+### Prepare items and groups of items for `Select` widget using `Select.Item` and `Select.Group`
 
 ```python
 animals_domestic = [
