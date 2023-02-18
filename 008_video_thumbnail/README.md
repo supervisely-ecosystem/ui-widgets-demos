@@ -79,7 +79,6 @@ api = sly.Api()
 ### Initialize `VideoThumbnail` widget
 
 ```python
-# get video info from server
 video_id = int(os.environ["modal.state.slyVideoId"])
 video_info = api.video.get_info_by_id(id=video_id)
 
@@ -91,7 +90,6 @@ video_thumbnail = VideoThumbnail(info=video_info)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-# create new cards
 card = Card(
     title="Video Thumbnail",
     content=Container(widgets=[video_thumbnail]),
