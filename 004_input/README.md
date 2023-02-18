@@ -117,14 +117,14 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods  | Description                                                |
-| :---------------------: | ---------------------------------------------------------- |
-|     `is_readonly()`     | Return `True` if input is readonly, else `False`.          |
-| `set_value(value: str)` | Set input value.                                           |
-|      `get_value()`      | Get input value.                                           |
-|   `enable_readonly()`   | Enable input`s readonly property.                          |
-|  `disable_readonly()`   | Disable input`s readonly property.                         |
-|     `value_changed`     | Decorator function is handled when input value is changed. |
+| Attributes and Methods | Description                                                |
+| :--------------------: | ---------------------------------------------------------- |
+|    `is_readonly()`     | Return `True` if input is readonly, else `False`.          |
+|     `set_value()`      | Set input value.                                           |
+|     `get_value()`      | Get input value.                                           |
+|  `enable_readonly()`   | Enable input`s readonly property.                          |
+|  `disable_readonly()`  | Disable input`s readonly property.                         |
+|    `value_changed`     | Decorator function is handled when input value is changed. |
 
 ## Mini App Example
 
@@ -182,7 +182,6 @@ buttons_container = Container(
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-# create new cards
 card = Card(
     title="Input",
     content=Container(widgets=[input_text, buttons_container]),
