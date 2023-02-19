@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "015_select_tag_meta.src.main:app",
+                "051_binded_input_number.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
