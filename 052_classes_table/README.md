@@ -58,7 +58,7 @@ classes_table = ClassesTable(project_id=project_id)
 
 ### project_fs
 
-Determine input `Project`, upload it from local host.
+Determine input `Project`, located on local host.
 
 **type:** `Project`
 
