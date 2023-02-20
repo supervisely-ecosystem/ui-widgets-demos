@@ -51,27 +51,22 @@ List of series including names and lists of X, Y coordinates
 
 **type:** `list`
 
+```python
+apexchart = Apexchart(
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    # options=...
+    # type=...
+)
+```
+
 ### options
 
 Chart options for customizing styles
 
 **type:** `dict`
 
-### type
-
-Type of chart
-
-**type:** `str`
-
-### height
-
-Type of chart
-
-**type:** `str`
-
 ```python
 apexchart = Apexchart(
-    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
     options={
         "chart": {"type": "line", "zoom": {"enabled": False}},
         "dataLabels": {"enabled": False},
@@ -80,7 +75,39 @@ apexchart = Apexchart(
         "grid": {"row": {"colors": ["#f3f3f3", "transparent"], "opacity": 0.5}},
         "xaxis": {"type": "category"},
     },
+    # series=...,
+    # type=...
+)
+```
+
+### type
+
+Type of chart
+
+**type:** `str`
+
+
+```python
+apexchart = Apexchart(
+    # series=...,
+    # options=...,
     type="line",
+)
+```
+
+### height
+
+Type of chart
+
+**type:** `str`
+
+
+```python
+apexchart = Apexchart(
+    # series=...,
+    # options=...,
+    # type=...,
+    height="500"
 )
 ```
 
