@@ -8,7 +8,7 @@ In this tutorial you will learn how to use **`ConfusionMatrix`** widget in Super
 
 ## Function signature
 
-prepare data for table
+prepare data for widget
 
 ```python
 a = list(range(1, 11))
@@ -29,6 +29,7 @@ confusion_matrix = ConfusionMatrix(
     widget_id=None
 )
 ```
+
 or
 
 ```python
@@ -42,7 +43,7 @@ confusion_matrix.read_pandas(data=pd.DataFrame(data=data, index=b, columns=a))
 
 | Parameters  |            Type            |      Description      |
 | :---------: | :------------------------: | :-------------------: |
-|   `data`    | `pd.DataFrame()` or `dict` |      Table data       |
+|   `data`    | `pd.DataFrame()` or `dict` |   Matrix table data   |
 |  `columns`  |           `list`           | List of columns names |
 |  `x_label`  |           `str`            |     Columns label     |
 |  `y_label`  |           `str`            |      Rows label       |
@@ -50,7 +51,7 @@ confusion_matrix.read_pandas(data=pd.DataFrame(data=data, index=b, columns=a))
 
 ### data
 
-Table data in different formats:
+Matrix table data in different formats:
 
 1. Pandas Dataframe
 
@@ -133,13 +134,13 @@ ID of the widget.
 
 |       Attributes and Methods       | Description                                               |
 | :--------------------------------: | --------------------------------------------------------- |
+|             `loading`              | Get or set table loading status property.                 |
 |            `to_json()`             | Convert table data to json.                               |
 |           `to_pandas()`            | Convert table data to pandas dataframe.                   |
 |      `read_json(value: dict)`      | Read and set table data from json.                        |
 | `read_pandas(value: pd.DataFrame)` | Read and set table data from pandas dataframe.            |
 |     `get_selected_cell(state)`     | Get selected table cell info.                             |
 |              `@click`              | Decodator function is handled when table cell is pressed. |
-|             `loading`              | Get or set table loading status property.                 |
 
 ## Mini App Example
 

@@ -79,7 +79,7 @@ api = sly.Api()
 You can use `RadioGroup`, `Select` or `Switch` widgets to set in `conditional_widget` parameter.
 In this tutorial we will use `Select` widget. 
 
-Prepare images we will use in `Select.Items`
+Prepare sample images
 
 ```python
 image_1 = Image(

@@ -30,7 +30,7 @@ obj_class_view = ObjectClassView(
 
 ### obj_class
 
-Description text of widget
+Supervisely object class
 
 **type:** `sly.ObjClass`
 
@@ -185,7 +185,6 @@ obj_class_field = Field(
     title="Project classes:",
 )
 
-# create widget ProjectThumbnail
 project_thumbnail = ProjectThumbnail(project_info)
 
 card = Card(

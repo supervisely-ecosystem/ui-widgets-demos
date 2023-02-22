@@ -21,16 +21,16 @@ obj_classes_list = ObjectClassesList(
 
 ## Parameters
 
-|    Parameters    |                    Type                     |          Description          |
-| :--------------: | :-----------------------------------------: | :---------------------------: |
-| `object_classes` | `Union[ObjClassCollection, List[ObjClass]]` | collection or list of classes |
-|   `selectable`   |                   `bool`                    |   Enable classes selection    |
-|    `columns`     |                    `int`                    |       Number of columns       |
-|   `widget_id`    |                    `str`                    |       id of the widget        |
+|    Parameters    |                    Type                     |                          Description                          |
+| :--------------: | :-----------------------------------------: | :-----------------------------------------------------------: |
+| `object_classes` | `Union[ObjClassCollection, List[ObjClass]]` | Supervisely object class collection or list of object classes |
+|   `selectable`   |                   `bool`                    |                   Enable classes selection                    |
+|    `columns`     |                    `int`                    |                       Number of columns                       |
+|   `widget_id`    |                    `str`                    |                       ID of the widget                        |
 
 ### object_classes
 
-`sly.ObjClassCollection` or list of `sly.ObjClass`.
+Supervisely object class collection (`sly.ObjClassCollection`) or list of `sly.ObjClass`.
 
 **type:** `Union[ObjClassCollection, List[ObjClass]]`
 
@@ -123,7 +123,6 @@ api = sly.Api()
 project_id = sly.env.project_id()
 dataset_id = sly.env.dataset_id()
 ```
-
 
 ### Get Project info and meta
 

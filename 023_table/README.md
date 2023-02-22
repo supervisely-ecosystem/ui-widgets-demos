@@ -194,7 +194,7 @@ ID of the widget.
 |                                            `to_pandas()`                                             | Convert table data to pandas dataframe.                                 |
 |                                       `read_json(value: dict)`                                       | Read and set table data from json.                                      |
 |                                  `read_pandas(value: pd.DataFrame)`                                  | Read and set table data from pandas dataframe.                          |
-|                                        `insert_row(index=-1)`                                        | Insert new row in table.                                                |
+|                                        `insert_row(index=-1)`                                        | Insert new row in table by index.                                       |
 |                                    `pop_row(value: pd.DataFrame)`                                    | Remove row from table by index.                                         |
 |                                      `get_selected_cell(state)`                                      | Get selected table cell info.                                           |
 |                          `get_html_text_as_button(title: str = "preview")`                           | Static method to get html code for button with given title.             |

@@ -90,8 +90,7 @@ done_label = DoneLabel(
 
 ### Create app layout
 
-Prepare some widgets for demo.
-In this tutorial we will use `Button`, `Progress` widgets
+In this tutorial we will use `Button`, `Progress` widgets for demo.
 
 ```python
 done_label.hide()
