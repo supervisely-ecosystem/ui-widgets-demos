@@ -24,7 +24,7 @@ checkbox = Checkbox(content="Enable")
 
 ### content
 
-Сontent of checkbox input string.
+Checkbox content.
 
 **type:** `Union[Widget, str]`
 
