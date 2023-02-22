@@ -10,7 +10,10 @@ In this tutorial you will learn how to use **`ObjectClassesList`** widget in Sup
 
 ```python
 obj_classes_list = ObjectClassesList(
-    object_classes=project_meta.obj_classes
+    object_classes=project_meta.obj_classes,
+    selectable=False,
+    columns=1,
+    widget_id=None
 )
 ```
 
@@ -27,7 +30,7 @@ obj_classes_list = ObjectClassesList(
 
 ### object_classes
 
-`ObjClassCollection` or list of `ObjClass`.
+`sly.ObjClassCollection` or list of `sly.ObjClass`.
 
 **type:** `Union[ObjClassCollection, List[ObjClass]]`
 
@@ -59,6 +62,8 @@ obj_classes_list = ObjectClassesList(
 Number of columns.
 
 **type:** `int`
+
+**default** `1`
 
 ```python
 obj_classes_list = ObjectClassesList(

@@ -8,15 +8,32 @@ In this tutorial you will learn how to use **`ConfusionMatrix`** widget in Super
 
 ## Function signature
 
+prepare data for table
+
 ```python
-confusion_matrix = ConfusionMatrix()
-confusion_matrix.read_pandas(data=pd.DataFrame(data=data, index=b, columns=a))
+a = list(range(1, 11))
+b = list(range(1, 5))
+
+data = []
+for row in b:
+    temp = [round(row * number, 1) for number in a]
+    data.append(temp)
 ```
 
+```python
+confusion_matrix = ConfusionMatrix(
+    data=pd.DataFrame(data=data, index=b, columns=a),
+    columns=a,
+    x_label="X",
+    y_label="Y",
+    widget_id=None
+)
+```
 or
 
 ```python
-confusion_matrix = ConfusionMatrix(data=pd.DataFrame(data=data, index=b, columns=a))
+confusion_matrix = ConfusionMatrix()
+confusion_matrix.read_pandas(data=pd.DataFrame(data=data, index=b, columns=a))
 ```
 
 ![matrix-default](https://user-images.githubusercontent.com/79905215/218085637-5ca2c068-329b-4e73-8204-a3dfc176acfb.png)
@@ -33,7 +50,7 @@ confusion_matrix = ConfusionMatrix(data=pd.DataFrame(data=data, index=b, columns
 
 ### data
 
-Data of table in different formats:
+Table data in different formats:
 
 1. Pandas Dataframe
 

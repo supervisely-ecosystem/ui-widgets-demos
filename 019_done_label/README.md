@@ -2,14 +2,17 @@
 
 ## Introduction
 
-This widget display message with done label. In this tutorial you will learn how to use **`DoneLabel`** widget in Supervisely app.
+In this tutorial you will learn how to use **`DoneLabel`** widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/done-label)
 
 ## Function signature
 
 ```python
-done_label = DoneLabel(text="Task has been successfully finished")
+done_label = DoneLabel(
+    text="Task has been successfully finished",
+    widget_id=None
+)
 ```
 
 ![label-default](https://user-images.githubusercontent.com/79905215/218078545-53840478-4f2d-4b74-a4c7-2838efba93b9.png)
@@ -18,12 +21,12 @@ done_label = DoneLabel(text="Task has been successfully finished")
 
 | Parameters | Type |        Description         |
 | :--------: | :--: | :------------------------: |
-|    text    | str  | Description text of widget |
-| widget_id  | str  |      ID of the widget      |
+|    `text`    | `str`  | Description text |
+| `widget_id`  | `str`  |      ID of the widget      |
 
 ### text
 
-Description text of widget
+Description text
 
 **type:** `str`
 

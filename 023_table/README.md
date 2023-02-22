@@ -16,22 +16,33 @@ table.read_pandas(pd.DataFrame(data=data, index=b, columns=a))
 or
 
 ```python
-table = Table(data=pd.DataFrame(data=data, index=b, columns=a))
+table = Table(
+    data=pd.DataFrame(data=data, index=b, columns=a),
+    fixed_cols=1,
+    per_page=10,
+    page_sizes=[10, 15, 30, 50, 100],
+    width="auto",
+    sort_column_id=1,
+    sort_direction="asc",
+    widget_id=None
+)
 ```
 
 ![table-new](https://user-images.githubusercontent.com/79905215/218051109-136fdb07-eccf-420f-ae9d-67dd7f195f21.png)
 
 ## Parameters
 
-|  Parameters  |            Type            |               Description               |
-| :----------: | :------------------------: | :-------------------------------------: |
-|    `data`    | `pd.DataFrame()` or `dict` |              Data of table              |
-|  `columns`   |      `Optional[list]`      |          List of columns names          |
-| `fixed_cols` |      `Optional[int]`       | Number of fixed columns (left to right) |
-|  `per_page`  |      `Optional[int]`       |         Default per page value          |
-| `page_sizes` |   `Optional[List[int]]`    |           Page sizes presets            |
-|   `width`    |      `Optional[str]`       |             Width of table              |
-| `widget_id`  |           `str`            |            ID of the widget             |
+|    Parameters    |                Type                |                 Description                 |
+| :--------------: | :--------------------------------: | :-----------------------------------------: |
+|      `data`      |     `pd.DataFrame()` or `dict`     |                Data of table                |
+|    `columns`     |          `Optional[list]`          |            List of columns names            |
+|   `fixed_cols`   |          `Optional[int]`           |   Number of fixed columns (left to right)   |
+|    `per_page`    |          `Optional[int]`           |           Default per page value            |
+|   `page_sizes`   |       `Optional[List[int]]`        |             Page sizes presets              |
+|     `width`      |          `Optional[str]`           |               Width of table                |
+| `sort_column_id` |               `int`                | Column ID by which the table will be sorted |
+| `sort_direction` | `Optional[Literal["asc", "desc"]]` |           Table sorting direction           |
+|   `widget_id`    |               `str`                |              ID of the widget               |
 
 ### data
 
@@ -129,6 +140,42 @@ Page sizes presets.
 
 **default value:** `[10, 15, 30, 50, 100]`
 
+### width
+
+Width of table.
+
+**type:** `Optional[int]`
+
+**default value:** `10`
+
+```python
+table = Table(data=df, width="200px")
+```
+
+### sort_column_id
+
+Column ID by which the table will be sorted.
+
+**type:** `int`
+
+**default value:** `0`
+
+```python
+table = Table(data=df, sort_column_id=2)
+```
+
+### sort_direction
+
+Table sorting direction.
+
+**type:** `Optional[Literal["asc", "desc"]]`
+
+**default value:** `asc`
+
+```python
+table = Table(data=df, sort_direction="desc")
+```
+
 ### widget_id
 
 ID of the widget.
@@ -150,8 +197,6 @@ ID of the widget.
 |                                        `insert_row(index=-1)`                                        | Insert new row in table.                                                |
 |                                    `pop_row(value: pd.DataFrame)`                                    | Remove row from table by index.                                         |
 |                                      `get_selected_cell(state)`                                      | Get selected table cell info.                                           |
-|                                          `@download_as_csv`                                          | Decodator function is handled when "download as csv" button is pressed. |
-|                                               `@click`                                               | Decodator function is handled when table cell is pressed.               |
 |                          `get_html_text_as_button(title: str = "preview")`                           | Static method to get html code for button with given title.             |
 |                               `create_button(title: str = "preview")`                                | Static method to get html code for button with given title.             |
 |                                              `loading`                                               | Get or set table loading status property.                               |
@@ -159,6 +204,9 @@ ID of the widget.
 |                       `delete_row(key_column_name: str, key_cell_value: str)`                        | Delete row by column name and cell value.                               |
 |   `update_cell_value(key_column_name: str, key_cell_value: str, column_name: str, new_value: str)`   | Update single cell value by column name and cell value.                 |
 | `update_matching_cells(key_column_name: str, key_cell_value: str, column_name: str, new_value: str)` | Update all matching cells values by column name and cell value.         |
+|                 `sort(column_id: int, direction: Optional[Literal["asc", "desc"]])`                  | Sort table rows by given column ID and/or order direction.              |
+|                                          `@download_as_csv`                                          | Decodator function is handled when "download as csv" button is pressed. |
+|                                               `@click`                                               | Decodator function is handled when table cell is pressed.               |
 
 ## Mini App Example
 

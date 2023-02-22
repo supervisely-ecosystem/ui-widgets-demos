@@ -9,14 +9,14 @@ In this tutorial you will learn how to use **`Empty`** widget in Supervisely app
 ## Function signature
 
 ```python
-empty = Empty()
+empty = Empty(widget_id=None)
 ```
 
 ## Parameters
 
 | Parameters | Type |   Description    |
 | :--------: | :--: | :--------------: |
-| widget_id  | str  | id of the widget |
+| `widget_id`  | `str`  | ID of the widget |
 
 ### widget_id
 

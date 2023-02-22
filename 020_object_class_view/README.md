@@ -13,6 +13,7 @@ obj_class_view = ObjectClassView(
     obj_class=sly.ObjClass("cat", sly.Bitmap, [255, 0, 0]),
     show_shape_text=True,
     show_shape_icon=True,
+    widget_id=None
 )
 ```
 
@@ -22,10 +23,10 @@ obj_class_view = ObjectClassView(
 
 |   Parameters    |     Type     |         Description          |
 | :-------------: | :----------: | :--------------------------: |
-|    obj_class    | sly.ObjClass |   Supervisely object class   |
-| show_shape_text |     bool     | If `True` display shape text |
-| show_shape_icon |     bool     | If `True` display shape icon |
-|    widget_id    |     str      |       ID of the widget       |
+|    `obj_class`    | `sly.ObjClass` |   Supervisely object class   |
+| `show_shape_text` |     `bool`     | If `True` display shape text |
+| `show_shape_icon` |     `bool`     | If `True` display shape icon |
+|    `widget_id`    |     `str`      |       ID of the widget       |
 
 ### obj_class
 
@@ -34,21 +35,28 @@ Description text of widget
 **type:** `sly.ObjClass`
 
 ```python
-obj_class = sly.ObjClass(name="cat", geometry_type=sly.Bitmap, color=[255, 0, 0])
+obj_class = sly.ObjClass(
+    name="cat",
+    geometry_type=sly.Bitmap,
+    color=[255, 0, 0]
+)
 
 obj_class_view = ObjectClassView(obj_class=obj_class)
 ```
 
 ### show_shape_text
 
-Display object class text
+Display shape text of object class
 
 **type:** `bool`
 
 **default value:** `True`
 
 ```python
-obj_class_view = ObjectClassView(obj_class=obj_class, show_shape_text=False)
+obj_class_view = ObjectClassView(
+    obj_class=obj_class,
+    show_shape_text=False
+)
 ```
 
 ![objclass-show-text](https://user-images.githubusercontent.com/79905215/218081019-0d0d2ebe-69a8-4e7d-b1ce-e647b005dd7b.png)
@@ -62,7 +70,10 @@ Display object class icon
 **default value:** `False`
 
 ```python
-obj_class_view = ObjectClassView(obj_class=obj_class, show_shape_icon=True)
+obj_class_view = ObjectClassView(
+    obj_class=obj_class,
+    show_shape_icon=True
+)
 ```
 
 ![objclass-show-icon](https://user-images.githubusercontent.com/79905215/218080581-9344eb4a-3696-4c75-b9ff-8f1ec96722b7.png)

@@ -2,14 +2,17 @@
 
 ## Introduction
 
-This widget allows to display an element corresponding to selected item in a conditional type widget (e. g. `Select`, `RadioButton`, `Switch`). Clicking on it can be processed from python code. In this tutorial you will learn how to use **`OneOf`** widget in Supervisely app.
+In this tutorial you will learn how to use **`OneOf`** widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/one-of)
 
 ## Function signature
 
 ```python
-one_of = OneOf(conditional_widget=Select(items=animals))
+one_of = OneOf(
+    conditional_widget=Select(items=animals),
+    widget_id=None
+)
 ```
 
 ![sheeps-one-of](https://user-images.githubusercontent.com/79905215/218075609-0428af83-0ef1-492b-8623-fa7a7bd0d3de.png)
@@ -18,18 +21,20 @@ one_of = OneOf(conditional_widget=Select(items=animals))
 
 |     Parameters     |       Type        |                             Description                             |
 | :----------------: | :---------------: | :-----------------------------------------------------------------: |
-| conditional_widget | ConditionalWidget | conditional widget with preset items (e.g. `Select`, `RadioButton`, `Switch`) |
-|     widget_id      |        str        |                          id of the widget                           |
+| `conditional_widget` | `sly.app.widgets.ConditionalWidget` | conditional widget with preset items (e.g. `Select`, `RadioButton`, `Switch`) |
+|     `widget_id`      |        `str`        |                          ID of the widget                           |
 
 ### conditional_widget
 
 Conditional widget with preset items.
 
-**type:** `ConditionalWidget`
+**type:** `sly.app.widgets.ConditionalWidget`
 
 ```python
 # prepare "animals" using RadioGroup.Item
-one_of = OneOf(conditional_widget=RadioGroup(items=animals))
+one_of = OneOf(
+    conditional_widget=RadioGroup(items=animals)
+)
 ```
 
 ![horse-one-of](https://user-images.githubusercontent.com/79905215/218075942-d2754ba6-0b9c-4572-b619-9363a2eecaf3.png)

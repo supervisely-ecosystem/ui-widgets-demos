@@ -22,9 +22,9 @@ checkbox = Checkbox(
 
 | Parameters  |         Type         |         Description         |
 | :---------: | :------------------: | :-------------------------: |
-|  `content`  | `Union[Widget, str]` | content of string or widget |
-|  `checked`  |        `bool`        | whether Checkbox is checked |
-| `widget_id` |        `str`         |      id of the widget       |
+|  `content`  | `Union[Widget, str]` | checkbox content |
+|  `checked`  |        `bool`        | whether checkbox is checked |
+| `widget_id` |        `str`         |      ID of the widget       |
 
 ### content
 
@@ -62,7 +62,7 @@ ID of the widget.
 
 | Attributes and Methods | Description                                                   |
 | :--------------------: | ------------------------------------------------------------- |
-|     `is_checked()`     | Return `True` if checkbox is checked, else `False`.           |
+|     `is_checked()`     | Return `True` if checked, else `False`.           |
 |       `check()`        | Enable `checked` property.                                    |
 |      `uncheck()`       | Disable `checked` property.                                   |
 |    `@value_changed`    | Decorator function is handled when checkbox value is changed. |
@@ -172,7 +172,6 @@ def hide_notification(value):
 def show_info():
     images_count = 0
 
-    # check if checkbox is enabled
     if checkbox.is_checked():
         datasets_list = api.dataset.get_list(project_id=project_id)
         select_dataset.disable()

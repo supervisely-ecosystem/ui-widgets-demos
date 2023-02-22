@@ -16,7 +16,11 @@ classic_table.read_pandas(pd.DataFrame(data=data, index=b, columns=a))
 or
 
 ```python
-classic_table = ClassicTable(data=pd.DataFrame(data=data, index=b, columns=a))
+classic_table = ClassicTable(
+    data=pd.DataFrame(data=data, index=b, columns=a),
+    fixed_columns_num=1,
+    widget_id=None
+)
 ```
 
 ![classic-table](https://user-images.githubusercontent.com/79905215/218053006-6a62f66e-2848-42cb-8dda-6f36146107f0.png)

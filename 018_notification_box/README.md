@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget allows to display notification message. In this tutorial you will learn how to use **`NotificationBox`** widget in Supervisely app.
+In this tutorial you will learn how to use **`NotificationBox`** widget in Supervisely app.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/notification-box)
 
@@ -12,6 +12,8 @@ This widget allows to display notification message. In this tutorial you will le
 note_box = NotificationBox(
     title="Notification Box",
     description="Lorem ipsum dolor sit amet...",
+    box_type="info",
+    widget_id=None
 )
 ```
 
@@ -21,10 +23,10 @@ note_box = NotificationBox(
 
 | Parameters  |                      Type                      |          Description           |
 | :---------: | :--------------------------------------------: | :----------------------------: |
-|    title    |                      str                       | Main title of notification box |
-| description |                      str                       |        Description text        |
-|  box_type   | Literal["success", "info", "warning", "error"] |     Notification box style     |
-|  widget_id  |                      str                       |        ID of the widget        |
+|    `title`    |                      `str`                       | Main title of notification box |
+| `description` |                      `str`                       |        Description text        |
+|  `box_type`   | `Literal["success", "info", "warning", "error"]` |     Notification box style     |
+|  `widget_id`  |                      `str`                       |        ID of the widget        |
 
 ### title
 
