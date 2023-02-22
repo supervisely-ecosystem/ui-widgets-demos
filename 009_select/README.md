@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select type input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Select` widget in Supervisely app.
+This Supervisely widget allows you to create a dropdown menu that lets users select an option from a list of choices. The `Select` widget has event handler that is triggered when the user selects an option from the dropdown menu. This can be useful for applications that require users to take an action based on the selected option, such as filtering content or displaying specific information.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Select)
 
