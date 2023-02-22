@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Text` widget in Supervisely app.
+This Supervisely widget allows you to display text. You can customize the displayed text and it's status which defines text color.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/text)
 

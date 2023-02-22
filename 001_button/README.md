@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Button` widget in Supervisely app.
+This Supervisely widget allows you to create buttons that can be clicked to trigger an action. It is a versatile widget that can be used in a variety of GUI applications.
+
+<!-- With the `Button` widget, you can easily create buttons that have customizable text, colors, and styles. You can also attach event handlers to buttons, so that when a button is clicked, a function is called. -->
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/button)
 

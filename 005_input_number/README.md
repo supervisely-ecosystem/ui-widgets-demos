@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `InputNumber` widget in Supervisely app.
+This Superivsely widget allows you to create input fields for numeric values. It is a useful widget for applications that require users to input numbers, such as a number of data to process or how many augmentations to perform.
+
+The `InputNumber` widget also allows you to set default values for the input field, and set minimum and maximum values for the range of numbers that can be entered. You can also set a step value to control how much the number increases or decreases when the user uses the controls to adjust the value.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/inputnumber)
 

@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Progress Bar` widget in Supervisely app.
+This Supervisely widget allows you to display the progress of a task or operation. It is a useful widget for applications that involve long-running processes or tasks that take time to complete.
+
+With the `Progress Bar` widget, you can easily create a progress bar that updates in real-time or update the progress bar dynamically as a task progresses, giving users a clear indication of how much time is left until the task is complete.
+
+The Progress Bar Widget can be customized to show progress as percents or values.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
 

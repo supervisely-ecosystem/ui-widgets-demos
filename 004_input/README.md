@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Input` widget in Supervisely app.
+This Supervisely widget allows you to create input fields for text. It is a useful widget for applications that require users to enter text, such as project name, dataset name or path to folder or archive with data.
+
+The `Input` widget also allows you to set default text to be displayed in the input field, set text placeholder, set input field to be `readonly`, and set a minimum and maximum length for the input.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/input)
 
