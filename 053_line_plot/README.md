@@ -1,4 +1,4 @@
-# ElementButton
+# Line Plot
 
 ## Introduction
 
@@ -16,18 +16,18 @@ LinePlot(title, series=[], smoothing_weight=0, group_key=None, show_legend=True,
 
 ## Parameters
 
-|       Parameters        | Type |             Description             |
-| :---------------------: | :--: | :---------------------------------: |
-|          title          | str  |          `LinePlot` title           |
-|         series          | list |      List of input data series      |
-|    smoothing_weight     | int  |              Smoothing              |
-|        group_key        | str  |          Synced charts key          |
-|       show_legend       | bool |      Show legend on `LinePlot`      |
-|    decimals_in_float    | int  | Whether the component is selectable |
-| xaxis_decimals_in_float | int  |  Whether the component is disabled  |
-|     yaxis_interval      | list |          Id of the widget           |
-|        widget_id        | str  |          Id of the widget           |
-|    yaxis_autorescale    | bool |          Id of the widget           |
+|       Parameters        | Type |                         Description                          |
+| :---------------------: | :--: | :----------------------------------------------------------: |
+|          title          | str  |                       `LinePlot` title                       |
+|         series          | list |                  List of input data series                   |
+|    smoothing_weight     | int  |                          Smoothing                           |
+|        group_key        | str  |                      Synced charts key                       |
+|       show_legend       | bool |                  Show legend on `LinePlot`                   |
+|    decimals_in_float    | int  | The number of fractions to display floating values in y-axis |
+| xaxis_decimals_in_float | int  | The number of fractions to display floating values in x-axis |
+|     yaxis_interval      | list |          Min and max values on y axis (e.g. [0, 1])          |
+|        widget_id        | str  |                       Id of the widget                       |
+|    yaxis_autorescale    | bool |                       Id of the widget                       |
 
 ### title
 
@@ -56,7 +56,7 @@ line_chart = LinePlot(
 )
 ```
 
-![series](https://user-images.githubusercontent.com/120389559/219959947-59a77142-1208-4bac-b371-0fa54e93afd2.png)
+![series](https://user-images.githubusercontent.com/120389559/220658262-3d4af3e6-70cd-4b02-9a75-18046d4bc401.png)
 
 ### smoothing_weight
 
@@ -65,16 +65,6 @@ Determine `LinePlot` smoothing.
 **type:** `int`
 
 **default value:** `0`
-
-```python
-line_chart = LinePlot(
-    title="Max vs Denis",
-    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
-    smoothing_weight=3,
-)
-```
-
-![smoothing_weight](https://user-images.githubusercontent.com/120389559/219960053-5c90d279-c6a6-4390-8c2e-eef016b661d3.png)
 
 ### group_key
 
@@ -100,21 +90,51 @@ line_chart = LinePlot(
 )
 ```
 
-![show_legend](https://user-images.githubusercontent.com/120389559/219960471-ba7f3745-25c6-4b76-bdec-5583f516be10.png)
+![show_legend](https://user-images.githubusercontent.com/120389559/220660068-1801f5ad-fc21-4ab5-88e4-6f30a5d0a0e4.png)
 
-### disabled
+### decimals_in_float
 
-Determine whether the component is disabled.
+The number of fractions to display floating values in y-axis.
 
-**type:** `bool`
+**type:** `int`
 
-**default value:** `False`
+**default value:** `2`
+
+### xaxis_decimals_in_float
+
+The number of fractions to display floating values in x-axis.
+
+**type:** `int`
+
+**default value:** `None`
 
 ```python
-classes_table = ClassesTable(project_id=project_id, disabled=True)
+line_chart = LinePlot(
+    title="Max vs Denis",
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    xaxis_decimals_in_float=44,
+)
 ```
 
-![disabled](https://user-images.githubusercontent.com/120389559/219955255-6b2a7075-8e58-4934-9ab4-b3dbb4c11ce8.gif)
+![xaxis_decimals_in_float](https://user-images.githubusercontent.com/120389559/220661506-646cc687-bc27-445d-8f05-0b3a2b2efccf.png)
+
+### yaxis_interval
+
+Determine min and max values on y axis (e.g. [0, 1]).
+
+**type:** `list`
+
+**default value:** `None`
+
+```python
+line_chart = LinePlot(
+    title="Max vs Denis",
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    yaxis_interval=[0, 200],
+)
+```
+
+![yaxis_interval](https://user-images.githubusercontent.com/120389559/220662241-f6e86fd9-0410-4e8f-bd18-859e5dfc6dc9.png)
 
 ### widget_id
 
@@ -123,6 +143,24 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+### yaxis_autorescale
+
+Determine min and max values on y axis (e.g. [0, 1]).
+
+**type:** `bool`
+
+**default value:** `True`
+
+```python
+line_chart = LinePlot(
+    title="Max vs Denis",
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    yaxis_interval=[0, 200],
+)
+```
+
+![yaxis_autorescale](https://user-images.githubusercontent.com/120389559/220662241-f6e86fd9-0410-4e8f-bd18-859e5dfc6dc9.png)
 
 ## Methods and attributes
 
