@@ -21,14 +21,14 @@ one_of = OneOf(
 
 |     Parameters     |       Type        |                             Description                             |
 | :----------------: | :---------------: | :-----------------------------------------------------------------: |
-| `conditional_widget` | `sly.app.widgets.ConditionalWidget` | conditional widget with preset items (e.g. `Select`, `RadioButton`, `Switch`) |
+| `conditional_widget` | `ConditionalWidget` | conditional widget with preset items (`Select`, `RadioButton`, `Switch`) |
 |     `widget_id`      |        `str`        |                          ID of the widget                           |
 
 ### conditional_widget
 
 Conditional widget with preset items.
 
-**type:** `sly.app.widgets.ConditionalWidget`
+**type:** `ConditionalWidget`
 
 ```python
 # prepare "animals" using RadioGroup.Item

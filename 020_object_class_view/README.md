@@ -21,18 +21,18 @@ obj_class_view = ObjectClassView(
 
 ## Parameters
 
-|   Parameters    |     Type     |         Description          |
-| :-------------: | :----------: | :--------------------------: |
-|    `obj_class`    | `sly.ObjClass` |   Supervisely object class   |
-| `show_shape_text` |     `bool`     | If `True` display shape text |
-| `show_shape_icon` |     `bool`     | If `True` display shape icon |
-|    `widget_id`    |     `str`      |       ID of the widget       |
+|    Parameters     |    Type    |         Description          |
+| :---------------: | :--------: | :--------------------------: |
+|    `obj_class`    | `ObjClass` |   Supervisely object class   |
+| `show_shape_text` |   `bool`   | If `True` display shape text |
+| `show_shape_icon` |   `bool`   | If `True` display shape icon |
+|    `widget_id`    |   `str`    |       ID of the widget       |
 
 ### obj_class
 
 Supervisely object class
 
-**type:** `sly.ObjClass`
+**type:** `ObjClass`
 
 ```python
 obj_class = sly.ObjClass(
@@ -153,7 +153,7 @@ classes = [
 ]
 ```
 
-### Create `sly.ObjClassCollection` from ObjClasses
+### Create `ObjClassCollection` from ObjClasses
 
 ```python
 classes = sly.ObjClassCollection(classes)

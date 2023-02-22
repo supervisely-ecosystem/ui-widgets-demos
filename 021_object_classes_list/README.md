@@ -30,7 +30,7 @@ obj_classes_list = ObjectClassesList(
 
 ### object_classes
 
-Supervisely object class collection (`sly.ObjClassCollection`) or list of `sly.ObjClass`.
+Supervisely object class collection (`ObjClassCollection`) or list of `ObjClass`.
 
 **type:** `Union[ObjClassCollection, List[ObjClass]]`
 
