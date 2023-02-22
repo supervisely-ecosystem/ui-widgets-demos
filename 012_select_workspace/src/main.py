@@ -20,7 +20,7 @@ select_workspace = SelectWorkspace(
 )
 card = Card(
     title="Select Workspace",
-    content=Container(widgets=[select_project]),
+    content=Container(widgets=[select_workspace]),
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
