@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "006_project_thumbnail.src.main:app",
+                "007_dataset_thumbnail.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
