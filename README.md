@@ -50,6 +50,9 @@
   - [46. File Thumbnail](/046_file_thumbnail/README.md)
   - [47. Input Tag](/047_input_tag/README.md)
   - [48. Switch](/048_switch/README.md)
+  - [49. Model Info](/049_model_info/README.md)
+  - [50. Select App Session](/050_select_app_session/README.md)
+ 
 
 # How to debug widgets
 
