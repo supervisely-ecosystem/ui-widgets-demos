@@ -9,14 +9,14 @@ from supervisely.app.widgets import Card, ClassicTable, Container
 # function that creates example pandas table
 def multiplication_table():
     a = list(range(1, 11))
-    b = list(range(1, 11))
+    b = list(range(1, 6))
 
     data = []
     for row in b:
         temp = [round(row * number, 1) for number in a]
         data.append(temp)
 
-    a = [str(i) for i in a]
+    a = [f"Col#{str(i)}" for i in a]
     b = [str(i) for i in b]
     return pd.DataFrame(data=data, index=b, columns=a)
 
