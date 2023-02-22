@@ -21,7 +21,7 @@ Progress(message=None, show_percents=False, hide_on_finish=True, widget_id=None)
 |    message     |  str  |            progress bar message            |
 | show_percents  | bool  |         show progress in percents          |
 | hide_on_finish | bool  |        hide progress bar on finish         |
-|   widget_id    |  int  | determine whether button is a plain button |
+|   widget_id    |  str  | determine whether button is a plain button |
 
 ### message
 
@@ -70,7 +70,7 @@ progress = Progress(hide_on_finish=True)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
