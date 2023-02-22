@@ -112,12 +112,13 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get Project ID and Dataset ID from environment variables
+### Initialize `Project ID` and `Dataset ID` we will use
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
+project_id = sly.env.project_id()
+dataset_id = sly.env.dataset_id()
 ```
+
 
 ### Get Project info and meta
 

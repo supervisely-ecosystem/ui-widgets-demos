@@ -9,7 +9,11 @@ In this tutorial you will learn how to use `Checkbox` widget in Supervisely app.
 ## Function signature
 
 ```python
-checkbox = Checkbox(content="Enable")
+checkbox = Checkbox(
+    content="Enable",
+    checked=False,
+    widget_id=None
+)
 ```
 
 ![checkbox-default](https://user-images.githubusercontent.com/79905215/218074113-182c113e-5ac4-47ce-96b2-ace63dc59564.png)
@@ -98,11 +102,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get environment variables
+### Initialize `Project ID` we will use
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+project_id = sly.env.project_id()
 ```
 
 ### Initialize `Checkbox` widget

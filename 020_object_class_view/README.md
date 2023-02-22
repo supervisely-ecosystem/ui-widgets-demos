@@ -102,10 +102,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get Project ID from environment variables
+### Initialize `Project ID` we will use
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 ```
 
 ### Get Project info and meta from server

@@ -18,8 +18,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # get variables from environment
-project_id = int(os.environ["modal.state.slyProjectId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+project_id = sly.env.project_id()
 
 # create select project widget
 select_dataset = SelectDataset(
@@ -31,6 +30,7 @@ select_dataset = SelectDataset(
 checkbox = Checkbox(
     content="Choose all datasets",
     checked=False,
+    widget_id=None
 )
 
 # create button to show images
