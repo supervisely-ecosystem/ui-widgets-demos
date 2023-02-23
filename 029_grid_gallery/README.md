@@ -112,7 +112,7 @@ Sync pan & zoom between views.
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 ```
 
-![sync_views](https://user-images.githubusercontent.com/120389559/218132098-3b799735-2494-4eb5-9489-fae636e9d2c5.gif)
+![sync_views](https://user-images.githubusercontent.com/120389559/220902092-012f8f69-cb3c-4187-837d-60dfaa9ad682.gif)
 
 ### widget_id
 
