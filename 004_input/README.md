@@ -126,7 +126,7 @@ ID of the widget.
 |     `get_value()`      | Get input value.                                  |
 |  `enable_readonly()`   | Enable input`s readonly property.                 |
 |  `disable_readonly()`  | Disable input`s readonly property.                |
-|    `value_changed`     | Handled when input value is changed.              |
+|   `value_changed()`    | Handled when input value is changed.              |
 
 ## Mini App Example
 
