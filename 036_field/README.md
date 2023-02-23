@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Field`, `Field.Icon` widgets in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Field)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/field)
 
 ## Function signature
 
@@ -16,15 +16,15 @@ Field(content, title, description=None, title_url=None, description_url=None, ic
 
 ## Parameters
 
-|   Parameters    |    Type    |                Description                 |
-| :-------------: | :--------: | :----------------------------------------: |
-|     content     |   Widget   |        Widget to display on `Field`        |
-|      title      |    str     |          Determines `Field` title          |
-|   description   |    str     |       Determines `Field` description       |
-|    title_url    |    str     |    Determines url used on `Field` title    |
-| description_url |    str     | Determines url used on `Field` description |
-|      icon       | Field.Icon |          Determines `Field` icon           |
-|    widget_id    |    str     |              Id of the widget              |
+|    Parameters     |     Type     |                Description                 |
+| :---------------: | :----------: | :----------------------------------------: |
+|     `content`     |   `Widget`   |        Widget to display on `Field`        |
+|      `title`      |    `str`     |          Determines `Field` title          |
+|   `description`   |    `str`     |       Determines `Field` description       |
+|    `title_url`    |    `str`     |    Determines url used on `Field` title    |
+| `description_url` |    `str`     | Determines url used on `Field` description |
+|      `icon`       | `Field.Icon` |          Determines `Field` icon           |
+|    `widget_id`    |    `str`     |              Id of the widget              |
 
 ### content
 
