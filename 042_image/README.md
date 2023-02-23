@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Image` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Image)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/image)
 
 ## Function signature
 
@@ -16,14 +16,14 @@ Image(url="", widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |                 Description                  |
-| :--------: | :--: | :------------------------------------------: |
-|    url     | str  | Image url or local path to image on the host |
-| widget_id  | str  |               Id of the widget               |
+| Parameters  | Type  |                 Description                  |
+| :---------: | :---: | :------------------------------------------: |
+|    `url`    | `str` | Image url or local path to image on the host |
+| `widget_id` | `str` |               Id of the widget               |
 
 ### url
 
-Image url or local path to image on the host. Determines the image to be displayed on widget.
+Image url or local path to image on the host. Determines image to be displayed on widget.
 
 **type:** `str`
 
@@ -39,7 +39,7 @@ ID of the widget.
 
 | Attributes and Methods | Description                |
 | :--------------------: | -------------------------- |
-|        `set()`         | Set given item in `Image`. |
+|    `set(url: str)`     | Set given item in `Image`. |
 |      `clean_up()`      | Clean `Image` from item.   |
 
 ## Mini App Example
