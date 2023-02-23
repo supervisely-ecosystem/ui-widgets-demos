@@ -12,7 +12,7 @@ In this tutorial you will learn how to use `Menu`, `Menu.Item`, `Menu.Group` wid
 Menu(items=None, groups=None, index=None, width_percent=25, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218469453-0db5046f-0287-40e0-b56e-e6b780bb44f2.gif)
+![default](https://user-images.githubusercontent.com/120389559/220916979-223e32ad-ed9a-4382-be74-148b2f792012.gif)
 
 ## Parameters
 
@@ -48,7 +48,7 @@ items = [
 menu = Menu(items=items)
 ```
 
-![items](https://user-images.githubusercontent.com/120389559/218473788-d3283b51-6d6a-48d5-a31d-4fddd8497d36.gif)
+![items](https://user-images.githubusercontent.com/120389559/220916979-223e32ad-ed9a-4382-be74-148b2f792012.gif)
 
 ### groups
 
