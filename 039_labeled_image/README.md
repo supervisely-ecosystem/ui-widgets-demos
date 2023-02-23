@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `LabeledImage` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/LabeledImage)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/labeledimage)
 
 ## Function signature
 
@@ -16,15 +16,15 @@ LabeledImage(annotations_opacity=0.5, show_opacity_slider=True, enable_zoom=Fals
 
 ## Parameters
 
-|     Parameters      | Type  |                         Description                         |
-| :-----------------: | :---: | :---------------------------------------------------------: |
-| annotations_opacity | float |                       Figures opacity                       |
-| show_opacity_slider | bool  | Determines the presence of opacity slider on `LabeledImage` |
-|     enable_zoom     | bool  |                Enable zoom on `LabeledImage`                |
-|   resize_on_zoom    | bool  |                  Resize card to fit figure                  |
-|   fill_rectangle    | bool  |                        Fill rectange                        |
-|    border_width     |  int  |                        Border width                         |
-|      widget_id      |  str  |                      Id of the widget                       |
+|      Parameters       |  Type   |                         Description                         |
+| :-------------------: | :-----: | :---------------------------------------------------------: |
+| `annotations_opacity` | `float` |                       Figures opacity                       |
+| `show_opacity_slider` | `bool`  | Determines the presence of opacity slider on `LabeledImage` |
+|     `enable_zoom`     | `bool`  |                Enable zoom on `LabeledImage`                |
+|   `resize_on_zoom`    | `bool`  |                  Resize card to fit figure                  |
+|   `fill_rectangle`    | `bool`  |                        Fill rectange                        |
+|    `border_width`     |  `int`  |                        Border width                         |
+|      `widget_id`      |  `str`  |                      Id of the widget                       |
 
 ### annotations_opacity
 
@@ -87,11 +87,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                     |
-| :--------------------: | ------------------------------- |
-|        `set()`         | Set item in `LabeledImage`.     |
-|      `clean_up()`      | Clean `LabeledImage` from item. |
-|      `is_empty()`      | Check `LabeledImage` is empty.  |
+|                                            Attributes and Methods                                             | Description                     |
+| :-----------------------------------------------------------------------------------------------------------: | ------------------------------- |
+| `set(title, image_url, ann: Annotation = None, image_id=None, zoom_to=None, zoom_factor=1.2, title_url=None)` | Set item in `LabeledImage`.     |
+|                                                 `clean_up()`                                                  | Clean `LabeledImage` from item. |
+|                                                 `is_empty()`                                                  | Check `LabeledImage` is empty.  |
 
 ## Mini App Example
 
