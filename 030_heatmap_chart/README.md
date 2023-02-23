@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `HeatmapChart` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/HeatmapChart)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/heatmapchart)
 
 ## Function signature
 
@@ -16,13 +16,13 @@ HeatmapChart(title, data_labels=True, xaxis_title=None, color_range="row", toolt
 
 ## Parameters
 
-| Parameters  |          Type           |                                Description                                |
-| :---------: | :---------------------: | :-----------------------------------------------------------------------: |
-|    title    |           str           |                           `HeatmapChart` title                            |
-| data_labels |          bool           | Determines whether the values ​​in the `HeatmapChart` cells are displayed |
-| xaxis_title |           str           |                                X axe title                                |
-| color_range | Literal["table", "row"] |            Determines the color distribution on `HeatmapChart`            |
-|   tooltip   |           str           |        Determines the displayed value in the `HeatmapChart` cells         |
+|  Parameters   |           Type            |                                Description                                |
+| :-----------: | :-----------------------: | :-----------------------------------------------------------------------: |
+|    `title`    |           `str`           |                           `HeatmapChart` title                            |
+| `data_labels` |          `bool`           | Determines whether the values ​​in the `HeatmapChart` cells are displayed |
+| `xaxis_title` |           `str`           |                               `X` axe title                               |
+| `color_range` | `Literal["table", "row"]` |            Determines the color distribution on `HeatmapChart`            |
+|   `tooltip`   |           `str`           |        Determines the displayed value in the `HeatmapChart` cells         |
 
 ### title
 
@@ -107,11 +107,11 @@ chart = HeatmapChart(
 
 ## Methods and attributes
 
-|  Attributes and Methods   | Description                                    |
-| :-----------------------: | ---------------------------------------------- |
-|   `add_series_batch()`    | Add series of data in `HeatmapChart` by batch. |
-|      `add_series()`       | Add series of data in `HeatmapChart`.          |
-| `get_clicked_datapoint()` | Return data clicked in `HeatmapChart`.         |
+|                    Attributes and Methods                    | Description                                    |
+| :----------------------------------------------------------: | ---------------------------------------------- |
+|               `add_series_batch(series: dict)`               | Add series of data in `HeatmapChart` by batch. |
+| `add_series(name: str, x: list, y: list, send_changes=True)` | Add series of data in `HeatmapChart`.          |
+|                  `get_clicked_datapoint()`                   | Return data clicked in `HeatmapChart`.         |
 
 ## Mini App Example
 
