@@ -4,7 +4,7 @@
 
 This widget is a select type input, clicking on it can be processed from python code. In this tutorial you will learn how to use `Select` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Select)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/select)
 
 ## Function signature
 
@@ -16,15 +16,15 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 
 ## Parameters
 
-| Parameters  |                  Type                   |             Description              |
-| :---------: | :-------------------------------------: | :----------------------------------: |
-|    items    |            List[Select.Item]            |    list of `Select.Item` widgets     |
-|   groups    |           List[Select.Group]            |    list of `Select.Group` widgets    |
-| filterable  |                  bool                   |    whether `Select` is filterable    |
-| placeholder |                   str                   |             placeholder              |
-|    size     | Literal["large", "small", "mini", None] |            size of input             |
-|  multiple   |                  bool                   | whether multiple-select is activated |
-|  widget_id  |                   str                   |           id of the widget           |
+|  Parameters   |                   Type                    |             Description              |
+| :-----------: | :---------------------------------------: | :----------------------------------: |
+|    `items`    |            `List[Select.Item]`            |    List of `Select.Item` widgets     |
+|   `groups`    |           `List[Select.Group]`            |    List of `Select.Group` widgets    |
+| `filterable`  |                  `bool`                   |    Whether `Select` is filterable    |
+| `placeholder` |                   `str`                   |             Placeholder              |
+|    `size`     | `Literal["large", "small", "mini", None]` |            Size of input             |
+|  `multiple`   |                  `bool`                   | Whether multiple-select is activated |
+|  `widget_id`  |                   `str`                   |           Id of the widget           |
 
 ### items
 
@@ -142,12 +142,12 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                |
-| :--------------------: | ---------------------------------------------------------- |
-|     `get_value()`      | Return selected item value.                                |
-|        `set()`         | Set select input items or group of items.                  |
-|     `get_items()`      | Return list of items from widget.                          |
-|    `@value_changed`    | Decorator function is handled when input value is changed. |
+|                          Attributes and Methods                           | Description                                 |
+| :-----------------------------------------------------------------------: | ------------------------------------------- |
+|                               `get_value()`                               | Return selected item value.                 |
+| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items. |
+|                               `get_items()`                               | Return list of items from widget.           |
+|                             `value_changed()`                             | Handled when input value is changed.        |
 
 ## Mini App Example
 
