@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Menu`, `Menu.Item`, `Menu.Group` widgets in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Menu)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/menu)
 
 ## Function signature
 
@@ -16,13 +16,13 @@ Menu(items=None, groups=None, index=None, width_percent=25, widget_id=None)
 
 ## Parameters
 
-|  Parameters   |       Type       |                Description                |
-| :-----------: | :--------------: | :---------------------------------------: |
-|     items     | List[Menu.Item]  |          List of `Menu` `Items`           |
-|    groups     | List[Menu.Group] |          List of `Menu` `Groups`          |
-|     index     |       str        | Sets the active `Menu` at the given index |
-| width_percent |       int        |   Width of the left part of `Menu` in %   |
-|   widget_id   |       str        |             Id of the widget              |
+|   Parameters    |        Type        |                Description                |
+| :-------------: | :----------------: | :---------------------------------------: |
+|     `items`     | `List[Menu.Item]`  |          List of `Menu` `Items`           |
+|    `groups`     | `List[Menu.Group]` |          List of `Menu` `Groups`          |
+|     `index`     |       `str`        | Sets the active `Menu` at the given index |
+| `width_percent` |       `int`        |   Width of the left part of `Menu` in %   |
+|   `widget_id`   |       `str`        |             Id of the widget              |
 
 ### items
 
