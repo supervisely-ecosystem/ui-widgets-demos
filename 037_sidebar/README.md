@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Siderbar` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Siderbar)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/siderbar)
 
 ## Function signature
 
@@ -16,12 +16,12 @@ Siderbar(left_content, right_content, width_percent=25, widget_id=None)
 
 ## Parameters
 
-|  Parameters   |  Type  |                  Description                  |
-| :-----------: | :----: | :-------------------------------------------: |
-| left_content  | Widget | Widget to display in left part of `Siderbar`  |
-| right_content | Widget | Widget to display in right part of `Siderbar` |
-| width_percent |  int   |   Width of the left part of `Siderbar` in %   |
-|   widget_id   |  str   |               Id of the widget                |
+|   Parameters    |   Type   |                  Description                  |
+| :-------------: | :------: | :-------------------------------------------: |
+| `left_content`  | `Widget` | Widget to display in left part of `Siderbar`  |
+| `right_content` | `Widget` | Widget to display in right part of `Siderbar` |
+| `width_percent` |  `int`   |   Width of the left part of `Siderbar` in %   |
+|   `widget_id`   |  `str`   |               Id of the widget                |
 
 ### left_content
 
