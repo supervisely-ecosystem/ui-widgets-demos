@@ -1,8 +1,9 @@
 import os
 import numpy as np
 import supervisely as sly
+from supervisely.app.widgets import Card, Container, LinePlot
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, LinePlot, LineChart
+
 
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
@@ -25,11 +26,9 @@ line_chart = LinePlot(
     show_legend=False,
 )
 
-# element_button = LinePlot(title="LinePlot title")
-
 
 card = Card(
-    # title="Element Button",
+    title="Line Plot",
     content=line_chart,
 )
 layout = Container(widgets=[card])

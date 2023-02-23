@@ -27,11 +27,11 @@ LinePlot(title, series=[], smoothing_weight=0, group_key=None, show_legend=True,
 | xaxis_decimals_in_float | int  | The number of fractions to display floating values in x-axis |
 |     yaxis_interval      | list |          Min and max values on y axis (e.g. [0, 1])          |
 |        widget_id        | str  |                       Id of the widget                       |
-|    yaxis_autorescale    | bool |                       Id of the widget                       |
+|    yaxis_autorescale    | bool |                Set autoscaling of the Y axis                 |
 
 ### title
 
-Determine `LinePlot` title .
+Determine `LinePlot` title.
 
 **type:** `str`
 
@@ -50,6 +50,16 @@ Determine list of input data series.
 **default value:** `[]`
 
 ```python
+size1 = 10
+x1 = list(range(size1))
+y1 = np.random.randint(low=10, high=148, size=size1).tolist()
+s1 = [{"x": x, "y": y} for x, y in zip(x1, y1)]
+
+size2 = 30
+x2 = list(range(size2))
+y2 = np.random.randint(low=0, high=300, size=size2).tolist()
+s2 = [{"x": x, "y": y} for x, y in zip(x2, y2)]
+
 line_chart = LinePlot(
     title="Max vs Denis",
     series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
@@ -146,48 +156,36 @@ ID of the widget.
 
 ### yaxis_autorescale
 
-Determine min and max values on y axis (e.g. [0, 1]).
+Set autoscaling of the Y axis.
 
 **type:** `bool`
 
 **default value:** `True`
 
-```python
-line_chart = LinePlot(
-    title="Max vs Denis",
-    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
-    yaxis_interval=[0, 200],
-)
-```
-
-![yaxis_autorescale](https://user-images.githubusercontent.com/120389559/220662241-f6e86fd9-0410-4e8f-bd18-859e5dfc6dc9.png)
-
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                                                  |
-| :----------------------: | ------------------------------------------------------------ |
-|      `read_meta()`       | Read given `ProjectMeta`.                                    |
-|     `read_project()`     | Read given `Project`.                                        |
-| `read_project_from_id()` | Read given `Project` by ID.                                  |
-| `get_selected_classes()` | Return list of selected classes.                             |
-|   `clear_selection()`    | Clear selected data.                                         |
-|    `value_changed()`     | Decorator function is handled when input value is changed.   |
-|       `loading()`        | Decorator function is handled when input value is uplouding. |
+| Attributes and Methods | Description                                    |
+| :--------------------: | ---------------------------------------------- |
+|   `update_y_range()`   | Update `LinePlot` data.                        |
+|     `add_series()`     | Add new series of data in `LinePlot`.          |
+|  `add_series_batch()`  | Add new series of data in `LinePlot` by batch. |
+|   `add_to_series()`    | Add data to exist series.                      |
+| `get_series_by_name()` | Return series data by name.                    |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/052_classes_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/052_classes_table/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/053_line_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/053_line_plot/src/main.py)
 
 ### Import libraries
 
 ```python
 import os
-
+import numpy as np
 import supervisely as sly
+from supervisely.app.widgets import Card, Container, LinePlot
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ClassesTable
 ```
 
 ### Init API client
@@ -201,11 +199,28 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ClassesTable` widget
+### Prepare series for plot
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-classes_table = ClassesTable(project_id=project_id)
+size1 = 10
+x1 = list(range(size1))
+y1 = np.random.randint(low=10, high=148, size=size1).tolist()
+s1 = [{"x": x, "y": y} for x, y in zip(x1, y1)]
+
+size2 = 30
+x2 = list(range(size2))
+y2 = np.random.randint(low=0, high=300, size=size2).tolist()
+s2 = [{"x": x, "y": y} for x, y in zip(x2, y2)]
+```
+
+### Initialize `LinePlot` widget
+
+```python
+line_chart = LinePlot(
+    title="Max vs Denis",
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    show_legend=False,
+)
 ```
 
 ### Create app layout
@@ -214,8 +229,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    title="Classes Table",
-    content=classes_table,
+    title="Line Plot",
+    content=line_chart,
 )
 
 layout = Container(widgets=[card])
@@ -229,4 +244,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219955799-4f8abe96-8995-4c2a-bf19-61be6cd119d3.gif)
+![layout](https://user-images.githubusercontent.com/120389559/220869621-7e055e46-a81d-4c92-b263-d5ce8e2cc5b5.gif)
