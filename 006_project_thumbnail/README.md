@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `ProjectThumbnail` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/ProjectThumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/projectthumbnail)
 
 ## Function signature
 
@@ -16,10 +16,10 @@ ProjectThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |     Type      |                   Description                    |
-| :--------: | :-----------: | :----------------------------------------------: |
-|    info    | `ProjectInfo` | NamedTuple, containing information about project |
-| widget_id  |      str      |                 id of the widget                 |
+| Parameters  |     Type      |                    Description                     |
+| :---------: | :-----------: | :------------------------------------------------: |
+|   `info`    | `ProjectInfo` | `NamedTuple`, containing information about project |
+| `widget_id` |     `str`     |                  Id of the widget                  |
 
 ### info
 
@@ -44,9 +44,9 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description             |
-| :--------------------: | ----------------------- |
-|        `set()`         | Set input project data. |
+|  Attributes and Methods  | Description             |
+| :----------------------: | ----------------------- |
+| `set(info: ProjectInfo)` | Set input project data. |
 
 ## Mini App Example
 

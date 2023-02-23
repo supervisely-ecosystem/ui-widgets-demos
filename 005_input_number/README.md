@@ -151,7 +151,7 @@ ID of the widget.
 |           `get_value()`           | Get input number value.              |
 |  `min(value: Union[int, float])`  | Set min value value.                 |
 |  `max(value: Union[int, float])`  | Set max value value.                 |
-|          `value_changed`          | Handled when input value is changed. |
+|         `value_changed()`         | Handled when input value is changed. |
 
 ## Mini App Example
 
