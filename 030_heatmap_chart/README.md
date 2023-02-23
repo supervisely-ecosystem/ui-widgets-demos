@@ -86,7 +86,7 @@ chart = HeatmapChart(
 )
 ```
 
-![color_range](https://user-images.githubusercontent.com/120389559/218247863-836b4834-fe1d-499c-a324-9db938ef9f3c.png)
+![color_range](https://user-images.githubusercontent.com/120389559/220913004-f46fa248-3368-4be9-9bb4-0396ebffe56c.png)
 
 ### tooltip
 
