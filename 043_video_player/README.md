@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `VideoPlayer` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/VideoPlayer)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/videoplayer)
 
 ## Function signature
 
@@ -16,11 +16,11 @@ VideoPlayer(url=None, mime_type="video/mp4", widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |                 Description                  |
-| :--------: | :--: | :------------------------------------------: |
-|    url     | str  | Video url or local path to video on the host |
-| mime_type  | str  |                  Video type                  |
-| widget_id  | str  |               Id of the widget               |
+| Parameters  | Type  |                 Description                  |
+| :---------: | :---: | :------------------------------------------: |
+|    `url`    | `str` | Video url or local path to video on the host |
+| `mime_type` | `str` |                  Video type                  |
+| `widget_id` | `str` |               Id of the widget               |
 
 ### url
 
@@ -46,13 +46,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-|  Attributes and Methods   | Description                               |
-| :-----------------------: | ----------------------------------------- |
-|       `set_video()`       | Set video in `VideoPlayer` widget by url. |
-|         `play()`          | Start video to play.                      |
-|         `pause()`         | Stop video playback.                      |
-| `get_current_timestamp()` | Return current video playing step.        |
-| `set_current_timestamp()` | Set current video playing step.           |
+|               Attributes and Methods                | Description                               |
+| :-------------------------------------------------: | ----------------------------------------- |
+| `set_video(url: str, mime_type: str = "video/mp4")` | Set video in `VideoPlayer` widget by url. |
+|                      `play()`                       | Start video to play.                      |
+|                      `pause()`                      | Stop video playback.                      |
+|              `get_current_timestamp()`              | Return current video playing step.        |
+|         `set_current_timestamp(value: int)`         | Set current video playing step.           |
 
 ## Mini App Example
 
