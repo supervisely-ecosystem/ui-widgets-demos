@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Grid` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Grid)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/grid)
 
 ## Function signature
 
@@ -16,12 +16,12 @@ Grid(widgets, columns=1, gap=10, widget_id=None)
 
 ## Parameters
 
-| Parameters |     Type     |             Description              |
-| :--------: | :----------: | :----------------------------------: |
-|  widgets   | List[Widget] | List if widgets to display on `Grid` |
-|  columns   |     int      |     Number of columns on `Grid`      |
-|    gap     |     int      |    Gap between widgets on `Grid`     |
-| widget_id  |     str      |           Id of the widget           |
+| Parameters  |      Type      |             Description              |
+| :---------: | :------------: | :----------------------------------: |
+|  `widgets`  | `List[Widget]` | List if widgets to display on `Grid` |
+|  `columns`  |     `int`      |     Number of columns on `Grid`      |
+|    `gap`    |     `int`      |    Gap between widgets on `Grid`     |
+| `widget_id` |     `str`      |           Id of the widget           |
 
 ### widgets
 
