@@ -4,7 +4,7 @@
 
 This widget is a select `Item` input(`image`, `video`, `volume`, `point_cloud` or `point_cloud_episode`), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectItem)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectitem)
 
 ## Function signature
 
@@ -16,13 +16,13 @@ SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |                  Type                   |           Description            |
-| :--------: | :-------------------------------------: | :------------------------------: |
-| dataset_id |                   int                   |           `Dataset` ID           |
-|  compact   |                  bool                   |     Show only dataset select     |
-| show_label |                  bool                   |            Show label            |
-|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
-| widget_id  |                   str                   |         Id of the widget         |
+|  Parameters  |                   Type                    |           Description            |
+| :----------: | :---------------------------------------: | :------------------------------: |
+| `dataset_id` |                   `int`                   |           `Dataset` ID           |
+|  `compact`   |                  `bool`                   |     Show only dataset select     |
+| `show_label` |                  `bool`                   |            Show label            |
+|    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
+| `widget_id`  |                   `str`                   |         Id of the widget         |
 
 ### dataset_id
 
@@ -92,6 +92,13 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+## Methods and attributes
+
+|                  Attributes and Methods                  | Description                       |
+| :------------------------------------------------------: | --------------------------------- |
+|                   `get_selected_id()`                    | Return selected item id.          |
+| `refresh_items(dataset_id: int = None, limit: int = 50)` | Update items by given dataset id. |
 
 ## Mini App Example
 
