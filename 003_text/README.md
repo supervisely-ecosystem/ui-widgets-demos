@@ -19,7 +19,7 @@ Text(text=None, status="text", widget_id=None)
 | Parameters  |                           Type                           |       Description        |
 | :---------: | :------------------------------------------------------: | :----------------------: |
 |   `text`    |                          `str`                           | Determine displayed text |
-|  `status`   | `Literal["text", "info", "success", "warning", "error"]` |       Text status        |
+|  `status`   | `Literal["text", "info", "success", "warning", "error"]` |      `Text` status       |
 | `widget_id` |                          `str`                           |     Id of the widget     |
 
 ### text
