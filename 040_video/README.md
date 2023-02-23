@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Video` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Video)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/video)
 
 ## Function signature
 
@@ -16,10 +16,10 @@ Video(video_id=None, widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |   Description    |
-| :--------: | :--: | :--------------: |
-|  video_id  | int  |    `Video` ID    |
-| widget_id  | str  | Id of the widget |
+| Parameters  | Type  |   Description    |
+| :---------: | :---: | :--------------: |
+| `video_id`  | `int` |    `Video` ID    |
+| `widget_id` | `str` | Id of the widget |
 
 ### video_id
 
@@ -29,6 +29,8 @@ Determines `Video` ID, used in `Video` widget.
 
 **default value:** `None`
 
+### widget_id
+
 ID of the widget.
 
 **type:** `str`
@@ -37,17 +39,17 @@ ID of the widget.
 
 ## Methods and attributes
 
-|  Attributes and Methods   | Description                                                         |
-| :-----------------------: | ------------------------------------------------------------------- |
-|       `set_video()`       | Set video in `Video` widget by ID.                                  |
-|   `set_current_frame()`   | Set video player to given frame.                                    |
-|   `get_current_frame()`   | Get current video player frame.                                     |
-|     `play_clicked()`      | Called when video start to play.                                    |
-|     `pause_clicked()`     | Called when video stopped.                                          |
-| `frame_change_started()`  | Called when a frame index is being changed.                         |
-| `frame_change_finished()` | Called when there was no change in frame index for the last second. |
-|   `get_frames_count()`    | Return number of frames in video.                                   |
-|     `@loading.setter`     | Decorator function used to download video by ID.                    |
+|     Attributes and Methods      | Description                                                         |
+| :-----------------------------: | ------------------------------------------------------------------- |
+|      `set_video(id: int)`       | Set video in `Video` widget by ID.                                  |
+| `set_current_frame(value: int)` | Set video player to given frame.                                    |
+|      `get_current_frame()`      | Get current video player frame.                                     |
+|        `play_clicked()`         | Called when video start to play.                                    |
+|        `pause_clicked()`        | Called when video stopped.                                          |
+|    `frame_change_started()`     | Called when a frame index is being changed.                         |
+|    `frame_change_finished()`    | Called when there was no change in frame index for the last second. |
+|      `get_frames_count()`       | Return number of frames in video.                                   |
+|     `loading(value: bool)`      | Used to download video by ID.                                       |
 
 ## Mini App Example
 
