@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `GridGallery` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/GridGallery)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/gridgallery)
 
 ## Function signature
 
@@ -26,15 +26,15 @@ GridGallery(
 
 ## Parameters
 
-|     Parameters      | Type  |                        Description                         |
-| :-----------------: | :---: | :--------------------------------------------------------: |
-|   columns_number    |  int  |       Determines number of columns on `GridGallery`        |
-| annotations_opacity | float |                      Figures opacity                       |
-| show_opacity_slider | bool  | Determines the presence of opacity slider on `GridGallery` |
-|     enable_zoom     | bool  |                Enable zoom on `GridGallery`                |
-|   resize_on_zoom    | bool  |                 Resize card to fit figure                  |
-|     sync_views      | bool  |               Sync pan & zoom between views                |
-|      widget_id      |  str  |                      Id of the widget                      |
+|      Parameters       |  Type   |                        Description                         |
+| :-------------------: | :-----: | :--------------------------------------------------------: |
+|   `columns_number`    |  `int`  |       Determines number of columns on `GridGallery`        |
+| `annotations_opacity` | `float` |                      Figures opacity                       |
+| `show_opacity_slider` | `bool`  | Determines the presence of opacity slider on `GridGallery` |
+|     `enable_zoom`     | `bool`  |                Enable zoom on `GridGallery`                |
+|   `resize_on_zoom`    | `bool`  |                 Resize card to fit figure                  |
+|     `sync_views`      | `bool`  |               Sync pan & zoom between views                |
+|      `widget_id`      |  `str`  |                      Id of the widget                      |
 
 ### columns_number
 
@@ -124,10 +124,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                         |
-| :--------------------: | ----------------------------------- |
-|       `append()`       | Add item in `GridGallery`.          |
-|      `clean_up()`      | Clean `GridGallery` from all items. |
+|                                                                       Attributes and Methods                                                                        | Description                         |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------- |
+|                                                               `get_column_index(incoming_value: int)`                                                               | Return column index by given value. |
+| `append(image_url: str, annotation: Annotation = None, title: str = "", column_index: int = None, zoom_to: int = None, zoom_factor: float = 1.2, title_url = None)` | Add item in `GridGallery`.          |
+|                                                                            `clean_up()`                                                                             | Clean `GridGallery` from all items. |
 
 ## Mini App Example
 
