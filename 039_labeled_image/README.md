@@ -69,7 +69,7 @@ labeled_image = LabeledImage(enable_zoom=True)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![enable_zoom](https://user-images.githubusercontent.com/120389559/220935315-390aee4d-4b15-4b9c-bbf9-507eac9a922d.gif)
+![enable_zoom](https://user-images.githubusercontent.com/120389559/220936622-b42760eb-4438-451b-af3e-cfbde9f1cad7.gif)
 
 ### resize_on_zoom
 
