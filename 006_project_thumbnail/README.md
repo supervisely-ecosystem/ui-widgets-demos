@@ -23,7 +23,7 @@ ProjectThumbnail(info=None, widget_id=None)
 
 ### info
 
-NamedTuple, containing information about project.
+`NamedTuple`, containing information about project.
 
 **type:** `ProjectInfo`
 
