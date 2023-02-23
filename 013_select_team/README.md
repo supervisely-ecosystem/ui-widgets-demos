@@ -4,7 +4,7 @@
 
 This widget is a select `Team` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectTeam` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectWorkspace)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectworkspace)
 
 ## Function signature
 
@@ -16,12 +16,12 @@ SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |                  Type                   |           Description            |
-| :--------: | :-------------------------------------: | :------------------------------: |
-| default_id |                   int                   |            `Team` ID             |
-| show_label |                  bool                   |            Show label            |
-|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
-| widget_id  |                   str                   |         Id of the widget         |
+|  Parameters  |                   Type                    |           Description            |
+| :----------: | :---------------------------------------: | :------------------------------: |
+| `default_id` |                   `int`                   |            `Team` ID             |
+| `show_label` |                  `bool`                   |            Show label            |
+|    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
+| `widget_id`  |                   `str`                   |         Id of the widget         |
 
 ### default_id
 
@@ -79,6 +79,12 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+## Methods and attributes
+
+| Attributes and Methods | Description              |
+| :--------------------: | ------------------------ |
+|  `get_selected_id()`   | Return selected team id. |
 
 ## Mini App Example
 
