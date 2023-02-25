@@ -16,15 +16,15 @@ ClassesTable(project_meta=None, project_id=None, project_fs=None, allowed_types=
 
 ## Parameters
 
-|  Parameters   |       Type       |                                Description                                 |
-| :-----------: | :--------------: | :------------------------------------------------------------------------: |
-| project_meta  |  `ProjectMeta`   |                            Input `ProjectMeta`                             |
-|  project_id   |       int        |                              Input project ID                              |
-|  project_fs   |    `Project`     |                              Input `Project`                               |
-| allowed_types | List[`Geometry`] | `Geometry` types witch will not be display from all types in given project |
-|  selectable   |       bool       |                    Whether the component is selectable                     |
-|   disabled    |       bool       |                     Whether the component is disabled                      |
-|   widget_id   |       str        |                              Id of the widget                              |
+|   Parameters    |       Type       |                                Description                                |
+| :-------------: | :--------------: | :-----------------------------------------------------------------------: |
+| `project_meta`  |  `ProjectMeta`   |                            Input `ProjectMeta`                            |
+|  `project_id`   |      `int`       |                             Input project ID                              |
+|  `project_fs`   |    `Project`     |                              Input `Project`                              |
+| `allowed_types` | `List[Geometry]` | `Geometry` types that will not be display from all types in given project |
+|  `selectable`   |      `bool`      |                    Whether the component is selectable                    |
+|   `disabled`    |      `bool`      |                     Whether the component is disabled                     |
+|   `widget_id`   |      `str`       |                             Id of the widget                              |
 
 ### project_meta
 
@@ -74,7 +74,7 @@ classes_table = ClassesTable(project_fs=project)
 
 ### allowed_types
 
-Determine `Geometry` types witch will not be display from all types in given project.
+Determine `Geometry` types that will not be display from all types in given project.
 
 **type:** `List[Geometry]`
 
@@ -124,15 +124,15 @@ ID of the widget.
 
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                                                  |
-| :----------------------: | ------------------------------------------------------------ |
-|      `read_meta()`       | Read given `ProjectMeta`.                                    |
-|     `read_project()`     | Read given `Project`.                                        |
-| `read_project_from_id()` | Read given `Project` by ID.                                  |
-| `get_selected_classes()` | Return list of selected classes.                             |
-|   `clear_selection()`    | Clear selected data.                                         |
-|    `value_changed()`     | Decorator function is handled when input value is changed.   |
-|       `loading()`        | Decorator function is handled when input value is uplouding. |
+|           Attributes and Methods           | Description                                                  |
+| :----------------------------------------: | ------------------------------------------------------------ |
+| `read_meta(project_meta: sly.ProjectMeta)` | Read given `ProjectMeta`.                                    |
+|  `read_project(project_fs: sly.Project)`   | Read given `Project`.                                        |
+|  `read_project_from_id(project_id: int)`   | Read given `Project` by ID.                                  |
+|          `get_selected_classes()`          | Return list of selected classes.                             |
+|            `clear_selection()`             | Clear selected data.                                         |
+|             `value_changed()`              | Decorator function is handled when input value is changed.   |
+|           `loading(value: bool)`           | Decorator function is handled when input value is uplouding. |
 
 ## Mini App Example
 
@@ -144,10 +144,9 @@ You can find this example in our Github repository:
 
 ```python
 import os
-
-import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ClassesTable
+import supervisely as sly
+from supervisely.app.widgets import Container, ClassesTable, Text, Card
 ```
 
 ### Init API client
@@ -161,11 +160,23 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ClassesTable` widget
+### Initialize `ClassesTable` widget by project ID
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
-classes_table = ClassesTable(project_id=project_id)
+class_table = ClassesTable(project_id=project_id)
+label = Text("")
+```
+
+### Initialize `ClassesTable` widget by local project
+
+```python
+data_dir = sly.app.get_data_dir()
+project_dir = os.path.join(data_dir, "sly_project")
+sly.Project.download(api, project_id, project_dir)
+project = sly.Project(project_dir, sly.OpenMode.READ)
+local_class_table = ClassesTable(project_fs=project)
+local_label = Text("")
 ```
 
 ### Create app layout
@@ -173,12 +184,11 @@ classes_table = ClassesTable(project_id=project_id)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-card = Card(
-    title="Classes Table",
-    content=classes_table,
+card = Card(title="Classes Table", content=Container([class_table, label], gap=5))
+card_local = Card(
+    title="Classes Table Local", content=Container([local_class_table, local_label], gap=5)
 )
-
-layout = Container(widgets=[card])
+layout = Container(widgets=[card, card_local])
 ```
 
 ### Create app using layout
@@ -189,4 +199,19 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219955799-4f8abe96-8995-4c2a-bf19-61be6cd119d3.gif)
+### Handle ClassesTable clicks
+
+Use the decorator as shown below to handle `ClassesTable` clicks.
+
+```python
+@class_table.value_changed
+def class_table_value_changed(selected_classes):
+    label.text = f"Selected classes: {', '.join(selected_classes)}"
+
+
+@local_class_table.value_changed
+def class_table_value_changed(selected_classes):
+    local_label.text = f"Selected classes: {', '.join(selected_classes)}"
+```
+
+![layout](https://user-images.githubusercontent.com/120389559/221355359-03e32c23-3a89-4e63-996d-78417ba43e39.gif)
