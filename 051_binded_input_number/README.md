@@ -16,14 +16,14 @@ BindedInputNumber(width=256, height=256, min=1, max=10000, proportional=False, w
 
 ## Parameters
 
-|  Parameters  | Type |                    Description                     |
-| :----------: | :--: | :------------------------------------------------: |
-|    width     | int  |                    width value                     |
-|    height    | int  |                    height value                    |
-|     min      | int  |             the minimum allowed value              |
-|     max      | int  |             the maximum allowed value              |
-| proportional | bool | synchronize changes in width and height parameters |
-|  widget_id   | str  |                  id of the widget                  |
+|   Parameters   |  Type  |                    Description                     |
+| :------------: | :----: | :------------------------------------------------: |
+|    `width`     | `int`  |                    Width value                     |
+|    `height`    | `int`  |                    Weight value                    |
+|     `min`      | `int`  |               Minimum allowed value                |
+|     `max`      | `int`  |               Maximum allowed value                |
+| `proportional` | `bool` | Synchronize changes in width and height parameters |
+|  `widget_id`   | `str`  |                  Id of the widget                  |
 
 ### width
 
@@ -73,7 +73,7 @@ Maximum allowed value.
 binded_input_number = BindedInputNumber(width=12, height=12, min=10, max=14)
 ```
 
-![min_max](https://user-images.githubusercontent.com/120389559/219941158-c6377743-d55f-4ec9-bee4-aeb530622157.gif)
+![min_max](https://user-images.githubusercontent.com/120389559/221354865-018d95d0-c540-462c-888f-b9b1fc71a389.gif)
 
 ### proportional
 
@@ -87,7 +87,7 @@ Synchronize changes in width and height parameters.
 binded_input_number = BindedInputNumber(proportional=True)
 ```
 
-![proportional](https://user-images.githubusercontent.com/120389559/219941279-f0207c65-dcf5-4418-a819-a1bc8e575ec0.gif)
+![proportional](https://user-images.githubusercontent.com/120389559/221354956-e537a019-80ec-4964-b4b3-fbbf5052747b.gif)
 
 ### widget_id
 
@@ -99,15 +99,15 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                             |
-| :--------------------: | --------------------------------------- |
-|       `value()`        | Set widgets `width` and `height` filed. |
-|     `get_value()`      | Get input `width` and `height` values.  |
-|    `proportional()`    | Set `proportional` value.               |
-|        `min()`         | Set `min` value.                        |
-|        `max()`         | Set `max` value.                        |
-|      `disable()`       | Disable widget.                         |
-|       `enable()`       | Enable widget.                          |
+|      Attributes and Methods      | Description                             |
+| :------------------------------: | --------------------------------------- |
+| `value(width: int, height: int)` | Set widgets `width` and `height` filed. |
+|          `get_value()`           | Get input `width` and `height` values.  |
+|   `proportional(value: bool)`    | Set `proportional` value.               |
+|        `min(value: int)`         | Set `min` value.                        |
+|        `max(value: int)`         | Set `max` value.                        |
+|           `disable()`            | Disable widget.                         |
+|            `enable()`            | Enable widget.                          |
 
 ## Mini App Example
 
