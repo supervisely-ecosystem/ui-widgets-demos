@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `BindedInputNumber` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/BindedInputNumber)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/bindedinputnumber)
 
 ## Function signature
 

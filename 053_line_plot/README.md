@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `LinePlot` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/LinePlot)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/lineplot)
 
 ## Function signature
 

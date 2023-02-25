@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `ClassesTable` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/ClassesTable)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classestable)
 
 ## Function signature
 
