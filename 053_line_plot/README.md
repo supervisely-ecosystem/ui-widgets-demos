@@ -16,18 +16,18 @@ LinePlot(title, series=[], smoothing_weight=0, group_key=None, show_legend=True,
 
 ## Parameters
 
-|       Parameters        | Type |                         Description                          |
-| :---------------------: | :--: | :----------------------------------------------------------: |
-|          title          | str  |                       `LinePlot` title                       |
-|         series          | list |                  List of input data series                   |
-|    smoothing_weight     | int  |                          Smoothing                           |
-|        group_key        | str  |                      Synced charts key                       |
-|       show_legend       | bool |                  Show legend on `LinePlot`                   |
-|    decimals_in_float    | int  | The number of fractions to display floating values in y-axis |
-| xaxis_decimals_in_float | int  | The number of fractions to display floating values in x-axis |
-|     yaxis_interval      | list |          Min and max values on y axis (e.g. [0, 1])          |
-|        widget_id        | str  |                       Id of the widget                       |
-|    yaxis_autorescale    | bool |                Set autoscaling of the Y axis                 |
+|        Parameters         |  Type  |                         Description                          |
+| :-----------------------: | :----: | :----------------------------------------------------------: |
+|          `title`          | `str`  |                       `LinePlot` title                       |
+|         `series`          | `list` |                  List of input data series                   |
+|    `smoothing_weight`     | `int`  |                          Smoothing                           |
+|        `group_key`        | `str`  |                      Synced charts key                       |
+|       `show_legend`       | `bool` |                  Show legend on `LinePlot`                   |
+|    `decimals_in_float`    | `int`  | The number of fractions to display floating values in y-axis |
+| `xaxis_decimals_in_float` | `int`  | The number of fractions to display floating values in x-axis |
+|     `yaxis_interval`      | `list` |          Min and max values on y axis (e.g. [0, 1])          |
+|        `widget_id`        | `str`  |                       Id of the widget                       |
+|    `yaxis_autorescale`    | `bool` |                Set autoscaling of the Y axis                 |
 
 ### title
 
@@ -164,13 +164,13 @@ Set autoscaling of the Y axis.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                    |
-| :--------------------: | ---------------------------------------------- |
-|   `update_y_range()`   | Update `LinePlot` data.                        |
-|     `add_series()`     | Add new series of data in `LinePlot`.          |
-|  `add_series_batch()`  | Add new series of data in `LinePlot` by batch. |
-|   `add_to_series()`    | Add data to exist series.                      |
-| `get_series_by_name()` | Return series data by name.                    |
+|                        Attributes and Methods                        | Description                                    |
+| :------------------------------------------------------------------: | ---------------------------------------------- |
+|                `update_y_range(ymin: int, ymax: int)`                | Update `LinePlot` data.                        |
+| `add_series(name: str, x: list, y: list, send_changes: bool = True)` | Add new series of data in `LinePlot`.          |
+|                   `add_series_batch(series: list)`                   | Add new series of data in `LinePlot` by batch. |
+|         `add_to_series(name_or_id: str or int, data: dict)`          | Add data to exist series.                      |
+|                   `get_series_by_name(name: str)`                    | Return series data by name.                    |
 
 ## Mini App Example
 
