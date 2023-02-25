@@ -69,11 +69,11 @@ match = MatchTagMetas(
     left_collection=tag_metas_left,
     right_collection=tag_metas_right,
     left_name="left tags",
-    right_name="right_tags",
+    right_name="right tags",
 )
 ```
 
-![left_right](https://user-images.githubusercontent.com/120389559/221365702-4851d5ad-ea7b-44b4-8f27-4bec51622076.png)
+![left_right](https://user-images.githubusercontent.com/120389559/221367169-9c4e1a6a-6eda-4330-8c27-d60e315525d3.png)
 
 ### selectable
 
@@ -152,7 +152,7 @@ project_meta_right = sly.ProjectMeta.from_json(meta_json_right)
 tag_metas_right = project_meta_right.tag_metas
 ```
 
-### Initialize `MatchTagMetas` widget, initiate suffix to match tags with similar names
+### Initialize `MatchTagMetas` widget, initiate `suffix` to match tags with similar names
 
 ```python
 match = MatchTagMetas(

@@ -20,8 +20,15 @@ project_meta_right = sly.ProjectMeta.from_json(meta_json_right)
 tag_metas_right = project_meta_right.tag_metas
 
 
+# match = MatchTagMetas(
+#     left_collection=tag_metas_left, right_collection=tag_metas_right, suffix="afes"
+# )
+
 match = MatchTagMetas(
-    left_collection=tag_metas_left, right_collection=tag_metas_right, suffix="afes"
+    left_collection=tag_metas_left,
+    right_collection=tag_metas_right,
+    left_name="left tags",
+    right_name="right tags",
 )
 
 
