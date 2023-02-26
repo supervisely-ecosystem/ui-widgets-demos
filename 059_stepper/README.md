@@ -153,7 +153,6 @@ button_increase = Button(text="Increase step")
 button_decrease = Button(text="Decrease step")
 
 buttons_container = Container(widgets=[button_increase, button_decrease])
-buttons_card = Card(content=buttons_container)
 ```
 
 ### Create app layout
@@ -161,6 +160,7 @@ buttons_card = Card(content=buttons_container)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
+buttons_card = Card(content=buttons_container)
 layout = Container(widgets=[card, buttons_card])
 ```
 
