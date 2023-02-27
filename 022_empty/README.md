@@ -2,7 +2,12 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`Empty`** widget in Supervisely app.
+**`Empty`** widget is a simple placeholder widget that can be used to create empty spaces within a layout. 
+
+It has no content or functionality of its own and is typically used to provide spacing or alignment within a larger widget or layout. This widget is particularly useful for creating clean, organized interfaces with clearly defined sections and layouts.
+
+
+
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/empty)
 

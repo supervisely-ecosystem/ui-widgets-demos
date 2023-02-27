@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`ConfusionMatrix`** widget in Supervisely app.
+**`ConfusionMatrix`** is a widget that display a given confusion matrix with color-coded visualization for better interpretation. It also shows row and column totals. 
+
+`ConfusionMatrix` allows users to customize the axis labels, detect cell clicking events, and control it from Python code.
+
+
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/confusion-matrix)
 

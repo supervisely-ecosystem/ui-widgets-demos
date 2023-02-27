@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`ObjectClassesList`** widget in Supervisely app.
+**`ObjectClassesList`** is a widget that allows users to view a list of all given object classes. The widget provides a flexible display option with a choice of single-column or multiple-column layouts. It also allows users to select or deselect one or more classes, making it easy to manage and organize object classes. This widget is a useful tool for visualizing and selecting classes in Supervisely.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/object-classes-list)
 

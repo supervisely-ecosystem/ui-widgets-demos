@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`ClassicTable`** widget in Supervisely app.
+**`ClassicTable`** is a widget in Supervisely that is used for displaying and manipulating data in a table format. It was similar to the `Table` widget but with fewer customization options and functionalities. 
+
+It is recommended to use the newer `Table` widget instead.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classic-table)
 

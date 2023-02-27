@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`Table`** widget in Supervisely app.
+**`Table`** widget in Supervisely allows for displaying and manipulating data in a table format. 
+
+It supports data in the Pandas DataFrame format or a Python dictionary with a specific structure. 
+
+The `Table` widget allows searching, sorting by column and direction, and the ability to download or customize data before downloading. It also allows for the creation of buttons in table cells and updating table data in real-time through Python code. 
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/table)
 

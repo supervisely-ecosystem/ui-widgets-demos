@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`OneOf`** widget in Supervisely app.
+**`OneOf`**  is a container widget that can hold one of several child widgets, such as `Radio`, `Select`, or `Switch`. Depending on the value selected by the user within these child widgets, the corresponding item will be added to the page markup. It is very convenient for those who are involved in object annotation on images, as it allows them to quickly switch between different types of annotation without losing sight of the overall picture.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/one-of)
 
