@@ -2,7 +2,10 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`Apexchart`** widget in Supervisely app.
+**`Apexchart`** is a widget in Supervisely that allows for displaying interactive charts on the UI. 
+It supports various chart types such as `line`, `area`, and `bar`. Users can customize the chart by changing the chart type, color schemes, and legend location.
+
+It also provides functionality for data streaming and dynamic updates, allowing the chart to display real-time data. The data can be passed to the chart in the form of a pandas dataframe or a Python list of dictionaries. Additionally, users can control the chart through Python code by detecting events such as clicking on a data point or hovering over a chart element.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/apexchart)
 
@@ -41,7 +44,7 @@ apexchart = Apexchart(
 | :-----------: | :---------------: | :----------------------------------------------------------: |
 |   `series`    |      `list`       | List of series including names and lists of X, Y coordinates |
 |   `options`   |      `dict`       |             Chart options for customizing styles             |
-|    `type`     |       `str`       |                        Type of chart                         |
+|    `type`     |       `str`       |            Type of chart (`line`, `bar`, `area`)             |
 |   `height`    | `Union[int, str]` |                        Widget height                         |
 | `sly_options` |      `dict`       |       Additional options used in supervisely component       |
 
@@ -82,25 +85,69 @@ apexchart = Apexchart(
 
 ### type
 
-Type of chart
+Type of chart. It supports following chart types: line, area, bar.
 
 **type:** `str`
 
-
 ```python
 apexchart = Apexchart(
-    # series=...,
-    # options=...,
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    options={
+        "chart": {"type": "line", "zoom": {"enabled": False}},
+        "dataLabels": {"enabled": False},
+        "stroke": {"curve": "smooth", "width": 2},
+        "title": {"text": "Product Trends by Month", "align": "left"},
+        "grid": {"row": {"colors": ["#f3f3f3", "transparent"], "opacity": 0.5}},
+        "xaxis": {"type": "category"},
+    },
     type="line",
 )
 ```
 
+![line](https://user-images.githubusercontent.com/79905215/221541384-7eceb61e-85d2-4922-b015-287e14caa264.png)
+
+```python
+apexchart = Apexchart(
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    options={
+        "chart": {"type": "line", "zoom": {"enabled": False}},
+        "dataLabels": {"enabled": False},
+        "stroke": {"curve": "smooth", "width": 2},
+        "title": {"text": "Product Trends by Month", "align": "left"},
+        "grid": {"row": {"colors": ["#f3f3f3", "transparent"], "opacity": 0.5}},
+        "xaxis": {"type": "category"},
+    },
+    type="area",
+)
+```
+
+![area](https://user-images.githubusercontent.com/79905215/221541404-c24fc594-7e6d-4887-a115-9fac5f5c6fff.png)
+
+```python
+apexchart = Apexchart(
+    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    options={
+        "chart": {"type": "line", "zoom": {"enabled": False}},
+        "dataLabels": {"enabled": False},
+        "stroke": {"curve": "smooth", "width": 2},
+        "title": {"text": "Product Trends by Month", "align": "left"},
+        "grid": {"row": {"colors": ["#f3f3f3", "transparent"], "opacity": 0.5}},
+        "xaxis": {"type": "category"},
+    },
+    type="bar",
+)
+```
+
+![bar](https://user-images.githubusercontent.com/79905215/221541398-6f506670-65dc-45ce-b504-cb8905076f9b.png)
+
+
 ### height
 
-Type of chart
+Widget height
 
-**type:** `str`
+**type:** `Union[int, str]`
 
+**default value:** `"300"`
 
 ```python
 apexchart = Apexchart(
@@ -117,13 +164,6 @@ Additional options used in supervisely component.
 
 **type:** `dict`
 
-### height
-
-Widget height
-
-**type:** `Union[int, str]`
-
-**default value:** `300`
 
 ## Methods and attributes
 
