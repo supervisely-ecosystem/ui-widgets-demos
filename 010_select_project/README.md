@@ -9,7 +9,15 @@ This widget is a select `Project` input, clicking on it can be processed from py
 ## Function signature
 
 ```python
-SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[], show_label=True, size=None, widget_id=None)
+SelectProject(
+    default_id=None,
+    workspace_id=None,
+    compact=False,
+    allowed_types=[],
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217844120-65f36676-0e42-4a75-a74b-3ae2f8d18167.png)

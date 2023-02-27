@@ -9,7 +9,15 @@ In this tutorial you will learn how to use `LabeledImage` widget in Supervisely 
 ## Function signature
 
 ```python
-LabeledImage(annotations_opacity=0.5, show_opacity_slider=True, enable_zoom=False, esize_on_zoom=False, fill_rectangle=True, border_width=3, widget_id=None)
+LabeledImage(
+    annotations_opacity=0.5,
+    show_opacity_slider=True,
+    enable_zoom=False,
+    esize_on_zoom=False,
+    fill_rectangle=True,
+    border_width=3,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218493332-ef9ed5d9-d42e-4044-8948-e3208c00d88f.gif)

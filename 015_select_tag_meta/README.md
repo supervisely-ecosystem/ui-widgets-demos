@@ -9,7 +9,16 @@ This widget is a select `TagMeta` input, clicking on it can be processed from py
 ## Function signature
 
 ```python
-SelectTagMeta(default=None, project_id=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
+SelectTagMeta(
+    default=None,
+    project_id=None,
+    project_meta=None,
+    allowed_types=None,
+    multiselect=False,
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218047319-9e4b681c-ee63-4709-b5c1-24c94f457e7a.png)

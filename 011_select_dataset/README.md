@@ -9,7 +9,16 @@ This widget is a select `Dataset` input, clicking on it can be processed from py
 ## Function signature
 
 ```python
-SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False, show_label=True, size=None, disabled=False, widget_id=None)
+SelectDataset(
+    default_id=None,
+    project_id=None,
+    multiselect=False,
+    compact=False,
+    show_label=True,
+    size=None,
+    disabled=False,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217846091-eb9b97a2-8a11-4e61-b8fe-2387b8a3137c.png)

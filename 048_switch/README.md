@@ -9,7 +9,17 @@ In this tutorial you will learn how to use `Switch` widget in Supervisely app.
 ## Function signature
 
 ```python
-Switch(switched=False, width=58, on_text="ON", off_text="OFF", on_color=None,  off_color=None, on_content=None, off_content=None, widget_id=None)
+Switch(
+    switched=False,
+    width=58,
+    on_text="ON",
+    off_text="OFF",
+    on_color=None,
+    off_color=None,
+    on_content=None,
+    off_content=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/219039067-9798a2ba-2bbc-42f7-94b1-dabb4e6da37b.gif)
