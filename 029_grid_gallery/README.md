@@ -34,6 +34,8 @@ GridGallery(
 |     `enable_zoom`     | `bool`  |                Enable zoom on `GridGallery`                |
 |   `resize_on_zoom`    | `bool`  |                 Resize card to fit figure                  |
 |     `sync_views`      | `bool`  |               Sync pan & zoom between views                |
+|   `fill_rectangle`    | `bool`  |                       Fill rectange                        |
+|    `border_width`     |  `int`  |                        Border width                        |
 |      `widget_id`      |  `str`  |                      Id of the widget                      |
 
 ### columns_number
@@ -113,6 +115,40 @@ grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 ```
 
 ![sync_views](https://user-images.githubusercontent.com/120389559/220902092-012f8f69-cb3c-4187-837d-60dfaa9ad682.gif)
+
+### fill_rectangle
+
+Determines to fill rectange figure or not.
+
+**type:** `bool`
+
+**default value:** `true`
+
+```python
+grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
+```
+
+![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221578556-76d7bc99-c74d-4b0e-a64f-af7371b15e43.gif)
+
+```python
+grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
+```
+
+![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221579195-e66458a0-b79c-43f6-9310-819150833b1a.gif)
+
+### border_width
+
+Determines border width to rectange figures.
+
+**type:** `int`
+
+**default value:** `3`
+
+```python
+grid_gallery = GridGallery(columns_number=3, border_width=12)
+```
+
+![border_width](https://user-images.githubusercontent.com/120389559/221580110-d98abb1b-bc91-4928-a419-b2841fcd7eea.png)
 
 ### widget_id
 
