@@ -9,7 +9,15 @@ In this tutorial you will learn how to use `ClassesTable` widget in Supervisely 
 ## Function signature
 
 ```python
-ClassesTable(project_meta=None, project_id=None, project_fs=None, allowed_types=None, selectable=True, disabled=False, widget_id=None)
+ClassesTable(
+    project_meta=None,
+    project_id=None,
+    project_fs=None,
+    allowed_types=None,
+    selectable=True,
+    disabled=False,
+    widget_id=None,
+)
 ```
 
 ![project_id](https://user-images.githubusercontent.com/120389559/219954018-a0d76d1e-d617-4729-9f8f-62ad688031ad.png)

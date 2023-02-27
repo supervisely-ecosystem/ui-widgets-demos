@@ -9,7 +9,15 @@ In this tutorial you will learn how to use `MatchObjClasses` widget in Supervise
 ## Function signature
 
 ```python
-MatchObjClasses(left_collection=None, right_collection=None, left_name=None, right_name=None, selectable=False, suffix=None, widget_id=None)
+MatchObjClasses(
+    left_collection=None,
+    right_collection=None,
+    left_name=None,
+    right_name=None,
+    selectable=False,
+    suffix=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221399402-fab17435-f5e8-4746-b331-1e33f52b44ae.png)

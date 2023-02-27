@@ -9,7 +9,15 @@ In this tutorial you will learn how to use `MatchTagMetas` widget in Supervisely
 ## Function signature
 
 ```python
-MatchTagMetas(left_collection=None, right_collection=None, left_name=None, right_name=None, selectable=False, suffix=None, widget_id=None)
+MatchTagMetas(
+    left_collection=None,
+    right_collection=None,
+    left_name=None,
+    right_name=None,
+    selectable=False,
+    suffix=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221365567-f5b7359e-9e92-49be-910a-b613d566f7f2.png)

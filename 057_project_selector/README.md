@@ -9,7 +9,14 @@ In this tutorial you will learn how to use `ProjectSelector` widget in Supervise
 ## Function signature
 
 ```python
-ProjectSelector(team_id=None, workspace_id=None, project_id=None, team_is_selectable=True, datasets_is_selectable=True, widget_id=None)
+ProjectSelector(
+    team_id=None,
+    workspace_id=None,
+    project_id=None,
+    team_is_selectable=True,
+    datasets_is_selectable=True,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221404961-9a9bc6a8-feae-4295-b0a2-5d70c295341e.gif)

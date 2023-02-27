@@ -9,7 +9,18 @@ In this tutorial you will learn how to use `LinePlot` widget in Supervisely app.
 ## Function signature
 
 ```python
-LinePlot(title, series=[], smoothing_weight=0, group_key=None, show_legend=True, decimals_in_float=2, xaxis_decimals_in_float=None, yaxis_interval=None, widget_id=None, yaxis_autorescale=True)
+LinePlot(
+    title,
+    series=[],
+    smoothing_weight=0,
+    group_key=None,
+    show_legend=True,
+    decimals_in_float=2,
+    xaxis_decimals_in_float=None,
+    yaxis_interval=None,
+    widget_id=None,
+    yaxis_autorescale=True,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/219958867-13bb604e-d890-475d-ab46-8b41063620ba.png)
