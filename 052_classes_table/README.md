@@ -24,15 +24,15 @@ ClassesTable(
 
 ## Parameters
 
-|   Parameters    |       Type       |                                Description                                |
-| :-------------: | :--------------: | :-----------------------------------------------------------------------: |
-| `project_meta`  |  `ProjectMeta`   |                            Input `ProjectMeta`                            |
-|  `project_id`   |      `int`       |                             Input project ID                              |
-|  `project_fs`   |    `Project`     |                              Input `Project`                              |
-| `allowed_types` | `List[Geometry]` | `Geometry` types that will not be display from all types in given project |
-|  `selectable`   |      `bool`      |                    Whether the component is selectable                    |
-|   `disabled`    |      `bool`      |                     Whether the component is disabled                     |
-|   `widget_id`   |      `str`       |                             Id of the widget                              |
+|   Parameters    |       Type       |                              Description                              |
+| :-------------: | :--------------: | :-------------------------------------------------------------------: |
+| `project_meta`  |  `ProjectMeta`   |                          Input `ProjectMeta`                          |
+|  `project_id`   |      `int`       |                           Input project ID                            |
+|  `project_fs`   |    `Project`     |                            Input `Project`                            |
+| `allowed_types` | `List[Geometry]` | `Geometry` types that will be display from all types in given project |
+|  `selectable`   |      `bool`      |                  Whether the component is selectable                  |
+|   `disabled`    |      `bool`      |                   Whether the component is disabled                   |
+|   `widget_id`   |      `str`       |                           Id of the widget                            |
 
 ### project_meta
 
@@ -82,14 +82,14 @@ classes_table = ClassesTable(project_fs=project)
 
 ### allowed_types
 
-Determine `Geometry` types that will not be display from all types in given project.
+Determine `Geometry` types that will be display from all types in given project.
 
 **type:** `List[Geometry]`
 
 **default value:** `None`
 
 ```python
-classes_table = ClassesTable(project_id=project_id, allowed_types=[sly.Bitmap])
+classes_table = ClassesTable(project_id=project_id, allowed_types=[sly.Polygon])
 ```
 
 ![allowed_types](https://user-images.githubusercontent.com/120389559/219954233-dd463cec-b385-4386-b951-3b017df55f3e.png)
