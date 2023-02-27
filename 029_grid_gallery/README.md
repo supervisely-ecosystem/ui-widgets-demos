@@ -131,7 +131,7 @@ grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
 ![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221578556-76d7bc99-c74d-4b0e-a64f-af7371b15e43.gif)
 
 ```python
-grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
+grid_gallery = GridGallery(columns_number=3)
 ```
 
 ![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221579195-e66458a0-b79c-43f6-9310-819150833b1a.gif)
