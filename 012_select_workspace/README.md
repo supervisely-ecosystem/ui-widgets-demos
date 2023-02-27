@@ -60,10 +60,10 @@ Show only `Workspace` select.
 **default value:** `false`
 
 ```python
-select_workspace = SelectWorkspace(default_id=workspace_id, team_id=team_id, compact=True)
+select_workspace = SelectWorkspace(default_id=workspace_id, compact=True)
 ```
 
-![compact](https://user-images.githubusercontent.com/120389559/218032327-61a184cc-cc6b-4d94-8bdf-c1bd8d3926b6.png)
+![compact](https://user-images.githubusercontent.com/120389559/221557626-042f1911-7065-48d4-a830-c003f0baa4d2.png)
 
 ### show_label
 
@@ -79,7 +79,7 @@ select_workspace = SelectWorkspace(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/218032520-111c307b-1147-4483-b5f5-592e96533dff.png)
+![show_label](https://user-images.githubusercontent.com/120389559/221558086-abb3aaa3-8f2c-46f5-8ec4-3f66125aed9e.png)
 
 ### size
 
@@ -88,6 +88,32 @@ Size of input.
 **type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
+
+```python
+select_workspace = SelectWorkspace(default_id=workspace_id, compact=True, show_label=False)
+select_workspace_mini = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="mini"
+)
+select_workspace_small = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="small"
+)
+select_workspace_large = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="large"
+)
+card = Card(
+    title="Select Workspace",
+    content=Container(
+        widgets=[
+            select_workspace,
+            select_workspace_mini,
+            select_workspace_small,
+            select_workspace_large,
+        ]
+    ),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/221558737-7a9ecd44-dae9-4d39-ad6f-319ff1ae3ab7.png)
 
 ### widget_id
 
