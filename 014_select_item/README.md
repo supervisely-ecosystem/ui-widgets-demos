@@ -50,6 +50,8 @@ Show only `Dataset` select.
 select_item = SelectItem(dataset_id=dataset_id, compact=False)
 ```
 
+![compact](https://user-images.githubusercontent.com/120389559/221548050-4e7707fb-a665-43c6-a7db-8f969b212c63.png)
+
 ### show_label
 
 Determine show text `Item` on widget or not.
