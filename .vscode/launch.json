@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "060_textarea.src.main:app",
+                "061_grid_plot.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
