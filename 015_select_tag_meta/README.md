@@ -4,11 +4,13 @@
 
 This widget is a select `TagMeta` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectTagMeta` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selecttagmeta)
+
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectTagMeta)
 
 ## Function signature
 
 ```python
+
 SelectTagMeta(
     default=None,
     project_id=None,
@@ -19,6 +21,7 @@ SelectTagMeta(
     size=None,
     widget_id=None,
 )
+
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218047319-9e4b681c-ee63-4709-b5c1-24c94f457e7a.png)
