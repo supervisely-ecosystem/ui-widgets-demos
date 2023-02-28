@@ -2,7 +2,8 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Image` widget in Supervisely app.
+**`Image`** widget in Supervisely is a simple widget that displays images using the HTML `<img>` tag, and is convenient to use when there is no need to add extra functions for displaying annotations or adjusting their settings, but only to display the image passed to it by url or local path.
+
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Image)
 
@@ -16,10 +17,10 @@ Image(url="", widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |                 Description                  |
-| :--------: | :--: | :------------------------------------------: |
-|    url     | str  | Image url or local path to image on the host |
-| widget_id  | str  |               Id of the widget               |
+| Parameters  | Type  |                 Description                  |
+| :---------: | :---: | :------------------------------------------: |
+|    `url`    | `str` | Image url or local path to image on the host |
+| `widget_id` | `str` |               ID of the widget               |
 
 ### url
 
@@ -27,7 +28,9 @@ Image url or local path to image on the host. Determines the image to be display
 
 **type:** `str`
 
-**default value:** ``
+**default value:** `""`
+
+### widget_id
 
 ID of the widget.
 
@@ -37,10 +40,10 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                |
-| :--------------------: | -------------------------- |
-|        `set()`         | Set given item in `Image`. |
-|      `clean_up()`      | Clean `Image` from item.   |
+| Attributes and Methods | Description                         |
+| :--------------------: | ----------------------------------- |
+|    `set(url: str)`     | Set image by url in `Image` widget. |
+|      `clean_up()`      | Clean `Image` widget from item.     |
 
 ## Mini App Example
 
@@ -70,19 +73,19 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ImageInfos` we will use in UI
+### Get images infos from server
 
 ```python
 IMAGE_ID1 = 11073637
 IMAGE_ID2 = 17526002
 IMAGE_ID3 = 17526001
-# get image info from server
+
 image_info_1 = api.image.get_info_by_id(IMAGE_ID1)
 image_info_2 = api.image.get_info_by_id(IMAGE_ID2)
 image_info_3 = api.image.get_info_by_id(IMAGE_ID3)
 ```
 
-### Get image url
+### Get images urls
 
 ```python
 image_url_1 = image_info_1.preview_url
@@ -90,7 +93,7 @@ image_url_2 = image_info_2.preview_url
 image_url_3 = image_info_3.preview_url
 ```
 
-### Initialize `Image` widget
+### Initialize `Image` widgets we will use in UI
 
 ```python
 image_1 = Image(image_url_1)
@@ -98,10 +101,10 @@ image_2 = Image(image_url_2)
 image_3 = Image(image_url_3)
 ```
 
-### Declare static files directory path and initialize local `Image`
+### Declare static files directory path and initialize `Image` using image from local directory
 
 ```python
-static_dir = Path('042_image/images')
+static_dir = Path("042_image/images")
 local_image_url = "/static/my-cats.jpg"
 local_image = Image(local_image_url)
 ```
