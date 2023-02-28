@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`GridGallery`** is a widget in Supervisely used for displaying multiple images in a grid format. 
+**`GridGallery`** is a widget in Supervisely used for displaying multiple images in a grid format.
 Allowing for annotations to be displayed on the images, the ability to hide annotations of specific classes, adjust their transparency and zoom level, making it a convenient widget for visualizing annotated image results.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/gridgallery)
@@ -166,7 +166,7 @@ ID of the widget.
 |                                Attributes and Methods                                 | Description                         |
 | :-----------------------------------------------------------------------------------: | ----------------------------------- |
 |                                       `loading`                                       | Get or set `loading` property.      |
-|                      `get_column_index(incoming_value)`                               | Return column index by given value. |
+|                          `get_column_index(incoming_value)`                           | Return column index by given value. |
 | `append(image_url, annotation, title, column_index, zoom_to, zoom_factor, title_url)` | Add item in `GridGallery`.          |
 |                                     `clean_up()`                                      | Clean `GridGallery` from all items. |
 

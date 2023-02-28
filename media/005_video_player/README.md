@@ -50,17 +50,17 @@ ID of the widget.
 
 ## Methods and attributes
 
-|        Attributes and Methods         | Description                                                   |
-| :-----------------------------------: | ------------------------------------------------------------- |
-|                 `url`                 | Get `url` property.                                           |
-|              `mime_type`              | Get `mime_type` property.                                     |
+|               Attributes and Methods                | Description                                                   |
+| :-------------------------------------------------: | ------------------------------------------------------------- |
+|                        `url`                        | Get `url` property.                                           |
+|                     `mime_type`                     | Get `mime_type` property.                                     |
 | `set_video(url: str, mime_type: str = "video/mp4")` | Set video in `VideoPlayer` widget by url.                     |
-|               `play()`                | Start video to play.                                          |
-|               `pause()`               | Stop video playback.                                          |
-|       `get_current_timestamp()`       | Return current video playing step.                            |
-|  `set_current_timestamp(value: int)`  | Set current video playing step.                               |
-|        `draw_mask(path: str)`         | Draw a mask image on top of the video without changing video. |
-|             `hide_mask()`             | Hide the drawn mask from the video.                           |
+|                      `play()`                       | Start video to play.                                          |
+|                      `pause()`                      | Stop video playback.                                          |
+|              `get_current_timestamp()`              | Return current video playing step.                            |
+|         `set_current_timestamp(value: int)`         | Set current video playing step.                               |
+|               `draw_mask(path: str)`                | Draw a mask image on top of the video without changing video. |
+|                    `hide_mask()`                    | Hide the drawn mask from the video.                           |
 
 ## Mini App Example
 

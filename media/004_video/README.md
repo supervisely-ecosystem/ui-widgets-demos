@@ -41,8 +41,8 @@ ID of the widget.
 
 |     Attributes and Methods      | Description                                                                                |
 | :-----------------------------: | ------------------------------------------------------------------------------------------ |
-|        `video_id(id: int)`      | Get `video_id` property.                                                                   |
-|       `loading(value: bool)`    | Get or set `loading` property to `Video` widget.                                           |
+|       `video_id(id: int)`       | Get `video_id` property.                                                                   |
+|     `loading(value: bool)`      | Get or set `loading` property to `Video` widget.                                           |
 |      `set_video(id: int)`       | Set video in `Video` widget by ID.                                                         |
 | `set_current_frame(value: int)` | Set video player to given frame.                                                           |
 |      `get_current_frame()`      | Get current video player frame.                                                            |

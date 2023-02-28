@@ -1,60 +1,24 @@
 # UI Widgets demos
 
-**List of all currently available supervisely widgets:**
+[Hello World](hello_world/README.md) - tutorial that will guide you through the process of creating a simple Python application that uses widgets to provide an interactive user interface.
 
-  - [1. Button](/001_button/README.md)
-  - [2. Progress Bar](/002_progress_bar/README.md)
-  - [3. Text](/003_text/README.md)
-  - [4. Input](/004_input/README.md)
-  - [5. Input Number](/005_input_number/README.md)
-  - [6. Project Thumbnail](/006_project_thumbnail/README.md)
-  - [7. Dataset Thumbnail](/007_dataset_thumbnail/README.md)
-  - [8. Video Thumbnail](/008_video_thumbnail/README.md)
-  - [9. Select](/009_select/README.md)
-  - [10. Select Project](/010_select_project/README.md)
-  - [11. Select Dataset](/011_select_dataset/README.md)
-  - [12. Select Workspace](/012_select_workspace/README.md)
-  - [13. Select Team](/013_select_team/README.md)
-  - [14. Select Item](/014_select_item/README.md)
-  - [15. Select TagMeta](/015_select_tag_meta/README.md)
-  - [16. Checkbox](/016_checkbox/README.md)
-  - [17. One of](/017_one_of/README.md)
-  - [18. Notification Box](/018_notification_box/README.md)
-  - [19. Done Label](/019_done_label/README.md)
-  - [20. Object Class View](/020_object_class_view/README.md)
-  - [21. Object Class List](/021_object_classes_list/README.md)
-  - [22. Empty](/022_empty/README.md)
-  - [23. Table](/023_table/README.md)
-  - [24. Classic Table](/024_classic_table/README.md)
-  - [25. Confusion Matrix](/025_confusion_matrix/README.md)
-  - [26. Radio Table](/026_radio_table/README.md)
-  - [27. Flexbox](/027_flexbox/README.md)
-  - [28. Grid](/028_grid/README.md)
-  - [29. Grid Gallery](/029_grid_gallery/README.md)
-  - [30. Heatmap Chart](/030_heatmap_chart/README.md)
-  - [31. Apex Chart](/031_apex_chart/README.md)
-  - [32. Line Chart](/032_line_chart/README.md)
-  - [33. Identity](/033_identity/README.md)
-  - [34. Container](/034_container/README.md)
-  - [35. Card](/035_card/README.md)
-  - [36. Field](/036_field/README.md)
-  - [37. Sidebar](/037_sidebar/README.md)
-  - [38. Menu](/038_menu/README.md)
-  - [39. Labeled Image](/039_labeled_image/README.md)
-  - [40. Video](/040_video/README.md)
-  - [41. Dialog message](/041_dialog_message/README.md)
-  - [42. Image](/042_image/README.md)
-  - [43. Video Player](/043_video_player/README.md)
-  - [44. Radio Group](/044_radio_group/README.md)
-  - [45. Folder Thumbnail](/045_folder_thumbnail/README.md)
-  - [46. File Thumbnail](/046_file_thumbnail/README.md)
-  - [47. Input Tag](/047_input_tag/README.md)
-  - [48. Switch](/048_switch/README.md)
-  - [49. Model Info](/049_model_info/README.md)
-  - [50. Select App Session](/050_select_app_session/README.md)
- 
+**List of widgets categories:**
 
-# How to debug widgets
+ - [Input](input/001_input/README.md)
+ - [Controls](controls/README.md)
+ - [Text Elements](text%20elements/README.md)
+ - [Media](media/README.md)
+ - [Selection](selection/README.md)
+ - [Thumbnails](thumbnail/README.md)
+ - [Status Elements](status%20elements/README.md)
+ - [Layouts and Containers](layouts%20and%20containers/README.md)
+ - [Tables](tables/README.md)
+ - [Charts and Plots](charts%20and%20plots/README.md)
+ - [Compare Data](compare%20data/README.md)
+
+
+
+<!-- # How to debug widgets
 
 **Step 1.** Prepare `~/supervisely.env` file with credentials. [Learn more here](https://developer.supervise.ly/getting-started/basics-of-authentication#how-to-use-in-python).
 
@@ -82,4 +46,4 @@ Select widget that you want to debug and enter its folder name to 10th line of `
 
 To launch app with widget go to `Run and Debug` section and press `play` button as shown on an image below and go to uvicorn server specified in `launch.json` `0.0.0.0:8000`. Link to uvicorn server will be displayed in terminal.
 
-![step_5](https://user-images.githubusercontent.com/48913536/202445868-12c35bae-f372-4a19-b01c-0b9e9ea38c0d.png)
+![step_5](https://user-images.githubusercontent.com/48913536/202445868-12c35bae-f372-4a19-b01c-0b9e9ea38c0d.png) -->
