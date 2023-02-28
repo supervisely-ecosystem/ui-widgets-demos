@@ -2,7 +2,8 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `GridGallery` widget in Supervisely app.
+**`GridGallery`** is a widget in Supervisely used for displaying multiple images in a grid format. 
+Allowing for annotations to be displayed on the images, the ability to hide annotations of specific classes, adjust their transparency and zoom level, making it a convenient widget for visualizing annotated image results.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/gridgallery)
 
@@ -22,7 +23,7 @@ GridGallery(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218119199-81c0a7f8-d1c1-4d8f-976d-43f6bdc86851.gif)
+![grid_gallery_def](https://user-images.githubusercontent.com/79905215/221854917-45d58570-a2f3-4c2b-a107-023a4346ed8f.png)
 
 ## Parameters
 
@@ -50,7 +51,7 @@ Determines number of columns on `GridGallery`.
 grid_gallery = GridGallery(columns_number=4)
 ```
 
-![columns](https://user-images.githubusercontent.com/120389559/218127708-13c6f79e-fd51-4ea8-9f7e-a6a6889f71d5.png)
+![grid_gallery_col](https://user-images.githubusercontent.com/79905215/221855119-b605aaa9-82ea-4e6d-aef1-6c9f4d5f7041.png)
 
 ### annotations_opacity
 
@@ -64,7 +65,7 @@ Figures opacity.
 grid_gallery = GridGallery(columns_number=3, annotations_opacity=1)
 ```
 
-![annotations_opacity](https://user-images.githubusercontent.com/120389559/218128278-925a8f65-5505-43ec-a3a0-1eb34bc6dc2d.png)
+![grid_gallery_opacity](https://user-images.githubusercontent.com/79905215/221855404-56e3d197-200c-41ce-bab2-78bdfddeeaef.png)
 
 ### show_opacity_slider
 
@@ -78,7 +79,7 @@ Determines the presence of opacity slider on `GridGallery`.
 grid_gallery = GridGallery(columns_number=3, show_opacity_slider=False)
 ```
 
-![show_opacity_slider](https://user-images.githubusercontent.com/120389559/218129356-d3dc9c92-3d00-4e5f-a361-1a5b0c97a120.png)
+![grid_gallery_opacity_slider](https://user-images.githubusercontent.com/79905215/221855593-99aeda6d-68bf-4cfa-87cc-1f78a2e46c18.png)
 
 ### enable_zoom
 
@@ -92,7 +93,7 @@ Enable zoom on `GridGallery`.
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True)
 ```
 
-![enable_zoom](https://user-images.githubusercontent.com/120389559/218130261-31160ede-13c4-4a08-8998-3949678ed943.gif)
+![grid_gallery_zoom](https://user-images.githubusercontent.com/79905215/221856143-7eb079d0-38ea-460d-9ca5-f38d1146bbb3.gif)
 
 ### resize_on_zoom
 
@@ -114,7 +115,7 @@ Sync pan & zoom between views.
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 ```
 
-![sync_views](https://user-images.githubusercontent.com/120389559/220902092-012f8f69-cb3c-4187-837d-60dfaa9ad682.gif)
+![grid_gallery_sync](https://user-images.githubusercontent.com/79905215/221856489-2aa2d8ad-4930-47ae-a907-98f47764e176.gif)
 
 ### fill_rectangle
 
@@ -150,6 +151,7 @@ grid_gallery = GridGallery(columns_number=3, border_width=12)
 
 ![border_width](https://user-images.githubusercontent.com/120389559/221580110-d98abb1b-bc91-4928-a419-b2841fcd7eea.png)
 
+
 ### widget_id
 
 ID of the widget.
@@ -160,11 +162,14 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                                                                       Attributes and Methods                                                                        | Description                         |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------- |
-|                                                               `get_column_index(incoming_value: int)`                                                               | Return column index by given value. |
-| `append(image_url: str, annotation: Annotation = None, title: str = "", column_index: int = None, zoom_to: int = None, zoom_factor: float = 1.2, title_url = None)` | Add item in `GridGallery`.          |
-|                                                                            `clean_up()`                                                                             | Clean `GridGallery` from all items. |
+
+|                                Attributes and Methods                                 | Description                         |
+| :-----------------------------------------------------------------------------------: | ----------------------------------- |
+|                                       `loading`                                       | Get or set `loading` property.      |
+|                      `get_column_index(incoming_value)`                               | Return column index by given value. |
+| `append(image_url, annotation, title, column_index, zoom_to, zoom_factor, title_url)` | Add item in `GridGallery`.          |
+|                                     `clean_up()`                                      | Clean `GridGallery` from all items. |
+
 
 ## Mini App Example
 
@@ -193,35 +198,30 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Project` ID and `Dataset` ID we will use in UI
+### Get project ID and dataset ID from environment variables
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
+project_id = sly.env.project_id()
+dataset_id = sly.env.dataset_id()
 project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id))
 ```
 
-### Initialize `GridGallery` widget
+### Initialize `GridGallery` widget we will use in UI
 
 ```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
+grid_gallery = GridGallery(columns_number=3, enable_zoom=False)
 ```
 
-### Fill `GridGallery` with data
+### Set data to `GridGallery` widget
 
 ```python
-grid_gallery = GridGallery(columns_number=3, enable_zoom=False, sync_views=True)
-
 images_infos = api.image.get_list(dataset_id=dataset_id)[: grid_gallery.columns_number]
-anns_infos = api.annotation.get_list(dataset_id=dataset_id)[
-: grid_gallery.columns_number
-]
+anns_infos = api.annotation.get_list(dataset_id=dataset_id)[: grid_gallery.columns_number]
+
 for idx, (image_info, ann_info) in enumerate(zip(images_infos, anns_infos)):
-image_name = image_info.name
-image_url = image_info.full_storage_url
-image_ann = sly.Annotation.from_json(
-data=ann_info.annotation, project_meta=project_meta
-)
+    image_name = image_info.name
+    image_url = image_info.full_storage_url
+    image_ann = sly.Annotation.from_json(data=ann_info.annotation, project_meta=project_meta)
 
     grid_gallery.append(
         title=image_name, image_url=image_url, annotation=image_ann, column_index=idx
@@ -248,3 +248,5 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
+
+![grid_gallery_app](https://user-images.githubusercontent.com/79905215/221858652-bc342549-d16b-44bb-8452-b4c0e18ec8a7.gif)

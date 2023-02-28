@@ -2,7 +2,8 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Checkbox` widget in Supervisely app.
+This widget is a simple and intuitive interface element that allows users to select given option. 
+The `Checkbox` widget can be customized with different label text and default state. By providing an easy and efficient way to make selections, the `Checkbox` widget is an essential tool for any image or video annotation project.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/checkbox)
 

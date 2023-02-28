@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`Linechart`** widget in Supervisely app.
+**`Linechart`** is a Supervisely widget that allows for visualizing data as a line chart. It supports data in pandas dataframe format or a Python list of dictionaries with a specific structure.
+
+The widget allows for customization of the chart title, axis titles, and color scheme. `Linechart` also supports zooming, panning, and downloading the chart as png, svg, or csv. Additionally, it can detect clicks on data points and respond to them through Python code
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/linechart)
 

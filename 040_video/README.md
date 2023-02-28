@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Video` widget in Supervisely app.
+**`Video`** widget in Supervisely is a custom player designed for displaying videos and annotations frame-by-frame. It allows to play, pause, rewind, and fast-forward videos, as well as move through them frame by frame. It is a powerful tool for visualizing and analyzing video data with annotations.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/video)
 
@@ -19,7 +19,7 @@ Video(video_id=None, widget_id=None)
 | Parameters  | Type  |   Description    |
 | :---------: | :---: | :--------------: |
 | `video_id`  | `int` |    `Video` ID    |
-| `widget_id` | `str` | Id of the widget |
+| `widget_id` | `str` | ID of the widget |
 
 ### video_id
 
@@ -39,17 +39,18 @@ ID of the widget.
 
 ## Methods and attributes
 
-|     Attributes and Methods      | Description                                                         |
-| :-----------------------------: | ------------------------------------------------------------------- |
-|      `set_video(id: int)`       | Set video in `Video` widget by ID.                                  |
-| `set_current_frame(value: int)` | Set video player to given frame.                                    |
-|      `get_current_frame()`      | Get current video player frame.                                     |
-|        `play_clicked()`         | Called when video start to play.                                    |
-|        `pause_clicked()`        | Called when video stopped.                                          |
-|    `frame_change_started()`     | Called when a frame index is being changed.                         |
-|    `frame_change_finished()`    | Called when there was no change in frame index for the last second. |
-|      `get_frames_count()`       | Return number of frames in video.                                   |
-|     `loading(value: bool)`      | Used to download video by ID.                                       |
+|     Attributes and Methods      | Description                                                                                |
+| :-----------------------------: | ------------------------------------------------------------------------------------------ |
+|        `video_id(id: int)`      | Get `video_id` property.                                                                   |
+|       `loading(value: bool)`    | Get or set `loading` property to `Video` widget.                                           |
+|      `set_video(id: int)`       | Set video in `Video` widget by ID.                                                         |
+| `set_current_frame(value: int)` | Set video player to given frame.                                                           |
+|      `get_current_frame()`      | Get current video player frame.                                                            |
+|      `get_frames_count()`       | Return number of frames in video.                                                          |
+|         `@play_clicked`         | Decodator function is handled when video start to play.                                    |
+|        `@pause_clicked`         | Decodator function is handled when video stopped.                                          |
+|     `@frame_change_started`     | Decodator function is handled when a frame index is being changed.                         |
+|    `@frame_change_finished`     | Decodator function is handled when there was no change in frame index for the last second. |
 
 ## Mini App Example
 
@@ -79,14 +80,19 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Video` ID and `VideoInfo` we will use in UI
+### Get Video ID from environment variables
 
 ```python
 video_id = int(os.environ["modal.state.slyVideoId"])
+```
+
+### Get `VideoInfo` from server
+
+```python
 video_info = api.video.get_info_by_id(id=video_id)
 ```
 
-### Initialize `Video` widget
+### Initialize `Video` widget we will use in UI
 
 ```python
 video = Video(video_id=video_id)
@@ -109,7 +115,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 ```python
 card = Card(
     title="Video",
-    content=Container(widgets=[video, buttons_container]),)
+    content=Container(widgets=[video, buttons_container]),
+)
 
 layout = Container(widgets=[card])
 ```
@@ -127,26 +134,6 @@ app = sly.Application(layout=layout)
 Use the decorator as shown below to handle button click. We have 6 buttons: to play video, to stop video, to change video frame, to stop change video frame, to set random frame, to download video.
 
 ```python
-@video.play_clicked
-def play(start_frame: int):
-    print(f"Start play frame: {start_frame}")
-
-
-@video.pause_clicked
-def pause(current_frame: int):
-    print(f"Pause frame: {current_frame}")
-
-
-@video.frame_change_started
-def change_frame_start(current_frame: int):
-    print(f"Frame change started: {current_frame}")
-
-
-@video.frame_change_finished
-def change_frame_end(current_frame: int):
-    print(f"Frame change finished: {current_frame}")
-
-
 @button_random_frame.click
 def set_random_frame():
     video.set_current_frame(randint(0, video_info.frames_count - 1))

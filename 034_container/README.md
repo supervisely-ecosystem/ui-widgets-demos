@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`Container`** widget in Supervisely app.
+**`Container`** widget in Supervisely is a flexible tool that allows for organizing other widgets within it. It can be used to group related widgets, change the layout of widgets, and adjust the sizing of widgets. `Container` widget supports both horizontal and vertical layout options. 
+
+However, `Container` widget does not have any specific functionality on its own but serves as a wrapper for other widgets.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/container)
 

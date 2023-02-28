@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This widget is a select `Project` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectProject` widget in Supervisely app.
+This Supervisely widget allows you to create a dropdown menu that lets users select a project from a list of projects. It is a useful widget for applications that require users to select a project to work on or view.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectproject)
 

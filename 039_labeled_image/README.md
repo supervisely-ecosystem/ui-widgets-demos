@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `LabeledImage` widget in Supervisely app.
+**`LabeledImage`** widget in Supervisely is designed to display an image with annotations and provides additional features such as the ability to toggle the visibility of individual class annotations, change fill opacity, and includes a zoom function.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/labeledimage)
 
@@ -16,11 +16,11 @@ LabeledImage(
     esize_on_zoom=False,
     fill_rectangle=True,
     border_width=3,
-    widget_id=None,
+    widget_id=None
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218493332-ef9ed5d9-d42e-4044-8948-e3208c00d88f.gif)
+![li_def](https://user-images.githubusercontent.com/79905215/221849681-7266b42f-636e-4068-a0d7-3825034d935b.png)
 
 ## Parameters
 
@@ -31,8 +31,8 @@ LabeledImage(
 |     `enable_zoom`     | `bool`  |                Enable zoom on `LabeledImage`                |
 |   `resize_on_zoom`    | `bool`  |                  Resize card to fit figure                  |
 |   `fill_rectangle`    | `bool`  |                        Fill rectange                        |
-|    `border_width`     |  `int`  |                        Border width                         |
-|      `widget_id`      |  `str`  |                      Id of the widget                       |
+|    `border_width`     |  `int`  |                  Border width (thickness)                   |
+|      `widget_id`      |  `str`  |                      ID of the widget                       |
 
 ### annotations_opacity
 
@@ -47,7 +47,7 @@ labeled_image = LabeledImage(annotations_opacity=1)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![annotations_opacity](https://user-images.githubusercontent.com/120389559/218493802-4ab354e1-fcf2-4eea-8184-eadf6b1a176a.png)
+![li_opacity](https://user-images.githubusercontent.com/79905215/221849926-66b25fb7-5df1-4398-aff6-7e5f2ba5d3c8.png)
 
 ### show_opacity_slider
 
@@ -62,7 +62,7 @@ labeled_image = LabeledImage(show_opacity_slider=False)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![show_opacity_slider](https://user-images.githubusercontent.com/120389559/218494420-81b0019f-6249-477b-842d-fc776112d57b.png)
+![li_opacity_slider](https://user-images.githubusercontent.com/79905215/221851814-bb98e802-9f1d-46d8-983f-c82d4c18c07a.png)
 
 ### enable_zoom
 
@@ -77,7 +77,7 @@ labeled_image = LabeledImage(enable_zoom=True)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![enable_zoom](https://user-images.githubusercontent.com/120389559/220936622-b42760eb-4438-451b-af3e-cfbde9f1cad7.gif)
+![li_zoom](https://user-images.githubusercontent.com/79905215/221850680-d6ffdcf8-468f-4663-a29f-09695f45c76f.gif)
 
 ### resize_on_zoom
 
@@ -134,11 +134,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                                            Attributes and Methods                                             | Description                     |
-| :-----------------------------------------------------------------------------------------------------------: | ------------------------------- |
-| `set(title, image_url, ann: Annotation = None, image_id=None, zoom_to=None, zoom_factor=1.2, title_url=None)` | Set item in `LabeledImage`.     |
-|                                                 `clean_up()`                                                  | Clean `LabeledImage` from item. |
-|                                                 `is_empty()`                                                  | Check `LabeledImage` is empty.  |
+|                                        Attributes and Methods                                        | Description                     |
+| :--------------------------------------------------------------------------------------------------: | ------------------------------- |
+|                                                 `id`                                                 | Get image id property.          |
+|                                              `loading`                                               | Get or set `loading` property.  |
+| `set(title: str, image_url, ann: Annotation, image_id: int, zoom_to, zoom_factor: float, title_url)` | Set item in `LabeledImage`.     |
+|                                             `clean_up()`                                             | Clean `LabeledImage` from item. |
+|                                             `is_empty()`                                             | Check `LabeledImage` is empty.  |
 
 ## Mini App Example
 
@@ -167,7 +169,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Project` ID and `ProjectMeta` we will use in UI
+### Get project ID and meta
 
 ```python
 project_id = int(os.environ["modal.state.slyProjectId"])
@@ -176,7 +178,7 @@ meta_json = api.project.get_meta(id=project_id)
 meta = sly.ProjectMeta.from_json(data=meta_json)
 ```
 
-### Initialize `Image` ID and `Annotation` we will use in UI
+### Get image ID and annotations
 
 ```python
 image_id = int(os.environ["modal.state.slyImageId"])
@@ -213,4 +215,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218667990-6d41e1b9-a053-4942-9bae-fbe12254fb3c.png)
+![li_app](https://user-images.githubusercontent.com/79905215/221851475-650b610b-a5c5-4e49-a32c-47d65094ac29.gif)

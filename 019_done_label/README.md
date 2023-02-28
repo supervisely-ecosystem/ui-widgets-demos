@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use **`DoneLabel`** widget in Supervisely app.
+**`DoneLabel`** is a widget in Supervisely that is used to display messages about completed tasks or operations. 
+
+It is a minimalist text element that displays a green "Done" checkmark with the message next to it. `DoneLabel` is usually used to inform the user that a task has been successfully completed or that a process is finished.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/done-label)
 
