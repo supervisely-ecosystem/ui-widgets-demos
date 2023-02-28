@@ -16,11 +16,11 @@ Text(text=None, status="text", widget_id=None)
 
 ## Parameters
 
-| Parameters |                          Type                          |       Description        |
-| :--------: | :----------------------------------------------------: | :----------------------: |
-|    text    |                          str                           | determine displayed text |
-|   status   | Literal["text", "info", "success", "warning", "error"] |       text status        |
-| widget_id  |                          str                           |     id of the widget     |
+| Parameters  |                           Type                           |       Description        |
+| :---------: | :------------------------------------------------------: | :----------------------: |
+|   `text`    |                          `str`                           | Determine displayed text |
+|  `status`   | `Literal["text", "info", "success", "warning", "error"]` |      `Text` status       |
+| `widget_id` |                          `str`                           |     Id of the widget     |
 
 ### text
 

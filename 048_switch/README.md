@@ -4,29 +4,39 @@
 
 In this tutorial you will learn how to use `Switch` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Switch)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/switch)
 
 ## Function signature
 
 ```python
-Switch(switched=False, width=58, on_text="ON", off_text="OFF", on_color=None,  off_color=None, on_content=None, off_content=None, widget_id=None)
+Switch(
+    switched=False,
+    width=58,
+    on_text="ON",
+    off_text="OFF",
+    on_color=None,
+    off_color=None,
+    on_content=None,
+    off_content=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/219039067-9798a2ba-2bbc-42f7-94b1-dabb4e6da37b.gif)
 
 ## Parameters
 
-| Parameters  |  Type  |                       Description                       |
-| :---------: | :----: | :-----------------------------------------------------: |
-|  switched   |  bool  |             Determine `Switch` is ON or OFF             |
-|    width    |  int   |                    Width of `Switch`                    |
-|   on_text   |  str   |        Text displayed when `Switch` in ON state         |
-|  off_text   |  str   |        Text displayed when `Switch` in OFF state        |
-|  on_color   |  str   |       Background color when `Switch` in ON state        |
-|  off_color  |  str   |       Background color when `Switch` in OFF state       |
-| on_content  | Widget | Determine active `Widget` when `Switch` is in ON state  |
-| off_content | Widget | Determine active `Widget` when `Switch` is in OFF state |
-|  widget_id  |  str   |                    Id of the widget                     |
+|  Parameters   |   Type   |                       Description                       |
+| :-----------: | :------: | :-----------------------------------------------------: |
+|  `switched`   |  `bool`  |             Determine `Switch` is ON or OFF             |
+|    `width`    |  `int`   |                    Width of `Switch`                    |
+|   `on_text`   |  `str`   |        Text displayed when `Switch` in ON state         |
+|  `off_text`   |  `str`   |        Text displayed when `Switch` in OFF state        |
+|  `on_color`   |  `str`   |       Background color when `Switch` in ON state        |
+|  `off_color`  |  `str`   |       Background color when `Switch` in OFF state       |
+| `on_content`  | `Widget` | Determine active `Widget` when `Switch` is in ON state  |
+| `off_content` | `Widget` | Determine active `Widget` when `Switch` is in OFF state |
+|  `widget_id`  |  `str`   |                    Id of the widget                     |
 
 ### switched
 
@@ -133,21 +143,21 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                        |
-| :--------------------: | -------------------------------------------------- |
-|    `is_switched()`     | Check `Switch` state.                              |
-|         `on()`         | Set `Switch` in ON state.                          |
-|        `off()`         | Set `Switch` in OFF state.                         |
-|     `get_width()`      | Return `Switch` width.                             |
-|    `get_on_text()`     | Return `Switch` ON text.                           |
-|    `set_on_text()`     | Set `Switch` ON text.                              |
-|    `get_off_text()`    | Return `Switch` OFF text.                          |
-|    `set_off_text()`    | Set `Switch` OFF text.                             |
-|    `get_on_color()`    | Return `Switch` ON color.                          |
-|     `set_on_color`     | Set `Switch` ON color.                             |
-|   `get_off_color()`    | Return `Switch` OFF color.                         |
-|   `set_off_color()`    | Set `Switch` OFF color.                            |
-|    `value_changed`     | Function is handled when `Switch` value is change. |
+|   Attributes and Methods    | Description                            |
+| :-------------------------: | -------------------------------------- |
+|       `is_switched()`       | Check `Switch` state.                  |
+|           `on()`            | Set `Switch` in ON state.              |
+|           `off()`           | Set `Switch` in OFF state.             |
+|        `get_width()`        | Return `Switch` width.                 |
+|       `get_on_text()`       | Return `Switch` ON text.               |
+|       `set_on_text()`       | Set `Switch` ON text.                  |
+|      `get_off_text()`       | Return `Switch` OFF text.              |
+| `set_off_text(value: str)`  | Set `Switch` OFF text.                 |
+|      `get_on_color()`       | Return `Switch` ON color.              |
+| `set_on_color(value: str)`  | Set `Switch` ON color.                 |
+|      `get_off_color()`      | Return `Switch` OFF color.             |
+| `set_off_color(value: str)` | Set `Switch` OFF color.                |
+|      `value_changed()`      | Handled when `Switch` value is change. |
 
 ## Mini App Example
 

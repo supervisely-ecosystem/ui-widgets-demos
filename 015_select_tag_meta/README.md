@@ -4,28 +4,37 @@
 
 This widget is a select `TagMeta` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectTagMeta` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectTagMeta)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selecttagmeta)
 
 ## Function signature
 
 ```python
-SelectTagMeta(default=None, project_id=None, project_meta=None, allowed_types=None, multiselect=False, show_label=True, size=None, widget_id=None)
+SelectTagMeta(
+    default=None,
+    project_id=None,
+    project_meta=None,
+    allowed_types=None,
+    multiselect=False,
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218047319-9e4b681c-ee63-4709-b5c1-24c94f457e7a.png)
 
 ## Parameters
 
-|  Parameters   |                  Type                   |                                    Description                                     |
-| :-----------: | :-------------------------------------: | :--------------------------------------------------------------------------------: |
-|    default    |                   str                   |                                     `Tag` name                                     |
-|  project_id   |                   int                   |              Determine `Project` from which `Tags` will be selected.               |
-| project_meta  |               ProjectMeta               |             Determine `ProjectMeta` from which `Tags` will be selected             |
-| allowed_types |                List[str]                | Determine `Tags` types witch will be available to select from all `Project` `Tags` |
-|  multiselect  |                  bool                   |                          Allows to select multiple `Tags`                          |
-|  show_label   |                  bool                   |                                     Show label                                     |
-|     size      | Literal["large", "small", "mini", None] |                          Selector size (large/small/mini)                          |
-|   widget_id   |                   str                   |                                  Id of the widget                                  |
+|   Parameters    |                   Type                    |                                    Description                                     |
+| :-------------: | :---------------------------------------: | :--------------------------------------------------------------------------------: |
+|    `default`    |                   `str`                   |                                     `Tag` name                                     |
+|  `project_id`   |                   `int`                   |              Determine `Project` from which `Tags` will be selected.               |
+| `project_meta`  |               `ProjectMeta`               |             Determine `ProjectMeta` from which `Tags` will be selected             |
+| `allowed_types` |                `List[str]`                | Determine `Tags` types witch will be available to select from all `Project` `Tags` |
+|  `multiselect`  |                  `bool`                   |                          Allows to select multiple `Tags`                          |
+|  `show_label`   |                  `bool`                   |                                     Show label                                     |
+|     `size`      | `Literal["large", "small", "mini", None]` |                          Selector size (large/small/mini)                          |
+|   `widget_id`   |                   `str`                   |                                  Id of the widget                                  |
 
 ### default
 
@@ -147,15 +156,15 @@ ID of the widget.
 
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                                                                                              |
-| :----------------------: | -------------------------------------------------------------------------------------------------------- |
-|  `get_selected_name()`   | Return selected tag name. If multiselect is `True` raise `RuntimeError`.                                 |
-|  `get_selected_names()`  | Return `List` with selected `Tag` names. If multiselect is `False` raise `RuntimeError`.                 |
-| `get_tag_meta_by_name()` | Return `TagMeta` by `Tag` name.                                                                          |
-|  `get_selected_item()`   | Return `TagMeta` for selected `Tag`.                                                                     |
-|  `get_selected_items()`  | Return `List`, containing `TagMeta` for selected tags.                                                   |
-|       `set_name()`       | Set `Tag` with given name as `selected`.                                                                 |
-|      `set_names()`       | Set `Tags` from given list of `Tag` names as `selected`. If multiselect is `False` raise `RuntimeError`. |
+|      Attributes and Methods       | Description                                                                                              |
+| :-------------------------------: | -------------------------------------------------------------------------------------------------------- |
+|       `get_selected_name()`       | Return selected tag name. If multiselect is `True` raise `RuntimeError`.                                 |
+|      `get_selected_names()`       | Return `List` with selected `Tag` names. If multiselect is `False` raise `RuntimeError`.                 |
+| `get_tag_meta_by_name(name: str)` | Return `TagMeta` by `Tag` name.                                                                          |
+|       `get_selected_item()`       | Return `TagMeta` for selected `Tag`.                                                                     |
+|      `get_selected_items()`       | Return `List`, containing `TagMeta` for selected tags.                                                   |
+|       `set_name(name: str)`       | Set `Tag` with given name as `selected`.                                                                 |
+|   `set_names(names: List[str])`   | Set `Tags` from given list of `Tag` names as `selected`. If multiselect is `False` raise `RuntimeError`. |
 
 ## Mini App Example
 

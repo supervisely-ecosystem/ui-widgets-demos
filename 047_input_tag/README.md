@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `InputTag` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/InputTag)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/inputtag)
 
 ## Function signature
 
@@ -16,11 +16,11 @@ InputTag(tag_meta, max_width=300, widget_id=None)
 
 ## Parameters
 
-| Parameters |  Type   |                 Description                  |
-| :--------: | :-----: | :------------------------------------------: |
-|  tag_meta  | TagMeta | `TagMeta` from which `Tags` will be selected |
-| max_width  |   int   |             Max tag field width              |
-| widget_id  |   str   |               Id of the widget               |
+| Parameters  |   Type    |                 Description                  |
+| :---------: | :-------: | :------------------------------------------: |
+| `tag_meta`  | `TagMeta` | `TagMeta` from which `Tags` will be selected |
+| `max_width` |   `int`   |             Max tag field width              |
+| `widget_id` |   `str`   |               Id of the widget               |
 
 ### tag_meta
 
@@ -52,18 +52,18 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                |
-| :--------------------: | ---------------------------------------------------------- |
-|    `get_tag_meta()`    | Return current `TagMeta`.                                  |
-|      `activate()`      | Activate `InputTag` switch.                                |
-|     `deactivate()`     | Deactivate `InputTag` switch.                              |
-|     `is_active()`      | Check `InputTag` switch is active.                         |
-|   `is_valid_value()`   | Check `InputTag` current value is valid.                   |
-|        `set()`         | Set given value in `InputTag`.                             |
-|      `get_tag()`       | Get current `Tag` from `InputTag`.                         |
-|   `value_changed()`    | Function is handled when `InputTag` value is changed.      |
-| `selection_changed()`  | Function is handled when `InputTag` selection is changed.  |
-|    `@value.setter`     | Decorator function is handled when input value is setting. |
+|       Attributes and Methods       | Description                                   |
+| :--------------------------------: | --------------------------------------------- |
+|          `get_tag_meta()`          | Return current `TagMeta`.                     |
+|            `activate()`            | Activate `InputTag` switch.                   |
+|           `deactivate()`           | Deactivate `InputTag` switch.                 |
+|           `is_active()`            | Check `InputTag` switch is active.            |
+| `is_valid_value(value: tag.value)` | Check `InputTag` current value is valid.      |
+|    `set(tag: Union[Tag, None])`    | Set given value in `InputTag`.                |
+|            `get_tag()`             | Get current `Tag` from `InputTag`.            |
+|         `value_changed()`          | Handled when `InputTag` value is changed.     |
+|       `selection_changed()`        | Handled when `InputTag` selection is changed. |
+|     `value(value: tag.value)`      | Handled when input value is setting.          |
 
 ## Mini App Example
 

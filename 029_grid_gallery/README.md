@@ -5,7 +5,7 @@
 **`GridGallery`** is a widget in Supervisely used for displaying multiple images in a grid format. 
 Allowing for annotations to be displayed on the images, the ability to hide annotations of specific classes, adjust their transparency and zoom level, making it a convenient widget for visualizing annotated image results.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/GridGallery)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/gridgallery)
 
 ## Function signature
 
@@ -35,7 +35,9 @@ GridGallery(
 |     `enable_zoom`     | `bool`  |                Enable zoom on `GridGallery`                |
 |   `resize_on_zoom`    | `bool`  |                 Resize card to fit figure                  |
 |     `sync_views`      | `bool`  |               Sync pan & zoom between views                |
-|      `widget_id`      |  `str`  |                      ID of the widget                      |
+|   `fill_rectangle`    | `bool`  |                       Fill rectange                        |
+|    `border_width`     |  `int`  |                        Border width                        |
+|      `widget_id`      |  `str`  |                      Id of the widget                      |
 
 ### columns_number
 
@@ -115,6 +117,41 @@ grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 
 ![grid_gallery_sync](https://user-images.githubusercontent.com/79905215/221856489-2aa2d8ad-4930-47ae-a907-98f47764e176.gif)
 
+### fill_rectangle
+
+Determines to fill rectange figure or not.
+
+**type:** `bool`
+
+**default value:** `true`
+
+```python
+grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
+```
+
+![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221578556-76d7bc99-c74d-4b0e-a64f-af7371b15e43.gif)
+
+```python
+grid_gallery = GridGallery(columns_number=3)
+```
+
+![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221579195-e66458a0-b79c-43f6-9310-819150833b1a.gif)
+
+### border_width
+
+Determines border width to rectange figures.
+
+**type:** `int`
+
+**default value:** `3`
+
+```python
+grid_gallery = GridGallery(columns_number=3, border_width=12)
+```
+
+![border_width](https://user-images.githubusercontent.com/120389559/221580110-d98abb1b-bc91-4928-a419-b2841fcd7eea.png)
+
+
 ### widget_id
 
 ID of the widget.
@@ -125,11 +162,14 @@ ID of the widget.
 
 ## Methods and attributes
 
+
 |                                Attributes and Methods                                 | Description                         |
 | :-----------------------------------------------------------------------------------: | ----------------------------------- |
 |                                       `loading`                                       | Get or set `loading` property.      |
+|                      `get_column_index(incoming_value)`                               | Return column index by given value. |
 | `append(image_url, annotation, title, column_index, zoom_to, zoom_factor, title_url)` | Add item in `GridGallery`.          |
 |                                     `clean_up()`                                      | Clean `GridGallery` from all items. |
+
 
 ## Mini App Example
 

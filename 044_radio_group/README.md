@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `RadioGroup`, `RadioGroup.Item` widgets in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/RadioGroup)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/radiogroup)
 
 ## Function signature
 
@@ -16,13 +16,13 @@ RadioGroup(items, size=None, direction="horizontal", gap=10, widget_id=None)
 
 ## Parameters
 
-| Parameters |                  Type                   |             Description              |
-| :--------: | :-------------------------------------: | :----------------------------------: |
-|   items    |         List[`RadioGroup.Item`]         |     List of `RadioGroup` content     |
-|    size    | Literal["large", "small", "mini", None] | `RadioGroup` size (large/small/mini) |
-| direction  |    Literal["vertical", "horizontal"]    |     `RadioGroup` items direction     |
-|    gap     |                   int                   |    Gap between `RadioGroup` items    |
-| widget_id  |                   str                   |           Id of the widget           |
+| Parameters  |                   Type                    |             Description              |
+| :---------: | :---------------------------------------: | :----------------------------------: |
+|   `items`   |          `List[RadioGroup.Item]`          |     List of `RadioGroup` content     |
+|   `size`    | `Literal["large", "small", "mini", None]` | `RadioGroup` size (large/small/mini) |
+| `direction` |    `Literal["vertical", "horizontal"]`    |     `RadioGroup` items direction     |
+|    `gap`    |                   `int`                   |    Gap between `RadioGroup` items    |
+| `widget_id` |                   `str`                   |           Id of the widget           |
 
 ### items
 
@@ -88,12 +88,12 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                  |
-| :--------------------: | ------------------------------------------------------------ |
-|     `get_value()`      | Return selected `RadioGroup.Item` value.                     |
-|   `value_changed()`    | Function is handled when input `RadioGroup.Item` is changed. |
-|        `set()`         | Set given `RadioGroup.Item` in `RadioGroup`.                 |
-|     `set_value()`      | Set given value in `RadioGroup.Item`.                        |
+|       Attributes and Methods        | Description                                      |
+| :---------------------------------: | ------------------------------------------------ |
+|            `get_value()`            | Return selected `RadioGroup.Item` value.         |
+|          `value_changed()`          | Handled when input `RadioGroup.Item` is changed. |
+| `set(items: List[RadioGroup.Item])` | Set given `RadioGroup.Item` in `RadioGroup`.     |
+|         `set_value(value)`          | Set given value in `RadioGroup.Item`.            |
 
 ## Mini App Example
 

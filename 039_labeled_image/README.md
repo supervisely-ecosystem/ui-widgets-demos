@@ -4,7 +4,7 @@
 
 **`LabeledImage`** widget in Supervisely is designed to display an image with annotations and provides additional features such as the ability to toggle the visibility of individual class annotations, change fill opacity, and includes a zoom function.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/LabeledImage)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/labeledimage)
 
 ## Function signature
 
@@ -86,6 +86,43 @@ Resize card to fit figure.
 **type:** `bool`
 
 **default value:** `false`
+
+### fill_rectangle
+
+Resize card to fit figure.
+
+**type:** `bool`
+
+**default value:** `true`
+
+```python
+labeled_image = LabeledImage()
+labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
+```
+
+![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221583188-6bc606cd-abba-4e92-a342-dced21a093ab.gif)
+
+```python
+labeled_image = LabeledImage(fill_rectangle=False)
+labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
+```
+
+![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221583698-747dcb67-d14a-499a-b3b4-861f100ffd3d.gif)
+
+### border_width
+
+Resize card to fit figure.
+
+**type:** `int`
+
+**default value:** `3`
+
+```python
+labeled_image = LabeledImage(border_width=15)
+labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
+```
+
+![border_width](https://user-images.githubusercontent.com/120389559/221584066-de01e206-49cc-4289-b76c-c675be8b6fc5.png)
 
 ### widget_id
 

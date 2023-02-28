@@ -4,7 +4,7 @@
 
 This Supervisely widget allows you to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/ProjectThumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/projectthumbnail)
 
 ## Function signature
 
@@ -16,14 +16,14 @@ ProjectThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |     Type      |                   Description                    |
-| :--------: | :-----------: | :----------------------------------------------: |
-|    info    | `ProjectInfo` | NamedTuple, containing information about project |
-| widget_id  |      str      |                 id of the widget                 |
+| Parameters  |     Type      |                    Description                     |
+| :---------: | :-----------: | :------------------------------------------------: |
+|   `info`    | `ProjectInfo` | `NamedTuple`, containing information about project |
+| `widget_id` |     `str`     |                  Id of the widget                  |
 
 ### info
 
-NamedTuple, containing information about project.
+`NamedTuple`, containing information about project.
 
 **type:** `ProjectInfo`
 
@@ -44,9 +44,9 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description             |
-| :--------------------: | ----------------------- |
-|        `set()`         | Set input project data. |
+|  Attributes and Methods  | Description             |
+| :----------------------: | ----------------------- |
+| `set(info: ProjectInfo)` | Set input project data. |
 
 ## Mini App Example
 

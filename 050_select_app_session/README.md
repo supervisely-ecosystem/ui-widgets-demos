@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `SelectAppSession` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectAppSession)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectappsession)
 
 ## Function signature
 
@@ -16,14 +16,14 @@ SelectAppSession(team_id, tags, show_label=False, size="mini", widget_id=None, o
 
 ## Parameters
 
-| Parameters |               Type                |           Description            |
-| :--------: | :-------------------------------: | :------------------------------: |
-|  team_id   |                int                |            `Team` ID             |
-|    tags    |             List[str]             |      List of possible tags       |
-| show_label |               bool                |         Show label text          |
-|    size    | Literal["large", "small", "mini"] | Selector size (large/small/mini) |
-| widget_id  |                str                |         Id of the widget         |
-| operation  |                str                |          Operation type          |
+|  Parameters  |                Type                 |           Description            |
+| :----------: | :---------------------------------: | :------------------------------: |
+|  `team_id`   |                `int`                |            `Team` ID             |
+|    `tags`    |             `List[str]`             |      List of possible tags       |
+| `show_label` |               `bool`                |         Show label text          |
+|    `size`    | `Literal["large", "small", "mini"]` | Selector size (large/small/mini) |
+| `widget_id`  |                `str`                |         Id of the widget         |
+| `operation`  |                `str`                |          Operation type          |
 
 ### team_id
 

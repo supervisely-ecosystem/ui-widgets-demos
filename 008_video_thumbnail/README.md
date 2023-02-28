@@ -4,7 +4,7 @@
 
 This Supervisely widget allows you to display a thumbnail image that represents specific video. It is a useful widget for applications that work with videos, allowing users to have quick access to this video, so that when the user clicks on the thumbnail, the link will take him to this video.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/VideoThumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/videothumbnail)
 
 ## Function signature
 
@@ -16,14 +16,14 @@ VideoThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |    Type     |                      Description                       |
-| :--------: | :---------: | :----------------------------------------------------: |
-|    info    | `VideoInfo` | NamedTuple, containing information about video project |
-| widget_id  |     str     |                    id of the widget                    |
+| Parameters  |    Type     |                       Description                        |
+| :---------: | :---------: | :------------------------------------------------------: |
+|   `info`    | `VideoInfo` | `NamedTuple`, containing information about video project |
+| `widget_id` |    `str`    |                     Id of the widget                     |
 
 ### info
 
-NamedTuple, containing information about video project.
+`NamedTuple`, containing information about video project.
 
 **type:** `VideoInfo`
 
@@ -44,10 +44,10 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                      |
-| :--------------------: | ------------------------------------------------ |
-|     `set_video()`      | Set input video project data                     |
-|    `set_video_id()`    | Set input video project data by video project id |
+|    Attributes and Methods    | Description                                       |
+| :--------------------------: | ------------------------------------------------- |
+| `set_video(info: VideoInfo)` | Set input video project data.                     |
+|   `set_video_id(id: int)`    | Set input video project data by video project id. |
 
 ## Mini App Example
 

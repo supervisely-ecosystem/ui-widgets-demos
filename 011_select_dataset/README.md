@@ -4,28 +4,37 @@
 
 This widget is a select `Dataset` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectDataset` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectDataset)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectdataset)
 
 ## Function signature
 
 ```python
-SelectDataset(default_id=None, project_id=None, multiselect=False, compact=False, show_label=True, size=None, disabled=False, widget_id=None)
+SelectDataset(
+    default_id=None,
+    project_id=None,
+    multiselect=False,
+    compact=False,
+    show_label=True,
+    size=None,
+    disabled=False,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217846091-eb9b97a2-8a11-4e61-b8fe-2387b8a3137c.png)
 
 ## Parameters
 
-| Parameters  |                  Type                   |                   Description                   |
-| :---------: | :-------------------------------------: | :---------------------------------------------: |
-| default_id  |                   int                   |                  `Dataset` ID                   |
-| project_id  |                   int                   |                  `Project` ID                   |
-| multiselect |                  bool                   | Allow to select all datasets in current project |
-|   compact   |                  bool                   |            Show only dataset select             |
-| show_label  |                  bool                   |                   Show label                    |
-|    size     | Literal["large", "small", "mini", None] |        Selector size (large/small/mini)         |
-|  disabled   |                  bool                   |             Disable dataset select              |
-|  widget_id  |                   str                   |                Id of the widget                 |
+|  Parameters   |                   Type                    |                   Description                   |
+| :-----------: | :---------------------------------------: | :---------------------------------------------: |
+| `default_id`  |                   `int`                   |                  `Dataset` ID                   |
+| `project_id`  |                   `int`                   |                  `Project` ID                   |
+| `multiselect` |                  `bool`                   | Allow to select all datasets in current project |
+|   `compact`   |                  `bool`                   |            Show only dataset select             |
+| `show_label`  |                  `bool`                   |                   Show label                    |
+|    `size`     | `Literal["large", "small", "mini", None]` |        Selector size (large/small/mini)         |
+|  `disabled`   |                  `bool`                   |             Disable dataset select              |
+|  `widget_id`  |                   `str`                   |                Id of the widget                 |
 
 ### default_id
 
@@ -126,7 +135,7 @@ card = Card(
 
 ### disabled
 
-Determine dataset select ability.
+Determine `Dataset` select ability.
 
 **type:** `bool`
 
@@ -148,13 +157,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                                  |
-| :--------------------: | ---------------------------------------------------------------------------- |
-|  `get_selected_id()`   | Return selected `dataset ID`, if `multiselect` is `True` raise ValueError.   |
-|  `get_selected_ids()`  | Return selected `dataset IDs`, if `multiselect` is `False` raise ValueError. |
-|      `disable()`       | Set `disabled` attribute == `True`.                                          |
-|       `enable()`       | Set `disabled` attribute == `False`.                                         |
-|    `value_changed`     | Function is handled when selected `dataset ID` is changed.                   |
+| Attributes and Methods | Description                                                                    |
+| :--------------------: | ------------------------------------------------------------------------------ |
+|  `get_selected_id()`   | Return selected `dataset ID`, if `multiselect` is `True` raise `ValueError`.   |
+|  `get_selected_ids()`  | Return selected `dataset IDs`, if `multiselect` is `False` raise `ValueError`. |
+|      `disable()`       | Set `disabled` attribute == `True`.                                            |
+|       `enable()`       | Set `disabled` attribute == `False`.                                           |
+|   `value_changed()`    | Handled when selected `dataset ID` is changed.                                 |
 
 ## Mini App Example
 

@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Flexbox` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Flexbox)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/flexbox)
 
 ## Function signature
 
@@ -16,12 +16,12 @@ Flexbox(widgets, gap=10, center_content=False, widget_id=None)
 
 ## Parameters
 
-|   Parameters   |     Type     |                           Description                           |
-| :------------: | :----------: | :-------------------------------------------------------------: |
-|    widgets     | List[Widget] |             List if widgets to display on `Flexbox`             |
-|      gap       |     int      |                Gap between widgets on `Flexbox`                 |
-| center_content |     bool     | Determines whether to place widgets in the center of the window |
-|   widget_id    |     str      |                        Id of the widget                         |
+|    Parameters    |      Type      |                           Description                           |
+| :--------------: | :------------: | :-------------------------------------------------------------: |
+|    `widgets`     | `List[Widget]` |             List if widgets to display on `Flexbox`             |
+|      `gap`       |     `int`      |                Gap between widgets on `Flexbox`                 |
+| `center_content` |     `bool`     | Determines whether to place widgets in the center of the window |
+|   `widget_id`    |     `str`      |                        Id of the widget                         |
 
 ### widgets
 

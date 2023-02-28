@@ -4,27 +4,35 @@
 
 This Supervisely widget allows you to create a dropdown menu that lets users select a project from a list of projects. It is a useful widget for applications that require users to select a project to work on or view.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectProject)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectproject)
 
 ## Function signature
 
 ```python
-SelectProject(default_id=None, workspace_id=None, compact=False, allowed_types=[], show_label=True, size=None, widget_id=None)
+SelectProject(
+    default_id=None,
+    workspace_id=None,
+    compact=False,
+    allowed_types=[],
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217844120-65f36676-0e42-4a75-a74b-3ae2f8d18167.png)
 
 ## Parameters
 
-|  Parameters   |                  Type                   |                       Description                       |
-| :-----------: | :-------------------------------------: | :-----------------------------------------------------: |
-|  default_id   |                   int                   |                      `Project` ID                       |
-| workspace_id  |                   int                   |                     `Workspace` ID                      |
-|    compact    |                  bool                   |            Check `Workspace` ID is not None             |
-| allowed_types |            List[ProjectType]            | List of project types witch will be available to select |
-|  show_label   |                  bool                   |                       Show label                        |
-|     size      | Literal["large", "small", "mini", None] |            Selector size (large/small/mini)             |
-|   widget_id   |                   str                   |                    Id of the widget                     |
+|   Parameters    |                   Type                    |                       Description                       |
+| :-------------: | :---------------------------------------: | :-----------------------------------------------------: |
+|  `default_id`   |                   `int`                   |                      `Project` ID                       |
+| `workspace_id`  |                   `int`                   |                     `Workspace` ID                      |
+|    `compact`    |                  `bool`                   |            Check `Workspace` ID is not None             |
+| `allowed_types` |            `List[ProjectType]`            | List of project types witch will be available to select |
+|  `show_label`   |                  `bool`                   |                       Show label                        |
+|     `size`      | `Literal["large", "small", "mini", None]` |            Selector size (large/small/mini)             |
+|   `widget_id`   |                   `str`                   |                    Id of the widget                     |
 
 ### default_id
 
@@ -124,6 +132,12 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+## Methods and attributes
+
+| Attributes and Methods | Description                 |
+| :--------------------: | --------------------------- |
+|  `get_selected_id()`   | Return selected project id. |
 
 ## Mini App Example
 

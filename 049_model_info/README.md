@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `ModelInfo` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/ModelInfo)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/modelinfo)
 
 ## Function signature
 
@@ -16,15 +16,15 @@ ModelInfo(session_id=None, team_id=None, widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |   Description    |
-| :--------: | :--: | :--------------: |
-| session_id | int  |   `Session` ID   |
-|  team_id   | int  |    `Team` ID     |
-| widget_id  | str  | Id of the widget |
+|  Parameters  | Type  |   Description    |
+| :----------: | :---: | :--------------: |
+| `session_id` | `int` |   `Session` ID   |
+|  `team_id`   | `int` |    `Team` ID     |
+| `widget_id`  | `str` | Id of the widget |
 
 ### session_id
 
-Determines session ID for which model data will be displayed.
+Determines `Session` ID for which model data will be displayed.
 
 **type:** `int`
 
@@ -32,7 +32,7 @@ Determines session ID for which model data will be displayed.
 
 ### team_id
 
-Determines team ID for which model data will be displayed.
+Determines `Team` ID for which model data will be displayed.
 
 **type:** `int`
 
@@ -48,9 +48,9 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                  |
-| :--------------------: | -------------------------------------------- |
-|   `set_session_id()`   | Set given `session_id` value in `ModelInfo`. |
+|      Attributes and Methods       | Description                                  |
+| :-------------------------------: | -------------------------------------------- |
+| `set_session_id(session_id: int)` | Set given `session_id` value in `ModelInfo`. |
 
 ## Mini App Example
 

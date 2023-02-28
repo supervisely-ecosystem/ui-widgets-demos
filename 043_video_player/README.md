@@ -7,7 +7,7 @@
 In addition, Video Player has a feature for overlaying an image overlay on top of the video without modifying the video itself. 
 
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/VideoPlayer)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/videoplayer)
 
 ## Function signature
 
@@ -54,7 +54,7 @@ ID of the widget.
 | :-----------------------------------: | ------------------------------------------------------------- |
 |                 `url`                 | Get `url` property.                                           |
 |              `mime_type`              | Get `mime_type` property.                                     |
-| `set_video(url: str, mime_type: str)` | Set video in `VideoPlayer` widget by url.                     |
+| `set_video(url: str, mime_type: str = "video/mp4")` | Set video in `VideoPlayer` widget by url.                     |
 |               `play()`                | Start video to play.                                          |
 |               `pause()`               | Stop video playback.                                          |
 |       `get_current_timestamp()`       | Return current video playing step.                            |

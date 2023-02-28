@@ -4,7 +4,7 @@
 
 This widget is a select `Workspace` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectWorkspace` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectWorkspace)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectworkspace)
 
 ## Function signature
 
@@ -16,14 +16,14 @@ SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, s
 
 ## Parameters
 
-| Parameters |                  Type                   |           Description            |
-| :--------: | :-------------------------------------: | :------------------------------: |
-| default_id |                   int                   |          `Workspace` ID          |
-|  team_id   |                   int                   |            `Team` ID             |
-|  compact   |                  bool                   |    Show only workspace select    |
-| show_label |                  bool                   |            Show label            |
-|    size    | Literal["large", "small", "mini", None] | Selector size (large/small/mini) |
-| widget_id  |                   str                   |         Id of the widget         |
+|  Parameters  |                   Type                    |           Description            |
+| :----------: | :---------------------------------------: | :------------------------------: |
+| `default_id` |                   `int`                   |          `Workspace` ID          |
+|  `team_id`   |                   `int`                   |            `Team` ID             |
+|  `compact`   |                  `bool`                   |    Show only workspace select    |
+| `show_label` |                  `bool`                   |            Show label            |
+|    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
+| `widget_id`  |                   `str`                   |         Id of the widget         |
 
 ### default_id
 
@@ -60,10 +60,10 @@ Show only `Workspace` select.
 **default value:** `false`
 
 ```python
-select_workspace = SelectWorkspace(default_id=workspace_id, team_id=team_id, compact=True)
+select_workspace = SelectWorkspace(default_id=workspace_id, compact=True)
 ```
 
-![compact](https://user-images.githubusercontent.com/120389559/218032327-61a184cc-cc6b-4d94-8bdf-c1bd8d3926b6.png)
+![compact](https://user-images.githubusercontent.com/120389559/221557626-042f1911-7065-48d4-a830-c003f0baa4d2.png)
 
 ### show_label
 
@@ -79,7 +79,7 @@ select_workspace = SelectWorkspace(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/218032520-111c307b-1147-4483-b5f5-592e96533dff.png)
+![show_label](https://user-images.githubusercontent.com/120389559/221558086-abb3aaa3-8f2c-46f5-8ec4-3f66125aed9e.png)
 
 ### size
 
@@ -89,6 +89,32 @@ Size of input.
 
 **default value:** `None`
 
+```python
+select_workspace = SelectWorkspace(default_id=workspace_id, compact=True, show_label=False)
+select_workspace_mini = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="mini"
+)
+select_workspace_small = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="small"
+)
+select_workspace_large = SelectWorkspace(
+    default_id=workspace_id, compact=True, show_label=False, size="large"
+)
+card = Card(
+    title="Select Workspace",
+    content=Container(
+        widgets=[
+            select_workspace,
+            select_workspace_mini,
+            select_workspace_small,
+            select_workspace_large,
+        ]
+    ),
+)
+```
+
+![size](https://user-images.githubusercontent.com/120389559/221558737-7a9ecd44-dae9-4d39-ad6f-319ff1ae3ab7.png)
+
 ### widget_id
 
 ID of the widget.
@@ -96,6 +122,12 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+## Methods and attributes
+
+| Attributes and Methods | Description                   |
+| :--------------------: | ----------------------------- |
+|  `get_selected_id()`   | Return selected workspace id. |
 
 ## Mini App Example
 

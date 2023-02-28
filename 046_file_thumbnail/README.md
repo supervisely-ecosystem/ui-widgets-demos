@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `FileThumbnail` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/FileThumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/filethumbnail)
 
 ## Function signature
 
@@ -16,10 +16,10 @@ FileThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters |   Type   |         Description          |
-| :--------: | :------: | :--------------------------: |
-|    info    | FileInfo | Information about given file |
-| widget_id  |   str    |       Id of the widget       |
+| Parameters  |    Type    |         Description          |
+| :---------: | :--------: | :--------------------------: |
+|   `info`    | `FileInfo` | Information about given file |
+| `widget_id` |   `str`    |       Id of the widget       |
 
 ### info
 
@@ -41,7 +41,7 @@ ID of the widget.
 
 | Attributes and Methods | Description                              |
 | :--------------------: | ---------------------------------------- |
-|        `set()`         | Set given `FileInfo` in `FileThumbnail`. |
+| `set(info: FileInfo)`  | Set given `FileInfo` in `FileThumbnail`. |
 
 ## Mini App Example
 

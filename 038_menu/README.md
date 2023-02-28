@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Menu`, `Menu.Item`, `Menu.Group` widgets in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Menu)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/menu)
 
 ## Function signature
 
@@ -12,17 +12,17 @@ In this tutorial you will learn how to use `Menu`, `Menu.Item`, `Menu.Group` wid
 Menu(items=None, groups=None, index=None, width_percent=25, widget_id=None)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218469453-0db5046f-0287-40e0-b56e-e6b780bb44f2.gif)
+![default](https://user-images.githubusercontent.com/120389559/220916979-223e32ad-ed9a-4382-be74-148b2f792012.gif)
 
 ## Parameters
 
-|  Parameters   |       Type       |                Description                |
-| :-----------: | :--------------: | :---------------------------------------: |
-|     items     | List[Menu.Item]  |          List of `Menu` `Items`           |
-|    groups     | List[Menu.Group] |          List of `Menu` `Groups`          |
-|     index     |       str        | Sets the active `Menu` at the given index |
-| width_percent |       int        |   Width of the left part of `Menu` in %   |
-|   widget_id   |       str        |             Id of the widget              |
+|   Parameters    |        Type        |                Description                |
+| :-------------: | :----------------: | :---------------------------------------: |
+|     `items`     | `List[Menu.Item]`  |          List of `Menu` `Items`           |
+|    `groups`     | `List[Menu.Group]` |          List of `Menu` `Groups`          |
+|     `index`     |       `str`        | Sets the active `Menu` at the given index |
+| `width_percent` |       `int`        |   Width of the left part of `Menu` in %   |
+|   `widget_id`   |       `str`        |             Id of the widget              |
 
 ### items
 
@@ -48,7 +48,7 @@ items = [
 menu = Menu(items=items)
 ```
 
-![items](https://user-images.githubusercontent.com/120389559/218473788-d3283b51-6d6a-48d5-a31d-4fddd8497d36.gif)
+![items](https://user-images.githubusercontent.com/120389559/220916979-223e32ad-ed9a-4382-be74-148b2f792012.gif)
 
 ### groups
 

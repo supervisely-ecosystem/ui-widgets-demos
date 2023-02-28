@@ -5,7 +5,7 @@
 **`Image`** widget in Supervisely is a simple widget that displays images using the HTML `<img>` tag, and is convenient to use when there is no need to add extra functions for displaying annotations or adjusting their settings, but only to display the image passed to it by url or local path.
 
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/Image)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/image)
 
 ## Function signature
 
@@ -24,7 +24,7 @@ Image(url="", widget_id=None)
 
 ### url
 
-Image url or local path to image on the host. Determines the image to be displayed on widget.
+Image url or local path to image on the host. Determines image to be displayed on widget.
 
 **type:** `str`
 

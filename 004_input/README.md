@@ -18,15 +18,15 @@ Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly
 
 ## Parameters
 
-| Parameters  |                  Type                   |           Description           |
-| :---------: | :-------------------------------------: | :-----------------------------: |
-|    value    |                   str                   |          binding value          |
-|  minlength  |                   int                   |    minimum input text length    |
-|  maxlength  |                   int                   |    maximum input text length    |
-| placeholder |                   str                   |      placeholder of input       |
-|    size     | Literal["mini", "small", "large", None] |          size of input          |
-|  readonly   |                  bool                   | same as readonlyin native input |
-|  widget_id  |                   str                   |        id of the widget         |
+|  Parameters   |                   Type                    |           Description           |
+| :-----------: | :---------------------------------------: | :-----------------------------: |
+|    `value`    |                   `str`                   |          Binding value          |
+|  `minlength`  |                   `int`                   |    Minimum input text length    |
+|  `maxlength`  |                   `int`                   |    Maximum input text length    |
+| `placeholder` |                   `str`                   |      Placeholder of input       |
+|    `size`     | `Literal["mini", "small", "large", None]` |          Size of input          |
+|  `readonly`   |                  `bool`                   | Same as readonlyin native input |
+|  `widget_id`  |                   `str`                   |        Id of the widget         |
 
 ### value
 
@@ -119,14 +119,14 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                |
-| :--------------------: | ---------------------------------------------------------- |
-|    `is_readonly()`     | Return `True` if input is readonly, else `False`.          |
-|     `set_value()`      | Set input value.                                           |
-|     `get_value()`      | Get input value.                                           |
-|  `enable_readonly()`   | Enable input`s readonly property.                          |
-|  `disable_readonly()`  | Disable input`s readonly property.                         |
-|    `value_changed`     | Decorator function is handled when input value is changed. |
+| Attributes and Methods | Description                                       |
+| :--------------------: | ------------------------------------------------- |
+|    `is_readonly()`     | Return `True` if input is readonly, else `False`. |
+|     `set_value()`      | Set input value.                                  |
+|     `get_value()`      | Get input value.                                  |
+|  `enable_readonly()`   | Enable input`s readonly property.                 |
+|  `disable_readonly()`  | Disable input`s readonly property.                |
+|   `value_changed()`    | Handled when input value is changed.              |
 
 ## Mini App Example
 

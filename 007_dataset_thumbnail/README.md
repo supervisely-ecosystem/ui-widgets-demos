@@ -4,7 +4,7 @@
 
 This Supervisely widget allows you to display a thumbnail image that represents supervisely dataset. It is a useful widget for applications that run from specific dataset, allowing users to have quick access to this dataset, so that when the user clicks on the thumbnail, the link will take him to this dataset.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/DatasetThumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/datasetthumbnail)
 
 ## Function signature
 
@@ -16,16 +16,16 @@ DatasetThumbnail(project_info=None, dataset_info=None, show_project_name=True, w
 
 ## Parameters
 
-|    Parameters     |     Type      |                   Description                    |
-| :---------------: | :-----------: | :----------------------------------------------: |
-|   project_info    | `ProjectInfo` | NamedTuple, containing information about project |
-|   dataset_info    | `DatasetInfo` | NamedTuple, containing information about dataset |
-| show_project_name |     bool      |        determines to display project name        |
-|     widget_id     |      str      |                 id of the widget                 |
+|     Parameters      |     Type      |                    Description                     |
+| :-----------------: | :-----------: | :------------------------------------------------: |
+|   `project_info`    | `ProjectInfo` | `NamedTuple`, containing information about project |
+|   `dataset_info`    | `DatasetInfo` | `NamedTuple`, containing information about dataset |
+| `show_project_name` |    `bool`     |         Determines to display project name         |
+|     `widget_id`     |     `str`     |                  Id of the widget                  |
 
 ### project_info
 
-NamedTuple, containing information about project.
+`NamedTuple`, containing information about project.
 
 **type:** `ProjectInfo`
 
@@ -38,7 +38,7 @@ dataset_thumbnail = DatasetThumbnail(project_info=project)
 
 ### dataset_info
 
-NamedTuple, containing information about dataset.
+`NamedTuple`, containing information about dataset.
 
 **type:** `DatasetInfo`
 
@@ -72,6 +72,12 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
+
+## Methods and attributes
+
+|                                   Attributes and Methods                                    | Description             |
+| :-----------------------------------------------------------------------------------------: | ----------------------- |
+| `set(project_info: ProjectInfo, dataset_info: DatasetInfo, show_project_name: bool = True)` | Set input project data. |
 
 ## Mini App Example
 

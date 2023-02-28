@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `RadioTable` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/RadioTable)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/radiotable)
 
 ## Function signature
 
@@ -16,13 +16,13 @@ RadioTable(columns, rows, subtitles={}, column_formatters={}, widget_id=None)
 
 ## Parameters
 
-|    Parameters     |      Type       |               Description               |
-| :---------------: | :-------------: | :-------------------------------------: |
-|      columns      |    List[str]    |       `RadioTable` columns names        |
-|       rows        | List[List[str]] |        `RadioTable` rows content        |
-|     subtitles     |      dict       |     Determine subtitles for columns     |
-| column_formatters |      dict       | Determine format of output `RadioTable` |
-|     widget_id     |       str       |            Id of the widget             |
+|     Parameters      |       Type        |               Description               |
+| :-----------------: | :---------------: | :-------------------------------------: |
+|      `columns`      |    `List[str]`    |       `RadioTable` columns names        |
+|       `rows`        | `List[List[str]]` |        `RadioTable` rows content        |
+|     `subtitles`     |      `dict`       |     Determine subtitles for columns     |
+| `column_formatters` |      `dict`       | Determine format of output `RadioTable` |
+|     `widget_id`     |       `str`       |            Id of the widget             |
 
 ### columns
 
@@ -92,10 +92,12 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                                                   |
-| :--------------------: | --------------------------------------------------------------------------------------------- |
-|  `get_selected_row()`  | Return selected row data.                                                                     |
-|     `select_row()`     | Set row with given index selected. If row with given index does not exist raise `ValueError`. |
+|      Attributes and Methods      | Description                                                                                   |
+| :------------------------------: | --------------------------------------------------------------------------------------------- |
+| `format_value(column_name: str)` | Return column formatter function by given column name.                                        |
+| `default_formatter(value: list)` | Return column formatter.                                                                      |
+| `get_selected_row(state: dict)`  | Return selected row data.                                                                     |
+|   `select_row(row_index: int)`   | Set row with given index selected. If row with given index does not exist raise `ValueError`. |
 
 ## Mini App Example
 

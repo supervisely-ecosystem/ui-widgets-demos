@@ -18,17 +18,17 @@ InputNumber(value=1, min=None, max=None, step=1, size="small", controls=True, de
 
 ## Parameters
 
-| Parameters |    Type    |                Description                 |
-| :--------: | :--------: | :----------------------------------------: |
-|   value    | int, float |               binding value                |
-|    min     | int, float |         the minimum allowed value          |
-|    max     | int, float |         the maximum allowed value          |
-|    step    | int, float |             incremental steps              |
-|    size    |    str     |           size of the component            |
-|  controls  |    bool    |   whether to enable the control buttons    |
-|  debounce  |    int     | debounce delay when typing, in millisecond |
-| precision  |    int     |                 precision                  |
-| widget_id  |    str     |              id of the widget              |
+| Parameters  |          Type          |                Description                 |
+| :---------: | :--------------------: | :----------------------------------------: |
+|   `value`   |     `int`, `float`     |               Binding value                |
+|    `min`    | `int`, `float`, `None` |         The minimum allowed value          |
+|    `max`    | `int`, `float`, `None` |         The maximum allowed value          |
+|   `step`    |     `int`, `float`     |             Incremental steps              |
+|   `size`    |         `str`          |           Size of the component            |
+| `controls`  |         `bool`         |   Whether to enable the control buttons    |
+| `debounce`  |         `int`          | Debounce delay when typing, in millisecond |
+| `precision` |         `int`          |                 Precision                  |
+| `widget_id` |         `str`          |              Id of the widget              |
 
 ### value
 
@@ -48,7 +48,7 @@ input_number = InputNumber(value=7)
 
 Minimum allowed value.
 
-**type:** `int`, `float`
+**type:** `int`, `float`, `None`
 
 **default value:** `None`
 
@@ -60,7 +60,7 @@ input = InputNumber(min=5)
 
 Maximum allowed value.
 
-**type:** `int`, `float`
+**type:** `int`, `float`, `None`
 
 **default value:** `None`
 
@@ -145,13 +145,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                |
-| :--------------------: | ---------------------------------------------------------- |
-|        `value`         | Get or set widgets `value` filed.                          |
-|     `get_value()`      | Get input number value.                                    |
-|         `min`          | Set min value value.                                       |
-|         `max`          | Set max value value.                                       |
-|    `value_changed`     | Decorator function is handled when input value is changed. |
+|      Attributes and Methods       | Description                          |
+| :-------------------------------: | ------------------------------------ |
+| `value(value: Union[int, float])` | Set widgets `value` filed.           |
+|           `get_value()`           | Get input number value.              |
+|  `min(value: Union[int, float])`  | Set min value value.                 |
+|  `max(value: Union[int, float])`  | Set max value value.                 |
+|         `value_changed()`         | Handled when input value is changed. |
 
 ## Mini App Example
 

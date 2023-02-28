@@ -22,17 +22,14 @@ def multiplication_chart():
 # initialize widgets we will use in UI
 chart = HeatmapChart(
     title="Multiplication Table",
-    xaxis_title="",
-    color_range="row",
+    xaxis_title="xaxis_title",
+    color_range="table",
     tooltip="Result multiplication of {x} * {series_name}",
 )
 
 data = multiplication_chart()
 
-lines = [
-    {"name": idx + 1, "x": list(range(1, 11)), "y": line}
-    for idx, line in enumerate(data)
-]
+lines = [{"name": idx + 1, "x": list(range(1, 11)), "y": line} for idx, line in enumerate(data)]
 
 chart.add_series_batch(lines)
 card = Card(
