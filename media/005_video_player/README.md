@@ -72,6 +72,7 @@ You can find this example in our Github repository:
 
 ```python
 import os
+from pathlib import Path
 
 import supervisely as sly
 from dotenv import load_dotenv
@@ -91,7 +92,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare video url and type
+### Prepare videos url and type
 
 ```python
 video_id = int(os.environ["modal.state.slyVideoId"])
@@ -100,15 +101,23 @@ video_info = api.video.get_info_by_id(id=video_id)
 
 video_url = abs_url(video_info.path_original)
 video_mime_type = video_info.file_meta["mime"]
+
+video_id = int(os.environ["modal.state.slyVideoId"])  # get video ID from environment
+video_info = api.video.get_info_by_id(id=video_id)  # get VideoInfo from server
+video_url = abs_url(video_info.path_original)
+video_mime_type = video_info.file_meta["mime"]
+
+local_video_url = "/static/video-cam2.mp4" # local video url
+local_video_type = "video/mp4" # local video url
 ```
 
 ### Initialize `VideoPlayer` widgets we will use in UI
 
 ```python
-video1 = VideoPlayer(url=video_path, mime_type=video_mime_type)
+video1 = VideoPlayer(url=local_video_url, mime_type=local_video_type)
 
 video2 = VideoPlayer()
-video2.set_video(url=video_path, mime_type=video_mime_type)
+video2.set_video(url=video_url, mime_type=video_mime_type)
 ```
 
 ### Create a video control form

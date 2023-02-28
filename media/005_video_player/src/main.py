@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import supervisely as sly
 from dotenv import load_dotenv
@@ -12,20 +13,20 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-# get video ID from environment
-video_id = int(os.environ["modal.state.slyVideoId"])
 
-# get VideoInfo from server
-video_info = api.video.get_info_by_id(id=video_id)
-
-
-# prepare video url and mime type
+# prepare remote video.
+video_id = int(os.environ["modal.state.slyVideoId"])  # get video ID from environment
+video_info = api.video.get_info_by_id(id=video_id)  # get VideoInfo from server
 video_url = abs_url(video_info.path_original)
 video_mime_type = video_info.file_meta["mime"]
 
+# prepare local video
+local_video_url = "/static/video-cam2.mp4"
+local_video_type = "video/mp4"
+
 
 # initialize widgets we will use in UI
-video1 = VideoPlayer(url=video_url, mime_type=video_mime_type)
+video1 = VideoPlayer(url=local_video_url, mime_type=local_video_type)
 video2 = VideoPlayer()
 video2.set_video(url=video_url, mime_type=video_mime_type)
 
@@ -63,17 +64,24 @@ mask_url = "https://user-images.githubusercontent.com/79905215/221801327-7be20a3
 # create new cards
 card1 = Card(
     title="Video player",
+    description="This widget uses video from a local directory",
     content=video1,
 )
 card2 = Card(
     title="Controls - operations from python code",
+    description="This widget uses video from the server",
     content=Container(
         widgets=[video2, draw_mask_checkbox, controls_container, change_timestamp_container]
     ),
 )
 
 layout = Container(widgets=[card1, card2], direction="horizontal", fractions=[1, 1])
-app = sly.Application(layout=layout)
+
+# declare static files directory path to use videos from local directory
+static_dir = Path("media/005_video_player/videos")
+
+
+app = sly.Application(layout=layout, static_dir=static_dir)
 
 
 # start playing video
