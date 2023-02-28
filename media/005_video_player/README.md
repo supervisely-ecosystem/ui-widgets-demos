@@ -95,13 +95,6 @@ api = sly.Api()
 ### Prepare videos url and type
 
 ```python
-video_id = int(os.environ["modal.state.slyVideoId"])
-
-video_info = api.video.get_info_by_id(id=video_id)
-
-video_url = abs_url(video_info.path_original)
-video_mime_type = video_info.file_meta["mime"]
-
 video_id = int(os.environ["modal.state.slyVideoId"])  # get video ID from environment
 video_info = api.video.get_info_by_id(id=video_id)  # get VideoInfo from server
 video_url = abs_url(video_info.path_original)
@@ -172,10 +165,13 @@ layout = Container(widgets=[card1, card2], direction="horizontal", fractions=[1,
 
 ### Create app using layout
 
-Create an app object with layout parameter.
+Define `static_dir` parameter for using files from local directory.
+Create an app object with `layout` parameter.
 
 ```python
-app = sly.Application(layout=layout)
+static_dir = Path("media/005_video_player/videos")
+
+app = sly.Application(layout=layout, static_dir=static_dir)
 ```
 
 ### Handle button clicks
@@ -198,7 +194,6 @@ def get_current_timestamp():
     input_time.value = video2.get_current_timestamp()
 
 
-# set current timestamp
 @set_time_btn.click
 def set_current_timestamp():
     time_to_set = input_time.get_value()

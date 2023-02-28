@@ -104,7 +104,6 @@ image_3 = Image(image_url_3)
 ### Declare static files directory path and initialize `Image` using image from local directory
 
 ```python
-static_dir = Path("042_image/images")
 local_image_url = "/static/my-cats.jpg"
 local_image = Image(local_image_url)
 ```
@@ -124,9 +123,12 @@ layout = Container(widgets=[card])
 
 ### Create app using layout
 
-Create an app object with `layout` parameter. Define `static_dir` parameter for using files from local directory.
+Define `static_dir` parameter for using files from local directory.
+Create an app object with `layout` parameter.
 
 ```python
+static_dir = Path("media/001_image/images")
+
 app = sly.Application(layout=layout, static_dir=static_dir)
 ```
 

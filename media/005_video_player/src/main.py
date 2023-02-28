@@ -14,13 +14,17 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 
-# prepare remote video.
-video_id = int(os.environ["modal.state.slyVideoId"])  # get video ID from environment
-video_info = api.video.get_info_by_id(id=video_id)  # get VideoInfo from server
+# get video ID from environment variables
+video_id = int(os.environ["modal.state.slyVideoId"])
+
+# get VideoInfo from server
+video_info = api.video.get_info_by_id(id=video_id)
+
+# prepare url and mime type for video from server
 video_url = abs_url(video_info.path_original)
 video_mime_type = video_info.file_meta["mime"]
 
-# prepare local video
+# prepare url and mime type for video from local directory
 local_video_url = "/static/video-cam2.mp4"
 local_video_type = "video/mp4"
 
