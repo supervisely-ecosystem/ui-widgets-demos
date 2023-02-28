@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Progress Bar` widget in Supervisely app.
+This Supervisely widget allows you to display the progress of a task or operation. It is a useful widget for applications that involve long-running processes or tasks that take time to complete.
+
+With the `Progress Bar` widget, you can easily create a progress bar that updates in real-time or update the progress bar dynamically as a task progresses, giving users a clear indication of how much time is left until the task is complete.
+
+The Progress Bar Widget can be customized to show progress as percents or values.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
 
@@ -21,7 +25,7 @@ Progress(message=None, show_percents=False, hide_on_finish=True, widget_id=None)
 |    message     |  str  |            progress bar message            |
 | show_percents  | bool  |         show progress in percents          |
 | hide_on_finish | bool  |        hide progress bar on finish         |
-|   widget_id    |  int  | determine whether button is a plain button |
+|   widget_id    |  str  | determine whether button is a plain button |
 
 ### message
 
@@ -70,7 +74,7 @@ progress = Progress(hide_on_finish=True)
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 

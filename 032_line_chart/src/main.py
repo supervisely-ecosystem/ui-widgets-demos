@@ -3,7 +3,7 @@ import os
 import numpy as np
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, LineChart
+from supervisely.app.widgets import Card, Container, LineChart, Table
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -27,13 +27,19 @@ line_chart = LineChart(
     xaxis_type="category",
 )
 
+row_id = 1
+columns = ["id", "Line", "x", "y"]
+result_table = Table(data=[], columns=columns, width="25%")
+
+
+container = Container(widgets=[line_chart, result_table])
+card = Card(title="Line Chart", content=container)
+app = sly.Application(layout=card)
+
 
 @line_chart.click
-def refresh_images_table(datapoint: sly.app.widgets.LineChart.ClickedDataPoint):
-    print(f"Line: {datapoint.series_name}")
-    print(f"x = {datapoint.x}")
-    print(f"y = {datapoint.y}")
-
-
-card = Card(title="Line Chart", content=line_chart)
-app = sly.Application(layout=card)
+def add_row_to_table(datapoint: sly.app.widgets.LineChart.ClickedDataPoint):
+    global row_id
+    row = [row_id, datapoint.series_name, datapoint.x, datapoint.y]
+    row_id += 1
+    result_table.insert_row(row)

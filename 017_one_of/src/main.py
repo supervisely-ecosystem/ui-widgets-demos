@@ -11,30 +11,26 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # initialize widgets we will use in UI
-cat_image = Image(
-    url="https://user-images.githubusercontent.com/120389559/209821564-7917cbe5-fa8e-49dd-a1ca-519ee2b3a7ca.jpg"
+image_1 = Image(
+    url="https://user-images.githubusercontent.com/79905215/218269544-2e126d4a-20eb-4ace-8933-d36732bb0634.jpeg"
 )
-dog_image = Image(
-    url="https://user-images.githubusercontent.com/120389559/209821597-8670675b-5a18-480c-8fdc-1309e91086c7.jpg"
+image_2 = Image(
+    url="https://user-images.githubusercontent.com/79905215/218269547-5b5316f9-9ae2-4b0c-aedb-b2238e44f95d.jpeg"
 )
-horse_image = Image(
-    url="https://user-images.githubusercontent.com/120389559/209821602-ddb8196f-0ac5-4556-abae-178327ff734b.jpg"
+image_3 = Image(
+    url="https://user-images.githubusercontent.com/79905215/218269550-a5caba65-1f0f-4986-8711-7d36c7911e51.jpeg"
 )
-sheep_image = Image(
-    url="https://user-images.githubusercontent.com/120389559/209821609-c8396b3e-d7a3-4beb-b92b-539d31e91e90.jpg"
-)
-animals = [
-    Select.Item(value="cat", label="cat", content=cat_image),
-    Select.Item(value="dog", label="dog", content=dog_image),
-    Select.Item(value="horse", label="horse", content=horse_image),
-    Select.Item(value="sheep", label="sheep", content=sheep_image),
+items = [
+    Select.Item(value="image 1", label="image 1", content=image_1),
+    Select.Item(value="image 2", label="image 2", content=image_2),
+    Select.Item(value="image 3", label="image 3", content=image_3),
 ]
 
-select_items = Select(items=animals)
+select_items = Select(items=items)
 one_of = OneOf(conditional_widget=select_items)
 card = Card(
     title="One of",
-    content=one_of,
+    content=Container(widgets=[select_items, one_of]),
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)

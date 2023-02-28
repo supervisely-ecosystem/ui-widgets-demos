@@ -17,7 +17,7 @@ video_id = int(os.environ["modal.state.slyVideoId"])
 # get VideoInfo from server
 video_info = api.video.get_info_by_id(id=video_id)
 
-# initialize widgets we will use in UI 
+# initialize widgets we will use in UI
 video = Video(video_id=video_id)
 
 # buttons to control widget from python code
@@ -36,26 +36,6 @@ card = Card(
 
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
-
-
-@video.play_clicked
-def play(start_frame: int):
-    print(f"Start play frame: {start_frame}")
-
-
-@video.pause_clicked
-def pause(current_frame: int):
-    print(f"Pause frame: {current_frame}")
-
-
-@video.frame_change_started
-def change_frame_start(current_frame: int):
-    print(f"Frame change started: {current_frame}")
-
-
-@video.frame_change_finished
-def change_frame_end(current_frame: int):
-    print(f"Frame change finished: {current_frame}")
 
 
 @button_random_frame.click

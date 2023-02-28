@@ -32,7 +32,7 @@ image_3 = Image(image_url_3)
 
 # add local image
 # declare static files directory path
-static_dir = Path('042_image/images')
+static_dir = Path("042_image/images")
 
 # get image url
 local_image_url = "/static/my-cats.jpg"

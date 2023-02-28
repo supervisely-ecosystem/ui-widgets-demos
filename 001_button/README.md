@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Button` widget in Supervisely app.
+This Supervisely widget allows you to create buttons that can be clicked to trigger an action. It is a versatile widget that can be used in a variety of GUI applications.
+
+<!-- With the `Button` widget, you can easily create buttons that have customizable text, colors, and styles. You can also attach event handlers to buttons, so that when a button is clicked, a function is called. -->
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/button)
 
@@ -26,7 +28,7 @@ plain=False, show_loading=True, icon=None, icon_gap=5, widget_id=None)
 | show_loading |                                bool                                |         determine whether button is loading         |
 |     icon     |                                str                                 | button icon, accepts an icon name of icon component |
 |   icon_gap   |                                int                                 |          gap between icon and button text           |
-|  widget_id   |                                int                                 |                  id of the widget                   |
+|  widget_id   |                                str                                 |                  id of the widget                   |
 
 ### text
 
@@ -150,7 +152,7 @@ button_icon_gap_50 = Button(text="icon gap 50", icon="zmdi zmdi-play", icon_gap=
 
 ID of the widget.
 
-**type:** `int`
+**type:** `str`
 
 **default value:** `None`
 
