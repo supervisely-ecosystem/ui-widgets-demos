@@ -4,7 +4,7 @@
 
 This Supervisely widget allows you to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/projectthumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/thumbnail/projectthumbnail)
 
 ## Function signature
 
@@ -52,7 +52,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/006_project_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/006_project_thumbnail/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/blob/widget-readmes-merged/thumbnail/001_project_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/widget-readmes-merged/thumbnail/001_project_thumbnail/src/main.py)
 
 ### Import libraries
 
@@ -78,7 +78,7 @@ api = sly.Api()
 ### Initialize `ProjectThumbnail` widget
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 project = api.project.get_info_by_id(project_id)
 
 project_thumbnail = ProjectThumbnail(project)
