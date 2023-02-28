@@ -49,7 +49,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/042_image/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/042_image/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/001_image/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/001_image/src/main.py)
 
 ### Import libraries
 

@@ -175,7 +175,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/029_grid_gallery/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/029_grid_gallery/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/003_grid_gallery/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/003_grid_gallery/src/main.py)
 
 ### Import libraries
 

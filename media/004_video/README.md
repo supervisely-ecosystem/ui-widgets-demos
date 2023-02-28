@@ -56,7 +56,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/040_video/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/040_video/src/main.py)
+[https://github.com/supervisely-ecosystem/ui-widgets-demos/media/004_video/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/004_video/src/main.py)
 
 ### Import libraries
 

@@ -2,10 +2,9 @@
 
 ## Introduction
 
-**`VideoPlayer`** widget in Supervised is a media player that utilizes the HTML `<video>` tag and provides additional functionalities to controll it through Python code such as seeking and controlling the current playback time in seconds.It uses the built-in browser player, which is supported by most devices. 
+**`VideoPlayer`** widget in Supervised is a media player that utilizes the HTML `<video>` tag and provides additional functionalities to controll it through Python code such as seeking and controlling the current playback time in seconds.It uses the built-in browser player, which is supported by most devices.
 
-In addition, Video Player has a feature for overlaying an image overlay on top of the video without modifying the video itself. 
-
+In addition, Video Player has a feature for overlaying an image overlay on top of the video without modifying the video itself.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/videoplayer)
 
@@ -16,7 +15,6 @@ VideoPlayer(url=None, mime_type="video/mp4", widget_id=None)
 ```
 
 ![videoplayer-default](https://user-images.githubusercontent.com/79905215/221818450-262abd3d-a883-4f1d-bddd-d0aba35d5ff3.gif)
-
 
 ## Parameters
 
@@ -66,7 +64,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/043_video_player/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/043_video_player/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/005_video_player/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/005_video_player/src/main.py)
 
 ### Import libraries
 
@@ -228,5 +226,3 @@ def fast_rewind_video():
 ```
 
 ![videoplayer-app](https://user-images.githubusercontent.com/79905215/221830670-81099679-2627-4b6e-9a98-9b409345c7dc.gif)
-
-
