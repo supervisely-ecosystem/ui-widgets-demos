@@ -134,13 +134,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                                        Attributes and Methods                                        | Description                     |
-| :--------------------------------------------------------------------------------------------------: | ------------------------------- |
-|                                                 `id`                                                 | Get image id property.          |
-|                                              `loading`                                               | Get or set `loading` property.  |
-| `set(title: str, image_url, ann: Annotation, image_id: int, zoom_to, zoom_factor: float, title_url)` | Set item in `LabeledImage`.     |
-|                                             `clean_up()`                                             | Clean `LabeledImage` from item. |
-|                                             `is_empty()`                                             | Check `LabeledImage` is empty.  |
+|                                               Attributes and Methods                                                | Description                     |
+| :-----------------------------------------------------------------------------------------------------------------: | ------------------------------- |
+|                                                        `id`                                                         | Get image id property.          |
+|                                                      `loading`                                                      | Get or set `loading` property.  |
+| `set(title: str, image_url: str, ann: Annotation, image_id: int, zoom_to: int, zoom_factor: float, title_url: str)` | Set item in `LabeledImage`.     |
+|                                                    `clean_up()`                                                     | Clean `LabeledImage` from item. |
+|                                                    `is_empty()`                                                     | Check `LabeledImage` is empty.  |
 
 ## Mini App Example
 

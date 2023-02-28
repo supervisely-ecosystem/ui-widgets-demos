@@ -124,10 +124,10 @@ layout = Container(widgets=[card])
 
 ### Create app using layout
 
-Create an app object with layout parameter.
+Create an app object with `layout` parameter. Define `static_dir` parameter for using files from local directory.
 
 ```python
-app = sly.Application(layout=layout)
+app = sly.Application(layout=layout, static_dir=static_dir)
 ```
 
 ![layout](https://user-images.githubusercontent.com/120389559/218758403-0fca4434-207f-4d1a-b5f4-5e65268efcee.png)

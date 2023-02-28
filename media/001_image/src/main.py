@@ -11,9 +11,9 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-IMAGE_ID1 = 11073637
-IMAGE_ID2 = 17526002
-IMAGE_ID3 = 17526001
+IMAGE_ID1 = 19369662
+IMAGE_ID2 = 19369661
+IMAGE_ID3 = 19369660
 
 # get image info from server
 image_info_1 = api.image.get_info_by_id(IMAGE_ID1)
@@ -31,10 +31,6 @@ image_2 = Image(image_url_2)
 image_3 = Image(image_url_3)
 
 # add local image
-# declare static files directory path
-static_dir = Path("042_image/images")
-
-# get image url
 local_image_url = "/static/my-cats.jpg"
 
 # initialize widget
@@ -47,4 +43,8 @@ card = Card(
 )
 
 layout = Container(widgets=[card])
+
+# declare static files directory path to use images from local directory
+static_dir = Path("media/001_image/images")
+
 app = sly.Application(layout=layout, static_dir=static_dir)
