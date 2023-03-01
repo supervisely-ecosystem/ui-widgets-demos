@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This Supervisely widget allows you to display a thumbnail image that represents supervisely dataset. It is a useful widget for applications that run from specific dataset, allowing users to have quick access to this dataset, so that when the user clicks on the thumbnail, the link will take him to this dataset.
+**`DatasetThumbnail`** widget in Supervisely is a widget that allows to display a thumbnail image that represents supervisely dataset. It is a useful widget for applications that run from specific dataset, allowing users to have quick access to this dataset, so that when the user clicks on the thumbnail, the link will take him to this dataset.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/datasetthumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/datasetthumbnail)
 
 ## Function signature
 

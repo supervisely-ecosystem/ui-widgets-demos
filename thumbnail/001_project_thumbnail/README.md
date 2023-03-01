@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This Supervisely widget allows you to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
+**`ProjectThumbnail`**  widget in Supervisely is a widget that allows to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/thumbnail/projectthumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/projectthumbnail)
 
 ## Function signature
 
