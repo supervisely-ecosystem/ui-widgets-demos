@@ -2,9 +2,10 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `FolderThumbnail` widget in Supervisely app.
+**`FolderThumbnail`** widget in Supervisely is a widget that allows for quickly identifying and navigating to specific folder in Team files. Clicking on it opens the folder in Supervisely Team files interface.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/folderthumbnail)
+
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/folderthumbnail)
 
 ## Function signature
 
@@ -19,7 +20,7 @@ FolderThumbnail(info=None, widget_id=None)
 | Parameters  |    Type    |         Description          |
 | :---------: | :--------: | :--------------------------: |
 |   `info`    | `FileInfo` | Information about given file |
-| `widget_id` |   `str`    |       Id of the widget       |
+| `widget_id` |   `str`    |       ID of the widget       |
 
 ### info
 
@@ -41,13 +42,13 @@ ID of the widget.
 
 | Attributes and Methods | Description                                |
 | :--------------------: | ------------------------------------------ |
-| `set(info: FileInfo)`  | Set given `FileInfo` in `FolderThumbnail`. |
+| `set(info: FileInfo)`  | Set given `FileInfo` in `FolderThumbnail` widget. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/045_folder_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/045_folder_thumbnail/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/thumbnail/004_folder_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/thumbnail/004_folder_thumbnail/src/main.py)
 
 ### Import libraries
 

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `FileThumbnail` widget in Supervisely app.
+**`FileThumbnail`** widget in Supervisely displays an icon, link, and path to the file in Team Files. Clicking on the widget opens Supervisely Team Files interface, where you can view and edit the file.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/filethumbnail)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/filethumbnail)
 
 ## Function signature
 
@@ -19,7 +19,7 @@ FileThumbnail(info=None, widget_id=None)
 | Parameters  |    Type    |         Description          |
 | :---------: | :--------: | :--------------------------: |
 |   `info`    | `FileInfo` | Information about given file |
-| `widget_id` |   `str`    |       Id of the widget       |
+| `widget_id` |   `str`    |       ID of the widget       |
 
 ### info
 
@@ -47,7 +47,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/046_file_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/046_file_thumbnail/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/thumbnail/005_file_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/thumbnail/005_file_thumbnail/src/main.py)
 
 ### Import libraries
 

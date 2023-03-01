@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # get project info from server
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 project = api.project.get_info_by_id(project_id)
 
 # initialize widgets we will use in UI
