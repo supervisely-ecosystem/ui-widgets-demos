@@ -13,8 +13,9 @@ In addition, Video Player has a feature for overlaying an image overlay on top o
 ```python
 VideoPlayer(url=None, mime_type="video/mp4", widget_id=None)
 ```
-
-![videoplayer-default](https://user-images.githubusercontent.com/79905215/221818450-262abd3d-a883-4f1d-bddd-d0aba35d5ff3.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221818450-262abd3d-a883-4f1d-bddd-d0aba35d5ff3.gif" alt="videoplayer-default" />
+</p>
 
 ## Parameters
 
@@ -225,4 +226,6 @@ def fast_rewind_video():
     video2.set_current_timestamp(currrent_time - step)
 ```
 
-![videoplayer-app](https://user-images.githubusercontent.com/79905215/221830670-81099679-2627-4b6e-9a98-9b409345c7dc.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221830670-81099679-2627-4b6e-9a98-9b409345c7dc.gif" alt="videoplayer-app" />
+</p>

@@ -92,8 +92,9 @@ Enable zoom on `GridGallery`.
 ```python
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True)
 ```
-
-![grid_gallery_zoom](https://user-images.githubusercontent.com/79905215/221856143-7eb079d0-38ea-460d-9ca5-f38d1146bbb3.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221856143-7eb079d0-38ea-460d-9ca5-f38d1146bbb3.gif" alt="grid_gallery_zoom" />
+</p>
 
 ### resize_on_zoom
 
@@ -115,7 +116,9 @@ Sync pan & zoom between views.
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True, sync_views=True)
 ```
 
-![grid_gallery_sync](https://user-images.githubusercontent.com/79905215/221856489-2aa2d8ad-4930-47ae-a907-98f47764e176.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221856489-2aa2d8ad-4930-47ae-a907-98f47764e176.gif" alt="grid_gallery_sync" />
+</p>
 
 ### fill_rectangle
 
@@ -129,13 +132,17 @@ Determines to fill rectange figure or not.
 grid_gallery = GridGallery(columns_number=3, fill_rectangle=False)
 ```
 
-![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221578556-76d7bc99-c74d-4b0e-a64f-af7371b15e43.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221578556-76d7bc99-c74d-4b0e-a64f-af7371b15e43.gif" alt="fill_rectangle_false" />
+</p>
 
 ```python
 grid_gallery = GridGallery(columns_number=3)
 ```
 
-![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221579195-e66458a0-b79c-43f6-9310-819150833b1a.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221579195-e66458a0-b79c-43f6-9310-819150833b1a.gif" alt="fill_rectangle_true" />
+</p>
 
 ### border_width
 
@@ -249,4 +256,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![grid_gallery_app](https://user-images.githubusercontent.com/79905215/221858652-bc342549-d16b-44bb-8452-b4c0e18ec8a7.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221858652-bc342549-d16b-44bb-8452-b4c0e18ec8a7.gif" alt="grid_gallery_app" />
+</p>

@@ -77,7 +77,9 @@ labeled_image = LabeledImage(enable_zoom=True)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![li_zoom](https://user-images.githubusercontent.com/79905215/221850680-d6ffdcf8-468f-4663-a29f-09695f45c76f.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221850680-d6ffdcf8-468f-4663-a29f-09695f45c76f.gif" alt="li_zoom" />
+</p>
 
 ### resize_on_zoom
 
@@ -100,14 +102,18 @@ labeled_image = LabeledImage()
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![fill_rectangle_true](https://user-images.githubusercontent.com/120389559/221583188-6bc606cd-abba-4e92-a342-dced21a093ab.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221583188-6bc606cd-abba-4e92-a342-dced21a093ab.gif" alt="fill_rectangle_true" />
+</p>
 
 ```python
 labeled_image = LabeledImage(fill_rectangle=False)
 labeled_image.set(title=image.name, image_url=image.preview_url, ann=ann)
 ```
 
-![fill_rectangle_false](https://user-images.githubusercontent.com/120389559/221583698-747dcb67-d14a-499a-b3b4-861f100ffd3d.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221583698-747dcb67-d14a-499a-b3b4-861f100ffd3d.gif" alt="fill_rectangle_false" />
+</p>
 
 ### border_width
 
@@ -215,4 +221,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![li_app](https://user-images.githubusercontent.com/79905215/221851475-650b610b-a5c5-4e49-a32c-47d65094ac29.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/221851475-650b610b-a5c5-4e49-a32c-47d65094ac29.gif" alt="li_app" />
+</p>

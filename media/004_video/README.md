@@ -11,8 +11,9 @@
 ```python
 Video(video_id=None, widget_id=None)
 ```
-
-![default](https://user-images.githubusercontent.com/120389559/218671402-bd79b3a6-171c-439a-a012-ed58098e1c4e.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218671402-bd79b3a6-171c-439a-a012-ed58098e1c4e.gif" alt="video-default" />
+</p>
 
 ## Parameters
 
@@ -148,4 +149,6 @@ def video_loading():
     print(f"Loading: {video.loading}")
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218671402-bd79b3a6-171c-439a-a012-ed58098e1c4e.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218671402-bd79b3a6-171c-439a-a012-ed58098e1c4e.gif" alt="video-app" />
+</p>
