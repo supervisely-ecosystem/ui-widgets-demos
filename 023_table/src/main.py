@@ -40,3 +40,11 @@ card = Card(
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
+
+
+@table.download_as_csv
+def download_as_csv():
+    df = table.to_pandas()
+    # set table name without ext
+    df.index.name = "my_table"
+    return df

@@ -11,17 +11,21 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
+# get video ID from environment
 video_id = int(os.environ["modal.state.slyVideoId"])
+
+# get VideoInfo from server
 video_info = api.video.get_info_by_id(id=video_id)
+
+# initialize widgets we will use in UI 
 video = Video(video_id=video_id)
 
+# buttons to control widget from python code
 button_random_frame = Button(text="Random", icon="zmdi zmdi-tv")
-button_play = Button(text="Play", icon="zmdi zmdi-play")
-button_pause = Button(text="Pause", icon="zmdi zmdi-pause")
 button_loading = Button(text="Loading", icon="zmdi zmdi-refresh")
 
 buttons_container = Container(
-    widgets=[button_random_frame, button_play, button_pause, button_loading],
+    widgets=[button_random_frame, button_loading],
     direction="horizontal",
 )
 
@@ -57,25 +61,6 @@ def change_frame_end(current_frame: int):
 @button_random_frame.click
 def set_random_frame():
     video.set_current_frame(randint(0, video_info.frames_count - 1))
-
-
-# @button_play.click
-# def play_video():
-#     from time import sleep
-#     video.frame = video.get_current_frame()
-#     if video.frame == video_info.frames_count - 1:
-#         video.frame == 0
-#     video.playing = True
-#     while video.frame != video_info.frames_count - 1:
-#         video.frame += 1
-#         sleep(0.04)
-#         if not video.playing:
-#             break
-
-
-@button_pause.click
-def pause_video():
-    video.set_current_frame(value=video.get_current_frame())
 
 
 @button_loading.click
