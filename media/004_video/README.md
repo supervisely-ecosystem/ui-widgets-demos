@@ -4,7 +4,7 @@
 
 **`Video`** widget in Supervisely is a custom player designed for displaying videos and annotations frame-by-frame. It allows to play, pause, rewind, and fast-forward videos, as well as move through them frame by frame. It is a powerful tool for visualizing and analyzing video data with annotations.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/video)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/video)
 
 ## Function signature
 
@@ -56,7 +56,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[https://github.com/supervisely-ecosystem/ui-widgets-demos/media/004_video/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/004_video/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/004_video/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/004_video/src/main.py)
 
 ### Import libraries
 

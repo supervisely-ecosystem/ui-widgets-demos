@@ -6,7 +6,7 @@
 
 In addition, Video Player has a feature for overlaying an image overlay on top of the video without modifying the video itself.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/videoplayer)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/videoplayer)
 
 ## Function signature
 

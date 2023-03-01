@@ -4,7 +4,7 @@
 
 **`LabeledImage`** widget in Supervisely is designed to display an image with annotations and provides additional features such as the ability to toggle the visibility of individual class annotations, change fill opacity, and includes a zoom function.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/labeledimage)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/labeledimage)
 
 ## Function signature
 
