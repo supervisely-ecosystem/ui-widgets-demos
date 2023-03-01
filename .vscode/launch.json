@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "misc.radio_tabs.src.main:app",
+                "misc.select_string.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
