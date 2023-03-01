@@ -19,7 +19,7 @@ ProjectThumbnail(info=None, widget_id=None)
 | Parameters  |     Type      |                    Description                     |
 | :---------: | :-----------: | :------------------------------------------------: |
 |   `info`    | `ProjectInfo` | `NamedTuple`, containing information about project |
-| `widget_id` |     `str`     |                  Id of the widget                  |
+| `widget_id` |     `str`     |                  ID of the widget                  |
 
 ### info
 
@@ -52,7 +52,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/blob/widget-readmes-merged/thumbnail/001_project_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/widget-readmes-merged/thumbnail/001_project_thumbnail/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/thumbnail/001_project_thumbnail/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/thumbnail/001_project_thumbnail/src/main.py)
 
 ### Import libraries
 
@@ -75,12 +75,16 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ProjectThumbnail` widget
+### Get Project ID and info
 
 ```python
 project_id = sly.env.project_id()
 project = api.project.get_info_by_id(project_id)
+```
 
+### Initialize `ProjectThumbnail` widget
+
+```python
 project_thumbnail = ProjectThumbnail(project)
 ```
 
