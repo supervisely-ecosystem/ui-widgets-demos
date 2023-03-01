@@ -2,14 +2,19 @@
 
 ## Introduction
 
-This widget is a select `Team` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectTeam` widget in Supervisely app.
+This widget is a select team input, clicking on it can be processed from python code. In this tutorial you will learn how to use **`SelectTeam`** widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectworkspace)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectworkspace)
 
 ## Function signature
 
 ```python
-SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
+SelectTeam(
+    default_id=None,
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218033566-7b4babed-9dfd-4bc6-ba14-19666afb2e1d.png)
@@ -18,10 +23,10 @@ SelectTeam(default_id=None, show_label=True, size=None, widget_id=None)
 
 |  Parameters  |                   Type                    |           Description            |
 | :----------: | :---------------------------------------: | :------------------------------: |
-| `default_id` |                   `int`                   |            `Team` ID             |
+| `default_id` |                   `int`                   |   Default supervisely team ID    |
 | `show_label` |                  `bool`                   |            Show label            |
 |    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
-| `widget_id`  |                   `str`                   |         Id of the widget         |
+| `widget_id`  |                   `str`                   |         ID of the widget         |
 
 ### default_id
 
@@ -99,7 +104,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, SelectTeam
+from supervisely.app.widgets import Button, Card, Container, NotificationBox, SelectTeam
 ```
 
 ### Init API client
@@ -116,15 +121,21 @@ api = sly.Api()
 ### Prepare `Team` ID
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
+team_id = sly.env.team_id()
 ```
 
 ### Initialize `SelectTeam` widget
 
 ```python
-select_team = SelectTeam(
-    default_id=team_id,
-)
+select_team = SelectTeam()
+```
+
+### Create button and notification box we will use in UI for demo
+
+```python
+ok_btn = Button("OK")
+
+notification_box = NotificationBox()
 ```
 
 ### Create app layout
@@ -134,7 +145,7 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 ```python
 card = Card(
     title="Select Team",
-    content=Container(widgets=[select_team]),
+    content=Container(widgets=[select_team, ok_btn, notification_box]),
 )
 
 layout = Container(widgets=[card])
@@ -148,4 +159,19 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218034207-b7bc95cd-351c-44c0-a6ae-0023c8a2f303.png)
+### Add functions to get `team ID` from widget
+
+```python
+@ok_btn.click
+def show_team_members():
+    team_id = select_team.get_selected_id()
+    team = api.team.get_info_by_id(team_id)
+    notification_box.set(
+        title=f"Team '{team.name}'",
+        description=f"Your role in the team: {team.role}",
+    )
+```
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222133799-90b573a4-d1fa-4c8e-a337-9665cd8ae458.gif" alt="select-team-app" width="600"/>
+</p>
