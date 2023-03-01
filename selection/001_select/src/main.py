@@ -30,7 +30,8 @@ animals_wild = [
 
 select_items = Select(
     items=animals_domestic + animals_wild,
-    filterable=True,
+    multiple=True,
+    placeholder="Select animals",
 )
 
 groups = [
@@ -42,7 +43,7 @@ select_groups = Select(groups=groups)
 
 card = Card(
     title="Select",
-    content=Container(widgets=[select_items, select_groups]),
+    content=Container(widgets=[select_items]),
 )
 
 layout = Container(widgets=[card])

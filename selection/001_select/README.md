@@ -2,14 +2,22 @@
 
 ## Introduction
 
-This Supervisely widget allows you to create a dropdown menu that lets users select an option from a list of choices. The `Select` widget has event handler that is triggered when the user selects an option from the dropdown menu. This can be useful for applications that require users to take an action based on the selected option, such as filtering content or displaying specific information.
+**`Select`** widget in Supervisely is a graphical user interface element that allows users to choose an option from a predefined list. It presents the options as a dropdown menu that can be expanded and collapsed by clicking.
+The `Select` widget has event handler that is triggered when the user selects an option from the dropdown menu. This can be useful for applications that require users to take an action based on the selected option, such as filtering content or displaying specific information.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/select)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/select)
 
 ## Function signature
 
 ```python
-Select(items=None, groups=None, filterable=False, placeholder="select", size=None, multiple=False, widget_id=None)
+Select(
+    items=None, groups=None,
+    filterable=False,
+    placeholder="select",
+    size=None,
+    multiple=False,
+    widget_id=None
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
@@ -24,7 +32,7 @@ Select(items=None, groups=None, filterable=False, placeholder="select", size=Non
 | `placeholder` |                   `str`                   |             Placeholder              |
 |    `size`     | `Literal["large", "small", "mini", None]` |            Size of input             |
 |  `multiple`   |                  `bool`                   | Whether multiple-select is activated |
-|  `widget_id`  |                   `str`                   |           Id of the widget           |
+|  `widget_id`  |                   `str`                   |           ID of the widget           |
 
 ### items
 
@@ -34,17 +42,7 @@ Determine list of `Select.Item` widgets.
 
 **default value:** `None`
 
-### groups
-
-Determine list of `Select.Group` widgets.
-
-**type:** `List[Select.Group]`
-
-**default value:** `None`
-
-**Function signature**
-
-Prepare select items and groups:
+Prepare select items:
 
 ```python
 animals_domestic = [
@@ -67,14 +65,34 @@ select_items = Select(
 
 ![items](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
 
-or initialize widget with given groups of items:
+### groups
+
+Determine list of `Select.Group` widgets.
+
+**type:** `List[Select.Group]`
+
+**default value:** `None`
+
+Prepare select items and groups:
 
 ```python
+animals_domestic = [
+    Select.Item(value="cat", label="cat"),
+    Select.Item(value="dog", label="dog"),
+]
+animals_wild = [
+    Select.Item(value="squirrel", label="squirrel"),
+]
+
 groups = [
     Select.Group(label="domestic", items=animals_domestic),
     Select.Group(label="wild", items=animals_wild),
 ]
+```
 
+Initialize widget with given groups of items:
+
+```python
 select_groups = Select(groups=groups)
 ```
 
@@ -88,13 +106,35 @@ Whether `Select` is filterable.
 
 **default value:** `false`
 
+```python
+select_items = Select(
+    items=animals_domestic + animals_wild,
+    filterable=True,
+)
+```
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222120126-1feedd62-48a1-4479-a634-9f6fb8635f19.gif" alt="select-filter" width="600"/>
+</p>
+
 ### placeholder
 
-Placeholder.
+Placeholder. It needs to set `multiple=True` parameter.
 
 **type:** `str`
 
 **default value:** `select`
+
+
+```python
+select_items = Select(
+    items=animals_domestic + animals_wild,
+    multiple=True,
+    placeholder="Select animals",
+)
+```
+
+![placeholder](https://user-images.githubusercontent.com/79905215/222124304-a769d36b-9eb5-4550-a5c9-a8535fe245a8.png)
 
 ### size
 
@@ -130,7 +170,9 @@ select_items = Select(
 )
 ```
 
-![multiple](https://user-images.githubusercontent.com/120389559/218096915-b300c3d6-7a17-4cca-befe-36a2ee4828de.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218096915-b300c3d6-7a17-4cca-befe-36a2ee4828de.gif" alt="multiple" width="600"/>
+</p>
 
 ### widget_id
 
@@ -142,18 +184,18 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                          Attributes and Methods                           | Description                                 |
-| :-----------------------------------------------------------------------: | ------------------------------------------- |
-|                               `get_value()`                               | Return selected item value.                 |
-| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items. |
-|                               `get_items()`                               | Return list of items from widget.           |
-|                             `value_changed()`                             | Handled when input value is changed.        |
+|                          Attributes and Methods                           | Description                                                 |
+| :-----------------------------------------------------------------------: | ----------------------------------------------------------- |
+|                               `get_value()`                               | Return selected item value.                                 |
+| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items.                 |
+|                               `get_items()`                               | Return list of items from widget.                           |
+|                             `@value_changed`                              | Decorator functions is handled when input value is changed. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/009_select/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/009_select/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/001_select/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/001_select/src/main.py)
 
 ### Import libraries
 
@@ -231,4 +273,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218097482-c5d94009-036c-43dd-85c4-f8f6c413f984.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218097482-c5d94009-036c-43dd-85c4-f8f6c413f984.gif" alt="layout" width="600"/>
+</p>
