@@ -7,7 +7,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "NEW widgets.grid_plot.src.main2:app",
+                "NEW widgets.image_region_selector.src.main:app",
                 "--host",
                 "0.0.0.0",
                 "--port",
