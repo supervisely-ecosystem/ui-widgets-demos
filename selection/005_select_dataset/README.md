@@ -69,7 +69,11 @@ Allow to select multiple datasets in current project.
 **default value:** `false`
 
 ```python
-select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, multiselect=True)
+select_dataset = SelectDataset(
+    default_id=dataset_id,
+    project_id=project_id,
+    multiselect=True,
+)
 ```
 
 <p align="center">
@@ -85,7 +89,11 @@ Show only `Dataset` select.
 **default value:** `false`
 
 ```python
-select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, compact=True)
+select_dataset = SelectDataset(
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+)
 ```
 
 ![compact](https://user-images.githubusercontent.com/120389559/217848891-7caf3883-fcb2-48d0-b0bb-4393a159ba6a.png)
@@ -100,7 +108,10 @@ Determine show text `Dataset` on widget or not, work only if `compact` is True.
 
 ```python
 select_dataset = SelectDataset(
-    default_id=dataset_id, project_id=project_id, compact=True, show_label=False
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+    show_label=False,
 )
 ```
 
@@ -116,21 +127,39 @@ Size of input.
 
 ```python
 select_dataset = SelectDataset(
-    default_id=dataset_id, project_id=project_id, compact=True, show_label=False
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+    show_label=False,
 )
 select_mini = SelectDataset(
-    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="mini"
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+    show_label=False,
+    size="mini",
 )
 select_small = SelectDataset(
-    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="small"
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+    show_label=False,
+    size="small",
 )
 select_large = SelectDataset(
-    default_id=dataset_id, project_id=project_id, compact=True, show_label=False, size="large"
+    default_id=dataset_id,
+    project_id=project_id,
+    compact=True,
+    show_label=False,
+    size="large",
 )
-card = Card(
-    title="Select Dataset",
-    content=Container(widgets=[select_dataset, select_mini, select_small, select_large]),
-)
+container = Container(widgets=[
+    select_dataset,
+    select_mini,
+    select_small,
+    select_large,
+])
+card = Card(title="Select Dataset", content=container)
 ```
 
 ![size](https://user-images.githubusercontent.com/120389559/218713836-2e03438c-2ce3-49be-8a9c-292c617cca14.png)
@@ -144,7 +173,11 @@ Determine `Dataset` select ability.
 **default value:** `false`
 
 ```python
-select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, disabled=True)
+select_dataset = SelectDataset(
+    default_id=dataset_id,
+    project_id=project_id,
+    disabled=True,
+)
 ```
 
 ![st-disabled](https://user-images.githubusercontent.com/79905215/222368297-d49c243d-a2bb-4df4-b474-e6a25f9a5a85.png)

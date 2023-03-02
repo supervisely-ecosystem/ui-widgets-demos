@@ -92,7 +92,10 @@ Determine show text `Workspace` on widget or not, work only if `compact` is True
 
 ```python
 select_workspace = SelectWorkspace(
-    default_id=workspace_id, team_id=team_id, compact=True, show_label=False
+    default_id=workspace_id,
+    team_id=team_id,
+    compact=True,
+    show_label=False,
 )
 ```
 
@@ -109,15 +112,28 @@ Size of input.
 **default value:** `None`
 
 ```python
-select_workspace = SelectWorkspace(default_id=workspace_id, compact=True, show_label=False)
+select_workspace = SelectWorkspace(
+    default_id=workspace_id,
+    compact=True,
+    show_label=False,
+)
 select_workspace_mini = SelectWorkspace(
-    default_id=workspace_id, compact=True, show_label=False, size="mini"
+    default_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="mini",
 )
 select_workspace_small = SelectWorkspace(
-    default_id=workspace_id, compact=True, show_label=False, size="small"
+    default_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="small",
 )
 select_workspace_large = SelectWorkspace(
-    default_id=workspace_id, compact=True, show_label=False, size="large"
+    default_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="large",
 )
 card = Card(
     title="Select Workspace",

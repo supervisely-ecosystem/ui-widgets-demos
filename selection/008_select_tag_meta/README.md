@@ -47,7 +47,10 @@ Determine `Tag` will be selected by default.
 **default value:** `None`
 
 ```python
-select_tag_meta = SelectTagMeta(default="rust", project_id=project_id)
+select_tag_meta = SelectTagMeta(
+    default="rust",
+    project_id=project_id,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218047689-6236f160-b0f9-43da-b0b8-f44e3a9eacbb.png)
@@ -93,7 +96,10 @@ Determine `Tags` types witch will be available to select from all `Project` `Tag
 ```python
 from supervisely.annotation.tag_meta import TagValueType
 allowed_types = [TagValueType.ANY_STRING]
-select_tag_meta = SelectTagMeta(project_id=project_id, allowed_types=allowed_types)
+select_tag_meta = SelectTagMeta(
+    project_id=project_id,
+    allowed_types=allowed_types,
+)
 ```
 
 ![allowed_types](https://user-images.githubusercontent.com/79905215/222377831-7dcb4128-d381-4c7e-83f4-c482dc70f62a.png)
@@ -107,7 +113,10 @@ Allows to select multiple `Tags`.
 **default value:** `False`
 
 ```python
-select_tag_meta = SelectTagMeta(project_id=project_id, multiselect=True)
+select_tag_meta = SelectTagMeta(
+    project_id=project_id,
+    multiselect=True,
+)
 ```
 
 ![multiselect](https://user-images.githubusercontent.com/120389559/218099610-e36e6221-74d3-4271-89d4-da7edf088f80.gif)
@@ -121,7 +130,10 @@ Determine show text `Tag` on widget or not.
 **default value:** `True`
 
 ```python
-select_tag_meta = SelectTagMeta(project_id=project_id, show_label=False)
+select_tag_meta = SelectTagMeta(
+    project_id=project_id,
+    show_label=False,
+)
 ```
 
 ![show_label](https://user-images.githubusercontent.com/120389559/218049460-041e2086-548c-4961-8245-33847900b59c.png)
@@ -135,14 +147,38 @@ Size of input.
 **default value:** `None`
 
 ```python
-select_tag_meta = SelectTagMeta(default="cat", project_id=project_id, show_label=False)
-select_mini = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="mini")
-select_small = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="small")
-select_large = SelectTagMeta(default="cat", project_id=project_id, show_label=False, size="large")
+select_tag_meta = SelectTagMeta(
+    default="cat",
+    project_id=project_id,
+    show_label=False,
+)
+select_mini = SelectTagMeta(
+    default="cat",
+    project_id=project_id,
+    show_label=False,
+    size="mini",
+)
+select_small = SelectTagMeta(
+    default="cat",
+    project_id=project_id,
+    show_label=False,
+    size="small",
+)
+select_large = SelectTagMeta(
+    default="cat",
+    project_id=project_id,
+    show_label=False,
+    size="large",
+)
 
 card = Card(
     title="Select TagMeta",
-    content=Container(widgets=[select_tag_meta, select_mini, select_small, select_large]),
+    content=Container(widgets=[
+        select_tag_meta,
+        select_mini,
+        select_small,
+        select_large,
+    ]),
 )
 ```
 

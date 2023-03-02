@@ -75,7 +75,10 @@ Determine `Project` ID.
 ```python
 workspace_id = sly.env.workspace_id()
 project_id = sly.env.project_id()
-project_selector = ProjectSelector(workspace_id=workspace_id, project_id=project_id)
+project_selector = ProjectSelector(
+    workspace_id=workspace_id,
+    project_id=project_id,
+)
 ```
 
 ![project_id](https://user-images.githubusercontent.com/120389559/221405281-80300e90-db52-4879-935b-d4cb1ba04d7c.png)
@@ -90,7 +93,10 @@ Determine ability to select `Team`.
 
 ```python
 team_id = sly.env.team_id()
-project_selector = ProjectSelector(team_id=team_id, team_is_selectable=False)
+project_selector = ProjectSelector(
+    team_id=team_id,
+    team_is_selectable=False,
+)
 ```
 
 ![team_is_selectable](https://user-images.githubusercontent.com/120389559/221405405-8cefe66c-1526-4289-936d-637314b39cec.png)
@@ -105,7 +111,10 @@ Determine ability to select `Datasets`.
 
 ```python
 team_id = sly.env.team_id()
-project_selector = ProjectSelector(team_id=team_id, datasets_is_selectable=False)
+project_selector = ProjectSelector(
+    team_id=team_id,
+    datasets_is_selectable=False,
+)
 ```
 
 ![datasets_is_selectable](https://user-images.githubusercontent.com/120389559/221405467-d014d7c8-0dc9-4eeb-81e0-dd646e98bd5f.png)
@@ -166,7 +175,9 @@ project_id = sly.env.project_id()
 
 ```python
 project_selector = ProjectSelector(
-    team_id=team_id, workspace_id=workspace_id, project_id=project_id
+    team_id=team_id,
+    workspace_id=workspace_id,
+    project_id=project_id,
 )
 ```
 
