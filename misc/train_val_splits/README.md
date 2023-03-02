@@ -9,7 +9,14 @@ In this tutorial you will learn how to use `TrainValSplits` widget in Supervisel
 ## Function signature
 
 ```python
-TrainValSplits(project_id=None, project_fs=None, random_splits=True, tags_splits=True, datasets_splits=True, widget_id=None)
+TrainValSplits(
+    project_id=None,
+    project_fs=None,
+    random_splits=True,
+    tags_splits=True,
+    datasets_splits=True,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/222371242-96bc091e-e3e4-4135-a578-727026453842.gif)
