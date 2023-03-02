@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This widget is a select team input, clicking on it can be processed from python code. In this tutorial you will learn how to use **`SelectTeam`** widget in Supervisely app.
+**`SelectTeam`** widget in Supervisely is a dropdown menu that allows users to select a team from a list of available teams. 
+Clicking on it can be processed from python code. This widget is particularly useful when working with multiple teams in Supervisely and allows to easily switch between team in applications.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectworkspace)
 
@@ -17,7 +18,7 @@ SelectTeam(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218033566-7b4babed-9dfd-4bc6-ba14-19666afb2e1d.png)
+![select_team](https://user-images.githubusercontent.com/79905215/222352390-7631c1b5-30ce-4dc8-8924-c9c34c4cb6a1.png)
 
 ## Parameters
 
@@ -40,7 +41,7 @@ Determine `Team` will be selected by default.
 select_team = SelectTeam(default_id=team_id)
 ```
 
-![default_id](https://user-images.githubusercontent.com/120389559/218033755-a0449ce0-141e-4769-b11a-311bd2be7dfb.png)
+![select_team](https://user-images.githubusercontent.com/79905215/222352390-7631c1b5-30ce-4dc8-8924-c9c34c4cb6a1.png)
 
 ### show_label
 
@@ -54,7 +55,7 @@ Determine show text `Team` on widget or not.
 select_team = SelectTeam(default_id=team_id, show_label=False)
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/218034036-b9a1bd07-62f4-4787-a8f9-847d94ee3cf0.png)
+![st-show-label](https://user-images.githubusercontent.com/79905215/222352402-803089e7-bbb8-4540-936c-4430a11f1626.png)
 
 ### size
 
@@ -75,7 +76,7 @@ card = Card(
 )
 ```
 
-![size](https://user-images.githubusercontent.com/120389559/218723907-e80e8122-f1be-493e-afb2-5bdce23725c2.png)
+![st-size](https://user-images.githubusercontent.com/79905215/222354681-a4271d6b-1307-4886-a2be-fa98320b1568.png)
 
 ### widget_id
 
@@ -95,7 +96,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/013_select_team/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/013_select_team/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/002_select_team/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/002_select_team/src/main.py)
 
 ### Import libraries
 

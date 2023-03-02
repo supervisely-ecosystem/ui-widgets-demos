@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `ProjectSelector` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/projectselector)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/projectselector)
 
 ## Function signature
 
@@ -19,18 +19,20 @@ ProjectSelector(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/221404961-9a9bc6a8-feae-4295-b0a2-5d70c295341e.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221404961-9a9bc6a8-feae-4295-b0a2-5d70c295341e.gif" alt="default" />
+</p>
 
 ## Parameters
 
-|        Parameters        |  Type  |       Description        |
-| :----------------------: | :----: | :----------------------: |
-|        `team_id`         | `int`  |        `Team` ID         |
-|      `workspace_id`      | `int`  |      `Workspace` ID      |
-|       `project_id`       | `int`  |       `Project` ID       |
-|   `team_is_selectable`   | `bool` |   Enable `Team` select   |
-| `datasets_is_selectable` | `bool` | Enable `Datasets` select |
-|       `widget_id`        | `str`  |     Id of the widget     |
+|        Parameters        |  Type  |        Description        |
+| :----------------------: | :----: | :-----------------------: |
+|        `team_id`         | `int`  |          Team ID          |
+|      `workspace_id`      | `int`  |       Workspace ID        |
+|       `project_id`       | `int`  |        Project ID         |
+|   `team_is_selectable`   | `bool` |   Enable Team selection   |
+| `datasets_is_selectable` | `bool` | Enable Datasets selection |
+|       `widget_id`        | `str`  |     ID of the widget      |
 
 ### team_id
 
@@ -41,7 +43,7 @@ Determine `Team` ID.
 **default value:** `None`
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
+team_id = sly.env.team_id()
 project_selector = ProjectSelector(team_id=team_id)
 ```
 
@@ -56,7 +58,7 @@ Determine `Workspace` ID.
 **default value:** `None`
 
 ```python
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+workspace_id = sly.env.workspace_id()
 project_selector = ProjectSelector(workspace_id=workspace_id)
 ```
 
@@ -71,8 +73,8 @@ Determine `Project` ID.
 **default value:** `None`
 
 ```python
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
-project_id = int(os.environ["modal.state.slyProjectId"])
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
 project_selector = ProjectSelector(workspace_id=workspace_id, project_id=project_id)
 ```
 
@@ -87,7 +89,7 @@ Determine ability to select `Team`.
 **default value:** `True`
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
+team_id = sly.env.team_id()
 project_selector = ProjectSelector(team_id=team_id, team_is_selectable=False)
 ```
 
@@ -102,7 +104,7 @@ Determine ability to select `Datasets`.
 **default value:** `True`
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
+team_id = sly.env.team_id()
 project_selector = ProjectSelector(team_id=team_id, datasets_is_selectable=False)
 ```
 
@@ -130,7 +132,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/057_project_selector/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/057_project_selector/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/006_project_selector/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/006_project_selector/src/main.py)
 
 ### Import libraries
 
@@ -155,9 +157,9 @@ api = sly.Api()
 ### Prepare `team_id`, `workspace_id`, `project_id` we will use
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
-project_id = int(os.environ["modal.state.slyProjectId"])
+team_id = sly.env.team_id()
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
 ```
 
 ### Initialize `ProjectSelector` widget
@@ -188,4 +190,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/221405858-cf9abe31-118b-4e67-a424-d8f5e012bf5f.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221405858-cf9abe31-118b-4e67-a424-d8f5e012bf5f.gif" alt="layout" />
+</p>

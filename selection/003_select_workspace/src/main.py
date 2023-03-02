@@ -10,8 +10,8 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-team_id = int(os.environ["modal.state.slyTeamId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+team_id = sly.env.team_id()
+workspace_id = sly.env.workspace_id()
 
 # initialize widgets we will use in UI
 select_workspace = SelectWorkspace(

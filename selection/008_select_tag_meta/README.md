@@ -2,10 +2,9 @@
 
 ## Introduction
 
-This widget is a select `TagMeta` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectTagMeta` widget in Supervisely app.
+**`SelectTagMeta`** widget in Supervisely is a drop down menu that allows users to select a `TagMeta` from a list of available tag metadatas. The widget can be customized with various parameters, such as the default selected tag metadata, default project ID, size, allowed types, multiple selection, label showing.
 
-
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/SelectTagMeta)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/SelectTagMeta)
 
 ## Function signature
 
@@ -36,8 +35,8 @@ SelectTagMeta(
 | `allowed_types` |                `List[str]`                | Determine `Tags` types witch will be available to select from all `Project` `Tags` |
 |  `multiselect`  |                  `bool`                   |                          Allows to select multiple `Tags`                          |
 |  `show_label`   |                  `bool`                   |                                     Show label                                     |
-|     `size`      | `Literal["large", "small", "mini", None]` |                          Selector size (large/small/mini)                          |
-|   `widget_id`   |                   `str`                   |                                  Id of the widget                                  |
+|     `size`      | `Literal["large", "small", "mini", None]` |                                   Selector size                                    |
+|   `widget_id`   |                   `str`                   |                                  ID of the widget                                  |
 
 ### default
 
@@ -93,11 +92,11 @@ Determine `Tags` types witch will be available to select from all `Project` `Tag
 
 ```python
 from supervisely.annotation.tag_meta import TagValueType
-allowed_types = [TagValueType.ANY_STRING, TagValueType.NONE]
+allowed_types = [TagValueType.ANY_STRING]
 select_tag_meta = SelectTagMeta(project_id=project_id, allowed_types=allowed_types)
 ```
 
-![allowed_types](https://user-images.githubusercontent.com/120389559/218048774-60b853c8-a597-4e8b-8eeb-216687b7d416.png)
+![allowed_types](https://user-images.githubusercontent.com/79905215/222377831-7dcb4128-d381-4c7e-83f4-c482dc70f62a.png)
 
 ### multiselect
 
@@ -173,7 +172,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/015_select_tag_meta/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/015_select_tag_meta/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/008_select_tag_meta/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/008_select_tag_meta/src/main.py)
 
 ### Import libraries
 
@@ -199,7 +198,7 @@ api = sly.Api()
 ### Prepare `Project` ID
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 ```
 
 ### Initialize `SelectTagMeta` widget
