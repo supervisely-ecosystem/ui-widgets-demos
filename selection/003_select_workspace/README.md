@@ -2,17 +2,27 @@
 
 ## Introduction
 
-This widget is a select `Workspace` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectWorkspace` widget in Supervisely app.
+**`SelectWorkspace`** widget in Supervisely is a dropdown menu that allows users to select a workspace from a list of available workspaces. 
+Clicking on it can be processed from python code. This widget is particularly useful when working with multiple workspaces in Supervisely and allows to easily switch between workspaces in applications.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectworkspace)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectworkspace)
 
 ## Function signature
 
 ```python
-SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, size=None, widget_id=None)
+SelectWorkspace(
+    default_id=None,
+    team_id=None,
+    compact=False,
+    show_label=True,
+    size=None,
+    widget_id=None
+)
 ```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222355186-ce11c293-4cfd-4a16-96b0-029589002e3f.png" alt="select-workspace" width="600" />
+</p>
 
-![default](https://user-images.githubusercontent.com/120389559/218714865-879144d5-9567-4560-a49b-e3c8ee0154b7.png)
 
 ## Parameters
 
@@ -23,7 +33,7 @@ SelectWorkspace(default_id=None, team_id=None, compact=False, show_label=True, s
 |  `compact`   |                  `bool`                   |    Show only workspace select    |
 | `show_label` |                  `bool`                   |            Show label            |
 |    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
-| `widget_id`  |                   `str`                   |         Id of the widget         |
+| `widget_id`  |                   `str`                   |         ID of the widget         |
 
 ### default_id
 
@@ -36,8 +46,9 @@ Determine `Workspace` will be selected by default.
 ```python
 select_workspace = SelectWorkspace(default_id=workspace_id)
 ```
-
-![default_id](https://user-images.githubusercontent.com/120389559/218031925-1f70bb32-5a44-4ee2-9c9b-813fa88ac8a7.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222355688-b92e4bcc-a24f-4dd9-821f-c4067759868e.png" alt="sw-def-id" width="600"/>
+</p>
 
 ### team_id
 
@@ -51,6 +62,11 @@ Determine `Team` will be selected by default.
 select_workspace = SelectWorkspace(team_id=team_id)
 ```
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222355932-1fac2c04-3c0f-47a9-86f8-4ea5e3daf40c.png" alt="sw-team-id" width="600" />
+</p>
+
+
 ### compact
 
 Show only `Workspace` select.
@@ -62,8 +78,9 @@ Show only `Workspace` select.
 ```python
 select_workspace = SelectWorkspace(default_id=workspace_id, compact=True)
 ```
-
-![compact](https://user-images.githubusercontent.com/120389559/221557626-042f1911-7065-48d4-a830-c003f0baa4d2.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222358488-dbec5846-ddc0-4ad0-a33f-7aad84048f60.png" alt="sw-compact" width="600" />
+</p>
 
 ### show_label
 
@@ -79,7 +96,9 @@ select_workspace = SelectWorkspace(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/221558086-abb3aaa3-8f2c-46f5-8ec4-3f66125aed9e.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221558086-abb3aaa3-8f2c-46f5-8ec4-3f66125aed9e.png" alt="show_label" width="600" />
+</p>
 
 ### size
 
@@ -112,8 +131,10 @@ card = Card(
     ),
 )
 ```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221558737-7a9ecd44-dae9-4d39-ad6f-319ff1ae3ab7.png" alt="size" width="600" />
+</p>
 
-![size](https://user-images.githubusercontent.com/120389559/221558737-7a9ecd44-dae9-4d39-ad6f-319ff1ae3ab7.png)
 
 ### widget_id
 
@@ -133,7 +154,8 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/012_select_workspace/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/012_select_workspace/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/003_select_workspace/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/003_select_workspace/src/main.py)
+
 
 ### Import libraries
 
@@ -159,8 +181,8 @@ api = sly.Api()
 ### Prepare `team_id` and `workspace_id`
 
 ```python
-team_id = int(os.environ["modal.state.slyTeamId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+team_id = sly.env.team_id()
+workspace_id = sly.env.workspace_id()
 ```
 
 ### Initialize `SelectWorkspace` widget
@@ -193,4 +215,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218032788-64ba31fc-65b1-4194-99cb-0668b48e80d0.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222355186-ce11c293-4cfd-4a16-96b0-029589002e3f.png" alt="select-workspace" width="600" />
+</p>

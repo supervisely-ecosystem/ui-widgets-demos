@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This widget is a select `Dataset` input, clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectDataset` widget in Supervisely app.
+**`SelectDataset`** widget is a dropdown menu that allows users to select a dataset or multiple datasets from a list of available datasets in current project. It displays the name of each dataset in the list.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectdataset)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectdataset)
 
 ## Function signature
 
@@ -21,7 +21,7 @@ SelectDataset(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/217846091-eb9b97a2-8a11-4e61-b8fe-2387b8a3137c.png)
+![select-dataset](https://user-images.githubusercontent.com/79905215/222369248-c5faf156-bf52-4685-906c-1b028a9f0f7d.png)
 
 ## Parameters
 
@@ -32,9 +32,9 @@ SelectDataset(
 | `multiselect` |                  `bool`                   | Allow to select all datasets in current project |
 |   `compact`   |                  `bool`                   |            Show only dataset select             |
 | `show_label`  |                  `bool`                   |                   Show label                    |
-|    `size`     | `Literal["large", "small", "mini", None]` |        Selector size (large/small/mini)         |
+|    `size`     | `Literal["large", "small", "mini", None]` |                  Selector size                  |
 |  `disabled`   |                  `bool`                   |             Disable dataset select              |
-|  `widget_id`  |                   `str`                   |                Id of the widget                 |
+|  `widget_id`  |                   `str`                   |                ID of the widget                 |
 
 ### default_id
 
@@ -62,7 +62,7 @@ select_project = SelectDataset(project_id=project_id)
 
 ### multiselect
 
-Allow to select all datasets in current project.
+Allow to select multiple datasets in current project.
 
 **type:** `bool`
 
@@ -72,7 +72,9 @@ Allow to select all datasets in current project.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, multiselect=True)
 ```
 
-![multiselect](https://user-images.githubusercontent.com/120389559/218098518-60cce7a0-d9d9-404e-af60-9310993296a8.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222367677-cdee343d-a841-4868-9106-10d3f44d9e76.gif" alt="multiselect" width="600" />
+</p>
 
 ### compact
 
@@ -145,7 +147,7 @@ Determine `Dataset` select ability.
 select_dataset = SelectDataset(default_id=dataset_id, project_id=project_id, disabled=True)
 ```
 
-![disabled](https://user-images.githubusercontent.com/120389559/217849459-1944a41a-df7a-4cac-ba77-3519fb67c734.png)
+![st-disabled](https://user-images.githubusercontent.com/79905215/222368297-d49c243d-a2bb-4df4-b474-e6a25f9a5a85.png)
 
 ### widget_id
 
@@ -163,13 +165,13 @@ ID of the widget.
 |  `get_selected_ids()`  | Return selected `dataset IDs`, if `multiselect` is `False` raise `ValueError`. |
 |      `disable()`       | Set `disabled` attribute == `True`.                                            |
 |       `enable()`       | Set `disabled` attribute == `False`.                                           |
-|   `value_changed()`    | Handled when selected `dataset ID` is changed.                                 |
+|    `@value_changed`    | Decorator functions is handled when selected `dataset ID` is changed.          |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/011_select_dataset/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/011_select_dataset/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/005_select_dataset/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/005_select_dataset/src/main.py)
 
 ### Import libraries
 
@@ -195,8 +197,8 @@ api = sly.Api()
 ### Prepare `project_id` and `dataset_id`
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
+project_id = sly.env.project_id()
+dataset_id = sly.env.dataset_id()
 ```
 
 ### Initialize `SelectDataset` widget

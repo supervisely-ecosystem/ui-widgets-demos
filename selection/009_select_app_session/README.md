@@ -2,28 +2,35 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `SelectAppSession` widget in Supervisely app.
+**`SelectAppSession`** widget in Supervisely is a dropdown menu that allows users to select an application session from a list of available sessions.
+`SelectAppSession` widget is particularly useful when working with multiple application sessions in Supervisely. It can be customized with various parameters, such as the size and label showing.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectappsession)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectappsession)
 
 ## Function signature
 
 ```python
-SelectAppSession(team_id, tags, show_label=False, size="mini", widget_id=None, operation="or")
+SelectAppSession(
+    team_id, tags,
+    show_label=False,
+    size="mini",
+    operation="or",
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/219646892-e064bd68-20f1-4ce3-9f1b-89650fe1dde0.gif)
 
 ## Parameters
 
-|  Parameters  |                Type                 |           Description            |
-| :----------: | :---------------------------------: | :------------------------------: |
-|  `team_id`   |                `int`                |            `Team` ID             |
-|    `tags`    |             `List[str]`             |      List of possible tags       |
-| `show_label` |               `bool`                |         Show label text          |
-|    `size`    | `Literal["large", "small", "mini"]` | Selector size (large/small/mini) |
-| `widget_id`  |                `str`                |         Id of the widget         |
-| `operation`  |                `str`                |          Operation type          |
+|  Parameters  |                   Type                    |           Description            |
+| :----------: | :---------------------------------------: | :------------------------------: |
+|  `team_id`   |                   `int`                   |            Team ID             |
+|    `tags`    |                `List[str]`                |      List of possible tags       |
+| `show_label` |                  `bool`                   |         Show label text          |
+|    `size`    | `Literal["large", "small", "mini", None]` |          Selector size           |
+| `operation`  |                   `str`                   | Operation type (`"or"`, `"and"`) |
+| `widget_id`  |                   `str`                   |         ID of the widget         |
 
 ### team_id
 
@@ -34,6 +41,7 @@ Determine `Team` from which run sessions will be selected.
 ### tags
 
 Determines list of possible tags to select run sessions.
+Tags are set in `config.json` file of the application in `session_tags` field.
 
 **type:** `List[str]`
 
@@ -53,9 +61,9 @@ select_app_session = SelectAppSession(team_id=team_id, tags=["deployed_nn"], sho
 
 ### size
 
-Determine selector size (large/small/mini).
+Determine selector size (large/small/mini/None).
 
-**type:** `Literal["large", "small", "mini"]`
+**type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `mini`
 
@@ -67,6 +75,15 @@ select_app_large = SelectAppSession(team_id=team_id, tags=["deployed_nn"], size=
 
 ![size](https://user-images.githubusercontent.com/120389559/219652377-cd8392d6-09b7-432b-94a4-ef91ca64f864.png)
 
+### operation
+
+Determine operation type in select. Can be one of `"or"`, `"and"`.
+Setting the `operation` parameter to `"or"` allows users to connect to apps with any of the provided tags, while setting it to `"and"` allows them to connect to apps that have all the selected tags specified.
+
+**type:** `str`
+
+**default value:** `or`
+
 ### widget_id
 
 ID of the widget.
@@ -74,14 +91,6 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
-
-### operation
-
-Determine operation type in select.
-
-**type:** `str`
-
-**default value:** `or`
 
 ## Methods and attributes
 
@@ -93,7 +102,7 @@ Determine operation type in select.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/050_select_app_session/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/050_select_app_session/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/009_select_app_session/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/009_select_app_session/src/main.py)
 
 ### Import libraries
 
@@ -105,7 +114,7 @@ from dotenv import load_dotenv
 from supervisely.app.widgets import Card, Container, SelectAppSession
 ```
 
-### Initialize `team_id` we will use
+### Get `team_id` from environment variables
 
 ```python
 team_id = sly.env.team_id()

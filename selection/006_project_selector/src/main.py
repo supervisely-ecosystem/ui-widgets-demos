@@ -10,9 +10,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 
-team_id = int(os.environ["modal.state.slyTeamId"])
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
-project_id = int(os.environ["modal.state.slyProjectId"])
+team_id = sly.env.team_id()
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
+
 project_selector = ProjectSelector(
     team_id=team_id, workspace_id=workspace_id, project_id=project_id
 )
