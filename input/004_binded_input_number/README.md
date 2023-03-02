@@ -2,14 +2,21 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `BindedInputNumber` widget in Supervisely app.
+**`BindedInputNumber`** widget in Supervisely is a user interface element that allows users to input two numerical values and customize their behavior using the proportional, min, and max properties. With the BindedInputNumber widget, users can fine-tune specific parameters within supervisely apps that require two numerical inputs, such as defining a rectangular region of interest by specifying the `x` and `y` coordinates and the `width` and `height`. The `BindedInputNumber` widget provides a convenient and flexible way to input and manage these values, with customizable behavior to ensure accurate and precise inputs.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/bindedinputnumber)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/bindedinputnumber)
 
 ## Function signature
 
 ```python
-BindedInputNumber(width=256, height=256, min=1, max=10000, proportional=False, widget_id=None)
+BindedInputNumber(
+    width=256,
+    height=256,
+    min=1,
+    max=10000,
+    proportional=False,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/219939414-e601fd63-3cdb-420e-99c4-706b48710a41.png)
@@ -23,7 +30,7 @@ BindedInputNumber(width=256, height=256, min=1, max=10000, proportional=False, w
 |     `min`      | `int`  |               Minimum allowed value                |
 |     `max`      | `int`  |               Maximum allowed value                |
 | `proportional` | `bool` | Synchronize changes in width and height parameters |
-|  `widget_id`   | `str`  |                  Id of the widget                  |
+|  `widget_id`   | `str`  |                  ID of the widget                  |
 
 ### width
 
@@ -70,10 +77,17 @@ Maximum allowed value.
 **default value:** `10000`
 
 ```python
-binded_input_number = BindedInputNumber(width=12, height=12, min=10, max=14)
+binded_input_number = BindedInputNumber(
+    width=12,
+    height=12,
+    min=10,
+    max=14,
+)
 ```
 
-![min_max](https://user-images.githubusercontent.com/120389559/221354865-018d95d0-c540-462c-888f-b9b1fc71a389.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221354865-018d95d0-c540-462c-888f-b9b1fc71a389.gif" alt="min_max" />
+</p>
 
 ### proportional
 
@@ -87,7 +101,9 @@ Synchronize changes in width and height parameters.
 binded_input_number = BindedInputNumber(proportional=True)
 ```
 
-![proportional](https://user-images.githubusercontent.com/120389559/221354956-e537a019-80ec-4964-b4b3-fbbf5052747b.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221354956-e537a019-80ec-4964-b4b3-fbbf5052747b.gif" alt="proportional" />
+</p>
 
 ### widget_id
 
@@ -113,7 +129,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/051_binded_input_number/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/051_binded_input_number/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/input/004_binded_input_number/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/input/004_binded_input_number/src/main.py)
 
 ### Import libraries
 
@@ -149,4 +165,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219942364-cb93b2fb-ca7b-40e7-8d8f-591525092bf1.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/219942364-cb93b2fb-ca7b-40e7-8d8f-591525092bf1.gif" alt="layout" />
+</p>
