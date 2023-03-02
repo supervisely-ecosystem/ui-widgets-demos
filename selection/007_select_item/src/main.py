@@ -10,12 +10,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
+dataset_id = sly.env.dataset_id()
 
 # initialize widgets we will use in UI
-select_item = SelectItem(
-    dataset_id=dataset_id,
-)
+select_item = SelectItem(dataset_id=dataset_id, compact=False)
 card = Card(
     title="Select Item",
     content=Container(widgets=[select_item]),

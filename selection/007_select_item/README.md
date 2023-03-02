@@ -4,7 +4,7 @@
 
 This widget is a select `Item` input(`image`, `video`, `volume`, `point_cloud` or `point_cloud_episode`), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectitem)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectitem)
 
 ## Function signature
 
@@ -16,17 +16,17 @@ SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
 
 ## Parameters
 
-|  Parameters  |                   Type                    |           Description            |
-| :----------: | :---------------------------------------: | :------------------------------: |
-| `dataset_id` |                   `int`                   |           `Dataset` ID           |
-|  `compact`   |                  `bool`                   |     Show only dataset select     |
-| `show_label` |                  `bool`                   |            Show label            |
-|    `size`    | `Literal["large", "small", "mini", None]` | Selector size (large/small/mini) |
-| `widget_id`  |                   `str`                   |         Id of the widget         |
+|  Parameters  |                   Type                    |       Description        |
+| :----------: | :---------------------------------------: | :----------------------: |
+| `dataset_id` |                   `int`                   |       `Dataset` ID       |
+|  `compact`   |                  `bool`                   | Show only dataset select |
+| `show_label` |                  `bool`                   |        Show label        |
+|    `size`    | `Literal["large", "small", "mini", None]` |      Selector size       |
+| `widget_id`  |                   `str`                   |     ID of the widget     |
 
 ### dataset_id
 
-Determine `Dataset` from which `Items` will be selected.
+Determine Supervisely dataset from which items will be selected.
 
 **type:** `int`
 
@@ -106,7 +106,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/014_select_item/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/014_select_item/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/007_select_item/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/007_select_item/src/main.py)
 
 ### Import libraries
 
@@ -132,7 +132,7 @@ api = sly.Api()
 ### Prepare `Dataset` ID
 
 ```python
-dataset_id = int(os.environ["modal.state.slyDatasetId"])
+dataset_id = sly.env.dataset_id()
 ```
 
 ### Initialize `SelectItem` widget

@@ -2,9 +2,10 @@
 
 ## Introduction
 
-This Supervisely widget allows you to create a dropdown menu that lets users select a project from a list of projects. It is a useful widget for applications that require users to select a project to work on or view.
+**`SelectProject`** widget in Supervisely is a dropdown menu that allows users to select a project from a list of available projects in current workspace.
+Clicking on it can be processed from python code. This widget is particularly useful when working with multiple projects in Supervisely and allows to easily switch between projects in applications.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/selectproject)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectproject)
 
 ## Function signature
 
@@ -26,13 +27,13 @@ SelectProject(
 
 |   Parameters    |                   Type                    |                       Description                       |
 | :-------------: | :---------------------------------------: | :-----------------------------------------------------: |
-|  `default_id`   |                   `int`                   |                      `Project` ID                       |
-| `workspace_id`  |                   `int`                   |                     `Workspace` ID                      |
-|    `compact`    |                  `bool`                   |            Check `Workspace` ID is not None             |
+|  `default_id`   |                   `int`                   |                       Project ID                        |
+| `workspace_id`  |                   `int`                   |                      Workspace ID                       |
+|    `compact`    |                  `bool`                   |      Show compact view of project selector widget       |
 | `allowed_types` |            `List[ProjectType]`            | List of project types witch will be available to select |
 |  `show_label`   |                  `bool`                   |                       Show label                        |
 |     `size`      | `Literal["large", "small", "mini", None]` |            Selector size (large/small/mini)             |
-|   `widget_id`   |                   `str`                   |                    Id of the widget                     |
+|   `widget_id`   |                   `str`                   |                    ID of the widget                     |
 
 ### default_id
 
@@ -74,7 +75,7 @@ select_project = SelectProject(default_id=project_id, workspace_id=workspace_id,
 
 ### allowed_types
 
-List of project types witch will be available to select. Possible project types: `images`, `videos`, `volumes`, `point_clouds`, `point_cloud_episodes`.
+List of project types witch will be available to select. Set one of available `sly.ProjectType`s: `IMAGES`, `VIDEOS`, `VOLUMES`, `POINT_CLOUDS`, `POINT_CLOUD_EPISODES`. 
 
 **type:** `List[ProjectType]`
 
@@ -82,7 +83,7 @@ List of project types witch will be available to select. Possible project types:
 
 ### show_label
 
-Determine show text `Project` on widget or not, work only if `compact` is True.
+Determine show text `Project` on widget or not. This parameter only affects when parameter `compact` is `True`.
 
 **type:** `bool`
 
@@ -143,7 +144,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/010_select_project/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/010_select_project/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/004_select_project/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/004_select_project/src/main.py)
 
 ### Import libraries
 
@@ -169,8 +170,8 @@ api = sly.Api()
 ### Prepare `project_id` and `workspace_id`
 
 ```python
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
-project_id = int(os.environ["modal.state.slyProjectId"])
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
 ```
 
 ### Initialize `SelectProject` widget

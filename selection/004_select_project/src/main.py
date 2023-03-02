@@ -10,13 +10,13 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
-project_id = int(os.environ["modal.state.slyProjectId"])
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
 
 # initialize widgets we will use in UI
 select_project = SelectProject(
     default_id=project_id,
-    workspace_id=workspace_id,
+    workspace_id=workspace_id
 )
 card = Card(
     title="Select Project",
