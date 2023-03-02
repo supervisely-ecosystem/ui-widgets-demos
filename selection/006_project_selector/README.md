@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `ProjectSelector` widget in Supervisely app.
+**`ProjectSelector`** widget in Supervisely is a dropdown menu that allows users to select a team, workspace, project and datasets from a list of available items.
+Clicking on it can be processed from python code. This widget is particularly useful when working with multiple teams, workspaces, projects or datasets in Supervisely and allows to easily select items in applications. It can be customized by disabling team or dataset selection.
+Overall, the ProjectSelector widget is a valuable tool for improving the efficiency and usability of Supervisely apps. 
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/projectselector)
 
