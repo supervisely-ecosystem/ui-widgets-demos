@@ -2,17 +2,25 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `InputTag` widget in Supervisely app.
+**`InputTag`** widget in Supervisely is a user interface element that allows users to add or remove tag labels to items (images, videos, volumes, and point clouds). It uses `TagMeta` of the current project and allow to use them easily in Supervisely apps.
+`InputTag` widget is a valuable tool for improving the organization and efficiency of Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/inputtag)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/inputtag)
 
 ## Function signature
 
 ```python
-InputTag(tag_meta, max_width=300, widget_id=None)
+InputTag(
+    tag_meta,
+    max_width=300,
+    widget_id=None,
+)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218993249-8d449098-3efa-4c60-92d5-3019c76a1106.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218993249-8d449098-3efa-4c60-92d5-3019c76a1106.gif" alt="default" />
+</p>
+
 
 ## Parameters
 
@@ -20,7 +28,7 @@ InputTag(tag_meta, max_width=300, widget_id=None)
 | :---------: | :-------: | :------------------------------------------: |
 | `tag_meta`  | `TagMeta` | `TagMeta` from which `Tags` will be selected |
 | `max_width` |   `int`   |             Max tag field width              |
-| `widget_id` |   `str`   |               Id of the widget               |
+| `widget_id` |   `str`   |               ID of the widget               |
 
 ### tag_meta
 
@@ -52,24 +60,25 @@ ID of the widget.
 
 ## Methods and attributes
 
-|       Attributes and Methods       | Description                                   |
-| :--------------------------------: | --------------------------------------------- |
-|          `get_tag_meta()`          | Return current `TagMeta`.                     |
-|            `activate()`            | Activate `InputTag` switch.                   |
-|           `deactivate()`           | Deactivate `InputTag` switch.                 |
-|           `is_active()`            | Check `InputTag` switch is active.            |
-| `is_valid_value(value: tag.value)` | Check `InputTag` current value is valid.      |
-|    `set(tag: Union[Tag, None])`    | Set given value in `InputTag`.                |
-|            `get_tag()`             | Get current `Tag` from `InputTag`.            |
-|         `value_changed()`          | Handled when `InputTag` value is changed.     |
-|       `selection_changed()`        | Handled when `InputTag` selection is changed. |
-|     `value(value: tag.value)`      | Handled when input value is setting.          |
+|       Attributes and Methods       | Description                                                         |
+| :--------------------------------: | ------------------------------------------------------------------- |
+|              `value`               | Get input widget value property.                                    |
+|     `value(value: tag.value)`      | Set input widget value property.                                    |
+|          `get_tag_meta()`          | Return current `TagMeta`.                                           |
+|            `activate()`            | Activate `InputTag` switch.                                         |
+|           `deactivate()`           | Deactivate `InputTag` switch.                                       |
+|           `is_active()`            | Check `InputTag` switch is active.                                  |
+| `is_valid_value(value: tag.value)` | Check `InputTag` current value is valid.                            |
+|    `set(tag: Union[Tag, None])`    | Set given value in `InputTag`.                                      |
+|            `get_tag()`             | Get current `Tag` from `InputTag`.                                  |
+|        `@selection_changed`        | Decorator function is handled when `InputTag` selection is changed. |
+|          `@value_changed`          | Decorator function is handled when `InputTag` value is changed.     |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/047_input_tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/047_input_tag/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/input/003_input_tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/input/003_input_tag/src/main.py)
 
 ### Import libraries
 
@@ -156,4 +165,6 @@ def toggle_tag_inputs():
             tag_input.activate()
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219036626-79af7718-3e93-4528-8a11-642c8798e154.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/219036626-79af7718-3e93-4528-8a11-642c8798e154.gif" alt="default" />
+</p>

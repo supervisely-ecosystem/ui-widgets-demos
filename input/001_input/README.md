@@ -2,16 +2,24 @@
 
 ## Introduction
 
-This Supervisely widget allows you to create input fields for text. It is a useful widget for applications that require users to enter text, such as project name, dataset name or path to folder or archive with data.
+**`Input`** widget in Supervisely allows to create input fields for text. It is a useful widget for applications that require users to enter text, such as project name, dataset name or path to folder or archive with data.
 
 The `Input` widget also allows you to set default text to be displayed in the input field, set text placeholder, set input field to be `readonly`, and set a minimum and maximum length for the input.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/input)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/input)
 
 ## Function signature
 
 ```python
-Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly=False, widget_id=None)
+Input(
+    value="",
+    minlength=0,
+    maxlength=1000,
+    placeholder="",
+    size=None,
+    readonly=False,
+    widget_id=None
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217822528-c77c3391-8baf-4bab-8480-d38f0071278b.png)
@@ -26,7 +34,7 @@ Input(value="", minlength=0, maxlength=1000, placeholder="", size=None, readonly
 | `placeholder` |                   `str`                   |      Placeholder of input       |
 |    `size`     | `Literal["mini", "small", "large", None]` |          Size of input          |
 |  `readonly`   |                  `bool`                   | Same as readonlyin native input |
-|  `widget_id`  |                   `str`                   |        Id of the widget         |
+|  `widget_id`  |                   `str`                   |        ID of the widget         |
 
 ### value
 
@@ -72,7 +80,7 @@ Placeholder of input.
 
 **type:** `str`
 
-**default value:** ""
+**default value:** `""`
 
 ```python
 input = Input(placeholder="Please input")
@@ -119,20 +127,20 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                       |
-| :--------------------: | ------------------------------------------------- |
-|    `is_readonly()`     | Return `True` if input is readonly, else `False`. |
-|     `set_value()`      | Set input value.                                  |
-|     `get_value()`      | Get input value.                                  |
-|  `enable_readonly()`   | Enable input`s readonly property.                 |
-|  `disable_readonly()`  | Disable input`s readonly property.                |
-|   `value_changed()`    | Handled when input value is changed.              |
+| Attributes and Methods  | Description                                                 |
+| :---------------------: | ----------------------------------------------------------- |
+|     `is_readonly()`     | Return `True` if input is readonly, else `False`.           |
+| `set_value(value: str)` | Set input value.                                            |
+|      `get_value()`      | Get input value.                                            |
+|   `enable_readonly()`   | Enable input`s readonly property.                           |
+|  `disable_readonly()`   | Disable input`s readonly property.                          |
+|    `@value_changed`     | Decorator functions is handled when input value is changed. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/004_input/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/004_input/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/input/001_input/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/input/001_input/src/main.py)
 
 ### Import libraries
 
@@ -235,4 +243,6 @@ def set_readonly():
         print("Readonly: Enabled")
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218093184-15b038b9-6b26-4ce1-bc24-64905e4e5c52.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/218093184-15b038b9-6b26-4ce1-bc24-64905e4e5c52.gif" alt="layout" />
+</p>

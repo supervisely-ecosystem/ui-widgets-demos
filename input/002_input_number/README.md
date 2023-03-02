@@ -2,39 +2,49 @@
 
 ## Introduction
 
-This Superivsely widget allows you to create input fields for numeric values. It is a useful widget for applications that require users to input numbers, such as a number of data to process or how many augmentations to perform.
+**`InputNumber`** widget in Superivsely allows to create input fields for numeric values. It is a useful widget for applications that require users to input numbers, such as a number of data to process or how many augmentations to perform.
 
 The `InputNumber` widget also allows you to set default values for the input field, and set minimum and maximum values for the range of numbers that can be entered. You can also set a step value to control how much the number increases or decreases when the user uses the controls to adjust the value.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/inputnumber)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/inputnumber)
 
 ## Function signature
 
 ```python
-InputNumber(value=1, min=None, max=None, step=1, size="small", controls=True, debounce=300, precision=0, widget_id=None)
+InputNumber(
+    value=1,
+    min=None,
+    max=None,
+    step=1,
+    size="small",
+    controls=True,
+    debounce=300,
+    precision=0,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/217827984-b1b33d3e-2dfd-43de-9c2e-9558a5d15bbb.png)
 
 ## Parameters
 
-| Parameters  |          Type          |                Description                 |
-| :---------: | :--------------------: | :----------------------------------------: |
-|   `value`   |     `int`, `float`     |               Binding value                |
-|    `min`    | `int`, `float`, `None` |         The minimum allowed value          |
-|    `max`    | `int`, `float`, `None` |         The maximum allowed value          |
-|   `step`    |     `int`, `float`     |             Incremental steps              |
-|   `size`    |         `str`          |           Size of the component            |
-| `controls`  |         `bool`         |   Whether to enable the control buttons    |
-| `debounce`  |         `int`          | Debounce delay when typing, in millisecond |
-| `precision` |         `int`          |                 Precision                  |
-| `widget_id` |         `str`          |              Id of the widget              |
+| Parameters  |           Type            |                Description                 |
+| :---------: | :-----------------------: | :----------------------------------------: |
+|   `value`   |    `Union[int, float]`    |               Binding value                |
+|    `min`    | `Union[int, float, None]` |         The minimum allowed value          |
+|    `max`    | `Union[int, float, None]` |         The maximum allowed value          |
+|   `step`    |    `Union[int, float]`    |             Incremental steps              |
+|   `size`    |           `str`           |           Size of the component            |
+| `controls`  |          `bool`           |   Whether to enable the control buttons    |
+| `debounce`  |           `int`           | Debounce delay when typing, in millisecond |
+| `precision` |           `int`           |                 Precision                  |
+| `widget_id` |           `str`           |              ID of the widget              |
 
 ### value
 
 Binding value.
 
-**type:** `int`, `float`
+**type:** `Union[int, float]`
 
 **default value:** `1`
 
@@ -48,7 +58,7 @@ input_number = InputNumber(value=7)
 
 Minimum allowed value.
 
-**type:** `int`, `float`, `None`
+**type:** `Union[int, float, None]`
 
 **default value:** `None`
 
@@ -60,7 +70,7 @@ input = InputNumber(min=5)
 
 Maximum allowed value.
 
-**type:** `int`, `float`, `None`
+**type:** `Union[int, float, None]`
 
 **default value:** `None`
 
@@ -72,7 +82,7 @@ input = InputNumber(max=500)
 
 Incremental steps.
 
-**type:** `int`, `float`
+**type:** `Union[int, float]`
 
 **default value:** `1`
 
@@ -145,19 +155,19 @@ ID of the widget.
 
 ## Methods and attributes
 
-|      Attributes and Methods       | Description                          |
-| :-------------------------------: | ------------------------------------ |
-| `value(value: Union[int, float])` | Set widgets `value` filed.           |
-|           `get_value()`           | Get input number value.              |
-|  `min(value: Union[int, float])`  | Set min value value.                 |
-|  `max(value: Union[int, float])`  | Set max value value.                 |
-|         `value_changed()`         | Handled when input value is changed. |
+|      Attributes and Methods       | Description                                                |
+| :-------------------------------: | ---------------------------------------------------------- |
+| `value(value: Union[int, float])` | Set widgets `value` field.                                 |
+|           `get_value()`           | Get input number value.                                    |
+|  `min(value: Union[int, float])`  | Set min value value.                                       |
+|  `max(value: Union[int, float])`  | Set max value value.                                       |
+|         `@value_changed`          | Decorator function is handled when input value is changed. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/005_input_number/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/005_input_number/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/input/002_input_number/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/input/002_input_number/src/main.py)
 
 ### Import libraries
 

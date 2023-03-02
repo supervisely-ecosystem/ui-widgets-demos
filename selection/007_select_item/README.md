@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This widget is a select `Item` input(`image`, `video`, `volume`, `point_cloud` or `point_cloud_episode`), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
+**`SelectItem`** widget can show selector for project items (depending on project type: `image`, `video`, `volume`, `point_cloud` or `point_cloud_episode`), clicking on it can be processed from python code. In this tutorial you will learn how to use `SelectItem` widget in Supervisely app.
+
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectitem)
 
