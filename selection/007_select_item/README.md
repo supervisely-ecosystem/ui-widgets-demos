@@ -9,7 +9,12 @@ This widget is a select `Item` input(`image`, `video`, `volume`, `point_cloud` o
 ## Function signature
 
 ```python
-SelectItem(dataset_id=None, show_label=True, size=None, widget_id=None)
+SelectItem(
+    dataset_id=None,
+    show_label=True,
+    size=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/218035492-9a07432d-8fb0-4dad-b5ff-ccd8ce03a137.png)
@@ -47,7 +52,10 @@ Show only `Dataset` select.
 **default value:** `true`
 
 ```python
-select_item = SelectItem(dataset_id=dataset_id, compact=False)
+select_item = SelectItem(
+    dataset_id=dataset_id,
+    compact=False,
+)
 ```
 
 ![compact](https://user-images.githubusercontent.com/120389559/221548050-4e7707fb-a665-43c6-a7db-8f969b212c63.png)
@@ -61,7 +69,10 @@ Determine show text `Item` on widget or not.
 **default value:** `True`
 
 ```python
-select_item = SelectItem(dataset_id=dataset_id, show_label=False)
+select_item = SelectItem(
+    dataset_id=dataset_id,
+    show_label=False,
+)
 ```
 
 ![show_label](https://user-images.githubusercontent.com/120389559/218035951-70b5d164-d7f4-44a2-85f8-4da65c112cae.png)
@@ -75,13 +86,33 @@ Size of input.
 **default value:** `None`
 
 ```python
-select_item = SelectItem(dataset_id=dataset_id, show_label=False)
-select_mini = SelectItem(dataset_id=dataset_id, show_label=False, size="mini")
-select_small = SelectItem(dataset_id=dataset_id, show_label=False, size="small")
-select_large = SelectItem(dataset_id=dataset_id, show_label=False, size="large")
+select_item = SelectItem(
+    dataset_id=dataset_id,
+    show_label=False,
+)
+select_mini = SelectItem(
+    dataset_id=dataset_id,
+    show_label=False,
+    size="mini",
+)
+select_small = SelectItem(
+    dataset_id=dataset_id,
+    show_label=False,
+    size="small",
+)
+select_large = SelectItem(
+    dataset_id=dataset_id,
+    show_label=False,
+    size="large",
+)
 card = Card(
     title="Select Item",
-    content=Container(widgets=[select_item, select_mini, select_small, select_large]),
+    content=Container(widgets=[
+        select_item,
+        select_mini,
+        select_small,
+        select_large,
+    ]),
 )
 ```
 

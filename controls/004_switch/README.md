@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Switch` widget in Supervisely app.
+**`Switch`** widget in Supervisely is a user interface element that allows users to toggle between two states, such as on/off or true/false. With the Switch widget, users can easily turn on or off a specific feature or setting. The Switch widget is useful for creating project dashboards that require users to toggle specific options quickly and easily. Users can customize the appearance and behavior of the Switch widget to match their project requirements, making it a flexible tool for creating user interfaces in Supervisely apps. Overall, the Switch widget is a simple yet effective tool for improving the usability and functionality of Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/switch)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/switch)
 
 ## Function signature
 
@@ -22,7 +22,9 @@ Switch(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/219039067-9798a2ba-2bbc-42f7-94b1-dabb4e6da37b.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/222439328-eb096aca-5c22-4ef2-8410-7339580c6178.gif" alt="default">
+</p>
 
 ## Parameters
 
@@ -36,7 +38,7 @@ Switch(
 |  `off_color`  |  `str`   |       Background color when `Switch` in OFF state       |
 | `on_content`  | `Widget` | Determine active `Widget` when `Switch` is in ON state  |
 | `off_content` | `Widget` | Determine active `Widget` when `Switch` is in OFF state |
-|  `widget_id`  |  `str`   |                    Id of the widget                     |
+|  `widget_id`  |  `str`   |                    ID of the widget                     |
 
 ### switched
 
@@ -50,7 +52,7 @@ Determine `Switch` is ON or OFF.
 switch = Switch(switched=True)
 ```
 
-![switched](https://user-images.githubusercontent.com/120389559/219045048-d914e087-21b7-4166-9c31-06eb146a2031.png)
+![switched](https://user-images.githubusercontent.com/79905215/222439526-3fc99d57-7a29-4490-8fd8-66369e3c6be2.png)
 
 ### width
 
@@ -61,10 +63,10 @@ Determine `Switch` width.
 **default value:** `58`
 
 ```python
-switch = Switch(width=300)
+switch = Switch(width=150)
 ```
 
-![width](https://user-images.githubusercontent.com/120389559/219045541-a6ee235e-ebd3-4aea-9ef8-d851aa4219c6.gif)
+![switch-width](https://user-images.githubusercontent.com/79905215/222440545-87e0fab8-c1a2-4c2d-b5c9-cfc4e3ec3a48.png)
 
 ### on_text
 
@@ -83,10 +85,16 @@ Determine text displayed when `Switch` in OFF state.
 **default value:** `OFF`
 
 ```python
-switch = Switch(on_text="on example", off_text="off example", width=140)
+switch = Switch(
+    on_text="on example",
+    off_text="off example",
+    width=140,
+)
 ```
 
-![on_off_text](https://user-images.githubusercontent.com/120389559/219046819-c0b57c41-2829-46d5-933e-772a203ea75f.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/222441017-7585e940-6d66-4b49-a545-11df5524de22.gif" alt="on_off_text">
+</p>
 
 ### on_color
 
@@ -95,6 +103,12 @@ Determine background color when `Switch` in ON state.
 **type:** `str`
 
 **default value:** `None`
+
+```python
+switch = Switch(on_color="#FF0000")
+```
+
+![on_color](https://user-images.githubusercontent.com/79905215/222441521-db70503f-f010-4df8-9e60-4a7422247c6b.png)
 
 ### off_color
 
@@ -105,10 +119,10 @@ Determine background color when `Switch` in OFF state.
 **default value:** `None`
 
 ```python
-switch = Switch(on_color="#FF0000", off_color="#7F00FF")
+switch = Switch(off_color="#7F00FF")
 ```
 
-![on_off_color](https://user-images.githubusercontent.com/120389559/219048879-b58edb2c-7074-488d-bcb6-9713480a3fc6.gif)
+![off_color](https://user-images.githubusercontent.com/79905215/222441494-76bbedad-6a69-4c7b-b674-e3c4cf84ad1e.png)
 
 ### on_content
 
@@ -127,11 +141,16 @@ Determine active `Widget` when `Switch` in OFF state.
 **default value:** `None`
 
 ```python
-switch = Switch(on_content=Text("ON Conent"), off_content=Text("OFF content"))
+switch = Switch(
+    on_content=Text("ON Conent"),
+    off_content=Text("OFF content"),
+)
 switch_one_of = OneOf(switch)
 ```
 
-![on_off_content](https://user-images.githubusercontent.com/120389559/219050482-9b385f5d-b9e1-42a6-922e-c24c0673375d.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/222442744-b1df7f05-07a3-4a9c-bb9a-6769cb1731f3.gif" alt="on_off_content">
+</p>
 
 ### widget_id
 
@@ -143,27 +162,27 @@ ID of the widget.
 
 ## Methods and attributes
 
-|   Attributes and Methods    | Description                            |
-| :-------------------------: | -------------------------------------- |
-|       `is_switched()`       | Check `Switch` state.                  |
-|           `on()`            | Set `Switch` in ON state.              |
-|           `off()`           | Set `Switch` in OFF state.             |
-|        `get_width()`        | Return `Switch` width.                 |
-|       `get_on_text()`       | Return `Switch` ON text.               |
-|       `set_on_text()`       | Set `Switch` ON text.                  |
-|      `get_off_text()`       | Return `Switch` OFF text.              |
-| `set_off_text(value: str)`  | Set `Switch` OFF text.                 |
-|      `get_on_color()`       | Return `Switch` ON color.              |
-| `set_on_color(value: str)`  | Set `Switch` ON color.                 |
-|      `get_off_color()`      | Return `Switch` OFF color.             |
-| `set_off_color(value: str)` | Set `Switch` OFF color.                |
-|      `value_changed()`      | Handled when `Switch` value is change. |
+|   Attributes and Methods    | Description                                                  |
+| :-------------------------: | ------------------------------------------------------------ |
+|       `is_switched()`       | Check `Switch` state.                                        |
+|           `on()`            | Set `Switch` in ON state.                                    |
+|           `off()`           | Set `Switch` in OFF state.                                   |
+|        `get_width()`        | Return `Switch` width.                                       |
+|       `get_on_text()`       | Return `Switch` ON text.                                     |
+|       `set_on_text()`       | Set `Switch` ON text.                                        |
+|      `get_off_text()`       | Return `Switch` OFF text.                                    |
+| `set_off_text(value: str)`  | Set `Switch` OFF text.                                       |
+|      `get_on_color()`       | Return `Switch` ON color.                                    |
+| `set_on_color(value: str)`  | Set `Switch` ON color.                                       |
+|      `get_off_color()`      | Return `Switch` OFF color.                                   |
+| `set_off_color(value: str)` | Set `Switch` OFF color.                                      |
+|      `@value_changed`       | Decorator function is handled when `Switch` value is change. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/048_switch/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/048_switch/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/004_switch/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/004_switch/src/main.py)
 
 ### Import libraries
 
@@ -175,7 +194,10 @@ from supervisely.app.widgets import Container, Switch, OneOf, Text, Card
 ### Initialize `Switch` widget
 
 ```python
-switch = Switch(on_content=Text("ON Conent"), off_content=Text("OFF content"))
+switch = Switch(
+    on_content=Text("ON Conent"),
+    off_content=Text("OFF content"),
+)
 ```
 
 ### Initialize `OneOf` widget to switch between `Cards`
@@ -189,7 +211,10 @@ switch_one_of = OneOf(switch)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-layout = Container(widgets=[Card(title="Switch", content=switch), Card(title="OneOf", content=switch_one_of)])
+layout = Container(widgets=[
+    Card(title="Switch", content=switch),
+    Card(title="OneOf", content=switch_one_of),
+])
 ```
 
 ### Create app using layout
@@ -200,4 +225,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219058398-19aea1df-d3c0-4bc9-ac9b-163c47bdd2b0.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/222442744-b1df7f05-07a3-4a9c-bb9a-6769cb1731f3.gif" alt="layout">
+</p>

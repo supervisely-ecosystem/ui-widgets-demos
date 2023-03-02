@@ -54,7 +54,11 @@ Determine show text `App Session` on widget or not.
 **default value:** `false`
 
 ```python
-select_app_session = SelectAppSession(team_id=team_id, tags=["deployed_nn"], show_label=True)
+select_app_session = SelectAppSession(
+    team_id=team_id,
+    tags=["deployed_nn"],
+    show_label=True,
+)
 ```
 
 ![show_label](https://user-images.githubusercontent.com/120389559/219651794-16c3d78d-d3fe-49c2-ada5-1c5039c1e761.png)
@@ -68,9 +72,20 @@ Determine selector size (large/small/mini/None).
 **default value:** `mini`
 
 ```python
-select_app_session = SelectAppSession(team_id=team_id, tags=["deployed_nn"])
-select_app_small = SelectAppSession(team_id=team_id, tags=["deployed_nn"], size="small")
-select_app_large = SelectAppSession(team_id=team_id, tags=["deployed_nn"], size="large")
+select_app_session = SelectAppSession(
+    team_id=team_id,
+    tags=["deployed_nn"],
+)
+select_app_small = SelectAppSession(
+    team_id=team_id,
+    tags=["deployed_nn"],
+    size="small",
+)
+select_app_large = SelectAppSession(
+    team_id=team_id,
+    tags=["deployed_nn"],
+    size="large",
+)
 ```
 
 ![size](https://user-images.githubusercontent.com/120389559/219652377-cd8392d6-09b7-432b-94a4-ef91ca64f864.png)
@@ -123,7 +138,10 @@ team_id = sly.env.team_id()
 ### Initialize `SelectAppSession` widget
 
 ```python
-select_app_session = SelectAppSession(team_id=team_id, tags=["deployed_nn"])
+select_app_session = SelectAppSession(
+    team_id=team_id,
+    tags=["deployed_nn"],
+)
 ```
 
 ### Create app layout

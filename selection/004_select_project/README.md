@@ -68,7 +68,11 @@ Show only `Project` select.
 **default value:** `false`
 
 ```python
-select_project = SelectProject(default_id=project_id, workspace_id=workspace_id, compact=True)
+select_project = SelectProject(
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+)
 ```
 
 ![compact](https://user-images.githubusercontent.com/120389559/217844837-4b142a81-b456-4f1d-a57f-500e7f38adb8.png)
@@ -91,7 +95,10 @@ Determine show text `Project` on widget or not. This parameter only affects when
 
 ```python
 select_project = SelectProject(
-    default_id=project_id, workspace_id=workspace_id, compact=True, show_label=False
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+    show_label=False,
 )
 ```
 
@@ -107,20 +114,40 @@ Size of input.
 
 ```python
 select_project = SelectProject(
-    default_id=project_id, workspace_id=workspace_id, compact=True, show_label=False
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+    show_label=False,
 )
 select_mini = SelectProject(
-    default_id=project_id, workspace_id=workspace_id, compact=True, show_label=False, size="mini"
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="mini",
 )
 select_small = SelectProject(
-    default_id=project_id, workspace_id=workspace_id, compact=True, show_label=False, size="small"
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="small",
 )
 select_large = SelectProject(
-    default_id=project_id, workspace_id=workspace_id, compact=True, show_label=False, size="large"
+    default_id=project_id,
+    workspace_id=workspace_id,
+    compact=True,
+    show_label=False,
+    size="large",
 )
 card = Card(
     title="Select Project",
-    content=Container(widgets=[select_project, select_mini, select_small, select_large]),
+    content=Container(widgets=[
+        select_project,
+        select_mini,
+        select_small,
+        select_large,
+    ]),
 )
 ```
 
