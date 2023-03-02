@@ -2,27 +2,35 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `RadioGroup`, `RadioGroup.Item` widgets in Supervisely app.
+**`RadioGroup`** widget in Supervisely is a user interface element that allows users to create a group of mutually exclusive options that can be selected via radio buttons. With the RadioGroup widget, users can define a set of options, each with a corresponding radio button, and only one option (`RadioGroup.Item`) can be selected at a time.
+Overall, `RadioGroup` widget is a valuable tool for simplifying user interactions and improving the usability of Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/radiogroup)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/radiogroup)
 
 ## Function signature
 
 ```python
-RadioGroup(items, size=None, direction="horizontal", gap=10, widget_id=None)
+RadioGroup(
+    items, size=None,
+    direction="horizontal",
+    gap=10,
+    widget_id=None,
+)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/218781501-c8849c3c-1070-4425-8b9f-e9cb9ad9a74b.gif)
+<p align="center"></p>
+    <img src="https://user-images.githubusercontent.com/120389559/218781501-c8849c3c-1070-4425-8b9f-e9cb9ad9a74b.gif" alt="default">
+</p>
 
 ## Parameters
 
-| Parameters  |                   Type                    |             Description              |
-| :---------: | :---------------------------------------: | :----------------------------------: |
-|   `items`   |          `List[RadioGroup.Item]`          |     List of `RadioGroup` content     |
-|   `size`    | `Literal["large", "small", "mini", None]` | `RadioGroup` size (large/small/mini) |
-| `direction` |    `Literal["vertical", "horizontal"]`    |     `RadioGroup` items direction     |
-|    `gap`    |                   `int`                   |    Gap between `RadioGroup` items    |
-| `widget_id` |                   `str`                   |           Id of the widget           |
+| Parameters  |                   Type                    |          Description           |
+| :---------: | :---------------------------------------: | :----------------------------: |
+|   `items`   |          `List[RadioGroup.Item]`          |  List of `RadioGroup` content  |
+|   `size`    | `Literal["large", "small", "mini", None]` |       `RadioGroup` size        |
+| `direction` |    `Literal["vertical", "horizontal"]`    |  `RadioGroup` items direction  |
+|    `gap`    |                   `int`                   | Gap between `RadioGroup` items |
+| `widget_id` |                   `str`                   |        ID of the widget        |
 
 ### items
 
@@ -37,6 +45,10 @@ Determine `RadioGroup` size.
 **type:** `Literal["large", "small", "mini", None]`
 
 **default value:** `None`
+
+```python
+radio_group = RadioGroup(items=items, size="large")
+```
 
 ### direction
 
@@ -88,18 +100,18 @@ ID of the widget.
 
 ## Methods and attributes
 
-|       Attributes and Methods        | Description                                      |
-| :---------------------------------: | ------------------------------------------------ |
-|            `get_value()`            | Return selected `RadioGroup.Item` value.         |
-|          `value_changed()`          | Handled when input `RadioGroup.Item` is changed. |
-| `set(items: List[RadioGroup.Item])` | Set given `RadioGroup.Item` in `RadioGroup`.     |
-|         `set_value(value)`          | Set given value in `RadioGroup.Item`.            |
+|       Attributes and Methods        | Description                                                       |
+| :---------------------------------: | ----------------------------------------------------------------- |
+|            `get_value()`            | Return selected `RadioGroup.Item` value.                          |
+| `set(items: List[RadioGroup.Item])` | Set given list of `RadioGroup.Item` in `RadioGroup`.              |
+|       `set_value(value: str)`       | Set given value by value of `RadioGroup.Item`.                    |
+|          `@value_changed`           | Decorator function is handled when input `RadioGroup` is changed. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/044_radio_group/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/044_radio_group/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/003_radio_group/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/003_radio_group/src/main.py)
 
 ### Import libraries
 
@@ -135,9 +147,7 @@ one_of = OneOf(radio_group)
 Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
-widgets = Container(
-    widgets=[radio_group, one_of],
-)
+widgets = Container(widgets=[radio_group, one_of])
 
 layout = Card(content=widgets, title="Radio group")
 ```
@@ -150,4 +160,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/218789546-34054150-6e4d-44cf-8673-f2e9e112b2e4.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/120389559/218789546-34054150-6e4d-44cf-8673-f2e9e112b2e4.gif" alt="layout">
+</p>

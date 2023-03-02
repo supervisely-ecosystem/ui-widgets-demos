@@ -2,10 +2,10 @@
 
 ## Introduction
 
-This widget is a simple and intuitive interface element that allows users to select given option. 
+This widget is a simple and intuitive interface element that allows users to select given option.
 The `Checkbox` widget can be customized with different label text and default state. By providing an easy and efficient way to make selections, the `Checkbox` widget is an essential tool for any image or video annotation project.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/checkbox)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/checkbox)
 
 ## Function signature
 
@@ -13,7 +13,7 @@ The `Checkbox` widget can be customized with different label text and default st
 checkbox = Checkbox(
     content="Enable",
     checked=False,
-    widget_id=None
+    widget_id=None,
 )
 ```
 
@@ -21,11 +21,11 @@ checkbox = Checkbox(
 
 ## Parameters
 
-| Parameters  |         Type         |         Description         |
-| :---------: | :------------------: | :-------------------------: |
-|  `content`  | `Union[Widget, str]` | checkbox content |
-|  `checked`  |        `bool`        | whether checkbox is checked |
-| `widget_id` |        `str`         |      ID of the widget       |
+| Parameters  |         Type         |             Description              |
+| :---------: | :------------------: | :----------------------------------: |
+|  `content`  | `Union[Widget, str]` |           Checkbox content           |
+|  `checked`  |        `bool`        | Return `True` if checkbox is checked |
+| `widget_id` |        `str`         |           ID of the widget           |
 
 ### content
 
@@ -39,7 +39,7 @@ checkbox = Checkbox(content="Enable")
 
 ### checked
 
-Whether Checkbox is checked.
+Whether Checkbox is checked. Return `True` if checked.
 
 **type:** `bool`
 
@@ -63,17 +63,16 @@ ID of the widget.
 
 | Attributes and Methods | Description                                                   |
 | :--------------------: | ------------------------------------------------------------- |
-|     `is_checked()`     | Return `True` if checked, else `False`.           |
+|     `is_checked()`     | Return `True` if checked, else `False`.                       |
 |       `check()`        | Enable `checked` property.                                    |
 |      `uncheck()`       | Disable `checked` property.                                   |
 |    `@value_changed`    | Decorator function is handled when checkbox value is changed. |
-
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/016_checkbox/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/016_checkbox/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/002_checkbox/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/002_checkbox/src/main.py)
 
 ### Import libraries
 

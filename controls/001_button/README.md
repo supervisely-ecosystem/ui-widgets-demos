@@ -2,33 +2,41 @@
 
 ## Introduction
 
-This Supervisely widget allows you to create buttons that can be clicked to trigger an action. It is a versatile widget that can be used in a variety of GUI applications.
+**`Button`** widget in Supervisely is a user interface element that allows users to create clickable buttons in the appliactions. These buttons can be customized with text, size, colors, and icons, and can be used to trigger specific actions or workflows. The Button widget is a versatile tool that can help users automate repetitive tasks or streamline their workflows, making it a valuable addition to any project dashboard.
 
 <!-- With the `Button` widget, you can easily create buttons that have customizable text, colors, and styles. You can also attach event handlers to buttons, so that when a button is clicked, a function is called. -->
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/button)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/button)
 
 ## Function signature
 
 ```python
-Button(text="Button", button_type="primary", button_size=None,
-plain=False, show_loading=True, icon=None, icon_gap=5, widget_id=None)
+Button(
+    text="Button",
+    button_type="primary",
+    button_size=None,
+    plain=False,
+    show_loading=True,
+    icon=None,
+    icon_gap=5,
+    widget_id=None,
+)
 ```
 
-![default](https://user-images.githubusercontent.com/48913536/202175644-0dc9c62a-544c-4460-8efa-f9af66e0b14f.png)
+![button-default](https://user-images.githubusercontent.com/79905215/222425389-2eaf1f4a-0bc6-4593-bee1-0698df506775.png)
 
 ## Parameters
 
-|  Parameters  |                                Type                                |                     Description                     |
-| :----------: | :----------------------------------------------------------------: | :-------------------------------------------------: |
-|     text     |                                str                                 |     determine text that displayed on the button     |
-| button_type  | Literal["primary", "info", "warning", "danger", "success", "text"] |                     button type                     |
-| button_size  |                 Literal["mini", "small", "large"]                  |                     button size                     |
-|    plain     |                                bool                                |     determine whether button is a plain button      |
-| show_loading |                                bool                                |         determine whether button is loading         |
-|     icon     |                                str                                 | button icon, accepts an icon name of icon component |
-|   icon_gap   |                                int                                 |          gap between icon and button text           |
-|  widget_id   |                                str                                 |                  id of the widget                   |
+|   Parameters   |                                 Type                                 |                                    Description                                     |
+| :------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+|     `text`     |                                `str`                                 |                    Determine text that displayed on the button                     |
+| `button_type`  | `Literal["primary", "info", "warning", "danger", "success", "text"]` |                                    Button type                                     |
+| `button_size`  |              `Literal["mini", "small", "large", None]`               |                                    Button size                                     |
+|    `plain`     |                                `bool`                                |                     Determine whether button is a plain button                     |
+| `show_loading` |                                `bool`                                |       If `True` display loading animation when `loading` property is `True`        |
+|     `icon`     |                                `str`                                 | Button icon, accepts an icon name of icon from Material Design Iconic Font library |
+|   `icon_gap`   |                                `int`                                 |                          Gap between icon and button text                          |
+|  `widget_id`   |                                `str`                                 |                                  ID of the widget                                  |
 
 ### text
 
@@ -42,7 +50,7 @@ Determine text that will be displayed on the button.
 button = Button(text="My text on the button")
 ```
 
-![text](https://user-images.githubusercontent.com/48913536/202176057-d21bf18b-f6df-44ee-82a4-c87f5077dddb.png)
+![text](https://user-images.githubusercontent.com/79905215/222425551-f4ba5a79-4fc6-48b9-96ac-40ac01b6c655.png)
 
 ### button_type
 
@@ -61,18 +69,13 @@ button_success = Button(text="success", button_type="success")
 button_text = Button(text="text", button_type="text")
 ```
 
-![type_primary](https://user-images.githubusercontent.com/48913536/202175723-19150a5c-3d62-474c-af7d-9802fffa6fc0.png)
-![type_info](https://user-images.githubusercontent.com/48913536/202175740-14b07018-b823-4a5c-88fe-78018fb4283c.png)
-![type_warning](https://user-images.githubusercontent.com/48913536/202175771-5f44ef74-4ffe-4865-8566-d332557b8e19.png)
-![type_danger](https://user-images.githubusercontent.com/48913536/202175770-e96ef326-4c46-4f73-8e0e-c0788d8b0143.png)
-![type_success](https://user-images.githubusercontent.com/48913536/202175768-b3934b08-b553-4f81-a209-4aa66b452c6f.png)
-![type_text](https://user-images.githubusercontent.com/48913536/202175763-8140ff85-0bdb-41e0-9ad2-dbf5e0e5ea67.png)
+![button-type](https://user-images.githubusercontent.com/79905215/222425939-dc3dab0a-4944-4ccb-9423-0914810eb0dd.png)
 
 ### button_size
 
 Button size.
 
-**type:** `Literal["mini", "small", "large"]`
+**type:** `Literal["mini", "small", "large", None]`
 
 **default value:** `None`
 
@@ -82,9 +85,7 @@ button_small = Button(text="small", button_size="small")
 button_large = Button(text="large", button_size="large")
 ```
 
-![size_mini](https://user-images.githubusercontent.com/48913536/202175806-908797f7-f17a-49e1-bb52-935b5a1789f1.png)
-![size_small](https://user-images.githubusercontent.com/48913536/202175804-bb9711af-d372-4e81-ae1d-2d905d2dcaa0.png)
-![size_large](https://user-images.githubusercontent.com/48913536/202175800-ae6d2b9d-6b1c-45a9-b5ca-5b4a055f67e1.png)
+![button-size](https://user-images.githubusercontent.com/79905215/222426825-c1c48184-40fd-4766-8ec0-f49c0a466230.png)
 
 ### plain
 
@@ -98,7 +99,7 @@ Determine whether button is a plain button.
 button_plain = Button(plain=True)
 ```
 
-![plain](https://user-images.githubusercontent.com/48913536/202175892-c7fb1d5f-5e69-4369-9d92-df58077d2840.png)
+![plain](https://user-images.githubusercontent.com/79905215/222426997-fd108303-a4dd-4529-bbcf-e0a3431b7c5e.png)
 
 ### show_loading
 
@@ -109,10 +110,14 @@ Determine whether button is loading.
 **default value:** `False`
 
 ```python
-button = Button(show_loading=True)
+button_1 = Button(show_loading=False)
+
+button_2 = Button(show_loading=True)
 ```
 
-![loading](https://user-images.githubusercontent.com/48913536/202196364-f6677a65-5c51-4333-8632-56a5cce270ac.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222428715-422d966b-9bc4-40d4-a59f-29351651869b.gif" alt="show_loading" />
+</p>
 
 ### icon
 
@@ -120,7 +125,7 @@ Button icon, accepts an icon name of icon component. Icons can be found at [zavo
 
 Open any icon at [zavoloklom.github.io](http://zavoloklom.github.io/material-design-iconic-font/icons.html) and copy it's name (see example below).
 
-![icon2](https://user-images.githubusercontent.com/48913536/202219207-e04801c2-84a0-4c0a-9c42-bc26a5b7cb65.png)
+![icon](https://user-images.githubusercontent.com/79905215/222429824-54cf5044-6083-453b-964a-438469824e63.png)
 
 **type:** `str`
 
@@ -130,7 +135,7 @@ Open any icon at [zavoloklom.github.io](http://zavoloklom.github.io/material-des
 button_icon = Button(text="icon", icon="zmdi zmdi-play")
 ```
 
-![icon](https://user-images.githubusercontent.com/48913536/202175834-eee3ec21-99b9-46e9-89c2-7a067f5d3362.png)
+![button-icon](https://user-images.githubusercontent.com/79905215/222430124-297575bb-4031-487d-bf81-dc0af58c1fe7.png)
 
 ### icon_gap
 
@@ -145,8 +150,7 @@ button_icon_gap_5 = Button(text="icon gap 5", icon="zmdi zmdi-play", icon_gap=5)
 button_icon_gap_50 = Button(text="icon gap 50", icon="zmdi zmdi-play", icon_gap=50)
 ```
 
-![icon_gap_5](https://user-images.githubusercontent.com/48913536/202175845-39f72731-e625-4793-b3aa-e232189d36ae.png)
-![icon_gap_50](https://user-images.githubusercontent.com/48913536/202175842-14192061-4f6b-429c-8d5a-3af8997e85b0.png)
+![button-gap](https://user-images.githubusercontent.com/79905215/222430331-6534e93f-0978-482c-8e96-8b49987e898a.png)
 
 ### widget_id
 
@@ -160,7 +164,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/001_button/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/001_button/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/001_button/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/001_button/src/main.py)
 
 ```python
 import os
@@ -225,4 +229,6 @@ def subtract():
     text_num.text = str(int(text_num.text) - 1)
 ```
 
-![demo](https://user-images.githubusercontent.com/48913536/202197687-5b2b4cdc-66ef-4d88-b47e-48a1556bd56e.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/48913536/202197687-5b2b4cdc-66ef-4d88-b47e-48a1556bd56e.gif" alt="layout" />
+</p>
