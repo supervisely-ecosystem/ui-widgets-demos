@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `ClassesTable` widget in Supervisely app.
+**`ClassesTable`** widget in Supervisely allows users to display all classes from given project in a table format. The widget shows the class name, geometry type, and the number of images and labels associated with each class. With `ClassesTable` widget, users can enable multi-selection mode, restrict the display of certain geometry types, and manage the selected classes. Users can customize the appearance and behavior of the widget to match their project requirements. `ClassesTable` widget also allows users to retrieve a list of the selected classes from the code. Overall, the ClassesTable widget is a valuable tool for organizing and managing the classes in Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classestable)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/classestable)
 
 ## Function signature
 
@@ -20,19 +20,19 @@ ClassesTable(
 )
 ```
 
-![project_id](https://user-images.githubusercontent.com/120389559/219954018-a0d76d1e-d617-4729-9f8f-62ad688031ad.png)
+![default](https://user-images.githubusercontent.com/120389559/219954018-a0d76d1e-d617-4729-9f8f-62ad688031ad.png)
 
 ## Parameters
 
 |   Parameters    |       Type       |                              Description                              |
 | :-------------: | :--------------: | :-------------------------------------------------------------------: |
 | `project_meta`  |  `ProjectMeta`   |                          Input `ProjectMeta`                          |
-|  `project_id`   |      `int`       |                           Input project ID                            |
+|  `project_id`   |      `int`       |                           Input Supervisely project ID                            |
 |  `project_fs`   |    `Project`     |                            Input `Project`                            |
 | `allowed_types` | `List[Geometry]` | `Geometry` types that will be display from all types in given project |
 |  `selectable`   |      `bool`      |                  Whether the component is selectable                  |
 |   `disabled`    |      `bool`      |                   Whether the component is disabled                   |
-|   `widget_id`   |      `str`       |                           Id of the widget                            |
+|   `widget_id`   |      `str`       |                           ID of the widget                            |
 
 ### project_meta
 
@@ -89,7 +89,10 @@ Determine `Geometry` types that will be display from all types in given project.
 **default value:** `None`
 
 ```python
-classes_table = ClassesTable(project_id=project_id, allowed_types=[sly.Polygon])
+classes_table = ClassesTable(
+    project_id=project_id,
+    allowed_types=[sly.Polygon],
+)
 ```
 
 ![allowed_types](https://user-images.githubusercontent.com/120389559/219954233-dd463cec-b385-4386-b951-3b017df55f3e.png)
@@ -103,7 +106,10 @@ Determine whether the component is selectable.
 **default value:** `True`
 
 ```python
-classes_table = ClassesTable(project_id=project_id, selectable=False)
+classes_table = ClassesTable(
+    project_id=project_id,
+    selectable=False,
+)
 ```
 
 ![selectable](https://user-images.githubusercontent.com/120389559/219954378-3ddb4098-93c7-49fe-9a8d-dc49515d60a6.png)
@@ -117,10 +123,14 @@ Determine whether the component is disabled.
 **default value:** `False`
 
 ```python
-classes_table = ClassesTable(project_id=project_id, disabled=True)
+classes_table = ClassesTable(
+    project_id=project_id,
+    disabled=True,
+)
 ```
-
-![disabled](https://user-images.githubusercontent.com/120389559/219955255-6b2a7075-8e58-4934-9ab4-b3dbb4c11ce8.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/219955255-6b2a7075-8e58-4934-9ab4-b3dbb4c11ce8.gif" alt="disabled" />
+</p>
 
 ### widget_id
 
@@ -146,7 +156,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/052_classes_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/052_classes_table/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/tables/004_classes_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/tables/004_classes_table/src/main.py)
 
 ### Import libraries
 
@@ -171,7 +181,7 @@ api = sly.Api()
 ### Initialize `ClassesTable` widget by project ID
 
 ```python
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 class_table = ClassesTable(project_id=project_id)
 label = Text("")
 ```
@@ -179,7 +189,10 @@ label = Text("")
 ### Initialize `ClassesTable` widget by local project
 
 ```python
-data_dir = sly.app.get_data_dir()
+data_dir = sly.app.get_data_dir() # create local directory
+if sly.fs.dir_exists(data_dir):
+    sly.fs.clean_dir(data_dir) # clean directory
+
 project_dir = os.path.join(data_dir, "sly_project")
 sly.Project.download(api, project_id, project_dir)
 project = sly.Project(project_dir, sly.OpenMode.READ)
@@ -192,10 +205,15 @@ local_label = Text("")
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-card = Card(title="Classes Table", content=Container([class_table, label], gap=5))
-card_local = Card(
-    title="Classes Table Local", content=Container([local_class_table, local_label], gap=5)
+card = Card(
+    title="Classes Table",
+    content=Container([class_table, label], gap=5),
 )
+card_local = Card(
+    title="Classes Table Local",
+    content=Container([local_class_table, local_label], gap=5),
+)
+
 layout = Container(widgets=[card, card_local])
 ```
 
@@ -222,4 +240,6 @@ def class_table_value_changed(selected_classes):
     local_label.text = f"Selected classes: {', '.join(selected_classes)}"
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/221355359-03e32c23-3a89-4e63-996d-78417ba43e39.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221355359-03e32c23-3a89-4e63-996d-78417ba43e39.gif" alt="layout" />
+</p>

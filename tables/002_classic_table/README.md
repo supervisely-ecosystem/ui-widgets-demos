@@ -6,7 +6,7 @@
 
 It is recommended to use the newer `Table` widget instead.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classic-table)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/classic-table)
 
 ## Function signature
 
@@ -106,9 +106,9 @@ Number of fixed colums (left to right).
 classic_table = ClassicTable(data=df, fixed_columns_num=2)
 ```
 
-<video width="860" controls>
-   <source src="https://user-images.githubusercontent.com/79905215/218063397-8c090752-1136-41a4-92df-7f5ef079938e.mov" type="video/mp4">
- </video>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222659501-0dd0f4a6-ecdd-4fe4-b17b-d271de9f8a06.gif" alt="classic_table_fix_columns" />
+</p>
 
 ### widget_id
 
@@ -136,7 +136,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/024_classic_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/024_classic_table/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/tables/002_classic_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/tables/002_classic_table/src/main.py)
 
 ### Import libraries
 
@@ -217,4 +217,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![classic-final](https://user-images.githubusercontent.com/79905215/218065148-e15d9642-2ca2-4132-9f76-52ed3cff5cce.png)
+![layout](https://user-images.githubusercontent.com/79905215/218065148-e15d9642-2ca2-4132-9f76-52ed3cff5cce.png)

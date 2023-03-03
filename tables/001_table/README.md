@@ -8,7 +8,7 @@ It supports data in the Pandas DataFrame format or a Python dictionary with a sp
 
 The `Table` widget allows searching, sorting by column and direction, and the ability to download or customize data before downloading. It also allows for the creation of buttons in table cells and updating table data in real-time through Python code. 
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/table)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/table)
 
 ## Function signature
 
@@ -32,7 +32,7 @@ table = Table(
 )
 ```
 
-![table-new](https://user-images.githubusercontent.com/79905215/218051109-136fdb07-eccf-420f-ae9d-67dd7f195f21.png)
+![default](https://user-images.githubusercontent.com/79905215/218051109-136fdb07-eccf-420f-ae9d-67dd7f195f21.png)
 
 ## Parameters
 
@@ -118,9 +118,10 @@ Number of fixed colums (left to right).
 table = Table(data=df, fixed_cols=2)
 ```
 
-<video width="860" controls>
-   <source src="https://user-images.githubusercontent.com/79905215/217930130-1f2585bd-8491-4753-a2f3-d27bd539420d.mp4" type="video/mp4">
- </video>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/222658487-28712e56-9b53-4f33-8a4a-fe93a68ca7cc.gif" alt="fix-column" />
+</p>
+
 
 ### per_page
 
@@ -216,7 +217,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/023_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/023_table/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/tables/001_table/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/tables/001_table/src/main.py)
 
 ### Import libraries
 
@@ -318,4 +319,7 @@ def handle_table_button(datapoint: sly.app.widgets.Table.ClickedDataPoint):
         table.delete_row("Col#1", row_num)
 ```
 
-![table-app](https://user-images.githubusercontent.com/79905215/219018134-14fd350a-b5b0-49d5-8649-fa1a8956a7ad.gif)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/219018134-14fd350a-b5b0-49d5-8649-fa1a8956a7ad.gif" alt="table-app" />
+</p>

@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 import supervisely as sly
-from supervisely.project.project_meta import ProjectMeta
 from supervisely.app.widgets import Container, ClassesTable, Text, Card
 
 # for convenient debug, has no effect in production
@@ -10,20 +9,27 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-project_id = int(os.environ["modal.state.slyProjectId"])
+project_id = sly.env.project_id()
 class_table = ClassesTable(project_id=project_id)
 label = Text("")
 
 data_dir = sly.app.get_data_dir()
+if sly.fs.dir_exists(data_dir):
+    sly.fs.clean_dir(data_dir)
+
 project_dir = os.path.join(data_dir, "sly_project")
 sly.Project.download(api, project_id, project_dir)
 project = sly.Project(project_dir, sly.OpenMode.READ)
 local_class_table = ClassesTable(project_fs=project)
 local_label = Text("")
 
-card = Card(title="Classes Table", content=Container([class_table, label], gap=5))
+card = Card(
+    title="Classes Table",
+    content=Container([class_table, label], gap=5),
+)
 card_local = Card(
-    title="Classes Table Local", content=Container([local_class_table, local_label], gap=5)
+    title="Classes Table Local",
+    content=Container([local_class_table, local_label], gap=5),
 )
 layout = Container(widgets=[card, card_local])
 
