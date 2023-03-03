@@ -10,3 +10,5 @@
 8. [OneOf](008_one_of/README.md)
 9. [Sidebar](009_sidebar/README.md)
 10. [Stepper](010_stepper/README.md)
+11. [RadioTabs](011_radio_tabs/README.md)
+12. [Tabs](012_tabs/README.md)

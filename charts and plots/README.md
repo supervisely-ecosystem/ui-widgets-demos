@@ -6,3 +6,4 @@
 4. [ConfusionMatrix](004_confusion_matrix/README.md)
 5. [LinePlot](005_line_plot/README.md)
 6. [GridPlot](006_grid_plot/README.md)
+7. [ScatterChart](007_scatter_chart/README.md)
