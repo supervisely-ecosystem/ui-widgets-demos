@@ -142,14 +142,14 @@ Determine active `Widget` when `Switch` in OFF state.
 
 ```python
 switch = Switch(
-    on_content=Text("ON content"),
-    off_content=Text("OFF content"),
+    on_content=Text("ON Content"),
+    off_content=Text("OFF Сontent"),
 )
 switch_one_of = OneOf(switch)
 ```
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/79905215/222442744-b1df7f05-07a3-4a9c-bb9a-6769cb1731f3.gif" alt="on_off_content">
+    <img src="https://user-images.githubusercontent.com/79905215/222667564-e20ac85e-365d-4130-814c-caec386ffef7.gif" alt="on_off_content">
 </p>
 
 ### widget_id
@@ -195,8 +195,8 @@ from supervisely.app.widgets import Container, Switch, OneOf, Text, Card
 
 ```python
 switch = Switch(
-    on_content=Text("ON content"),
-    off_content=Text("OFF content"),
+    on_content=Text("ON Content"),
+    off_content=Text("OFF Сontent"),
 )
 ```
 
@@ -226,5 +226,5 @@ app = sly.Application(layout=layout)
 ```
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/79905215/222442744-b1df7f05-07a3-4a9c-bb9a-6769cb1731f3.gif" alt="layout">
+    <img src="https://user-images.githubusercontent.com/79905215/222667564-e20ac85e-365d-4130-814c-caec386ffef7.gif" alt="layout">
 </p>
