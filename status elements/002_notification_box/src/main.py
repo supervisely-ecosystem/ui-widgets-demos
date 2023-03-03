@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-workspace_id = int(os.environ["modal.state.slyWorkspaceId"])
+workspace_id = sly.env.workspace_id()
 
 # create Notification Box with "info" box type
 note_box_info = NotificationBox()

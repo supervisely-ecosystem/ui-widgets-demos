@@ -4,7 +4,7 @@
 
 **`NotificationBox`** is a widget to display messages to the user. It immediately attracts the user's attention and can be used to inform the user about important events, such as the successful completion of a task, errors during execution, or the need to make adjustments to the annotation. NotificationBox supports various levels of messages, such as informational, success, warning, and error.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/notification-box)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/notificationbox)
 
 ## Function signature
 
@@ -118,7 +118,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/018_notification_box/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/018_notification_box/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/status-elements/002_notification_box/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status-elements/002_notification_box/src/main.py)
 
 ### Import libraries
 
@@ -268,4 +268,6 @@ def show_warning():
     note_box_warning.show()
 ```
 
-![note-gif](https://user-images.githubusercontent.com/79905215/218417029-28c397a9-dab0-4b5f-9ea2-a230c722538b.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/218417029-28c397a9-dab0-4b5f-9ea2-a230c722538b.gif" alt="layout" />
+</p>
