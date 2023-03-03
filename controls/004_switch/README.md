@@ -142,7 +142,7 @@ Determine active `Widget` when `Switch` in OFF state.
 
 ```python
 switch = Switch(
-    on_content=Text("ON Conent"),
+    on_content=Text("ON content"),
     off_content=Text("OFF content"),
 )
 switch_one_of = OneOf(switch)
