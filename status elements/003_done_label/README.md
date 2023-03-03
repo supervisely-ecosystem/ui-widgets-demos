@@ -6,7 +6,7 @@
 
 It is a minimalist text element that displays a green "Done" checkmark with the message next to it. `DoneLabel` is usually used to inform the user that a task has been successfully completed or that a process is finished.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/done-label)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/donelabel)
 
 ## Function signature
 
@@ -58,7 +58,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/019_done_label/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/019_done_label/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/status-elements/003_done_label/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status-elements/003_done_label/src/main.py)
 
 ### Import libraries
 
@@ -136,4 +136,6 @@ def start_progress():
     done_label.show()
 ```
 
-![done-gif](https://user-images.githubusercontent.com/79905215/218423940-5b178198-06e2-4d4e-8d99-1154f5c3889b.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/218423940-5b178198-06e2-4d4e-8d99-1154f5c3889b.gif" alt="layout" />
+</p>

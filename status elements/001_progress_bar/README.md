@@ -8,24 +8,29 @@ With the `Progress Bar` widget, you can easily create a progress bar that update
 
 The Progress Bar Widget can be customized to show progress as percents or values.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/progress-bar)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/progressbar)
 
 ## Function signature
 
 ```python
-Progress(message=None, show_percents=False, hide_on_finish=True, widget_id=None)
+Progress(
+    message=None,
+    show_percents=False,
+    hide_on_finish=True,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/48913536/202434648-cda78cff-0796-498b-b77e-8eb6e8909e9c.gif)
 
 ## Parameters
 
-|   Parameters   | Type  |                Description                 |
-| :------------: | :---: | :----------------------------------------: |
-|    message     |  str  |            progress bar message            |
-| show_percents  | bool  |         show progress in percents          |
-| hide_on_finish | bool  |        hide progress bar on finish         |
-|   widget_id    |  str  | determine whether button is a plain button |
+|   Parameters   | Type |         Description         |
+| :------------: | :--: | :-------------------------: |
+|    message     | str  |    Progress bar message     |
+| show_percents  | bool |  Show progress in percents  |
+| hide_on_finish | bool | Hide progress bar on finish |
+|   widget_id    | str  |      ID of the widget       |
 
 ### message
 
@@ -82,7 +87,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/002_progress_bar/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/002_progress_bar/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/status-elements/001_progress_bar/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status-elements/001_progress_bar/src/main.py)
 
 ### Import libraries
 
@@ -136,7 +141,6 @@ app = sly.Application(layout=layout)
 
 Our app layout is ready. Progress bar will appear after pressing the `Start` button.
 
-![layout](https://user-images.githubusercontent.com/48913536/202438081-552d2ba1-c682-42aa-9010-064b460f3ce4.png)
 
 ### Start progress with button click
 
