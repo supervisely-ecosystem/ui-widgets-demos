@@ -8,7 +8,10 @@ from supervisely.app.widgets import Container, Switch, OneOf, Text, Card
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-switch = Switch(on_content=Text("ON content"), off_content=Text("OFF content"))
+switch = Switch(
+    on_content=Text("ON Content"),
+    off_content=Text("OFF Сontent"),
+)
 switch_one_of = OneOf(switch)
 
 
