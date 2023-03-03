@@ -195,7 +195,7 @@ from supervisely.app.widgets import Container, Switch, OneOf, Text, Card
 
 ```python
 switch = Switch(
-    on_content=Text("ON Conent"),
+    on_content=Text("ON content"),
     off_content=Text("OFF content"),
 )
 ```
