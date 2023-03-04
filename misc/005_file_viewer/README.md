@@ -1,3 +1,144 @@
 # File Viewer
 
-Widget description and detailed instruction will be added soon.
+## Introduction
+
+In this tutorial you will learn how to use `FileViewer` widget in Supervisely app.
+
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/fileviewer)
+
+## Function signature
+
+```python
+FileViewer(files_list, widget_id=None)
+```
+
+![default](https://user-images.githubusercontent.com/120389559/222391341-f8857a83-dffb-484e-859b-30794d0368f1.gif)
+
+## Parameters
+
+|  Parameters  |     Type     |   Description    |
+| :----------: | :----------: | :--------------: |
+| `files_list` | `List[dict]` | Pathes to files  |
+| `widget_id`  |    `str`     | Id of the widget |
+
+### files_list
+
+Determine pathes to files.
+
+**type:** `List[dict]`
+
+```python
+files = api.file.list(team_id, path)
+tree_items = []
+for file in files:
+    path = file["path"]
+    tree_items.append({"path": path})
+
+
+file_viewer = FileViewer(files_list=tree_items)
+```
+
+![default](https://user-images.githubusercontent.com/120389559/222391341-f8857a83-dffb-484e-859b-30794d0368f1.gif)
+
+### widget_id
+
+ID of the widget.
+
+**type:** `str`
+
+**default value:** `None`
+
+## Methods and attributes
+
+|           Attributes and Methods           | Description                            |
+| :----------------------------------------: | -------------------------------------- |
+|           `get_selected_items()`           | Return selected items.                 |
+|            `get_current_path()`            | Return current path to files.          |
+| `update_file_tree(files_list: List[dict])` | Update files tree by given files list. |
+|              `path_changed()`              | Handled then input path changed.       |
+|             `value_changed()`              | Handled then input value changed.      |
+|           `loading(value: dict)`           | Upload input data.                     |
+
+## Mini App Example
+
+You can find this example in our Github repository:
+
+[supervisely-ecosystem/ui-widgets-demos/misc/file_viewer/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/file_viewer/src/main.py)
+
+### Import libraries
+
+```python
+import os
+import supervisely as sly
+from dotenv import load_dotenv
+from supervisely.app.widgets import FileViewer, Container, Card, Text
+```
+
+### Init API client
+
+First, we load environment variables with credentials and init API for communicating with Supervisely Instance:
+
+```python
+load_dotenv("local.env")
+load_dotenv(os.path.expanduser("~/supervisely.env"))
+
+api = sly.Api()
+```
+
+### Prepare file pathes
+
+```python
+path = "/"  # root of Team Files or specify your directory
+
+files = api.file.list(team_id, path)
+tree_items = []
+for file in files:
+    path = file["path"]
+    tree_items.append({"path": path, "size": file["meta"]["size"]})
+```
+
+### Initialize `FileViewer` widget
+
+```python
+file_viewer = FileViewer(files_list=tree_items)
+```
+
+### Initialize `Text` widgets we will use
+
+```python
+selected_values = Text()
+curr_path = Text()
+```
+
+### Create app layout
+
+Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+
+```python
+layout = Card(
+    content=Container(widgets=[curr_path, selected_values, file_viewer]), title="File Viewer"
+)
+```
+
+### Create app using layout
+
+Create an app object with layout parameter.
+
+```python
+app = sly.Application(layout=layout)
+```
+
+### Add function to control widgets from python code
+
+```python
+@file_viewer.path_changed
+def refresh_tree(current_path):
+    curr_path.set(text=f"Current path: {current_path}", status="text")
+
+
+@file_viewer.value_changed
+def print_selected(selected_items):
+    selected_values.set(text=f"Selected items: {', '.join(selected_items)}", status="text")
+```
+
+![layout](https://user-images.githubusercontent.com/120389559/222407891-9b5965c0-e99b-4f30-8ed7-b97d954cb422.gif)
