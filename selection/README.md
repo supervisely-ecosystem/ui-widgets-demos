@@ -9,3 +9,4 @@
 7. [SelectItem](007_select_item/README.md)
 8. [SelectTagMeta](008_select_tag_meta/README.md)
 9. [SelectAppSession](009_select_app_session/README.md)
+10. [SelectString](010_select_string/README.md)
