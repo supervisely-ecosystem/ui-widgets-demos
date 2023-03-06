@@ -18,10 +18,16 @@ button_show_text = Button(
     icon="zmdi zmdi-comment-text",
 )
 button_show_info = Button(
-    text="Info", button_type="info", button_size="small", icon="zmdi zmdi-info-outline"
+    text="Info",
+    button_type="info",
+    button_size="small",
+    icon="zmdi zmdi-info-outline",
 )
 button_show_success = Button(
-    text="Success", button_type="success", button_size="small", icon="zmdi zmdi-check"
+    text="Success",
+    button_type="success",
+    button_size="small",
+    icon="zmdi zmdi-check",
 )
 button_show_warning = Button(
     text="Warning",
