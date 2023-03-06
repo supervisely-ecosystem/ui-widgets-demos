@@ -9,19 +9,21 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-project_id_left = int(os.environ["modal.state.slyProjectId_left"])
+project_id_left = 17996
 meta_json_left = api.project.get_meta(project_id_left)
 project_meta_left = sly.ProjectMeta.from_json(meta_json_left)
 left_classes = project_meta_left.obj_classes
 
-project_id_right = int(os.environ["modal.state.slyProjectId_right"])
+project_id_right = 17997
 meta_json_right = api.project.get_meta(project_id_right)
 project_meta_right = sly.ProjectMeta.from_json(meta_json_right)
 right_classes = project_meta_right._obj_classes
 
 
 match = MatchObjClasses(
-    left_collection=left_classes, right_collection=right_classes, suffix="erity"
+    left_collection=left_classes,
+    right_collection=right_classes,
+    suffix="erity",
 )
 
 
