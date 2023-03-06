@@ -194,7 +194,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/selection/010_select/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/010_select/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/009_select/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/009_select/src/main.py)
 
 ### Import libraries
 

@@ -208,7 +208,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/selection/008_select_tag_meta/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/008_select_tag_meta/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/007_select_tag_meta/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/007_select_tag_meta/src/main.py)
 
 ### Import libraries
 
