@@ -26,17 +26,17 @@ Editor(
 
 ## Parameters
 
-|        Parameters        |        Type         |                       Description                       |
-| :----------------------: | :-----------------: | :-----------------------------------------------------: |
-|      `initial_text`      |   `Optional[str]`   |                  Editor default value                   |
-|       `height_px`        |   `Optional[int]`   |            Specifies widget height in pixels            |
-|      `height_lines`      |   `Optional[int]`   |     Specifies the visible number of lines in widget     |
-|     `language_mode`      |   `Optional[int]`   |            Specifies language mode of editor            |
-|        `readonly`        |  `Optional[bool]`   |    Specifies that a editor area should be read-only     |
-|   `show_line_numbers`    | `Optional[bool]int` |     Specifies displaying numbers of lines in editor     |
-| `highlight_active_line`  |  `Optional[bool]`   | Specifies if visible highlighting active line in editor |
-| `restore_default_button` |  `Optional[bool]`   |    Display button for settting editor default value     |
-|       `widget_id`        |   `Optional[str]`   |                    ID of the widget                     |
+|        Parameters        |       Type       |                       Description                       |
+| :----------------------: | :--------------: | :-----------------------------------------------------: |
+|      `initial_text`      | `Optional[str]`  |                  Editor default value                   |
+|       `height_px`        | `Optional[int]`  |            Specifies widget height in pixels            |
+|      `height_lines`      | `Optional[int]`  |     Specifies the visible number of lines in widget     |
+|     `language_mode`      | `Optional[int]`  |            Specifies language mode of editor            |
+|        `readonly`        | `Optional[bool]` |    Specifies that a editor area should be read-only     |
+|   `show_line_numbers`    | `Optional[bool]` |     Specifies displaying numbers of lines in editor     |
+| `highlight_active_line`  | `Optional[bool]` | Specifies if visible highlighting active line in editor |
+| `restore_default_button` | `Optional[bool]` |    Display button for settting editor default value     |
+|       `widget_id`        | `Optional[str]`  |                    ID of the widget                     |
 
 ### initial_text
 
@@ -99,10 +99,14 @@ Specifies language mode of editor.
 **default value:** `json`
 
 ```python
-editor = Editor("<span>some text</span>", language_mode="html")
+editor_json = Editor('{ "value": 10 }', language_mode="json")
+editor_html = Editor("<div> </div>", language_mode="html")
+editor_plain_text = Editor("plain_text example", language_mode="plain_text")
+editor_yaml = Editor('ray: "a drop of golden sun"', language_mode="yaml")
+editor_python = Editor("import supervisely as sly", language_mode="python")
 ```
 
-![language_mode](https://user-images.githubusercontent.com/79905215/223060162-590986d0-fa1a-4ca5-93e9-238bac2e6bc7.png)
+![language_mode](https://user-images.githubusercontent.com/120389559/222470256-6ccc3b15-891a-44f1-aec0-75ed66af1e1f.png)
 
 ### readonly
 
@@ -178,7 +182,7 @@ ID of the widget.
 |                                                     `show_line_numbers()`                                                     | Display line numbers or code snippet. |
 |                                                     `hide_line_numbers()`                                                     | Hide line numbers or code snippet.    |
 |                                                         `get_text()`                                                          | Returns input value data.             |
-| `set_text(text: Optional[str] = "", language_mode: Optional[Literal['json', 'html', 'plain_text', 'yaml', 'python']] = None)` | set input value data.                 |
+| `set_text(text: Optional[str] = "", language_mode: Optional[Literal['json', 'html', 'plain_text', 'yaml', 'python']] = None)` | Set input value data.                 |
 
 ## Mini App Example
 
