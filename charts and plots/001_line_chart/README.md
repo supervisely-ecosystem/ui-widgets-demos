@@ -6,7 +6,7 @@
 
 The widget allows for customization of the chart title, axis titles, and color scheme. `Linechart` also supports zooming, panning, and downloading the chart as png, svg, or csv. Additionally, it can detect clicks on data points and respond to them through Python code
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/linechart)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/linechart)
 
 ## Function signature
 
@@ -35,14 +35,15 @@ line_chart = LineChart(
 |     Parameters      |                     Type                     |                          Description                           |
 | :-----------------: | :------------------------------------------: | :------------------------------------------------------------: |
 |       `title`       |                    `str`                     |                        Line chart title                        |
-|      `series`       |                    `list`                    |  List of series including names and lists of X, Y coordinates  |
+|      `series`       |                    `list`                    |  List of series including names and lists of `X`, `Y` coordinates  |
 |       `zoom`        |                    `bool`                    |                   Enable zoom on `Linechart`                   |
 |   `stroke_curve`    |       `Literal["smooth", "straight"]`        |               Set line type (straight or curved)               |
 |   `stroke_width`    |                    `int`                     |                         Set line width                         |
 |   `markers_size`    |                    `int`                     |                     Set point markers size                     |
 |    `data_labels`    |                    `bool`                    | If `True` it will display `Y` value of data for each datapoint |
-|    `xaxis_type`     | `Literal["numeric", "category", "datetime"]` |                Set type of divisions on X axis                 |
-|    `xaxis_title`    |                    `str`                     |                    Set title for the X axis                    |
+|    `xaxis_type`     | `Literal["numeric", "category", "datetime"]` |                Set type of divisions on `X` axis                 |
+|    `xaxis_title`    |                    `str`                     |                    Set title for the `X` axis                    |
+|    `yaxis_title`    |                    `str`                     |                    Set title for the `Y` axis                    |
 | `yaxis_autorescale` |                    `bool`                    |                 Set autoscaling of the Y axis                  |
 |      `height`       |              `Union[int, str]`               |                         Widget height                          |
 |  `decimalsInFloat`  |                    `int`                     |       Set number of decimals in float values of `Y` axis       |
@@ -95,7 +96,10 @@ line_chart = LineChart(
 )
 ```
 
-![linechart-zoom](https://user-images.githubusercontent.com/79905215/220102374-effacf49-6e2e-434e-ae71-a783de5c98bf.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/220102374-effacf49-6e2e-434e-ae71-a783de5c98bf.gif" alt="zoom" />
+</p>
+
 
 ### stroke_curve
 
@@ -206,6 +210,25 @@ line_chart = LineChart(
 
 ![linechart-xtitle](https://user-images.githubusercontent.com/79905215/220106662-0f213a1e-4959-4762-980e-99d1fdbb02b5.png)
 
+### yaxis_title
+
+Set title for the Y axis
+
+**type:** `str`
+
+**default** `None`
+
+```python
+line_chart = LineChart(
+    title="Title",
+    series=[{"name": "Max", "data": s1}],
+    xaxis_type="category",
+    yaxis_title="sales",
+)
+```
+
+![linechart-ytitle](https://user-images.githubusercontent.com/79905215/223173688-255ae642-a96e-4415-ac8a-7467a7a69be7.png)
+
 ### yaxis_autorescale
 
 Set autoscaling of the Y axis
@@ -278,7 +301,7 @@ line_chart = LineChart(
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/032_line_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/032_line_chart/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/001_line_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/001_line_chart/src/main.py)
 
 ### Import libraries
 
@@ -352,11 +375,13 @@ app = sly.Application(layout=card)
 
 ```python
 @line_chart.click
-def add_row_to_table(datapoint: sly.app.widgets.LineChart.ClickedDataPoint):
+def add_row_to_table(datapoint: LineChart.ClickedDataPoint):
     global row_id
     row = [row_id, datapoint.series_name, datapoint.x, datapoint.y]
     row_id += 1
     result_table.insert_row(row)
 ```
 
-![linechart-app](https://user-images.githubusercontent.com/79905215/220120213-8debc158-5cb7-46ce-91b0-49a73695c081.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/220120213-8debc158-5cb7-46ce-91b0-49a73695c081.gif" alt="layout" />
+</p>

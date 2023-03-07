@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, HeatmapChart
+from supervisely.app.widgets import Card, Container, HeatmapChart, Text
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -32,9 +32,16 @@ data = multiplication_chart()
 lines = [{"name": idx + 1, "x": list(range(1, 11)), "y": line} for idx, line in enumerate(data)]
 
 chart.add_series_batch(lines)
+
+text = Text(status="info")
 card = Card(
     title="Heatmap Chart",
-    content=chart,
+    content=Container([chart, text]),
 )
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
+
+
+@chart.click
+def show_cell_info(datapoint: HeatmapChart.ClickedDataPoint):
+    text.text = datapoint

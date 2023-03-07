@@ -2,16 +2,40 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `LinePlot` widget in Supervisely app.
+**`LinePlot`** widget in Supervisely is a widget that allows users to display one or more lines of data in a plot. It provides a canvas area that can be customized with various options, such as line smoothing, axis labels, and displaying legends. `LinePlot` widget is useful for visualizing time-series data or data with continuous variables.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/lineplot)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/lineplot)
 
 ## Function signature
 
 ```python
-LinePlot(
-    title,
-    series=[],
+x1 = list(range(10))
+y1 = [random.randint(10, 148) for _ in range(10)]
+
+x2 = list(range(30))
+y2 = [random.randint(1, 300) for _ in range(30)]
+
+line_plot = LinePlot("My Line Plot")
+line_plot.add_series("Line 1", x1, y1)
+line_plot.add_series("Line 2", x2, y2)
+```
+
+or
+
+```python
+size1 = 10
+x1 = list(range(size1))
+y1 = np.random.randint(low=10, high=148, size=size1).tolist()
+s1 = [{"x": x, "y": y} for x, y in zip(x1, y1)]
+
+size2 = 30
+x2 = list(range(size2))
+y2 = np.random.randint(low=0, high=300, size=size2).tolist()
+s2 = [{"x": x, "y": y} for x, y in zip(x2, y2)]
+
+line_plot = LinePlot(
+    title="My Line Plot",
+    series=[{"name": "Line 1", "data": s1}, {"name": "Line 2", "data": s2}],
     smoothing_weight=0,
     group_key=None,
     show_legend=True,
@@ -23,7 +47,7 @@ LinePlot(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/219958867-13bb604e-d890-475d-ab46-8b41063620ba.png)
+![default](https://user-images.githubusercontent.com/79905215/223357504-968a3c56-beda-41a8-bf51-5293d02c5384.png)
 
 ## Parameters
 
@@ -34,11 +58,11 @@ LinePlot(
 |    `smoothing_weight`     | `int`  |                          Smoothing                           |
 |        `group_key`        | `str`  |                      Synced charts key                       |
 |       `show_legend`       | `bool` |                  Show legend on `LinePlot`                   |
-|    `decimals_in_float`    | `int`  | The number of fractions to display floating values in y-axis |
-| `xaxis_decimals_in_float` | `int`  | The number of fractions to display floating values in x-axis |
-|     `yaxis_interval`      | `list` |          Min and max values on y axis (e.g. [0, 1])          |
-|        `widget_id`        | `str`  |                       Id of the widget                       |
-|    `yaxis_autorescale`    | `bool` |                Set autoscaling of the Y axis                 |
+|    `decimals_in_float`    | `int`  | The number of fractions to display floating values in `Y` axis |
+| `xaxis_decimals_in_float` | `int`  | The number of fractions to display floating values in `X` axis |
+|     `yaxis_interval`      | `list` |          Min and max values on `Y` axis (e.g. [0, 1])          |
+|    `yaxis_autorescale`    | `bool` |                Set autoscaling of the `Y` axis                 |
+|        `widget_id`        | `str`  |                       ID of the widget                       |
 
 ### title
 
@@ -115,7 +139,7 @@ line_chart = LinePlot(
 
 ### decimals_in_float
 
-The number of fractions to display floating values in y-axis.
+The number of fractions to display floating values in `Y` axis.
 
 **type:** `int`
 
@@ -123,7 +147,7 @@ The number of fractions to display floating values in y-axis.
 
 ### xaxis_decimals_in_float
 
-The number of fractions to display floating values in x-axis.
+The number of fractions to display floating values in `X` axis.
 
 **type:** `int`
 
@@ -141,7 +165,7 @@ line_chart = LinePlot(
 
 ### yaxis_interval
 
-Determine min and max values on y axis (e.g. [0, 1]).
+Determine min and max values on `Y` axis (e.g. [0, 1]).
 
 **type:** `list`
 
@@ -157,6 +181,14 @@ line_chart = LinePlot(
 
 ![yaxis_interval](https://user-images.githubusercontent.com/120389559/220662241-f6e86fd9-0410-4e8f-bd18-859e5dfc6dc9.png)
 
+### yaxis_autorescale
+
+Set autoscaling of the `Y` axis.
+
+**type:** `bool`
+
+**default value:** `True`
+
 ### widget_id
 
 ID of the widget.
@@ -164,14 +196,6 @@ ID of the widget.
 **type:** `str`
 
 **default value:** `None`
-
-### yaxis_autorescale
-
-Set autoscaling of the Y axis.
-
-**type:** `bool`
-
-**default value:** `True`
 
 ## Methods and attributes
 
@@ -187,7 +211,7 @@ Set autoscaling of the Y axis.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/053_line_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/053_line_plot/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/005_line_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/005_line_plot/src/main.py)
 
 ### Import libraries
 
@@ -255,4 +279,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/220869621-7e055e46-a81d-4c92-b263-d5ce8e2cc5b5.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/220869621-7e055e46-a81d-4c92-b263-d5ce8e2cc5b5.gif" alt="layout" />
+</p>
