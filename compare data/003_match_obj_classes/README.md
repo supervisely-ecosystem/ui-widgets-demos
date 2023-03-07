@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `MatchObjClasses` widget in Supervisely app.
+**`MatchObjClasses`** widget allows you to compare object classes between projects based on their names, geometry types, and name suffix. It displays the matching and non-matching object classes in a table form and provides the option to filter the results based on the match status. This widget is particularly useful when you want to compare object classes between different projects in Supervisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/matchobjclasses)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/matchobjclasses)
 
 ## Function signature
 
@@ -32,7 +32,7 @@ MatchObjClasses(
 |    `right_name`    |                       `str`                       |                                Right part classes name                                 |
 |    `selectable`    |                      `bool`                       |                          Whether the component is selectable                           |
 |      `suffix`      |                       `str`                       |                             Suffix to match classes names                              |
-|    `widget_id`     |                       `str`                       |                                    Id of the widget                                    |
+|    `widget_id`     |                       `str`                       |                                    ID of the widget                                    |
 
 ### left_collection
 
@@ -51,7 +51,10 @@ Determine information about right classes.
 **default value:** `None`
 
 ```python
-match = MatchObjClasses(left_collection=left_classes, right_collection=right_classes)
+match = MatchObjClasses(
+    left_collection=left_classes,
+    right_collection=right_classes,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221399402-fab17435-f5e8-4746-b331-1e33f52b44ae.png)
@@ -92,7 +95,11 @@ Whether the components are selectable.
 **default value:** `False`
 
 ```python
-match = MatchObjClasses(left_collection=left_classes, right_collection=right_classes, selectable=True)
+match = MatchObjClasses(
+    left_collection=left_classes,
+    right_collection=right_classes,
+    selectable=True,
+)
 ```
 
 ![selectable](https://user-images.githubusercontent.com/120389559/221399859-42ff1a90-14c5-40f9-a99b-26e64af47c6b.gif)
@@ -119,12 +126,13 @@ ID of the widget.
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------ |
 | `set(left_collection: Union[ObjClassCollection, List[ObjClass], None] = None, right_collection: Union[ObjClassCollection, List[ObjClass], None] = None, left_name=Union[str, None] = None, right_name=Union[str, None] = None, suffix: Union[str, None] = None)` | Set input data in left and right part of widget. |
 |                                                                                                                           `get_stat()`                                                                                                                           | Return classes match statistics.                 |
+|                                                                                                                         `get_selected()`                                                                                                                         | Return list of selected ObjClass names.          |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/056_match_obj_classes/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/056_match_obj_classes/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/compare-data/003_match_obj_classes/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/compare-data/003_match_obj_classes/src/main.py)
 
 ### Import libraries
 
@@ -149,22 +157,24 @@ api = sly.Api()
 ### Prepare `ObjClasses` we will matched
 
 ```python
-project_id_left = int(os.environ["modal.state.slyProjectId_left"])
+project_id_left = 17996
 meta_json_left = api.project.get_meta(project_id_left)
 project_meta_left = sly.ProjectMeta.from_json(meta_json_left)
 left_classes = project_meta_left.obj_classes
 
-project_id_right = int(os.environ["modal.state.slyProjectId_right"])
+project_id_right = 17997
 meta_json_right = api.project.get_meta(project_id_right)
 project_meta_right = sly.ProjectMeta.from_json(meta_json_right)
 right_classes = project_meta_right._obj_classes
 ```
 
-### Initialize `MatchObjClasses` widget, initiate `suffix` to match classes with similar names
+### Initialize `MatchObjClasses` widget
 
 ```python
 match = MatchObjClasses(
-    left_collection=left_classes, right_collection=right_classes, suffix="erity"
+    left_collection=left_classes,
+    right_collection=right_classes,
+    suffix="erity",
 )
 ```
 
@@ -188,4 +198,7 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/221400207-007f741a-8d1c-47aa-8eaa-1179d634b043.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221400207-007f741a-8d1c-47aa-8eaa-1179d634b043.gif" alt="layout" />
+</p>
+

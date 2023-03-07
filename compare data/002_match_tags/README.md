@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `MatchTagMetas` widget in Supervisely app.
+**`MatchTagMetas`** widget in Supervisely is used to compare tag metas between two different projects. It displays a table with the tag name, type, and possible differences between the tag metas of the two datasets. This widget allows users to identify differences in the tag structure between projects and easily reconcile them. Additionally, it provides the comparison result in the form of a dictionary grouped in "match", `only_right`, `only_left`, `different_value_type`, `different_one_of_options`, `match_suffix`, `different_value_type_suffix`, and `different_one_of_options_suffix` categories.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/matchtagmetas)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/matchtagmetas)
 
 ## Function signature
 
@@ -28,11 +28,11 @@ MatchTagMetas(
 | :----------------: | :---------------------------------------------: | :-------------------------------------------------------------------------------: |
 | `left_collection`  | `Union[TagMetaCollection, List[TagMeta], None]` | List of `TagMeta` or `TagMetaCollection`, containing information about left tags  |
 | `right_collection` | `Union[TagMetaCollection, List[TagMeta], None]` | List of `TagMeta` or `TagMetaCollection`, containing information about right tags |
-|    `left_name`     |                      `str`                      |                                Left part tags name                                |
-|    `right_name`    |                      `str`                      |                               Right part tags name                                |
+|    `left_name`     |                      `str`                      |                                Left part column name                                |
+|    `right_name`    |                      `str`                      |                               Right part column name                                |
 |    `selectable`    |                     `bool`                      |                        Whether the component is selectable                        |
 |      `suffix`      |                      `str`                      |                             Suffix to match tag names                             |
-|    `widget_id`     |                      `str`                      |                                 Id of the widget                                  |
+|    `widget_id`     |                      `str`                      |                                 ID of the widget                                  |
 
 ### left_collection
 
@@ -51,7 +51,10 @@ Determine information about right tags.
 **default value:** `None`
 
 ```python
-match = MatchTagMetas(left_collection=tag_metas_left, right_collection=tag_metas_right)
+match = MatchTagMetas(
+    left_collection=tag_metas_left,
+    right_collection=tag_metas_right,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221365567-f5b7359e-9e92-49be-910a-b613d566f7f2.png)
@@ -92,10 +95,16 @@ Whether the components are selectable.
 **default value:** `False`
 
 ```python
-match = MatchTagMetas(left_collection=tag_metas_left, right_collection=tag_metas_right, selectable=True)
+match = MatchTagMetas(
+    left_collection=tag_metas_left,
+    right_collection=tag_metas_right,
+    selectable=True,
+)
 ```
 
-![selectable](https://user-images.githubusercontent.com/120389559/221365872-27f6442c-7e0c-4e0e-bd64-8dedad7e75c9.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221365872-27f6442c-7e0c-4e0e-bd64-8dedad7e75c9.gif" alt="selectable" />
+</p>
 
 ### suffix
 
@@ -119,12 +128,13 @@ ID of the widget.
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------ |
 | `set(left_collection: Union[TagMetaCollection, List[TagMeta], None] = None, right_collection: Union[TagMetaCollection, List[TagMeta], None] = None, left_name=Union[str, None] = None, right_name=Union[str, None] = None, suffix: Union[str, None] = None)` | Set input data in left and right part of widget. |
 |                                                                                                                         `get_stat()`                                                                                                                         | Return tags match statistics.                    |
+|                                                                                                                         `get_selected()`                                                                                                                         | Return list of selected TagMeta names.                    |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/055_match_tags/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/055_match_tags/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/compare-data/002_match_tags/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/compare-data/002_match_tags/src/main.py)
 
 ### Import libraries
 
@@ -149,22 +159,25 @@ api = sly.Api()
 ### Prepare `TagMeta` we will matched
 
 ```python
-project_id_left = int(os.environ["modal.state.slyProjectId_left"])
+project_id_left = 17208
 meta_json_left = api.project.get_meta(project_id_left)
 project_meta_left = sly.ProjectMeta.from_json(meta_json_left)
 tag_metas_left = project_meta_left.tag_metas
 
-project_id_right = int(os.environ["modal.state.slyProjectId_right"])
+project_id_right = 17752
 meta_json_right = api.project.get_meta(project_id_right)
 project_meta_right = sly.ProjectMeta.from_json(meta_json_right)
 tag_metas_right = project_meta_right.tag_metas
 ```
 
-### Initialize `MatchTagMetas` widget, initiate `suffix` to match tags with similar names
+### Initialize `MatchTagMetas` widget
 
 ```python
 match = MatchTagMetas(
-    left_collection=tag_metas_left, right_collection=tag_metas_right, suffix="afes"
+    left_collection=tag_metas_left,
+    right_collection=tag_metas_right,
+    left_name="left tags",
+    right_name="right tags",
 )
 ```
 
@@ -188,4 +201,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/221366720-e23eb733-9a9d-4ce6-bb0c-7dc45c1d4f60.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221366720-e23eb733-9a9d-4ce6-bb0c-7dc45c1d4f60.gif" alt="layout" />
+</p>
