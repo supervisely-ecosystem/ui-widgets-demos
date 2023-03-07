@@ -20,7 +20,7 @@ SelectString(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
+![default](https://user-images.githubusercontent.com/79905215/223374487-566d4ff7-ac2e-40b8-afca-44b9c3e21ec9.png)
 
 ## Parameters
 
@@ -46,7 +46,7 @@ Determine list of strings for `SelectString` widget.
 select_string = SelectString(["cat", "dog","horse", "sheep", "squirrel"])
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/217835655-5a888104-dd74-4dc9-b68f-88ab956898f3.png)
+![default](https://user-images.githubusercontent.com/79905215/223374487-566d4ff7-ac2e-40b8-afca-44b9c3e21ec9.png)
 
 ### labels
 
@@ -62,7 +62,7 @@ select_string = SelectString(
 )
 ```
 
-![labels](https://user-images.githubusercontent.com/120389559/222191338-6db067c2-0a79-4c9f-b3e5-fa9136b33b0d.gif)
+![labels](https://user-images.githubusercontent.com/79905215/223374951-a6dd4363-fa30-49ce-a799-c9e41a81294a.png)
 
 ### filterable
 
@@ -70,7 +70,7 @@ Whether `SelectString` is filterable.
 
 **type:** `Optional[bool]`
 
-**default value:** `false`
+**default value:** `False`
 
 ```python
 select_string = SelectString(
@@ -89,7 +89,7 @@ Input placeholder.
 
 **type:** `Optional[str]`
 
-**default value:** `select`
+**default value:** `"select"`
 
 ```python
 select_string = SelectString(
@@ -124,7 +124,7 @@ Whether multiple-select is activated.
 
 **type:** `Optional[bool]`
 
-**default value:** `false`
+**default value:** `False`
 
 ```python
 
@@ -135,7 +135,7 @@ select_string = SelectString(
 ```
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/120389559/218096915-b300c3d6-7a17-4cca-befe-36a2ee4828de.gif" alt="multiple" />
+  <img src="https://user-images.githubusercontent.com/79905215/223376026-d98243ed-7b43-476c-9219-9955aba2809a.gif" alt="multiple" />
 </p>
 
 ### items_right_text
@@ -147,7 +147,10 @@ Determine text on the right side of each item.
 **default value:** `None`
 
 ```python
-
+select_string = SelectString(
+    values=["cat", "dog", "horse"],
+    items_right_text=["cat", "dog", "horse"],
+)
 ```
 
 ![right_text](https://user-images.githubusercontent.com/79905215/223087480-acbed850-3ffa-47df-8b63-0f9fd1c08668.png)
