@@ -9,11 +9,13 @@ from supervisely.app.widgets import FileStorageUpload, Input, Text
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
+# app requires TASK_ID in local.env
+
 api = sly.Api()
 
 team_id = sly.env.team_id()
 
-file_upload = FileStorageUpload(path="folder")
+file_upload = FileStorageUpload(team_id=team_id, path="folder")
 
 input = Input(placeholder="Please enter path")
 button_change_path = Button("Change path name")
