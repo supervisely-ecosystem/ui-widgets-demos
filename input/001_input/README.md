@@ -127,7 +127,7 @@ Same as type in native input.
 **default value:** `None`
 
 ```python
-input = Input(type="text")
+input = Input(type="password")
 ```
 
 ![type](https://user-images.githubusercontent.com/48913536/224060672-f3f44f7d-de5c-4cb2-97f6-bf73c43eee47.png)
