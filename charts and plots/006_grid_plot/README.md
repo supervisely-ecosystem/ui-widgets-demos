@@ -2,30 +2,45 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `GridPlot` widget in Supervisely app.
+**`GridPlot`** widget in Supervisely is used to create a grid of subplots with given list of data. Users can add plots in real-time, making it useful for interactive data exploration and analysis.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/gridplot)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/gridplot)
 
 ## Function signature
 
 ```python
-GridPlot(data, columns=1, gap=10, widget_id=None)
+data_1 = {
+    "title": "Line 1",
+    "series": [{"name": "Line 1", "data": s1}],
+}
+
+data_2 = {
+    "title": "Line 2",
+    "series": [{"name": "Line 2", "data": s2}],
+}
+
+data_all = {
+    "title": "All lines",
+    "series": [{"name": "Line 1", "data": s1}, {"name": "Line 2", "data": s2}],
+}
+
+grid_plot = GridPlot(data=[data_1, data_2, data_all], columns=3)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/221510629-ac9d6f3d-cf11-450c-b145-1e493a8d7707.png)
+![default](https://user-images.githubusercontent.com/79905215/223367783-a51944b0-3c31-480b-b9fe-d86cea5ffd79.png)
 
 ## Parameters
 
 | Parameters  |        Type         |              Description              |
 | :---------: | :-----------------: | :-----------------------------------: |
-|   `data`    | `List[Dict or str]` | List if data to display on `GridPlot` |
+|   `data`    | `List[Dict or str]` | List of data to display on `GridPlot` |
 |  `columns`  |        `int`        |    Number of columns on `GridPlot`    |
 |    `gap`    |        `int`        |   Gap between widgets on `GridPlot`   |
-| `widget_id` |        `str`        |           Id of the widget            |
+| `widget_id` |        `str`        |           ID of the widget            |
 
 ### data
 
-List if data to display on `GridPlot`.
+List of data to display on `GridPlot`.
 
 **type:** `List[Dict or str]`
 
@@ -91,7 +106,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/061_grid_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/061_grid_plot/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/006_grid_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/006_grid_plot/src/main.py)
 
 ### Import libraries
 

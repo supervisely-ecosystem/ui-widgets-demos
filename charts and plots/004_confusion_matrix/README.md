@@ -2,13 +2,11 @@
 
 ## Introduction
 
-**`ConfusionMatrix`** is a widget that display a given confusion matrix with color-coded visualization for better interpretation. It also shows row and column totals. 
+**`ConfusionMatrix`** is a widget that display a given confusion matrix with color-coded visualization for better interpretation. It also shows row and column totals.
 
 `ConfusionMatrix` allows users to customize the axis labels, detect cell clicking events, and control it from Python code.
 
-
-
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/confusion-matrix)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/confusionmatrix)
 
 ## Function signature
 
@@ -138,19 +136,19 @@ ID of the widget.
 
 |       Attributes and Methods       | Description                                               |
 | :--------------------------------: | --------------------------------------------------------- |
-|             `loading`              | Get or set table loading status property.                 |
+|             `loading`              | Get or set table `loading` status property.               |
 |            `to_json()`             | Convert table data to json.                               |
 |           `to_pandas()`            | Convert table data to pandas dataframe.                   |
 |      `read_json(value: dict)`      | Read and set table data from json.                        |
 | `read_pandas(value: pd.DataFrame)` | Read and set table data from pandas dataframe.            |
-|     `get_selected_cell(state)`     | Get selected table cell info.                             |
+|       `get_selected_cell(state)`        | Get selected table cell info.                             |
 |              `@click`              | Decodator function is handled when table cell is pressed. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/025_confusion_matrix/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/025_confusion_matrix/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/004_confusion_matrix/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/004_confusion_matrix/src/main.py)
 
 ### Import libraries
 
