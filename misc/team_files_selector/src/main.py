@@ -15,14 +15,17 @@ team_id = sly.env.team_id()
 
 file_selector = TeamFilesSelector(
     team_id=team_id,
-    max_height=250,
+    max_height=300,
 )
 
 text = Text()
 button = Button()
 
-card = Card(title="Team Files Selector", content=Container([file_selector]))
-layout = Container(widgets=[card, button, text])
+card = Card(
+    title="Team Files Selector",
+    content=Container([file_selector, button, text]),
+)
+layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
 
 
