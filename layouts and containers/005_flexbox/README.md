@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`Flexbox`** widget in Supervisely is a widget that enables users to arrange other widgets in a flexible and responsive grid layout. Users can customize the layout by setting the gap between widgets and aligning them to the center. With the `Flexbox` widget, users can easily create dynamic and adaptable layouts that can be optimized for different devices and screen sizes
+**`Flexbox`** widget in Supervisely is a widget that enables users to arrange other widgets in a flexible and responsive layout. Users can customize the layout by setting the gap between widgets and aligning them to the center. With the `Flexbox` widget, users can easily create dynamic and adaptable layouts that can be optimized for different devices and screen sizes
 
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/flexbox)

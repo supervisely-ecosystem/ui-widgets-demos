@@ -2,26 +2,31 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Stepper` widget in Supervisely app.
+**`Stepper`** widget in Supervisely is a graphical user interface tool that allows users to navigate through a sequence of widgets step by step. It is particularly useful for inspecting large size content in apps. The widget offers navigation option to set active step from code. Overall, `Stepper` widget is a helpful tool for navigating through complex interfaces and exploring large sets of data.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/stepper)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/stepper)
 
 ## Function signature
 
 ```python
-Stepper(titles=[], widgets=[], active_step=1, widget_id=None)
+Stepper(
+    titles=[],
+    widgets=[],
+    active_step=1,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/221410742-e51459ab-cfaf-469a-a9d9-392d6edf8800.png)
 
 ## Parameters
 
-|  Parameters   |  Type  |          Description          |
-| :-----------: | :----: | :---------------------------: |
-|   `titles`    | `list` |        Widgets titles         |
-|   `widgets`   | `list` | Widgets provided in `Stepper` |
-| `active_step` | `int`  |        Set active step        |
-|  `widget_id`  | `str`  |       Id of the widget        |
+|  Parameters   |  Type  |              Description              |
+| :-----------: | :----: | :-----------------------------------: |
+|   `titles`    | `list` |            Widgets titles             |
+|   `widgets`   | `list` | List of widgets provided in `Stepper` |
+| `active_step` | `int`  |            Set active step            |
+|  `widget_id`  | `str`  |           ID of the widget            |
 
 ### titles
 
@@ -34,7 +39,11 @@ Determine widgets titles.
 ```python
 text_info = Text(text="My info text", status="info")
 card_info = Card(title="Info text", content=text_info)
-stepper = Stepper(titles=["Title_1"], widgets=[card_info])
+
+stepper = Stepper(
+    titles=["Title_1"],
+    widgets=[card_info],
+)
 ```
 
 ![titles](https://user-images.githubusercontent.com/120389559/221411042-67dbd904-411c-4ec6-9b86-dee7319702d6.png)
@@ -98,7 +107,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/059_stepper/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/059_stepper/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/layouts-and-containers/010_stepper/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/layouts-and-containers/010_stepper/src/main.py)
 
 ### Import libraries
 
@@ -189,4 +198,6 @@ def click_button():
     stepper.set_active_step(curr_step)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/221412710-4ab1a750-3042-4a1f-9cf7-ac278f9a08c4.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/221412710-4ab1a750-3042-4a1f-9cf7-ac278f9a08c4.gif" alt="layout" />
+</p>
