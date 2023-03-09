@@ -120,7 +120,7 @@ input = Input(readonly=True)
 
 ### type
 
-Same as readonly in native input.
+Same as type in native input.
 
 **type:** `Literal["text", "password"]`
 
