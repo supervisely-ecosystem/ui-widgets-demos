@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, TeamFilesSelector
+from supervisely.app.widgets import Button, Card, Container, TeamFilesSelector, Text
 
 
 # for convenient debug, has no effect in production
@@ -11,10 +11,21 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-test = TeamFilesSelector(439)
+team_id = sly.env.team_id()
 
-a = test.get_selected_id()
+file_selector = TeamFilesSelector(
+    team_id=team_id,
+    max_height=250,
+)
 
-card = Card(title="Team Files Selector", content=Container([test]))
-layout = Container(widgets=[card])
+text = Text()
+button = Button()
+
+card = Card(title="Team Files Selector", content=Container([file_selector]))
+layout = Container(widgets=[card, button, text])
 app = sly.Application(layout=layout)
+
+
+@button.click
+def show_selected():
+    text.text = file_selector.get_selected_paths()
