@@ -76,7 +76,9 @@ tabs = RadioTabs(
     ],
     descriptions=[
         "Tab with info text",
-        "Tab with success text"])
+        "Tab with success text"
+    ]
+)
 ```
 
 <p align="center">
