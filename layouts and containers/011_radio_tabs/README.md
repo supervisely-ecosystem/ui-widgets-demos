@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `RadioTabs` widget in Supervisely app.
+**`RadioTabs`** is a graphical user interface tool in Supervisely that allows users to group related widgets into tabs and switch between them using radio buttons. This feature is particularly useful for organizing and presenting complex interfaces with multiple settings and options. `RadioTabs` offers a simple and intuitive interface for users to quickly navigate between different tabs and access the desired widgets.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/radiotabs)
 
@@ -20,7 +20,9 @@ RadioTabs(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/222171253-af777d91-7c48-4990-b807-9238e2968662.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/222171253-af777d91-7c48-4990-b807-9238e2968662.gif" alt="default" />
+</p>
 
 ## Parameters
 
@@ -53,7 +55,9 @@ tabs = RadioTabs(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/222171253-af777d91-7c48-4990-b807-9238e2968662.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/222171253-af777d91-7c48-4990-b807-9238e2968662.gif" alt="default" />
+</p>
 
 ### descriptions
 
@@ -75,7 +79,9 @@ tabs = RadioTabs(
         "Tab with success text"])
 ```
 
-![descriptions](https://user-images.githubusercontent.com/120389559/222174503-b99916b1-06e8-4845-a2dc-6abef1d1cb1e.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/222174503-b99916b1-06e8-4845-a2dc-6abef1d1cb1e.gif" alt="descriptions" />
+</p>
 
 ### widget_id
 
@@ -87,11 +93,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-|    Attributes and Methods    | Description                                |
-| :--------------------------: | ------------------------------------------ |
-| `set_active_tab(value: str)` | Set active tab by title.                   |
-|      `get_active_tab()`      | Return active tab title.                   |
-|      `value_changed()`       | Handled when `RadioTabs` value is changed. |
+|    Attributes and Methods    | Description                                                   |
+| :--------------------------: | ------------------------------------------------------------- |
+| `set_active_tab(value: str)` | Set active tab by title.                                      |
+|      `get_active_tab()`      | Return active tab title.                                      |
+|       `@value_changed`       | Decorator function handled when `RadioTabs` value is changed. |
 
 ## Mini App Example
 
@@ -142,7 +148,8 @@ tabs = RadioTabs(
 many_tabs = RadioTabs(
     titles=[f"{i + 1} tab" for i in range(10)],
     contents=[Text(f"{i + 1} text", status="info") for i in range(10)],
-    descriptions=[f"Tab with {i + 1} text" for i in range(10)])
+    descriptions=[f"Tab with {i + 1} text" for i in range(10)],
+)
 ```
 
 ### Initialize `Text` widget to change text on widget
@@ -160,7 +167,11 @@ card = Card(
     title="Radio tabs",
     content=Container([tabs, text]),
 )
-card_many_tabs = Card("Many radio tabs", content=many_tabs)
+card_many_tabs = Card(
+    "Many radio tabs",
+    content=many_tabs,
+)
+
 layout = Container(widgets=[card, card_many_tabs])
 ```
 
@@ -180,4 +191,6 @@ def show_opened_tab(value):
     text.text = f"Opened tab: {value}"
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/222177913-2c4d26de-f555-4747-8fed-ee8807f7d6ce.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/120389559/222177913-2c4d26de-f555-4747-8fed-ee8807f7d6ce.gif" alt="layout" />
+</p>
