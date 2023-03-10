@@ -11,7 +11,12 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-slider = Slider(value=[10, 50], step=5, range=True, show_stops=True)
+slider = Slider(
+    value=[10, 50],
+    step=5,
+    range=True,
+    show_stops=True,
+)
 
 
 card = Card(title="Slider", content=Container([slider]))
