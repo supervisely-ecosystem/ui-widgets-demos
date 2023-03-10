@@ -241,7 +241,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/controls/slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/slider/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/005_slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/005_slider/src/main.py)
 
 ### Import libraries
 
