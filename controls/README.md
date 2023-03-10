@@ -4,3 +4,4 @@
 2. [Checkbox](002_checkbox/README.md)
 3. [RadioGroup](003_radio_group/README.md)
 4. [Switch](004_switch/README.md)
+5. [Slider](005_slider/README.md)

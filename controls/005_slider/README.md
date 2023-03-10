@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Slider` widget in Supervisely app.
+**`Slider`** is a widget in Supervisely that allows users to input numerical values within a specific range. The widget is commonly used to set parameters such as batch size in machine learning models. Users can adjust the slider handle to select the desired value, and the corresponding numerical value is displayed. `Slider` widget also provides users with the ability to customize the slider range, height in vertical mode and step size between values, allowing for more precise and flexible inputs.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/slider)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/slider)
 
 ## Function signature
 
@@ -25,7 +25,9 @@ Slider(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/223120953-a9a1b137-26c4-441f-9f1b-81cc7afd6d9c.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224255613-b736eae2-8fde-42e3-890b-71568e5207f1.gif" alt="default">
+</p>
 
 ## Parameters
 
@@ -42,7 +44,7 @@ Slider(
 |        `range`        |         `bool`          |                   Whether to select a range                    |
 |      `vertical`       |         `bool`          |                         Vertical mode                          |
 |       `height`        |          `int`          |           `Slider` height, required in vertical mode           |
-|      `widget_id`      |          `str`          |                        Id of the widget                        |
+|      `widget_id`      |          `str`          |                        ID of the widget                        |
 
 ### value
 
@@ -56,7 +58,7 @@ Determine `Slider` start value.
 slider = Slider(value=15)
 ```
 
-![value](https://user-images.githubusercontent.com/120389559/223123599-84cf761f-c872-4eb3-9818-0c64d0f7ea02.gif)
+![value](https://user-images.githubusercontent.com/79905215/224255842-6cecad1a-0502-4dea-9cb7-f891cf9c96a7.png)
 
 ### min
 
@@ -78,7 +80,9 @@ Determine `Slider` maximum value.
 slider = Slider(min=30, max=50)
 ```
 
-![min_max](https://user-images.githubusercontent.com/120389559/223124560-2779ca6a-c4af-4566-b0a8-ccdeae655333.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224256309-226e531b-615e-453a-83c8-bd4c74c2e908.gif" alt="min_max">
+</p>
 
 ### step
 
@@ -92,7 +96,9 @@ Determine step size.
 slider = Slider(step=5)
 ```
 
-![step](https://user-images.githubusercontent.com/120389559/223126223-757d4d9d-955b-4c4c-977a-db06c1f53678.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224256692-9a2a5221-653a-4e67-a0bb-9c17845c051c.gif" alt="step">
+</p>
 
 ### show_input
 
@@ -106,7 +112,9 @@ Whether to display an input box, works when `range` is false.
 slider = Slider(show_input=True)
 ```
 
-![show_input](https://user-images.githubusercontent.com/120389559/223126910-d41427e0-e577-4f25-93b8-cff984d9bc35.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224257076-036d68b4-7444-4d36-b308-bb0d1553ed26.gif" alt="show_input">
+</p>
 
 ### show_input_controls
 
@@ -120,7 +128,9 @@ Whether to display control buttons when `show-input` is true.
 slider = Slider(show_input=True, show_input_controls=True)
 ```
 
-![show_input_controls](https://user-images.githubusercontent.com/120389559/223127700-8beb0cb4-547a-41d0-8825-560d55b3bdf2.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224257470-51bd144b-c4a9-416d-b625-7ad40352f7d5.gif" alt="show_input_controls">
+</p>
 
 ### show_stops
 
@@ -134,7 +144,9 @@ Whether to display breakpoints.
 slider = Slider(show_stops=True, max=20, step=5)
 ```
 
-![show_stops](https://user-images.githubusercontent.com/120389559/223128573-f0685e71-2722-491d-bdcd-bcecbe425688.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224257796-1f92301d-3a06-4287-a85a-68e7bc47b99f.gif" alt="show_stops">
+</p>
 
 ### show_tooltip
 
@@ -148,7 +160,9 @@ Whether to display tooltip value.
 slider = Slider(show_tooltip=False)
 ```
 
-![show_tooltip](https://user-images.githubusercontent.com/120389559/223129072-7508c91c-5d1a-49f0-a032-07744241e121.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224258104-b2fbd6b0-4f1c-460c-bec3-73a9bdd72cc1.gif" alt="show_tooltip">
+</p>
 
 ### range
 
@@ -162,7 +176,9 @@ Determine whether to select a range, equires value to be List[int, int].
 slider = Slider(value=[5, 20], range=True)
 ```
 
-![range](https://user-images.githubusercontent.com/120389559/223129733-1f769ed5-bd73-4bb7-9d03-ee7f813e9aae.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224258411-71047a72-6b8c-49fa-bd6a-9178bf85cd68.gif" alt="range">
+</p>
 
 ### vertical
 
@@ -184,7 +200,9 @@ Determine `Slider` height, required in vertical mode.
 slider = Slider(vertical=True, height=100)
 ```
 
-![vertical](https://user-images.githubusercontent.com/120389559/223130649-d7a81b94-6645-4dc2-9568-95541e9d2228.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224269317-e48282ff-4b2a-4e8e-99f1-5fcb5325ec58.gif" alt="vertical_height">
+</p>
 
 ### widget_id
 
@@ -223,7 +241,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/slider/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/slider/src/main.py)
 
 ### Import libraries
 
@@ -249,7 +267,12 @@ api = sly.Api()
 ### Initialize `Slider` widget
 
 ```python
-slider = Slider(value=[10, 50], step=5, range=True, show_stops=True)
+slider = Slider(
+    value=[10, 50],
+    step=5,
+    range=True,
+    show_stops=True,
+)
 ```
 
 ### Create app layout
@@ -269,4 +292,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/223135395-7a883603-d8bf-40da-a5b1-1409f0f6e424.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/79905215/224270113-ffe9f97b-47e0-4d36-9e7e-1a9746ff145f.gif" alt="layout">
+</p>
