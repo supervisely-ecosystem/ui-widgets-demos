@@ -2,18 +2,26 @@
 
 ## Introduction
 
-**`Card`** widget in Supervisely is a simple widget that can be used to display information or content in a compact format. 
+**`Card`** widget in Supervisely is a simple widget that can be used to display information or content in a compact format.
 It can be controlled by setting `loading`/`lock` properties and can be collapsed to save space. It provides a straightforward and easy-to-use solution for displaying information clearly and concisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/card)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/card)
 
 ## Function signature
 
 ```python
-card = Card(content=Text("some text"))
+card = Card(
+    title="Title",
+    description="Description text",
+    collapsable=False,
+    content=Text("some text"),
+    content_top_right=None,
+    lock_message="Card content is locked",
+    widget_id=None,
+)
 ```
 
-![card-def](https://user-images.githubusercontent.com/79905215/220175796-e2b904d2-9dee-4243-bd73-2aa78e592954.png)
+![default](https://user-images.githubusercontent.com/79905215/223941574-16a3903a-b8a4-46a1-bb38-a885dccf32b6.png)
 
 ## Parameters
 
@@ -72,7 +80,9 @@ card = Card(
 )
 ```
 
-![card-collapse](https://user-images.githubusercontent.com/79905215/220180426-9533f12c-87b0-445b-9456-d2cc37cc8ebc.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/223941697-a3a68d59-194a-45f4-98d9-589bf015b155.gif" alt="card-collapse" />
+</p>
 
 ### content
 
@@ -120,7 +130,10 @@ Message to display when card will be locked
 **default** `"Card content is locked"`
 
 ```python
-card = Card(content=Text("some text"), lock_message='Press "UNLOCK" button to unlock the card.')
+card = Card(
+    content=Text("some text"),
+    lock_message='Press "UNLOCK" button to unlock the card.',
+)
 ```
 
 ![card-lock-message](https://user-images.githubusercontent.com/79905215/220178542-f589a5f4-5ffc-437d-b0ed-5863a6d8d64b.png)
@@ -137,6 +150,7 @@ Widget ID
 
 | Attributes and Methods | Description                               |
 | :--------------------: | ----------------------------------------- |
+|       `loading`        | Get or set `loading` property.            |
 |      `collapse()`      | Minimize card widget.                     |
 |     `uncollapse()`     | Expand card widget.                       |
 |        `lock()`        | Lock card widget and show message.        |
@@ -146,7 +160,7 @@ Widget ID
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/035_card/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/035_card/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/layouts-and-containers/001_card/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/layouts-and-containers/001_card/src/main.py)
 
 ### Import libraries
 
@@ -210,13 +224,13 @@ image = Image()
 
 ### Initialize `Card` widgets
 
-One `Card` widget for buttons
+Initialize one `Card` widget for buttons
 
 ```python
 buttons_card = Card(content=containers)
 ```
 
-Another `Card` widget for previewing images.
+Initialize second `Card` widget for previewing images.
 
 ```python
 image_card = Card(
@@ -288,4 +302,6 @@ def load_preview_image():
     image_card.loading = False
 ```
 
-![card-app](https://user-images.githubusercontent.com/79905215/220270565-861b5a71-238e-4a30-8152-1df5811d8e6c.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/220270565-861b5a71-238e-4a30-8152-1df5811d8e6c.gif" alt="card-layout" />
+</p>

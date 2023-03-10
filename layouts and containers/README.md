@@ -12,3 +12,4 @@
 10. [Stepper](010_stepper/README.md)
 11. [RadioTabs](011_radio_tabs/README.md)
 12. [Tabs](012_tabs/README.md)
+13. [Tabs Dynamic](013_tabs_dynamic/README.md)

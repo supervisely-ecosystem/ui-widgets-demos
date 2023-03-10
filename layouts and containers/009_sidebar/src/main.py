@@ -10,13 +10,13 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-l = Text(text="left part", status="success")
+left = Text(text="left part", status="success")
 items = [
     Select.Item(label="CPU", value="cpu"),
     Select.Item(label="GPU 0", value="cuda:0"),
     Select.Item(value="option3"),
 ]
-r = Select(items=items, filterable=True, placeholder="select me")
+right = Select(items=items, filterable=True, placeholder="select me")
 
-sidebar = Sidebar(left_content=l, right_content=r)
+sidebar = Sidebar(left_content=left, right_content=right)
 app = sly.Application(layout=sidebar)

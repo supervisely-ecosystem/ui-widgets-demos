@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, RadioTabs, Text, Button
+from supervisely.app.widgets import Card, Container, RadioTabs, Text
 
 
 # for convenient debug, has no effect in production
