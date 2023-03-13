@@ -16,6 +16,10 @@ team_id = sly.env.team_id()
 file_selector = TeamFilesSelector(
     team_id=team_id,
     max_height=300,
+    multiple_selection=True,
+    hide_header=False,
+    selection_file_type="folder",
+    additional_fields=["createdAt", "type", "size"],
 )
 
 text = Text()
@@ -31,4 +35,5 @@ app = sly.Application(layout=layout)
 
 @button.click
 def show_selected():
-    text.text = file_selector.get_selected_paths()
+    selected_paths = file_selector.get_selected_paths()
+    text.text = "<br>".join(selected_paths)

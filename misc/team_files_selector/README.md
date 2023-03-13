@@ -1,1 +1,0 @@
-# Team files selector
