@@ -16,13 +16,7 @@ api = sly.Api()
 # team_id = sly.env.team_id()
 
 
-# file_upload = FileStorageUpload(team_id=team_id, path="folder")
-
-# input = Input(placeholder="Please enter path")
-# button_change_path = Button("Change path name")
 # button_get_paths = Button("Get upoaded paths")
-
-# text = Text()
 
 # btn_container = Container(
 #     [button_change_path, button_get_paths],
@@ -146,4 +140,8 @@ app = sly.Application(layout=layout)
 
 @class_balance.click
 def show_item(datapoint):
-    text.text = datapoint
+    if datapoint.get("segmentValue") is not None and datapoint.get("segmentName") is not None:
+        result_info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
+    else:
+        result_info = f"Class {datapoint['name']}"
+    text.set(text=result_info, status="info")
