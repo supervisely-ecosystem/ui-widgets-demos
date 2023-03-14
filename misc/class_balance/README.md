@@ -4,7 +4,7 @@
 
 **`ClassBalance`** is a widget in Supervisely that allows for displaying input data classes balance on the UI. For example, you can display
 distribution of tags to different classes in project, or set your own data according to the required format.
-It also provides functionality for data streaming and dynamic updates, allowing the class balance to display real-time data. Additionally, users can control the chart through Python code by detecting events such as clicking on a class name or segment data.
+It also provides functionality for data streaming and dynamic updates, allowing the class balance to display real-time data. Additionally, users can control the widget through Python code by detecting events such as clicking on a class name or segment data.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/classbalance)
 
@@ -212,11 +212,11 @@ class_balance = ClassBalance(
 )
 ```
 
-![clickable_segment](https://user-images.githubusercontent.com/120389559/224939423-baf16c11-dd8f-4fa5-9f7a-631b111ffce2.png)
+![clickable_name](https://user-images.githubusercontent.com/120389559/224949506-f85fa772-e2c8-4de5-9079-919adc9cbf2c.png)
 
-### clickable_name
+### clickable_segment
 
-Allow to click on class name.
+Allow to click on class segments.
 
 **type:** `bool`
 
@@ -423,7 +423,7 @@ app = sly.Application(layout=card)
 @class_balance.click
 def show_item(datapoint):
     if datapoint.get("segmentValue") is not None and datapoint.get("segmentName") is not None:
-        result_info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
+        info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
         if datapoint["segmentName"] == "Val":
             status = "success"
         elif datapoint["segmentName"] == "Test":
@@ -431,10 +431,10 @@ def show_item(datapoint):
         else:
             status = "info"
     else:
-        result_info = f"Class {datapoint['name']}"
+        info = f"Class {datapoint['name']}"
         status = "text"
 
-    text.set(text=result_info, status=status)
+    text.set(text=info, status=status)
 ```
 
 <p align="center">

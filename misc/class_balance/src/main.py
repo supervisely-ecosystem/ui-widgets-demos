@@ -123,7 +123,7 @@ app = sly.Application(layout=layout)
 @class_balance.click
 def show_item(datapoint):
     if datapoint.get("segmentValue") is not None and datapoint.get("segmentName") is not None:
-        result_info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
+        info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
         if datapoint["segmentName"] == "Val":
             status = "success"
         elif datapoint["segmentName"] == "Test":
@@ -131,7 +131,7 @@ def show_item(datapoint):
         else:
             status = "info"
     else:
-        result_info = f"Class {datapoint['name']}"
+        info = f"Class {datapoint['name']}"
         status = "text"
 
-    text.set(text=result_info, status=status)
+    text.set(text=info, status=status)
