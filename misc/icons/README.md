@@ -27,7 +27,7 @@ Icons(class_name=None, color=None, bg_color=None, rounded=False, image_url=None,
 
 ### class_name
 
-Determines icon class name. Icons can be found at zavoloklom.github.io.
+Determines icon class name. Icons can be found at [zavoloklom.github.io](http://zavoloklom.github.io/material-design-iconic-font/icons.html).
 
 **type:** `str`
 
