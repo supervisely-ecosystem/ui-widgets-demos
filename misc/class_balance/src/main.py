@@ -2,33 +2,13 @@ import os
 
 from dotenv import load_dotenv
 import supervisely as sly
-from supervisely.app.widgets import Button, Card, Container
-from supervisely.app.widgets import ClassBalance, Input, Text
+from supervisely.app.widgets import ClassBalance, Text, Card, Container
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-# app requires TASK_ID in local.env
-
 api = sly.Api()
-
-# team_id = sly.env.team_id()
-
-
-# button_get_paths = Button("Get upoaded paths")
-
-# btn_container = Container(
-#     [button_change_path, button_get_paths],
-#     direction="horizontal",
-# )
-# controls_container = Container([input, btn_container, text])
-
-# card = Card(
-#     title="Image Preview",
-#     content=Container([file_upload, controls_container]),
-# )
-
 
 max_value = 1000
 segments = [
@@ -122,6 +102,7 @@ class_balance = ClassBalance(
     segments=segments,
     rows_data=rows_data,
     slider_data=slider_data,
+    max_height=700,
     collapsable=True,
     clickable_name=True,
     clickable_segment=True,
@@ -130,6 +111,7 @@ class_balance = ClassBalance(
 text = Text()
 
 card = Card(
+    title="Class Balance",
     content=Container([class_balance, text]),
 )
 
@@ -142,6 +124,14 @@ app = sly.Application(layout=layout)
 def show_item(datapoint):
     if datapoint.get("segmentValue") is not None and datapoint.get("segmentName") is not None:
         result_info = f"Class {datapoint['name']} contain {datapoint['segmentValue']} tags with name {datapoint['segmentName']}"
+        if datapoint["segmentName"] == "Val":
+            status = "success"
+        elif datapoint["segmentName"] == "Test":
+            status = "warning"
+        else:
+            status = "info"
     else:
         result_info = f"Class {datapoint['name']}"
-    text.set(text=result_info, status="info")
+        status = "text"
+
+    text.set(text=result_info, status=status)
