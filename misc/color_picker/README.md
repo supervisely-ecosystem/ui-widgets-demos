@@ -56,16 +56,16 @@ color_picker = ColorPicker(color_format="hsl")
 
 ## Methods and attributes
 
-|     Attributes and Methods     | Description                          |
-| :----------------------------: | ------------------------------------ |
-|         `get_value()`          | Return `ColorPicker` current color.  |
-|    `set_value(value: int)`     | Set `ColorPicker` color.             |
-|      `check_show_alpha()`      | Check `show_alpha` is True or False. |
-|     `disable_show_alpha()`     | Disable `show_alpha`.                |
-|     `unable_show_alpha()`      | Unable `show_alpha`.                 |
-|      `get_color_format()`      | Return `ColorPicker` color format.   |
-| `set_color_format(value: str)` | Set `ColorPicker` color format.      |
-|     `value_changed(func)`      | Handle color click.                  |
+|     Attributes and Methods     | Description                              |
+| :----------------------------: | ---------------------------------------- |
+|         `get_value()`          | Return `ColorPicker` current color.      |
+|    `set_value(value: int)`     | Set `ColorPicker` color.                 |
+|      `check_show_alpha()`      | Check `show_alpha` is `True` or `False`. |
+|     `disable_show_alpha()`     | Disable `show_alpha`.                    |
+|     `unable_show_alpha()`      | Unable `show_alpha`.                     |
+|      `get_color_format()`      | Return `ColorPicker` color format.       |
+| `set_color_format(value: str)` | Set `ColorPicker` color format.          |
+|     `value_changed(func)`      | Handle color click.                      |
 
 ## Mini App Example
 
