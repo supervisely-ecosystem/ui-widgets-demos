@@ -231,5 +231,5 @@ def show_item(res):
 ```
 
 <p align="center">
-  <img src="(https://user-images.githubusercontent.com/120389559/225847401-c7aa255c-e32c-40c3-b5ed-4c4e0942e5f8.gif)" alt="layout" />
+  <img src="https://user-images.githubusercontent.com/120389559/225847401-c7aa255c-e32c-40c3-b5ed-4c4e0942e5f8.gif" alt="layout" />
 </p>
