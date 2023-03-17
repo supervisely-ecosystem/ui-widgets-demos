@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ColorPicker
+from supervisely.app.widgets import Card, Container, ColorPicker, Text
 
 if sly.is_development():
     load_dotenv("local.env")
@@ -10,13 +10,22 @@ if sly.is_development():
 
 api: sly.Api = sly.Api.from_env()
 
-color_picker = ColorPicker(show_alpha=False)
+
+text = Text()
+
+color_picker = ColorPicker()
 
 card = Card(
-    "Destination Project",
-    content=Container([color_picker]),
+    "Color Picker",
+    content=Container([color_picker, text]),
 )
 
 
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
+
+
+@color_picker.value_changed
+def show_color(res):
+    colir_info = f"Current color: {res}"
+    text.set(text=colir_info, status="info")
