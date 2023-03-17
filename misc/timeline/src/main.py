@@ -22,28 +22,10 @@ intervals = [
 
 colors = ["#99d162", "#00f0b0", "#e41436", "#14d7e4", "#99d162", "#ffff00", "#00ff00"]
 
-pointer_color = "#ffffff"
-
 text = Text()
 
-timeline = Timeline(pointer=220, intervals=intervals, colors=colors)
+timeline = Timeline(intervals=intervals, colors=colors)
 
-intervals = [
-    [0, 50],
-    [60, 90],
-]
-
-colors = ["#000772", "#00ff00"]
-
-
-# a = timeline.get_intervals()
-# timeline.add_intervals(intervals, colors)
-# b = timeline.get_intervals()
-
-# timeline.set_height(500)
-# timeline.set_pointer_color(pointer_color)
-
-# timeline = Timeline(intervals=intervals, colors=colors)
 
 card = Card(
     title="Timeline",
@@ -55,6 +37,7 @@ layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
 
 
-# @timeline.click
-# def show_item(res):
-#     text.set(text=res, status="info")
+@timeline.click
+def show_item(res):
+    info = f"Current clicked interval: from {res[0]} to {res[1]}"
+    text.set(text=info, status="info")
