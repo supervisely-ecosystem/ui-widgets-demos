@@ -217,8 +217,6 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Prepare series for class balance
-
 ### Initialize `Rate` widget
 
 ```python
@@ -237,6 +235,8 @@ card = Card(
     "Rate",
     content=Container([rate]),
 )
+
+layout = Container(widgets=[card])
 ```
 
 ### Create app using layout
