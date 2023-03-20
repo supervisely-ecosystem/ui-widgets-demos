@@ -68,7 +68,7 @@ Determine `TimePicker` end time.
 time_picker = TimePicker(start="06:30", step="00:30", end="15:00")
 ```
 
-![start_step_end](https://user-images.githubusercontent.com/120389559/226361267-a46da0f4-38d3-46fc-adaa-bef14d33e58f.gif)
+![start_step_end](https://user-images.githubusercontent.com/120389559/226368722-3419a5fc-7a7d-401b-8084-0138209007ce.gif)
 
 ### placeholder
 
