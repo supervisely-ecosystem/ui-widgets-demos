@@ -1,80 +1,167 @@
-# Destination Project
+# Time Picker
 
 ## Introduction
 
-**`DestinationProject`** widget in Supervisely provides several options for selecting the destination project and dataset when transferring data. Users can choose between creating a new project or selecting an existing project, as well as creating a new dataset or selecting an existing dataset within the project. `DestinationProject` also includes an input field where users can enter the name of the destination project or dataset when creating a new one. This flexibility allows users to easily manage and organize their projects and datasets within the platform.
+**`TimePicker`** is a widget in Supervisely that allows choise time on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/destinationproject)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/timepicker)
 
 ## Function signature
 
 ```python
-DestinationProject(
-    workspace_id=654,
-    project_type="videos",
+TimePicker(
+    start="09:00",
+    step="00:15",
+    end="22:30",
+    placeholder=None,
+    size=None,
+    readonly=False,
+    disabled=False,
+    editable=True,
+    clearable=True,
     widget_id=None,
 )
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/225234197-95dd3c3a-18dc-4fed-a583-b46cf101217c.png)
+![time_picker_default](https://user-images.githubusercontent.com/120389559/226362544-665389df-e819-4bc2-908c-8b1b6effaf84.gif)
 
 ## Parameters
 
-|   Parameters   |     Type      |                  Description                   |
-| :------------: | :-----------: | :--------------------------------------------: |
-| `workspace_id` |     `int`     |                  Workspace ID                  |
-| `project_type` | `ProjectType` | Determine project type available for selection |
-|  `widget_id`   |     `str`     |                ID of the widget                |
+|  Parameters   |                   Type                    |            Description            |
+| :-----------: | :---------------------------------------: | :-------------------------------: |
+|    `start`    |                   `str`                   |            Start time             |
+|    `step`     |                   `str`                   |             Time step             |
+|     `end`     |                   `str`                   |             End time              |
+| `placeholder` |                   `str`                   |     `TimePicker` placeholder      |
+|    `size`     | `Literal["large", "small", "mini", None]` |           Size of input           |
+|  `readonly`   |                  `bool`                   | Whether `TimePicker` is read only |
+|  `disabled`   |                  `bool`                   | Whether `TimePicker` is disabled  |
+|  `editable`   |                  `bool`                   |   Whether the input is editable   |
+|  `clearable`  |                  `bool`                   |   Whether to show clear button    |
+|  `widget_id`  |                   `str`                   |         ID of the widget          |
 
-### workspace_id
+### start
 
-Workspace ID
+Determine `TimePicker` start time.
 
-**type:** `int`
+**type:** `str`
+
+**default value:** `"09:00"`
+
+### step
+
+Determine `TimePicker` time step.
+
+**type:** `str`
+
+**default value:** `"00:15"`
+
+### end
+
+Determine `TimePicker` end time.
+
+**type:** `str`
+
+**default value:** `"22:30"`
 
 ```python
-destination = DestinationProject(workspace_id=435)
+time_picker = TimePicker(start="06:30", step="00:30", end="15:00")
 ```
 
-### project_type
+![start_step_end](https://user-images.githubusercontent.com/120389559/226361267-a46da0f4-38d3-46fc-adaa-bef14d33e58f.gif)
 
-Determine project type available for selection
+### placeholder
 
-**type:** `ProjectType`
-
-**default value:** `ProjectType.IMAGES`
-
-```python
-destination = DestinationProject(
-    workspace_id=435,
-    project_type=sly.ProjectType.IMAGES,
-)
-```
-
-![project_type](https://user-images.githubusercontent.com/79905215/225234270-efeb6a3c-45a0-4a4c-9464-e0ba8e67f2d9.png)
-
-### widget_id
-
-ID of the widget
+Determine `TimePicker` placeholder.
 
 **type:** `str`
 
 **default value:** `None`
 
+```python
+time_picker = TimePicker(placeholder="Select time")
+```
+
+![placeholder](https://user-images.githubusercontent.com/120389559/226362933-1da5a4c1-d9a6-4ba3-85d2-831afb42e074.png)
+
+### size
+
+Determine `TimePicker` size of input.
+
+**type:** `Literal["large", "small", "mini", None]`
+
+**default value:** `None`
+
+```python
+text = Text()
+time_picker = TimePicker()
+time_picker_mini = TimePicker(size="mini")
+time_picker_small = TimePicker(size="small")
+time_picker_large = TimePicker(size="large")
+```
+
+![size](https://user-images.githubusercontent.com/120389559/226363690-95e2def4-9154-44ef-8469-f0b4132e76e1.png)
+
+### readonly
+
+Determine whether `TimePicker` is read only.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+time_picker = TimePicker(readonly=True)
+```
+
+![readonly](https://user-images.githubusercontent.com/120389559/226364643-d1f00154-accb-461f-a26a-971fa3a103e2.gif)
+
+### disabled
+
+Determine whether `TimePicker` is disabled.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+time_picker = TimePicker(disabled=True)
+```
+
+![disabled](https://user-images.githubusercontent.com/120389559/226365042-fb81b483-3a63-4e25-9cc3-d1c326631342.png)
+
+### editable
+
+Determine whether the input is editable.
+
+**type:** `bool`
+
+**default value:** `True`
+
+### clearable
+
+Determine whether to show clear button.
+
+**type:** `bool`
+
+**default value:** `True`
+
 ## Methods and attributes
 
-|   Attributes and Methods    | Description                                                               |
-| :-------------------------: | ------------------------------------------------------------------------- |
-| `get_selected_project_id()` | Get selected Project ID if radio input in "Add to existing project" mode. |
-| `get_selected_dataset_id()` | Get selected Dataset ID if radio input in "Add to existing dataset" mode. |
-|    `get_project_name()`     | Get selected Project name if radio input in "Create new project" mode.    |
-|    `get_dataset_name()`     | Get selected Dataset name if radio input in "Create new dataset" mode.    |
+| Attributes and Methods  | Description                                      |
+| :---------------------: | ------------------------------------------------ |
+|      `get_value()`      | Return `TimePicker` current value.               |
+| `get_picker_options()`  | Return `TimePicker` options(start, step, end).   |
+| `set_start(value: str)` | Set `TimePicker` start time.                     |
+|  `set_end(value: str)`  | Set `TimePicker` time step.                      |
+| `set_step(value: str)`  | Set `TimePicker` end time.                       |
+|    `@value_changed`     | Decorator function to handle `TimePicker` click. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/009_destination_project/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/009_destination_project/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/misc/time_picker/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/time_picker/src/main.py)
 
 ### Import libraries
 
@@ -83,7 +170,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, DestinationProject, Text
+from supervisely.app.widgets import Card, Container, Text, TimePicker
 ```
 
 ### Init API client
@@ -97,52 +184,23 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get `workspace_id` from environment variables
+### Initialize `TimePicker` and `Text` widgets
 
 ```python
-workspace_id = sly.env.workspace_id()
-```
+time_picker = TimePicker()
 
-### Initialize `DestinationProject` widget
-
-```python
-destination = DestinationProject(
-    workspace_id=workspace_id,
-    project_type=sly.ProjectType.IMAGES,
-)
-```
-
-### Create `Button`, `Text` widgets we will use in UI for demo
-
-```python
-button = Button()
-text_project_id = Text()
-text_project_name = Text()
-text_dataset_id = Text()
-text_dataset_name = Text()
+text = Text()
 ```
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
-
-container = Container(
-    widgets=[
-        button,
-        text_project_id,
-        text_project_name,
-        text_dataset_id,
-        text_dataset_name,
-    ]
-)
-
 card = Card(
-    "Destination Project",
-    content=Container([destination, container]),
+    "Time Picker",
+    content=Container([time_picker, text]),
 )
-
 layout = Container(widgets=[card])
 ```
 
@@ -151,20 +209,18 @@ layout = Container(widgets=[card])
 Create an app object with layout parameter.
 
 ```python
-app = sly.Application(layout=layout)
+app = sly.Application(layout=card)
 ```
 
-### Add functions to control widgets from code
+### Add functions to control widgets from python code
 
 ```python
-@button.click
-def get_destination():
-    text_project_id.text = f"project_id: {destination.get_selected_project_id()}"
-    text_project_name.text = f"project_name: {destination.get_project_name()}"
-    text_dataset_id.text = f"dataset_id: {destination.get_selected_dataset_id()}"
-    text_dataset_name.text = f"dataset_name: {destination.get_dataset_name()}"
+@time_picker.value_changed
+def show_time(res):
+    info = f"Selected time: {res}"
+    text.set(text=info, status="info")
 ```
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/79905215/225239059-f33aa092-a74f-47eb-93d3-247aec410e57.gif" alt="layout">
+  <img src="https://user-images.githubusercontent.com/120389559/226366974-06d6fde5-11cc-4cdf-b743-93bf378b67fa.gif" alt="layout" />
 </p>
