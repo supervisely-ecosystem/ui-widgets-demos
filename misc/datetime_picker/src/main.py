@@ -1,5 +1,4 @@
 import os
-
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, Container, Text, DateTimePicker
