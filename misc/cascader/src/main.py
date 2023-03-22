@@ -46,5 +46,5 @@ app = sly.Application(layout=layout)
 
 @select_items.value_changed
 def show_item(res):
-    info = f"You choise: {res} item"
+    info = f"You choise: {'/'.join(str(x) for x in res)} item"
     text.set(text=info, status="info")
