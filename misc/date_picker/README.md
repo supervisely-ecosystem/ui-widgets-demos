@@ -367,8 +367,8 @@ def _check_dates(value1, value2):
 
 @date_picker.value_changed
 def check_date(date_value):
-    range_value = daterange_picker.get_value()
-    _check_dates(date_value, range_value)
+    daterange_value = daterange_picker.get_value()
+    _check_dates(date_value, daterange_value)
 
 
 @daterange_picker.value_changed
