@@ -267,6 +267,7 @@ ID of the widget
 |                 `get_value()`                  | Get date picker datetime string value                                 |
 | `set_value(value: Union[int, str, datetime])`  | Set date picker value                                                 |
 | `set_range_values(values: Union[list, tuple])` | Set date range picker values                                          |
+|                `clear_value()`                 | Clear date picker value                                               |
 |                `@value_changed`                | Decorator function is handled when date picker value is changed value |
 
 ## Mini App Example
