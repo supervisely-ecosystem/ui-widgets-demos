@@ -55,13 +55,11 @@ def _check_dates(value1, value2):
 @date_picker.value_changed
 def check_date(value):
     value2 = daterange_picker.get_value()
-    print("date: ", value)
     _check_dates(value, value2)
 
 
 @daterange_picker.value_changed
 def check_daterange(value):
-    print("daterange: ", value)
     value1 = date_picker.get_value()
     _check_dates(value1, value)
 
