@@ -1,80 +1,128 @@
-# Destination Project
+# Dropdown
 
 ## Introduction
 
-**`DestinationProject`** widget in Supervisely provides several options for selecting the destination project and dataset when transferring data. Users can choose between creating a new project or selecting an existing project, as well as creating a new dataset or selecting an existing dataset within the project. `DestinationProject` also includes an input field where users can enter the name of the destination project or dataset when creating a new one. This flexibility allows users to easily manage and organize their projects and datasets within the platform.
+**`Dropdown`** is a widget in Supervisely that allows for selecting action from dropdown menu on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/destinationproject)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/dropdown)
 
 ## Function signature
 
 ```python
-DestinationProject(
-    workspace_id=654,
-    project_type="videos",
+Dropdown(
+    items=None,
+    trigger="hover",
+    menu_align="end",
+    hide_on_click=True,
+    header="Dropdown List",
     widget_id=None,
 )
 ```
 
-![default](https://user-images.githubusercontent.com/79905215/225234197-95dd3c3a-18dc-4fed-a583-b46cf101217c.png)
+Example of input data we will use.
+
+```python
+items = [
+    Dropdown.Item(text="1"),
+    Dropdown.Item(text="2"),
+    Dropdown.Item(text="3"),
+    Dropdown.Item(text="4"),
+    Dropdown.Item(text="5"),
+    Dropdown.Item(text="6"),
+]
+
+dropdown = Dropdown(items=items)
+```
+
+![dropdown_default](https://user-images.githubusercontent.com/120389559/227707948-0a29cf46-50f2-4198-8659-2c32892e8e23.gif)
 
 ## Parameters
 
-|   Parameters   |     Type      |                  Description                   |
-| :------------: | :-----------: | :--------------------------------------------: |
-| `workspace_id` |     `int`     |                  Workspace ID                  |
-| `project_type` | `ProjectType` | Determine project type available for selection |
-|  `widget_id`   |     `str`     |                ID of the widget                |
+|   Parameters    |            Type             |                  Description                  |
+| :-------------: | :-------------------------: | :-------------------------------------------: |
+|     `items`     |    `List[Dropdown.Item]`    |             Input `Dropdown` data             |
+|    `trigger`    | `Literal["hover", "click"]` |        How to trigger `Dropdown` items        |
+|  `menu_align`   |  `Literal["start", "end"]`  |             Horizontal alignment              |
+| `hide_on_click` |           `bool`            | Whether to hide menu after clicking menu-item |
+|    `header`     |            `str`            |               `Dropdown` header               |
+|   `widget_id`   |            `str`            |               ID of the widget                |
 
-### workspace_id
+### items
 
-Workspace ID
+Determine input `Dropdown` data.
 
-**type:** `int`
-
-```python
-destination = DestinationProject(workspace_id=435)
-```
-
-### project_type
-
-Determine project type available for selection
-
-**type:** `ProjectType`
-
-**default value:** `ProjectType.IMAGES`
-
-```python
-destination = DestinationProject(
-    workspace_id=435,
-    project_type=sly.ProjectType.IMAGES,
-)
-```
-
-![project_type](https://user-images.githubusercontent.com/79905215/225234270-efeb6a3c-45a0-4a4c-9464-e0ba8e67f2d9.png)
-
-### widget_id
-
-ID of the widget
-
-**type:** `str`
+**type:** `List[Dropdown.Item]`
 
 **default value:** `None`
 
+### trigger
+
+Determine how to trigger `Dropdown` items.
+
+**type:** `Literal["hover", "click"]`
+
+**default value:** `hover`
+
+### menu_align
+
+Determine horizontal alignment.
+
+**type:** `Literal["start", "end"]`
+
+**default value:** `end`
+
+### hide_on_click
+
+Determine whether to hide menu after clicking menu-item.
+
+**type:** `bool`
+
+**default value:** `True`
+
+```python
+dropdown = Dropdown(items=items, hide_on_click=False)
+```
+
+![hide_on_click](https://user-images.githubusercontent.com/120389559/227708228-465f44a7-8885-45e6-9595-2368fa2f5b97.gif)
+
+### header
+
+Determine `Dropdown` header.
+
+**type:** `str`
+
+**default value:** `"Dropdown List"`
+
+```python
+dropdown = Dropdown(items=items, header="Your text here")
+```
+
+![header](https://user-images.githubusercontent.com/120389559/227708344-d35ac75e-a732-426a-8fae-53487a114091.png)
+
 ## Methods and attributes
 
-|   Attributes and Methods    | Description                                                               |
-| :-------------------------: | ------------------------------------------------------------------------- |
-| `get_selected_project_id()` | Get selected Project ID if radio input in "Add to existing project" mode. |
-| `get_selected_dataset_id()` | Get selected Dataset ID if radio input in "Add to existing dataset" mode. |
-|    `get_project_name()`     | Get selected Project name if radio input in "Create new project" mode.    |
-|    `get_dataset_name()`     | Get selected Dataset name if radio input in "Create new dataset" mode.    |
+|         Attributes and Methods          | Description                                         |
+| :-------------------------------------: | --------------------------------------------------- |
+|          `get_clicked_value()`          | Return `Dropdown` selected values `command`.        |
+|     `set_clicked_value(value: str)`     | Set `Dropdown` selected value `command`.            |
+|              `get_items()`              | Return `Dropdown` items.                            |
+| `set_items(value: List[Dropdown.Item])` | Set `Dropdown` items.                               |
+| `add_items(value: List[Dropdown.Item])` | Add items in `Dropdown`.                            |
+|           `expand_to_hover()`           | Set `trigger` to `hover` mode.                      |
+|           `expand_to_click()`           | Set `trigger` to `click` mode.                      |
+|      `set_menu_align_from_start()`      | Set `menu_align` to `start` mode.                   |
+|       `set_menu_align_from_end()`       | Set `menu_align` to `end` mode.                     |
+|        `unable_hide_on_click()`         | Set `hide_on_click` to `True`.                      |
+|        `disable_hide_on_click()`        | Set `hide_on_click` to `False`.                     |
+|           `get_header_text()`           | Return `Dropdown` header text.                      |
+|      `set_header_text(value: str)`      | Set `Dropdown` header text.                         |
+|            `@value_changed`             | Decorator function to handle selected value change. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/009_destination_project/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/009_destination_project/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/misc/cascader/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/cascader/src/main.py)
 
 ### Import libraries
 
@@ -83,7 +131,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, DestinationProject, Text
+from supervisely.app.widgets import Card, Container, Dropdown, Text
 ```
 
 ### Init API client
@@ -97,52 +145,36 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Get `workspace_id` from environment variables
+### Prepare items for cascader
 
 ```python
-workspace_id = sly.env.workspace_id()
+items = [
+    Dropdown.Item(text="1", command="A"),
+    Dropdown.Item(text="2", divided=True, command="B"),
+    Dropdown.Item(text="3", disabled=True, command="C"),
+    Dropdown.Item(text="4", command="D"),
+    Dropdown.Item(text="5", divided=True, command="E"),
+    Dropdown.Item(text="6", command="F"),
+]
 ```
 
-### Initialize `DestinationProject` widget
+### Initialize `Dropdown` and `Text` widgets
 
 ```python
-destination = DestinationProject(
-    workspace_id=workspace_id,
-    project_type=sly.ProjectType.IMAGES,
-)
-```
+dropdown = Dropdown(items=items, header="Example dropdown")
 
-### Create `Button`, `Text` widgets we will use in UI for demo
-
-```python
-button = Button()
-text_project_id = Text()
-text_project_name = Text()
-text_dataset_id = Text()
-text_dataset_name = Text()
+text = Text()
 ```
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
-
-container = Container(
-    widgets=[
-        button,
-        text_project_id,
-        text_project_name,
-        text_dataset_id,
-        text_dataset_name,
-    ]
-)
-
 card = Card(
-    "Destination Project",
-    content=Container([destination, container]),
+    "Dropdown",
+    content=Container([dropdown, text]),
 )
-
 layout = Container(widgets=[card])
 ```
 
@@ -151,20 +183,18 @@ layout = Container(widgets=[card])
 Create an app object with layout parameter.
 
 ```python
-app = sly.Application(layout=layout)
+app = sly.Application(layout=card)
 ```
 
-### Add functions to control widgets from code
+### Add functions to control widgets from python code
 
 ```python
-@button.click
-def get_destination():
-    text_project_id.text = f"project_id: {destination.get_selected_project_id()}"
-    text_project_name.text = f"project_name: {destination.get_project_name()}"
-    text_dataset_id.text = f"dataset_id: {destination.get_selected_dataset_id()}"
-    text_dataset_name.text = f"dataset_name: {destination.get_dataset_name()}"
+@dropdown.value_changed
+def show_item(res):
+    info = f"Command {res} will be executed"
+    text.set(text=info, status="info")
 ```
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/79905215/225239059-f33aa092-a74f-47eb-93d3-247aec410e57.gif" alt="layout">
+  <img src="https://user-images.githubusercontent.com/120389559/227708677-c79e9c18-3496-484a-a181-a9c53fc5c1a8.gif" alt="layout" />
 </p>
