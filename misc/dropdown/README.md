@@ -122,7 +122,7 @@ dropdown = Dropdown(items=items, header="Your text here")
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/cascader/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/cascader/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/misc/dropdown/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/dropdown/src/main.py)
 
 ### Import libraries
 
