@@ -88,7 +88,7 @@ Determine how indicators are triggered.
 
 **type:** `Literal["hover", "click"]`
 
-**default value:** `"hover`
+**default value:** `"hover"`
 
 ### autoplay
 
@@ -118,7 +118,7 @@ Determine position of the indicators.
 
 **type:** `Literal["outside", "none"]`
 
-**default value:** `none`
+**default value:** `"none"`
 
 ```python
 carousel = Carousel(items=items, indicator_position="outside")
@@ -132,7 +132,7 @@ Determine when arrows are shown.
 
 **type:** `Literal["always", "hover", "never"]`
 
-**default value:** `hover`
+**default value:** `"hover"`
 
 ```python
 carousel = Carousel(items=items, arrow="always")
