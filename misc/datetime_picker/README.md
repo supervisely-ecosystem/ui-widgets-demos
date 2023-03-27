@@ -23,7 +23,9 @@ DateTimePicker(
 )
 ```
 
-![datetime_picker_default](link)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/57998637/227946386-f23cad29-1c32-409d-8531-d9e1024b587e.gif" width="500px" >
+</p>
 
 ## Parameters
 
@@ -52,7 +54,7 @@ Determine `DateTimePicker` default value.
 datetime_picker = DateTimePicker(value="2023-03-22 14:01:02")
 ```
 
-![value](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946399-11d5761b-387c-4b1d-b332-2ae3363e37f0.gif" width="500px" >
 
 ### placeholder
 
@@ -66,7 +68,7 @@ Determine `DateTimePicker` placeholder.
 datetime_picker = DateTimePicker(placeholder="Select")
 ```
 
-![placeholder](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946395-466df30b-2ec0-48a3-8b9b-d52cbfa944dc.png" width="500px" >
 
 ### size
 
@@ -83,7 +85,7 @@ datetime_picker_small = DateTimePicker(size="small")
 datetime_picker_large = DateTimePicker(size="large")
 ```
 
-![size](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946398-4d086ac3-c591-40a9-884e-2ef6911175bf.png" width="500px" >
 
 ### w_type
 
@@ -97,7 +99,7 @@ Determine `DateTimePicker` picker type.
 datetime_picker = DateTimePicker(w_type="datetimerange")
 ```
 
-![type-datetimerange](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946384-479d384d-e330-4960-b053-599f94cc9980.png" width="500px" >
 
 ### format
 
@@ -108,10 +110,10 @@ Determine `DateTimePicker` displaying format.
 **default value:** `"yyyy-MM-dd HH:mm:ss"`
 
 ```python
-datetime_picker = DateTimePicker(format="yyyy-MM-dd HH:mm")
+datetime_picker = DateTimePicker(format="yyyy/MM/dd HH:mm")
 ```
 
-![format](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946394-8a494a04-32b4-4a9a-8e9a-6aaf2686924d.png" width="500px" >
 
 ### readonly
 
@@ -122,10 +124,10 @@ Determine whether `DateTimePicker` is read only.
 **default value:** `False`
 
 ```python
-datetime_picker = DateTimePicker(readonly=True)
+datetime_picker = DateTimePicker(value="2023-03-22 14:01:02", readonly=True)
 ```
 
-![readonly](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946397-c77714c3-1551-41ac-83f1-e6c25b54e2ed.gif" width="500px" >
 
 ### disabled
 
@@ -139,7 +141,7 @@ Determine whether `DateTimePicker` is disabled.
 datetime_picker = DateTimePicker(disabled=True)
 ```
 
-![disabled](link)
+<img src="https://user-images.githubusercontent.com/57998637/227946389-22d37fc5-4b41-4a00-9cdb-539b4a6171b4.png" width="500px" >
 
 ### editable
 
@@ -149,6 +151,8 @@ Determine whether the input is editable.
 
 **default value:** `True`
 
+<img src="https://user-images.githubusercontent.com/57998637/227946392-4f5d0fca-bc28-4d2c-916a-42968a80661f.gif" width="500px" >
+
 ### clearable
 
 Determine whether to show clear button.
@@ -156,6 +160,8 @@ Determine whether to show clear button.
 **type:** `bool`
 
 **default value:** `True`
+
+<img src="https://user-images.githubusercontent.com/57998637/227946379-34f520d3-c27e-4886-81e2-deb4e55c295c.gif" width="500px" >
 
 ### widget_id
 
@@ -236,5 +242,5 @@ def show_time(res):
 ```
 
 <p align="center">
-  <img src="link" alt="layout" />
+  <img src="https://user-images.githubusercontent.com/57998637/227946386-f23cad29-1c32-409d-8531-d9e1024b587e.gif" alt="layout" width="500px"/>
 </p>
