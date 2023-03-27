@@ -54,7 +54,7 @@ Determine `DateTimePicker` default value.
 datetime_picker = DateTimePicker(value="2023-03-22 14:01:02")
 ```
 
-<img src="https://user-images.githubusercontent.com/57998637/227946399-11d5761b-387c-4b1d-b332-2ae3363e37f0.gif" width="500px" >
+<img src="https://user-images.githubusercontent.com/57998637/227953057-4a0838c4-92a0-4b62-a6f2-8e9d44b3978d.png" width="500px" >
 
 ### placeholder
 
@@ -161,7 +161,7 @@ Determine whether to show clear button.
 
 **default value:** `True`
 
-<img src="https://user-images.githubusercontent.com/57998637/227946379-34f520d3-c27e-4886-81e2-deb4e55c295c.gif" width="500px" >
+<img src="https://user-images.githubusercontent.com/57998637/227946399-11d5761b-387c-4b1d-b332-2ae3363e37f0.gif" width="500px" >
 
 ### widget_id
 
