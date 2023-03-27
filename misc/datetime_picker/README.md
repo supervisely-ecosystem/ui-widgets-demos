@@ -176,7 +176,7 @@ ID of the widget
 |             Attributes and Methods             | Description                                          |
 | :--------------------------------------------: | ---------------------------------------------------- |
 |                 `get_value()`                  | Return `DateTimePicker` current value.               |
-| `set_value(value: Union[int, str, datetime])`  | Set `DateTimePicker` vlue.                           |
+| `set_value(value: Union[int, str, datetime])`  | Set `DateTimePicker` value.                          |
 | `set_range_values(values: Union[list, tuple])` | Set `DateTimePicker` range values.                   |
 |                `@value_changed`                | Decorator function to handle `DateTimePicker` click. |
 
@@ -190,6 +190,7 @@ You can find this example in our Github repository:
 
 ```python
 import os
+from datetime import datetime, timezone
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, Container, Text, DateTimePicker
@@ -236,11 +237,22 @@ app = sly.Application(layout=card)
 
 ```python
 @datetime_picker.value_changed
-def show_time(res):
-    info = f"Selected time: {res}"
+def set_only_date_from_today(datetime_value):
+    if datetime_value is not None:
+        format_string = "%Y-%m-%dT%H:%M:%S.%fZ"
+        selected = datetime.strptime(datetime_value, format_string).replace(tzinfo=timezone.utc)
+        current_day = datetime.combine(datetime.now().date(), datetime.min.time()).replace(
+            tzinfo=timezone.utc
+        )
+        if selected < current_day:
+            new_value = datetime.utcnow().replace(tzinfo=timezone.utc)
+            iso_value = new_value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+            datetime_picker.set_value(iso_value)
+
+    info = f"Selected date and time: {datetime_value}"
     text.set(text=info, status="info")
 ```
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/57998637/227946386-f23cad29-1c32-409d-8531-d9e1024b587e.gif" alt="layout" width="500px"/>
+  <img src="https://user-images.githubusercontent.com/57998637/227992280-a3a6e837-5641-40bc-99dc-a1cd41ee2302.gif" alt="layout" width="500px"/>
 </p>
