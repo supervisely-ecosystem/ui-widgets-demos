@@ -101,9 +101,9 @@ ID of the widget.
 
 ## Mini App Example
 
-You can find this example in our Github repository:
+<!-- You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/slider/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/misc/slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/slider/src/main.py) -->
 
 ### Import libraries
 
