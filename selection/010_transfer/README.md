@@ -18,7 +18,7 @@ Transfer(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/....png)
+![default](https://user-images.githubusercontent.com/118521851/228144372-90e0ae84-5c81-41de-94ab-da17d17abc12.png)
 
 ## Parameters
 
@@ -62,7 +62,7 @@ transfer = Transfer(
 )
 ```
 
-![items](https://user-images.githubusercontent.com/....png)
+![items](https://user-images.githubusercontent.com/118521851/228144286-0eb4cb5f-1474-4dc7-a61d-e9c4b49f7dca.png)
 
 ### transferred_items
 
@@ -82,7 +82,7 @@ transfer = Transfer(
 )
 ```
 
-![transferred_items](https://user-images.githubusercontent.com/....png)
+![transferred_items](https://user-images.githubusercontent.com/118521851/228144347-e7a5b0fd-fe67-4261-b5df-14bff7eed87e.png)
 
 ### filterable
 
@@ -101,7 +101,7 @@ transfer = Transfer(
 )
 ```
 
-![filterable](https://user-images.githubusercontent.com/....png)
+![filterable](https://user-images.githubusercontent.com/118521851/228144350-6f4332e1-b39c-4a43-9c7b-24b7f16c4a88.png)
 
 ### filter_placeholder
 
@@ -121,7 +121,7 @@ transfer = Transfer(
 )
 ```
 
-![filter_placeholder](https://user-images.githubusercontent.com/....png)
+![filter_placeholder](https://user-images.githubusercontent.com/118521851/228144353-670fbd04-1722-490c-8839-d4e98ce4aa17.png)
 
 ### titles
 
@@ -140,7 +140,7 @@ transfer = Transfer(
 )
 ```
 
-![titles](https://user-images.githubusercontent.com/....png)
+![titles](https://user-images.githubusercontent.com/118521851/228144355-e8aa92d1-8c7b-4496-a3ad-37480bfa7a64.png)
 
 
 ### button_texts
@@ -156,11 +156,11 @@ Initialize widget with button texts:
 ```python
 transfer = Transfer(
     items=animals_domestic + animals_wild,
-    button_texts=["Add", "Remove"],
+    button_texts=["Remove", "Add"],
 )
 ```
 
-![button_texts](https://user-images.githubusercontent.com/....png)
+![button_texts](https://user-images.githubusercontent.com/118521851/228144360-40f6ab95-afea-47da-80df-24c99fc648b0.png)
 
 ### left_checked
 
@@ -179,7 +179,7 @@ transfer = Transfer(
 )
 ```
 
-![left_checked](https://user-images.githubusercontent.com/....png)
+![left_checked](https://user-images.githubusercontent.com/118521851/228144364-a2952fb3-4931-469d-a2b2-cf9ec7a60d06.png)
 
 
 ### right_checked
@@ -200,7 +200,7 @@ transfer = Transfer(
 )
 ```
 
-![right_checked](https://user-images.githubusercontent.com/....png)
+![right_checked](https://user-images.githubusercontent.com/118521851/228144369-140eaf9d-6800-4dde-a9c7-901aa6554c3c.png)
 
 ### widget_id
 The ID of the widget.
@@ -356,3 +356,5 @@ Create an app object with the layout parameter.
 # Initializing the application.
 app = sly.Application(layout=layout)
 ```
+
+![mini_app](https://user-images.githubusercontent.com/118521851/228144372-90e0ae84-5c81-41de-94ab-da17d17abc12.png)
