@@ -59,7 +59,8 @@ slider = Slider(
 )
 ```
 
-<!-- ![default](https://user-images.githubusercontent.com/120389559/223120953-a9a1b137-26c4-441f-9f1b-81cc7afd6d9c.gif) -->
+![accordion_false](https://user-images.githubusercontent.com/87002239/228161946-279b1647-e765-43cc-8130-796a6214309b.gif)
+
 
 ### accordion
 
@@ -77,7 +78,7 @@ slider = Slider(
 )
 ```
 
-<!-- ![min_max](https://user-images.githubusercontent.com/120389559/223124560-2779ca6a-c4af-4566-b0a8-ccdeae655333.gif) -->
+![accordion_true](https://user-images.githubusercontent.com/87002239/228161318-9a734351-0b9d-4c73-a27c-3e88fc30d52a.gif)
 
 
 ### widget_id
@@ -159,5 +160,3 @@ Create an app object with layout parameter.
 ```python
 app = sly.Application(layout=layout)
 ```
-
-<!-- ![layout](https://user-images.githubusercontent.com/120389559/223135395-7a883603-d8bf-40da-a5b1-1409f0f6e424.gif) -->
