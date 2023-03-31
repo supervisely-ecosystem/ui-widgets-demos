@@ -6,6 +6,8 @@
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imageregionselector)
 
+![ImageRegionSelector](https://user-images.githubusercontent.com/61844772/229194885-741fa3c3-a538-4f4f-82fd-a4227584ecb8.png)
+
 ## Function signature
 
 ```python
