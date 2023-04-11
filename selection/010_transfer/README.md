@@ -8,6 +8,7 @@ The `Transfer` widget has event handlers that are triggered when items in the ri
 [Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/selection/transfer)
 
 ## Function signature
+
 ```python
 Transfer(
     items=None, transferred_items=None,
@@ -18,27 +19,27 @@ Transfer(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/118521851/228144372-90e0ae84-5c81-41de-94ab-da17d17abc12.png)
+![default](https://user-images.githubusercontent.com/118521851/231207149-59b6e471-ed43-4dc2-b040-7b8f2ac46750.png)
 
 ## Parameters
 
-|      Parameters      |               Type               |                    Description                     |
-| :------------------: | :------------------------------: | :------------------------------------------------: |
-|       `items`        | `[Union[List[Item], List[str]]]` | List of `Transfer.Item` widgets or list of strings |
-| `transferred_items`  |           `List[str]`            |   List of strings, containing keys from `items`    |
-|     `filterable`     |              `bool`              |          Whether `Transfer` is filterable          |
-| `filter_placeholder` |              `str`               |    Placeholder for filter if `filterable=True`     |
-|       `titles`       |           `[List[str]`           |      List of titles for left and right lists       |
-|    `button_texts`    |           `[List[str]`           |   List of button texts for left and right lists    |
-|    `left_checked`    |           `[List[str]`           |        List of checked items for left list         |
-|   `right_checked`    |           `[List[str]`           |        List of checked items for right list        |
-|     `widget_id`      |              `str`               |                  ID of the widget                  |
+|      Parameters      |              Type              |                    Description                     |
+| :------------------: | :----------------------------: | :------------------------------------------------: |
+|       `items`        | `Union[List[Item], List[str]]` | List of `Transfer.Item` widgets or list of strings |
+| `transferred_items`  |          `List[str]`           |   List of strings, containing keys from `items`    |
+|     `filterable`     |             `bool`             |          Whether `Transfer` is filterable          |
+| `filter_placeholder` |             `str`              |    Placeholder for filter if `filterable=True`     |
+|       `titles`       |           `List[str`           |      List of titles for left and right lists       |
+|    `button_texts`    |           `List[str`           |   List of button texts for left and right lists    |
+|    `left_checked`    |           `List[str`           |        List of checked items for left list         |
+|   `right_checked`    |           `List[str`           |        List of checked items for right list        |
+|     `widget_id`      |             `str`              |                  ID of the widget                  |
 
 ### items
 
 Determine the list of `Transfer.Item` widgets or list of strings, containing keys for items, from which `Transfer.Item` widgets will be created.
 
-**type:** `[Union[List[Item], List[str]]]`
+**type:** `Union[List[Item], List[str]]`
 
 **default value:** `None`
 
@@ -62,7 +63,7 @@ transfer = Transfer(
 )
 ```
 
-![items](https://user-images.githubusercontent.com/118521851/228144286-0eb4cb5f-1474-4dc7-a61d-e9c4b49f7dca.png)
+![items](https://user-images.githubusercontent.com/118521851/231207097-c9a63aa5-f1b3-4115-88a0-9838df468313.png)
 
 ### transferred_items
 
@@ -82,7 +83,7 @@ transfer = Transfer(
 )
 ```
 
-![transferred_items](https://user-images.githubusercontent.com/118521851/228144347-e7a5b0fd-fe67-4261-b5df-14bff7eed87e.png)
+![transferred_items](https://user-images.githubusercontent.com/118521851/231207110-93c52970-d098-41f1-9508-2f25c5f7d653.png)
 
 ### filterable
 
@@ -101,7 +102,7 @@ transfer = Transfer(
 )
 ```
 
-![filterable](https://user-images.githubusercontent.com/118521851/228144350-6f4332e1-b39c-4a43-9c7b-24b7f16c4a88.png)
+![filterable](https://user-images.githubusercontent.com/118521851/231207116-e26380a3-a492-4038-a395-ee3873e2563d.png)
 
 ### filter_placeholder
 
@@ -121,13 +122,13 @@ transfer = Transfer(
 )
 ```
 
-![filter_placeholder](https://user-images.githubusercontent.com/118521851/228144353-670fbd04-1722-490c-8839-d4e98ce4aa17.png)
+![filter_placeholder](https://user-images.githubusercontent.com/118521851/231207120-771c23c7-4544-4ce1-bedf-d724d86b9bb3.png)
 
 ### titles
 
 Determine the list of titles for left and right lists.
 
-**type:** `[List[str]`
+**type:** `List[str]`
 
 **default value:** `None`
 
@@ -140,14 +141,13 @@ transfer = Transfer(
 )
 ```
 
-![titles](https://user-images.githubusercontent.com/118521851/228144355-e8aa92d1-8c7b-4496-a3ad-37480bfa7a64.png)
-
+![titles](https://user-images.githubusercontent.com/118521851/231207127-e43bc9f9-e02d-4de0-babc-ee2d8066f74c.png)
 
 ### button_texts
 
 Determine the list of texts for each button.
 
-**type:** `[List[str]`
+**type:** `List[str]`
 
 **default value:** `None`
 
@@ -160,13 +160,13 @@ transfer = Transfer(
 )
 ```
 
-![button_texts](https://user-images.githubusercontent.com/118521851/228144360-40f6ab95-afea-47da-80df-24c99fc648b0.png)
+![button_texts](https://user-images.githubusercontent.com/118521851/231207130-dd9c7f89-2bc4-4a5a-9c87-0cac6865f430.png)
 
 ### left_checked
 
 Determine the list of items that will be checked in the left list when the widget is initialized.
 
-**type:** `[List[str]`
+**type:** `List[str]`
 
 **default value:** `None`
 
@@ -179,14 +179,13 @@ transfer = Transfer(
 )
 ```
 
-![left_checked](https://user-images.githubusercontent.com/118521851/228144364-a2952fb3-4931-469d-a2b2-cf9ec7a60d06.png)
-
+![left_checked](https://user-images.githubusercontent.com/118521851/231207135-86f0a3ad-68cf-4463-a3fc-04256ab38508.png)
 
 ### right_checked
 
 Determine the list of items that will be checked in the right list when the widget is initialized.
 
-**type:** `[List[str]`
+**type:** `List[str]`
 
 **default value:** `None`
 
@@ -200,9 +199,10 @@ transfer = Transfer(
 )
 ```
 
-![right_checked](https://user-images.githubusercontent.com/118521851/228144369-140eaf9d-6800-4dde-a9c7-901aa6554c3c.png)
+![right_checked](https://user-images.githubusercontent.com/118521851/231207141-ee6023a4-f9d5-4918-90a3-aa1ae7839a36.png)
 
 ### widget_id
+
 The ID of the widget.
 
 **type:** `str`
@@ -227,8 +227,8 @@ transfer = Transfer(
 |                     `@value_changed`                      | Event that is triggered when items in the right list changed |
 | `set_items(items: Union[List[Transfer.Item], List[str]])` |       Set the items list (replacing it) for the widget       |
 |   `set_transferred_items(transferred_items: List[str])`   | Set the transferred items list (replacing it) for the widget |
-|       `add(items: [Union[List[Item], List[str]]]):`       |                 Adds new items to the widget                 |
-|             `remove(items_keys: [List[str]])`             |             Remove items from the widget by key              |
+|        `add(items: Union[List[Item], List[str]]):`        |                 Adds new items to the widget                 |
+|              `remove(items_keys: List[str])`              |             Remove items from the widget by key              |
 |                    `get_items_keys()`                     |         Get the list of keys of items in the widget          |
 
 ## Mini app example
@@ -248,6 +248,7 @@ from supervisely.app.widgets import Card, Transfer, Container, Text
 ```
 
 ### Init API client
+
 First, we load environment variables with credentials and init API for communicating with Supervisely Instance:
 
 ```python
@@ -357,4 +358,4 @@ Create an app object with the layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![mini_app](https://user-images.githubusercontent.com/118521851/228144372-90e0ae84-5c81-41de-94ab-da17d17abc12.png)
+![mini_app](https://user-images.githubusercontent.com/118521851/231207149-59b6e471-ed43-4dc2-b040-7b8f2ac46750.png)
