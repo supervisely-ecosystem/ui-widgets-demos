@@ -40,13 +40,25 @@ api: sly.Api = sly.Api.from_env()
 #     },
 # ]
 
-node_1 = Tree.Node(label="Level one 1", disabled=True)
+node_1 = Tree.Node(label="Level one 1")
+child_1 = Tree.Node(label="Level two 1-1")
+child_11 = Tree.Node(label="Level three 1-1-1", children=[])
+child_12 = Tree.Node(label="Level two 1-1-2", children=[])
+# child_1.add_children([child_11, child_12])
+# node_1.add_children([child_1])
 
-node_2 = Tree.Node(label="Level one 2")
-children_2_1 = Tree.Children(parent=node_2, label="Level two 2-1")
-node_2.add_children(children=children_2_1)
 
-nodes = [node_1, node_2]
+child_2_1 = Tree.Node(label="Level two 2-1")
+child_2_2 = Tree.Node(label="Level two 2-1")
+node_2 = Tree.Node(label="Level one 2", children=[child_2_1, child_2_2])
+
+node_3 = Tree.Node(label="Level one 3")
+child_3_1 = Tree.Node(label="Level two 3-1", disabled=True, children=[])
+child_3_2 = Tree.Node(label="Level two 3-2", children=[])
+node_3.add_children([child_3_1])
+
+
+nodes = [node_1, node_2, node_3]
 
 
 tree = Tree(data=nodes, show_checkbox=True)
