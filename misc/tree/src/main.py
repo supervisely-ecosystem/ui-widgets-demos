@@ -10,46 +10,42 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api: sly.Api = sly.Api.from_env()
 
 
-# data = [
-#     {
-#         "id": 1,
-#         "label": "Level one 1",
-#         "children": [
-#             {
-#                 "id": 4,
-#                 "label": "Level two 1-1",
-#                 "children": [
-#                     {"id": 9, "label": "Level three 1-1-1"},
-#                     {"id": 10, "label": "Level three 1-1-2"},
-#                 ],
-#             }
-#         ],
-#     },
-#     {
-#         "id": 2,
-#         "label": "Level one 2",
-#         "children": [{"id": 5, "label": "Level two 2-1"}, {"id": 6, "label": "Level two 2-2"}],
-#     },
-#     {
-#         "id": 3,
-#         "label": "Level one 3",
-#         "children": [
-#             {"id": 7, "label": "Level two 3-1", "disabled": True},
-#             {"id": 8, "label": "Level two 3-2"},
-#         ],
-#     },
-# ]
+data = [
+    {
+        "label": "Level one 1",
+        "children": [
+            {
+                "label": "Level two 1-1",
+                "children": [
+                    {"label": "Level three 1-1-1"},
+                    {"label": "Level three 1-1-2"},
+                ],
+            }
+        ],
+    },
+    {
+        "label": "Level one 2",
+        "children": [{"label": "Level two 2-1"}, {"label": "Level two 2-2"}],
+    },
+    {
+        "label": "Level one 3",
+        "children": [
+            {"label": "Level two 3-1", "disabled": True},
+            {"label": "Level two 3-2"},
+        ],
+    },
+]
 
 node_1 = Tree.Node(label="Level one 1")
 child_1 = Tree.Node(label="Level two 1-1")
 child_11 = Tree.Node(label="Level three 1-1-1")
-child_12 = Tree.Node(label="Level two 1-1-2")
+child_12 = Tree.Node(label="Level three 1-1-2")
 child_1.add_children([child_11, child_12])
 node_1.add_children([child_1])
 
 
 child_2_1 = Tree.Node(label="Level two 2-1")
-child_2_2 = Tree.Node(label="Level two 2-1")
+child_2_2 = Tree.Node(label="Level two 2-2")
 node_2 = Tree.Node(label="Level one 2", children=[child_2_1, child_2_2])
 
 node_3 = Tree.Node(label="Level one 3")
@@ -62,6 +58,8 @@ nodes = [node_1, node_2, node_3]
 
 
 tree = Tree(data=nodes, show_checkbox=True)
+
+# tree.set_data(nodes)
 
 text = Text()
 
@@ -82,23 +80,26 @@ app = sly.Application(layout=layout)
 
 @button.click
 def add_node():
-    node = tree.get_current_node()
+    # node_4 = {
+    #     "label": "Level one 4",
+    #     "children": [{"label": "Level two 4-1"}, {"label": "Level two 4-2"}],
+    # }
 
-    text_2.text = f"{node}"
-    # node = Tree.Node(label="New node")
-    # tree.add_node(node)
-
-    # new_node = Tree.Node(label="New node")
-    # tree.add_node(new_node)
+    # node_5 = {"label": "Level one 5"}
+    node_4 = Tree.Node(label="Level one 4")
+    child_4_1 = Tree.Node(label="Level two 4-1")
+    node_4.add_children([child_4_1])
+    node_5 = Tree.Node(label="Level one 5")
+    tree.add_nodes([node_4, node_5])
 
 
 @tree.node_click
-def show_time(node: Tree.Node):
-    info = f"{node}\nCurrent node id={node.get_id()}"  # , label text: {node.get_label()}"
+def show_node(node: Tree.Node):
+    info = f"Current node id={node.get_id()}"  # , label text: {node.get_label()}"
     text.set(text=info, status="info")
 
 
 @tree.check_change
-def show_time(res):
+def show_check(res):
     info = f"Current checkbox id={res['id']}"
     text.set(text=info, status="info")
