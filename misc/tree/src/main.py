@@ -49,8 +49,8 @@ child_2_2 = Tree.Node(label="Level two 2-2")
 node_2 = Tree.Node(label="Level one 2", children=[child_2_1, child_2_2])
 
 node_3 = Tree.Node(label="Level one 3")
-child_3_1 = Tree.Node(label="Level two 3-1", disabled=True, children=[])
-child_3_2 = Tree.Node(label="Level two 3-2", children=[])
+child_3_1 = Tree.Node(label="Level two 3-1", disabled=True)
+child_3_2 = Tree.Node(label="Level two 3-2")
 node_3.add_children([child_3_1, child_3_2])
 
 
@@ -60,6 +60,9 @@ nodes = [node_1, node_2, node_3]
 tree = Tree(data=nodes, show_checkbox=True)
 
 # tree.set_data(nodes)
+
+# tree.disable_node(5)
+# tree.unable_node(8)
 
 text = Text()
 
@@ -95,7 +98,7 @@ def add_node():
 
 @tree.node_click
 def show_node(node: Tree.Node):
-    info = f"Current node id={node.get_id()}"  # , label text: {node.get_label()}"
+    info = f"Current node id={node.get_id()}, label text: {node.get_label()}"
     text.set(text=info, status="info")
 
 
