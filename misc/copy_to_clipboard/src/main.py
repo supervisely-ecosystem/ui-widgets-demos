@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, CopyToClipboard, Button
+from supervisely.app.widgets import Card, Container, CopyToClipboard, Button, Editor
 
 
 # for convenient debug, has no effect in production
@@ -11,7 +11,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-copytoclipboard = CopyToClipboard(content="fasdefsdfzasde")
+editor = Editor('{ "value": 10 }')
+
+# copytoclipboard = CopyToClipboard(content=editor)
+copytoclipboard = CopyToClipboard(content='{ "value": 10 }')
 
 card = Card(content=Container([copytoclipboard]))
 
