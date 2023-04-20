@@ -24,7 +24,7 @@ button_text = Button(text="Get text")
 
 editor = Editor('{ "value": 10 }', show_line_numbers=False)
 text = Text(text="some text", status="success")
-text_area = TextArea(value="some text " * 10, readonly=True)
+text_area = TextArea(value="some text " * 10)
 input = Input(value="Start input value", size="large")
 string = "Only string"
 
