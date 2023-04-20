@@ -1,32 +1,31 @@
-# Markdown
+# CopyToClipboard
 
 ## Introduction
 
-In this tutorial you will learn how to use `Markdown` widget in Supervisely app.
+In this tutorial you will learn how to use `CopyToClipboard` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/markdown)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard)
 
 ## Function signature
 
 ```python
-Markdown(md="", height=300, widget_id=None)
+CopyToClipboard(content="", widget_id=None)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/224316390-de355f21-bf5b-4dca-9619-43cc523562f9.png)
 
 ## Parameters
 
-| Parameters  | Type  |    Description     |
-| :---------: | :---: | :----------------: |
-|    `md`     | `str` | `Markdown` content |
-|  `height`   | `int` |  `Widget` height   |
-| `widget_id` | `str` |  Id of the widget  |
+| Parameters  |                     Type                      |        Description        |
+| :---------: | :-------------------------------------------: | :-----------------------: |
+|  `content`  | `Optional[Editor or Text or TextArea or str]` | `CopyToClipboard` content |
+| `widget_id` |                     `str`                     |     Id of the widget      |
 
-### md
+### content
 
-Determine input `Markdown` content.
+Determine input `CopyToClipboard` content.
 
-**type:** `str`
+**type:** `Optional[Editor or Text or TextArea or str]`
 
 **default value:** `""`
 

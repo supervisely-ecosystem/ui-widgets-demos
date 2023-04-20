@@ -20,15 +20,20 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
+button_text = Button(text="Get text")
+
 editor = Editor('{ "value": 10 }', show_line_numbers=False)
 text = Text(text="some text", status="success")
-text_area = TextArea(value="some text" * 10, readonly=True)
+text_area = TextArea(value="some text " * 10, readonly=True)
 input = Input(value="Start input value", size="large")
-string = '{ "value": 10 }'
+string = "Only string"
 
-copytoclipboard = CopyToClipboard(content=input)
+copytoclipboard = CopyToClipboard(content=editor)
 
-card = Card(title="Copy To Clipboard", content=Container([copytoclipboard]))
+card = Card(
+    title="Copy To Clipboard",
+    content=Container([copytoclipboard]),
+)
 
 layout = Container(widgets=[card], direction="vertical")
 app = sly.Application(layout=layout)
