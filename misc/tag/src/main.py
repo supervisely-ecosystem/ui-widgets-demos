@@ -1,8 +1,8 @@
 import os
-
+import random
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Tag
+from supervisely.app.widgets import Card, Container, Tag, Button
 
 if sly.is_development():
     load_dotenv("local.env")
@@ -11,6 +11,8 @@ if sly.is_development():
 api: sly.Api = sly.Api.from_env()
 
 tag = Tag(text="Tag")
+
+button = Button(text="Change Color")
 
 all_tag_types = [tag]
 for tag_type in ["primary", "gray", "success", "warning", "danger"]:
@@ -23,5 +25,12 @@ card = Card(
 )
 
 
-layout = Container(widgets=[card])
+layout = Container(widgets=[card, button])
 app = sly.Application(layout=layout)
+
+
+@button.click
+def change_color():
+    colors = ["orange", "purple", "black", "blue", "green"]
+    for tag in all_tag_types:
+        tag.set_color(random.choice(colors))
