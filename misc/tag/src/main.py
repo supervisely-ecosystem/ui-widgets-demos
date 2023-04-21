@@ -12,7 +12,7 @@ api: sly.Api = sly.Api.from_env()
 
 tag = Tag(text="Tag")
 
-button = Button()
+# button = Button()
 
 all_tag_types = [tag]
 for tag_type in ["primary", "gray", "success", "warning", "danger"]:
@@ -25,7 +25,7 @@ card = Card(
 )
 
 
-layout = Container(widgets=[card, button])
+layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
 
 
