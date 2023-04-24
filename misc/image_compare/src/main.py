@@ -20,9 +20,9 @@ api = sly.Api()
 left_image = LabeledImage()
 right_image = LabeledImage()
 
-# compare_images = CompareImages(left=left_image, right=right_image)
+compare_images = CompareImages(left=left_image, right=right_image)
 
-compare_images = CompareImages(left=left_image)
+# compare_images = CompareImages(left=left_image)
 
 
 project_id = 14957
@@ -44,8 +44,8 @@ right_image.set(title=image_name_right, image_url=image_url_right, ann=image_ann
 
 image_set_left = Image(url=images_infos[2].full_storage_url)
 image_set_right = Image(url=images_infos[3].full_storage_url)
-# compare_images.set_left(image_set_left)
-# compare_images.set_right(image_set_right)
+compare_images.set_left(image_set_left)
+compare_images.set_right(image_set_right)
 
 
 button = Button("set image")
@@ -67,4 +67,7 @@ app = sly.Application(layout=layout)
 
 @button.click
 def add():
-    compare_images.set_right(image_set_right)
+    # compare_images.set_right(image_set_right)
+    # right_image.clean_up()
+    # right_image.set(image_url=image_url_left, title="test")
+    image_set_right.set(url=images_infos[1].full_storage_url)
