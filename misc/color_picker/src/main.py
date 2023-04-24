@@ -27,5 +27,5 @@ app = sly.Application(layout=layout)
 
 @color_picker.value_changed
 def show_color(res):
-    colir_info = f"Current color: {res}"
-    text.set(text=colir_info, status="info")
+    color_info = f"Current color: {res}"
+    text.set(text=color_info, status="info")
