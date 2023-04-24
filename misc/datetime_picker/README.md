@@ -215,7 +215,16 @@ text = Text()
 ### Create app layout
 
 Prepare a layout for an app using `Card` widget with the `content` parameter.
-Create an app using a layout
+
+```python
+card = Card(
+    "Date and Time Picker",
+    content=Container([datetime_picker, text]),
+)
+layout = Container(widgets=[card])
+```
+
+### Create an app using a layout
 
 Create an app object with a layout parameter.
 
