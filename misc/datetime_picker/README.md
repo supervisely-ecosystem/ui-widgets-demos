@@ -2,9 +2,9 @@
 
 ## Introduction
 
-**`DateTimePicker`** is a widget in Supervisely that allows choise date and time on the UI.
+**`DateTimePicker`** is a widget in Supervisely that allows you to choose a date and time on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/datetimepicker)
+[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/datetimepicker)
 
 ## Function signature
 
@@ -13,7 +13,7 @@ DateTimePicker(
     value=None
     readonly=False,
     disabled=False,
-    editable=True,
+    editable=False,
     clearable=True,
     size=None,
     placeholder="Select date and time",
@@ -72,7 +72,7 @@ datetime_picker = DateTimePicker(placeholder="Select")
 
 ### size
 
-Determine `DateTimePicker` size of input.
+Determine `DateTimePicker` size of the input.
 
 **type:** `Literal["large", "small", "mini", None]`
 
@@ -117,7 +117,7 @@ datetime_picker = DateTimePicker(format="yyyy/MM/dd HH:mm")
 
 ### readonly
 
-Determine whether `DateTimePicker` is read only.
+Determine whether `DateTimePicker` is read-only.
 
 **type:** `bool`
 
@@ -149,13 +149,13 @@ Determine whether the input is editable.
 
 **type:** `bool`
 
-**default value:** `True`
+**default value:** `False`
 
 <img src="https://user-images.githubusercontent.com/57998637/227946392-4f5d0fca-bc28-4d2c-916a-42968a80661f.gif" width="500px" >
 
 ### clearable
 
-Determine whether to show clear button.
+Determine whether to show a clear button.
 
 **type:** `bool`
 
@@ -165,7 +165,7 @@ Determine whether to show clear button.
 
 ### widget_id
 
-ID of the widget
+The ID of the widget
 
 **type:** `str`
 
@@ -173,16 +173,15 @@ ID of the widget
 
 ## Methods and attributes
 
-|             Attributes and Methods             | Description                                          |
-| :--------------------------------------------: | ---------------------------------------------------- |
-|                 `get_value()`                  | Return `DateTimePicker` current value.               |
-| `set_value(value: Union[int, str, datetime])`  | Set `DateTimePicker` value.                          |
-| `set_range_values(values: Union[list, tuple])` | Set `DateTimePicker` range values.                   |
-|                `@value_changed`                | Decorator function to handle `DateTimePicker` click. |
+|                   Attributes and Methods                   | Description                                          |
+| :--------------------------------------------------------: | ---------------------------------------------------- |
+|                       `get_value()`                        | Return `DateTimePicker` current value.               |
+| `set_value(value: Union[int, str, datetime, list, tuple])` | Set `DateTimePicker` value.                          |
+|                      `@value_changed`                      | Decorator function to handle `DateTimePicker` click. |
 
 ## Mini App Example
 
-You can find this example in our Github repository:
+You can find this example in our GitHub repository:
 
 [supervisely-ecosystem/ui-widgets-demos/misc/datetime_picker/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/datetime_picker/src/main.py)
 
@@ -215,25 +214,16 @@ text = Text()
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter.
+Prepare a layout for an app using `Card` widget with the `content` parameter.
+Create an app using a layout
 
-```python
-card = Card(
-    "Date and Time Picker",
-    content=Container([datetime_picker, text]),
-)
-layout = Container(widgets=[card])
-```
-
-### Create app using layout
-
-Create an app object with layout parameter.
+Create an app object with a layout parameter.
 
 ```python
 app = sly.Application(layout=card)
 ```
 
-### Add functions to control widgets from python code
+### Add functions to control widgets from Python code
 
 ```python
 @datetime_picker.value_changed
