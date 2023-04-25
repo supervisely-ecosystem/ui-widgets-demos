@@ -39,7 +39,7 @@ DateTimePicker(
 |    `size`     |                      `Literal["large", "small", "mini", None]`                       |        Size of input field         |
 | `placeholder` |                                        `str`                                         |    `DateTimePicker` placeholder    |
 |   `w_type`    | `Literal["year", "month", "date", "datetime", "week", "datetimerange", "daterange"]` |    `DateTimePicker` picker type    |
-|   `format`    |                                        `str`                                         |     Datetime displaying format     |
+|   `format`    |                   `Literal["yyyy", "MM", "dd", "HH", "mm", "ss"]`                    |     Datetime displaying format     |
 |  `widget_id`  |                                        `str`                                         |          ID of the widget          |
 
 ### value
@@ -105,7 +105,7 @@ datetime_picker = DateTimePicker(w_type="datetimerange")
 
 Determine `DateTimePicker` displaying format.
 
-**type:** `str`
+**type:** `Literal["yyyy", "MM", "dd", "HH", "mm", "ss"]`
 
 **default value:** `"yyyy-MM-dd HH:mm:ss"`
 
