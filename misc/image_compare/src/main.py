@@ -7,7 +7,6 @@ from supervisely.app.widgets import (
     Card,
     Container,
     CompareImages,
-    Text,
     LabeledImage,
     Image,
 )
@@ -43,13 +42,10 @@ right_image = Image(url=images_infos[3].full_storage_url)
 
 button = Button("set image")
 
-left_card = Card(content=left_labeled_image)
-right_card = Card(content=right_labeled_image)
-# a = compare_images.get_left()
-# b = compare_images.get_right()
 
 compare_images = CompareImages(left=left_labeled_image, right=right_labeled_image)
-# compare_images.set_right(image_url=image_url_right, title="test")
+# a = compare_images.get_left()
+# b = compare_images.get_right()
 
 card = Card(
     "Compare Images",
@@ -63,6 +59,5 @@ app = sly.Application(layout=layout)
 
 @button.click
 def add():
-    right_labeled_image.set(image_url=image_url_left, title="test")
     # compare_images.set_right(image_url=image_url_left, title="test")
-    # compare_images.set_right(url=image_url_left)
+    compare_images.set_right(url=image_url_left)
