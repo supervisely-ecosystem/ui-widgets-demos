@@ -29,6 +29,9 @@ collapse.add_items([Collapse.Item("Random added item", title="Added item")])
 
 text = Text("Active item: Collapse with text")
 
+layout = Container(widgets=[Card(title="Collapse", content=Container([text, collapse]))])
+app = sly.Application(layout=layout)
+
 
 @collapse.value_changed
 def show_active_item(value):
@@ -37,5 +40,7 @@ def show_active_item(value):
     text.text = f"Active item: {act_items}"
 
 
-layout = Container(widgets=[Card(title="Collapse", content=Container([text, collapse]))])
-app = sly.Application(layout=layout)
+@tbl.click
+def handle_table_button(datapoint: sly.app.widgets.Table.ClickedDataPoint):
+    if datapoint.button_name is None:
+        return
