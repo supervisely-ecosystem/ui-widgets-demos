@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Collapse, Table
+from supervisely.app.widgets import Card, Container, Collapse, Table, Text
 
 
 # for convenient debug, has no effect in production
@@ -22,9 +22,20 @@ tbl = Table(data=df)
 collapse = Collapse(
     labels=["Collapse with text", "Collapse with table"],
     contents=["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", tbl],
-    accordion=True,
+    accordion=False,
 )
 
-card = Card(title="Collapse", content=Container([collapse]))
-layout = Container(widgets=[card])
+collapse.add_items([Collapse.Item("Random added item", title="Added item")])
+
+text = Text("Active item: Collapse with text")
+
+
+@collapse.value_changed
+def show_active_item(value):
+    if isinstance(value, list):
+        act_items = ", ".join(value)
+    text.text = f"Active item: {act_items}"
+
+
+layout = Container(widgets=[Card(title="Collapse", content=Container([text, collapse]))])
 app = sly.Application(layout=layout)
