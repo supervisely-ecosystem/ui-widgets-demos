@@ -17,13 +17,6 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-left_image = LabeledImage()
-right_image = LabeledImage()
-
-compare_images = CompareImages(left=left_image, right=right_image)
-
-# compare_images = CompareImages(left=left_image)
-
 
 project_id = 14957
 dataset_id = 52733
@@ -39,21 +32,24 @@ image_name_right = images_infos[1].name
 image_url_right = images_infos[1].full_storage_url
 image_ann_right = sly.Annotation.from_json(data=anns_infos[1].annotation, project_meta=project_meta)
 
-left_image.set(title=image_name_left, image_url=image_url_left, ann=image_ann_left)
-right_image.set(title=image_name_right, image_url=image_url_right, ann=image_ann_right)
+left_labeled_image = LabeledImage()
+right_labeled_image = LabeledImage()
+left_labeled_image.set(title=image_name_left, image_url=image_url_left, ann=image_ann_left)
+# right_labeled_image.set(title=image_name_right, image_url=image_url_right, ann=image_ann_right)
 
-image_set_left = Image(url=images_infos[2].full_storage_url)
-image_set_right = Image(url=images_infos[3].full_storage_url)
-compare_images.set_left(image_set_left)
-compare_images.set_right(image_set_right)
+left_image = Image(url=images_infos[2].full_storage_url)
+right_image = Image(url=images_infos[3].full_storage_url)
 
 
 button = Button("set image")
 
-
+left_card = Card(content=left_labeled_image)
+right_card = Card(content=right_labeled_image)
 # a = compare_images.get_left()
 # b = compare_images.get_right()
 
+compare_images = CompareImages(left=left_labeled_image, right=right_labeled_image)
+# compare_images.set_right(image_url=image_url_right, title="test")
 
 card = Card(
     "Compare Images",
@@ -67,7 +63,6 @@ app = sly.Application(layout=layout)
 
 @button.click
 def add():
-    # compare_images.set_right(image_set_right)
-    # right_image.clean_up()
-    # right_image.set(image_url=image_url_left, title="test")
-    image_set_right.set(url=images_infos[1].full_storage_url)
+    right_labeled_image.set(image_url=image_url_left, title="test")
+    # compare_images.set_right(image_url=image_url_left, title="test")
+    # compare_images.set_right(url=image_url_left)
