@@ -144,6 +144,20 @@ collapse = Collapse(
 )
 ```
 
+### Add new item manually
+
+```python
+collapse.add_items([Collapse.Item("Random added item", title="Added item")])
+```
+
+### Create text widget
+
+This text widget will show the collapse widget's current active item(s).
+
+```python
+text = Text("Active item: Collapse with text")
+```
+
 ### Create app layout
 
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
@@ -159,4 +173,24 @@ Create an app object with layout parameter.
 
 ```python
 app = sly.Application(layout=layout)
+```
+
+### Update text widget state
+
+`collapse.value_changed` decorator handle collapse changes and pass active collapse items to `show_active_item` function. 
+
+```python
+@collapse.value_changed
+def show_active_item(value):
+    if isinstance(value, list):
+        act_items = ", ".join(value)
+    text.text = f"Active item: {act_items}"
+```
+
+`tbl.click` decorator handle table changes (sorting, searching etc.).
+```
+@tbl.click
+def handle_table_button(datapoint: sly.app.widgets.Table.ClickedDataPoint):
+    if datapoint.button_name is None:
+        return
 ```
