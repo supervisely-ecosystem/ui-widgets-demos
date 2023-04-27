@@ -24,7 +24,7 @@ md_path = os.path.join(os.getcwd(), "misc/markdown/README.md")
 f = open(md_path, "r")
 md = markdown.markdown(f.read())
 
-markdown = Markdown(md=md)
+markdown = Markdown(content=md)
 
 card = Card(title="Markdown", content=Container([markdown, buttons_container]))
 layout = Container(widgets=[card], direction="vertical")
