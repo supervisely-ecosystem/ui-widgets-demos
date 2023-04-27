@@ -33,15 +33,6 @@ for idx in range(len(images_infos)):
         sly.Annotation.from_json(data=anns_infos[idx].annotation, project_meta=project_meta)
     )
 
-
-image_name_left = images_infos[0].name
-image_url_left = images_infos[0].full_storage_url
-image_ann_left = sly.Annotation.from_json(data=anns_infos[0].annotation, project_meta=project_meta)
-
-image_name_right = images_infos[1].name
-image_url_right = images_infos[1].full_storage_url
-image_ann_right = sly.Annotation.from_json(data=anns_infos[1].annotation, project_meta=project_meta)
-
 left_labeled_image = LabeledImage()
 right_labeled_image = LabeledImage()
 left_labeled_image.set(title=image_names[0], image_url=image_urls[0], ann=image_anns[0])
