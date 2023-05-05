@@ -144,18 +144,13 @@ collapse = Collapse(
 )
 ```
 
-### Add new item manually
-
-```python
-collapse.add_items([Collapse.Item("Random added item", title="Added item")])
-```
-
-### Create text widget
+### Create text widget and contol button
 
 This text widget will show the collapse widget's current active item(s).
 
 ```python
 text = Text("Active item: Collapse with text")
+button = Button("Open random collapse")
 ```
 
 ### Create app layout
@@ -163,7 +158,7 @@ text = Text("Active item: Collapse with text")
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-card = Card(title="Slider", content=Container([collapse]))
+layout = Container(widgets=[Card(title="Collapse", content=Container([text, collapse, button]))])
 layout = Container(widgets=[card])
 ```
 
@@ -188,9 +183,19 @@ def show_active_item(value):
 ```
 
 `tbl.click` decorator handle table changes (sorting, searching etc.).
-```
+```python
 @tbl.click
 def handle_table_button(datapoint: sly.app.widgets.Table.ClickedDataPoint):
     if datapoint.button_name is None:
         return
+```
+
+`button.click` decorator handle clicks on button. We use this button to open random collapse.
+```python
+@button.click
+def open_random_collapse():
+    panels = list(collapse._items_title)
+    value = panels[random.randint(0, len(panels) - 1)]
+    collapse.set_active_panel(value)
+    text.text = f"Active item: {value}"
 ```
