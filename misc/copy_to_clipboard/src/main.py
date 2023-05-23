@@ -28,7 +28,7 @@ text_area = TextArea(value="some text " * 10)
 input = Input(value="Start input value", size="large")
 string = "Only string"
 
-copytoclipboard = CopyToClipboard(content=editor)
+copytoclipboard = CopyToClipboard(content=input)
 
 card = Card(
     title="Copy To Clipboard",
