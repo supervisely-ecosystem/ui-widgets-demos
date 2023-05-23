@@ -1,4 +1,5 @@
 supervisely
-
+httpx
 # code formatter
 black
+imgaug
