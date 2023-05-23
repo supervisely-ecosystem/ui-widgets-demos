@@ -23,8 +23,8 @@ image_urls = [
 image_slider = ImageSlider(data=image_urls, selectable=True, height=250)
 
 
-image_url = Text()
-image_index = Text()
+image_url = Text(status="info")
+image_index = Text(status="info")
 
 button_url = Button(text="Get image url")
 button_index = Button(text="Get image index")
@@ -47,9 +47,9 @@ app = sly.Application(layout=layout)
 
 @button_url.click
 def get_url():
-    image_url.set(text=f"Image URL: {image_slider.get_preview_url()}", status="info")
+    image_url.text = f"Image URL: {image_slider.get_preview_url()}"
 
 
 @button_index.click
 def get_index():
-    image_index.set(text=f"Image index on slider: {image_slider.get_preview_idx()}", status="info")
+    image_index.text = f"Image index on slider: {image_slider.get_preview_idx()}"
