@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`Rate`** is a widget in Supervisely that allows for displaying stars rate on the UI.
+**`Rate`** widget in Supervisely that allows users to provide a rating using a graphical interface. It provides a customizable rating scale and supports features like disabling the widget, allowing half ratings, and displaying text labels.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/rate)
 
@@ -10,13 +10,15 @@
 
 ```python
 Rate(
+    value=None,
     max=5,
-    colors=["#F7BA2A", "#F7BA2A", "#F7BA2A"],
     disabled=False,
     allow_half=False,
     texts=[],
     show_text=False,
     text_color="#1F2D3D",
+    text_template="",
+    colors=["#F7BA2A", "#F7BA2A", "#F7BA2A"],
     void_color="#C6D1DE",
     disabled_void_color="#EFF2F7",
     widget_id=None,
@@ -27,18 +29,20 @@ Rate(
 
 ## Parameters
 
-|      Parameters       |    Type     |              Description              |
-| :-------------------: | :---------: | :-----------------------------------: |
-|         `max`         |    `int`    |           Max rating score            |
-|       `colors`        | `List[str]` |         Color array for icons         |
-|      `disabled`       |   `bool`    |      Whether `Rate` is read-only      |
-|     `allow_half`      |   `bool`    | Whether picking half start is allowed |
-|        `texts`        | `List[str]` |              Text array               |
-|      `show_text`      |   `bool`    |       Whether to display texts        |
-|     `text_color`      |    `str`    |            Color of texts             |
-|     `void_color`      |    `str`    |       Color of unselected icons       |
-| `disabled_void_color` |    `str`    |  Color of unselected read-only icons  |
-|      `widget_id`      |    `str`    |           ID of the widget            |
+|      Parameters       |        Type         |                  Description                  |
+| :-------------------: | :-----------------: | :-------------------------------------------: |
+|        `value`        | `Union[int, float]` |                 Rating score                  |
+|         `max`         |        `int`        |               Max rating score                |
+|      `disabled`       |       `bool`        |          Whether `Rate` is read-only          |
+|     `allow_half`      |       `bool`        |     Whether picking half start is allowed     |
+|        `texts`        |     `List[str]`     |                  Text array                   |
+|      `show_text`      |       `bool`        |           Whether to display texts            |
+|     `text_color`      |        `str`        |                Color of texts                 |
+|    `text_template`    |        `str`        | Text template when the component is read-only |
+|       `colors`        |     `List[str]`     |             Color array for icons             |
+|     `void_color`      |        `str`        |           Color of unselected icons           |
+| `disabled_void_color` |        `str`        |      Color of unselected read-only icons      |
+|      `widget_id`      |        `str`        |               ID of the widget                |
 
 ### max
 
@@ -56,7 +60,7 @@ rate = Rate(max=15)
 
 ### colors
 
-Determine color array for icons.
+Determine color array for icons. It should have 3 elements, each of which corresponds with a score level
 
 **type:** `List[str]`
 
@@ -98,7 +102,7 @@ rate = Rate(allow_half=True)
 
 ### texts
 
-Determine text array for each star.
+Determine text array for each star. Available if `show_text` is `True`
 
 **type:** `List[str]`
 
@@ -113,6 +117,7 @@ Determine whether to display texts.
 **default value:** `False`
 
 ```python
+infos = ["oops", "disappointed", "normal", "good", "great"]
 rate = Rate(texts=infos, show_text=True)
 ```
 
@@ -127,6 +132,7 @@ Determine color of texts.
 **default value:** `"#1F2D3D"`
 
 ```python
+infos = ["oops", "disappointed", "normal", "good", "great"]
 rate = Rate(texts=infos, show_text=True, text_color="#E414BB")
 ```
 
@@ -162,37 +168,34 @@ rate = Rate(disabled_void_color="#5D6D7E", disabled=True)
 
 ## Methods and attributes
 
-|        Attributes and Methods         | Description                                              |
-| :-----------------------------------: | -------------------------------------------------------- |
-|         `get_current_value()`         | Return `ClassBalance` max value.                         |
-|    `set_current_value(value: int)`    | Set `ClassBalance` max value.                            |
-|           `get_max_value()`           | Set `ClassBalance` max height.                           |
-|      `set_max_value(value: int)`      | Return `ClassBalance` max height.                        |
-|            `get_colors()`             | Set `selectable` to `False`.                             |
-|            `set_colors()`             | Set `selectable` to `True`.                              |
-|           `set_disabled()`            | Return `ClassBalance` `selectable` value.                |
-|            `set_unabled()`            | Set `collapsable` to `False`.                            |
-|           `get_disabled()`            | Set `collapsable` to `True`.                             |
-|         `unable_allow_half()`         | Return `ClassBalance` `collapsable` value.               |
-|        `disable_allow_half()`         | Set `clickable_name` to `False`.                         |
-|          `get_allow_half()`           | Set `clickable_name` to `True`.                          |
-|             `get_texts()`             | Return `ClassBalance` `clickable_name` value.            |
-|     `add_texts(value: List[str])`     | Set `clickable_segment` to `False`.                      |
-|     `set_texts(value: List[str])`     | Set `clickable_segment` to `True`.                       |
-|         `unable_show_text()`          | Return `ClassBalance` `clickable_segment` value.         |
-|         `disable_show_text()`         | Add new `segments` to now existing in `ClassBalance`.    |
-|           `get_show_text()`           | Return `ClassBalance` `segments`.                        |
-|          `get_text_color()`           | Set new `segments` in `ClassBalance`.                    |
-|     `set_text_color(value: str)`      | Add new `rows_data` to now existing in `ClassBalance`.   |
-|          `get_void_color()`           | Return `ClassBalance` `rows_data`.                       |
-|     `set_void_color(value: str)`      | Set new `rows_data` in `ClassBalance`.                   |
-|      `get_disabled_void_color()`      | Add new `slider_data` to now existing in `ClassBalance`. |
-| `set_disabled_void_color(value: str)` | Return `ClassBalance` `slider_data`.                     |
-|         `value_changed(func)`         | Handle value click.                                      |
+|        Attributes and Methods         | Description                                                 |
+| :-----------------------------------: | ----------------------------------------------------------- |
+|             `is_disabled`             | Property return `True` if `Rate` is read-only.              |
+|             `get_value()`             | Get `Rate` score value.                                     |
+| `set_value(value: Union[int, float])` | Set `Rate` score value.                                     |
+|           `get_max_value()`           | Get max rating score.                                       |
+|      `set_max_value(value: int)`      | Set max rating score.                                       |
+|            `get_colors()`             | Get color array for icons.                                  |
+|            `set_colors()`             | Set color array for icons.                                  |
+|              `disable()`              | Enable rate`s read-only property.                           |
+|              `enable()`               | Disable rate`s read-only property.                          |
+|       `allow_half_precision()`        | Enable picking half star.                                   |
+|      `disallow_half_precision()`      | Disable picking half star.                                  |
+|             `get_texts()`             | Return text array for each star.                            |
+|     `set_texts(value: List[str])`     | Set text for each star.                                     |
+|             `show_text()`             | Enable displaying texts.                                    |
+|             `hide_text()`             | Disable displaying texts.                                   |
+|          `get_text_color()`           | Get color of texts.                                         |
+|     `set_text_color(value: str)`      | Set color of texts.                                         |
+|          `get_void_color()`           | Get color of unselected icons.                              |
+|     `set_void_color(value: str)`      | Set color of unselected icons.                              |
+|      `get_disabled_void_color()`      | Get color of unselected read-only icons.                    |
+| `set_disabled_void_color(value: str)` | Set color of unselected read-only icons.                    |
+|         `value_changed(func)`         | Decorator function is handled when input `Rate` is changed. |
 
 ## Mini App Example
 
-You can find this example in our Github repository:
+You can find this examples in our Github repository:
 
 [supervisely-ecosystem/ui-widgets-demos/misc/rate/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/rate/src/main.py)
 
@@ -203,7 +206,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Rate
+from supervisely.app.widgets import Button, Card, Container, Field, Input, InputNumber, Rate, Text
 ```
 
 ### Init API client
@@ -217,36 +220,176 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `Rate` widget
+**In this guide, let's look at 3 examples of using the widget `Rate` in the one app.**
+
+### Example 1
+
+**Initialize `Rate` widget**
 
 ```python
-
 infos = ["oops", "disappointed", "normal", "good", "great"]
-colors = ["#1414E4", "#2DE414", "#F7BA2A"]
-rate = Rate(colors=colors, texts=infos, text_color="#E414D7", show_text=True, void_color="#17202A")
+colors = ["#656565", "#F7BA2A", "#F6568E"]
+rate = Rate(
+    text_color="#656565",
+    disabled=True,
+    value=4,
+    show_text=True,
+    colors=colors,
+    max=5,
+    text_template="points",
+)
 ```
 
-### Create app layout
+**Prepare `InputNumber`, `Button` and `Card` widgets we will use in this example**
+
+```python
+btn = Button("Enable / Disable")
+
+card = Card("Disabled rate", content=Container([rate, btn]))
+```
+
+**Add functions to control widgets from python code**
+
+```python
+@btn.click
+def enable_btn_click():
+    rate.enable() if rate.is_disabled else rate.disable()
+```
+
+**Create app**
 
 Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
-card = Card(
-    "Rate",
-    content=Container([rate]),
-)
-
 layout = Container(widgets=[card])
 ```
-
-### Create app using layout
 
 Create an app object with layout parameter.
 
 ```python
-app = sly.Application(layout=card)
+app = sly.Application(layout=layout)
 ```
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/120389559/225910001-8ff0fe26-401b-4646-b8de-e46e274f2520.gif" alt="layout" />
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/2a7ea6bf-e5d2-404f-ae9f-0e67bf606306" alt="layout" />
+</p>
+
+### Example 2
+
+**Initialize `Rate` widget**
+
+```python
+colors = ["#656565", "#F7BA2A", "#F6568E"]
+rate = Rate(
+    text_color="#656565",
+    allow_half=True,
+    value=4.2,
+    show_text=True,
+    colors=colors,
+)
+```
+
+**Prepare `InputNumber`, `Button` and `Card` widgets we will use in this example**
+
+```python
+btn = Button("Set value")
+input_num = InputNumber(value=rate.get_value(), min=0, max=5, step=0.1)
+
+card = Card("Set rating", content=Container([rate, input_num, btn]))
+```
+
+**Add functions to control widgets from python code**
+
+```python
+@btn.click
+def set_value_btn_click():
+    new_value = input_num.get_value()
+    rate.set_value(new_value)
+```
+
+**Create app**
+
+Prepare a layout for app using `Card` widget with the `content` parameter.
+
+```python
+layout = Container(widgets=[card])
+```
+
+Create an app object with layout parameter.
+
+```python
+app = sly.Application(layout=layout)
+```
+
+<p align="center">
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/0f9db62b-f3b3-4df4-bc43-df113e51fbeb" alt="layout" />
+</p>
+
+### Example 3
+
+**Initialize `Rate` widget**
+
+```python
+infos = ["oops", "disappointed", "normal", "good", "great"]
+colors = ["#656565", "#F7BA2A", "#F6568E"]
+rate = Rate(
+    texts=infos,
+    text_color="#656565",
+    show_text=True,
+    colors=colors,
+    void_color="#F6568E",
+)
+```
+
+**Prepare `Input`, `Field`, `Text`, `Button` and `Card` widgets we will use in this example**
+
+```python
+text_input = Input()
+text_field = Field(
+    content=text_input,
+    title="Enter texts for rate",
+    description="Enter 5 string values separated by commas",
+)
+text = Text(status="text")
+btn = Button("Set texts")
+
+
+card = Card(
+    "Rate",
+    content=Container([rate, text, text_field, btn]),
+)
+```
+
+**Add functions to control widgets from python code**
+
+```python
+@rate.value_changed
+def rate_changed(value):
+    text.text = f"Rate value: {value} stars"
+
+
+@btn.click
+def set_texts_btn_click():
+    text = text_input.get_value()
+    if len(text.split()) != 5:
+        return
+    rate.set_texts(text.split(", "))
+```
+
+**Create app**
+
+Prepare a layout for app using `Card` widget with the `content` parameter.
+
+```python
+layout = Container(widgets=[card])
+```
+
+Create an app object with layout parameter.
+
+```python
+app = sly.Application(layout=layout)
+```
+
+<p align="center">
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/e1660e25-7051-445c-bd36-f08c86a1080a" alt="layout" />
 </p>
