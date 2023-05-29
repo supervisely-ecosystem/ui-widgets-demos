@@ -135,11 +135,18 @@ table_data = {
     "-x^2": [-1, -4, -9],
 }
 
-table = Table(data=df)
-sample_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+tbl = Table(data=table_data)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+items = [
+    Collapse.Item(name="table", title="Collapse with text", content=text),
+    Collapse.Item(name="text", title="Collapse with table", content=tbl),
+    Collapse.Item(name="1", title="Random #1", content="Random #1"),
+    Collapse.Item(name="2", title="Random #2", content="Random #2"),
+]
+
 collapse = Collapse(
-    labels=["Collapse with text", "Collapse with table"],
-    contents=[sample_text, table],
+    items=items,
     accordion=False,
 )
 ```
