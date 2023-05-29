@@ -48,7 +48,7 @@ def show_active_item(value):
 
 @button.click
 def open_random_collapse():
-    panels = list(collapse._items_title)
+    panels = list(collapse.items_names)
     value = panels[random.randint(0, len(panels) - 1)]
     collapse.set_active_panel(value)
     text.text = f"Active item: {value}"
