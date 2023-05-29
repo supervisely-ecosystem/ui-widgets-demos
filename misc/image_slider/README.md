@@ -2,32 +2,39 @@
 
 ## Introduction
 
-**`ImageSlider`** widget in Supervisely is a simple widget that displays images using Slider, and is convenient to use when there is no need to add extra functions for displaying annotations or adjusting their settings, but only to display the images passed to it by list of urls or local pathes.
+**`ImageSlider`** widget in Supervisely is a simple widget that displays images using Slider and is convenient to use when there is no need to add extra functions for displaying annotations or adjusting their settings, but only to display the images passed to it by a list of URLs or local paths.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/imageslider)
+[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/controls/imageslider)
 
 ## Function signature
 
 ```python
-ImageSlider(data: List[str], height=200, selectable=False, preview_idx=0, preview_url=None, widget_id=None)
+ImageSlider(
+    data: List[str],
+    height=200,
+    selectable=False,
+    preview_idx=0,
+    preview_url=None,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/224553705-a6e109d5-f8cf-4243-b3f7-fb096bc2876e.png)
 
 ## Parameters
 
-|  Parameters   |    Type     |                Description                 |
-| :-----------: | :---------: | :----------------------------------------: |
-|    `data`     | `List[str]` |           Determine images list            |
-|   `height`    |    `int`    |              `Slider` height               |
-| `selectable`  |   `bool`    |           Allow to select image            |
-| `preview_idx` |    `int`    | Determine selected image index on `Slider` |
-| `preview_url` |    `str`    |  Determine selected image URL on `Slider`  |
-|  `widget_id`  |    `str`    |              ID of the widget              |
+|  Parameters   |    Type     |                        Description                        |
+| :-----------: | :---------: | :-------------------------------------------------------: |
+|    `data`     | `List[str]` |        List of image URLs for the `Slider` widget         |
+|   `height`    |    `int`    |               Height of the `Slider` widget               |
+| `selectable`  |   `bool`    | Determines whether image selection is enabled or disabled |
+| `preview_idx` |    `int`    |     Index of the initially selected image in `Slider`     |
+| `preview_url` |    `str`    |      URL of the initially selected image in `Slider`      |
+|  `widget_id`  |    `str`    |                     ID of the widget                      |
 
 ### data
 
-Determine images list.
+List of image URLs for the `Slider` widget.
 
 **type:** `List[str]`
 
@@ -47,7 +54,7 @@ image_slider = ImageSlider(data=image_urls)
 
 ### height
 
-Determine `Slider` height.
+Height of the `Slider` widget.
 
 **type:** `int`
 
@@ -61,7 +68,7 @@ image_slider = ImageSlider(data=image_urls, height=100)
 
 ### selectable
 
-Allow to select image.
+Determines whether image selection is enabled or disabled.
 
 **type:** `bool`
 
@@ -75,7 +82,7 @@ image_slider = ImageSlider(data=image_urls, selectable=True)
 
 ### preview_idx
 
-Determine selected image index on `Slider`, use only if `selectable` is `True`.
+Index of the initially selected image in `Slider`. Use only if `selectable` is `True`.
 
 **type:** `int`
 
@@ -89,7 +96,7 @@ image_slider = ImageSlider(data=image_urls, selectable=True, preview_idx=4)
 
 ### preview_url
 
-Determine selected image URL on `Slider`, use only if `selectable` is `True`.
+URL of the initially selected image in `Slider`. Use only if `selectable` is `True`.
 
 **type:** `str`
 
@@ -111,9 +118,20 @@ ID of the widget.
 
 **default value:** `None`
 
+|    Attributes and Methods     | Description                                                                     |
+| :---------------------------: | ------------------------------------------------------------------------------- |
+|      `get_preview_url()`      | Get URL of the selected image in the slider.                                    |
+| `set_preview_url(value: str)` | Sets URL of the image to be displayed as the preview image in the slider.       |
+|      `get_preview_idx()`      | Retrieves the index of the currently selected image in the slider.              |
+| `set_preview_idx(value: int)` | Sets the index of the image to be displayed as the preview image in the slider. |
+|        `is_selectable`        | Returns a boolean indicating whether image selection is enabled or disabled.    |
+|     `enable_selection()`      | Enables image selection.                                                        |
+|     `disable_selection()`     | Disables image selection.                                                       |
+|      `get_data_length()`      | Retrieves the length of the image URL list.                                     |
+
 ## Mini App Example
 
-You can find this example in our Github repository:
+You can find this example in our GitHub repository:
 
 [supervisely-ecosystem/ui-widgets-demos/misc/image_slider/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/image_slider/src/main.py)
 
@@ -167,7 +185,7 @@ buttons_container = Container(
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place 3 widgets that we've just created in the `Container` widget. Place order in the `Container` is important, we want buttons to be displayed above `Text` widget.
+Prepare a layout for the app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` widget. Place order in the `Container` is important, we want buttons to be displayed above the `Text` widget.
 
 ```python
 card = Card(
@@ -178,9 +196,9 @@ card = Card(
 layout = Container(widgets=[card])
 ```
 
-### Create app using layout
+### Create an app using the layout
 
-Create an app object with layout parameter.
+Create an app object with the layout parameter.
 
 ```python
 app = sly.Application(layout=layout)
@@ -188,9 +206,7 @@ app = sly.Application(layout=layout)
 
 Our app layout is ready. It's time to handle button clicks.
 
-### Handle button clicks
-
-Use the decorator as shown below to handle button click.
+### Add functions to control widgets from python code
 
 ```python
 @button_url.click
