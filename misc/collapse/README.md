@@ -151,6 +151,18 @@ collapse = Collapse(
 )
 ```
 
+If no elements are passed during initialization, then the Collapse will contain an empty element by default. To add new elements and delete the default one use `set_items` funciton.
+
+```python
+collapse = Collapse(accordion=False)
+items = []
+
+# code to create items
+# ...
+
+collapse.set_items(items) 
+```
+
 ### Create text widget and contol button
 
 This text widget will show the collapse widget's current active item(s).
