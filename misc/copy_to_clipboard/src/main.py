@@ -13,7 +13,6 @@ from supervisely.app.widgets import (
     Input,
 )
 
-
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
@@ -22,17 +21,29 @@ api = sly.Api()
 
 button_text = Button(text="Get text")
 
-editor = Editor('{ "value": 10 }', show_line_numbers=False)
-text = Text(text="some text", status="success")
-text_area = TextArea(value="some text " * 10)
-input = Input(value="Start input value", size="large")
+editor = Editor('{ "value": 10 }', show_line_numbers=True)
+text = Text(text="Text", status="success")
+text_area = TextArea(value="TextArea")
+input = Input(value="Input", size="large")
 string = "Only string"
 
-copytoclipboard = CopyToClipboard(content=input)
+copytoclipboard1 = CopyToClipboard(content=editor)
+copytoclipboard2 = CopyToClipboard(content=text)
+copytoclipboard3 = CopyToClipboard(content=text_area)
+copytoclipboard4 = CopyToClipboard(content=input)
+copytoclipboard5 = CopyToClipboard(content=string)
 
 card = Card(
     title="Copy To Clipboard",
-    content=Container([copytoclipboard]),
+    content=Container(
+        [
+            copytoclipboard1,
+            copytoclipboard2,
+            copytoclipboard3,
+            copytoclipboard4,
+            copytoclipboard5,
+        ]
+    ),
 )
 
 layout = Container(widgets=[card], direction="vertical")
