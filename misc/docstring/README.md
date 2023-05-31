@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you will learn how to use the `Docstring` widget in Supervisely app.
+In this tutorial, you will learn how to use the `Docstring` widget in the Supervisely app. The `Docstring` widget allows you to display a given docstring as HTML-formatted content.
 
 [Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/docstring)
 
