@@ -15,7 +15,7 @@ DistributedChart(
 )
 ```
 
-![default](plh)
+![default](https://github-production-user-asset-6210df.s3.amazonaws.com/118521851/242213978-50b2c027-8d6a-4958-b482-bcfe347aa203.png)
 
 ## Parameters
 
@@ -140,4 +140,4 @@ Create an app object with the layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![mini_app](plh)
+![mini_app](https://github-production-user-asset-6210df.s3.amazonaws.com/118521851/242213978-50b2c027-8d6a-4958-b482-bcfe347aa203.png)
