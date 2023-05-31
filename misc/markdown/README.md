@@ -2,25 +2,29 @@
 
 ## Introduction
 
-In this tutorial you will learn how to use `Markdown` widget in Supervisely app.
+The `Markdown` widget allows you to easily add and style your text using Markdown syntax. By using Markdown, you can add headings, lists, links, images, and more to enhance the presentation of your text content.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/markdown)
+[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/markdown)
 
 ## Function signature
 
 ```python
-Markdown(md="", height=300, widget_id=None)
+Markdown(
+    md="",
+    height=300,
+    widget_id=None,
+)
 ```
 
 ![default](https://user-images.githubusercontent.com/120389559/224316390-de355f21-bf5b-4dca-9619-43cc523562f9.png)
 
 ## Parameters
 
-| Parameters  | Type  |    Description     |
-| :---------: | :---: | :----------------: |
-|    `md`     | `str` | `Markdown` content |
-|  `height`   | `int` |  `Widget` height   |
-| `widget_id` | `str` |  Id of the widget  |
+| Parameters  | Type  |       Description       |
+| :---------: | :---: | :---------------------: |
+|    `md`     | `str` | `Markdown` content text |
+|  `height`   | `int` |     `Widget` height     |
+| `widget_id` | `str` |    ID of the widget     |
 
 ### md
 
@@ -79,7 +83,7 @@ import os, markdown
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Markdown, Button
+from supervisely.app.widgets import Card, Container, Flexbox, Markdown, Button
 ```
 
 ### Init API client
@@ -96,11 +100,10 @@ api = sly.Api()
 ### Initialize `Button` widgets, we will use
 
 ```python
-button_readme = Button(text="Set md readme")
 button_text = Button(text="Set md text")
 button_clean = Button(text="Clean md")
-buttons_container = Container(
-    widgets=[button_readme, button_text, button_clean], direction="horizontal")
+button_readme = Button(text="Set md readme")
+buttons_container = Flexbox(widgets=[button_text, button_clean, button_readme])
 ```
 
 ### Initialize `Markdown` widget
@@ -115,7 +118,7 @@ markdown = Markdown(md=md)
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for the app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
 card = Card(title="Markdown", content=Container([markdown, buttons_container]))
@@ -124,7 +127,7 @@ layout = Container(widgets=[card], direction="vertical")
 
 ### Create app using layout
 
-Create an app object with layout parameter.
+Create an app object with the layout parameter.
 
 ```python
 app = sly.Application(layout=layout)
@@ -133,19 +136,18 @@ app = sly.Application(layout=layout)
 ### Handle button clicks
 
 ```python
-@button_readme.click
-def gmail_content():
-    markdown.set_value(md)
-
-
 @button_text.click
-def google_content():
-    markdown.set_value("some markdown text")
+def simple_content():
+    markdown.set_value("### Title \n *some markdown text*")
 
 
 @button_clean.click
-def clear():
+def clear_content():
     markdown.set_value("")
+
+@button_readme.click
+def readme_content():
+    markdown.set_value(md)
 ```
 
 ![layout](https://user-images.githubusercontent.com/120389559/224319059-a601a2a4-fc67-4551-bf22-df3b621f9260.gif)
