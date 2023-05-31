@@ -33,21 +33,14 @@ th { text-align: left; }
 </body>
 </html>"""
 
-docstring_example_3 = pd.DataFrame(
-    {"Class name": ["Lemon", "kiwi"], "Images": [6, 6], "Labels": ["6", "20"]}
-)
 
 docstring_1 = Docstring(content=docstring_example_1)
 
 docstring_2 = Docstring()
 docstring_2.set_content(content=docstring_example_2, is_html=True)
-docstring_3 = Docstring()
-docstring_3.set_content(content=docstring_example_3, is_dataframe=True)
-
-# docstrings = Container([docstring_1, docstring_2, docstring_3])
 
 card_1 = Card(title="Docstring example 1", content=docstring_1)
-card_2 = Card(title="Docstring example 2", content=docstring_3)
-card_3 = Card(title="Docstring example 3", content=docstring_3)
-layout = Container(widgets=[card_1, card_2, card_3], direction="horizontal")
+card_2 = Card(title="Docstring example 2", content=docstring_2)
+
+layout = Container(widgets=[card_1, card_2])
 app = sly.Application(layout=layout)

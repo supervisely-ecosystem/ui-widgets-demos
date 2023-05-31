@@ -12,7 +12,6 @@ In this tutorial, you will learn how to use the `Docstring` widget in Supervisel
 Docstring(
     content="",
     is_html=False,
-    is_dataframe=False,
     widget_id=None,
 )
 ```
@@ -21,12 +20,11 @@ Docstring(
 
 ## Parameters
 
-|   Parameters   |            Type            |                       Description                        |
-| :------------: | :------------------------: | :------------------------------------------------------: |
-|   `content`    | `Union[str, pd.DataFrame]` |                      `HTML` content                      |
-|   `is_html`    |           `bool`           |   Determine if the given content has an `HTML` format    |
-| `is_dataframe` |           `bool`           | Determine if the given content has `pd.Dataframe` format |
-|  `widget_id`   |           `str`            |                     ID of the widget                     |
+| Parameters  |  Type  |                     Description                     |
+| :---------: | :----: | :-------------------------------------------------: |
+|  `content`  | `str`  |                   `HTML` content                    |
+|  `is_html`  | `bool` | Determine if the given content has an `HTML` format |
+| `widget_id` | `str`  |                  ID of the widget                   |
 
 ### content
 
@@ -56,23 +54,6 @@ docstring = Docstring(content="<h2>Some title</h2><p>some text</p>", is_html=Tru
 
 ![is_html](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/075be32a-8db7-45bb-bbe4-e800268f5391)
 
-### is_dataframe
-
-Determine if the given content has an `HTML` format.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-content = pd.DataFrame(
-    {"Class name": ["Lemon", "kiwi"], "Images": [6, 6], "Labels": ["6", "20"]}
-)
-docstring = Docstring(content=content, is_dataframe=True)
-```
-
-![is_dataframe](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/34b6c84a-d478-44a7-ab94-bdad28b4f879)
-
 ### widget_id
 
 ID of the widget.
@@ -83,11 +64,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                     Attributes and Methods                     | Description                |
-| :------------------------------------------------------------: | -------------------------- |
-| `set_content(content: str, is_html: bool, is_dataframe: bool)` | Set `Docstring` content    |
-|                        `get_content()`                         | Return `Docstring` content |
-|                           `clear()`                            | Clear `Docstring` content  |
+|           Attributes and Methods           | Description                |
+| :----------------------------------------: | -------------------------- |
+| `set_content(content: str, is_html: bool)` | Set `Docstring` content    |
+|              `get_content()`               | Return `Docstring` content |
+|                 `clear()`                  | Clear `Docstring` content  |
 
 ## Mini App Example
 
@@ -100,7 +81,6 @@ You can find this example in our Github repository:
 ```python
 import os
 
-import pandas as pd
 from dotenv import load_dotenv
 
 import supervisely as sly
@@ -121,9 +101,9 @@ api = sly.Api()
 
 ### Prepare contents for `Docstring` widget
 
-**You can use 3 types of content:**
+**You can use 2 types of content:**
 
-- raw docstring
+- raw docstring as a `str` type
 
 ```python
 docstring_example_1 = ImageApi.__doc__
@@ -151,14 +131,6 @@ th { text-align: left; }
 </html>"""
 ```
 
-- pd.Dataframe format
-
-```py
-docstring_example_3 = pd.DataFrame(
-    {"Class name": ["Lemon", "kiwi"], "Images": [6, 6], "Labels": ["6", "20"]}
-)
-```
-
 ### Initialize `Docstring` widgets and set content types and values
 
 ```python
@@ -166,8 +138,6 @@ docstring_1 = Docstring(content=docstring_example_1)
 
 docstring_2 = Docstring()
 docstring_2.set_content(content=docstring_example_2, is_html=True)
-docstring_3 = Docstring()
-docstring_3.set_content(content=docstring_example_3, is_dataframe=True)
 ```
 
 ### Create app layout
@@ -176,10 +146,9 @@ Prepare a layout for the app using `Card` widget with the `content` parameter an
 
 ```python
 card_1 = Card(title="Docstring example 1", content=docstring_1)
-card_2 = Card(title="Docstring example 2", content=docstring_3)
-card_3 = Card(title="Docstring example 3", content=docstring_3)
+card_2 = Card(title="Docstring example 2", content=docstring_2)
 
-layout = Container(widgets=[card_1, card_2, card_3], direction="horizontal")
+layout = Container(widgets=[card_1, card_2])
 ```
 
 ### Create app using layout
@@ -190,4 +159,4 @@ Create an app object with the layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/2b6ed063-7a7b-4d27-a68b-76d308c39c74)
+![layout](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/12865031-2274-426c-98fa-48bf21de5941)
