@@ -10,7 +10,7 @@
 
 ```python
 TreemapChart(
-    title="Distributed Chart",
+    title="Treemap Chart",
     colors=None,
     tooltip=None,
 )
@@ -44,7 +44,7 @@ The colors should be in `hex` format (e.g. `#ff0000`).
 ```python
 colors = ["#ff0000", "#00ff00", "#0000ff"]
 chart = TreemapChart(
-    title="Distributed Chart",
+    title="Treemap Chart",
     colors=colors,
 )
 ```
@@ -63,7 +63,7 @@ If not specified, the default tooltip will be used (e.g. `name: value`)
 ```python
 tooltip = "This is the name: {x}, this is the value: {y}"
 chart = TreemapChart(
-    title="Distributed Chart",
+    title="Treemap Chart",
     tooltip=tooltip,
 )
 ```
@@ -82,7 +82,7 @@ chart = TreemapChart(
 
 You can find this example in our GitHub repository:
 
-[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/008_distribured_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/008_distributed_chart/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/008_treemap_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/008_treemap_chart/src/main.py)
 
 ### Import libraries
 
@@ -117,7 +117,7 @@ colors = [
 # Tooltip is optional. If not specified, the default tooltip will be used.
 tooltip = "This is the name: {x}, this is the value: {y}"
 
-tc = TreemapChart(title="Distributed Chart", colors=colors, tooltip=tooltip)
+tc = TreemapChart(title="Treemap Chart", colors=colors, tooltip=tooltip)
 ```
 
 ### Prepare names and values for series
