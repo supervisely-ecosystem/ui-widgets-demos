@@ -22,7 +22,7 @@ colors = [
     "#F86624",
 ]
 
-dc = DistributedChart(title="Distributed Chart", colors=colors)
+dc = DistributedChart(title="Distributed Chart")
 
 card = Card("Distributed Chart", content=dc)
 
@@ -30,7 +30,7 @@ names1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 values1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 names2 = ["name1", "name1", "name1", "name4", "name5"]
-values2 = [1, 2, 3, 4, 5]
+values2 = [1.2, 2.1, 3.7, 4, 5]
 
 
 dc.set_series(names2, values2)
