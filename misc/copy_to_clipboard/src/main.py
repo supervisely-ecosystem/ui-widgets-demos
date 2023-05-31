@@ -28,9 +28,9 @@ input = Input(value="Input", size="large")
 string = "Only string"
 
 copytoclipboard1 = CopyToClipboard(content=editor)
-copytoclipboard2 = CopyToClipboard(content=text)
-copytoclipboard3 = CopyToClipboard(content=text_area)
-copytoclipboard4 = CopyToClipboard(content=input)
+copytoclipboard2 = CopyToClipboard(content=input)
+copytoclipboard3 = CopyToClipboard(content=text)
+copytoclipboard4 = CopyToClipboard(content=text_area)
 copytoclipboard5 = CopyToClipboard(content=string)
 
 card = Card(
@@ -48,3 +48,11 @@ card = Card(
 
 layout = Container(widgets=[card], direction="vertical")
 app = sly.Application(layout=layout)
+
+print(
+                copytoclipboard1.text,
+            copytoclipboard2.text,
+            copytoclipboard3.text,
+            copytoclipboard4.text,
+            copytoclipboard5.text,
+)
