@@ -4,7 +4,7 @@
 
 `CopyToClipboard` widget allows you to wrap your widgets (`Editor`, `Text`, `TextArea`, or `Input`) and `str` text with a copy button. This enables you to easily obtain the value of the wrapped content and copy it to your clipboard.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard)
+<!-- [Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard) -->
 
 ## Function signature
 
