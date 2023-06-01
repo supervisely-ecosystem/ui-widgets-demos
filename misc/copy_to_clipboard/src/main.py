@@ -33,6 +33,7 @@ copytoclipboard3 = CopyToClipboard(content=text)
 copytoclipboard4 = CopyToClipboard(content=text_area)
 copytoclipboard5 = CopyToClipboard(content=string)
 
+button = Button()
 card = Card(
     title="Copy To Clipboard",
     content=Container(
@@ -42,17 +43,10 @@ card = Card(
             copytoclipboard3,
             copytoclipboard4,
             copytoclipboard5,
+            button,
         ]
     ),
 )
 
 layout = Container(widgets=[card], direction="vertical")
 app = sly.Application(layout=layout)
-
-print(
-                copytoclipboard1.text,
-            copytoclipboard2.text,
-            copytoclipboard3.text,
-            copytoclipboard4.text,
-            copytoclipboard5.text,
-)
