@@ -8,7 +8,7 @@ load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
-team_id = int(os.environ["modal.state.slyTeamId"])
+team_id = sly.env.team_id()
 
 path = "/"  # root of Team Files or specify your directory
 
@@ -24,16 +24,23 @@ selected_values = Text()
 curr_path = Text()
 
 layout = Card(
-    content=Container(widgets=[curr_path, selected_values, file_viewer]), title="File Viewer"
+    content=Container(widgets=[curr_path, selected_values, file_viewer]),
+    title="File Viewer",
 )
 app = sly.Application(layout=layout)
 
 
 @file_viewer.path_changed
 def refresh_tree(current_path):
-    curr_path.set(text=f"Current path: {current_path}", status="text")
+    curr_path.set(
+        text=f"Current path: {current_path}",
+        status="text",
+    )
 
 
 @file_viewer.value_changed
 def print_selected(selected_items):
-    selected_values.set(text=f"Selected items: {', '.join(selected_items)}", status="text")
+    selected_values.set(
+        text=f"Selected items: {', '.join(selected_items)}",
+        status="text",
+    )

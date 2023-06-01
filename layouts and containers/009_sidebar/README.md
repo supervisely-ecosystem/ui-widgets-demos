@@ -1,4 +1,4 @@
-# Siderbar
+# Sidebar
 
 ## Introduction
 
