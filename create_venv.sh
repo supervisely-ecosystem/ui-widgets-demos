@@ -10,7 +10,7 @@ if [ -d ".venv" ]; then
 fi
 
 echo "VENV will be created" && \
-python -m venv .venv && \
+python3 -m venv .venv && \
 source .venv/bin/activate && \
 
 echo "Install requirements..." && \
