@@ -6,7 +6,6 @@ from supervisely.app.widgets import (
     Card,
     Container,
     CopyToClipboard,
-    Button,
     Editor,
     Text,
     TextArea,
@@ -19,7 +18,6 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-button_text = Button(text="Get text")
 
 editor = Editor('{ "value": 10 }', show_line_numbers=True)
 text = Text(text="Text", status="success")
@@ -33,7 +31,6 @@ copytoclipboard3 = CopyToClipboard(content=text)
 copytoclipboard4 = CopyToClipboard(content=text_area)
 copytoclipboard5 = CopyToClipboard(content=string)
 
-button = Button()
 card = Card(
     title="Copy To Clipboard",
     content=Container(
@@ -43,10 +40,9 @@ card = Card(
             copytoclipboard3,
             copytoclipboard4,
             copytoclipboard5,
-            button,
         ]
     ),
 )
-
 layout = Container(widgets=[card], direction="vertical")
+
 app = sly.Application(layout=layout)
