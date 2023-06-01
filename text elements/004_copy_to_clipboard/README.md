@@ -69,7 +69,6 @@ from supervisely.app.widgets import (
     Card,
     Container,
     CopyToClipboard,
-    Button,
     Editor,
     Text,
     TextArea,
