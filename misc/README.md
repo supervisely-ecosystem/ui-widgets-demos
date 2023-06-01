@@ -7,3 +7,4 @@
 5. [File Viewer](005_file_viewer/README.md)
 6. [Train val splits](006_train_val_splits/README.md)
 7. [File storage upload](007_file_storage_upload/README.md)
+8. [Team files selector](008_team_files_selector/README.md)

@@ -93,7 +93,7 @@ image_3 = Image(
 )
 ```
 
-Prepare items for `Select` widget using `Select.Item`. [Learn more](https://github.com/supervisely-ecosystem/ui-widgets-demos/tree/master/009_select)
+Prepare items for `Select` widget using `Select.Item`. [Learn more](https://github.com/supervisely-ecosystem/ui-widgets-demos/tree/master/selection/001_select)
 
 ```python
 items = [
