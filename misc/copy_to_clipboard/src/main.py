@@ -19,11 +19,11 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 
-editor = Editor('{ "value": 10 }', show_line_numbers=True)
+editor = Editor('{ "Editor": 42 }', show_line_numbers=True)
+input = Input(value="Input", size="large")
 text = Text(text="Text", status="success")
 text_area = TextArea(value="TextArea")
-input = Input(value="Input", size="large")
-string = "Only string"
+string = "Some string"
 
 copytoclipboard1 = CopyToClipboard(content=editor)
 copytoclipboard2 = CopyToClipboard(content=input)

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-`CopyToClipboard` widget allows you to wrap your widget with copy button.
+`CopyToClipboard` widget allows you to wrap your widgets (`Editor`, `Text`, `TextArea`, or `Input`) and `str` text with a copy button. This enables you to easily obtain the value of the wrapped content and copy it to your clipboard.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard)
+[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard)
 
 ## Function signature
 
@@ -15,7 +15,7 @@ CopyToClipboard(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/224316390-de355f21-bf5b-4dca-9619-43cc523562f9.png)
+![default](https://github.com/supervisely/developer-portal/assets/78355358/473d4b89-11c1-4e10-99be-027b4d1f78d7)
 
 ## Parameters
 
@@ -33,10 +33,10 @@ Determine input `CopyToClipboard` content.
 **default value:** `""`
 
 ```python
-copy_to_clipboard = CopyToClipboard(content="Some Text")
+copy_to_clipboard = CopyToClipboard(content="Some text to copy ")
 ```
 
-![content](https://user-images.githubusercontent.com/120389559/224316855-4dd7d72a-3818-44f5-bc74-7a83ac1a82ab.png)
+![content](https://github.com/supervisely/developer-portal/assets/78355358/983984a7-3bdd-4567-9c40-987653c01065)
 
 ### widget_id
 
@@ -48,22 +48,20 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods  | Description               |
-| :---------------------: | ------------------------- |
-|    `get_json_data()`    | Get data in dict format.  |
-|    `get_json_state()`   | Get state in dict format. |
-|     `get_content()`     | Return wrapped content.   |
+| Attributes and Methods  | Description                                   |
+| :---------------------: | --------------------------------------------- |
+|     `get_content()`     | Return wrapped content (i.e. widget or `str`) |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/copy_to_clipboard/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/copy_to_clipboard/src/main.py)s
+[supervisely-ecosystem/ui-widgets-demos/misc/copy_to_clipboard/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/copy_to_clipboard/src/main.py)
 
 ### Import libraries
 
 ```python
-import os, markdown
+import os
 
 import supervisely as sly
 from dotenv import load_dotenv
@@ -93,11 +91,11 @@ api = sly.Api()
 ### Initialize different inputs
 
 ```python
-editor = Editor('{ "value": 10 }', show_line_numbers=True)
+editor = Editor('{ "Editor": 42 }', show_line_numbers=True)
+input = Input(value="Input", size="large")
 text = Text(text="Text", status="success")
 text_area = TextArea(value="TextArea")
-input = Input(value="Input", size="large")
-string = "Only string"
+string = "Some string"
 
 copytoclipboard1 = CopyToClipboard(content=editor)
 copytoclipboard2 = CopyToClipboard(content=input)
@@ -108,7 +106,7 @@ copytoclipboard5 = CopyToClipboard(content=string)
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for an app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
 card = Card(
@@ -126,12 +124,12 @@ card = Card(
 layout = Container(widgets=[card], direction="vertical")
 ```
 
-### Create app using layout
+### Create an app using a layout
 
-Create an app object with layout parameter.
+Create an app object with a layout parameter.
 
 ```python
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/224319059-a601a2a4-fc67-4551-bf22-df3b621f9260.gif)
+![layout](https://github.com/supervisely/developer-portal/assets/78355358/77c72255-e912-4cba-9fb3-94f695d233e0)
