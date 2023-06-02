@@ -4,7 +4,7 @@
 
 `CopyToClipboard` widget allows you to wrap your widgets (`Editor`, `Text`, `TextArea`, or `Input`) and `str` text with a copy button. This enables you to easily obtain the value of the wrapped content and copy it to your clipboard.
 
-<!-- [Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/сopyеoсlipboard) -->
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/copytoclipboard)
 
 ## Function signature
 
@@ -33,7 +33,7 @@ Determine input `CopyToClipboard` content.
 **default value:** `""`
 
 ```python
-copy_to_clipboard = CopyToClipboard(content="Some text to copy ")
+copy_to_clipboard = CopyToClipboard(content="Some text to copy")
 ```
 
 ![content](https://github.com/supervisely/developer-portal/assets/78355358/983984a7-3bdd-4567-9c40-987653c01065)
@@ -56,7 +56,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/copy_to_clipboard/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/copy_to_clipboard/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/text elements/004_copy_to_clipboard/src/main.py](<https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text elements/004_copy_to_clipboard/src/main.py>)
 
 ### Import libraries
 
