@@ -198,6 +198,8 @@ app = sly.Application(layout=layout)
 def show_active_item(value):
     if isinstance(value, list):
         act_items = ", ".join(value)
+    else:
+        act_items = value
     text.text = f"Active item: {act_items}"
 ```
 
