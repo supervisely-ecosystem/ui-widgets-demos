@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Empty, Menu, Select, Text
+from supervisely.app.widgets import DoneLabel, Empty, Menu, Text
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
@@ -10,23 +10,21 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-l = Text(text="left part", status="success")
-items = [
-    Select.Item(label="CPU", value="cpu"),
-    Select.Item(label="GPU 0", value="cuda:0"),
-    Select.Item(value="option3"),
-]
-r = Select(items=items, filterable=True, placeholder="select me")
+text = Text(text="text", status="success")
+done_label = DoneLabel("done")
 
 g1_items = [
-    Menu.Item(title="m1", content=r),
-    Menu.Item(title="m2", content=l),
+    Menu.Item(title="menu item 1", content=text),
+    Menu.Item(title="menu item 2", content=done_label),
 ]
+
 g2_items = [
-    Menu.Item(title="m3", content=Empty()),
-    Menu.Item(title="m4"),
+    Menu.Item(title="menu item 3", content=Empty()),
+    Menu.Item(title="menu item 4"),
 ]
-g1 = Menu.Group("g1", g1_items)
-g2 = Menu.Group("g2", g2_items)
-menu = Menu(groups=[g1, g2])
+group_1 = Menu.Group("group 1", g1_items)
+group_2 = Menu.Group("group 2", g2_items)
+
+menu = Menu(groups=[group_1, group_2])
+
 app = sly.Application(layout=menu)

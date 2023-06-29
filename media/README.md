@@ -5,3 +5,4 @@
 3. [GridGallery](003_grid_gallery/README.md)
 4. [Video](004_video/README.md)
 5. [VideoPlayer](005_video_player/README.md)
+6. [ImageRegionSelector](006_image_region_selector/README.md)

@@ -20,19 +20,22 @@ x2 = list(range(size2))
 y2 = np.random.randint(low=0, high=300, size=size2).tolist()
 s2 = [{"x": x, "y": y} for x, y in zip(x2, y2)]
 
-data_max = {"title": "Max", "series": [{"name": "Max", "data": s1}]}
+data_1 = {
+    "title": "Line 1",
+    "series": [{"name": "Line 1", "data": s1}],
+}
 
-data_denis = {
-    "title": "Denis",
-    "series": [{"name": "Denis", "data": s2}],
+data_2 = {
+    "title": "Line 2",
+    "series": [{"name": "Line 2", "data": s2}],
 }
 
 data_all = {
-    "title": "Max vs Denis",
-    "series": [{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    "title": "All lines",
+    "series": [{"name": "Line 1", "data": s1}, {"name": "Line 2", "data": s2}],
 }
 
-grid_plot = GridPlot(data=[data_max, data_denis, data_all], columns=2)
+grid_plot = GridPlot(data=[data_1, data_2, data_all], columns=3)
 
 card = Card(
     title="GridPlot",

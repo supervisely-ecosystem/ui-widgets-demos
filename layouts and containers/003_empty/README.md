@@ -2,14 +2,11 @@
 
 ## Introduction
 
-**`Empty`** widget is a simple placeholder widget that can be used to create empty spaces within a layout. 
+**`Empty`** widget is a simple placeholder widget that can be used to create empty spaces within a layout.
 
 It has no content or functionality of its own and is typically used to provide spacing or alignment within a larger widget or layout. This widget is particularly useful for creating clean, organized interfaces with clearly defined sections and layouts.
 
-
-
-
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/empty)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/empty)
 
 ## Function signature
 
@@ -19,9 +16,9 @@ empty = Empty(widget_id=None)
 
 ## Parameters
 
-| Parameters | Type |   Description    |
-| :--------: | :--: | :--------------: |
-| `widget_id`  | `str`  | ID of the widget |
+| Parameters  | Type  |   Description    |
+| :---------: | :---: | :--------------: |
+| `widget_id` | `str` | ID of the widget |
 
 ### widget_id
 
@@ -35,7 +32,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/022_empty/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/022_empty/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/layouts-and-containers/003_empty/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/layouts-and-containers/003_empty/src/main.py)
 
 ### Import libraries
 
@@ -64,9 +61,9 @@ api = sly.Api()
 empty = Empty()
 ```
 
-### Prepare some widgets 
+### Prepare some widgets
 
-> This widget is useful in other widgets, for example,  `Select.Item`
+> This widget is useful in other widgets, for example, `Select.Item`
 
 ```python
 text = Text("Some text")
@@ -100,5 +97,7 @@ app = sly.Application(layout=layout)
 
 In this video demonstrated `Empty` (invisible) and `Text` widgets that we used in `Select` widget.
 
-![empty-app](https://user-images.githubusercontent.com/79905215/219017739-1dc185a9-bb16-489a-b412-2dda94294398.gif)
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/223943970-f4338bd1-0f2b-4f6b-96d5-c2a3086aca0c.gif" alt="layout" />
+</p>

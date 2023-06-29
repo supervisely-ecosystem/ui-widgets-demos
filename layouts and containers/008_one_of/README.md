@@ -2,9 +2,9 @@
 
 ## Introduction
 
-**`OneOf`**  is a container widget that can hold one of several child widgets, such as `Radio`, `Select`, or `Switch`. Depending on the value selected by the user within these child widgets, the corresponding item will be added to the page markup. It is very convenient for those who are involved in object annotation on images, as it allows them to quickly switch between different types of annotation without losing sight of the overall picture.
+**`OneOf`**  is a container widget that can hold one of several child widgets, such as `Radio`, `Select`, or `Switch`. Depending on the value selected by the user within these child widgets, the corresponding item will be added to the page markup. It is very convenient to quickly switch between different items without losing sight of the overall picture.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/one-of)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/oneof)
 
 ## Function signature
 
@@ -51,7 +51,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/017_one_of/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/017_one_of/src/main.py)
+[supervisely-ecosystem/ui-widgets-demoslayouts-and-containers/008_one_of/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/layouts-and-containers/008_one_of/src/main.py)
 
 ### Import libraries
 
@@ -93,7 +93,7 @@ image_3 = Image(
 )
 ```
 
-Prepare items for `Select` widget using `Select.Item`. [Learn more](https://github.com/supervisely-ecosystem/ui-widgets-demos/tree/master/009_select)
+Prepare items for `Select` widget using `Select.Item`. [Learn more](https://github.com/supervisely-ecosystem/ui-widgets-demos/tree/master/selection/001_select)
 
 ```python
 items = [
@@ -137,4 +137,6 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![one-of-gif](https://user-images.githubusercontent.com/79905215/218269955-86b5bb95-f242-4e05-9bc6-be86e633f2b1.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/218269955-86b5bb95-f242-4e05-9bc6-be86e633f2b1.gif" alt="layout" />
+</p>

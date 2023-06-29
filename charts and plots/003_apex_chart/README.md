@@ -7,7 +7,7 @@ It supports various chart types such as `line`, `area`, and `bar`. Users can cus
 
 It also provides functionality for data streaming and dynamic updates, allowing the chart to display real-time data. The data can be passed to the chart in the form of a pandas dataframe or a Python list of dictionaries. Additionally, users can control the chart through Python code by detecting events such as clicking on a data point or hovering over a chart element.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/apexchart)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/apexchart)
 
 ## Function signature
 
@@ -181,7 +181,7 @@ Additional options used in supervisely component.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/031_apex_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/031_apex_chart/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/charts-and-plots/003_apex_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts-and-plots/003_apex_chart/src/main.py)
 
 ### Import libraries
 
@@ -270,4 +270,7 @@ def show_info(datapoint: sly.app.widgets.Apexchart.ClickedDataPoint):
         info_text.status = "info"
 ```
 
-![apexchart-app](https://user-images.githubusercontent.com/79905215/219078786-cad6ad14-4524-4cea-a7f6-4baade4b3eba.gif)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79905215/219078786-cad6ad14-4524-4cea-a7f6-4baade4b3eba.gif" alt="layout" />
+</p>

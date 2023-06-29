@@ -11,7 +11,8 @@ The `Select` widget has event handler that is triggered when the user selects an
 
 ```python
 Select(
-    items=None, groups=None,
+    items=None, 
+    groups=None,
     filterable=False,
     placeholder="select",
     size=None,

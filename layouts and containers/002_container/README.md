@@ -6,13 +6,20 @@
 
 However, `Container` widget does not have any specific functionality on its own but serves as a wrapper for other widgets.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/container)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/container)
 
 ## Function signature
 
 ```python
-container = Container(widgets=[button_1, button_2])
+container = Container(
+    widgets=[],
+    direction="vertical",
+    gap=10,
+    fractions=None,
+    widget_id=None
+)
 ```
+
 
 ## Parameters
 
@@ -64,7 +71,10 @@ Gap between widgets in container
 **default** `10`
 
 ```python
-container = Container(widgets=[Input(), Input(), Input()], gap=25)
+container = Container(
+    widgets=[Input(), Input(), Input()],
+    gap=25,
+)
 ```
 
 ![container-gap](https://user-images.githubusercontent.com/79905215/220127050-fa283570-2fce-4f92-9599-9c21e83fdcaf.png)
@@ -92,7 +102,7 @@ container = Container(
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/034_container/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/034_container/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/layouts-and-containers/002_container/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/layouts-and-containers/002_container/src/main.py)
 
 ### Import libraries
 

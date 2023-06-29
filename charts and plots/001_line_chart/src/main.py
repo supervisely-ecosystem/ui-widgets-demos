@@ -23,8 +23,10 @@ s2 = [{"x": x, "y": y} for x, y in zip(x2, y2)]
 
 line_chart = LineChart(
     title="Max vs Denis",
-    series=[{"name": "Max", "data": s1}, {"name": "Denis", "data": s2}],
+    series=[{"name": "Max", "data": s1}],
     xaxis_type="category",
+    yaxis_title="sales",
+    height=250
 )
 
 row_id = 1
@@ -32,13 +34,13 @@ columns = ["id", "Line", "x", "y"]
 result_table = Table(data=[], columns=columns, width="25%")
 
 
-container = Container(widgets=[line_chart, result_table])
+container = Container(widgets=[line_chart])
 card = Card(title="Line Chart", content=container)
 app = sly.Application(layout=card)
 
 
 @line_chart.click
-def add_row_to_table(datapoint: sly.app.widgets.LineChart.ClickedDataPoint):
+def add_row_to_table(datapoint: LineChart.ClickedDataPoint):
     global row_id
     row = [row_id, datapoint.series_name, datapoint.x, datapoint.y]
     row_id += 1
