@@ -11,10 +11,10 @@ The **`TaskLogs`** widget in Supervisely is designed to display task logs for a 
 ## Function signature
 
 ```python
-TaskLogs(task_id=None, multiple=False, filterable=True, widget_id=None)
+TaskLogs(task_id=None, widget_id=None)
 ```
 
-![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/76cb5208-bcb1-42b2-bbf5-033fb8b63d7c)
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/619dfbce-8ac6-44ec-b52a-15f675e74dfa)
 
 ## Parameters
 
@@ -56,7 +56,7 @@ You can find this example in our Github repository:
 
 ```python
 import supervisely as sly
-from supervisely.app.widgets import Card, Container, TaskLogs
+from supervisely.app.widgets import Button, Card, Container, InputNumber, TaskLogs
 ```
 
 > ℹ️ This widget will display logs passed by the session ID **only in production**. In development mode, the message _"You are currently in development mode. Task logs will be displayed only in production mode."_ will be displayed.
@@ -66,15 +66,21 @@ from supervisely.app.widgets import Card, Container, TaskLogs
 ```python
 task_id = 36925
 
-logs = TaskLogs()
-logs.set_task_id(task_id)
+logs = TaskLogs(task_id)
 ```
 
 or
 
 ```python
-logs = TaskLogs(task_id)
+logs = TaskLogs()
+logs.set_task_id(task_id)
+```
 
+### Add `Button` and `InputNumber` widgets to use in demo
+
+```python
+btn = Button("Set task id", button_size="small")
+input_task_id = InputNumber(size="small", controls=False)
 ```
 
 ### Create app layout
@@ -82,7 +88,8 @@ logs = TaskLogs(task_id)
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
 
 ```python
-card = Card(title="Logs", content=logs)
+container = Container(widgets=[input_task_id, btn, logs])
+card = Card(content=container, title="Logs")
 layout = Container(widgets=[card])
 ```
 
@@ -94,9 +101,18 @@ Create an app object with `layout` parameter.
 app = sly.Application(layout=layout)
 ```
 
+### Add function to controls widgets from python code
+
+```python
+@btn.click
+def set_task_id():
+    task_id = int(input_task_id.get_value())
+    logs.set_task_id(task_id)
+```
+
 <p align="center">
     <video preload="none" playsinline="" autoplay="autoplay" muted="muted" loop="loop" width="1200">
-        <source src=https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/a59bde9e-4120-43e9-9219-5cb4d5d03843" type="video/webm"> 
-        <source src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/4ece99d2-89b9-44b9-8f32-5a05ff918417" type="video/mp4">
+        <source src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/aea8cd9f-2add-4f61-bf27-50d23386faab" type="video/webm"> 
+        <source src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/e49bed0a-3b51-4a91-b9e4-9bf10d96db67" type="video/mp4">
     </video>
 </p>
