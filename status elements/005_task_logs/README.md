@@ -71,7 +71,7 @@ from supervisely.app.widgets import Button, Card, Container, InputNumber, TaskLo
  > ℹ️ This widget will display logs only when the application with the widget is released **in production**.
  > In development mode, a message will be shown: `"You are currently in development mode. Task logs will be displayed only in production mode."`
 
-### Initialize `TaskLogs` widgets we will use in UI
+### Initialize `TaskLogs` widget we will use in UI
 
 ```python
 task_id = 36925
