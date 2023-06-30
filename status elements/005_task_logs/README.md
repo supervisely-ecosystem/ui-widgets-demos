@@ -23,13 +23,21 @@ TaskLogs(task_id=None, widget_id=None)
 |  `task_id`  | `int` | The task ID to display logs for |
 | `widget_id` | `str` |        ID of the widget         |
 
-### url
+### task_id
 
 The task ID to display logs for.
 
 **type:** `str`
 
 **default value:** `None`
+
+```python
+task_id = 36926
+logs = TaskLogs(task_id)
+```
+
+![default_with_logs](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/2a616b26-af64-4608-8fc3-6ff5476cda7c)
+
 
 ### widget_id
 
