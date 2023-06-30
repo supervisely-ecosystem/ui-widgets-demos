@@ -4,9 +4,8 @@
 
 The **`TaskLogs`** widget in Supervisely is designed to display task logs for a given task ID.
 
- > ℹ️ This widget will display logs only when the application with the widget is released **in production**. 
- 
- >In development mode, a message will be shown: `"You are currently in development mode. Task logs will be displayed only in production mode."`
+ > ℹ️ This widget will display logs only when the application with the widget is released **in production**.
+ > In development mode, a message will be shown: `"You are currently in development mode. Task logs will be displayed only in production mode."`
 
 [Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/tasklogs)
 
@@ -69,7 +68,7 @@ import supervisely as sly
 from supervisely.app.widgets import Button, Card, Container, InputNumber, TaskLogs
 ```
 
- > ℹ️ This widget will display logs only when the application with the widget is released **in production**. 
+ > ℹ️ This widget will display logs only when the application with the widget is released **in production**.
  > In development mode, a message will be shown: `"You are currently in development mode. Task logs will be displayed only in production mode."`
 
 ### Initialize `TaskLogs` widgets we will use in UI
