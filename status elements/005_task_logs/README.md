@@ -121,8 +121,5 @@ def set_task_id():
 ```
 
 <p align="center">
-    <video preload="none" playsinline="" autoplay="autoplay" muted="muted" loop="loop" width="1200">
-        <source src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/aea8cd9f-2add-4f61-bf27-50d23386faab" type="video/webm"> 
-        <source src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/e49bed0a-3b51-4a91-b9e4-9bf10d96db67" type="video/mp4">
-    </video>
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/d3b88741-736d-458c-8c0a-cdd3613bc10a" alt="layout" />
 </p>
