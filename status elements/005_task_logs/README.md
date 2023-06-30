@@ -121,5 +121,5 @@ def set_task_id():
 ```
 
 <p align="center">
-  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/d3b88741-736d-458c-8c0a-cdd3613bc10a" alt="layout" />
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/7d158697-71ff-430b-a21f-e7965b9a308c" alt="layout" />
 </p>
