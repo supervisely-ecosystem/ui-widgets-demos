@@ -62,10 +62,10 @@ reloadable_area = ReloadableArea(widget_id="reloadable_area")
 
 ## Methods and attributes
 
-|        Methods and attributes        |                      Description                       |
-| :----------------------------------: | :----------------------------------------------------: |
-| `set_content(self, content: Widget)` | Replaces content of the ReloadableArea with new widget |
-|              `reload()`              | Reloads the content of the ReloadableArea widget in UI |
+|     Methods and attributes     |                      Description                       |
+| :----------------------------: | :----------------------------------------------------: |
+| `set_content(content: Widget)` | Replaces content of the ReloadableArea with new widget |
+|           `reload()`           | Reloads the content of the ReloadableArea widget in UI |
 
 ## Mini app example
 
