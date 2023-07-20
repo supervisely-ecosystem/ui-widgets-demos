@@ -28,13 +28,14 @@ image_url_3 = image_info_3.preview_url
 # initialize widget we will use in UI
 image_1 = Image(image_url_1)
 image_2 = Image(image_url_2)
-image_3 = Image(image_url_3)
+image_3 = Image(image_url_3, width="25%")
 
 # add local image
 local_image_url = "/static/my-cats.jpg"
 
 # initialize widget
 local_image = Image(local_image_url)
+local_image.set_image_size(width="25%")
 
 # create new card
 card = Card(
