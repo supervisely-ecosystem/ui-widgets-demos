@@ -4,10 +4,6 @@ import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairsSequence, Text
 
-import supervisely as sly
-from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairsSequence, Text
-
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
