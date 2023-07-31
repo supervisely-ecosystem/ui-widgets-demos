@@ -16,9 +16,8 @@ project_id = sly.env.project_id()
 dataset_id = sly.env.dataset_id()
 project_meta = sly.ProjectMeta.from_json(data=api.project.get_meta(id=project_id))
 
-data_dir = sly.app.get_data_dir()
-team = api.team.get_info_by_id(sly.env.team_id())
 
+data_dir = sly.app.get_data_dir()
 static_dir = os.path.join(data_dir, "static")
 if not os.path.exists(static_dir):
     os.makedirs(static_dir)
