@@ -102,7 +102,7 @@ def pair_btn_click_handler():
     left = get_next_prediction("left")
     right = get_next_prediction("right")
     if left[0] is not None and right[0] is not None:
-        image_pairs_sequence.set_pair(left=left, right=right)
+        image_pairs_sequence.append_pair(left=left, right=right)
 
 
 @pairs_batch_btn.click
@@ -119,21 +119,21 @@ def pairs_batch_btn_click_handler():
             rights.append(right)
 
     if len(lefts) > 0 and len(rights) > 0:
-        image_pairs_sequence.set_pairs_batch(lefts, rights)
+        image_pairs_sequence.extend_pairs(lefts, rights)
 
 
 @left_btn.click
 def left_btn_click_handler():
     url, ann, title = get_next_prediction("left")
     if url is not None:
-        image_pairs_sequence.set_left(url, ann, title)
+        image_pairs_sequence.append_left(url, ann, title)
 
 
 @right_btn.click
 def right_btn_click_handler():
     url, ann, title = get_next_prediction("right")
     if url is not None:
-        image_pairs_sequence.set_right(url, ann, title)
+        image_pairs_sequence.append_right(url, ann, title)
 
 
 @left_three_btn.click
@@ -148,7 +148,7 @@ def left_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.set_left_batch(urls=urls, anns=anns, titles=titles)
+        image_pairs_sequence.extend_left(urls=urls, anns=anns, titles=titles)
 
 
 @right_three_btn.click
@@ -163,7 +163,7 @@ def right_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.set_right_batch(urls=urls, anns=anns, titles=titles)
+        image_pairs_sequence.extend_right(urls=urls, anns=anns, titles=titles)
 
 
 @clean_btn.click

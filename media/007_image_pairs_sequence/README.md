@@ -106,12 +106,12 @@ ID of the widget.
 
 |                                        Attributes and Methods                                         | Description                                                                                          |
 | :---------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------- |
-|                         `set_left(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation and title to display on the left side of `ImagePairsSequence`.            |
-|                        `set_right(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation aand title to display on the right side of `ImagePairsSequence`.          |
-| `set_left_batch(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])`  | Sets a batch of images, annotations and titles to display on the left side of `ImagePairsSequence`.  |
-| `set_right_batch(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])` | Sets a batch of images, annotations and titles to display on the right side of `ImagePairsSequence`. |
-|       `set_pair(left: Tuple[str, sly.Annotation, str], right: Tuple[str, sly.Annotation, str])`       | Sets a pair of images, annotations and titles to display on the `ImagePairsSequence`.                |
-|                       `set_pairs_batch(left: List[Tuple], right: List[Tuple])`                        | Sets a batch of pairs of images, annotations and titles to display on the `ImagePairsSequence`.      |
+|                         `append_left(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation and title to display on the left side of `ImagePairsSequence`.            |
+|                        `append_right(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation aand title to display on the right side of `ImagePairsSequence`.          |
+| `extend_left(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])`  | Sets a batch of images, annotations and titles to display on the left side of `ImagePairsSequence`.  |
+| `extend_right(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])` | Sets a batch of images, annotations and titles to display on the right side of `ImagePairsSequence`. |
+|       `append_pair(left: Tuple[str, sly.Annotation, str], right: Tuple[str, sly.Annotation, str])`       | Sets a pair of images, annotations and titles to display on the `ImagePairsSequence`.                |
+|                       `extend_pairs(left: List[Tuple], right: List[Tuple])`                        | Sets a batch of pairs of images, annotations and titles to display on the `ImagePairsSequence`.      |
 |                                             `clean_up()`                                              | Clears the `ImagePairsSequence` widget.                                                              |
 |                                              `disable()`                                              | Disables the `ImagePairsSequence` widget controls.                                                   |
 |                                              `enable()`                                               | Enables the `ImagePairsSequence` widget controls.                                                    |
@@ -204,16 +204,6 @@ anns = [sly.Annotation.from_json(ann_json, project_meta) for ann_json in anns_js
 image_pairs_sequence = ImagePairsSequence()
 ```
 
-### Set ground truth image and annotation
-
-```python
-image_pairs_sequence.set_ground_truth(
-    image_url=images_infos[0].full_storage_url,
-    annotation=anns[0],
-    title="Ground truth",
-)
-```
-
 ### Create app layout
 
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
@@ -275,7 +265,7 @@ def pair_btn_click_handler():
     left = get_next_prediction("left")
     right = get_next_prediction("right")
     if left[0] is not None and right[0] is not None:
-        image_pairs_sequence.set_pair(left=left, right=right)
+        image_pairs_sequence.append_pair(left=left, right=right)
 
 
 @pairs_batch_btn.click
@@ -299,14 +289,14 @@ def pairs_batch_btn_click_handler():
 def left_btn_click_handler():
     url, ann, title = get_next_prediction("left")
     if url is not None:
-        image_pairs_sequence.set_left(url, ann, title)
+        image_pairs_sequence.append_left(url, ann, title)
 
 
 @right_btn.click
 def right_btn_click_handler():
     url, ann, title = get_next_prediction("right")
     if url is not None:
-        image_pairs_sequence.set_right(url, ann, title)
+        image_pairs_sequence.append_right(url, ann, title)
 
 
 @left_three_btn.click
@@ -321,7 +311,7 @@ def left_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.set_left_batch(urls=urls, anns=anns, titles=titles)
+        image_pairs_sequence.extend_left(urls=urls, anns=anns, titles=titles)
 
 
 @right_three_btn.click
@@ -336,7 +326,7 @@ def right_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.set_right_batch(urls=urls, anns=anns, titles=titles)
+        image_pairs_sequence.extend_right(urls=urls, anns=anns, titles=titles)
 
 
 @clean_btn.click
