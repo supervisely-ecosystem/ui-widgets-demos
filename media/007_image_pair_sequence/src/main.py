@@ -66,8 +66,8 @@ api.image.download_paths(dataset_id, image_ids, paths)
 anns_json = api.annotation.download_json_batch(dataset_id=dataset_id, image_ids=image_ids)
 anns = [sly.Annotation.from_json(ann_json, project_meta) for ann_json in anns_json]
 
-left_urls_generator = (url for url in static_paths)
-right_urls_generator = (url for url in static_paths)
+left_paths_generator = (path for path in static_paths)
+right_paths_generator = (path for path in static_paths)
 left_anns_generator = (ann for ann in anns)
 right_anns_generator = (ann for ann in anns)
 
@@ -78,11 +78,11 @@ right_num = 0
 
 def get_next_prediction(side):
     global left_num, right_num
-    url, ann, title = None, None, None
-    url_gen = left_urls_generator if side == "left" else right_urls_generator
+    path, ann, title = None, None, None
+    url_gen = left_paths_generator if side == "left" else right_paths_generator
     ann_gen = left_anns_generator if side == "left" else right_anns_generator
     try:
-        url = next(url_gen)
+        path = next(url_gen)
         ann = next(ann_gen)
         if side == "left":
             title = f"Predictions {left_num}"
@@ -94,7 +94,7 @@ def get_next_prediction(side):
         sly.logger.info("No more predictions.")
         text.set(text="No more predictions.", status="info")
     finally:
-        return url, ann, title
+        return path, ann, title
 
 
 @pair_btn.click
@@ -124,16 +124,16 @@ def pairs_batch_btn_click_handler():
 
 @left_btn.click
 def left_btn_click_handler():
-    url, ann, title = get_next_prediction("left")
-    if url is not None:
-        image_pair_sequence.append_left(url, ann, title)
+    path, ann, title = get_next_prediction("left")
+    if path is not None:
+        image_pair_sequence.append_left(path, ann, title)
 
 
 @right_btn.click
 def right_btn_click_handler():
-    url, ann, title = get_next_prediction("right")
-    if url is not None:
-        image_pair_sequence.append_right(url, ann, title)
+    path, ann, title = get_next_prediction("right")
+    if path is not None:
+        image_pair_sequence.append_right(path, ann, title)
 
 
 @left_three_btn.click
@@ -147,8 +147,8 @@ def left_three_btn_click_handler():
             data.append(left)
 
     if len(data) > 0:
-        urls, anns, titles = zip(*data)
-        image_pair_sequence.extend_left(urls=urls, anns=anns, titles=titles)
+        paths, anns, titles = zip(*data)
+        image_pair_sequence.extend_left(paths=paths, anns=anns, titles=titles)
 
 
 @right_three_btn.click
@@ -162,8 +162,8 @@ def right_three_btn_click_handler():
             data.append(right)
 
     if len(data) > 0:
-        urls, anns, titles = zip(*data)
-        image_pair_sequence.extend_right(urls=urls, anns=anns, titles=titles)
+        paths, anns, titles = zip(*data)
+        image_pair_sequence.extend_right(paths=paths, anns=anns, titles=titles)
 
 
 @clean_btn.click
