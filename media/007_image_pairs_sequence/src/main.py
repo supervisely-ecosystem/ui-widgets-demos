@@ -2,7 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairsSequence, Text
+from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairSequence, Text
 
 
 # for convenient debug, has no effect in production
@@ -34,12 +34,12 @@ clean_btn = Button(text="clean up")
 btn_container = Flexbox(
     [left_btn, right_btn, left_three_btn, right_three_btn, pair_btn, pairs_batch_btn, clean_btn]
 )
-image_pairs_sequence = ImagePairsSequence()
+image_pair_sequence = ImagePairSequence()
 text = Text()
 
 card = Card(
-    title="Image Pairs Sequence",
-    content=Container([image_pairs_sequence]),
+    title="Image Pair Sequence",
+    content=Container([image_pair_sequence]),
 )
 
 layout = Container(widgets=[btn_container, card, text])
@@ -102,7 +102,7 @@ def pair_btn_click_handler():
     left = get_next_prediction("left")
     right = get_next_prediction("right")
     if left[0] is not None and right[0] is not None:
-        image_pairs_sequence.append_pair(left=left, right=right)
+        image_pair_sequence.append_pair(left=left, right=right)
 
 
 @pairs_batch_btn.click
@@ -119,21 +119,21 @@ def pairs_batch_btn_click_handler():
             rights.append(right)
 
     if len(lefts) > 0 and len(rights) > 0:
-        image_pairs_sequence.extend_pairs(lefts, rights)
+        image_pair_sequence.extend_pairs(lefts, rights)
 
 
 @left_btn.click
 def left_btn_click_handler():
     url, ann, title = get_next_prediction("left")
     if url is not None:
-        image_pairs_sequence.append_left(url, ann, title)
+        image_pair_sequence.append_left(url, ann, title)
 
 
 @right_btn.click
 def right_btn_click_handler():
     url, ann, title = get_next_prediction("right")
     if url is not None:
-        image_pairs_sequence.append_right(url, ann, title)
+        image_pair_sequence.append_right(url, ann, title)
 
 
 @left_three_btn.click
@@ -148,7 +148,7 @@ def left_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.extend_left(urls=urls, anns=anns, titles=titles)
+        image_pair_sequence.extend_left(urls=urls, anns=anns, titles=titles)
 
 
 @right_three_btn.click
@@ -163,9 +163,9 @@ def right_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.extend_right(urls=urls, anns=anns, titles=titles)
+        image_pair_sequence.extend_right(urls=urls, anns=anns, titles=titles)
 
 
 @clean_btn.click
 def clean_btn_click_handler():
-    image_pairs_sequence.clean_up()
+    image_pair_sequence.clean_up()

@@ -4,10 +4,10 @@
 
 The **`ImagePairsSequence`** widget is a widget in Supervisely designed for displaying pairs of images and annotations. It is useful for comparing. For example, it can be used to compare ground truth and predictions in a grid format. It allows users to navigate through multiple pages of predictions and provides zooming functionality, making it convenient for visualizing annotated image results.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imagepairssequence)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imagepairsequence)
 
 > All images will be saved in the `Team Files` in the `offline-sessions` directory:
-> `/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pairs_sequence/{image_name}`
+> `/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pair_sequence/{image_name}`
 
 ## Function signature
 
@@ -44,7 +44,7 @@ Measurement units in the widget controls.
 **default value:** `epochs`
 
 ```python
-image_pairs_sequence = ImagePairsSequence(slider_title="predictions")
+image_pair_sequence = ImagePairsSequence(slider_title="predictions")
 ```
 
 <p align="center">
@@ -60,7 +60,7 @@ Enable zoom on `ImagePairsSequence`.
 **default value:** `False`
 
 ```python
-image_pairs_sequence = ImagePairsSequence(enable_zoom=True)
+image_pair_sequence = ImagePairsSequence(enable_zoom=True)
 ```
 
 <p align="center">
@@ -76,7 +76,7 @@ Objects opacity.
 **default value:** `0.4`
 
 ```python
-image_pairs_sequence = ImagePairsSequence(opacity=0.8)
+image_pair_sequence = ImagePairsSequence(opacity=0.8)
 ```
 
 ![opacity](https://github.com/supervisely/developer-portal/assets/79905215/27e1ad16-2073-40bf-abf7-eed6ee7bbc41)
@@ -90,7 +90,7 @@ Enable sync zoom on `ImagePairsSequence` images.
 **default value:** `True`
 
 ```python
-image_pairs_sequence = ImagePairsSequence(sync_views=False)
+image_pair_sequence = ImagePairsSequence(sync_views=False)
 ```
 
 <p align="center">
@@ -111,7 +111,7 @@ By using the `ImagePairsSequence` widget, you can set the images, annotations an
 
 All the images will be saved in the `Team Files` in the `offline-sessions` directory:
 
-`/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pairs_sequence/{image_name}`
+`/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pair_sequence/{image_name}`
 
 |                                        Attributes and Methods                                         | Description                                                                                          |
 | :---------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------- |
@@ -129,7 +129,7 @@ All the images will be saved in the `Team Files` in the `offline-sessions` direc
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/media/007_image_pairs_sequence/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/007_image_pairs_sequence/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/007_image_pair_sequence/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/007_image_pair_sequence/src/main.py)
 
 ### Import libraries
 
@@ -210,7 +210,7 @@ anns = [sly.Annotation.from_json(ann_json, project_meta) for ann_json in anns_js
 ### Initialize `ImagePairsSequence` widget we will use in UI
 
 ```python
-image_pairs_sequence = ImagePairsSequence()
+image_pair_sequence = ImagePairsSequence()
 ```
 
 ### Create app layout
@@ -222,7 +222,7 @@ text = Text()
 
 card = Card(
     title="Image Pairs Sequence",
-    content=Container([image_pairs_sequence]),
+    content=Container([image_pair_sequence]),
 )
 layout = Container(widgets=[btn_container, card, text])
 ```
@@ -274,7 +274,7 @@ def pair_btn_click_handler():
     left = get_next_prediction("left")
     right = get_next_prediction("right")
     if left[0] is not None and right[0] is not None:
-        image_pairs_sequence.append_pair(left=left, right=right)
+        image_pair_sequence.append_pair(left=left, right=right)
 
 
 @pairs_batch_btn.click
@@ -291,21 +291,21 @@ def pairs_batch_btn_click_handler():
             rights.append(right)
 
     if len(lefts) > 0 and len(rights) > 0:
-        image_pairs_sequence.set_pairs_batch(lefts, rights)
+        image_pair_sequence.set_pairs_batch(lefts, rights)
 
 
 @left_btn.click
 def left_btn_click_handler():
     url, ann, title = get_next_prediction("left")
     if url is not None:
-        image_pairs_sequence.append_left(url, ann, title)
+        image_pair_sequence.append_left(url, ann, title)
 
 
 @right_btn.click
 def right_btn_click_handler():
     url, ann, title = get_next_prediction("right")
     if url is not None:
-        image_pairs_sequence.append_right(url, ann, title)
+        image_pair_sequence.append_right(url, ann, title)
 
 
 @left_three_btn.click
@@ -320,7 +320,7 @@ def left_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.extend_left(urls=urls, anns=anns, titles=titles)
+        image_pair_sequence.extend_left(urls=urls, anns=anns, titles=titles)
 
 
 @right_three_btn.click
@@ -335,12 +335,12 @@ def right_three_btn_click_handler():
 
     if len(data) > 0:
         urls, anns, titles = zip(*data)
-        image_pairs_sequence.extend_right(urls=urls, anns=anns, titles=titles)
+        image_pair_sequence.extend_right(urls=urls, anns=anns, titles=titles)
 
 
 @clean_btn.click
 def clean_btn_click_handler():
-    image_pairs_sequence.clean_up()
+    image_pair_sequence.clean_up()
 ```
 
 ### Run app
