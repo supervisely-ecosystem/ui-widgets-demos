@@ -6,6 +6,9 @@ The **`ImagePairsSequence`** widget is a widget in Supervisely designed for disp
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imagepairssequence)
 
+> All images will be saved in the `Team Files` in the `offline-sessions` directory:
+> `/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pairs_sequence/{image_name}`
+
 ## Function signature
 
 ```python
@@ -103,6 +106,12 @@ ID of the widget.
 **default value:** `None`
 
 ## Methods and attributes
+
+By using the `ImagePairsSequence` widget, you can set the images, annotations and titles to display on the left and right sides of the widget. You can also set a batch of images, annotations and titles to display on the left and right sides of the widget. The widget also provides methods for clearing the widget.
+
+All the images will be saved in the `Team Files` in the `offline-sessions` directory:
+
+`/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pairs_sequence/{image_name}`
 
 |                                        Attributes and Methods                                         | Description                                                                                          |
 | :---------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------- |
