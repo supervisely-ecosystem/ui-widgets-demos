@@ -6,4 +6,4 @@
 4. [Video](004_video/README.md)
 5. [VideoPlayer](005_video_player/README.md)
 6. [ImageRegionSelector](006_image_region_selector/README.md)
-7. [PredictionsGallery](007_predictions_gallery/README.md)
+7. [ImagePairsSequence](007_image_pair_sequence/README.md)
