@@ -1,8 +1,8 @@
-# Image Pairs Sequence
+# Image Pair Sequence
 
 ## Introduction
 
-The **`ImagePairsSequence`** widget is a widget in Supervisely designed for displaying pairs of images and annotations. It is useful for comparing. For example, it can be used to compare ground truth and predictions in a grid format. It allows users to navigate through multiple pages of predictions and provides zooming functionality, making it convenient for visualizing annotated image results.
+The **`ImagePairSequence`** widget is a widget in Supervisely designed for displaying pairs of images and annotations. It is useful for comparing. For example, it can be used to compare ground truth and predictions in a grid format. It allows users to navigate through multiple pages of predictions and provides zooming functionality, making it convenient for visualizing annotated image results.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imagepairsequence)
 
@@ -12,7 +12,7 @@ The **`ImagePairsSequence`** widget is a widget in Supervisely designed for disp
 ## Function signature
 
 ```python
-ImagePairsSequence(
+ImagePairSequence(
     opacity=0.4,
     enable_zoom=False,
     sync_views=True,
@@ -22,7 +22,7 @@ ImagePairsSequence(
 ```
 
 <p align="center">
-  <img src="https://github.com/supervisely/developer-portal/assets/79905215/1f1adfcd-4fce-489c-bf4f-d8acbbc5a1be" alt="ImagePairsSequence" />
+  <img src="https://github.com/supervisely/developer-portal/assets/79905215/1f1adfcd-4fce-489c-bf4f-d8acbbc5a1be" alt="ImagePairSequence" />
 </p>
 
 ## Parameters
@@ -30,8 +30,8 @@ ImagePairsSequence(
 |   Parameters   |       Type        |                   Description                   |
 | :------------: | :---------------: | :---------------------------------------------: |
 |   `opacity`    | `Optional[float]` |                 Objects opacity                 |
-| `enable_zoom`  | `Optional[bool]`  |       Enable zoom on `ImagePairsSequence`       |
-|  `sync_views`  | `Optional[bool]`  | Enable sync zoom on `ImagePairsSequence` images |
+| `enable_zoom`  | `Optional[bool]`  |       Enable zoom on `ImagePairSequence`       |
+|  `sync_views`  | `Optional[bool]`  | Enable sync zoom on `ImagePairSequence` images |
 | `slider_title` |  `Optional[str]`  |    Measurement units in the widget controls     |
 |  `widget_id`   |  `Optional[str]`  |                Id of the widget                 |
 
@@ -44,27 +44,27 @@ Measurement units in the widget controls.
 **default value:** `epochs`
 
 ```python
-image_pair_sequence = ImagePairsSequence(slider_title="predictions")
+image_pair_sequence = ImagePairSequence(slider_title="predictions")
 ```
 
 <p align="center">
-  <img src="https://github.com/supervisely/developer-portal/assets/79905215/88ec3b86-4916-4904-96e2-44f38822fc0b" alt="ImagePairsSequence title" />
+  <img src="https://github.com/supervisely/developer-portal/assets/79905215/88ec3b86-4916-4904-96e2-44f38822fc0b" alt="ImagePairSequence title" />
 </p>
 
 ### enable_zoom
 
-Enable zoom on `ImagePairsSequence`.
+Enable zoom on `ImagePairSequence`.
 
 **type:** `Optional[bool]`
 
 **default value:** `False`
 
 ```python
-image_pair_sequence = ImagePairsSequence(enable_zoom=True)
+image_pair_sequence = ImagePairSequence(enable_zoom=True)
 ```
 
 <p align="center">
-  <img src="https://github.com/supervisely/developer-portal/assets/79905215/6c7ea31c-c9cd-4931-a80c-d246f620923d" alt="ImagePairsSequence zoom" />
+  <img src="https://github.com/supervisely/developer-portal/assets/79905215/6c7ea31c-c9cd-4931-a80c-d246f620923d" alt="ImagePairSequence zoom" />
 </p>
 
 ### opacity
@@ -76,25 +76,25 @@ Objects opacity.
 **default value:** `0.4`
 
 ```python
-image_pair_sequence = ImagePairsSequence(opacity=0.8)
+image_pair_sequence = ImagePairSequence(opacity=0.8)
 ```
 
 ![opacity](https://github.com/supervisely/developer-portal/assets/79905215/27e1ad16-2073-40bf-abf7-eed6ee7bbc41)
 
 ### sync_views
 
-Enable sync zoom on `ImagePairsSequence` images.
+Enable sync zoom on `ImagePairSequence` images.
 
 **type:** `Optional[bool]`
 
 **default value:** `True`
 
 ```python
-image_pair_sequence = ImagePairsSequence(sync_views=False)
+image_pair_sequence = ImagePairSequence(sync_views=False)
 ```
 
 <p align="center">
-  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/0b3cb50b-c817-4609-9f72-1e573baf19c3" alt="ImagePairsSequence sync_views" />
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/0b3cb50b-c817-4609-9f72-1e573baf19c3" alt="ImagePairSequence sync_views" />
 </p>
 
 ### widget_id
@@ -107,7 +107,7 @@ ID of the widget.
 
 ## Methods and attributes
 
-By using the `ImagePairsSequence` widget, you can set the images, annotations and titles to display on the left and right sides of the widget. You can also set a batch of images, annotations and titles to display on the left and right sides of the widget. The widget also provides methods for clearing the widget.
+By using the `ImagePairSequence` widget, you can set the images, annotations and titles to display on the left and right sides of the widget. You can also set a batch of images, annotations and titles to display on the left and right sides of the widget. The widget also provides methods for clearing the widget.
 
 All the images will be saved in the `Team Files` in the `offline-sessions` directory:
 
@@ -115,15 +115,15 @@ All the images will be saved in the `Team Files` in the `offline-sessions` direc
 
 |                                        Attributes and Methods                                         | Description                                                                                          |
 | :---------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------- |
-|                         `append_left(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation and title to display on the left side of `ImagePairsSequence`.            |
-|                        `append_right(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation aand title to display on the right side of `ImagePairsSequence`.          |
-| `extend_left(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])`  | Sets a batch of images, annotations and titles to display on the left side of `ImagePairsSequence`.  |
-| `extend_right(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])` | Sets a batch of images, annotations and titles to display on the right side of `ImagePairsSequence`. |
-|       `append_pair(left: Tuple[str, sly.Annotation, str], right: Tuple[str, sly.Annotation, str])`       | Sets a pair of images, annotations and titles to display on the `ImagePairsSequence`.                |
-|                       `extend_pairs(left: List[Tuple], right: List[Tuple])`                        | Sets a batch of pairs of images, annotations and titles to display on the `ImagePairsSequence`.      |
-|                                             `clean_up()`                                              | Clears the `ImagePairsSequence` widget.                                                              |
-|                                              `disable()`                                              | Disables the `ImagePairsSequence` widget controls.                                                   |
-|                                              `enable()`                                               | Enables the `ImagePairsSequence` widget controls.                                                    |
+|                         `append_left(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation and title to display on the left side of `ImagePairSequence`.            |
+|                        `append_right(url: str, ann: sly.Annotation, title: str)`                         | Sets the image, annotation aand title to display on the right side of `ImagePairSequence`.          |
+| `extend_left(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])`  | Sets a batch of images, annotations and titles to display on the left side of `ImagePairSequence`.  |
+| `extend_right(urls: List[str], anns: Optional[List[sly.Annotation]], titles: Optional[List[str]])` | Sets a batch of images, annotations and titles to display on the right side of `ImagePairSequence`. |
+|       `append_pair(left: Tuple[str, sly.Annotation, str], right: Tuple[str, sly.Annotation, str])`       | Sets a pair of images, annotations and titles to display on the `ImagePairSequence`.                |
+|                       `extend_pairs(left: List[Tuple], right: List[Tuple])`                        | Sets a batch of pairs of images, annotations and titles to display on the `ImagePairSequence`.      |
+|                                             `clean_up()`                                              | Clears the `ImagePairSequence` widget.                                                              |
+|                                              `disable()`                                              | Disables the `ImagePairSequence` widget controls.                                                   |
+|                                              `enable()`                                               | Enables the `ImagePairSequence` widget controls.                                                    |
 
 ## Mini App Example
 
@@ -138,7 +138,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairsSequence, Text
+from supervisely.app.widgets import Button, Card, Container, Flexbox, ImagePairSequence, Text
 ```
 
 ### Init API client
@@ -169,7 +169,7 @@ if not os.path.exists(static_dir):
     os.makedirs(static_dir)
 ```
 
-### Create `Button` widgets for controlling `ImagePairsSequence`
+### Create `Button` widgets for controlling `ImagePairSequence`
 
 ```python
 left_btn = Button(text="add 1 prediction to left")
@@ -185,7 +185,7 @@ btn_container = Flexbox(
 )
 ```
 
-### Prepare images and annotations for `ImagePairsSequence` widget
+### Prepare images and annotations for `ImagePairSequence` widget
 
 ```python
 # get all image infos in dataset
@@ -207,10 +207,10 @@ anns_json = api.annotation.download_json_batch(dataset_id=dataset_id, image_ids=
 anns = [sly.Annotation.from_json(ann_json, project_meta) for ann_json in anns_json]
 ```
 
-### Initialize `ImagePairsSequence` widget we will use in UI
+### Initialize `ImagePairSequence` widget we will use in UI
 
 ```python
-image_pair_sequence = ImagePairsSequence()
+image_pair_sequence = ImagePairSequence()
 ```
 
 ### Create app layout
@@ -221,7 +221,7 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 text = Text()
 
 card = Card(
-    title="Image Pairs Sequence",
+    title="Image Pair Sequence",
     content=Container([image_pair_sequence]),
 )
 layout = Container(widgets=[btn_container, card, text])
@@ -346,5 +346,5 @@ def clean_btn_click_handler():
 ### Run app
 
 <p align="center">
-  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/ebd8cfcb-3444-454c-b8eb-30a25f8d0f37" alt="ImagePairsSequence app" />
+  <img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/ebd8cfcb-3444-454c-b8eb-30a25f8d0f37" alt="ImagePairSequence app" />
 </p>
