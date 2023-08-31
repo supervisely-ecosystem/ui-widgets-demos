@@ -7,3 +7,4 @@
 5. [VideoPlayer](005_video_player/README.md)
 6. [ImageRegionSelector](006_image_region_selector/README.md)
 7. [ImagePairSequence](007_image_pair_sequence/README.md)
+8. [Icons](008_icons/README.md)
