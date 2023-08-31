@@ -4,7 +4,7 @@
 
 **`DateTimePicker`** is a widget in Supervisely that allows you to choose a date and time on the UI.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/datetimepicker)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/input/datetimepicker)
 
 ## Function signature
 

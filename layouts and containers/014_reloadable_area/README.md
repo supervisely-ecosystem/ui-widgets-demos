@@ -4,7 +4,7 @@
 
 **`ReloadableArea`** widget in Supervisely is a tool that allows dynamically creating and changing widgets in the application UI without reloading the whole page. It can be used to create a dynamic UI that changes depending on user actions without any noticeable delays.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/selection/reloadablearea)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/reloadablearea)
 
 ## Function signature
 

@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Icons` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/icons)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/icons)
 
 ## Function signature
 

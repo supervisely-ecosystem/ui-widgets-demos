@@ -4,7 +4,7 @@
 
 **`Badge`** widget in Supervisely is a versatile tool for displaying notifications or counts on elements such as buttons, text. With customizable types (number, text, or dot), visibility, the Badge can be easily used in Supervisely apps for a seamless user experience.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/badge)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/badge)
 
 ## Function signature
 

@@ -4,7 +4,7 @@
 
 **`TreemapChart`** widget in Supervisely is a widget used for displaying a treemap chart. It allows users to visualize data for comparison distribution of different objects. The TreemapChart widget allows easily visualize data to determine the distribution of objects in comparison to each other.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/TreemapChart)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/treemapchart)
 
 ## Function signature
 

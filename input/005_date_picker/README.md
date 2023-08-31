@@ -4,7 +4,7 @@
 
 **`DatePicker`** widget in Supervsely is a user-friendly and customizable date input solution for Supervisely app developers. It features an intuitive interface that allows users to select a date from a calendar or enter one manually. The widget supports a wide range of date formats, making it suitable for use in diverse applications. With its flexible styling options, the DatePicker component can seamlessly integrate with apps and enhance the user experience.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/datepicker)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/datepicker)
 
 ## Function signature
 
