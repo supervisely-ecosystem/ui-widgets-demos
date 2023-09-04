@@ -10,3 +10,6 @@
 8. [SelectAppSession](008_select_app_session/README.md)
 9. [SelectString](009_select_string/README.md)
 10. [Transfer](010_transfer/README.md)
+11. [DestinationProject](011_destination_project/README.md)
+12. [TeamFilesSelector](012_team_files_selector/README.md)
+13. [FileViewer](013_file_viewer/README.md)

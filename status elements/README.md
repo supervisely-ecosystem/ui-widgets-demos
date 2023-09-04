@@ -6,3 +6,4 @@
 4. [DialogMessage](004_dialog_message/README.md)
 5. [TaskLogs](005_task_logs/README.md)
 6. [Badge](006_badge/README.md)
+7. [ModelInfo](007_model_info/README.md)

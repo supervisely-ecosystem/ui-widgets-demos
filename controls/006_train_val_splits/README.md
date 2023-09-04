@@ -143,7 +143,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/006_train_val_splits/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/006_train_val_splits/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/006_train_val_splits/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/006_train_val_splits/src/main.py)
 
 ### Import libraries
 

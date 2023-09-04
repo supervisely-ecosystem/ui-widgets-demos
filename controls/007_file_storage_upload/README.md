@@ -93,7 +93,7 @@ ID of the widget
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/007_file_storage_upload/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/007_file_storage_upload/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/007_file_storage_upload/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/007_file_storage_upload/src/main.py)
 
 ### Import libraries
 
