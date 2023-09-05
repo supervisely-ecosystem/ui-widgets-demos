@@ -8,3 +8,5 @@
 6. [ImageRegionSelector](006_image_region_selector/README.md)
 7. [ImagePairSequence](007_image_pair_sequence/README.md)
 8. [Icons](008_icons/README.md)
+9. [ObjectClassView](009_object_class_view/README.md)
+10. [ObjectClassesList](010_object_classes_list/README.md)

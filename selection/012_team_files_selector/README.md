@@ -4,7 +4,7 @@
 
 **`TeamFilesSelector`** is a graphic interface widget in the Supervisely platform that enables users to easily select files and/or folders from their Team files. It allows to customize selecting type (files, folder or both of this types) and displaying additional columns with information about files and folder (size, created date, updated date, type, mime type). The widget features a user-friendly interface and is optimized for performance, making it a valuable tool for teams working.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/teamfilesselector)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/teamfilesselector)
 
 ## Function signature
 
@@ -211,7 +211,7 @@ ID of the widget
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/008_team_files_selector/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/008_team_files_selector/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/012_team_files_selector/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/012_team_files_selector/src/main.py)
 
 ### Import libraries
 

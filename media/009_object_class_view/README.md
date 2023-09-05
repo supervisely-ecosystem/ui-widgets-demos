@@ -90,7 +90,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/020_object_class_view/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/020_object_class_view/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/009_object_class_view/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/009_object_class_view/src/main.py)
 
 ### Import libraries
 
