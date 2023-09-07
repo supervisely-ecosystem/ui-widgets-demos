@@ -18,6 +18,8 @@ SelectDataset(
     size=None,
     disabled=False,
     widget_id=None,
+    select_all_datasets = False,
+    allowed_project_types = [],
 )
 ```
 
@@ -34,9 +36,9 @@ SelectDataset(
 |      `show_label`       |                  `bool`                   |                   Show label                    |
 |         `size`          | `Literal["large", "small", "mini", None]` |                  Selector size                  |
 |       `disabled`        |                  `bool`                   |             Disable dataset select              |
+|       `widget_id`       |                   `str`                   |                ID of the widget                 |
 |  `select_all_datasets`  |                  `bool`                   |               Select all datasets               |
 | `allowed_project_types` |            `List[ProjectType]`            |          List of allowed project types          |
-|       `widget_id`       |                   `str`                   |                ID of the widget                 |
 
 ### default_id
 
