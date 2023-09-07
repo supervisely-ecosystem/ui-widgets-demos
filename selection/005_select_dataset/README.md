@@ -25,16 +25,18 @@ SelectDataset(
 
 ## Parameters
 
-|  Parameters   |                   Type                    |                   Description                   |
-| :-----------: | :---------------------------------------: | :---------------------------------------------: |
-| `default_id`  |                   `int`                   |                  `Dataset` ID                   |
-| `project_id`  |                   `int`                   |                  `Project` ID                   |
-| `multiselect` |                  `bool`                   | Allow to select all datasets in current project |
-|   `compact`   |                  `bool`                   |            Show only dataset select             |
-| `show_label`  |                  `bool`                   |                   Show label                    |
-|    `size`     | `Literal["large", "small", "mini", None]` |                  Selector size                  |
-|  `disabled`   |                  `bool`                   |             Disable dataset select              |
-|  `widget_id`  |                   `str`                   |                ID of the widget                 |
+|       Parameters        |                   Type                    |                   Description                   |
+| :---------------------: | :---------------------------------------: | :---------------------------------------------: |
+|      `default_id`       |                   `int`                   |                  `Dataset` ID                   |
+|      `project_id`       |                   `int`                   |                  `Project` ID                   |
+|      `multiselect`      |                  `bool`                   | Allow to select all datasets in current project |
+|        `compact`        |                  `bool`                   |            Show only dataset select             |
+|      `show_label`       |                  `bool`                   |                   Show label                    |
+|         `size`          | `Literal["large", "small", "mini", None]` |                  Selector size                  |
+|       `disabled`        |                  `bool`                   |             Disable dataset select              |
+|  `select_all_datasets`  |                  `bool`                   |               Select all datasets               |
+| `allowed_project_types` |            `List[ProjectType]`            |          List of allowed project types          |
+|       `widget_id`       |                   `str`                   |                ID of the widget                 |
 
 ### default_id
 
@@ -181,6 +183,43 @@ select_dataset = SelectDataset(
 ```
 
 ![st-disabled](https://user-images.githubusercontent.com/79905215/222368297-d49c243d-a2bb-4df4-b474-e6a25f9a5a85.png)
+
+### select_all_datasets
+
+Select all datasets in current project. Work only if `multiselect` is `True`.
+
+**type:** `bool`
+
+**default value:** `false`
+
+```python
+select_dataset = SelectDataset(
+    default_id=dataset_id,
+    project_id=project_id,
+    multiselect=True,
+    select_all_datasets=True
+)
+```
+
+<figure><img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/09a70fcd-2707-4ece-80e0-cea809c941c5" alt=""><figcaption></figcaption></figure>
+
+### allowed_project_types
+
+List of allowed project types.
+
+**type:** `List[ProjectType]`
+
+**default value:** `None`
+
+```python
+select_dataset = SelectDataset(
+    default_id=dataset_id,
+    project_id=project_id,
+    allowed_project_types=[sly.ProjectType.POINT_CLOUD_EPISODES]
+)
+```
+
+<figure><img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/bbb4cfc8-5ce7-4db2-9db7-39cfa4de1919" alt=""><figcaption></figcaption></figure>
 
 ### widget_id
 

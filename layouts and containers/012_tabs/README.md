@@ -83,6 +83,7 @@ tabs = Tabs(
     type="card",
 )
 ```
+
 ![type-card](https://user-images.githubusercontent.com/79905215/224063450-5616bc8b-a09b-4d58-8c72-37821ca3f79a.png)
 
 ```python
@@ -110,10 +111,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-|    Attributes and Methods    | Description              |
-| :--------------------------: | ------------------------ |
-| `set_active_tab(value: str)` | Set active tab by title. |
-|      `get_active_tab()`      | Return active tab title. |
+|    Attributes and Methods    | Description                                                      |
+| :--------------------------: | ---------------------------------------------------------------- |
+| `set_active_tab(value: str)` | Set active tab by title.                                         |
+|      `get_active_tab()`      | Return active tab title.                                         |
+|           `@click`           | Decorator for setting a callback function for the `Tabs` widget. |
 
 ## Mini App Example
 
