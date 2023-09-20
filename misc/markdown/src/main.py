@@ -1,4 +1,4 @@
-import os, markdown
+import os
 
 import supervisely as sly
 from dotenv import load_dotenv
@@ -19,10 +19,11 @@ buttons_container = Flexbox(widgets=[button_text, button_clean, button_readme])
 
 
 md_path = os.path.join(os.getcwd(), "misc/markdown/README.md")
-f = open(md_path, "r")
-md = markdown.markdown(f.read())
+md = ""
+with open(md_path, "r") as f:
+    md = f.read()
 
-markdown = Markdown()
+markdown = Markdown(height=400)
 
 card = Card(title="Markdown", content=Container([markdown, buttons_container]))
 layout = Container(widgets=[card], direction="vertical")
@@ -31,14 +32,14 @@ app = sly.Application(layout=layout)
 
 @button_text.click
 def simple_content():
-    markdown.set_value("### Title \n *some markdown text*")
+    markdown.set_content("### Title \n *some markdown text*")
 
 
 @button_clean.click
 def clear_content():
-    markdown.set_value("")
+    markdown.set_content("")
 
 
 @button_readme.click
 def readme_content():
-    markdown.set_value(md)
+    markdown.set_content(md)

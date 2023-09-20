@@ -64,11 +64,12 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods  | Description               |
-| :---------------------: | ------------------------- |
-| `set_value(value: str)` | Set `Markdown` data.      |
-|      `get_value()`      | Return `Markdown` data.   |
-|     `get_height()`      | Return `Markdown` height. |
+|   Attributes and Methods    | Description               |
+| :-------------------------: | ------------------------- |
+| `set_content(content: str)` | Set `Markdown` data.      |
+|       `get_content()`       | Return `Markdown` data.   |
+|       `get_height()`        | Return `Markdown` height. |
+|  `set_height(height: int)`  | Set `Markdown` height.    |
 
 ## Mini App Example
 
@@ -79,7 +80,7 @@ You can find this example in our Github repository:
 ### Import libraries
 
 ```python
-import os, markdown
+import os
 
 import supervisely as sly
 from dotenv import load_dotenv
@@ -110,10 +111,11 @@ buttons_container = Flexbox(widgets=[button_text, button_clean, button_readme])
 
 ```python
 md_path = os.path.join(os.getcwd(), "misc/markdown/README.md")
-f = open(md_path, "r")
-md = markdown.markdown(f.read())
+md = ""
+with open(md_path, "r") as f:
+    md = f.read()
 
-markdown = Markdown(md=md)
+markdown = Markdown(height=400)
 ```
 
 ### Create app layout
@@ -138,16 +140,17 @@ app = sly.Application(layout=layout)
 ```python
 @button_text.click
 def simple_content():
-    markdown.set_value("### Title \n *some markdown text*")
+    markdown.set_content("### Title \n *some markdown text*")
 
 
 @button_clean.click
 def clear_content():
-    markdown.set_value("")
+    markdown.set_content("")
+
 
 @button_readme.click
 def readme_content():
-    markdown.set_value(md)
+    markdown.set_content(md)
 ```
 
 ![layout](https://user-images.githubusercontent.com/120389559/224319059-a601a2a4-fc67-4551-bf22-df3b621f9260.gif)
