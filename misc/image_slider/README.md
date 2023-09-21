@@ -10,33 +10,39 @@
 
 ```python
 ImageSlider(
-    data: List[str],
+    previews=None,
+    examples=None,
+    combined_data=None,
     height=200,
     selectable=False,
-    preview_idx=0,
+    preview_idx=None,
     preview_url=None,
     widget_id=None,
 )
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/224553705-a6e109d5-f8cf-4243-b3f7-fb096bc2876e.png)
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/0e09b6a6-e8a4-48a9-b9cf-649ac119a7ac)
 
 ## Parameters
 
-|  Parameters   |    Type     |                        Description                        |
-| :-----------: | :---------: | :-------------------------------------------------------: |
-|    `data`     | `List[str]` |        List of image URLs for the `Slider` widget         |
-|   `height`    |    `int`    |               Height of the `Slider` widget               |
-| `selectable`  |   `bool`    | Determines whether image selection is enabled or disabled |
-| `preview_idx` |    `int`    |     Index of the initially selected image in `Slider`     |
-| `preview_url` |    `str`    |      URL of the initially selected image in `Slider`      |
-|  `widget_id`  |    `str`    |                     ID of the widget                      |
+|   Parameters    |       Type        |                           Description                            |
+| :-------------: | :---------------: | :--------------------------------------------------------------: |
+|   `previews`    |    `List[str]`    |          List of previews URLs for the `Slider` widget           |
+|   `examples`    | `List[List[str]]` |          List of image examples for the `Slider` widget          |
+| `combined_data` |   `List[dict]`    | List of image previews and examples URLs for the `Slider` widget |
+|    `height`     |       `int`       |                  Height of the `Slider` widget                   |
+|  `selectable`   |      `bool`       |    Determines whether image selection is enabled or disabled     |
+|  `preview_idx`  |       `int`       |        Index of the initially selected image in `Slider`         |
+|  `preview_url`  |       `str`       |         URL of the initially selected image in `Slider`          |
+|   `widget_id`   |       `str`       |                         ID of the widget                         |
 
-### data
+### previews
 
-List of image URLs for the `Slider` widget.
+List of previews URLs for the `Slider` widget.
 
 **type:** `List[str]`
+
+**default value:** `None`
 
 ```python
 image_urls = [
@@ -47,10 +53,75 @@ image_urls = [
     "https://i.imgur.com/OpSj3JE.jpg",
 ]
 
-image_slider = ImageSlider(data=image_urls)
+image_slider = ImageSlider(previews=image_urls)
 ```
 
-![default](https://user-images.githubusercontent.com/120389559/224553705-a6e109d5-f8cf-4243-b3f7-fb096bc2876e.png)
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/0e09b6a6-e8a4-48a9-b9cf-649ac119a7ac)
+
+### examples
+
+List of image examples for the `Slider` widget.
+
+**type:** `List[List[str]]`
+
+**default value:** `None`
+
+```python
+image_urls = [
+    "https://www.w3schools.com/howto/img_nature.jpg",
+    "https://www.quackit.com/pix/samples/18m.jpg",
+    "https://i.imgur.com/35pUPD2.jpg",
+    "https://i.imgur.com/fB2DBcM.jpeg",
+    "https://i.imgur.com/OpSj3JE.jpg",
+]
+
+example_urls = [
+    [
+        "https://www.w3schools.com/howto/img_nature.jpg",
+        "https://www.quackit.com/pix/samples/18m.jpg",
+        "https://i.imgur.com/35pUPD2.jpg",
+        "https://i.imgur.com/fB2DBcM.jpeg",
+        "https://i.imgur.com/OpSj3JE.jpg",
+    ],
+    ["https://www.quackit.com/pix/samples/18m.jpg"],
+    ["https://i.imgur.com/35pUPD2.jpg"],
+    ["https://i.imgur.com/fB2DBcM.jpeg"],
+    ["https://i.imgur.com/OpSj3JE.jpg"],
+]
+
+image_slider = ImageSlider(previews=image_urls, examples=example_urls)
+```
+
+![examples](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/26207fef-58c1-4609-9810-466ced589ace)
+
+### combined_data
+
+List of image previews and examples URLs for the `Slider` widget.
+
+**type:** `List[dict]`
+
+**default value:** `None`
+
+```python
+combined_data = [
+    {
+        "preview": "https://i.imgur.com/0XbKOJ3.jpeg",
+        "moreExamples": ["https://i.imgur.com/0XbKOJ3.jpeg", "https://i.imgur.com/mIcObyL.jpeg"],
+    },
+    {
+        "preview": "https://i.imgur.com/3rYHhEu.jpeg",
+        "moreExamples": [
+            "https://i.imgur.com/3rYHhEu.jpeg",
+            "https://i.imgur.com/pSafUhg.jpeg",
+            "https://i.imgur.com/yKc0xTb.jpeg",
+        ],
+    },
+]
+
+image_slider = ImageSlider(combined_data=combined_data)
+```
+
+![data](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/a7288c71-3054-4bb8-81c6-a7e349c02ba6)
 
 ### height
 
@@ -86,7 +157,7 @@ Index of the initially selected image in `Slider`. Use only if `selectable` is `
 
 **type:** `int`
 
-**default value:** `0`
+**default value:** `None`
 
 ```python
 image_slider = ImageSlider(data=image_urls, selectable=True, preview_idx=4)
@@ -104,7 +175,7 @@ URL of the initially selected image in `Slider`. Use only if `selectable` is `Tr
 
 ```python
 image_slider = ImageSlider(
-    data=image_urls, selectable=True, preview_url="https://i.imgur.com/35pUPD2.jpg"
+    data=image_urls, selectable=True, preview_url=image_urls[2]
 )
 ```
 
@@ -118,16 +189,20 @@ ID of the widget.
 
 **default value:** `None`
 
-|    Attributes and Methods     | Description                                                                     |
-| :---------------------------: | ------------------------------------------------------------------------------- |
-|      `get_preview_url()`      | Get URL of the selected image in the slider.                                    |
-| `set_preview_url(value: str)` | Sets URL of the image to be displayed as the preview image in the slider.       |
-|      `get_preview_idx()`      | Retrieves the index of the currently selected image in the slider.              |
-| `set_preview_idx(value: int)` | Sets the index of the image to be displayed as the preview image in the slider. |
-|        `is_selectable`        | Returns a boolean indicating whether image selection is enabled or disabled.    |
-|     `enable_selection()`      | Enables image selection.                                                        |
-|     `disable_selection()`     | Disables image selection.                                                       |
-|      `get_data_length()`      | Retrieves the length of the image URL list.                                     |
+|                                  Attributes and Methods                                  | Description                                                                        |
+| :--------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------- |
+|                                 `get_selected_preview()`                                 | Get URL of the selected image in the slider.                                       |
+|                            `set_selected_preview(value: str)`                            | Sets URL of the image to be displayed as the preview image in the slider.          |
+|                                   `get_selected_idx()`                                   | Retrieves the index of the currently selected image in the slider.                 |
+|                              `set_selected_idx(value: int)`                              | Sets the index of the image to be displayed as the preview image in the slider.    |
+|                                `get_selected_examples()`                                 | Retrieves the list of URLs of the currently selected image examples in the slider. |
+|                                     `is_selectable`                                      | Returns a boolean indicating whether image selection is enabled or disabled.       |
+|                                   `enable_selection()`                                   | Enables image selection.                                                           |
+|                                  `disable_selection()`                                   | Disables image selection.                                                          |
+|                                   `get_data_length()`                                    | Retrieves the length of the image URL list.                                        |
+|                                       `get_data()`                                       | Retrieves the list of image URLs and examples.                                     |
+|  `set_data(previews: List[str], examples: List[List[str]], combined_data: List[dict])`   | Sets the list of image URLs and examples.                                          |
+| `append_data(previews: List[str], examples: List[List[str]], combined_data: List[dict])` | Extends the list of image URLs and examples.                                       |
 
 ## Mini App Example
 
@@ -137,10 +212,11 @@ You can find this example in our GitHub repository:
 
 ```python
 import os
+import json
 
 from dotenv import load_dotenv
 import supervisely as sly
-from supervisely.app.widgets import Card, Container, Text, ImageSlider, Button
+from supervisely.app.widgets import Button, Card, Container, Editor, Flexbox, Text, ImageSlider
 ```
 
 ### Init API client
@@ -148,14 +224,16 @@ from supervisely.app.widgets import Card, Container, Text, ImageSlider, Button
 Init API for communicating with Supervisely Instance. First, we load environment variables with credentials:
 
 ```python
-load_dotenv("local.env")
-load_dotenv(os.path.expanduser("~/supervisely.env"))
+if sly.is_development():
+    load_dotenv("local.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ImageSlider` widget
+### Prepare data for `ImageSlider` widget
 
 ```python
+
 image_urls = [
     "https://www.w3schools.com/howto/img_nature.jpg",
     "https://www.quackit.com/pix/samples/18m.jpg",
@@ -164,23 +242,75 @@ image_urls = [
     "https://i.imgur.com/OpSj3JE.jpg",
 ]
 
+example_urls = [
+    [
+        "https://www.w3schools.com/howto/img_nature.jpg",
+        "https://www.quackit.com/pix/samples/18m.jpg",
+        "https://i.imgur.com/35pUPD2.jpg",
+        "https://i.imgur.com/fB2DBcM.jpeg",
+        "https://i.imgur.com/OpSj3JE.jpg",
+    ],
+    ["https://www.quackit.com/pix/samples/18m.jpg"],
+    ["https://i.imgur.com/35pUPD2.jpg"],
+    ["https://i.imgur.com/fB2DBcM.jpeg"],
+    ["https://i.imgur.com/OpSj3JE.jpg"],
+]
 
-image_slider = ImageSlider(data=image_urls, selectable=True, height=250)
+
+combined_data = [
+    {
+        "preview": "https://i.imgur.com/0XbKOJ3.jpeg",
+        "moreExamples": ["https://i.imgur.com/0XbKOJ3.jpeg", "https://i.imgur.com/mIcObyL.jpeg"],
+    },
+    {
+        "preview": "https://i.imgur.com/3rYHhEu.jpeg",
+        "moreExamples": [
+            "https://i.imgur.com/3rYHhEu.jpeg",
+            "https://i.imgur.com/pSafUhg.jpeg",
+            "https://i.imgur.com/yKc0xTb.jpeg",
+        ],
+    },
+]
 ```
 
-### Initialize `Text` and `Button` widgets, we will use
+### Initialize `ImageSlider` widget
 
 ```python
-image_url = Text()
-image_index = Text()
+image_slider = ImageSlider(previews=image_urls, examples=example_urls)
+```
 
-button_url = Button(text="Get image url")
-button_index = Button(text="Get image index")
+### Initialize `Text`, `Editor` and `Button` widgets, we will use
 
-buttons_container = Container(
-    widgets=[button_url, button_index],
-    direction="vertical",
+```python
+image_url = Text(status="info")
+image_index = Text(status="info")
+image_examples = Text(status="info")
+data_length = Text(status="info")
+
+text_container = Container(widgets=[image_url, image_index, image_examples, data_length])
+
+button_url = Button(text="Get info")
+button_set_url = Button(text="Select image by url")
+button_set_index = Button(text="Select image by index")
+button_extend_data = Button(text="Extend data")
+button_set_data = Button(text="Set new data")
+button_toggle_selectable = Button(text="Toggle selectable")
+button_get_data = Button(text="Get data")
+
+buttons_container = Flexbox(
+    widgets=[
+        button_url,
+        button_set_url,
+        button_set_index,
+        button_extend_data,
+        button_set_data,
+        button_toggle_selectable,
+        button_get_data,
+    ]
 )
+
+all_data = Editor(height_lines=20)
+all_data.hide()
 ```
 
 ### Create app layout
@@ -190,7 +320,7 @@ Prepare a layout for the app using `Card` widget with the `content` parameter an
 ```python
 card = Card(
     title="Image Slider",
-    content=Container([image_slider, image_url, image_index, buttons_container]),
+    content=Container([image_slider, text_container, buttons_container, all_data]),
 )
 
 layout = Container(widgets=[card])
@@ -210,13 +340,50 @@ Our app layout is ready. It's time to handle button clicks.
 
 ```python
 @button_url.click
-def get_url():
-    image_url.set(text=f"Image URL: {image_slider.get_preview_url()}", status="info")
+def get_info():
+    image_url.text = f"Image URL: {image_slider.get_selected_preview()}"
+    image_index.text = f"Image index on slider: {image_slider.get_selected_idx()}"
+    image_examples.text = f"Image examples: {image_slider.get_selected_examples()}"
+    data_length.text = f"Data length: {image_slider.get_data_length()}"
 
 
-@button_index.click
-def get_index():
-    image_index.set(text=f"Image index on slider: {image_slider.get_preview_idx()}", status="info")
+@button_set_url.click
+def set_url():
+    image_slider.set_selected_preview("https://i.imgur.com/OpSj3JE.jpg")
+    get_info()
+
+
+@button_set_index.click
+def set_index():
+    image_slider.set_selected_idx(2)
+    get_info()
+
+
+@button_extend_data.click
+def extend_data():
+    image_slider.append_data(combined_data=combined_data[:1])
+    get_info()
+
+
+@button_set_data.click
+def set_data():
+    image_slider.set_data(combined_data=combined_data)
+    get_info()
+
+
+@button_toggle_selectable.click
+def toggle_selectable():
+    if image_slider.is_selectable:
+        image_slider.disable_selection()
+    else:
+        image_slider.enable_selection()
+
+
+@button_get_data.click
+def get_data():
+    data = image_slider.get_data()
+    all_data.set_text(json.dumps(data, indent=4))
+    all_data.show()
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/224554987-8fe055ae-0ccf-4994-ac4b-8fec064f0a4a.gif)
+![layout](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/13c6cd60-7b88-4776-96b9-49e4e32887fe)
