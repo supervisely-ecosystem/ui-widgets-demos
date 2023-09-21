@@ -163,7 +163,7 @@ Index of the initially selected image in `Slider`. Use only if `selectable` is `
 image_slider = ImageSlider(data=image_urls, selectable=True, preview_idx=4)
 ```
 
-![preview_idx](https://user-images.githubusercontent.com/120389559/224554540-e6b08895-a51f-490b-8af1-e604b46903a4.png)
+![preview_idx](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/6a0aac9d-5eff-4383-b8f6-652a7a47c960)
 
 ### preview_url
 
@@ -179,7 +179,7 @@ image_slider = ImageSlider(
 )
 ```
 
-![preview_url](https://user-images.githubusercontent.com/120389559/224554736-5f71c249-9dbb-41b2-9cb2-d04bfe0e5abe.png)
+![preview_url](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/cf71feae-e439-4df0-9d05-bc0c6b0d3982)
 
 ### widget_id
 
