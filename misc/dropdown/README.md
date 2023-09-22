@@ -103,17 +103,11 @@ dropdown = Dropdown(items=items, header="Your text here")
 
 |         Attributes and Methods          | Description                                         |
 | :-------------------------------------: | --------------------------------------------------- |
-|          `get_clicked_value()`          | Return `Dropdown` selected values `command`.        |
-|     `set_clicked_value(value: str)`     | Set `Dropdown` selected value `command`.            |
+|              `get_value()`              | Return `Dropdown` selected values `command`.        |
+|         `set_value(value: str)`         | Set `Dropdown` selected value `command`.            |
 |              `get_items()`              | Return `Dropdown` items.                            |
 | `set_items(value: List[Dropdown.Item])` | Set `Dropdown` items.                               |
 | `add_items(value: List[Dropdown.Item])` | Add items in `Dropdown`.                            |
-|           `expand_to_hover()`           | Set `trigger` to `hover` mode.                      |
-|           `expand_to_click()`           | Set `trigger` to `click` mode.                      |
-|      `set_menu_align_from_start()`      | Set `menu_align` to `start` mode.                   |
-|       `set_menu_align_from_end()`       | Set `menu_align` to `end` mode.                     |
-|        `unable_hide_on_click()`         | Set `hide_on_click` to `True`.                      |
-|        `disable_hide_on_click()`        | Set `hide_on_click` to `False`.                     |
 |           `get_header_text()`           | Return `Dropdown` header text.                      |
 |      `set_header_text(value: str)`      | Set `Dropdown` header text.                         |
 |            `@value_changed`             | Decorator function to handle selected value change. |
