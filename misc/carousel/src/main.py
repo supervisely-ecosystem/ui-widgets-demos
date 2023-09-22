@@ -10,17 +10,21 @@ if sly.is_development():
 
 api: sly.Api = sly.Api.from_env()
 
+image_id = 22683828
+static = os.path.join(sly.app.get_data_dir(), "static")
+api.image.download_path(image_id, os.path.join(static, "image.jpg"))
+
 items = [
     Carousel.Item(name="Slide 1", label="https://www.w3schools.com/howto/img_nature.jpg"),
     Carousel.Item(name="Slide 2", label="https://i.imgur.com/35pUPD2.jpg"),
-    Carousel.Item(name="Slide 3", label="label 3", is_link=False),
+    Carousel.Item(name="Slide 3", label=f"{os.path.join('static', 'image.jpg')}"),
     Carousel.Item(name="Slide 4", label="https://www.quackit.com/pix/samples/18m.jpg"),
     Carousel.Item(name="Slide 5", label="https://i.imgur.com/OpSj3JE.jpg"),
 ]
 
 text = Text()
 
-carousel = Carousel(items=items, autoplay=False, trigger="click", height=500)
+carousel = Carousel(items=items, height=200, type="card")
 
 card = Card(
     "Carousel",
@@ -29,7 +33,7 @@ card = Card(
 
 
 layout = Container(widgets=[card])
-app = sly.Application(layout=layout)
+app = sly.Application(layout=layout, static_dir=static)
 
 
 @carousel.value_changed
