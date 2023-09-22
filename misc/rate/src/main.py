@@ -92,12 +92,13 @@ def rate_changed(value):
 @btn_3.click
 def set_texts_btn_click():
     text = text_input.get_value()
-    if len(text.split()) != 5:
+    rates = [x.strip() for x in text.split(",")]
+    if len(rates) != 5:
         return
-    rate_3.set_texts(text.split(", "))
+    rate_3.set_texts(rates)
 
 
 ########################### App layout ###########################
 
-layout = Container(widgets=[card_3])
+layout = Container(widgets=[card_1, card_2, card_3])
 app = sly.Application(layout=layout)
