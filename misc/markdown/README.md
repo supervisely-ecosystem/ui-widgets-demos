@@ -10,7 +10,7 @@ The `Markdown` widget allows you to easily add and style your text using Markdow
 
 ```python
 Markdown(
-    md="",
+    content="",
     height=300,
     widget_id=None,
 )
@@ -20,13 +20,13 @@ Markdown(
 
 ## Parameters
 
-| Parameters  | Type  |       Description       |
-| :---------: | :---: | :---------------------: |
-|    `md`     | `str` | `Markdown` content text |
-|  `height`   | `int` |     `Widget` height     |
-| `widget_id` | `str` |    ID of the widget     |
+| Parameters  |                 Type                 |       Description       |
+| :---------: | :----------------------------------: | :---------------------: |
+|  `content`  |                `str`                 | `Markdown` content text |
+|  `height`   | `Union[int, Literal["fit-content"]]` |     `Widget` height     |
+| `widget_id` |                `str`                 |    ID of the widget     |
 
-### md
+### content
 
 Determine input `Markdown` content.
 
@@ -35,10 +35,10 @@ Determine input `Markdown` content.
 **default value:** `""`
 
 ```python
-markdown = Markdown(md="Some content")
+markdown = Markdown(content="Some content")
 ```
 
-![md](https://user-images.githubusercontent.com/120389559/224316855-4dd7d72a-3818-44f5-bc74-7a83ac1a82ab.png)
+![content](https://user-images.githubusercontent.com/120389559/224316855-4dd7d72a-3818-44f5-bc74-7a83ac1a82ab.png)
 
 ### height
 
@@ -49,7 +49,7 @@ Determine `Widget` height.
 **default value:** `300`
 
 ```python
-markdown = Markdown(md="Some content", height=30)
+markdown = Markdown(content="Some content", height=30)
 ```
 
 ![height](https://user-images.githubusercontent.com/120389559/224317474-e94ef7c0-39f2-42db-b7d6-5a105d84e11b.png)
