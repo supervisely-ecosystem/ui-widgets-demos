@@ -26,10 +26,15 @@ Carousel(
 Example of input data we will use.
 
 ```python
+# Example of local image
+image_id = 22683828
+static = os.path.join(sly.app.get_data_dir(), "static")
+api.image.download_path(image_id, os.path.join(static, "image.jpg"))
+
 items = [
     Carousel.Item(name="Slide 1", label="https://www.w3schools.com/howto/img_nature.jpg"),
     Carousel.Item(name="Slide 2", label="https://i.imgur.com/35pUPD2.jpg"),
-    Carousel.Item(name="Slide 3", label="label 3", is_link=False),
+    Carousel.Item(name="Slide 3", label=f"{os.path.join('static', 'image.jpg')}"), # for images from local directory
     Carousel.Item(name="Slide 4", label="https://www.quackit.com/pix/samples/18m.jpg"),
     Carousel.Item(name="Slide 5", label="https://i.imgur.com/OpSj3JE.jpg"),
 ]
@@ -41,28 +46,28 @@ carousel = Carousel(items=items)
 
 ## Parameters
 
-|      Parameters      |                 Type                  |                      Description                      |
-| :------------------: | :-----------------------------------: | :---------------------------------------------------: |
-|       `items`        |         `List[Carousel.Item]`         |                 Input `Carousel` data                 |
-|       `height`       |                 `int`                 |               Height of the `Carousel`                |
-|   `initial_index`    |                 `int`                 | Index of the initially active slide (starting from 0) |
-|      `trigger`       |      `Literal["hover", "click"]`      |             How indicators are triggered              |
-|      `autoplay`      |                `bool`                 |         Whether automatically loop the slides         |
-|      `interval`      |                 `int`                 |      Interval of the auto loop, in milliseconds       |
-| `indicator_position` |     `Literal["outside", "none"]`      |              Position of the indicators               |
-|       `arrow`        | `Literal["always", "hover", "never"]` |                 When arrows are shown                 |
-|        `type`        |        `Literal["card", None]`        |                Type of the `Carousel`                 |
-|     `widget_id`      |                 `str`                 |                   ID of the widget                    |
+|      Parameters      |                   Type                    |                      Description                      |
+| :------------------: | :---------------------------------------: | :---------------------------------------------------: |
+|       `items`        |           `List[Carousel.Item]`           |                 Input `Carousel` data                 |
+|       `height`       |                   `int`                   |               Height of the `Carousel`                |
+|   `initial_index`    |                   `int`                   | Index of the initially active slide (starting from 0) |
+|      `trigger`       |        `Literal["hover", "click"]`        |             How indicators are triggered              |
+|      `autoplay`      |                  `bool`                   |         Whether automatically loop the slides         |
+|      `interval`      |                   `int`                   |      Interval of the auto loop, in milliseconds       |
+| `indicator_position` | `Union[Literal["outside", "none"], None]` |              Position of the indicators               |
+|       `arrow`        |   `Literal["always", "hover", "never"]`   |                 When arrows are shown                 |
+|        `type`        |      `Union[Literal["card"], None]`       |                Type of the `Carousel`                 |
+|     `widget_id`      |                   `str`                   |                   ID of the widget                    |
 
 ### items
 
-Determine input `Carousel` data.
+Determine input `Carousel` widget data.
 
 **type:** `List[Carousel.Item]`
 
 ### height
 
-Determine height of the `Carousel`.
+Determine height of the `Carousel` widget.
 
 **type:** `int`
 
@@ -88,7 +93,7 @@ Determine how indicators are triggered.
 
 **type:** `Literal["hover", "click"]`
 
-**default value:** `"hover"`
+**default value:** `"click"`
 
 ### autoplay
 
@@ -96,7 +101,7 @@ Determine whether automatically loop the slides.
 
 **type:** `bool`
 
-**default value:** `True`
+**default value:** `False`
 
 ### interval
 
@@ -144,7 +149,7 @@ carousel = Carousel(items=items, arrow="always")
 
 Determine type of the `Carousel`.
 
-**type:** `Literal["card", None]`
+**type:** `Union[Literal["card"], None]`
 
 **default value:** `None`
 
@@ -162,7 +167,6 @@ carousel = Carousel(items=items, type="card")
 |              `get_items()`              | Return `Carousel` items.                            |
 | `set_items(value: List[Carousel.Item])` | Set `Carousel` items.                               |
 | `add_items(value: List[Carousel.Item])` | Add items in `Carousel`.                            |
-|             `get_height()`              | Return `Carousel` height.                           |
 |             `set_height()`              | Set `Carousel` height.                              |
 |          `get_initial_index()`          | Return `Carousel` `initial_index` value.            |
 |          `set_initial_index()`          | Set `Carousel` `initial_index` value.               |
@@ -197,11 +201,17 @@ api = sly.Api()
 
 ### Prepare items for cascader
 
+You can use images from local directory or image URL.
+
 ```python
+image_id = 22683828
+static = os.path.join(sly.app.get_data_dir(), "static")
+api.image.download_path(image_id, os.path.join(static, "image.jpg"))
+
 items = [
     Carousel.Item(name="Slide 1", label="https://www.w3schools.com/howto/img_nature.jpg"),
     Carousel.Item(name="Slide 2", label="https://i.imgur.com/35pUPD2.jpg"),
-    Carousel.Item(name="Slide 3", label="label 3", is_link=False),
+    Carousel.Item(name="Slide 3", label=f"{os.path.join('static', 'image.jpg')}"), # for images from local directory
     Carousel.Item(name="Slide 4", label="https://www.quackit.com/pix/samples/18m.jpg"),
     Carousel.Item(name="Slide 5", label="https://i.imgur.com/OpSj3JE.jpg"),
 ]
@@ -232,7 +242,7 @@ layout = Container(widgets=[card])
 Create an app object with layout parameter.
 
 ```python
-app = sly.Application(layout=card)
+app = sly.Application(layout=layout, static_dir=static)
 ```
 
 ### Add functions to control widgets from python code
