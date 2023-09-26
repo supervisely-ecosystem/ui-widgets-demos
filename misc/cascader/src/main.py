@@ -1,0 +1,50 @@
+import os
+
+import supervisely as sly
+from dotenv import load_dotenv
+from supervisely.app.widgets import Card, Container, Cascader, Text
+
+# for convenient debug, has no effect in production
+if sly.is_development():
+    load_dotenv("local.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
+
+api = sly.Api()
+
+
+# initialize widgets we will use in UI
+fluffy_cat = Cascader.Item(value="fluffy cat", label="fluffy cat")
+wild_cat = Cascader.Item(value="wild cat", label="wild cat")
+smooth_haired_cat = Cascader.Item(value="smooth-haired cat", label="smooth-haired cat")
+black_cat = Cascader.Item(
+    value="black cat", label="black cat", children=[fluffy_cat, smooth_haired_cat]
+)
+white_cat = Cascader.Item(value="white cat", label="white cat")
+red_cat = Cascader.Item(value="red cat", label="red cat")
+
+angry_dog = Cascader.Item(value="angry dog", label="angry dog", disabled=True)
+kind_dog = Cascader.Item(value="kind dog", label="kind dog")
+cat = Cascader.Item(value="cat", label="cat", children=[black_cat, white_cat, red_cat])
+
+animals = [
+    Cascader.Item(value="cat", label="cat", children=[black_cat, white_cat, red_cat]),
+    Cascader.Item(value="dog", label="dog", children=[angry_dog, kind_dog]),
+    Cascader.Item(value="horse", label="horse"),
+]
+
+select_items = Cascader(items=animals, selected_items=["cat", "black cat", "fluffy cat"])
+
+text = Text()
+
+card = Card(
+    title="Cascader",
+    content=Container(widgets=[select_items, text]),
+)
+
+layout = Container(widgets=[card])
+app = sly.Application(layout=layout)
+
+
+@select_items.value_changed
+def show_item(res):
+    text.text = f"You choise: {' > '.join(str(x) for x in res)}"
