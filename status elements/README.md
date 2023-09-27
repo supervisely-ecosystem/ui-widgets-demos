@@ -7,3 +7,4 @@
 5. [TaskLogs](005_task_logs/README.md)
 6. [Badge](006_badge/README.md)
 7. [ModelInfo](007_model_info/README.md)
+8. [Rate](008_rate/README.md)

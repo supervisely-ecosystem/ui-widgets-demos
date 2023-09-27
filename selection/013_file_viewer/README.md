@@ -4,7 +4,7 @@
 
 **`FileViewer`** widget in Supervisely is a useful tool for inspecting and easily navigation through files in specific directory in Team files.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/fileviewer)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/fileviewer)
 
 ## Function signature
 
