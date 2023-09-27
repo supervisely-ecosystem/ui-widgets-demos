@@ -4,7 +4,7 @@
 
 **`Dropdown`** is a widget in Supervisely that allows for selecting action from dropdown menu on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/dropdown)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/dropdown)
 
 ## Function signature
 
@@ -116,7 +116,7 @@ dropdown = Dropdown(items=items, header="Your text here")
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/dropdown/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/dropdown/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/014_dropdown/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/014_dropdown/src/main.py)
 
 ### Import libraries
 

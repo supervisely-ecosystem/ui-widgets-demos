@@ -4,7 +4,7 @@
 
 **`Rate`** widget in Supervisely that allows users to provide a rating using a graphical interface. It provides a customizable rating scale and supports features like disabling the widget, allowing half ratings, and displaying text labels.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/rate)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/rate)
 
 ## Function signature
 
@@ -197,7 +197,7 @@ rate = Rate(disabled_void_color="#5D6D7E", disabled=True)
 
 You can find this examples in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/rate/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/rate/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/status-elements/008_rate/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status-elements/008_rate/src/main.py)
 
 ### Import libraries
 

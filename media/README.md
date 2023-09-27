@@ -10,3 +10,5 @@
 8. [Icons](008_icons/README.md)
 9. [ObjectClassView](009_object_class_view/README.md)
 10. [ObjectClassesList](010_object_classes_list/README.md)
+11. [ImageSlider](011_image_slider/README.md)
+12. [Carousel](012_carousel/README.md)

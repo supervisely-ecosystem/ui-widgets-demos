@@ -4,7 +4,7 @@
 
 **`Carousel`** is a widget in Supervisely that allows loop a series of images or texts in a limited space on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/carousel)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/carousel)
 
 ## Function signature
 
@@ -176,7 +176,7 @@ carousel = Carousel(items=items, type="card")
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/carousel/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/carousel/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/media/012_carousel/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/media/012_carousel/src/main.py)
 
 ### Import libraries
 
