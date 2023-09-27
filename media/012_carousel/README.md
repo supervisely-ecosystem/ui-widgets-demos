@@ -32,9 +32,9 @@ static = os.path.join(sly.app.get_data_dir(), "static")
 api.image.download_path(image_id, os.path.join(static, "image.jpg"))
 
 items = [
-    Carousel.Item(name="Slide 1", label="https://www.w3schools.com/howto/img_nature.jpg"),
-    Carousel.Item(name="Slide 2", label="https://i.imgur.com/35pUPD2.jpg"),
-    Carousel.Item(name="Slide 3", label=f"{os.path.join('static', 'image.jpg')}"), # for images from local directory
+    Carousel.Item(name="Slide 1", label="https://www.w3schools.com/howto/img_nature.jpg"), # image by URL
+    Carousel.Item(name="Slide 2", label=f"{os.path.join('static', 'image.jpg')}"), # image from local directory
+    Carousel.Item(name="Slide 3", label="label 3", is_link=False), # text
     Carousel.Item(name="Slide 4", label="https://www.quackit.com/pix/samples/18m.jpg"),
     Carousel.Item(name="Slide 5", label="https://i.imgur.com/OpSj3JE.jpg"),
 ]
