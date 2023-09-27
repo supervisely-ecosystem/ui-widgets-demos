@@ -10,7 +10,7 @@
 
 ```python
 Pagination(
-    total,
+    total=1000,
     layout="prev, pager, next, jumper, ->, total",
     current_page=1,
     small=False,
@@ -18,10 +18,6 @@ Pagination(
     page_sizes=[10, 20, 30, 40, 50, 100],
     widget_id=None,
 )
-```
-
-```python
-pagination = Pagination(total=50)
 ```
 
 ![pagination_default](https://user-images.githubusercontent.com/120389559/227777410-1953c671-fd43-4778-903a-2c5de639325a.gif)
@@ -198,6 +194,6 @@ def set_layout():
     pagination.set_layout(["prev", "pager", "next", "sizes"])
 ```
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://user-images.githubusercontent.com/120389559/227779108-bbb467d3-2706-45ef-8d8e-db92359eadd7.gif" alt="layout" />
-</p>
+</p> -->
