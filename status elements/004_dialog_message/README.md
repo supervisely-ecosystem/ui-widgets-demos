@@ -65,7 +65,7 @@ Dialog window status.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/status-elements/004_dialog_message/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status-elements/004_dialog_message/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/status-elements/004_dialog_message/src/main.py](<https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/status elements/004_dialog_message/src/main.py>)
 
 ### Import libraries
 

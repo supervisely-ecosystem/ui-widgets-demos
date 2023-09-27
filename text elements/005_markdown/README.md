@@ -75,7 +75,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/text-elements/005_markdown/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text-elements/005_markdown/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/text-elements/005_markdown/src/main.py](<https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text elements/005_markdown/src/main.py>)
 
 ### Import libraries
 
