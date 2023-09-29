@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`TreemapChart`** widget in Supervisely is a widget used for displaying a treemap chart. It allows users to visualize data for comparison distribution of different objects. The TreemapChart widget allows easily visualize data to determine the distribution of objects in comparison to each other.
+**`TreemapChart`** widget in Supervisely is a widget used for displaying a treemap chart. It allows users to visualize data for comparison distribution of different objects. The `TreemapChart` widget allows easily visualize data to determine the distribution of objects in comparison to each other.
 
 [Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/treemapchart)
 
@@ -21,7 +21,7 @@ TreemapChart(
 ## Parameters
 
 | Parameters |    Type     |                       Description                        |
-| :--------: | :---------: | :------------------------------------------------------: |
+|:----------:|:-----------:|:--------------------------------------------------------:|
 |  `title`   |    `str`    |                   `TreemapChart` title                   |
 |  `colors`  | `List[str]` | Determines colors for cells in series in `TreemapChart`  |
 | `tooltip`  |    `str`    | Determines tooltip for cells in series in `TreemapChart` |
@@ -70,13 +70,13 @@ chart = TreemapChart(
 
 ## Methods and attributes
 
-|                     Methods and attributes                      |                                 Description                                 |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------------------: |
-| `add_series(names: List[str], values: List[Union[int, float]])` |               Adds a new series to the `TreemapChart` widget.               |
-| `set_series(names: List[str], values: List[Union[int, float]])` |  Sets a series to the `TreemapChart` widget, removing all previous series.  |
-|                    `get_series(index: int))`                    |          Returns a series from the `TreemapChart` widget by index.          |
-|                   `delete_series(index: int)`                   |          Deletes a series from the `TreemapChart` widget by index.          |
-|                    `get_clicked_datapoint()`                    | Returns the clicked datapoint from the `TreemapChart` widget as namedtuple. |
+|                     Methods and attributes                      |                                  Description                                  |
+|:---------------------------------------------------------------:|:-----------------------------------------------------------------------------:|
+| `add_series(names: List[str], values: List[Union[int, float]])` |                Adds a new series to the `TreemapChart` widget.                |
+| `set_series(names: List[str], values: List[Union[int, float]])` |   Sets a series to the `TreemapChart` widget, removing all previous series.   |
+|                    `get_series(index: int))`                    |           Returns a series from the `TreemapChart` widget by index.           |
+|                   `delete_series(index: int)`                   |           Deletes a series from the `TreemapChart` widget by index.           |
+|                    `get_clicked_datapoint()`                    | Returns the clicked datapoint from the `TreemapChart` widget as `NamedTuple`. |
 
 ## Mini app example
 
