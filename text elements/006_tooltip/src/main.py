@@ -14,10 +14,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # Create widgets, that will be shown on app initialization.
-new_button = Button("Button")
+button = Button("Button")
 
 # Create a Tooltip object.
-tooltip = Tooltip("Tooltip text", new_button)
+tooltip = Tooltip(text="Tooltip text", content=button)
 
 # Put widgets into the Container.
 main_container = Container(widgets=[tooltip])
@@ -29,7 +29,7 @@ card = Card(title="Tooltip preview", content=main_container)
 app = sly.Application(layout=card)
 
 # Set the multiline text in 'tooltip'
-tooltip.set_text(["set", "content"])
+tooltip.set_text(["Tooltip text line 1", "Tooltip text line 2"])
 
 # Set where to show a 'tooltip' around the element
 tooltip.set_placement("right-end")
