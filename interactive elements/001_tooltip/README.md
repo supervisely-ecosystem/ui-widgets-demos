@@ -115,7 +115,7 @@ Display delay in milliseconds.
 
 Example with `2000` value:
 
-<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_2sec" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/35363704-1c8f-4d20-84a4-940125a5fff8" alt="delay_2sec" />
 
 ### enterable
 
@@ -134,9 +134,9 @@ With the default value it is not hidden while the mouse is within the UI element
 
 **default value:** `0`
 
-Example with `4000` value:
+Example with `2000` value:
 
-<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_4sec" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/d7a108b4-9034-4d6e-8f34-250891ac02bf" alt="delay_4sec" />
 
 ### widget_id
 
