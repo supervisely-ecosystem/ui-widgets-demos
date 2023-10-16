@@ -9,39 +9,42 @@ from supervisely.app.widgets import (
     Tooltip,
 )
 
-# load_dotenv("local.env")
+load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 # Create widgets, that will be shown on app initialization.
 new_button = Button("Button")
 
-# Create a tooltip.
+# Create a Tooltip object.
 tooltip = Tooltip("Just text", new_button)
 
 # Put widgets into the Container.
 main_container = Container(widgets=[tooltip])
 
-# Creating Card widget, which will contain widget with the tooltip.
+# Create Card widget, which will contain widget with the 'tooltip'.
 card = Card(title="Tooltip", content=main_container)
 
-# Initializing the application.
+# Initialize the application.
 app = sly.Application(layout=card)
 
-# To set multiline text
+# Set the multiline text in 'tooltip'
 tooltip.set_content(["set", "content"])
 
-# Set where to show tooltip around the element
+# Set where to show a 'tooltip' around the element
 tooltip.set_placement("right-end")
 
-# To change tooltip offset
+# Change 'tooltip' offset
 tooltip.set_offset(10)
 
-# To change tooltip animation
+# Change 'tooltip' animation
 tooltip.set_transition("el-fade-in")
 
-# To set tooltip opening delay in milliseconds
+# Hide arrow for 'tooltip'
+tooltip.set_arrow_visibility(False)
+
+# Set 'tooltip' opening delay in milliseconds
 tooltip.set_open_delay(2000)
 
-# To disable tooltip
-tooltip.set_disabled(False)
+# Set 'tooltip' hide delay in milliseconds
+tooltip.set_hide_after(4000)
