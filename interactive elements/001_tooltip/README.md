@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`Tooltip`** widget in Supervisely is a user interface element that display prompt information for mouse hover.
+**`Tooltip`** widget in Supervisely is a user interface element that displays prompt information for mouse hover.
 Uses like a wrapper around a main UI elements, such as **`Button`** for example.
 
 ## Function signature
@@ -14,7 +14,7 @@ Tooltip(
 )
 ```
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/7b3fe0aa-fdde-41cd-bf4f-ee6e56a14db5" alt="default" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/7b3fe0aa-fdde-41cd-bf4f-ee6e56a14db5" alt="default" />
 
 ## Parameters
 
@@ -40,7 +40,7 @@ Tooltip text. For a multi-line view, use `List[str]` with each line as a value i
 
 Example with `['Tooltip text line 1', 'Tooltip text line 2']` :
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/835c3abe-1a6e-42d1-a1c4-b8de9e9baa16" alt="multi-line" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/835c3abe-1a6e-42d1-a1c4-b8de9e9baa16" alt="multi-line" />
 
 ### element
 
@@ -53,7 +53,7 @@ element=Checkbox("Set option")
 ...
 ```
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/1d66de46-d559-4e27-b6d9-e30957fd52cb" alt="element" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/1d66de46-d559-4e27-b6d9-e30957fd52cb" alt="element" />
 
 ### effect
 
@@ -63,7 +63,7 @@ Color theme of Tooltip widget.
 
 **default value:** `"dark"`
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/c9d356da-80d7-4282-8b6d-ff0cda7c73a9" alt="themes" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/c9d356da-80d7-4282-8b6d-ff0cda7c73a9" alt="themes" />
 
 ### placement
 
@@ -103,7 +103,7 @@ Determines whether the tooltip should have an arrow pointing to the item or not.
 
 Example with `False` :
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/ccf067aa-5585-49e4-97fb-49513762ad6d" alt="arrow_hide" />
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/ccf067aa-5585-49e4-97fb-49513762ad6d" alt="arrow_hide" />
 
 ### open_delay
 
@@ -113,7 +113,9 @@ Display delay in milliseconds.
 
 **default value:** `0`
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_2sec" />
+Example with `2000` value:
+
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_2sec" />
 
 ### enterable
 
@@ -126,12 +128,15 @@ Determines whether the cursor can enter the tooltip area or not.
 ### hide_after
 
 Hide delay in milliseconds.
+With the default value it is not hidden while the mouse is within the UI element.
 
 **type:** `int`
 
 **default value:** `0`
 
-<img height="200" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_4sec" />
+Example with `4000` value:
+
+<img height="260" src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/57998637/6b576c15-a08a-4020-8383-c84bf50e3dd3" alt="delay_4sec" />
 
 ### widget_id
 
