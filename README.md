@@ -15,7 +15,6 @@
 - [Tables](tables/README.md)
 - [Charts and Plots](charts%20and%20plots/README.md)
 - [Compare Data](compare%20data/README.md)
-- [Interactive Elements](interactive%20elements/README.md)
 
 <!-- # How to debug widgets
 
