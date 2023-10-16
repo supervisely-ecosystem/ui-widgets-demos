@@ -18,19 +18,19 @@ Tooltip(
 
 ## Parameters
 
-|   Parameters    |        Type        |                                                                                              Description                                                                                              |
-| :-------------: | :----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    `content`    | `str`, `List[str]` |                                                      Tooltip text. For a multi-line view, use `List[str]` with each line as a value in the list                                                       |
-|    `element`    |      `Widget`      |                                                                        The UI element for which the tooltip will be displayed                                                                         |
-|    `effect`     |       `str`        |                                                                                 One of `"dark", "light"` color theme                                                                                  |
-|   `placement`   |       `str`        | One of `"top","top-start","top-end","bottom","bottom-start","bottom-end","left","left-start","left-end","right","right-start","right-end"` - place around the element where tooltip will be displayed |
-|    `offset`     |       `int`        |                                                                                    Offset of the tooltip in pixels                                                                                    |
-|  `transition`   |       `str`        |                                                      One of `"el-fade-in-linear", "el-fade-in"` describes the disappearance animation for widget                                                      |
-| `visible_arrow` |       `bool`       |                                                            Determines whether the tooltip should have an arrow pointing to the item or not                                                            |
-|  `open_delay`   |       `int`        |                                                                                     Display delay in milliseconds                                                                                     |
-|   `enterable`   |       `bool`       |                                                                    Determines whether the cursor can enter the tooltip area or not                                                                    |
-|  `hide_after`   |       `int`        |                                                                                      Hide delay in milliseconds                                                                                       |
-|   `widget_id`   |       `str`        |                                                                                           ID of the widget                                                                                            |
+|   Parameters    |                     Type                      |                                                                                              Description                                                                                              |
+| :-------------: | :-------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    `content`    |              `str`, `List[str]`               |                                                      Tooltip text. For a multi-line view, use `List[str]` with each line as a value in the list                                                       |
+|    `widget`     |                   `Widget`                    |                                                                        The UI element for which the tooltip will be displayed                                                                         |
+|  `color_theme`  |          `Literal["dark", "light"]`           |                                                                                 One of `"dark", "light"` color theme                                                                                  |
+|   `placement`   |       `Literal["top","top-start", ..]`        | One of `"top","top-start","top-end","bottom","bottom-start","bottom-end","left","left-start","left-end","right","right-start","right-end"` - place around the element where tooltip will be displayed |
+|    `offset`     |                     `int`                     |                                                                                    Offset of the tooltip in pixels                                                                                    |
+|  `transition`   | `Literal["el-fade-in-linear","el-fade-in"]  ` |                                                      One of `"el-fade-in-linear", "el-fade-in"` describes the disappearance animation for widget                                                      |
+| `visible_arrow` |                    `bool`                     |                                                            Determines whether the tooltip should have an arrow pointing to the item or not                                                            |
+|  `open_delay`   |                     `int`                     |                                                                                     Display delay in milliseconds                                                                                     |
+|   `enterable`   |                    `bool`                     |                                                                    Determines whether the cursor can enter the tooltip area or not                                                                    |
+|  `hide_after`   |                     `int`                     |                                     Hide delay in milliseconds. With the default value `0`, it will not be hidden as long as the mouse is inside the UI element.                                      |
+|   `widget_id`   |                     `str`                     |                                                                                           ID of the widget                                                                                            |
 
 ### content
 
@@ -128,7 +128,7 @@ Determines whether the cursor can enter the tooltip area or not.
 ### hide_after
 
 Hide delay in milliseconds.
-With the default value it is not hidden while the mouse is within the UI element.
+With the default value, it will not be hidden as long as the mouse is inside the UI element.
 
 **type:** `int`
 
