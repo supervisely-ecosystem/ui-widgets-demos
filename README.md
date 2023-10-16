@@ -4,19 +4,18 @@
 
 **List of widgets categories:**
 
- - [Input](input/001_input/README.md)
- - [Controls](controls/README.md)
- - [Text Elements](text%20elements/README.md)
- - [Media](media/README.md)
- - [Selection](selection/README.md)
- - [Thumbnails](thumbnail/README.md)
- - [Status Elements](status%20elements/README.md)
- - [Layouts and Containers](layouts%20and%20containers/README.md)
- - [Tables](tables/README.md)
- - [Charts and Plots](charts%20and%20plots/README.md)
- - [Compare Data](compare%20data/README.md)
-
-
+- [Input](input/001_input/README.md)
+- [Controls](controls/README.md)
+- [Text Elements](text%20elements/README.md)
+- [Media](media/README.md)
+- [Selection](selection/README.md)
+- [Thumbnails](thumbnail/README.md)
+- [Status Elements](status%20elements/README.md)
+- [Layouts and Containers](layouts%20and%20containers/README.md)
+- [Tables](tables/README.md)
+- [Charts and Plots](charts%20and%20plots/README.md)
+- [Compare Data](compare%20data/README.md)
+- [Interactive Elements](interactive%20elements/README.md)
 
 <!-- # How to debug widgets
 
