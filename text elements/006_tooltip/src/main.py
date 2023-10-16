@@ -17,19 +17,19 @@ api = sly.Api()
 new_button = Button("Button")
 
 # Create a Tooltip object.
-tooltip = Tooltip("Just text", new_button)
+tooltip = Tooltip("Tooltip text", new_button)
 
 # Put widgets into the Container.
 main_container = Container(widgets=[tooltip])
 
 # Create Card widget, which will contain widget with the 'tooltip'.
-card = Card(title="Tooltip", content=main_container)
+card = Card(title="Tooltip preview", content=main_container)
 
 # Initialize the application.
 app = sly.Application(layout=card)
 
 # Set the multiline text in 'tooltip'
-tooltip.set_content(["set", "content"])
+tooltip.set_text(["set", "content"])
 
 # Set where to show a 'tooltip' around the element
 tooltip.set_placement("right-end")
