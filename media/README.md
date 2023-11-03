@@ -12,3 +12,5 @@
 10. [ObjectClassesList](010_object_classes_list/README.md)
 11. [ImageSlider](011_image_slider/README.md)
 12. [Carousel](012_carousel/README.md)
+13. [TagMetaView](013_tag_meta_view/README.md)
+14. [TagMetasList](014_tag_metas_list/README.md)
