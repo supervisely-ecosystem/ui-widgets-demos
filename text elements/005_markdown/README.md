@@ -64,7 +64,7 @@ Determine `Widget` height.
 **default value:** `True`
 
 ```python
-markdown = Markdown(content="Lorem ipsum ...", height="fit-content", show_border=False)
+markdown = Markdown(content="Lorem ipsum ...", show_border=False)
 ```
 
 ![show_border](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/ebd50cfe-d466-47a2-926c-03100dcd4e93)

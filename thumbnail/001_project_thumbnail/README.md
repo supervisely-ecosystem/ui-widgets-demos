@@ -35,7 +35,7 @@ project = api.project.get_info_by_id(project_id)
 project_thumbnail = ProjectThumbnail(project)
 ```
 
-### info
+### remove_margins
 
 Set margins to 0 to make widget more compact.
 
