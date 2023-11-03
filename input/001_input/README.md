@@ -145,7 +145,7 @@ Set an icon to indicate input type. Set to `None` to disable icon.
 input = Input(value="Search", icon="search")
 ```
 
-![icon](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/bc6bae94-dd6e-4347-bf62-644d5e9df026)
+![icon](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/7dd60917-b161-4700-bd05-857d4e975011)
 
 ### widget_id
 
