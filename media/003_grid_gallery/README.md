@@ -37,6 +37,7 @@ GridGallery(
 |     `sync_views`      | `bool`  |               Sync pan & zoom between views                |
 |   `fill_rectangle`    | `bool`  |                       Fill rectange                        |
 |    `border_width`     |  `int`  |                        Border width                        |
+|    `empty_message`    |  `str`  |  If no images are given, this message will be displayed.   |
 |      `widget_id`      |  `str`  |                      Id of the widget                      |
 
 ### columns_number
@@ -92,6 +93,7 @@ Enable zoom on `GridGallery`.
 ```python
 grid_gallery = GridGallery(columns_number=3, enable_zoom=True)
 ```
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79905215/221856143-7eb079d0-38ea-460d-9ca5-f38d1146bbb3.gif" alt="grid_gallery_zoom" />
 </p>
@@ -158,6 +160,19 @@ grid_gallery = GridGallery(columns_number=3, border_width=12)
 
 ![border_width](https://user-images.githubusercontent.com/120389559/221580110-d98abb1b-bc91-4928-a419-b2841fcd7eea.png)
 
+### empty_message
+
+If no images are given, this message will be displayed.
+
+**type:** `str`
+
+**default value:** `Gallery is empty`
+
+```python
+grid_gallery = GridGallery(columns_number=3, empty_message="Set images to gallery to see them here")
+```
+
+![empty_message_gallery](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/d9697b31-de83-4336-ab8c-ca672dd34d43)
 
 ### widget_id
 
@@ -169,14 +184,12 @@ ID of the widget.
 
 ## Methods and attributes
 
-
 |                                Attributes and Methods                                 | Description                         |
 | :-----------------------------------------------------------------------------------: | ----------------------------------- |
 |                                       `loading`                                       | Get or set `loading` property.      |
 |                          `get_column_index(incoming_value)`                           | Return column index by given value. |
 | `append(image_url, annotation, title, column_index, zoom_to, zoom_factor, title_url)` | Add item in `GridGallery`.          |
 |                                     `clean_up()`                                      | Clean `GridGallery` from all items. |
-
 
 ## Mini App Example
 

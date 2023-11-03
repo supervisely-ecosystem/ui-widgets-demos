@@ -17,8 +17,7 @@ button_clean = Button(text="Clean md")
 button_readme = Button(text="Set md readme")
 buttons_container = Flexbox(widgets=[button_text, button_clean, button_readme])
 
-
-md_path = os.path.join(os.getcwd(), "misc/markdown/README.md")
+md_path = os.path.join(os.getcwd(), "text elements", "005_markdown", "README.md")
 md = ""
 with open(md_path, "r") as f:
     md = f.read()
