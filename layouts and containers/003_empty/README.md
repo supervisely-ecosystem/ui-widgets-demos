@@ -16,9 +16,22 @@ empty = Empty(widget_id=None)
 
 ## Parameters
 
-| Parameters  | Type  |   Description    |
-| :---------: | :---: | :--------------: |
-| `widget_id` | `str` | ID of the widget |
+| Parameters  | Type  |               Description                |
+| :---------: | :---: | :--------------------------------------: |
+|   `style`   | `str` | Specifies an inline style for an element |
+| `widget_id` | `str` |             ID of the widget             |
+
+### style
+
+Specifies an inline style for an element.
+
+**type:** `str`
+
+**default value:** ""
+
+```python
+empty = Empty(style="padding: 5px;")
+```
 
 ### widget_id
 
@@ -96,7 +109,6 @@ app = sly.Application(layout=layout)
 ```
 
 In this video demonstrated `Empty` (invisible) and `Text` widgets that we used in `Select` widget.
-
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79905215/223943970-f4338bd1-0f2b-4f6b-96d5-c2a3086aca0c.gif" alt="layout" />

@@ -21,7 +21,6 @@ InputTag(
   <img src="https://user-images.githubusercontent.com/120389559/218993249-8d449098-3efa-4c60-92d5-3019c76a1106.gif" alt="default" />
 </p>
 
-
 ## Parameters
 
 | Parameters  |   Type    |                 Description                  |
@@ -65,6 +64,7 @@ ID of the widget.
 |              `value`               | Get input widget value property.                                    |
 |     `value(value: tag.value)`      | Set input widget value property.                                    |
 |          `get_tag_meta()`          | Return current `TagMeta`.                                           |
+|          `set_tag_meta()`          | set `TagMeta`.                                                      |
 |            `activate()`            | Activate `InputTag` switch.                                         |
 |           `deactivate()`           | Deactivate `InputTag` switch.                                       |
 |           `is_active()`            | Check `InputTag` switch is active.                                  |

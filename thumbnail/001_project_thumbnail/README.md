@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`ProjectThumbnail`**  widget in Supervisely is a widget that allows to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
+**`ProjectThumbnail`** widget in Supervisely is a widget that allows to display a thumbnail image that represents supervisely project. It is a useful widget for applications that run from specific project, allowing users to have quick access to this project, so that when the user clicks on the thumbnail, the link will take him to this project.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/projectthumbnail)
 
@@ -16,10 +16,11 @@ ProjectThumbnail(info=None, widget_id=None)
 
 ## Parameters
 
-| Parameters  |     Type      |                    Description                     |
-| :---------: | :-----------: | :------------------------------------------------: |
-|   `info`    | `ProjectInfo` | `NamedTuple`, containing information about project |
-| `widget_id` |     `str`     |                  ID of the widget                  |
+|    Parameters    |     Type      |                    Description                     |
+| :--------------: | :-----------: | :------------------------------------------------: |
+|      `info`      | `ProjectInfo` | `NamedTuple`, containing information about project |
+| `remove_margins` |    `bool`     |    Set margins to 0 to make widget more compact    |
+|   `widget_id`    |     `str`     |                  ID of the widget                  |
 
 ### info
 
@@ -32,6 +33,18 @@ ProjectThumbnail(info=None, widget_id=None)
 ```python
 project = api.project.get_info_by_id(project_id)
 project_thumbnail = ProjectThumbnail(project)
+```
+
+### remove_margins
+
+Set margins to 0 to make widget more compact.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+project_thumbnail = ProjectThumbnail(project, remove_margins=True)
 ```
 
 ### widget_id

@@ -20,11 +20,12 @@ Text(
 
 ## Parameters
 
-| Parameters  |                           Type                           |       Description        |
-| :---------: | :------------------------------------------------------: | :----------------------: |
-|   `text`    |                          `str`                           | Determine displayed text |
-|  `status`   | `Literal["text", "info", "success", "warning", "error"]` |      Message status      |
-| `widget_id` |                          `str`                           |     ID of the widget     |
+| Parameters  |                           Type                           |        Description         |
+| :---------: | :------------------------------------------------------: | :------------------------: |
+|   `text`    |                          `str`                           |  Determine displayed text  |
+|  `status`   | `Literal["text", "info", "success", "warning", "error"]` |       Message status       |
+| `font_size` |                          `int`                           | Size of the font in pixels |
+| `widget_id` |                          `str`                           |      ID of the widget      |
 
 ### text
 
@@ -55,6 +56,21 @@ text_error = Text(text="My error text", status="error")
 ```
 
 ![status](https://user-images.githubusercontent.com/120389559/218086875-c6990527-44f2-44a3-9367-c79d3c6717e9.png)
+
+### font_size
+
+Size of the font in pixels.
+
+**type:** `int`
+
+**default value:** `14`
+
+```python
+text14 = Text(text="Font size: 14", status="text", font_size=14)
+text32 = Text(text="Font size: 32", status="text", font_size=32)
+```
+
+![font-size](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/bf9d076a-269e-412f-8412-c758f9a21412)
 
 ### widget_id
 

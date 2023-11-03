@@ -27,7 +27,7 @@ ClassesTable(
 |   Parameters    |       Type       |                              Description                              |
 | :-------------: | :--------------: | :-------------------------------------------------------------------: |
 | `project_meta`  |  `ProjectMeta`   |                          Input `ProjectMeta`                          |
-|  `project_id`   |      `int`       |                           Input Supervisely project ID                            |
+|  `project_id`   |      `int`       |                     Input Supervisely project ID                      |
 |  `project_fs`   |    `Project`     |                            Input `Project`                            |
 | `allowed_types` | `List[Geometry]` | `Geometry` types that will be display from all types in given project |
 |  `selectable`   |      `bool`      |                  Whether the component is selectable                  |
@@ -130,6 +130,7 @@ classes_table = ClassesTable(
     disabled=True,
 )
 ```
+
 ![disabled](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/a3b5dc51-d248-4894-a0fb-48860bb1fb54)
 
 ### widget_id
@@ -148,6 +149,7 @@ ID of the widget.
 |  `read_project(project_fs: sly.Project)`   | Read given `Project`.                                        |
 |  `read_project_from_id(project_id: int)`   | Read given `Project` by ID.                                  |
 |          `get_selected_classes()`          | Return list of selected classes.                             |
+|             `select_classes()`             | Given classes will be selected (checked) in `ClassesTable``. |
 |            `clear_selection()`             | Clear selected data.                                         |
 |             `value_changed()`              | Decorator function is handled when input value is changed.   |
 |           `loading(value: bool)`           | Decorator function is handled when input value is uplouding. |
