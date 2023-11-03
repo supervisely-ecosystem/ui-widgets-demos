@@ -3,8 +3,14 @@ from random import randint
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Button, Card, Container
-from supervisely.app.widgets import Image, ObjectClassesList, ProjectThumbnail
+from supervisely.app.widgets import (
+    Button,
+    Card,
+    Container,
+    Image,
+    ObjectClassesList,
+    ProjectThumbnail,
+)
 
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
