@@ -4,7 +4,6 @@
 
 **`Flexbox`** widget in Supervisely is a widget that enables users to arrange other widgets in a flexible and responsive layout. Users can customize the layout by setting the gap between widgets and aligning them to the center. With the `Flexbox` widget, users can easily create dynamic and adaptable layouts that can be optimized for different devices and screen sizes
 
-
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/flexbox)
 
 ## Function signature
@@ -24,8 +23,8 @@ Flexbox(
 
 |    Parameters    |      Type      |                           Description                           |
 | :--------------: | :------------: | :-------------------------------------------------------------: |
-|    `widgets`     | `List[Widget]` |             List if widgets to display on `Flexbox`             |
-|      `gap`       |     `int`      |                Gap between widgets on `Flexbox`                 |
+|    `widgets`     | `List[Widget]` |             List of widgets to display in `Flexbox`             |
+|      `gap`       |     `int`      |                Gap between widgets in `Flexbox`                 |
 | `center_content` |     `bool`     | Determines whether to place widgets in the center of the window |
 |   `widget_id`    |     `str`      |                        ID of the widget                         |
 
@@ -40,7 +39,6 @@ flexbox = Flexbox(widgets=[Input(), Input()])
 ```
 
 ![widgets](https://user-images.githubusercontent.com/79905215/223953933-2d096050-3449-4e68-9ac9-71e50248e454.png)
-
 
 ### gap
 

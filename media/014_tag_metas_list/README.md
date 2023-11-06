@@ -4,7 +4,7 @@
 
 **`TagMetasList`** widget allows users to view a list of tag metas, it provide a flexible display option with a choice of single-column or multiple-column layouts. It also allows users to select or deselect one or more tags, making it easy to manage and organize object classes. This widget is a useful tool for visualizing and selecting tags in Supervisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/tag-metas-list)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/tagmetaslist)
 
 ## Function signature
 

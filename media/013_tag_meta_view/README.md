@@ -4,7 +4,7 @@
 
 **`TagMetaView`** is a widget in Supervisely that displays a single TagMeta and provides a convenient way to view the name, color, and tag value type.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/tag-meta-view)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/tagmetaview)
 
 ## Function signature
 

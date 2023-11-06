@@ -14,3 +14,4 @@
 12. [Carousel](012_carousel/README.md)
 13. [TagMetaView](013_tag_meta_view/README.md)
 14. [TagMetasList](014_tag_metas_list/README.md)
+15. [ImageAnnotationPreview](015_image_annotation_preview/README.md)
