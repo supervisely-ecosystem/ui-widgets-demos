@@ -16,7 +16,7 @@ image_preview = ImageAnnotationPreview(
 )
 ```
 
-![image-annotation-preview-default]()
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/6f29084d-c71e-47f0-a962-12ac2f472f23)
 
 ## Parameters
 
@@ -41,11 +41,11 @@ image_preview = ImageAnnotationPreview(
 )
 ```
 
-![annotation-opacity]()
+![opacity](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/87d6b835-b6cd-4e66-9479-6114d2c86d7c)
 
 ### enable_zoom
 
-If `True` allows to zoom image.
+If `True`, allows to zoom image with the mouse wheel.
 
 **type:** `bool`
 
@@ -56,8 +56,6 @@ image_preview = ImageAnnotationPreview(
     enable_zoom = True,
 )
 ```
-
-![enable-zoom]()
 
 ### line_width
 
@@ -73,7 +71,7 @@ image_preview = ImageAnnotationPreview(
 )
 ```
 
-![line-width]()
+![line_width](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/88af91d5-45a2-4a5c-93fd-1adef1b3721e)
 
 ### widget_id
 
@@ -155,7 +153,11 @@ image_preview = ImageAnnotationPreview(
     enable_zoom=False,
     line_width=1,
 )
-image_preview.set(image_url=image.preview_url, ann=ann, project_meta=project_meta)
+image_preview.set(
+    image_url=image.preview_url,
+    ann=ann,
+    project_meta=project_meta
+)
 ```
 
 ### Add button widget to show random image, we will use it later
@@ -169,7 +171,10 @@ random_button = Button("Random image")
 Prepare a layout for app using `Card` widget with the `content` parameter and place widgets that we've just created in the `Container` widget.
 
 ```python
-card = Card(title="ImageAnnotationPreview", content=Container([image_preview, random_button]))
+card = Card(
+    title="ImageAnnotationPreview",
+    content=Container([image_preview, random_button])
+)
 ```
 
 ### Create app using layout
@@ -180,7 +185,7 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![miniapp]()
+![miniapp](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/990461f1-8f5c-4e12-9257-7fe36952e897)
 
 ### Add button click event to update preview
 
@@ -189,6 +194,14 @@ app = sly.Application(layout=layout)
 def set_random_image():
     random_image = choice(images)
     random_ann_json = api.annotation.download(random_image.id).annotation
-    random_ann = sly.Annotation.from_json(random_ann_json, project_meta)
-    image_preview.set(image_url=random_image.preview_url, ann=random_ann, project_meta=project_meta)
+    random_ann = sly.Annotation.from_json(
+        random_ann_json,
+        project_meta
+    )
+
+    image_preview.set(
+        image_url=random_image.preview_url,
+        ann=random_ann,
+        project_meta=project_meta
+    )
 ```
