@@ -139,7 +139,7 @@ timeline = Timeline(
 
 ![tooltip](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/e42d1bd5-5691-4289-b532-c7cc8c8d30e7)
 
-### tooltip_content
+### widget_id
 
 ID of the widget.
 
