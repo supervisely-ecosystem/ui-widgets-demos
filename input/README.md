@@ -6,3 +6,4 @@
 4. [BindedInputNumber](004_binded_input_number/README.md)
 5. [Date Picker](005_date_picker/README.md)
 6. [Datetime Picker](006_datetime_picker/README.md)
+7. [Color Picker](007_color_picker/README.md)

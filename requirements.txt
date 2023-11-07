@@ -2,3 +2,4 @@ supervisely
 
 # code formatter
 black
+names
