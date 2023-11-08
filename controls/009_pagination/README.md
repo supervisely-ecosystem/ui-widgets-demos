@@ -150,7 +150,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/pagination/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/pagination/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/controls/009_pagination/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/controls/009_pagination/src/main.py)
 
 ### Import libraries
 
