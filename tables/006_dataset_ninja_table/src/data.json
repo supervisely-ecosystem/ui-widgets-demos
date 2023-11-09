@@ -1,0 +1,16 @@
+{
+  "columns": ["Class", "Items"],
+  "data": [
+    ["apple", "21"],
+    ["banana", "15"]
+  ],
+  "columnsOptions": [
+    { "type": "class" },
+    { "maxValue": 21, "postfix": "pcs", "tooltip": "description text" }
+  ],
+  "options": {
+    "fixColumns": 1,
+    "sort": { "columnIndex": 1, "order": "desc" },
+    "pageSize": 10
+  }
+}

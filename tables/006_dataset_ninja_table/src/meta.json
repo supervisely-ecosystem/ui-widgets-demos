@@ -1,0 +1,22 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "title": "apple",
+      "description": "",
+      "shape": "polygon",
+      "hotkey": "",
+      "color": "#008080"
+    },
+    {
+      "id": 2,
+      "title": "banana",
+      "description": "",
+      "shape": "polygon",
+      "hotkey": "",
+      "color": "#AA6E28"
+    }
+  ],
+  "tags": [],
+  "projectType": "images"
+}
