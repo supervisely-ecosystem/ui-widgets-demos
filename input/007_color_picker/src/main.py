@@ -9,14 +9,11 @@ if sly.is_development():
 
 api: sly.Api = sly.Api.from_env()
 
-color_picker = ColorPicker(show_alpha=False, color_format="hex", compact=True)
+color_picker = ColorPicker(show_alpha=False, color_format="hex", compact=False)
 color_info = Text("Current color: #20A0FF", "info")
 text = Text("Hello, World!", color="#20A0FF", font_size=22)
 
-layout = Card(
-    "Color Picker",
-    content=Container([color_picker, color_info, text]),
-)
+layout = Card("Color Picker", content=Container([color_picker]))  # , color_info, text]),
 
 app = sly.Application(layout=layout)
 

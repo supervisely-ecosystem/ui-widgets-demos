@@ -29,9 +29,3 @@ card = Card(
 
 layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
-
-
-# @tag.close_tag
-# def taggg(res):
-#     info = res
-#     a = 0
