@@ -37,7 +37,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 
-video_id = 350000  # set your video id here
+video_id = 349086  # set your video id here
 video = api.video.get_info_by_id(video_id)
 video_thumbnail = VideoThumbnail(video)
 
@@ -66,7 +66,7 @@ timeline_container = Container(
 
 main_container = Container(widgets=[video_thumbnail, timeline_container])
 card = Card(title="Timeline", content=main_container)
-app = sly.Application(layout=card)
+app = sly.Application(layout=Container([timeline, card]))
 
 
 @timeline.click

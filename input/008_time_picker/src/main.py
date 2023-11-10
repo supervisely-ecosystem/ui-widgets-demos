@@ -10,7 +10,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api: sly.Api = sly.Api.from_env()
 
 text = Text()
-time_picker = TimePicker()
+time_picker = TimePicker("09:00")
 
 card = Card(
     "Time Picker",
