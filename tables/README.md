@@ -5,4 +5,4 @@
 3. [RadioTable](003_radio_table/README.md)
 4. [ClassesTable](004_classes_table/README.md)
 5. [RandomSplitsTable](005_random_splits_table/README.md)
-6. [DatasetNinjaTable](006_dataset_ninja_table/README.md)
+6. [DatasetNinjaTable](006_smart_table/README.md)
