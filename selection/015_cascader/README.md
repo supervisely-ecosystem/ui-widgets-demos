@@ -59,7 +59,6 @@ select_items = Cascader(items=animals)
 |   `placeholder`    |                   `str`                   |                        Input placeholder                         |
 |       `size`       | `Literal["large", "small", "mini", None]` |                          Size of input                           |
 |  `expand_trigger`  |        `Literal["click", "hover"]`        |              Trigger mode of expanding current item              |
-|     `disabled`     |                  `bool`                   |                  Whether `Cascader` is disabled                  |
 |    `clearable`     |                  `bool`                   |              Whether selected value can be cleared               |
 | `show_all_levels`  |                  `bool`                   | Whether to display all levels of the selected value in the input |
 | `change_on_select` |                  `bool`                   |      Whether selecting an option of any level is permitted       |
@@ -132,20 +131,6 @@ select_items = Cascader(items=animals, expand_trigger="hover")
 ```
 
 ![expand_trigger](https://user-images.githubusercontent.com/120389559/226878119-6f1dd044-752a-4330-8093-4f4ce47fe113.gif)
-
-### disabled
-
-Determine whether `Cascader` is disabled.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-select_items = Cascader(items=animals, disabled=True)
-```
-
-![disabled](https://user-images.githubusercontent.com/120389559/226880378-d5423725-00b5-4f57-a754-42deb43c1300.png)
 
 ### clearable
 
@@ -223,15 +208,13 @@ ID of the widget.
 | `add_items(value: List[Cascader.Item])` | Add items in `Cascader`.                            |
 |           `expand_to_hover()`           | Set `expand_trigger` to `hover` mode.               |
 |           `expand_to_click()`           | Set `expand_trigger` to `click` mode.               |
-|            `set_disabled()`             | Set `disabled` to `True`.                           |
-|             `set_unabled()`             | Set `disabled` to `False`.                          |
 |            `@value_changed`             | Decorator function to handle selected value change. |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/cascader/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/cascader/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/selection/015_cascader/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/015_cascader/src/main.py)
 
 ### Import libraries
 

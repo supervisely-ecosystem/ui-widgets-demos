@@ -157,7 +157,7 @@ ID of the widget.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/time_picker/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/time_picker/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/input/008_time_picker/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/input/008_time_picker/src/main.py)
 
 ### Import libraries
 
