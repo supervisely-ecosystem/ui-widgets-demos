@@ -9,8 +9,8 @@ if sly.is_development():
 
 api: sly.Api = sly.Api.from_env()
 
-el_tag = ElementTagsList.Tag(text="Tag", closable=True, close_transition=False)
 
+el_tag = ElementTagsList.Tag(text="Tag")
 all_tag_types = [el_tag]
 for tag_type in ["primary", "gray", "success", "warning", "danger"]:
     curr_tag = ElementTagsList.Tag(
@@ -18,19 +18,17 @@ for tag_type in ["primary", "gray", "success", "warning", "danger"]:
     )
     all_tag_types.append(curr_tag)
 
-el_tags = ElementTagsList(tags=all_tag_types)
+el_tags_list = ElementTagsList(tags=all_tag_types)
 
 card = Card(
-    "ElementTag",
-    content=Container(widgets=[el_tags], direction="horizontal"),
+    "Element Tags List",
+    content=el_tags_list,
 )
 
-
-layout = Container(widgets=[card])
+layout = card
 app = sly.Application(layout=layout)
 
 
-@el_tags.close
+@el_tags_list.close
 def close_tag(current_tags):
-    info = current_tags
-    el_tags.add_tags([ElementTagsList.Tag(text="Tag213123123")])
+    el_tags_list.add_tags([ElementTagsList.Tag(text="New Tag", closable=True)])

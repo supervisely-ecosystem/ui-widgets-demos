@@ -2,9 +2,9 @@
 
 ## Introduction
 
-**`ElementTag`** widget in Supervisely is a widget that allows users to display tag on the UI.
+**`ElementTag`** widget in Supervisely is a widget that allows users to display [elements tag](https://element.eleme.io/1.4/#/en-US/component/tag) in the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/tag)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/elementtag)
 
 ## Function signature
 
@@ -101,7 +101,7 @@ ID of the widget
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/tag/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/text-elements/008_element_tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text-elements/008_element_tag/src/main.py)
 
 ### Import libraries
 

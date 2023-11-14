@@ -2,79 +2,44 @@
 
 ## Introduction
 
-**`ElementTag`** widget in Supervisely is a widget that allows users to display tag on the UI.
+**`ElementTagsList`** widget in Supervisely is a widget that allows users to display multiple [elements tags](https://element.eleme.io/1.4/#/en-US/component/tag) in the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/tag)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/elementtagslist)
 
 ## Function signature
 
 ```python
-ElementTag(text="", type=None, hit=False, color="", widget_id=None)
+ElementTagsList(tags=tags, widget_id=None)
 ```
+
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/1aad8b9f-d78f-4da9-b980-18f2da9592e9)
 
 ## Parameters
 
-| Parameters  |                                Type                                |                  Description                  |
-| :---------: | :----------------------------------------------------------------: | :-------------------------------------------: |
-|   `text`    |                               `str`                                |               `ElementTag` text               |
-|   `type`    | `Literal["primary", "gray", "success", "warning", "danger", None]` |              `ElementTag` theme               |
-|    `hit`    |                               `bool`                               | Whether `ElementTag` has a highlighted border |
-|   `color`   |                               `str`                                |     Background color of the `ElementTag`      |
-| `widget_id` |                               `str`                                |               ID of the widget                |
+| Parameters  |            Type             |              Description              |
+| :---------: | :-------------------------: | :-----------------------------------: |
+|   `tags`    | `List[ElementTagsList.Tag]` | List of `ElementTagsList.Tag` objects |
+| `widget_id` |            `str`            |           ID of the widget            |
 
-### text
+### tags
 
-Determine `ElementTag` text.
+List of `ElementTagsList.Tag` objects, that will be displayed in the UI. `ElementTagsList.Tag` object is based on `ElementTag` widget and has the same arguments. You can learn about them in the [ElementTag](https://developer.supervise.ly/app-development/widgets/text-elements/elementtag) tutorial.
 
-**type:** `str`
+If you want to add close button to the tag, you can use `ElementTagsList.Tag` object with `closable=True` argument.
 
-```python
-el_tag = ElementTag(text="Tag example")
-```
-
-![text](https://user-images.githubusercontent.com/120389559/226908793-2a620b84-0b72-4231-8639-ce1f3a458f89.png)
-
-### type
-
-Determine `ElementTag` theme.
-
-**type:** `Literal["primary", "gray", "success", "warning", "danger", None]`
-
-**default value:** `None`
+**type:** `List[ElementTagsList.Tag]`
 
 ```python
-el_tag = ElementTag(text="Tag example", type="success")
+tag_names = ["Tag 1", "Tag 2", "Tag 3"]
+tags = []
+for tag_name in tag_names:
+    el_tag = ElementTagsList.Tag(text=tag_name, closable=True)
+    tags.append(el_tag)
+
+el_tags_list = ElementTagsList(tags=tags)
 ```
 
-![type](https://user-images.githubusercontent.com/120389559/226909285-8ad976b9-e16a-4ebc-b0f4-f76e9b7fb7c2.png)
-
-### hit
-
-Determine whether `ElementTag` has a highlighted border.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-el_tag = ElementTag(text="Tag example", hit=True, type="success")
-```
-
-![hit](https://user-images.githubusercontent.com/120389559/226909880-f21382df-01de-42fc-9c0d-81dad8522e7c.png)
-
-### color
-
-Determine background color of the `ElementTag`.
-
-**type:** `str`
-
-**default value:** `""`
-
-```python
-el_tag = ElementTag(text="Tag example", color="#E414D7", type="success")
-```
-
-![color](https://user-images.githubusercontent.com/120389559/226910422-d0dc98ec-40da-4c11-adb3-69feff45e57a.png)
+![tags](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/353d38d5-c618-4b98-b37c-d5d4150c6366)
 
 ### widget_id
 
@@ -86,32 +51,26 @@ ID of the widget
 
 ## Methods and attributes
 
-|                            Attributes and Methods                             | Description                      |
-| :---------------------------------------------------------------------------: | -------------------------------- |
-|                            `set_text(value: str)`                             | Set `ElementTag` text.           |
-|                                 `get_text()`                                  | Return `ElementTag` text.        |
-| `set_type(value: Literal["primary", "gray", "success", "warning", "danger"])` | Set `ElementTag` type.           |
-|                                 `get_type()`                                  | Return `ElementTag` type.        |
-|                           `is_border_highlighted()`                           | Return `ElementTag` `hit` value. |
-|                        `enable_border_highlighting()`                         | Set `hit` to `True`.             |
-|                        `disable_border_highlighting()`                        | Set `hit` to `False`.            |
-|                                 `get_color()`                                 | Return `ElementTag` color.       |
-|                            `set_color(value: str)`                            | Set `ElementTag` color.          |
+| Attributes and Methods | Description                             |
+| :--------------------: | --------------------------------------- |
+|      `set_tags()`      | Set tags to widget                      |
+|      `get_tags()`      | Get current tags                        |
+|      `add_tags()`      | Add tags to existing tags in the widget |
+|       `close()`        | Triggers on close button                |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/misc/tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/misc/tag/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/text-elements/009_element_tags_list/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text-elements/009_element_tags_list/src/main.py)
 
 ### Import libraries
 
 ```python
 import os
-
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ElementTag
+from supervisely.app.widgets import Card, Container, ElementTagsList
 ```
 
 ### Init API client
@@ -125,28 +84,35 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `ElementTag` widgets
+### Create Tag objects for ElementTagsList widget
 
 ```python
-el_tag = ElementTag(text="Tag")
-
+el_tag = ElementTagsList.Tag(text="Tag")
 all_tag_types = [el_tag]
 for tag_type in ["primary", "gray", "success", "warning", "danger"]:
-    curr_tag = ElementTag(text=f"Tag {tag_type}", type=tag_type)
+    curr_tag = ElementTagsList.Tag(
+        text=f"Tag {tag_type}", type=tag_type, hit=True, closable=True, close_transition=False
+    )
     all_tag_types.append(curr_tag)
+```
+
+### Initialize ElementTagsList widget
+
+```python
+el_tags_list = ElementTagsList(tags=all_tag_types)
 ```
 
 ### Create app layout
 
-Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created in the `Container` widget.
+Prepare a layout for app using `Card` widget with the `content` parameter.
 
 ```python
 card = Card(
-    "ElementTag",
-    content=Container(widgets=all_tag_types, direction="horizontal"),
+    "Element Tags List",
+    content=el_tags_list,
 )
 
-layout = Container(widgets=[card])
+layout = card
 ```
 
 ### Create app using layout
@@ -157,4 +123,12 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout_tag](https://user-images.githubusercontent.com/120389559/226914574-394c3629-4816-42c8-8a5a-82aec34239ad.png)
+### Add handlers to the widget
+
+```
+@el_tags_list.close
+def close_tag(current_tags):
+    el_tags_list.add_tags([ElementTagsList.Tag(text="New Tag", closable=True)])
+```
+
+![miniapp](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/688e21c1-5a45-4d4e-8540-7caeddc08353)
