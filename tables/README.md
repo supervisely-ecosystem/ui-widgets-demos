@@ -5,3 +5,4 @@
 3. [RadioTable](003_radio_table/README.md)
 4. [ClassesTable](004_classes_table/README.md)
 5. [RandomSplitsTable](005_random_splits_table/README.md)
+6. [FastTable](006_fast_table/README.md)
