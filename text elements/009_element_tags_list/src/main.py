@@ -1,7 +1,7 @@
 import os
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, ElementTagsList
+from supervisely.app.widgets import Card, ElementTagsList
 
 if sly.is_development():
     load_dotenv("local.env")
