@@ -69,7 +69,7 @@ for idx in range(len(images_infos)):
 
 ann_names = [f"Model inference {idx+1}" for idx in range(len(image_anns))]
 
-compare_annotations = CompareAnnotations(columns_number=3, enable_zoom=True, resize_on_zoom=True)
+compare_annotations = CompareAnnotations(columns_number=3)
 compare_annotations.set_image_url(image_url=image_urls[0])
 
 for i in range(compare_annotations.columns_number):
@@ -85,14 +85,11 @@ clean_up_btn = Button("Clean up")
 
 card = Card(
     "Compare Annotations",
-    content=Container([compare_annotations]),  # , change_image_btn, clean_up_btn]),
+    content=Container([compare_annotations, change_image_btn, clean_up_btn]),
 )
 
 layout = card
-app = sly.Application(layout=layout)
-
-# Uncomment if you want to use data from local machine
-# app = sly.Application(layout=layout, static_dir=static_dir)
+app = sly.Application(layout=layout)  # add static_dir to use data from local machine
 
 
 @clean_up_btn.click

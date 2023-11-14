@@ -11,11 +11,7 @@
 ```python
 CompareAnnotations(
         columns_number=5,
-        annotations_opacity=0.5,
-        show_opacity_slider=False,
-        enable_zoom=False,
-        resize_on_zoom=False,
-        sync_views=False,
+        default_opacity=0.5,
         fill_rectangle=True,
         border_width=3,
         view_height=None,
@@ -24,24 +20,19 @@ CompareAnnotations(
 )
 ```
 
-![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/27c5da63-7af1-4939-aa00-25534dbe17aa)
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/4af434e6-44e7-481b-8a09-6e046f783c8d)
 
 ## Parameters
 
-|      Parameters       |  Type   |                       Description                       |
-| :-------------------: | :-----: | :-----------------------------------------------------: |
-|   `columns_number`    |  `int`  |         Determines number of columns in widget          |
-| `annotations_opacity` | `float` |                     Figures opacity                     |
-| `show_opacity_slider` | `bool`  |                  Enable opacity slider                  |
-|     `enable_zoom`     | `bool`  |                     Enable zooming                      |
-|   `resize_on_zoom`    | `bool`  |                Resize card to fit figure                |
-|     `sync_views`      | `bool`  |              Sync pan & zoom between views              |
-|   `fill_rectangle`    | `bool`  |                     Fill rectangle                      |
-|    `border_width`     |  `int`  |                      Border width                       |
-|    `show_preview`     | `bool`  |                 Enable preview dialog.                  |
-|     `view_height`     |  `int`  |            Set fixed gallery height in `px`             |
-|    `empty_message`    |  `str`  | If no images are given, this message will be displayed. |
-|      `widget_id`      |  `str`  |                    Id of the widget                     |
+|    Parameters     |  Type   |                       Description                       |
+| :---------------: | :-----: | :-----------------------------------------------------: |
+| `columns_number`  |  `int`  |         Determines number of columns in widget          |
+| `default_opacity` | `float` |                     Figures opacity                     |
+| `fill_rectangle`  | `bool`  | If `False` labels with shape `Rectangle` will be hollow |
+|  `border_width`   |  `int`  |                      Border width                       |
+|   `view_height`   |  `int`  |            Set fixed gallery height in `px`             |
+|  `empty_message`  |  `str`  |  If no image is given, this message will be displayed.  |
+|    `widget_id`    |  `str`  |                    Id of the widget                     |
 
 ### columns_number
 
@@ -55,9 +46,9 @@ Determines the number of columns on `CompareAnnotations`.
 compare_annotations = CompareAnnotations(columns_number=2)
 ```
 
-![columns_number](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/27c5da63-7af1-4939-aa00-25534dbe17aa)
+![columns_number](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/9afbac3c-2c83-4714-b869-bf76f5978e69)
 
-### annotations_opacity
+### default_opacity
 
 Figures opacity.
 
@@ -66,60 +57,10 @@ Figures opacity.
 **default value:** `0.5`
 
 ```python
-compare_annotations = CompareAnnotations(columns_number=3, annotations_opacity=1)
+compare_annotations = CompareAnnotations(columns_number=3, default_opacity=1)
 ```
 
-![annotations_opacity](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/2423c73d-21ae-4341-8464-5c4a0823e553)
-
-### show_opacity_slider
-
-Enable opacity slider.
-
-**type:** `bool`
-
-**default value:** `True`
-
-```python
-compare_annotations = CompareAnnotations(columns_number=3, show_opacity_slider=False)
-```
-
-### enable_zoom
-
-Enable zooming.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-compare_annotations = CompareAnnotations(columns_number=3, enable_zoom=True)
-```
-
-![enable_zoom](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/81d5a3bc-6799-4cf4-a74a-cd272865eae2)
-
-### resize_on_zoom
-
-Resize the card to fit the figure.
-
-**type:** `bool`
-
-**default value:** `False`
-
-![resize_on_zoom](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/c80a432e-9d51-4023-b8df-5fd0c89c71ce)
-
-### sync_views
-
-Sync pan & zoom between views.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-compare_annotations = CompareAnnotations(columns_number=3, enable_zoom=True, sync_views=True)
-```
-
-![sync_views](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/e0f5e80f-00a0-41c7-8d15-41a17281f716)
+![default_opacity](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/12709230-e9c2-4159-bbf1-e2241b718778)
 
 ### fill_rectangle
 
@@ -130,10 +71,10 @@ If `False` labels with shape `Rectangle` will be hollow.
 **default value:** `true`
 
 ```python
-compare_annotations = CompareAnnotations(columns_number=5, fill_rectangle=False)
+compare_annotations = CompareAnnotations(columns_number=3, fill_rectangle=False)
 ```
 
-![fill_rectangle](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/0f6174d2-01bb-46ff-8a6f-f293a4b3f1a6)
+![fill_rectangle](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/228e7b51-fb94-4bdc-adfd-8fbdf76a804e)
 
 ### border_width
 
@@ -144,10 +85,10 @@ Determines border width to rectangle figures.
 **default value:** `3`
 
 ```python
-compare_annotations = CompareAnnotations(columns_number=5, border_width=10)
+compare_annotations = CompareAnnotations(columns_number=3, border_width=10)
 ```
 
-![border_width](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/d9ae37cc-9135-430c-ab50-178815022a2b)
+![border_width](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/38810bc0-8736-45a2-b3b0-76b844f2b1f1)
 
 ### view_height
 
@@ -161,7 +102,7 @@ Set fixed gallery height in `px`.
 compare_annotations = CompareAnnotations(columns_number=3, view_height=300)
 ```
 
-![view_height](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/5e053226-d0c2-4140-a013-675213467c7f)
+![view_height](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/e1995878-18ee-4dca-8c1d-b43c72ab9b5c)
 
 ### empty_message
 
@@ -175,7 +116,7 @@ If no image is given, this message will be displayed.
 compare_annotations = CompareAnnotations(columns_number=3, empty_message="Set image URL and annotations")
 ```
 
-![empty_message](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/1a1c4c5b-07fa-4016-8f00-fb404a917419)
+![empty_message](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/b061e027-cf86-4f89-b8aa-b48897287656)
 
 ### widget_id
 
@@ -251,7 +192,7 @@ images_infos = api.image.get_list(dataset_id=dataset_id)
 anns_infos = api.annotation.get_list(dataset_id=dataset_id)
 ```
 
-### Collect image names, URLs, annotations and generate annotation names from server
+### Option 1. Collect image names, URLs, annotations and generate annotation names from server
 
 ```python
 image_names = []
@@ -267,7 +208,7 @@ for idx in range(len(images_infos)):
 ann_names = [f"Model inference {idx+1}" for idx in range(len(image_anns))]
 ```
 
-### [Optional] You can also serve images from your local machine, using a static directory
+### Option 2. You can also serve images from your local machine, using a static directory
 
 Sort lists of images and annotations to make sure they are in the correct order.
 
@@ -339,7 +280,7 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    "Compare Images",
+    "Compare Annotations",
     content=Container([compare_annotations, change_image_btn, clean_up_btn]),
 )
 
@@ -382,4 +323,4 @@ def set_image():
         )
 ```
 
-![miniapp](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/60e73e7a-c378-456c-a70a-63ce32371c9d)
+![miniapp](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/2c5ac4dd-fb16-4084-bf2d-28208666a082)
