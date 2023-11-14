@@ -101,7 +101,7 @@ ID of the widget
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/text-elements/008_element_tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text-elements/008_element_tag/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/text elements/008_element_tag/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text%20elements/008_element_tag/src/main.py)
 
 ### Import libraries
 
