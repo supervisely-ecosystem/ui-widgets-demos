@@ -136,15 +136,13 @@ ID of the widget.
 |      `is_empty()`      | Checks whether image is set or not         |
 |      `clean_up()`      | Clean up widget from image and annotations |
 
-## Usage examples
-
 ## Mini App Example
 
 In this example, we will use `CompareAnnotations` widget to display different annotations for one image. We will modify and duplicate an existing image annotation and slightly alter the labels on it, to make them different. All labels will be converted to shape `Rectangle`.
 
 You can find this example in our Github repository:
 
-[supervisely-ecosystem/ui-widgets-demos/compare-data/005_compare_annotations/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/compare-data/005_compare_annotations/src/main.py)
+[supervisely-ecosystem/ui-widgets-demos/compare-data/005_compare_annotations/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/compare%20data/005_compare_annotations/src/main.py)
 
 ### Import libraries
 
