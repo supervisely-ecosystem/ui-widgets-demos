@@ -1,27 +1,25 @@
-# Smart Table
+# Fast Table
 
 ## Introduction
 
-**`SmartTable`** widget in Supervisely allows for displaying and manipulating data of various dataset statistics and processing it on the server side.
+**`FastTable`** widget in Supervisely allows for displaying and manipulating data of various dataset statistics and processing it on the server side.
 
-The `SmartTable` widget allows searching, sorting by column and order, and the ability to customize data. It also allows updating table data in real-time through Python code.
+The `FastTable` widget allows searching, sorting by column and order, and the ability to customize data. It also allows updating table data in real-time through Python code.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/smarttable)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/fasttable)
 
 ## Function signature
 
 Data structure example
 
 ```python
-smart_table = SmartTable(
+fast_table = FastTable(
     data=data,
     columns=columns,
     columns_options=columns_options,
     project_meta=project_meta,
     fixed_columns=1,
     page_size=10,
-    clickable_rows=True,
-    clickable_cells=False,
     sort_column_idx=1,
     sort_order="desc",
     width="auto",
@@ -29,7 +27,7 @@ smart_table = SmartTable(
 )
 ```
 
-<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/ae4a574a-2cdb-4e9e-b4d9-3d951e81dde1" alt=""/><figcaption></figcaption></figure>
+<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/89c32ba6-64ed-4d80-88e8-76ebca438337" alt=""/><figcaption></figcaption></figure>
 
 ## Parameters
 
@@ -41,8 +39,6 @@ smart_table = SmartTable(
 |  `project_meta`   | `Optional[Union[ProjectMeta, dict]]`  |              Project metadata              |
 |  `fixed_columns`  |        `Optional[Literal[1]]`         |     Number of the first fixed columns      |
 |    `page_size`    |            `Optional[int]`            |     Table page size in number of rows      |
-| `clickable_rows`  |           `Optional[bool]`            |             Are rows clickable             |
-| `clickable_cells` |           `Optional[bool]`            |            Are cells clickable             |
 | `sort_column_idx` |                 `int`                 | Index of the column by which sorting works |
 |   `sort_order`    |  `Optional[Literal["asc", "desc"]]`   |                 Sort order                 |
 |      `width`      |            `Optional[str]`            |               Width of table               |
@@ -66,7 +62,7 @@ Table data in different formats:
        ],
    ]
 
-   smart_table = SmartTable(data=data_list)
+   fast_table = FastTable(data=data_list)
    ```
 
    Where:
@@ -77,7 +73,7 @@ Table data in different formats:
 
    ```python
    dataframe = pd.DataFrame(data=data, columns=columns)
-   smart_table = SmartTable(data=dataframe)
+   fast_table = FastTable(data=dataframe)
    ```
 
    Where:
@@ -88,14 +84,16 @@ Table data in different formats:
 
 ### columns
 
-Column names. If passed - will overwrite columns if data in `DataFrame` type is passed.
+Column names.
+
+💡 If `data` in `DataFrame` type is passed, specifying `columns` will overwrite it in `DataFrame`
 
 **type:** `Optional[list]`
 
 **default value:** `None`
 
 ```python
-smart_table = SmartTable(data=data_list, columns=columns_list)
+fast_table = FastTable(data=dataframe, columns=columns)
 ```
 
 ### columns_options
@@ -104,18 +102,18 @@ List of dictionaries with column options. `len(columns_options)` must equal `len
 
 Each dictionary may contain:
 
-- `type` - determines special type of column, depending on which styles will be applied, now supports only `class` as special type, you don't need to specify a type for regular
-- `subtitle` - provide additional clarification, specify units of measurement, offer context, and enhance overall understanding of the data
-- `maxValue` - determines the maximum value for the column and activates special bars that visualize how close the value is to the maximum value
-- `postfix` - is substituted after each value to denote dimensionality
-- `tooltip` - tooltip with description for a column
+- `type` - with value of type `str`, determines special column type, depending on which styles will be applied, now supports only `class` as special type, you don't need to specify a type for the regular ones
+- `subtitle` - with value of type `str`, provide additional clarification, specify units of measurement, offer context, and enhance overall understanding of the data
+- `maxValue` - with value of type `int`, determines the maximum value for the column and activates special bars that visualize how close the value is to the maximum value
+- `postfix` - with value of type `str`, is substituted after each value to denote dimensionality
+- `tooltip` - with value of type `str`, tooltip with description for a column
 
 **type:** `Optional[list[dict]]`
 
 **default value:** `None`
 
 ```python
-smart_table = SmartTable(data=data_list, columns=columns_list)
+fast_table = FastTable(data=data_list, columns=columns_list)
 ```
 
 ### project_meta
@@ -128,15 +126,15 @@ Project metadata with classes used to apply special styles for columns with `typ
 
 ```python
 meta_json = api.project.get_meta(id=project_id)
-smart_table = SmartTable(data=data_dict, project_meta=meta_json)
+fast_table = FastTable(data=data_dict, project_meta=meta_json)
 
 # or
 
 meta = sly.ProjectMeta.from_json(data=meta_json)
-smart_table = SmartTable(data=data_dict, project_meta=meta)
+fast_table = FastTable(data=data_dict, project_meta=meta)
 ```
 
-<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/e7a86d91-88a6-49ee-8021-189693fb41fd" alt="Project Meta"><figcaption></figcaption></figure>
+<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/822d8dc2-17be-44e6-befd-51509d0ba617" alt="Project Meta"><figcaption></figcaption></figure>
 
 ### fixed_columns
 
@@ -149,7 +147,7 @@ Number of the first fixed columns if the table has horizontal scrolling.
 **default value:** `None`
 
 ```python
-smart_table = SmartTable(data=dataframe, fixed_columns=1)
+fast_table = FastTable(data=dataframe, fixed_columns=1)
 ```
 
 ### page_size
@@ -161,65 +159,35 @@ Table page size in number of rows
 **default value:** `10`
 
 ```python
-smart_table = SmartTable(data=dataframe, page_size=15)
-```
-
-### clickable_rows
-
-Whether the rows are clickable, an event is called when the row is clicked
-
-💡 Cannot be used together with `clickable_cells`
-
-**type:** `Optional[bool]`
-
-**default value:** `False`
-
-```python
-smart_table = SmartTable(data=data_dict, clickable_rows=True)
-```
-
-<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/e72c987e-49a9-40b0-a4af-a2e970a9265b" alt="Clickable Rows"><figcaption></figcaption></figure>
-
-### clickable_cells
-
-Whether the cells are clickable, an event is called when the cell is clicked
-
-💡 Cannot be used together with `clickable_rows`
-
-**type:** `Optional[bool]`
-
-**default value:** `False`
-
-```python
-smart_table = SmartTable(data=data_dict, clickable_cells=True)
+fast_table = FastTable(data=dataframe, page_size=15)
 ```
 
 ### sort_column_idx
 
 Index of the column by which sorting works.
 
-💡 Cannot be used without `sort_order`
+💡 Cannot be used without `sort_order`, if one of parameters is not set - the sorting will follow the original data structure.
 
 **type:** `int`
 
 **default value:** `None`
 
 ```python
-smart_table = SmartTable(data=dataframe, sort_column_idx=0, sort_order='asc')
+fast_table = FastTable(data=dataframe, sort_column_idx=0, sort_order='asc')
 ```
 
 ### sort_order
 
 Sort order.
 
-💡 Cannot be used without `sort_column_idx`
+💡 Cannot be used without `sort_column_idx`, if one of parameters is not set - the sorting will follow the original data structure.
 
 **type:** `Optional[Literal["asc", "desc"]]`
 
 **default value:** `None`
 
 ```python
-smart_table = SmartTable(data=dataframe, sort_column_idx=1, sort_order='desc')
+fast_table = FastTable(data=dataframe, sort_column_idx=1, sort_order='desc')
 ```
 
 ### width
@@ -231,10 +199,10 @@ Width of table.
 **default value:** `auto`
 
 ```python
-smart_table = SmartTable(data=data_dict, width="50%")
+fast_table = FastTable(data=data_dict, width="50%")
 ```
 
-<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/bba653f9-d5aa-421d-8c74-ff01942e355e" alt="Width"><figcaption></figcaption></figure>
+<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/180d617b-d7d6-4960-abb4-f45a38616b64" alt="Width"><figcaption></figcaption></figure>
 
 ### widget_id
 
@@ -301,7 +269,7 @@ from dotenv import load_dotenv
 from supervisely.app.widgets import (
     Card,
     Container,
-    SmartTable,
+    FastTable,
 )
 ```
 
@@ -338,14 +306,13 @@ with open(meta_path, "r") as json_file:
     meta = json.load(json_file)
 ```
 
-### Initialize `SmartTable` widget
+### Initialize `FastTable` widget
 
 ```python
-smart_table = SmartTable(
+fast_table = FastTable(
     data=dataframe,
     project_meta=meta,
     columns_options=columns_options,
-    clickable_rows=True,
 )
 ```
 
@@ -355,8 +322,8 @@ Prepare a layout for app using `Card` widget with the `content` parameter and pl
 
 ```python
 card = Card(
-    title="Smart Table",
-    content=smart_table,
+    title="Fast Table",
+    content=fast_table,
 )
 layout = Container(widgets=[card])
 ```
@@ -372,12 +339,12 @@ app = sly.Application(layout=layout)
 ### Add functions to control widget from python code
 
 ```python
-@smart_table.row_click
-def handle_table_row(datapoint: sly.app.widgets.SmartTable.ClickedDataRow):
+@fast_table.row_click
+def handle_table_row(clicked_row: sly.app.widgets.FastTable.ClickedRow):
     sly.app.show_dialog(
-        f"{datapoint.row[0]}",
-        f"You clicked table row with idx={datapoint.row_index} in source data",
+        f"{clicked_row.row[0]}",
+        f"You clicked table row with idx={clicked_row.row_index} in source data",
     )
 ```
 
-<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/2f119b05-6a1b-49d6-8f5e-099c8a5dc826" alt="Smart Table Example"><figcaption></figcaption></figure>
+<figure><img src="https://github.com/supervisely/developer-portal/assets/57998637/fad97979-f67a-44c3-ba16-ef662adf5496" alt="Fast Table Example"><figcaption></figcaption></figure>

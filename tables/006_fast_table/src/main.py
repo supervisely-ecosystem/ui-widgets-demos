@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from supervisely.app.widgets import (
     Card,
     Container,
-    SmartTable,
+    FastTable,
 )
 
 # for convenient debug, has no effect in production
@@ -27,29 +27,29 @@ columns_options = [
     {"maxValue": 21, "postfix": "pcs", "tooltip": "description text", "subtitle": "boxes"},
 ]
 
-meta_path = "meta.json"
+meta_path = "./tables/006_fast_table/src/meta.json"
 with open(meta_path, "r") as json_file:
     meta = json.load(json_file)
 
-smart_table = SmartTable(
-    data=dataframe,
+fast_table = FastTable(
+    data=data,
+    columns=columns,
     project_meta=meta,
     columns_options=columns_options,
-    clickable_rows=True,
 )
 
 card = Card(
-    title="Smart Table",
-    content=smart_table,
+    title="Fast Table",
+    content=fast_table,
 )
 layout = Container(widgets=[card])
 
 app = sly.Application(layout=layout)
 
 
-@smart_table.row_click
-def handle_table_row(datapoint: sly.app.widgets.SmartTable.ClickedDataRow):
+@fast_table.row_click
+def handle_table_row(clicked_row: sly.app.widgets.FastTable.ClickedRow):
     sly.app.show_dialog(
-        f"{datapoint.row[0]}",
-        f"You clicked table row with idx={datapoint.row_index} in source data",
+        f"{clicked_row.row[0]}",
+        f"You clicked table row with idx={clicked_row.row_index} in source data",
     )
