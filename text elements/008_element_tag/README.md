@@ -86,17 +86,16 @@ ID of the widget
 
 ## Methods and attributes
 
-|                            Attributes and Methods                             | Description                      |
-| :---------------------------------------------------------------------------: | -------------------------------- |
-|                            `set_text(value: str)`                             | Set `ElementTag` text.           |
-|                                 `get_text()`                                  | Return `ElementTag` text.        |
-| `set_type(value: Literal["primary", "gray", "success", "warning", "danger"])` | Set `ElementTag` type.           |
-|                                 `get_type()`                                  | Return `ElementTag` type.        |
-|                           `is_border_highlighted()`                           | Return `ElementTag` `hit` value. |
-|                        `enable_border_highlighting()`                         | Set `hit` to `True`.             |
-|                        `disable_border_highlighting()`                        | Set `hit` to `False`.            |
-|                                 `get_color()`                                 | Return `ElementTag` color.       |
-|                            `set_color(value: str)`                            | Set `ElementTag` color.          |
+|                            Attributes and Methods                             | Description                   |
+| :---------------------------------------------------------------------------: | ----------------------------- |
+|                            `set_text(value: str)`                             | Set `ElementTag` text.        |
+|                                 `get_text()`                                  | Return `ElementTag` text.     |
+| `set_type(value: Literal["primary", "gray", "success", "warning", "danger"])` | Set `ElementTag` type.        |
+|                                 `get_type()`                                  | Return `ElementTag` type.     |
+|                                  `set_hit()`                                  | Set `ElementTag` `hit` value. |
+|                                  `get_hit()`                                  | Get `hit` value.              |
+|                                 `get_color()`                                 | Return `ElementTag` color.    |
+|                            `set_color(value: str)`                            | Set `ElementTag` color.       |
 
 ## Mini App Example
 

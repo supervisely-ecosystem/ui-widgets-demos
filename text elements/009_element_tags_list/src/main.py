@@ -1,5 +1,4 @@
 import os
-import random
 import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, Container, ElementTagsList
@@ -10,24 +9,16 @@ if sly.is_development():
 
 api: sly.Api = sly.Api.from_env()
 
-el_tag = ElementTagsList.ElementTag(text="Tag", closable=True, close_transition=False)
-
-# button = Button()
+el_tag = ElementTagsList.Tag(text="Tag", closable=True, close_transition=False)
 
 all_tag_types = [el_tag]
 for tag_type in ["primary", "gray", "success", "warning", "danger"]:
-    curr_tag = ElementTagsList.ElementTag(
-        text=f"Tag {tag_type}", type=tag_type, hit=True, closable=True, close_transition=True
+    curr_tag = ElementTagsList.Tag(
+        text=f"Tag {tag_type}", type=tag_type, hit=True, closable=True, close_transition=False
     )
     all_tag_types.append(curr_tag)
 
-# el_tag = ElementTag(
-#     text="Element Tag", type="primary", hit=True, closable=True, close_transition=True
-# )
-
-taggggs = all_tag_types  # ["tag 1", "tag 2", "tag 3"]
-
-el_tags = ElementTagsList(tags=taggggs)
+el_tags = ElementTagsList(tags=all_tag_types)
 
 card = Card(
     "ElementTag",
@@ -40,6 +31,6 @@ app = sly.Application(layout=layout)
 
 
 @el_tags.close
-def close_tag(res):
-    info = res
-    el_tags.add_tags([ElementTagsList.ElementTag(text="Tag213123123")])
+def close_tag(current_tags):
+    info = current_tags
+    el_tags.add_tags([ElementTagsList.Tag(text="Tag213123123")])

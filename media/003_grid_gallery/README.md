@@ -27,18 +27,20 @@ GridGallery(
 
 ## Parameters
 
-|      Parameters       |  Type   |                        Description                         |
-| :-------------------: | :-----: | :--------------------------------------------------------: |
-|   `columns_number`    |  `int`  |       Determines number of columns on `GridGallery`        |
-| `annotations_opacity` | `float` |                      Figures opacity                       |
-| `show_opacity_slider` | `bool`  | Determines the presence of opacity slider on `GridGallery` |
-|     `enable_zoom`     | `bool`  |                Enable zoom on `GridGallery`                |
-|   `resize_on_zoom`    | `bool`  |                 Resize card to fit figure                  |
-|     `sync_views`      | `bool`  |               Sync pan & zoom between views                |
-|   `fill_rectangle`    | `bool`  |                       Fill rectange                        |
-|    `border_width`     |  `int`  |                        Border width                        |
-|    `empty_message`    |  `str`  |  If no images are given, this message will be displayed.   |
-|      `widget_id`      |  `str`  |                      Id of the widget                      |
+|      Parameters       |  Type   |                       Description                       |
+| :-------------------: | :-----: | :-----------------------------------------------------: |
+|   `columns_number`    |  `int`  |      Determines number of columns on `GridGallery`      |
+| `annotations_opacity` | `float` |                     Figures opacity                     |
+| `show_opacity_slider` | `bool`  |         Enable opacity slider on `GridGallery`          |
+|     `enable_zoom`     | `bool`  |              Enable zoom on `GridGallery`               |
+|   `resize_on_zoom`    | `bool`  |                Resize card to fit figure                |
+|     `sync_views`      | `bool`  |              Sync pan & zoom between views              |
+|   `fill_rectangle`    | `bool`  |                     Fill rectangle                      |
+|    `border_width`     |  `int`  |                      Border width                       |
+|    `show_preview`     | `bool`  |                  Enable preview dialog                  |
+|     `view_height`     |  `int`  |            Set fixed gallery height in `px`             |
+|    `empty_message`    |  `str`  | If no images are given, this message will be displayed. |
+|      `widget_id`      |  `str`  |                    Id of the widget                     |
 
 ### columns_number
 
@@ -159,6 +161,30 @@ grid_gallery = GridGallery(columns_number=3, border_width=12)
 ```
 
 ![border_width](https://user-images.githubusercontent.com/120389559/221580110-d98abb1b-bc91-4928-a419-b2841fcd7eea.png)
+
+### show_preview
+
+Enable preview dialog.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+grid_gallery = GridGallery(columns_number=3, show_preview=True)
+```
+
+### view_height
+
+Set fixed gallery height.
+
+**type:** `int`
+
+**default value:** `None`
+
+```python
+grid_gallery = GridGallery(columns_number=3, view_height=300)
+```
 
 ### empty_message
 

@@ -7,7 +7,7 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"hello_world.src.main:app",
+				"compare data.005_compare_annotations.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",
