@@ -8,3 +8,4 @@
 6. [Badge](006_badge/README.md)
 7. [ModelInfo](007_model_info/README.md)
 8. [Rate](008_rate/README.md)
+9. [Circle Progress](009_circle_progress/README.md)
