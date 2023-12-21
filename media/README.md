@@ -15,3 +15,7 @@
 13. [TagMetaView](013_tag_meta_view/README.md)
 14. [TagMetasList](014_tag_metas_list/README.md)
 15. [ImageAnnotationPreview](015_image_annotation_preview/README.md)
+16. [ClassesMappingPreview](016_classes_mapping_preview/README.md)
+17. [ClassesListPreview](017_classes_list_preview/README.md)
+18. [TagsListPreview](018_tags_list_preview/README.md)
+19. [MembersListPreview](019_members_list_preview/README.md)

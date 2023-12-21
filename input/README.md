@@ -8,3 +8,5 @@
 6. [Datetime Picker](006_datetime_picker/README.md)
 7. [Color Picker](007_color_picker/README.md)
 8. [Time Picker](008_time_picker/README.md)
+9. [Classes Mapping](009_classes_mapping/README.md)
+10. [Classes Color Mapping](010_classes_color_mapping/README.md)

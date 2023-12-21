@@ -15,3 +15,6 @@
 13. [FileViewer](013_file_viewer/README.md)
 14. [Dropdown](014_dropdown/README.md)
 15. [Cascader](015_cascader/README.md)
+16. [ClassesListSelector](016_classes_list_selector/README.md)
+17. [TagsListSelector](017_tags_list_selector/README.md)
+18. [MembersListSelector](018_members_list_selector/README.md)
