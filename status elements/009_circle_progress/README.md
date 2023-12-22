@@ -15,7 +15,7 @@ CircleProgress(
 )
 ```
 
-![default](https://user-images.githubusercontent.com/48913536/202434648-cda78cff-0796-498b-b77e-8eb6e8909e9c.gif)
+![default](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/4c8ae731-2e2a-4cd3-b2f9-e78b7f2a0615)
 
 ## Parameters
 

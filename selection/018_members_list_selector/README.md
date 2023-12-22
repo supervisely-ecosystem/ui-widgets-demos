@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`Members List Selector`** widget allows to display users with roles.
+**`Members List Selector`** widget allows to display list of users with roles.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/members-list-selector)
 
