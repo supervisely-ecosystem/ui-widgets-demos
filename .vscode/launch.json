@@ -7,11 +7,11 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"misc.trained_models_selector.src.main:app",
+				"hello_world.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",
-				"8001",
+				"8000",
 				"--ws",
 				"websockets",
 				"--reload"
