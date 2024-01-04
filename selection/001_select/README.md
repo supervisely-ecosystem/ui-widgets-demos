@@ -11,7 +11,7 @@ The `Select` widget has event handler that is triggered when the user selects an
 
 ```python
 Select(
-    items=None, 
+    items=None,
     groups=None,
     filterable=False,
     placeholder="select",
@@ -126,7 +126,6 @@ Placeholder. It needs to set `multiple=True` parameter.
 
 **default value:** `select`
 
-
 ```python
 select_items = Select(
     items=animals_domestic + animals_wild,
@@ -185,18 +184,18 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                           Attributes and Methods                          | Description                                                 |
-| :-----------------------------------------------------------------------: | ----------------------------------------------------------- |
-|                               `get_value()`                               | Return selected item value.                                 |
-|                               `get_label()`                               | Return selected item label.                                 |
-|                               `get_items()`                               | Return list of items from widget.                           |
-| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items.                 |
-|                            `set_value(value: str)`                        | Set `Select` input value.                                   |
-|           `disable_item(item_index: int, group_index: int = None)`        | Disable item by index.                                      |
-|            `enable_item(item_index: int, group_index: int = None)`        | Enable item by index.                                       |
-|                      `disable_group(group_index: int)`                    | Disable group by index.                                     |
-|                       `enable_group(group_index: int`                     | Enable group by index.                                      |
-|                              `@value_changed`                             | Decorator functions is handled when input value is changed. |
+|                          Attributes and Methods                           | Description                                                |
+| :-----------------------------------------------------------------------: | ---------------------------------------------------------- |
+|                               `get_value()`                               | Return selected item value.                                |
+|                               `get_label()`                               | Return selected item label.                                |
+|                               `get_items()`                               | Return list of items from widget.                          |
+| `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items.                |
+|                          `set_value(value: str)`                          | Set `Select` input value.                                  |
+|         `disable_item(item_index: int, group_index: int = None)`          | Disable item by index.                                     |
+|          `enable_item(item_index: int, group_index: int = None)`          | Enable item by index.                                      |
+|                     `disable_group(group_index: int)`                     | Disable group by index.                                    |
+|                      `enable_group(group_index: int`                      | Enable group by index.                                     |
+|                             `@value_changed`                              | Decorator function is handled when input value is changed. |
 
 ## Mini App Example
 
