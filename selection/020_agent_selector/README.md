@@ -11,10 +11,8 @@
 ```python
 AgentSelector(
     team_id=team_id,
-    any_status=False,
-    show_public=False,
-    has_gpu=False,
-    only_running=False,
+    show_only_gpu=False,
+    show_only_running=True,
     compact=False,
     widget_id=None
 )
@@ -24,15 +22,13 @@ AgentSelector(
 
 ## Parameters
 
-|   Parameters   |  Type  |                  Description                   |
-| :------------: | :----: | :--------------------------------------------: |
-|   `team_id`    | `int`  |      Team ID to list agents from the team      |
-|  `any_status`  | `bool` |        Show all agents with any status         |
-| `show_public`  | `bool` |               Show shared agents               |
-|   `has_gpu`    | `bool` |              Show only GPU agents              |
-| `only_running` | `bool` | Show agents only with "Running" network status |
-|   `compact`    | `bool` |       If `True` selector will be compact       |
-|  `widget_id`   | `str`  |                ID of the widget                |
+|     Parameters      |  Type  |                  Description                   |
+| :-----------------: | :----: | :--------------------------------------------: |
+|      `team_id`      | `int`  |      Team ID to list agents from the team      |
+|   `show_only_gpu`   | `bool` |              Show only GPU agents              |
+| `show_only_running` | `bool` | Show agents only with "Running" network status |
+|      `compact`      | `bool` |       If `True` selector will be compact       |
+|     `widget_id`     | `str`  |                ID of the widget                |
 
 ### team_id
 
@@ -44,39 +40,7 @@ Team ID to list agents from the team. This parameter is required.
 agent_selector = AgentSelector(team_id=team_id)
 ```
 
-### any_status
-
-Show all agents with any status. If `False` only agents with "Running" status will be shown.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-agent_selector = AgentSelector(
-    team_id=team_id,
-    any_status=True,
-)
-```
-
-### show_public
-
-Show shared agents. If `False` shared agents will not be shown.
-
-**type:** `bool`
-
-**default value:** `False`
-
-```python
-agent_selector = AgentSelector(
-    team_id=team_id,
-    show_public=True,
-)
-```
-
-![show-public](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/967740bf-b743-4429-8f0d-30c19593dff2)
-
-### has_gpu
+### show_only_gpu
 
 Show only agents with GPU.
 
@@ -87,24 +51,24 @@ Show only agents with GPU.
 ```python
 agent_selector = AgentSelector(
     team_id=team_id,
-    has_gpu=True,
+    show_only_gpu=True,
 )
 ```
 
-![needGPU](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/d83815df-a8e6-4577-9d42-443bdfdd14c9)
+![show_only_gpu](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/d83815df-a8e6-4577-9d42-443bdfdd14c9)
 
-### only_running
+### show_only_running
 
 Show agents only with "Running" network status. If `False` agents with any status will be shown.
 
 **type:** `bool`
 
-**default value:** `False`
+**default value:** `True`
 
 ```python
 agent_selector = AgentSelector(
     team_id=team_id,
-    only_running=True,
+    show_only_running=True,
 )
 ```
 
@@ -178,11 +142,8 @@ team_id = sly.env.team_id()
 ```python
 agent_selector = AgentSelector(
     team_id=team_id,
-    any_status=False,
-    show_public=False,
-    has_gpu=False,
-    only_running=False,
-    compact=False,
+    show_only_gpu=False,
+    show_only_running=True
 )
 ```
 

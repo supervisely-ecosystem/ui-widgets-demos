@@ -11,9 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 team_id = sly.env.team_id()
-agent_selector = AgentSelector(
-    team_id, any_status=True, show_public=False, has_gpu=False, only_running=False, compact=False
-)
+agent_selector = AgentSelector(team_id, show_only_gpu=False, show_only_running=True)
 
 agent_id_preview = Text("", "text")
 agent_name_preview = Text("", "text")
