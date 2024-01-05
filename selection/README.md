@@ -18,3 +18,4 @@
 16. [ClassesListSelector](016_classes_list_selector/README.md)
 17. [TagsListSelector](017_tags_list_selector/README.md)
 18. [MembersListSelector](018_members_list_selector/README.md)
+19. [TrainedModelsSelector](019_trained_models_selector/README.md)
