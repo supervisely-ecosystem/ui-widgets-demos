@@ -3,6 +3,7 @@ import supervisely as sly
 from dotenv import load_dotenv
 from supervisely.app.widgets import Card, TrainedModelsSelector, Container, Text, Button
 
+
 # for convenient debug, has no effect in production
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
@@ -10,9 +11,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 
 team_id = sly.env.team_id()
-remote_path_to_custom_models = "/yolov8_train/"
-task_type = "object_detection"
-trained_models_table = TrainedModelsSelector(team_id, remote_path_to_custom_models, task_type)
+
+
+checkpoint_infos = sly.nn.checkpoints.yolov8.list_checkpoints(api, team_id)
+trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos)
 
 model_name_preview = Text("", "text")
 model_path_preview = Text("", "text")
