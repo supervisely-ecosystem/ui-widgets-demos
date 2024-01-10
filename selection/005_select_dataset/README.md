@@ -240,6 +240,7 @@ ID of the widget.
 | `get_selected_project_id()` | Return id of selected Project, if `compact` is `False`.                        |
 |         `disable()`         | Set `disabled` attribute == `True`.                                            |
 |         `enable()`          | Set `disabled` attribute == `False`.                                           |
+|     `set_project_id()`      | Set current project id.                                                        |
 |      `@value_changed`       | Decorator functions is handled when selected `dataset ID` is changed.          |
 
 ## Mini App Example

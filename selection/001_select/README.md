@@ -187,8 +187,9 @@ ID of the widget.
 |                          Attributes and Methods                           | Description                                                |
 | :-----------------------------------------------------------------------: | ---------------------------------------------------------- |
 |                               `get_value()`                               | Return selected item value.                                |
-|                               `get_label()`                               | Return selected item label.                                |
 |                               `get_items()`                               | Return list of items from widget.                          |
+|                               `get_label()`                               | Return selected item label.                                |
+|                              `get_labels()`                               | Return items labels.                                       |
 | `set(items: List[Select.Item] = None, groups: List[Select.Group] = None)` | Set `Select` input items or group of items.                |
 |                          `set_value(value: str)`                          | Set `Select` input value.                                  |
 |         `disable_item(item_index: int, group_index: int = None)`          | Disable item by index.                                     |

@@ -79,7 +79,7 @@ select_project = SelectProject(
 
 ### allowed_types
 
-List of project types witch will be available to select. Set one of available `sly.ProjectType`s: `IMAGES`, `VIDEOS`, `VOLUMES`, `POINT_CLOUDS`, `POINT_CLOUD_EPISODES`. 
+List of project types witch will be available to select. Set one of available `sly.ProjectType`s: `IMAGES`, `VIDEOS`, `VOLUMES`, `POINT_CLOUDS`, `POINT_CLOUD_EPISODES`.
 
 **type:** `List[ProjectType]`
 
@@ -163,9 +163,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                 |
-| :--------------------: | --------------------------- |
-|  `get_selected_id()`   | Return selected project id. |
+| Attributes and Methods | Description                                       |
+| :--------------------: | ------------------------------------------------- |
+|  `get_selected_id()`   | Return selected project id.                       |
+|   `set_project_id()`   | Set current project id.                           |
+|    `@value_changed`    | Decorator function to detect changes in selector. |
 
 ## Mini App Example
 
