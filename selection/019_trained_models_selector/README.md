@@ -130,9 +130,9 @@ api = sly.Api()
 
 ```python
 team_id = sly.env.team_id()
-remote_path_to_custom_models = "/yolov8_train/"
-task_type = "object_detection"
-trained_models_table = TrainedModelsSelector(team_id, remote_path_to_custom_models, task_type)
+
+checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
+trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos)
 ```
 
 ### Create additional widgets to preview selected model
@@ -175,8 +175,8 @@ def get_selected_row(row: TrainedModelsSelector.ModelRow):
 def preview_button_click_handler():
     preview_container.hide()
     row = trained_models_table.get_selected_row()
-    model_name = row.get_selected_artifact_name()
-    model_path = row.get_selected_artifact_path()
+    model_name = row.get_selected_checkpoint_name()
+    model_path = row.get_selected_checkpoint_path()
 
     model_name_preview.set(f"Model name: {model_name}", "text")
     model_path_preview.set(f"Model path: {model_path}", "text")
