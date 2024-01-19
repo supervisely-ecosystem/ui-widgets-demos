@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`FileViewer`** widget in Supervisely is a useful tool for inspecting and easily navigation through files in specific directory in Team files.
+**`FileViewer`** widget in Supervisely is a useful tool for inspecting and easily navigating through files in specific directory in Team files.
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/fileviewer)
 
@@ -10,7 +10,9 @@
 
 ```python
 FileViewer(
-    files_list,
+    files_list=files_list,
+    selection_type=None,
+    extended_selection=False,
     widget_id=None,
 )
 ```
@@ -21,14 +23,16 @@ FileViewer(
 
 ## Parameters
 
-|  Parameters  |     Type     |   Description    |
-| :----------: | :----------: | :--------------: |
-| `files_list` | `List[dict]` | Pathes to files  |
-| `widget_id`  |    `str`     | ID of the widget |
+|      Parameters      |               Type                |                                                            Description                                                             |
+| :------------------: | :-------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|     `files_list`     |           `List[dict]`            |                                             List of dicts with files and folders info                                              |
+|   `selection_type`   | `Literal[None, "file", "folder"]` |                                                       Type of data to select                                                       |
+| `extended_selection` |              `bool`               | If True method `get_selected_items()` returns an array of objects { path: '', type: 'file or folder' } instead of array with paths |
+|     `widget_id`      |               `str`               |                                                          ID of the widget                                                          |
 
 ### files_list
 
-Determine pathes to files.
+List of files and folders info in `dict` format. See method `api.file.list()` for more information [here](https://supervisely.readthedocs.io/en/latest/sdk/supervisely.api.file_api.FileApi.html#supervisely.api.file_api.FileApi.list).
 
 **type:** `List[dict]`
 
@@ -46,6 +50,36 @@ file_viewer = FileViewer(files_list=tree_items)
 <p align="center">
   <img src="https://user-images.githubusercontent.com/120389559/222391341-f8857a83-dffb-484e-859b-30794d0368f1.gif" alt="default" />
 </p>
+
+### selection_type
+
+Type of data to select. If set to `'file'` - only files can be selected, if set to `'folder'` - only folders can be selected. If set to `None` - both files and folders can be selected.
+
+**type:** `Literal[None, "file", "folder"]`
+
+**default value:** `None`
+
+```python
+file_viewer = FileViewer(
+    files_list=tree_items,
+    selection_type="file",
+)
+```
+
+### extended_selection
+
+If `True` method `get_selected_items()` returns a `list` of `dict`s: `{path: '', type: 'file or folder'}`, instead of `list` with paths.
+
+**type:** `bool`
+
+**default value:** `False`
+
+```python
+file_viewer = FileViewer(
+    files_list=tree_items,
+    extended_selection=True,
+)
+```
 
 ### widget_id
 
