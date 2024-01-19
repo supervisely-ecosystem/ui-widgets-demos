@@ -4,7 +4,7 @@
 
 **`IFrame`** widget in Supervisely allows to render `.html` template inside the app. This widget is useful for displaying custom html content within app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/iframe)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/iframe)
 
 ## Function signature
 
