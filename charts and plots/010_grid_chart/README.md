@@ -29,12 +29,13 @@ grid_chart = GridChart(data=[data_1, data_2, data_all], columns=3)
 
 ## Parameters
 
-| Parameters  |        Type         |               Description               |
-| :---------: | :-----------------: | :-------------------------------------: |
-|   `data`    | `List[dict or str]` |        List of data to display.         |
-|  `columns`  |        `int`        |           Number of columns.            |
+
+| Parameters |        Type        |              Description              |
+| :-----------: | :-------------------: | :--------------------------------------: |
+|   `data`   | `List[dict or str]` |        List of data to display. `str` inputs will be recognized as a titles for empty widgets.        |
+|  `columns`  |        `int`        |           Number of columns.           |
 |    `gap`    |        `int`        | Gap between widgets inside `GridChart`. |
-| `widget_id` |        `str`        |            ID of the widget             |
+| `widget_id` |        `str`        |            ID of the widget            |
 
 ### data
 
@@ -66,7 +67,7 @@ data_denis = {"title": "Denis", "series": [{"name": "Denis", "data": s2}]}
 grid_chart = GridChart(data=[data_max, data_denis], columns=2)
 ```
 
-<figure><img src="https://github.com/supervisely/developer-portal/assets/78355358/373b7ec1-eea1-476b-83d3-264382683a32" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/supervisely/developer-portal/assets/78355358/e2e5ad0b-0031-4cde-8474-b3478d3beb04" alt=""><figcaption></figcaption></figure>
 
 ### gap
 
@@ -85,7 +86,7 @@ grid_chart = GridChart(data=[data_max, data_denis], columns=2, gap=100)
 
 <figure><img src="https://github.com/supervisely/developer-portal/assets/78355358/f0e99122-b4c9-4882-917c-b3857ffc5d73" alt=""><figcaption></figcaption></figure>
 
-### widget_id
+### widget\_id
 
 ID of the widget.
 
@@ -95,16 +96,17 @@ ID of the widget.
 
 ## Methods and attributes
 
-|               Attributes and Methods                | Description                        |
-| :-------------------------------------------------: | ---------------------------------- |
-|         `add_scalar(identifier: str, y, x)`         | Add data in `GridChart`.           |
+
+|               Attributes and Methods               | Description                       |
+| :---------------------------------------------------: | ----------------------------------- |
+|         `add_scalar(identifier: str, y, x)`         | Add data in `GridChart`.          |
 | `add_scalars(plot_title: str, new_values: dict, x)` | Add series of data in `GridChart`. |
 
 ## Mini App Example
 
 You can find this example in our GitHub repository:
 
-[ui-widgets-demos/charts and plots/006_grid_plot/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts%20and%20plots/006_grid_plot/src/main.py)
+[ui-widgets-demos/charts and plots/010_grid_chart/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/charts%20and%20plots/010_grid_chart/src/main.py)
 
 ### Import libraries
 
