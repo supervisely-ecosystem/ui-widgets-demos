@@ -7,3 +7,6 @@
 5. [LinePlot](005_line_plot/README.md)
 6. [GridPlot](006_grid_plot/README.md)
 7. [ScatterChart](007_scatter_chart/README.md)
+8. [TreemapChart](008_treemap_chart/README.md)
+9. [PieChart](009_scatter_chart/README.md)
+10. [GridChart](010_grid_chart/README.md)
