@@ -14,7 +14,7 @@ team_id = sly.env.team_id()
 
 
 checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
-trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos)
+trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos, show_custom_path=True)
 
 model_name_preview = Text("", "text")
 model_path_preview = Text("", "text")
@@ -37,9 +37,13 @@ def get_selected_row(row: TrainedModelsSelector.ModelRow):
 @preview_button.click
 def preview_button_click_handler():
     preview_container.hide()
-    row = trained_models_table.get_selected_row()
-    model_name = row.get_selected_checkpoint_name()
-    model_path = row.get_selected_checkpoint_path()
+    if not trained_models_table.use_custom_checkpoint_path():
+        row = trained_models_table.get_selected_row()
+        model_name = row.get_selected_checkpoint_name()
+        model_path = row.get_selected_checkpoint_path()
+    else:
+        model_path = trained_models_table.get_custom_checkpoint_path()
+        model_name = sly.fs.get_file_name_with_ext(model_path)
 
     model_name_preview.set(f"Model name: {model_name}", "text")
     model_path_preview.set(f"Model path: {model_path}", "text")
