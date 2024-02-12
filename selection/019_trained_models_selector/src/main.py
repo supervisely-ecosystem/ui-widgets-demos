@@ -14,11 +14,17 @@ team_id = sly.env.team_id()
 
 
 checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
-trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos, show_custom_path=True)
+trained_models_table = TrainedModelsSelector(
+    team_id,
+    checkpoint_infos,
+    show_custom_checkpoint_path=True,
+    custom_checkpoint_task_types=["object detection", "instance segmentation", "pose estimation"],
+)
 
 model_name_preview = Text("", "text")
 model_path_preview = Text("", "text")
-preview_container = Container([model_name_preview, model_path_preview])
+model_task_type_preview = Text("", "text")
+preview_container = Container([model_name_preview, model_path_preview, model_task_type_preview])
 preview_container.hide()
 preview_button = Button("Show preview")
 
@@ -41,10 +47,13 @@ def preview_button_click_handler():
         row = trained_models_table.get_selected_row()
         model_name = row.get_selected_checkpoint_name()
         model_path = row.get_selected_checkpoint_path()
+        model_task_type = row.task_type
     else:
         model_path = trained_models_table.get_custom_checkpoint_path()
-        model_name = sly.fs.get_file_name_with_ext(model_path)
+        model_name = trained_models_table.get_custom_checkpoint_name()
+        model_task_type = trained_models_table.get_custom_checkpoint_task_type()
 
     model_name_preview.set(f"Model name: {model_name}", "text")
     model_path_preview.set(f"Model path: {model_path}", "text")
+    model_task_type_preview.set(f"Model task type: {model_task_type}", "text")
     preview_container.show()
