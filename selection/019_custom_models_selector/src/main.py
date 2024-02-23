@@ -1,7 +1,7 @@
 import os
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, TrainedModelsSelector, Container, Text, Button
+from supervisely.app.widgets import Card, CustomModelsSelector, Container, Text, Button
 
 
 # for convenient debug, has no effect in production
@@ -14,7 +14,7 @@ team_id = sly.env.team_id()
 
 
 checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
-trained_models_table = TrainedModelsSelector(
+trained_models_table = CustomModelsSelector(
     team_id,
     checkpoint_infos,
     show_custom_checkpoint_path=True,
@@ -36,7 +36,7 @@ app = sly.Application(layout=card)
 
 
 @trained_models_table.value_changed
-def get_selected_row(row: TrainedModelsSelector.ModelRow):
+def get_selected_row(row: CustomModelsSelector.ModelRow):
     preview_container.hide()
 
 

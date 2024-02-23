@@ -1,15 +1,15 @@
-# TrainedModelsSelector
+# CustomModelsSelector
 
 ## Introduction
 
-**`TrainedModelsSelector`** widget allows creating a table with NN models that you have trained in Supervisely by providing path to training application default save directory, Team ID and task type (e.g. object detection, instance segmentation, pose estimation and etc).
+**`CustomModelsSelector`** widget allows creating a table with NN models that you have trained in Supervisely by providing path to training application default save directory, Team ID and task type (e.g. object detection, instance segmentation, pose estimation and etc).
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selectors/trained-models-selector)
+[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selectors/custom-models-selector)
 
 ## Function signature
 
 ```python
-TrainedModelsSelector(
+CustomModelsSelector(
     team_id = team_id,
     training_app_directory="/yolov8_train/",
     task_type="object_detection",
@@ -65,7 +65,7 @@ ID of the widget.
 
 ## ModelRow
 
-`ModelRow` object represents an automatically generated row in the `TrainedModelsSelector` widget. It has information about the training session including:
+`ModelRow` object represents an automatically generated row in the `CustomModelsSelector` widget. It has information about the training session including:
 
 - ID of the training session
 - Names and paths to model artifacts
@@ -112,7 +112,7 @@ You can find this example in our Github repository:
 import os
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, TrainedModelsSelector, Container, Text, Button
+from supervisely.app.widgets import Card, CustomModelsSelector, Container, Text, Button
 ```
 
 ### Init API client
@@ -126,13 +126,13 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 api = sly.Api()
 ```
 
-### Initialize `TrainedModelsSelector` widget
+### Initialize `CustomModelsSelector` widget
 
 ```python
 team_id = sly.env.team_id()
 
 checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
-trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos)
+trained_models_table = CustomModelsSelector(team_id, checkpoint_infos)
 ```
 
 ### Create additional widgets to preview selected model
@@ -167,7 +167,7 @@ app = sly.Application(layout=layout)
 
 ```python
 @trained_models_table.value_changed
-def get_selected_row(row: TrainedModelsSelector.ModelRow):
+def get_selected_row(row: CustomModelsSelector.ModelRow):
     preview_container.hide()
 
 
