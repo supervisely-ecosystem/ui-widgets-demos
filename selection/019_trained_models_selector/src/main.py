@@ -1,7 +1,7 @@
 import os
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, TrainedModelsSelector, Container, Text, Button
+from supervisely.app.widgets import Card, PretrainedModelsSelector, Container, Text, Button
 
 
 # for convenient debug, has no effect in production
@@ -12,9 +12,8 @@ api = sly.Api()
 
 team_id = sly.env.team_id()
 
-
 checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
-trained_models_table = TrainedModelsSelector(team_id, checkpoint_infos)
+trained_models_table = PretrainedModelsSelector(checkpoint_infos)
 
 model_name_preview = Text("", "text")
 model_path_preview = Text("", "text")
