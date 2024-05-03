@@ -49,8 +49,8 @@ def model_changed(model):
     task_type = model_selector.get_selected_task_type()
     arch_type = model_selector.get_selected_arch_type()
 
-    config_url = model_row["meta"]["configURL"]
-    checkpoint_url = model_row["meta"]["weightsURL"]
+    config_url = model_row["meta"]["config_url"]
+    checkpoint_url = model_row["meta"]["weights_url"]
     checkpoint_filename = model_row["Model"]
 
     model_params = {
