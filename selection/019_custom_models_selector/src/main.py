@@ -13,10 +13,10 @@ api = sly.Api()
 team_id = sly.env.team_id()
 
 
-checkpoint_infos = sly.nn.checkpoints.yolov8.get_list(api, team_id)
+train_infos = sly.nn.artifacts.YOLOv8(team_id).get_list()
 trained_models_table = CustomModelsSelector(
     team_id,
-    checkpoint_infos,
+    train_infos,
     show_custom_checkpoint_path=True,
     custom_checkpoint_task_types=["object detection", "instance segmentation", "pose estimation"],
 )
