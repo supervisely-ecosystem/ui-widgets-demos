@@ -19,6 +19,7 @@ Editor(
     highlight_active_line=True,
     restore_default_button=True,
     widget_id=None,
+    auto_format=False,
 )
 ```
 
@@ -37,6 +38,7 @@ Editor(
 | `highlight_active_line`  | `Optional[bool]` | Specifies if visible highlighting active line in editor |
 | `restore_default_button` | `Optional[bool]` |    Display button for settting editor default value     |
 |       `widget_id`        | `Optional[str]`  |                    ID of the widget                     |
+|      `auto_format`       | `Optional[bool]` |  Automatically format JSON content on initialization   |
 
 ### initial_text
 
@@ -174,6 +176,20 @@ ID of the widget.
 
 **default value:** `None`
 
+### auto_format
+
+Automatically format JSON content on initialization.
+
+**type:** `Optional[bool]`
+
+**default value:** `False`
+
+```python
+editor = Editor('{ "value": 10 }', auto_format=True)
+```
+
+![auto_format](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/119750c5-8c94-4e1a-a29b-363b74eb2058)
+
 ## Methods and attributes
 
 |                                                    Attributes and Methods                                                     | Description                           |
@@ -186,7 +202,7 @@ ID of the widget.
 
 ## Mini App Example
 
-You can find this example in our Github repository:
+You can find this example in our GitHub repository:
 
 [supervisely-ecosystem/ui-widgets-demos/text-elements/003_editor/src/main.py](<https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/text elements/003_editor/src/main.py>)
 
