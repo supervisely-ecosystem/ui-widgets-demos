@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 from supervisely.app.widgets import Card, CheckboxField
 
 # for convenient debug, has no effect in production
-load_dotenv("local.env")
-load_dotenv(os.path.expanduser("~/supervisely.env"))
+if sly.is_development():
+    load_dotenv("local.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
