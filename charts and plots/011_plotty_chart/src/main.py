@@ -15,8 +15,6 @@ if sly.is_development():
     load_dotenv("local.env")
     load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-api = sly.Api.from_env()
-
 btn = Button("1 > 2 figure")
 fig1 = go.Figure()
 
