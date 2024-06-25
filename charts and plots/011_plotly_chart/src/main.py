@@ -2,8 +2,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 import os
-
 import supervisely as sly
+
 
 from supervisely.app.widgets import Button, Card, Container, PlotlyChart, Text
 from dotenv import load_dotenv
