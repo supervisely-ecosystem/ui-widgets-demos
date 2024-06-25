@@ -5,7 +5,7 @@ import os
 
 import supervisely as sly
 
-from supervisely.app.widgets import Button, Card, Container, PlottyChart, Text
+from supervisely.app.widgets import Button, Card, Container, PlotlyChart, Text
 from dotenv import load_dotenv
 import numpy as np
 
@@ -23,17 +23,17 @@ y = [10, 15, 13, 17, 14]
 z = np.random.rand(10, 40)
 fig1.add_trace(go.Scatter(x=x, y=y, mode="lines", name="Line Plot"))
 fig1.update_layout(xaxis_title="X Axis", yaxis_title="Y Axis")
-plotty_chart_1 = PlottyChart(figure=fig1)
+plotly_chart_1 = PlotlyChart(figure=fig1)
 text_1 = Text()
 
 
 fig2 = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
-plotty_chart_2 = PlottyChart(figure=fig2)
+plotly_chart_2 = PlotlyChart(figure=fig2)
 text_2 = Text()
 
 df = px.data.iris()  # iris is a pandas DataFrame
 fig3 = px.scatter(df, x="sepal_width", y="sepal_length")
-plotty_chart_3 = PlottyChart(figure=fig3)
+plotly_chart_3 = PlotlyChart(figure=fig3)
 text_3 = Text()
 
 df = px.data.iris()
@@ -45,28 +45,28 @@ fig4 = px.scatter(
     size="petal_length",
     hover_data=["petal_width"],
 )
-plotty_chart_4 = PlottyChart(figure=fig4)
+plotly_chart_4 = PlotlyChart(figure=fig4)
 text_4 = Text()
 
 df = px.data.iris()
 fig5 = px.scatter(df, x="sepal_width", y="sepal_length", color="petal_length")
-plotty_chart_5 = PlottyChart(figure=fig5)
+plotly_chart_5 = PlotlyChart(figure=fig5)
 text_5 = Text()
 
 df = px.data.iris()
 fig6 = px.scatter(df, x="sepal_width", y="sepal_length", color="species", symbol="species")
-plotty_chart_6 = PlottyChart(figure=fig6)
+plotly_chart_6 = PlotlyChart(figure=fig6)
 text_6 = Text()
 
 df = px.data.gapminder().query("year == 2007").query("continent == 'Europe'")
 df.loc[df["pop"] < 2.0e6, "country"] = "Other countries"  # Represent only large countries
 fig7 = px.pie(df, values="pop", names="country")
-plotty_chart_7 = PlottyChart(figure=fig7)
+plotly_chart_7 = PlotlyChart(figure=fig7)
 text_7 = Text()
 
 df = px.data.tips()
 fig8 = px.pie(df, values="tip", names="day")
-plotty_chart_8 = PlottyChart(figure=fig8)
+plotly_chart_8 = PlotlyChart(figure=fig8)
 text_8 = Text()
 
 
@@ -80,7 +80,7 @@ fig9 = px.bar(
     labels={"pop": "population of Canada"},
     height=400,
 )
-plotty_chart_9 = PlottyChart(figure=fig9)
+plotly_chart_9 = PlotlyChart(figure=fig9)
 text_9 = Text()
 
 df = px.data.gapminder().query("continent == 'Oceania'")
@@ -93,37 +93,37 @@ fig10 = px.bar(
     labels={"pop": "population of Canada"},
     height=400,
 )
-plotty_chart_10 = PlottyChart(figure=fig10)
+plotly_chart_10 = PlotlyChart(figure=fig10)
 text_10 = Text()
 
 df = px.data.tips()
 fig11 = px.bar(df, x="sex", y="total_bill", color="smoker", barmode="group", height=400)
-plotty_chart_11 = PlottyChart(figure=fig11)
+plotly_chart_11 = PlotlyChart(figure=fig11)
 text_11 = Text()
 
 df = px.data.tips()
 fig12 = px.histogram(
     df, x="sex", y="total_bill", color="smoker", barmode="group", histfunc="avg", height=400
 )
-plotty_chart_12 = PlottyChart(figure=fig12)
+plotly_chart_12 = PlotlyChart(figure=fig12)
 text_12 = Text()
 
 df = px.data.medals_long()
 fig13 = px.bar(df, x="medal", y="count", color="nation")
-plotty_chart_13 = PlottyChart(figure=fig13)
+plotly_chart_13 = PlotlyChart(figure=fig13)
 text_13 = Text()
 
 
 df = px.data.gapminder().query("continent == 'Europe' and year == 2007 and pop > 2.e6")
 fig14 = px.bar(df, y="pop", x="country")
-plotty_chart_14 = PlottyChart(figure=fig14)
+plotly_chart_14 = PlotlyChart(figure=fig14)
 text_14 = Text()
 
 
-plotty_chart_15 = PlottyChart(figure=demo_data_21)
+plotly_chart_15 = PlotlyChart(figure=demo_data_21)
 text_15 = Text()
 
-plotty_chart_16 = PlottyChart()
+plotly_chart_16 = PlotlyChart()
 fig16 = px.scatter(
     df.query("year==2007"),
     x="gdpPercap",
@@ -134,7 +134,7 @@ fig16 = px.scatter(
     log_x=True,
     size_max=60,
 )
-plotty_chart_16.set_figure(fig16)
+plotly_chart_16.set_figure(fig16)
 text_16 = Text()
 
 
@@ -158,7 +158,7 @@ fig17 = go.Figure(
 )
 
 fig17.update_layout(title_text="Basic Sankey Diagram", font_size=10)
-plotty_chart_17 = PlottyChart(figure=fig17)
+plotly_chart_17 = PlotlyChart(figure=fig17)
 text_17 = Text()
 
 fig18 = go.Figure(go.Sunburst(
@@ -168,32 +168,32 @@ fig18 = go.Figure(go.Sunburst(
     branchvalues="total",
 ))
 fig18.update_layout(margin = dict(t=0, l=0, r=0, b=0))
-plotty_chart_18 = PlottyChart(figure=fig18)
+plotly_chart_18 = PlotlyChart(figure=fig18)
 text_18 = Text()
 
 card = Card(
-    title="PlottyChart",
+    title="PlotlyChart",
     content=Container(
         [
             btn,
-            Container([plotty_chart_1, text_1]),
-            Container([plotty_chart_2, text_2]),
-            Container([plotty_chart_3, text_3]),
-            Container([plotty_chart_4, text_4]),
-            Container([plotty_chart_5, text_5]),
-            Container([plotty_chart_6, text_6]),
-            Container([plotty_chart_7, text_7]),
-            Container([plotty_chart_8, text_8]),
-            Container([plotty_chart_9, text_9]),
-            Container([plotty_chart_10, text_10]),
-            Container([plotty_chart_11, text_11]),
-            Container([plotty_chart_12, text_12]),
-            Container([plotty_chart_13, text_13]),
-            Container([plotty_chart_14, text_14]),
-            Container([plotty_chart_15, text_15]),
-            Container([plotty_chart_16, text_16]),
-            Container([plotty_chart_17, text_17]),
-            Container([plotty_chart_18, text_18]),
+            Container([plotly_chart_1, text_1]),
+            Container([plotly_chart_2, text_2]),
+            Container([plotly_chart_3, text_3]),
+            Container([plotly_chart_4, text_4]),
+            Container([plotly_chart_5, text_5]),
+            Container([plotly_chart_6, text_6]),
+            Container([plotly_chart_7, text_7]),
+            Container([plotly_chart_8, text_8]),
+            Container([plotly_chart_9, text_9]),
+            Container([plotly_chart_10, text_10]),
+            Container([plotly_chart_11, text_11]),
+            Container([plotly_chart_12, text_12]),
+            Container([plotly_chart_13, text_13]),
+            Container([plotly_chart_14, text_14]),
+            Container([plotly_chart_15, text_15]),
+            Container([plotly_chart_16, text_16]),
+            Container([plotly_chart_17, text_17]),
+            Container([plotly_chart_18, text_18]),
         ]
     ),
 )
@@ -203,7 +203,7 @@ layout = Container(widgets=[card])
 app = sly.Application(layout=layout)
 
 
-@plotty_chart_1.click
+@plotly_chart_1.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -211,7 +211,7 @@ def click_handler(datapoints):
     text_1.text = texts
 
 
-@plotty_chart_2.click
+@plotly_chart_2.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -219,7 +219,7 @@ def click_handler(datapoints):
     text_2.text = texts
 
 
-@plotty_chart_3.click
+@plotly_chart_3.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -227,7 +227,7 @@ def click_handler(datapoints):
     text_3.text = texts
 
 
-@plotty_chart_4.click
+@plotly_chart_4.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -235,7 +235,7 @@ def click_handler(datapoints):
     text_4.text = texts
 
 
-@plotty_chart_5.click
+@plotly_chart_5.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -243,7 +243,7 @@ def click_handler(datapoints):
     text_5.text = texts
 
 
-@plotty_chart_6.click
+@plotly_chart_6.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -251,7 +251,7 @@ def click_handler(datapoints):
     text_6.text = texts
 
 
-@plotty_chart_7.click
+@plotly_chart_7.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -259,7 +259,7 @@ def click_handler(datapoints):
     text_7.text = texts
 
 
-@plotty_chart_8.click
+@plotly_chart_8.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -267,7 +267,7 @@ def click_handler(datapoints):
     text_8.text = texts
 
 
-@plotty_chart_9.click
+@plotly_chart_9.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -275,7 +275,7 @@ def click_handler(datapoints):
     text_9.text = texts
 
 
-@plotty_chart_10.click
+@plotly_chart_10.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -283,7 +283,7 @@ def click_handler(datapoints):
     text_10.text = texts
 
 
-@plotty_chart_11.click
+@plotly_chart_11.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -291,7 +291,7 @@ def click_handler(datapoints):
     text_11.text = texts
 
 
-@plotty_chart_12.click
+@plotly_chart_12.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -299,7 +299,7 @@ def click_handler(datapoints):
     text_12.text = texts
 
 
-@plotty_chart_13.click
+@plotly_chart_13.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -307,7 +307,7 @@ def click_handler(datapoints):
     text_13.text = texts
 
 
-@plotty_chart_14.click
+@plotly_chart_14.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -315,7 +315,7 @@ def click_handler(datapoints):
     text_14.text = texts
 
 
-@plotty_chart_15.click
+@plotly_chart_15.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -323,7 +323,7 @@ def click_handler(datapoints):
     text_15.text = texts
 
 
-@plotty_chart_16.click
+@plotly_chart_16.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -331,14 +331,14 @@ def click_handler(datapoints):
     text_16.text = texts
 
 
-@plotty_chart_17.click
+@plotly_chart_17.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
         texts += f"\nx: {datapoint.x}, y: {datapoint.y}, customdata: {datapoint.customdata}"
     text_17.text = texts
 
-@plotty_chart_18.click
+@plotly_chart_18.click
 def click_handler(datapoints):
     texts = ""
     for datapoint in datapoints:
@@ -348,5 +348,5 @@ def click_handler(datapoints):
 
 @btn.click
 def click_handler():
-    _fig = plotty_chart_1.get_figure()
-    plotty_chart_2.set_figure(_fig)
+    _fig = plotly_chart_1.get_figure()
+    plotly_chart_2.set_figure(_fig)

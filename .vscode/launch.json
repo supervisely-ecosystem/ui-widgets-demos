@@ -7,7 +7,7 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"charts and plots.011_plotty_chart.src.main:app",
+				"charts and plots.011_plotly_chart.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",
