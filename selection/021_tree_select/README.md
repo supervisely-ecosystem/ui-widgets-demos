@@ -19,7 +19,7 @@ TreeSelect(
 )
 ```
 
-![default](🔴 add picture here)
+![default](https://github.com/user-attachments/assets/890d44aa-2f2b-4d14-8946-e73ecbc2c148)
 
 ## Parameters
 
@@ -59,8 +59,6 @@ Initialize the widget with the items:
 widget = TreeSelect(items=items)
 ```
 
-![items](🔴 add picture here)
-
 ### multiple_select
 
 If `True`, multiple items can be selected. Default is `False`.
@@ -75,7 +73,7 @@ Initialize the widget with multiple selection:
 widget = TreeSelect(items=items, multiple_select=True)
 ```
 
-![multiple_select](🔴 add picture here)
+![multiple_select](https://github.com/user-attachments/assets/890d44aa-2f2b-4d14-8946-e73ecbc2c148)
 
 ### flat
 
@@ -91,8 +89,6 @@ Initialize the widget with the flat option:
 widget = TreeSelect(items=items, flat=True)
 ```
 
-![flat](🔴 add picture here)
-
 ### always_open
 
 If `True`, the tree will be opened when the widget is initialized.
@@ -106,8 +102,6 @@ Initialize the widget with the always open option:
 ```python
 widget = TreeSelect(items=items, always_open=True)
 ```
-
-![always_open](🔴 add picture here)
 
 ### widget_id
 
@@ -316,4 +310,4 @@ Create an app object with the layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![mini_app](🔴 add picture here)
+![mini_app](https://github.com/user-attachments/assets/233e4878-9f04-4aa1-adbb-602eb9accad1)
