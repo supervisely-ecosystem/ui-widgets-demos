@@ -18,6 +18,7 @@ card = Card(
     content_top_right=None,
     lock_message="Card content is locked",
     widget_id=None,
+    remove_padding=False
 )
 ```
 
@@ -34,6 +35,7 @@ card = Card(
 | `content_top_right` | `Widget` |     Widget to place in top right corner of Card widget      |
 |   `lock_message`    |  `str`   |         Message to display when card will be locked         |
 |     `widget_id`     |  `str`   |                          Widget ID                          |
+|  `remove_padding`   |  `bool`  |            Remove paddings from Card widget                |
 
 ### title
 
@@ -145,6 +147,25 @@ Widget ID
 **type:** `str`
 
 **default** `None`
+
+### remove_padding
+
+Remove paddings from Card widget
+
+**type:** `bool`
+
+**default** `False`
+
+```python
+card = Card(
+    title="Card title",
+    description="card description",
+    content=Text("some text"),
+    remove_padding=True
+)
+```
+
+![card-remove-padding](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/567e0f66-b863-4efc-973e-4b394326ea10)
 
 ## Methods and attributes
 
