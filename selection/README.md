@@ -21,3 +21,4 @@
 19. [TrainedModelsSelector](019_trained_models_selector/README.md)
 20. [AgentSelector](020_agent_selector/README.md)
 21. [TreeSelect](021_tree_select/README.md)
+22. [SelectDatasetTree](022_select_dataset_tree/README.md)
