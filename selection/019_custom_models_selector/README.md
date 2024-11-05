@@ -4,7 +4,7 @@
 
 **`CustomModelsSelector`** widget allows creating a table with NN models that you have trained in Supervisely by providing path to training application default save directory, Team ID and task type (e.g. object detection, instance segmentation, pose estimation and etc).
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selectors/custom-models-selector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selectors/custom-models-selector)
 
 ## Function signature
 
