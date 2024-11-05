@@ -4,7 +4,7 @@
 
 **`Switch`** widget in Supervisely is a user interface element that allows users to toggle between two states, such as on/off or true/false. With the Switch widget, users can easily turn on or off a specific feature or setting. The Switch widget is useful for creating project dashboards that require users to toggle specific options quickly and easily. Users can customize the appearance and behavior of the Switch widget to match their project requirements, making it a flexible tool for creating user interfaces in Supervisely apps. Overall, the Switch widget is a simple yet effective tool for improving the usability and functionality of Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/switch)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/controls/switch)
 
 ## Function signature
 
