@@ -4,7 +4,7 @@
 
 **`Editor`** widget in Supervisely allows users to input and edit code with syntax highlighting. It provides a customizable text input area with options such as language selection, input height, and some styles. `Editor` widget is used for editing code snippets, as the syntax highlighting makes it easier to read and edit code for languages such as `python`, `json`, `html`, and `yaml`.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/editor)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/editor)
 
 ## Function signature
 
