@@ -4,7 +4,7 @@
 
 **`ImageAnnotationPreview`** is a widget for displaying image annotation.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/imageannotationpreview)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/imageannotationpreview)
 
 ## Function signature
 
