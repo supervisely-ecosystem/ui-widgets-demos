@@ -4,7 +4,7 @@
 
 **`AgentSelector`** widget in Supervisely is a dropdown menu that allows users to select an agent from a list of available agents in within a given team. Clicking on it can be processed from python code. This widget is particularly useful when you are developing an app that can be able to launch another apps or deploy models.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/agentselector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/agentselector)
 
 ## Function signature
 
