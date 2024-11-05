@@ -4,7 +4,7 @@
 
 **`Cascader`** is a widget in Supervisely that allows for displaying input data by cascader on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/cascader)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/cascader)
 
 ## Function signature
 
