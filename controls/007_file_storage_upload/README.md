@@ -4,7 +4,7 @@
 
 **`FileStorageUpload`** is a widget in Supervisely's web interface that allows users to upload files directly to Team files by given path. With this widget, users can easily transfer data from their local machine to Team files without the need for any external tools or commands. The widget supports multiple file uploads and progress tracking, making the process of transferring data efficient and streamlined.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/filestorageupload)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/misc/filestorageupload)
 
 ## Function signature
 
