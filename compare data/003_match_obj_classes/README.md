@@ -4,7 +4,7 @@
 
 **`MatchObjClasses`** widget allows you to compare object classes between projects based on their names, geometry types, and name suffix. It displays the matching and non-matching object classes in a table form and provides the option to filter the results based on the match status. This widget is particularly useful when you want to compare object classes between different projects in Supervisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/matchobjclasses)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/compare-data/matchobjclasses)
 
 ## Function signature
 
