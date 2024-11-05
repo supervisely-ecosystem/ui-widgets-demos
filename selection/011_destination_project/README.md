@@ -4,7 +4,7 @@
 
 **`DestinationProject`** widget in Supervisely provides several options for selecting the destination project and dataset when transferring data. Users can choose between creating a new project or selecting an existing project, as well as creating a new dataset or selecting an existing dataset within the project. `DestinationProject` also includes an input field where users can enter the name of the destination project or dataset when creating a new one. This flexibility allows users to easily manage and organize their projects and datasets within the platform.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/destinationproject)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/destinationproject)
 
 ## Function signature
 
