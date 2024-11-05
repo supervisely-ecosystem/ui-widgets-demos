@@ -6,7 +6,7 @@
 
 It has no content or functionality of its own and is typically used to provide spacing or alignment within a larger widget or layout. This widget is particularly useful for creating clean, organized interfaces with clearly defined sections and layouts.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/empty)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/empty)
 
 ## Function signature
 
