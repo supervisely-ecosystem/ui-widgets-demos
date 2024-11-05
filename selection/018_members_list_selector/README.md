@@ -4,7 +4,7 @@
 
 **`Members List Selector`** widget allows to display list of users with roles.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/members-list-selector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/members-list-selector)
 
 ## Function signature
 
