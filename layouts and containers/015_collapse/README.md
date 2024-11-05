@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `Collapse` widget in Supervisely app.
 
-<!-- [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/collapse) -->
+<!-- [Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/collapse) -->
 
 ## Function signature
 
