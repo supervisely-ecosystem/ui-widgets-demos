@@ -4,7 +4,7 @@
 
 **`MatchDatasets`** widget in Supervisely allows users to compare datasets by matching objects and displaying the results in a table. It also provides the comparison results in the form of a dictionary grouped into `matched`, `unique_left`, and `unique_right` categories. This widget helps users identify differences and similarities between datasets quickly and efficiently.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/matchdatasets)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/compare-data/matchdatasets)
 
 ## Function signature
 
