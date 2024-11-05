@@ -7,7 +7,7 @@ The **`TaskLogs`** widget in Supervisely is designed to display task logs for a 
  > ℹ️ This widget will display logs only when the application with the widget is released **in production**.
  > In development mode, a message will be shown: `"You are currently in development mode. Task logs will be displayed only in production mode."`
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/tasklogs)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/tasklogs)
 
 ## Function signature
 
