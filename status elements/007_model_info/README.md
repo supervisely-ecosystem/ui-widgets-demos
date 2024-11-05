@@ -4,7 +4,7 @@
 
 In this tutorial you will learn how to use `ModelInfo` widget in Supervisely app.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/modelinfo)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/modelinfo)
 
 ## Function signature
 
