@@ -4,7 +4,7 @@
 
 **`TabsDynamic`** is a versatile widget in Supervisely that allows users to display and edit YAML files within their info, such as NN model settings. The widget can divide the YAML file into separate tabs, making it easier to navigate and manage complex data structures. Additionally, users can edit the YAML directly within the widget and obtain a merged YAML file with their changes. `TabsDynamic` also enables users to get or set the active tab from code.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/tabsdynamic)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/tabsdynamic)
 
 ## Function signature
 
