@@ -4,7 +4,7 @@
 
 The `Markdown` widget allows you to easily add and style your text using Markdown syntax. By using Markdown, you can add headings, lists, links, images, and more to enhance the presentation of your text content.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/markdown)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/markdown)
 
 ## Function signature
 
