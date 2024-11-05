@@ -4,7 +4,7 @@
 
 **`Carousel`** is a widget in Supervisely that allows loop a series of images or texts in a limited space on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/carousel)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/carousel)
 
 ## Function signature
 
