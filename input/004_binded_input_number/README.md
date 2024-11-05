@@ -4,7 +4,7 @@
 
 **`BindedInputNumber`** widget in Supervisely is a user interface element that allows users to input two numerical values and customize their behavior using the proportional, min, and max properties. With the BindedInputNumber widget, users can fine-tune specific parameters within supervisely apps that require two numerical inputs, such as defining a rectangular region of interest by specifying the `x` and `y` coordinates and the `width` and `height`. The `BindedInputNumber` widget provides a convenient and flexible way to input and manage these values, with customizable behavior to ensure accurate and precise inputs.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/bindedinputnumber)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/bindedinputnumber)
 
 ## Function signature
 
