@@ -4,7 +4,7 @@
 
 **`OneOf`**  is a container widget that can hold one of several child widgets, such as `Radio`, `Select`, or `Switch`. Depending on the value selected by the user within these child widgets, the corresponding item will be added to the page markup. It is very convenient to quickly switch between different items without losing sight of the overall picture.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/oneof)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/oneof)
 
 ## Function signature
 
