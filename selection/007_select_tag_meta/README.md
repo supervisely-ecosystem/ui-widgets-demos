@@ -4,7 +4,7 @@
 
 **`SelectTagMeta`** widget in Supervisely is a drop down menu that allows users to select a `TagMeta` from a list of available tag metadatas. The widget can be customized with various parameters, such as the default selected tag metadata, default project ID, size, allowed types, multiple selection, label showing.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/SelectTagMeta)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/SelectTagMeta)
 
 ## Function signature
 
