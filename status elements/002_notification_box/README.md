@@ -4,7 +4,7 @@
 
 **`NotificationBox`** is a widget to display messages to the user. It immediately attracts the user's attention and can be used to inform the user about important events, such as the successful completion of a task, errors during execution, or the need to make adjustments to the annotation. NotificationBox supports various levels of messages, such as informational, success, warning, and error.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/notificationbox)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/notificationbox)
 
 ## Function signature
 
