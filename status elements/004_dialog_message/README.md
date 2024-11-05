@@ -4,7 +4,7 @@
 
 **`show_dialog`** widget in Supervisely is a function that is used to display a modal dialog window with customizable content. Users can specify the `title`, `message`, and `status` of the dialog window, such as informational, success, warning, or error. 
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/dialogmessage)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/dialogmessage)
 
 ## Function signature
 
