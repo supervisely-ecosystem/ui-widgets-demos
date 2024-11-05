@@ -4,7 +4,7 @@
 
 **`ClassesTable`** widget in Supervisely allows users to display all classes from given project in a table format. The widget shows the class name, geometry type, and the number of images and labels associated with each class. With `ClassesTable` widget, users can enable multi-selection mode, restrict the display of certain geometry types, and manage the selected classes. Users can customize the appearance and behavior of the widget to match their project requirements. `ClassesTable` widget also allows users to retrieve a list of the selected classes from the code. Overall, the ClassesTable widget is a valuable tool for organizing and managing the classes in Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/classestable)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/classestable)
 
 ## Function signature
 
