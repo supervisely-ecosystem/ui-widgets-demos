@@ -4,7 +4,7 @@
 
 **`Stepper`** widget in Supervisely is a graphical user interface tool that allows users to navigate through a sequence of widgets step by step. It is particularly useful for inspecting large size content in apps. The widget offers navigation option to set active step from code. Overall, `Stepper` widget is a helpful tool for navigating through complex interfaces and exploring large sets of data.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/stepper)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/stepper)
 
 ## Function signature
 
