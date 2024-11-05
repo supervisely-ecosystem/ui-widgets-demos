@@ -4,7 +4,7 @@
 
 **`ElementTag`** widget in Supervisely is a widget that allows users to display [elements tag](https://element.eleme.io/1.4/#/en-US/component/tag) in the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/elementtag)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/elementtag)
 
 ## Function signature
 
