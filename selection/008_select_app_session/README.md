@@ -5,7 +5,7 @@
 **`SelectAppSession`** widget in Supervisely is a dropdown menu that allows users to select an application session from a list of available sessions.
 `SelectAppSession` widget is particularly useful when working with multiple application sessions in Supervisely. It can be customized with various parameters, such as the size and label showing.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectappsession)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectappsession)
 
 ## Function signature
 
