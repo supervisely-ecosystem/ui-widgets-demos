@@ -4,7 +4,7 @@
 
 **`Classes Color Mapping`** widget allows users to edit class colors on the fly. This widget can be used when you have classes with similar colors and you want to change them to be more distinguishable.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classes-color-mapping)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/classes-color-mapping)
 
 ## Function signature
 
