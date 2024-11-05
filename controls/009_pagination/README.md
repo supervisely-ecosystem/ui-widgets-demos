@@ -4,7 +4,7 @@
 
 **`Pagination`** is a widget in Supervisely that allows to use pagination on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/pagination)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/pagination)
 
 ## Function signature
 
