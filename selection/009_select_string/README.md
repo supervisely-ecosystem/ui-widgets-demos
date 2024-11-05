@@ -4,7 +4,7 @@
 
 **`SelectString`** widget in Supervisely is a dropdown menu that allows users to select a single string value from a list of predefined options. It is commonly used when a specific string value is required as input, such as when selecting a specific class name or annotation type. Selected value can be accessed programmatically in the code.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectstring)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectstring)
 
 ## Function signature
 
