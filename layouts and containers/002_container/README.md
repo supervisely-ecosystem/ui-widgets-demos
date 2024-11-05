@@ -6,7 +6,7 @@
 
 However, `Container` widget does not have any specific functionality on its own but serves as a wrapper for other widgets.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/container)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/container)
 
 ## Function signature
 
