@@ -8,7 +8,7 @@ With the `Progress Bar` widget, you can easily create a progress bar that update
 
 The Progress Bar Widget can be customized to show progress as percents or values.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/progressbar)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/progressbar)
 
 ## Function signature
 
