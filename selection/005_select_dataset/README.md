@@ -4,7 +4,7 @@
 
 **`SelectDataset`** widget is a dropdown menu that allows users to select a dataset or multiple datasets from a list of available datasets in current project. It displays the name of each dataset in the list.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectdataset)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectdataset)
 
 ## Function signature
 
