@@ -5,7 +5,7 @@
 **`Card`** widget in Supervisely is a simple widget that can be used to display information or content in a compact format.
 It can be controlled by setting `loading`/`lock` properties and can be collapsed to save space. It provides a straightforward and easy-to-use solution for displaying information clearly and concisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/card)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/card)
 
 ## Function signature
 
