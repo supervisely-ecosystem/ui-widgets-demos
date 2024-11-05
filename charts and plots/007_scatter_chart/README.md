@@ -4,7 +4,7 @@
 
 **`ScatterChart`** is a widget in Supervisely used to display a scatter plot of numerical data. It can be used to visualize the relationship between two variables in a dataset, with each point on the plot representing a data point in the dataset. It is commonly used in data exploration and analysis tasks.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/scatterchart)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/scatterchart)
 
 ## Function signature
 
