@@ -5,7 +5,7 @@
 **`Tooltip`** widget in Supervisely is a user interface element that displays prompt information for mouse hover.
 Uses like a wrapper around a main UI elements, such as **`Button`** for example.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/tooltip)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/tooltip)
 
 ## Function signature
 
