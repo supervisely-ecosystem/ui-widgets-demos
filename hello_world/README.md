@@ -5,7 +5,7 @@
 
 </div>
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/hello-world)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/hello-world)
 
 ## Introduction
 
@@ -14,7 +14,7 @@ We will create a simple "Hello, World!" app that will generate names using `Text
 
 ## Requirements
 
-Install latest [`supervisely`](https://pypi.org/project/supervisely/) version to have access to all [available widgets](https://ecosystem.supervise.ly/docs/table) and [`names`](https://pypi.org/project/names/) library for names generation
+Install latest [`supervisely`](https://pypi.org/project/supervisely/) version to have access to all [available widgets](https://ecosystem.supervisely.com/docs/table) and [`names`](https://pypi.org/project/names/) library for names generation
 
 ```
 names # requires for names generation
@@ -23,7 +23,7 @@ supervisely
 
 ## How to debug this tutorial
 
-**Step 1.** Prepare `~/supervisely.env` file with credentials. [Learn more here.](https://developer.supervise.ly/getting-started/basics-of-authentication#how-to-use-in-python)
+**Step 1.** Prepare `~/supervisely.env` file with credentials. [Learn more here.](https://developer.supervisely.com/getting-started/basics-of-authentication#how-to-use-in-python)
 
 
 **Step 2.** Clone [repository](https://github.com/supervisely-ecosystem/ui-widgets-demos) with source code and create [Virtual Environment](https://docs.python.org/3/library/venv.html).
