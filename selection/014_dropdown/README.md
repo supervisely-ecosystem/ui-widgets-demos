@@ -4,7 +4,7 @@
 
 **`Dropdown`** is a widget in Supervisely that allows for selecting action from dropdown menu on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/dropdown)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/dropdown)
 
 ## Function signature
 
