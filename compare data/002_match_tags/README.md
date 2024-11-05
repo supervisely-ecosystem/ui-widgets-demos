@@ -4,7 +4,7 @@
 
 **`MatchTagMetas`** widget in Supervisely is used to compare tag metas between two different projects. It displays a table with the tag name, type, and possible differences between the tag metas of the two datasets. This widget allows users to identify differences in the tag structure between projects and easily reconcile them. Additionally, it provides the comparison result in the form of a dictionary grouped in "match", `only_right`, `only_left`, `different_value_type`, `different_one_of_options`, `match_suffix`, `different_value_type_suffix`, and `different_one_of_options_suffix` categories.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/matchtagmetas)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/compare-data/matchtagmetas)
 
 ## Function signature
 
