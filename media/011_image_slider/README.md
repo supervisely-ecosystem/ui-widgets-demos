@@ -4,7 +4,7 @@
 
 **`ImageSlider`** widget in Supervisely is a simple widget that displays images using Slider and is convenient to use when there is no need to add extra functions for displaying annotations or adjusting their settings, but only to display the images passed to it by a list of URLs or local paths.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/media/imageslider)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/media/imageslider)
 
 ## Function signature
 
