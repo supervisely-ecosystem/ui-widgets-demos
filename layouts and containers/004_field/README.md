@@ -4,7 +4,7 @@
 
 **`Field`** widget within Supervisely is a type of form which has the ability to contain various other widgets. This feature enables users to organize multiple widgets within a layout. Additionally, users have the option to customize the widget by setting a `title`, `icon`, `title_url` and `description`.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/field)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/field)
 
 ## Function signature
 
