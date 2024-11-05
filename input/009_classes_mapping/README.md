@@ -4,7 +4,7 @@
 
 **`Classes Mapping`** widget allows to rename given object classes with new names. It can be useful when you want to rename classes in your project.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classes-mapping)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/classes-mapping)
 
 ## Function signature
 
