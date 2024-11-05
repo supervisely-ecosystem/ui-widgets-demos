@@ -8,7 +8,7 @@ The `FastTable` widget allows searching, sorting by column and order, and the ab
 
 😲 The main feature of `FastTable` in that all information is processed on the server side and transmitted in the size of the active page of the table to the client, thus making its operation more efficient.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/fasttable)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/fasttable)
 
 ## Function signature
 
