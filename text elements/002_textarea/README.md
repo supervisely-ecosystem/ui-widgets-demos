@@ -5,7 +5,7 @@
 **`TextArea`** widget in Supervisely is a widget that allows users to enter and edit multiple lines of text. The widget provides a large text input area that can be customized with various options, such as placeholder text, autosize or read-only properties, and default value.
 `TextArea` widget is often used for collecting longer form input from users, such as descriptions or comments.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/textarea)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/textarea)
 
 ## Function signature
 
