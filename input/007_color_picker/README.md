@@ -4,7 +4,7 @@
 
 **`ColorPicker`** is a color selector supporting multiple color formats.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/colorpicker)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/colorpicker)
 
 ## Function signature
 
