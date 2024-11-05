@@ -4,7 +4,7 @@
 
 **`RadioTabs`** is a graphical user interface tool in Supervisely that allows users to group related widgets into tabs and switch between them using radio buttons. This feature is particularly useful for organizing and presenting complex interfaces with multiple settings and options. `RadioTabs` offers a simple and intuitive interface for users to quickly navigate between different tabs and access the desired widgets.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/radiotabs)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/radiotabs)
 
 ## Function signature
 
