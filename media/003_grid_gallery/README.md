@@ -5,7 +5,7 @@
 **`GridGallery`** is a widget in Supervisely used for displaying multiple images in a grid format.
 Allowing for annotations to be displayed on the images, the ability to hide annotations of specific classes, adjust their transparency and zoom level make it a convenient widget for visualizing annotated image results.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/gridgallery)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/gridgallery)
 
 ## Function signature
 
