@@ -4,7 +4,7 @@
 
 **`FileThumbnail`** widget in Supervisely displays an icon, link, and path to the file in Team Files. Clicking on the widget opens Supervisely Team Files interface, where you can view and edit the file.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/filethumbnail)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/thumbnail/filethumbnail)
 
 ## Function signature
 
