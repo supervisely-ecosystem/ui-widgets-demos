@@ -4,7 +4,7 @@
 
 **`TrainValSplits`** widget in Supervisely is a tool that helps with the creation of training and validation datasets. The widget allows for easy splitting of the original dataset into training and validation sets based on customizable parameters such as percentage split or based on datasets or specific tag. `TrainValSplits` helps improve the performance of machine learning models by ensuring that they are trained on diverse and representative data.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/misc/trainvalsplits)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/misc/trainvalsplits)
 
 ## Function signature
 
