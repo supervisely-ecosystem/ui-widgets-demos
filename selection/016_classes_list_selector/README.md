@@ -4,7 +4,7 @@
 
 **`Classes List Selector`** widget allows users to view a list of object classes and change it dynamically using widget methods. This widget can be used for visualizing and selecting classes in Supervisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/classes-list-selector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/classes-list-selector)
 
 ## Function signature
 
