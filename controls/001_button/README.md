@@ -6,7 +6,7 @@
 
 <!-- With the `Button` widget, you can easily create buttons that have customizable text, colors, and styles. You can also attach event handlers to buttons, so that when a button is clicked, a function is called. -->
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/button)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/controls/button)
 
 ## Function signature
 
