@@ -4,7 +4,7 @@
 
 **`MessageBox`** widget can be used for displaying alerts, notifications, or important information to users. Widget consists of a button and a Dialog window. When the button is clicked, the Dialog window opens and displays the message. The Dialog window can be closed by clicking the "OK" button or by clicking outside the Dialog window.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/messagebox)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/messagebox)
 
 ## Function signature
 
