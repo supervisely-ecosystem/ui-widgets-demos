@@ -5,7 +5,7 @@
 **`HeatmapChart`** widget in Supervisely is a widget used for displaying a heatmap chart. It allows users to visualize data in a way that highlights patterns and trends. Users can hover over each cell to see the data for that cell. The HeatmapChart widget is often used in data analysis and visualization tasks, such as exploring the distribution of object instances in a dataset.
 `HeatmapChart` allows downloading data series from widget in `svg`, `png`, and `csv` formats.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/heatmapchart)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/heatmapchart)
 
 ## Function signature
 
