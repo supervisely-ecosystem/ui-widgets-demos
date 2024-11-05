@@ -4,7 +4,7 @@
 
 **`ImageRegionSelector`** widget in Supervisely is designed to display an image with mask and bounding box and provides additional features such as the ability to change bounding box boundaries and add two types of points positive and negative.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imageregionselector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/imageregionselector)
 
 ![ImageRegionSelector](https://user-images.githubusercontent.com/61844772/229194885-741fa3c3-a538-4f4f-82fd-a4227584ecb8.png)
 
