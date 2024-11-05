@@ -5,7 +5,7 @@
 **`ClassBalance`** is a widget in Supervisely that allows for displaying input data classes balance on the UI. For example, you can display the distribution of tags to different classes in the project, or set your data according to the required format.
 It also provides functionality for data streaming and dynamic updates, allowing the class balance to display real-time data. Additionally, users can control the widget through Python code by detecting events such as clicking on a class name or segment data.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/compare-data/classbalance)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/compare-data/classbalance)
 
 ## Function signature
 
