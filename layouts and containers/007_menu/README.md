@@ -4,7 +4,7 @@
 
 **`Menu`** widget from Supervisely is a useful tool for organizing and navigating in Supervisely apps. With `Menu` widget, users can create custom menus that shows different parts and widgets of the app. These menus can be organized by groups.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/menu)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/menu)
 
 ## Function signature
 
