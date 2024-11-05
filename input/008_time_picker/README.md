@@ -4,7 +4,7 @@
 
 **`TimePicker`** is a widget in Supervisely that allows choise time on the UI.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/timepicker)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/timepicker)
 
 ## Function signature
 
