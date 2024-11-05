@@ -5,7 +5,7 @@
 **`FolderThumbnail`** widget in Supervisely is a widget that allows for quickly identifying and navigating to specific folder in Team files. Clicking on it opens the folder in Supervisely Team files interface.
 
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/folderthumbnail)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/thumbnail/folderthumbnail)
 
 ## Function signature
 
