@@ -5,7 +5,7 @@
 **`SelectWorkspace`** widget in Supervisely is a dropdown menu that allows users to select a workspace from a list of available workspaces. 
 Clicking on it can be processed from python code. This widget is particularly useful when working with multiple workspaces in Supervisely and allows to easily switch between workspaces in applications.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectworkspace)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectworkspace)
 
 ## Function signature
 
