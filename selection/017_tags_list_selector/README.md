@@ -4,7 +4,7 @@
 
 **`Tags List Selector`** widget allows users to view a list of tag metas and change it dynamically using widget methods. This widget can be used for visualizing and selecting tags in Supervisely.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/tags-list-selector)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/tags-list-selector)
 
 ## Function signature
 
