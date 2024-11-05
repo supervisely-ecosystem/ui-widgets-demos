@@ -4,7 +4,7 @@
 
 The **`ImagePairSequence`** widget is a widget in Supervisely designed for displaying pairs of images and annotations. It is useful for comparing. For example, it can be used to compare ground truth and predictions in a grid format. It allows users to navigate through multiple pages of predictions and provides zooming functionality, making it convenient for visualizing annotated image results.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/media/imagepairsequence)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/media/imagepairsequence)
 
 > All images will be saved in the `Team Files` in the `offline-sessions` directory:
 > `/offline-sessions/{task_id}/app-template/sly/css/app/widgets/image_pair_sequence/{image_name}`
