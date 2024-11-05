@@ -6,7 +6,7 @@
 
 It is recommended to use the newer `Table` widget instead.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/classic-table)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/classic-table)
 
 ## Function signature
 
