@@ -4,7 +4,7 @@
 
 **`VideoThumbnail`** widget in Supervisely is a widget that allows to display a thumbnail image that represents specific video. It is a useful widget for applications that work with videos, allowing users to have quick access to this video, so that when the user clicks on the thumbnail, the link will take him to this video.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/thumbnail/videothumbnail)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/thumbnail/videothumbnail)
 
 ## Function signature
 
