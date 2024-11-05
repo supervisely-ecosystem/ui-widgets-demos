@@ -4,7 +4,7 @@
 
 **`Sidebar`** widget from Supervisely is a tool that provides quick access to important information and features in Supervisely apps. `Sidebar` is a vertical panel that appears on the left side of the app interface and includes widget user will placed in. `Sidebar` widget is a useful tool for streamlining workflows and improving user productivity in the apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/sidebar)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/sidebar)
 
 ## Function signature
 
