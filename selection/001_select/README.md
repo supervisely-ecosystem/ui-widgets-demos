@@ -5,7 +5,7 @@
 **`Select`** widget in Supervisely is a graphical user interface element that allows users to choose an option from a predefined list. It presents the options as a dropdown menu that can be expanded and collapsed by clicking.
 The `Select` widget has event handler that is triggered when the user selects an option from the dropdown menu. This can be useful for applications that require users to take an action based on the selected option, such as filtering content or displaying specific information.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/select)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/select)
 
 ## Function signature
 
