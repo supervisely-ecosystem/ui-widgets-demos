@@ -2,9 +2,9 @@
 
 ## Introduction
 
-**`Members List Preview`** widget simply displays a list of members. It can be used to display members that were selected by the user in the [Members List Selector](https://developer.supervise.ly/app-development/apps-with-gui/members-list-selector) widget for example.
+**`Members List Preview`** widget simply displays a list of members. It can be used to display members that were selected by the user in the [Members List Selector](https://developer.supervisely.com/app-development/apps-with-gui/members-list-selector) widget for example.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/members-list-preview)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/members-list-preview)
 
 ## Function signature
 
