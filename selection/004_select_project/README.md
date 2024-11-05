@@ -5,7 +5,7 @@
 **`SelectProject`** widget in Supervisely is a dropdown menu that allows users to select a project from a list of available projects in current workspace.
 Clicking on it can be processed from python code. This widget is particularly useful when working with multiple projects in Supervisely and allows to easily switch between projects in applications.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectproject)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectproject)
 
 ## Function signature
 
