@@ -4,7 +4,7 @@
 
 **`RandomSplitsTable`** widget in Supervisely allows users to create random splits of their data for training, validation, and testing purposes. The widget enables users to define the percentage of data they want to allocate to each split, and then randomly assigns images or annotations to each split. This widget is particularly useful for machine learning projects, as it allows users to easily manage their training, validation, and testing data without having to manually split the data themselves. `RandomSplitsTable` widget provides a flexible and convenient way for users to organize their data splits, and can be customized to match the requirements of their project. `RandomSplitsTable` widget is a valuable tool for improving the accuracy and efficiency of machine learning projects that require data splits.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/randomsplitstable)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/randomsplitstable)
 
 ## Function signature
 
