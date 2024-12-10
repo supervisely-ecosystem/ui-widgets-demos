@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`SelectAppSession`** widget in Supervisely is a dropdown menu that allows users to select an application session from a list of available sessions.
+**`SelectAppSession`** widget in Supervisely is a dropdown menu that allows users to select an application session from a list of available sessions, and a refresh button to retrieve the latest information about existing app sessions.
 `SelectAppSession` widget is particularly useful when working with multiple application sessions in Supervisely. It can be customized with various parameters, such as the size and label showing.
 
 [Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectappsession)
@@ -18,8 +18,7 @@ SelectAppSession(
     widget_id=None,
 )
 ```
-
-![default](https://user-images.githubusercontent.com/120389559/219646892-e064bd68-20f1-4ce3-9f1b-89650fe1dde0.gif)
+<img src="https://github.com/user-attachments/assets/20e8ecc2-d56d-4dac-bdda-f8e6dd6cc773" width=540 />
 
 ## Parameters
 
@@ -61,7 +60,7 @@ select_app_session = SelectAppSession(
 )
 ```
 
-![show_label](https://user-images.githubusercontent.com/120389559/219651794-16c3d78d-d3fe-49c2-ada5-1c5039c1e761.png)
+<img src="https://github.com/user-attachments/assets/bf52c763-80d1-4b21-8b1b-f2d892111089" width=600 />
 
 ### size
 
@@ -88,7 +87,7 @@ select_app_large = SelectAppSession(
 )
 ```
 
-![size](https://user-images.githubusercontent.com/120389559/219652377-cd8392d6-09b7-432b-94a4-ef91ca64f864.png)
+<img src="https://github.com/user-attachments/assets/88a25882-d438-4ae1-bfcf-1358b2633282" width=600 />
 
 ### operation
 
@@ -164,4 +163,4 @@ Create an app object with layout parameter.
 app = sly.Application(layout=layout)
 ```
 
-![layout](https://user-images.githubusercontent.com/120389559/219653528-f8748e91-22ca-4cfb-b6cb-bb27a9997f1c.gif)
+<img src="https://github.com/user-attachments/assets/20e8ecc2-d56d-4dac-bdda-f8e6dd6cc773" width=540 />
