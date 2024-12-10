@@ -21,8 +21,6 @@ RandomSplitsTable(
   <img src="https://user-images.githubusercontent.com/120389559/221407209-a8049b1b-4807-4104-a876-dce63ea8bbc2.gif" alt="default" />
 </p>
 
-
-
 ## Parameters
 
 |      Parameters       |  Type  |       Description        |
@@ -88,9 +86,13 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                                                                               |
-| :--------------------: | ----------------------------------------------------------------------------------------- |
-| `get_splits_counts()`  | Returns the result of separating items `{ "total": <int>, "train": <int>, "val": <int>}`. |
+|   Attributes and Methods    | Description                                                                               |
+| :-------------------------: | ----------------------------------------------------------------------------------------- |
+|    `get_splits_counts()`    | Returns the result of separating items `{ "total": <int>, "train": <int>, "val": <int>}`. |
+| `set_train_split_percent()` | Set training split percent.                                                               |
+| `get_train_split_percent()` | Get training split percent.                                                               |
+|  `set_val_split_percent()`  | Set validation split percent.                                                             |
+|  `get_val_split_percent()`  | Get validation split percent.                                                             |
 
 ## Mini App Example
 

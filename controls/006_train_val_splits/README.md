@@ -133,11 +133,23 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                    |
-| :--------------------: | ------------------------------ |
-|     `get_splits()`     | Return result train/val split. |
-|      `disable()`       | Disable widget.                |
-|       `enable()`       | Enable widget.                 |
+|   Attributes and Methods    | Description                            |
+| :-------------------------: | -------------------------------------- |
+|       `get_splits()`        | Return result train/val split.         |
+|    `set_split_method()`     | Set splitting method.                  |
+|    `get_split_method()`     | Get active split method.               |
+|    `set_random_splits()`    | Set split method to random split.      |
+| `get_train_split_percent()` | Get training split percent.            |
+|  `get_val_split_percent()`  | Get validation split percent.          |
+|     `set_tags_splits()`     | Set split method to tags.              |
+|      `get_train_tag()`      | Get training tag.                      |
+|       `get_val_tag()`       | Get validation tag.                    |
+|   `get_untagged_action()`   | Get selected action for untagged data. |
+|   `set_datasets_splits()`   | Set split method to datasets.          |
+|  `get_train_dataset_ids()`  | Get training dataset ids.              |
+|   `get_val_dataset_ids()`   | Get validation dataset ids.            |
+|         `disable()`         | Disable widget.                        |
+|         `enable()`          | Enable widget.                         |
 
 ## Mini App Example
 

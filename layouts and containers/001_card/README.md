@@ -35,7 +35,7 @@ card = Card(
 | `content_top_right` | `Widget` |     Widget to place in top right corner of Card widget      |
 |   `lock_message`    |  `str`   |         Message to display when card will be locked         |
 |     `widget_id`     |  `str`   |                          Widget ID                          |
-|  `remove_padding`   |  `bool`  |            Remove paddings from Card widget                |
+|  `remove_padding`   |  `bool`  |              Remove paddings from Card widget               |
 
 ### title
 
@@ -169,14 +169,15 @@ card = Card(
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                               |
-| :--------------------: | ----------------------------------------- |
-|       `loading`        | Get or set `loading` property.            |
-|      `collapse()`      | Minimize card widget.                     |
-|     `uncollapse()`     | Expand card widget.                       |
-|        `lock()`        | Lock card widget and show message.        |
-|       `unlock()`       | Unlock card widget and hide lock message. |
-|       `is_locked()`    | Check if card widget is locked.           |
+| Attributes and Methods | Description                                |
+| :--------------------: | ------------------------------------------ |
+|       `loading`        | Get or set `loading` property.             |
+|      `collapse()`      | Minimize card widget.                      |
+|     `uncollapse()`     | Expand card widget.                        |
+|    `is_collapsed()`    | Checks if card widget is collapsed or not. |
+|        `lock()`        | Lock card widget and show message.         |
+|       `unlock()`       | Unlock card widget and hide lock message.  |
+|     `is_locked()`      | Checks if card widget is locked.           |
 
 ## Mini App Example
 
