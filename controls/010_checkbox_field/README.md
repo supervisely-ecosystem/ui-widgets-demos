@@ -4,7 +4,6 @@
 
 [Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/checkboxfield)
 
-
 ### Function signature
 
 ```python
@@ -48,7 +47,6 @@ checkbox = CheckboxField(
 
 <figure><img src="https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/79905215/dd0f609d-06cf-4b35-a79c-4cda345dfffb" alt=""><figcaption></figcaption></figure>
 
-
 ### checked
 
 Whether Checkbox is checked.
@@ -80,9 +78,9 @@ ID of the widget.
 | Attributes and Methods | Description                                                   |
 | :--------------------: | ------------------------------------------------------------- |
 |     `is_checked()`     | Return `True` if checked, else `False`.                       |
-|        `set()`       | Set `title`, `description`, and `checked` properties.         |
-|       `check()`       | Enable `checked` property.                                    |
-|      `uncheck()`      | Disable `checked` property.                                   |
+|        `set()`         | Set `title`, `description`, and `checked` properties.         |
+|       `check()`        | Enable `checked` property.                                    |
+|      `uncheck()`       | Disable `checked` property.                                   |
 |    `@value_changed`    | Decorator function is handled when checkbox value is changed. |
 
 ### is_checked()
@@ -132,7 +130,6 @@ def on_checkbox_changed(checked):
 ```
 
 ## Mini App Example
-
 
 You can find this example in our Github repository:
 
