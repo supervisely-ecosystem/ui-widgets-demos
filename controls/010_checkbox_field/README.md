@@ -2,7 +2,7 @@
 
 `CheckboxField` is similar to a [Checkbox](../002_checkbox/README.md) widget, but it is used in a form field. It allows to specify a title and a description for the checkbox.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/checkboxfield)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/controls/checkboxfield)
 
 ### Function signature
 
