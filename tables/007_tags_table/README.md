@@ -4,7 +4,7 @@
 
 **`TagsTable`** widget in Supervisely is a table that displays all given tags from the project meta. It allows you to select tags, get a list of selected tags, select all tags or clear the selection. For example, you can use this widget in training applications to select tags for the training process or in applications where you need to filter data by tags.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/tagstable)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/tagstable)
 
 ## Function signature
 
@@ -178,7 +178,7 @@ You can find this example in our Github repository:
 ### Create `local.env` file
 
 Create a `local.env` file with the following environment variables:
-Read more about environment variables [here](https://developer.supervise.ly/getting-started/environment-variables)
+Read more about environment variables [here](https://developer.supervisely.com/getting-started/environment-variables)
 
 ```
 PROJECT_ID=38857
