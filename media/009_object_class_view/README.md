@@ -4,7 +4,7 @@
 
 **`ObjectClassView`** is a widget in Supervisely that displays a single object class and provides a convenient way to view the name, color, as well as the icon and shape type of the class.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/apps-with-gui/object-class-view)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/apps-with-gui/object-class-view)
 
 ## Function signature
 
