@@ -4,7 +4,7 @@
 
 **`Text`** widget in Supervisely is used to display text with different styles, such as `"text"`, `"info"`, `"success"`, `"warning"`, or `"error"`. Content and style of the text can be easily changed drom code. The Text widget is useful for presenting informative messages or status updates to users, and can be combined with other widgets to create more complex interfaces.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/text-elements/text)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/text-elements/text)
 
 ## Function signature
 
