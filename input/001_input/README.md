@@ -6,7 +6,7 @@
 
 The `Input` widget also allows you to set default text to be displayed in the input field, set text placeholder, set input field to be `readonly`, and set a minimum and maximum length for the input.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/input)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/input)
 
 ## Function signature
 
