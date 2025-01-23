@@ -5,7 +5,7 @@
 The **`SelectDatasetTree`** widget in Supervisely is a user interface element that allows users to select datasets from a tree-like structure that can be useful when working with hierarchical data.
 The `SelectDatasetTree` widget has event handlers that are triggered when selected datasets are changed. This can be useful for applications that require dynamic change handling, such as showing data from the selected items.
 
-[Read this tutorial in the developer portal.](https://developer.supervise.ly/app-development/widgets/selection/selectdatasettree)
+[Read this tutorial in the developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectdatasettree)
 
 ## Function signature
 
