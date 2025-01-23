@@ -6,7 +6,7 @@
 
 The `InputNumber` widget also allows you to set default values for the input field, and set minimum and maximum values for the range of numbers that can be entered. You can also set a step value to control how much the number increases or decreases when the user uses the controls to adjust the value.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/inputnumber)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/inputnumber)
 
 ## Function signature
 
