@@ -4,7 +4,7 @@
 
 **Circle Progress** widget is a wrapper for [Progress](https://developer.supervisely.com/app-development/widgets/status-elements/progressbar) widget to display it in a circular form. This widget display progress only in percentage.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/status-elements/circle-progress)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/status-elements/circle-progress)
 
 ## Function signature
 
