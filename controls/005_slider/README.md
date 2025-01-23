@@ -4,7 +4,7 @@
 
 **`Slider`** is a widget in Supervisely that allows users to input numerical values within a specific range. The widget is commonly used to set parameters such as batch size in machine learning models. Users can adjust the slider handle to select the desired value, and the corresponding numerical value is displayed. `Slider` widget also provides users with the ability to customize the slider range, height in vertical mode and step size between values, allowing for more precise and flexible inputs.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/controls/slider)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/controls/slider)
 
 ## Function signature
 
