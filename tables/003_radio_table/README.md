@@ -4,7 +4,7 @@
 
 **`RadioTable`** widget in Supervisely is a user interface element that allows creating a table of options, each with a corresponding radio button. With `RadioTable` widget, developer can define multiple rows of options, and only one row option can be selected. The RadioTable widget provides a convenient and intuitive way to navigate and make selections within the table.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/tables/radiotable)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/tables/radiotable)
 
 ## Function signature
 
