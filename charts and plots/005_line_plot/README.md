@@ -4,7 +4,7 @@
 
 **`LinePlot`** widget in Supervisely is a widget that allows users to display one or more lines of data in a plot. It provides a canvas area that can be customized with various options, such as line smoothing, axis labels, and displaying legends. `LinePlot` widget is useful for visualizing time-series data or data with continuous variables.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/charts-and-plots/lineplot)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/charts-and-plots/lineplot)
 
 ## Function signature
 
