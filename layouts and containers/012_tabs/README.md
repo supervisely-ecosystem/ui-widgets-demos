@@ -4,7 +4,7 @@
 
 **`Tabs`** is a graphical user interface tool in Supervisely that allows users to group related widgets into multiple tabs, providing a more organized and streamlined interface. Each tab contains a set of widgets specific to a particular task or category.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/layouts-and-containers/tabs)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/layouts-and-containers/tabs)
 
 ## Function signature
 
