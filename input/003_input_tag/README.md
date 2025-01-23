@@ -5,7 +5,7 @@
 **`InputTag`** widget in Supervisely is a user interface element that allows users to add or remove tag labels to items (images, videos, volumes, and point clouds). It uses `TagMeta` of the current project and allow to use them easily in Supervisely apps.
 `InputTag` widget is a valuable tool for improving the organization and efficiency of Supervisely apps.
 
-[Read this tutorial in developer portal.](https://developer.supervise.ly/app-development/widgets/input/inputtag)
+[Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/input/inputtag)
 
 ## Function signature
 
