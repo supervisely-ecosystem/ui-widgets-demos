@@ -11,7 +11,7 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 api = sly.Api()
 
-image_info = api.image.get_info_by_id(19369522)
+IMAGE_URL = "https://github.com/supervisely-ecosystem/ui-widgets-demos/releases/download/v0.0.6/pexels-lenin-estrada-117221-2896297.jpg"
 
 lock_btn = Button("Lock")
 collapse_btn = Button("Collapse")
@@ -85,5 +85,5 @@ def lock_card():
 @preview_btn.click
 def load_preview_image():
     image_card.loading = True
-    image.set(image_info.full_storage_url)
+    image.set(IMAGE_URL)
     image_card.loading = False

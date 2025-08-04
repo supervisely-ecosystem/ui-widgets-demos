@@ -16,6 +16,7 @@ TrainValSplits(
     tags_splits=True,
     datasets_splits=True,
     widget_id=None,
+    collections_splits=False,
 )
 ```
 
@@ -33,6 +34,7 @@ TrainValSplits(
 |   `tags_splits`   | `bool` |  Images should have assigned train or val tag   |
 | `datasets_splits` | `bool` | Select one or several datasets for every split  |
 |    `widget_id`    | `str`  |                ID of the widget                 |
+|    `collections_splits`    | `bool`  |                Mode of the split               |
 
 ### project_id
 
@@ -131,6 +133,14 @@ ID of the widget.
 
 **default value:** `None`
 
+### collections_splits
+
+Determine mode of the split.
+
+**type:** `bool`
+
+**default value:** `False`
+
 ## Methods and attributes
 
 |   Attributes and Methods    | Description                            |
@@ -150,7 +160,11 @@ ID of the widget.
 |   `get_val_dataset_ids()`   | Get validation dataset ids.            |
 |         `disable()`         | Disable widget.                        |
 |         `enable()`          | Enable widget.                         |
-
+| `set_project_id_for_collections()`          | Sets the project ID and updates available collections for train and validation splits.                         |
+| `get_train_collections_ids()`  |   Returns a list of collection IDs selected for the training split.                                      |
+|  `get_val_collections_ids()`          | Returns a list of collection IDs selected for the validation split.                         |
+|  `set_collections_splits()`          |   Sets the collections (by their IDs) to be used for the training and validation splits when using the "collections" split method.                       |
+|`set_collections_splits_by_ids()`          |    Set for the specified split (train or val) sets the provided collection IDs.                      |
 ## Mini App Example
 
 You can find this example in our Github repository:

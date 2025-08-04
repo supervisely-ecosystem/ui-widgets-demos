@@ -153,7 +153,7 @@ ID of the widget.
 |            `clear_selection()`             | Clear selected data.                                         |
 |             `value_changed()`              | Decorator function is handled when input value is changed.   |
 |           `loading(value: bool)`           | Decorator function is handled when input value is uplouding. |
-|             `set_dataset_ids`              | Sets dataset ids to filter classes.                          |
+|             `set_dataset_ids`              | Display only those classes that occur in the selected datasets.                          |
 
 ## Mini App Example
 
