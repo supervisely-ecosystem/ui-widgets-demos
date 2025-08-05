@@ -135,7 +135,7 @@ ID of the widget.
 
 ### collections_splits
 
- Allows to split data into train and validation sets.
+ Allows to split data into train and validation sets based on the provided collections.
 
 **type:** `bool`
 
