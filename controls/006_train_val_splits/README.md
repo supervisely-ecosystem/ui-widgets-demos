@@ -34,7 +34,7 @@ TrainValSplits(
 |   `tags_splits`   | `bool` |  Images should have assigned train or val tag   |
 | `datasets_splits` | `bool` | Select one or several datasets for every split  |
 |    `widget_id`    | `str`  |                ID of the widget                 |
-|    `collections_splits`    | `bool`  |                Mode of the split               |
+|    `collections_splits`    | `bool`  |                If True, allows to split data into train and validation sets based on selected collections within the project.               |
 
 ### project_id
 
@@ -135,7 +135,7 @@ ID of the widget.
 
 ### collections_splits
 
-Determine mode of the split.
+ Allows to split data into train and validation sets.
 
 **type:** `bool`
 
