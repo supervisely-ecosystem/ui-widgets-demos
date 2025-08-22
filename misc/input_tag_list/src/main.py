@@ -36,7 +36,7 @@ tag_metas = [
 ]
 
 # Create InputTagList widget
-input_tag_list = InputTagList(tag_metas=tag_metas, max_width=200)
+input_tag_list = InputTagList(tag_metas=tag_metas, max_width=400, max_height=200)
 
 # Create buttons for demonstration
 btn_select_all = Button("Select All")
