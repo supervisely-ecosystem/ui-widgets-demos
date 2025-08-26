@@ -35,8 +35,14 @@ tag_metas = [
     tag_meta_confidence,
 ]
 
-# Create InputTagList widget
+# Alternatively use the TagMetaCollection
+tag_meta_collection = sly.TagMetaCollection(tag_metas)
+
+# Create InputTagList widget with tag metas.
 input_tag_list = InputTagList(tag_metas=tag_metas, max_width=400, max_height=200)
+
+# Or use the TagMetaCollection.
+# input_tag_list = InputTagList(tag_metas=tag_meta_collection, max_width=400, max_height=200)
 
 # Create buttons for demonstration
 btn_select_all = Button("Select All")
