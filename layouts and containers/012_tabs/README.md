@@ -111,11 +111,15 @@ ID of the widget.
 
 ## Methods and attributes
 
-|    Attributes and Methods    | Description                                                      |
-| :--------------------------: | ---------------------------------------------------------------- |
-| `set_active_tab(value: str)` | Set active tab by title.                                         |
-|      `get_active_tab()`      | Return active tab title.                                         |
-|           `@click`           | Decorator for setting a callback function for the `Tabs` widget. |
+|    Attributes and Methods    | Description                                                                                            |
+| :--------------------------: | ------------------------------------------------------------------------------------------------------ |
+| `set_active_tab(value: str)` | Set active tab by title.                                                                               |
+|      `get_active_tab()`      | Return active tab title.                                                                               |
+| `enable_tab(tab_name: str)`  | Enables a previously disabled tab, making it interactive and selectable again.                         |
+| `disable_tab(tab_name: str)` | Disables a specific tab, making it non-interactive and visually indicating that it cannot be selected. |
+
+|
+| `@click` | Decorator for setting a callback function for the `Tabs` widget. |
 
 ## Mini App Example
 

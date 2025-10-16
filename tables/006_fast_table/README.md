@@ -33,18 +33,25 @@ fast_table = FastTable(
 
 ## Parameters
 
-|    Parameters     |                 Type                  |                Description                 |
-| :---------------: | :-----------------------------------: | :----------------------------------------: |
-|      `data`       | `Optional[Union[list, pd.DataFrame]]` |                 Table data                 |
-|     `columns`     |           `Optional[list]`            |               Table columns                |
-| `columns_options` |        `Optional[list[dict]]`         |              Columns options               |
-|  `project_meta`   | `Optional[Union[ProjectMeta, dict]]`  |              Project metadata              |
-|  `fixed_columns`  |        `Optional[Literal[1]]`         |     Number of the first fixed columns      |
-|    `page_size`    |            `Optional[int]`            |     Table page size in number of rows      |
-| `sort_column_idx` |                 `int`                 | Index of the column by which sorting works |
-|   `sort_order`    |  `Optional[Literal["asc", "desc"]]`   |                 Sort order                 |
-|      `width`      |            `Optional[str]`            |               Width of table               |
-|    `widget_id`    |            `Optional[str]`            |              ID of the widget              |
+|       Parameters       |                 Type                  |                                                                                         Description                                                                                         |
+| :--------------------: | :-----------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|         `data`         | `Optional[Union[list, pd.DataFrame]]` |                                                                                         Table data                                                                                          |
+|       `columns`        |           `Optional[list]`            |                                                                                        Table columns                                                                                        |
+|   `columns_options`    |        `Optional[list[dict]]`         |                                                                                       Columns options                                                                                       |
+|     `project_meta`     | `Optional[Union[ProjectMeta, dict]]`  |                                                                                      Project metadata                                                                                       |
+|    `fixed_columns`     |        `Optional[Literal[1]]`         |                                                                              Number of the first fixed columns                                                                              |
+|      `page_size`       |            `Optional[int]`            |                                                                              Table page size in number of rows                                                                              |
+|   `sort_column_idx`    |                 `int`                 |                                                                         Index of the column by which sorting works                                                                          |
+|      `sort_order`      |  `Optional[Literal["asc", "desc"]]`   |                                                                                         Sort order                                                                                          |
+|        `width`         |            `Optional[str]`            |                                                                                       Width of table                                                                                        |
+|      `widget_id`       |            `Optional[str]`            |                                                                                      ID of the widget                                                                                       |
+|     `show_header`      |                `Bool`                 |                    If True header (column names) is displayed at the top of the table. When set to False, the table will show only the data rows without column headers.                    |
+|       `is_radio`       |                `Bool`                 |                        Enables radio button selection mode for single row selection. When set to True, users can select only one row at a time using radio buttons.                         |
+|    `is_selectable`     |                `Bool`                 |                                                                  If True, users can select multiple rows using checkboxes.                                                                  |
+| `header_left_content`  |          `Optional[Widget]`           |                                                          Allows to add a custom widget to the left side of the table header area.                                                           |
+| `header_right_content` |          `Optional[Widget]`           |                                                          Allows to add a custom widget to the right side of the table header area.                                                          |
+|  `max_selected_rows`   |            `Optional[int]`            |                     Sets the maximum number of rows that can be selected when is_selectable is True. If not specified, there's no limit on the number of selected rows.                     |
+|   `search_position`    | `Optional[Literal["left", "right"]]`  | Determines the position of the search input field in the table interface. Can be positioned on either the "left" or "right" side of the table header. If not specified, defaults to "left". |
 
 ### data
 
@@ -214,26 +221,89 @@ ID of the widget.
 
 **default value:** `None`
 
+### show_header
+
+If True header (column names) is displayed at the top of the table. When set to False, the table will show only the data rows without column headers.
+
+**type:** `bool`
+
+**default value:** `True`
+
+### is_radio
+
+Enables radio button selection mode for single row selection. When set to True, users can select only one row at a time using radio buttons.
+
+**type:** `bool`
+
+**default value:** `False`
+
+### is_selectable
+
+If True, users can select multiple rows using checkboxes.
+
+**type:** `bool`
+
+**default value:** `False`
+
+### header_left_content
+
+Allows to add a custom widget to the left side of the table header area.
+
+**type:** `Optional[Widget]`
+
+**default value:** `None`
+
+### header_right_content
+
+Allows to add a custom widget to the right side of the table header area.
+
+**type:** `Optional[Widget]`
+
+**default value:** `None`
+
+### max_selected_rows
+
+Sets the maximum number of rows that can be selected when is_selectable is True. If not specified, there's no limit on the number of selected rows.
+
+**type:** `Optional[int]`
+
+**default value:** `None`
+
+### search_position
+
+Determines the position of the search input field in the table interface. Can be positioned on either the "left" or "right" side of the table header. If not specified, defaults to "left".
+
+**type:** `Optional[Literal["left", "right"]]`
+
+**default value:** `None`
+
 ## Methods and attributes
 
-|                     Attributes and Methods                      | Description                                                               |
-| :-------------------------------------------------------------: | ------------------------------------------------------------------------- |
-|                       `fixed_columns_num`                       | Get or set number of fixed columns (left to right) property.              |
-|                         `project_meta`                          | Get or set number project meta property.                                  |
-|                           `page_size`                           | Get or set table page size property.                                      |
-|           `read_json(data: dict, meta: dict = None)`            | Read and set table data from JSON format.                                 |
-|                `read_pandas(data: pd.DataFrame)`                | Read and set table data from `DataFrame`.                                 |
-|                 `to_json(active_page = False)`                  | Convert table data to JSON format. Full table or active page only.        |
-|                `to_pandas(active_page = False)`                 | Convert table data to pandas `DataFrame`. Full table or active page only. |
-|                       `clear_selection()`                       | Deselect a table cell.                                                    |
-|                      `get_selected_row()`                       | Get selected table row info.                                              |
-|                      `get_selected_cell()`                      | Get selected table cell info.                                             |
-|                `insert_row(row: List, index=-1)`                | Insert new row in table by index.                                         |
-|                       `pop_row(index=-1)`                       | Remove row from table by index.                                           |
-|                     `search(search_value)`                      | Search source data for `search_value` and return results as `DataFrame`.  |
-| `sort(column_id: int, order: Optional[Literal["asc", "desc"]])` | Sort table rows by given column ID and/or order direction.                |
-|                          `@row_click`                           | Decorator function is handled when table row is clicked.                  |
-|                          `@cell_click`                          | Decorator function is handled when table cell is clicked.                 |
+|                     Attributes and Methods                      | Description                                                                                       |
+| :-------------------------------------------------------------: | ------------------------------------------------------------------------------------------------- |
+|                       `fixed_columns_num`                       | Get or set number of fixed columns (left to right) property.                                      |
+|                         `project_meta`                          | Get or set number project meta property.                                                          |
+|                           `page_size`                           | Get or set table page size property.                                                              |
+|           `read_json(data: dict, meta: dict = None)`            | Read and set table data from JSON format.                                                         |
+|                `read_pandas(data: pd.DataFrame)`                | Read and set table data from `DataFrame`.                                                         |
+|                 `to_json(active_page = False)`                  | Convert table data to JSON format. Full table or active page only.                                |
+|                `to_pandas(active_page = False)`                 | Convert table data to pandas `DataFrame`. Full table or active page only.                         |
+|                       `clear_selection()`                       | Deselect a table cell.                                                                            |
+|                      `get_selected_row()`                       | Get selected table row info.                                                                      |
+|                      `get_selected_cell()`                      | Get selected table cell info.                                                                     |
+|                `insert_row(row: List, index=-1)`                | Insert new row in table by index.                                                                 |
+|                       `pop_row(index=-1)`                       | Remove row from table by index.                                                                   |
+|                     `search(search_value)`                      | Search source data for `search_value` and return results as `DataFrame`.                          |
+| `sort(column_id: int, order: Optional[Literal["asc", "desc"]])` | Sort table rows by given column ID and/or order direction.                                        |
+|                          `@row_click`                           | Decorator function is handled when table row is clicked.                                          |
+|                          `@cell_click`                          | Decorator function is handled when table cell is clicked.                                         |
+|                            `filter`                             | Applies a filter to the table data using the specified filter value.                              |
+|                       `update_cell_value`                       | Updates the value of the cell in the table.                                                       |
+|                       `selection_changed`                       | Decorator for function that handles selection change event.                                       |
+|                          `select_row`                           | Selects single row in the table by row indice.                                                    |
+|                          `select_rows`                          | Selects multiple rows in the table by their row indices.                                          |
+|                      `select_row_by_value`                      | Selects a single row by finding a specific value in a given column.                               |
+|                     `select_rows_by_value`                      | Selects multiple rows by finding rows that contain any of the specified values in a given column. |
 
 ### read_json()
 
