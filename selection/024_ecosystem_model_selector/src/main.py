@@ -2,8 +2,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Text
-from ecosystem_model_selector import EcosystemModelSelector
+from supervisely.app.widgets import Card, Container, Text, EcosystemModelSelector
 
 
 load_dotenv("local.env")
@@ -15,10 +14,12 @@ model_selector = EcosystemModelSelector(api=api)
 selection_changed_info = Text(status="info")
 selection_changed_info.hide()
 
+model_selector.refresh_table()
 
-@model_selector.table.value_changed
-def model_selected(selected_row):
-    if selected_row:
+
+@model_selector.table.selection_changed
+def model_selected(selected_rows):
+    if selected_rows:
         try:
             selected_model = model_selector.get_selected()
             text = f"Selected model: {selected_model['name']} ({selected_model['framework']})"

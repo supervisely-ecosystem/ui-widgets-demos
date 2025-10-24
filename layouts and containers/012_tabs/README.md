@@ -117,8 +117,6 @@ ID of the widget.
 |      `get_active_tab()`      | Return active tab title.                                                                               |
 | `enable_tab(tab_name: str)`  | Enables a previously disabled tab, making it interactive and selectable again.                         |
 | `disable_tab(tab_name: str)` | Disables a specific tab, making it non-interactive and visually indicating that it cannot be selected. |
-
-|
 | `@click` | Decorator for setting a callback function for the `Tabs` widget. |
 
 ## Mini App Example

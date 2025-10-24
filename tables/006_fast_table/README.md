@@ -299,7 +299,7 @@ Determines the position of the search input field in the table interface. Can be
 |                          `@cell_click`                          | Decorator function is handled when table cell is clicked.                                         |
 |                            `filter`                             | Applies a filter to the table data using the specified filter value.                              |
 |                       `update_cell_value`                       | Updates the value of the cell in the table.                                                       |
-|                       `selection_changed`                       | Decorator for function that handles selection change event.                                       |
+|                       `@selection_changed`                       | Decorator for function that handles selection change event.                                       |
 |                          `select_row`                           | Selects single row in the table by row indice.                                                    |
 |                          `select_rows`                          | Selects multiple rows in the table by their row indices.                                          |
 |                      `select_row_by_value`                      | Selects a single row by finding a specific value in a given column.                               |

@@ -16,7 +16,7 @@ EcosystemModelSelector(
 )
 ```
 
-![default](https://github.com/user-attachments/assets/4a971741-3cc8-4844-b116-6abd40c751e2)
+![default](https://github.com/supervisely-ecosystem/while-true-script-v2/releases/download/v1.1.7/image_2025-10sha256.c82b9b94526e5a60ad83c2a2eacfb427643aa94b8150732b64e4adc6d09eb0e1-24_14-30-10.png)
 
 ## Parameters
 
@@ -122,8 +122,7 @@ import os
 
 import supervisely as sly
 from dotenv import load_dotenv
-from supervisely.app.widgets import Card, Container, Text
-from ecosystem_model_selector import EcosystemModelSelector
+from supervisely.app.widgets import Card, Container, Text, EcosystemModelSelector
 ```
 
 ### Init API client
@@ -153,9 +152,9 @@ selection_changed_info = Text(status="info")
 selection_changed_info.hide()
 
 
-@model_selector.table.value_changed
-def model_selected(selected_row):
-    if selected_row:
+@model_selector.table.selection_changed
+def model_selected(selected_rows):
+    if selected_rows:
         try:
             selected_model = model_selector.get_selected()
             text = f"Selected model: {selected_model['name']} ({selected_model['framework']})"
