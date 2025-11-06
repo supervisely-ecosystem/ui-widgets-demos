@@ -22,12 +22,8 @@ mask2 = np.exp(-((x - center_x2) ** 2 + (y - center_y2) ** 2) / (2 * 60**2))
 mask = (mask1 + mask2 * 0.7) * 255
 mask = mask.astype(np.float32)
 
-# Static directory for storing images
-static_dir = "static"
-
 # Initialize Heatmap widget
 heatmap = Heatmap(
-    static_dir=static_dir,
     background_image=background,
     heatmap_mask=mask,
     vmin=0,
@@ -51,7 +47,7 @@ card = Card(
     content=Container([heatmap, info_text]),
 )
 
-app = sly.Application(layout=card, static_dir=static_dir)
+app = sly.Application(layout=card)
 
 
 @heatmap.click
