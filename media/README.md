@@ -19,3 +19,4 @@
 17. [ClassesListPreview](017_classes_list_preview/README.md)
 18. [TagsListPreview](018_tags_list_preview/README.md)
 19. [MembersListPreview](019_members_list_preview/README.md)
+20. [Heatmap](020_heatmap/README.md)
