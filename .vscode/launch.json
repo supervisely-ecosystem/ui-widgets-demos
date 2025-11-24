@@ -7,7 +7,7 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"selection.024_ecosystem_model_selector.src.main:app",
+				"selection.025_dropdown_checkbox_selector.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",

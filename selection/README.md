@@ -22,3 +22,6 @@
 20. [AgentSelector](020_agent_selector/README.md)
 21. [TreeSelect](021_tree_select/README.md)
 22. [SelectDatasetTree](022_select_dataset_tree/README.md)
+23. [SelectCudaDevice](023_select_cuda_device/README.md)
+24. [EcosystemModelSelector](024_ecosystem_model_selector/README.md)
+25. [DropdownCheckboxSelector](025_dropdown_checkbox_selector/README.md)
