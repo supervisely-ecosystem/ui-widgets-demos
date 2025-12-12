@@ -38,6 +38,7 @@ classes_list_selector = ClassesListSelector(
 |      `multiple`      |                   `bool`                    |                    Enable multiple classes selection                    |
 | `empty_notification` |              `NotificationBox`              | Notification that will be displayed when there are no classes in widget |
 |     `widget_id`      |                    `str`                    |                            ID of the widget                             |
+| `allow_new_classes`  |                   `bool`                    |                  Allow adding new classes dynamically                   |
 
 ### classes
 
@@ -104,19 +105,28 @@ ID of the widget.
 
 **default value:** `None`
 
+### allow_new_classes
+
+Allow adding new classes dynamically.
+
+**type:** `bool`
+
+**default value:** `False`
+
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                                  |
-| :----------------------: | -------------------------------------------- |
-|         `set()`          | Set classes to widget.                       |
-| `get_selected_classes()` | Return list of selected classes.             |
-|      `select_all()`      | Select all classes.                          |
-|     `deselect_all()`     | Deselect all classes.                        |
-|        `select()`        | Select classes by names.                     |
-|       `deselect()`       | Deselect classes by names.                   |
-|     `set_multiple()`     | Set multiple flag.                           |
-|   `get_all_classes()`    | Return list of all classes.                  |
-|   `@selection_changed`   | Callback triggers when selection is changed. |
+|  Attributes and Methods  | Description                                   |
+| :----------------------: | --------------------------------------------- |
+|         `set()`          | Set classes to widget.                        |
+| `get_selected_classes()` | Return list of selected classes.              |
+|      `select_all()`      | Select all classes.                           |
+|     `deselect_all()`     | Deselect all classes.                         |
+|        `select()`        | Select classes by names.                      |
+|       `deselect()`       | Deselect classes by names.                    |
+|     `set_multiple()`     | Set multiple flag.                            |
+|   `get_all_classes()`    | Return list of all classes.                   |
+|   `@selection_changed`   | Callback triggers when selection is changed.  |
+|     `@class_created`     | Decorator to handle new class creation event. |
 
 ## Mini App Example
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`SelectTeam`** widget in Supervisely is a dropdown menu that allows users to select a team from a list of available teams. 
+**`SelectTeam`** widget in Supervisely is a dropdown menu that allows users to select a team from a list of available teams.
 Clicking on it can be processed from python code. This widget is particularly useful when working with multiple teams in Supervisely and allows to easily switch between team in applications.
 
 [Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectworkspace)
@@ -88,9 +88,11 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description              |
-| :--------------------: | ------------------------ |
-|  `get_selected_id()`   | Return selected team id. |
+| Attributes and Methods | Description                                      |
+| :--------------------: | ------------------------------------------------ |
+|  `get_selected_id()`   | Return selected team id.                         |
+|    `set_team_id()`     | Set the selected team ID.                        |
+|    `@value_changed`    | Decorator to handle team selection change event. |
 
 ## Mini App Example
 
