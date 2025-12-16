@@ -139,7 +139,13 @@ You can find this example in our Github repository:
 ```python
 import os
 import supervisely as sly
-from supervisely.app.widgets import Card, Container, ClassesListSelector, NotificationBox, Text
+from supervisely.app.widgets import (
+    Card,
+    Container,
+    ClassesListSelector,
+    NotificationBox,
+    Text,
+)
 from dotenv import load_dotenv
 ```
 
@@ -177,15 +183,16 @@ obj_classes = [
 ]
 ```
 
-### Initialize `ClassesListSelector` widget, `NotificationBox` widget for custom notification and `Text` widget for displaying selected classes count
+### Initialize `ClassesListSelector` widget with class creation enabled
 
 ```python
 notification_box = NotificationBox(title="No classes", description="Provide classes to the widget.")
 classes_list_selector = ClassesListSelector(
-    obj_classes, multiple=True, empty_notification=notification_box
+    obj_classes, multiple=True, empty_notification=notification_box, allow_new_classes=True
 )
 
 selected_classes_cnt = Text(f"Selected classes: 0 / {len(obj_classes)}")
+info_text = Text("You can create new classes using the Add new class button", status="info")
 ```
 
 ### Create app layout
@@ -193,7 +200,13 @@ selected_classes_cnt = Text(f"Selected classes: 0 / {len(obj_classes)}")
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created into the `Container` widget.
 
 ```python
-container = Container(widgets=[selected_classes_cnt, classes_list_selector])
+container = Container(
+    widgets=[
+        info_text,
+        selected_classes_cnt,
+        classes_list_selector,
+    ]
+)
 
 card = Card(
     title="Classes List Selector",
@@ -214,9 +227,22 @@ app = sly.Application(layout=layout)
 ### Add functions to control widgets from python code
 
 ```python
+# Update counters helper
+def update_counters():
+    all_classes = classes_list_selector.get_all_classes()
+    selected = classes_list_selector.get_selected_classes()
+    selected_classes_cnt.set(f"Selected classes: {len(selected)} / {len(all_classes)}", "text")
+
+
 @classes_list_selector.selection_changed
 def selection_changed(classes):
-    selected_classes_cnt.set(f"Selected classes: {len(classes)} / {len(obj_classes)}", "text")
+    update_counters()
+
+
+@classes_list_selector.class_created
+def on_class_created(new_class):
+    info_text.set(f"New class created: '{new_class.name}' ({new_class.geometry_type.name()})", "success")
+    update_counters()
 ```
 
 ![mini-app-min](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/5cd483ab-c620-4af3-8158-2a07b0e87e69)
