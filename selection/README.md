@@ -25,5 +25,6 @@
 23. [SelectCudaDevice](023_select_cuda_device/README.md)
 24. [EcosystemModelSelector](024_ecosystem_model_selector/README.md)
 25. [DropdownCheckboxSelector](025_dropdown_checkbox_selector/README.md)
-26. [ClassSelector](026_class_selector/README.md)
-27. [TagSelector](027_tag_selector/README.md)
+26. [ClassSelector](026_select_class/README.md)
+27. [TagSelector](027_select_tag/README.md)
+28. [UserSelector](028_select_user/README.md)
