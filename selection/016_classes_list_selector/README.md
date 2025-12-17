@@ -192,7 +192,6 @@ classes_list_selector = ClassesListSelector(
 )
 
 selected_classes_cnt = Text(f"Selected classes: 0 / {len(obj_classes)}")
-info_text = Text("You can create new classes using the Add new class button", status="info")
 ```
 
 ### Create app layout
@@ -241,7 +240,6 @@ def selection_changed(classes):
 
 @classes_list_selector.class_created
 def on_class_created(new_class):
-    info_text.set(f"New class created: '{new_class.name}' ({new_class.geometry_type.name()})", "success")
     update_counters()
 ```
 

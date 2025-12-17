@@ -74,5 +74,4 @@ def selection_changed(classes):
 
 @classes_list_selector.class_created
 def on_class_created(new_class):
-    info_text.set(f"New class created: '{new_class.name}' ({new_class.geometry_type.name()})", "success")
     update_counters()
