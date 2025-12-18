@@ -7,7 +7,7 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"status elements.010_activity_feed.src.main:app",
+				"layouts and containers.018_modal.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",
