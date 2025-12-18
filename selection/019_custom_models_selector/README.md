@@ -17,6 +17,8 @@ CustomModelsSelector(
 )
 ```
 
+![custom-models-selector](https://github.com/supervisely-ecosystem/ui-widgets-demos/releases/download/v0.0.8/screenshot-localhost-8000-1766078982620.png)
+
 ## Parameters
 
 |        Parameters        | Type  |                              Description                              |
@@ -54,14 +56,30 @@ ID of the widget.
 
 ## Methods and attributes
 
-|   Attributes and Methods   | Description                                                |
-| :------------------------: | ---------------------------------------------------------- |
-|         `columns`          | Return list of `columns` names.                            |
-|           `rows`           | Return list of `ModelRow` objects.                         |
-|    `get_selected_row()`    | Return `ModelRow` object.                                  |
-| `get_selected_row_index()` | Return index of the selected row.                          |
-|       `select_row()`       | Select row by index.                                       |
-|      `@value_changed`      | Decorator function is handled when widget value is changed |
+|            Attributes and Methods            |                            Returns                             |
+| :------------------------------------------: | :------------------------------------------------------------: |
+|                  `columns`                   |                          `List[str]`                           |
+|                    `rows`                    |                  `Dict[str, List[ModelRow]]`                   |
+|             `get_selected_row()`             |                      `ModelRow` or `None`                      |
+|          `get_selected_row_index()`          |                        `int` or `None`                         |
+|           `set_active_row(index)`            |                             `None`                             |
+|          `get_selected_task_type()`          |                             `str`                              |
+|      `set_active_task_type(task_type)`       |                             `None`                             |
+|         `get_available_task_types()`         |                          `List[str]`                           |
+|        `get_selected_model_params()`         |                        `Dict` or `None`                        |
+|        `use_custom_checkpoint_path()`        |                             `bool`                             |
+|        `get_custom_checkpoint_name()`        |                             `str`                              |
+|        `get_custom_checkpoint_path()`        |                             `str`                              |
+|      `set_custom_checkpoint_path(path)`      |                             `None`                             |
+|  `set_custom_checkpoint_preview(file_info)`  |                             `None`                             |
+|     `get_custom_checkpoint_task_type()`      |                             `str`                              |
+| `set_custom_checkpoint_task_type(task_type)` |                             `None`                             |
+|                  `enable()`                  |                             `None`                             |
+|                 `disable()`                  |                             `None`                             |
+|               `enable_table()`               |                             `None`                             |
+|              `disable_table()`               |                             `None`                             |
+|               `@value_changed`               |   Decorator function is handled when widget value is changed   |
+|             `@task_type_changed`             | Decorator function is handled when widget task type is changed |
 
 ## ModelRow
 
