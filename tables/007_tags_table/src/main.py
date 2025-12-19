@@ -11,7 +11,7 @@ if sly.is_development():
 
 api = sly.Api()
 
-project_id = 38792
+project_id = 4437
 tags_table = TagsTable(project_id=project_id)
 tags_text = Text("Selected tags: ")
 input_number = InputNumber(controls=False)
@@ -19,9 +19,11 @@ btn = Button("Set project ID")
 card = Card(title="TagsTable", content=Container([tags_table, tags_text, input_number, btn]))
 app = sly.Application(layout=card)
 
+
 @tags_table.value_changed
 def display_selected_tags(value):
     tags_text.text = f"Selected tags: {', '.join(value)}"
+
 
 @btn.click
 def click_btn():

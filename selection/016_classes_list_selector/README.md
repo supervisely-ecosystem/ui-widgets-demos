@@ -38,6 +38,7 @@ classes_list_selector = ClassesListSelector(
 |      `multiple`      |                   `bool`                    |                    Enable multiple classes selection                    |
 | `empty_notification` |              `NotificationBox`              | Notification that will be displayed when there are no classes in widget |
 |     `widget_id`      |                    `str`                    |                            ID of the widget                             |
+| `allow_new_classes`  |                   `bool`                    |                  Allow adding new classes dynamically                   |
 
 ### classes
 
@@ -104,19 +105,28 @@ ID of the widget.
 
 **default value:** `None`
 
+### allow_new_classes
+
+Allow adding new classes dynamically.
+
+**type:** `bool`
+
+**default value:** `False`
+
 ## Methods and attributes
 
-|  Attributes and Methods  | Description                                  |
-| :----------------------: | -------------------------------------------- |
-|         `set()`          | Set classes to widget.                       |
-| `get_selected_classes()` | Return list of selected classes.             |
-|      `select_all()`      | Select all classes.                          |
-|     `deselect_all()`     | Deselect all classes.                        |
-|        `select()`        | Select classes by names.                     |
-|       `deselect()`       | Deselect classes by names.                   |
-|     `set_multiple()`     | Set multiple flag.                           |
-|   `get_all_classes()`    | Return list of all classes.                  |
-|   `@selection_changed`   | Callback triggers when selection is changed. |
+|  Attributes and Methods  | Description                                   |
+| :----------------------: | --------------------------------------------- |
+|         `set()`          | Set classes to widget.                        |
+| `get_selected_classes()` | Return list of selected classes.              |
+|      `select_all()`      | Select all classes.                           |
+|     `deselect_all()`     | Deselect all classes.                         |
+|        `select()`        | Select classes by names.                      |
+|       `deselect()`       | Deselect classes by names.                    |
+|     `set_multiple()`     | Set multiple flag.                            |
+|   `get_all_classes()`    | Return list of all classes.                   |
+|   `@selection_changed`   | Callback triggers when selection is changed.  |
+|     `@class_created`     | Decorator to handle new class creation event. |
 
 ## Mini App Example
 
@@ -129,7 +139,13 @@ You can find this example in our Github repository:
 ```python
 import os
 import supervisely as sly
-from supervisely.app.widgets import Card, Container, ClassesListSelector, NotificationBox, Text
+from supervisely.app.widgets import (
+    Card,
+    Container,
+    ClassesListSelector,
+    NotificationBox,
+    Text,
+)
 from dotenv import load_dotenv
 ```
 
@@ -167,12 +183,12 @@ obj_classes = [
 ]
 ```
 
-### Initialize `ClassesListSelector` widget, `NotificationBox` widget for custom notification and `Text` widget for displaying selected classes count
+### Initialize `ClassesListSelector` widget with class creation enabled
 
 ```python
 notification_box = NotificationBox(title="No classes", description="Provide classes to the widget.")
 classes_list_selector = ClassesListSelector(
-    obj_classes, multiple=True, empty_notification=notification_box
+    obj_classes, multiple=True, empty_notification=notification_box, allow_new_classes=True
 )
 
 selected_classes_cnt = Text(f"Selected classes: 0 / {len(obj_classes)}")
@@ -183,7 +199,13 @@ selected_classes_cnt = Text(f"Selected classes: 0 / {len(obj_classes)}")
 Prepare a layout for app using `Card` widget with the `content` parameter and place widget that we've just created into the `Container` widget.
 
 ```python
-container = Container(widgets=[selected_classes_cnt, classes_list_selector])
+container = Container(
+    widgets=[
+        info_text,
+        selected_classes_cnt,
+        classes_list_selector,
+    ]
+)
 
 card = Card(
     title="Classes List Selector",
@@ -204,9 +226,21 @@ app = sly.Application(layout=layout)
 ### Add functions to control widgets from python code
 
 ```python
+# Update counters helper
+def update_counters():
+    all_classes = classes_list_selector.get_all_classes()
+    selected = classes_list_selector.get_selected_classes()
+    selected_classes_cnt.set(f"Selected classes: {len(selected)} / {len(all_classes)}", "text")
+
+
 @classes_list_selector.selection_changed
 def selection_changed(classes):
-    selected_classes_cnt.set(f"Selected classes: {len(classes)} / {len(obj_classes)}", "text")
+    update_counters()
+
+
+@classes_list_selector.class_created
+def on_class_created(new_class):
+    update_counters()
 ```
 
 ![mini-app-min](https://github.com/supervisely-ecosystem/ui-widgets-demos/assets/48913536/5cd483ab-c620-4af3-8158-2a07b0e87e69)

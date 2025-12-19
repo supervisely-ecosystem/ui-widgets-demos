@@ -97,19 +97,20 @@ ID of the widget.
 
 ## Methods and attributes
 
-|                                       Attributes and Methods                                       | Description                                                                                 |
-| :------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------- |
-|                                             `columns`                                              | Get or set `columns` property.                                                              |
-|                                            `subtitles`                                             | Get or set `subtitles` property.                                                            |
-|                                               `rows`                                               | Get or set `rows` property.                                                                 |
-|                           `format_value(column_name: str, value: list)`                            | Return column formatter function by given column name.                                      |
-|                                  `default_formatter(value: list)`                                  | Return default column formatter.                                                            |
-|                                        `get_selected_row()`                                        | Return selected row data.                                                                   |
-|                                     `get_selected_row_index()`                                     | Return selected row index.                                                                  |
-|           `set_columns(columns: List[str], subtitles: Union[Dict[str, str], List[str]])`           | Set table columns by given list of column names.                                            |
-| `set_data(columns: List[str], rows: List[List[str]], subtitles: Union[Dict[str, str], List[str]])` | Set table data.                                                                             |
-|                                    `select_row(row_index: int)`                                    | Set row selected by given index. If row with given index does not exist raise `ValueError`. |
-|                                          `@value_changed`                                          | Decorator function is handled when widget value is changed                                  |
+|                                       Attributes and Methods                                       | Description                                                                                            |
+| :------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------ |
+|                                             `columns`                                              | Get or set `columns` property.                                                                         |
+|                                            `subtitles`                                             | Get or set `subtitles` property.                                                                       |
+|                                               `rows`                                               | Get or set `rows` property.                                                                            |
+|                           `format_value(column_name: str, value: list)`                            | Return column formatter function by given column name.                                                 |
+|                                  `default_formatter(value: list)`                                  | Return default column formatter.                                                                       |
+|                                        `get_selected_row()`                                        | Return selected row data.                                                                              |
+|                                     `get_selected_row_index()`                                     | Return selected row index.                                                                             |
+|           `set_columns(columns: List[str], subtitles: Union[Dict[str, str], List[str]])`           | Set table columns by given list of column names.                                                       |
+| `set_data(columns: List[str], rows: List[List[str]], subtitles: Union[Dict[str, str], List[str]])` | Set table data.                                                                                        |
+|                                    `select_row(row_index: int)`                                    | Set row selected by given index. If row with given index does not exist raise `ValueError`.            |
+|                                          `@value_changed`                                          | Decorator function is handled when widget value is changed                                             |
+|                                       `select_row_by_value`                                        | Set row selected by given column and value. If row with given value does not exist raise `ValueError`. |
 
 ## Mini App Example
 

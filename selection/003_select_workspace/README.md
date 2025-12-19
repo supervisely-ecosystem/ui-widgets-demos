@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**`SelectWorkspace`** widget in Supervisely is a dropdown menu that allows users to select a workspace from a list of available workspaces. 
+**`SelectWorkspace`** widget in Supervisely is a dropdown menu that allows users to select a workspace from a list of available workspaces.
 Clicking on it can be processed from python code. This widget is particularly useful when working with multiple workspaces in Supervisely and allows to easily switch between workspaces in applications.
 
 [Read this tutorial in developer portal.](https://developer.supervisely.com/app-development/widgets/selection/selectworkspace)
@@ -19,10 +19,10 @@ SelectWorkspace(
     widget_id=None
 )
 ```
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79905215/222355186-ce11c293-4cfd-4a16-96b0-029589002e3f.png" alt="select-workspace" width="600" />
 </p>
-
 
 ## Parameters
 
@@ -46,6 +46,7 @@ Determine `Workspace` will be selected by default.
 ```python
 select_workspace = SelectWorkspace(default_id=workspace_id)
 ```
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79905215/222355688-b92e4bcc-a24f-4dd9-821f-c4067759868e.png" alt="sw-def-id" width="600"/>
 </p>
@@ -66,7 +67,6 @@ select_workspace = SelectWorkspace(team_id=team_id)
   <img src="https://user-images.githubusercontent.com/79905215/222355932-1fac2c04-3c0f-47a9-86f8-4ea5e3daf40c.png" alt="sw-team-id" width="600" />
 </p>
 
-
 ### compact
 
 Show only `Workspace` select.
@@ -78,6 +78,7 @@ Show only `Workspace` select.
 ```python
 select_workspace = SelectWorkspace(default_id=workspace_id, compact=True)
 ```
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79905215/222358488-dbec5846-ddc0-4ad0-a33f-7aad84048f60.png" alt="sw-compact" width="600" />
 </p>
@@ -147,10 +148,10 @@ card = Card(
     ),
 )
 ```
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/120389559/221558737-7a9ecd44-dae9-4d39-ad6f-319ff1ae3ab7.png" alt="size" width="600" />
 </p>
-
 
 ### widget_id
 
@@ -162,16 +163,20 @@ ID of the widget.
 
 ## Methods and attributes
 
-| Attributes and Methods | Description                   |
-| :--------------------: | ----------------------------- |
-|  `get_selected_id()`   | Return selected workspace id. |
+| Attributes and Methods | Description                                                                             |
+| :--------------------: | --------------------------------------------------------------------------------------- |
+|  `get_selected_id()`   | Return selected workspace id.                                                           |
+|      `set_ids()`       | Set both team ID and workspace ID and update the UI.                                    |
+|  `set_workspace_id()`  | Set the selected workspace ID.                                                          |
+|    `get_team_id()`     | Return selected team id.                                                                |
+|    `set_team_id()`     | Set the team ID and update the UI. Automatically enables the widget if it was disabled. |
+|    `@value_changed`    | The decorated function receives the selected workspace ID.                              |
 
 ## Mini App Example
 
 You can find this example in our Github repository:
 
 [supervisely-ecosystem/ui-widgets-demos/selection/003_select_workspace/src/main.py](https://github.com/supervisely-ecosystem/ui-widgets-demos/blob/master/selection/003_select_workspace/src/main.py)
-
 
 ### Import libraries
 
