@@ -7,7 +7,7 @@
 			"request": "launch",
 			"module": "uvicorn",
 			"args": [
-				"selection.019_custom_models_selector.src.main:app",
+				"tables.008_reorder_table.src.main:app",
 				"--host",
 				"0.0.0.0",
 				"--port",

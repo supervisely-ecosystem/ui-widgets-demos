@@ -7,3 +7,4 @@
 5. [RandomSplitsTable](005_random_splits_table/README.md)
 6. [FastTable](006_fast_table/README.md)
 7. [TagsTable](007_tags_table/README.md)
+8. [ReorderTable](008_reorder_table/README.md)

@@ -3,7 +3,7 @@
 current_dir="$PWD"
 parent_dir=$(dirname "$PWD")
 
-sly_repo_dir="${parent_dir}/sly_for_symlink"
+sly_repo_dir="${parent_dir}/sly_for_symlink_1"
 # Skip cloning if the directory already exists
 if [ -d "$sly_repo_dir" ]; then
     echo "Directory $sly_repo_dir already exists, skipping cloning."
