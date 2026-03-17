@@ -12,15 +12,21 @@ data = [
     ["Frank", 84, "Data Engineering"],
 ]
 
-reset_btn = Button("Reset order")
+refresh_btn = Button("Refresh")
+apply_btn = Button("Apply changes")
+
+saved_data = [list(row) for row in data]
+
+top_right_controls = Container(
+    [apply_btn, refresh_btn],
+    direction="horizontal",
+)
 reorder_table = ReorderTable(
     columns=columns,
     data=data,
     page_size=5,
-    content_top_right=reset_btn,
+    content_top_right=top_right_controls,
 )
-
-refresh_btn = Button("Refresh state")
 
 
 def update_state(order):
@@ -35,16 +41,18 @@ def handle_reorder(order):
 
 @refresh_btn.click
 def refresh_state():
+    reorder_table.set_data(columns, saved_data)
     update_state(reorder_table.get_order())
 
 
-@reset_btn.click
-def reset_order():
-    reorder_table.reset_order()
+@apply_btn.click
+def apply_changes():
+    saved_data[:] = [list(row) for row in reorder_table.get_reordered_data()]
+    reorder_table.set_data(columns, saved_data)
     update_state(reorder_table.get_order())
 
 
-content = Container([reorder_table, refresh_btn])
+content = Container([reorder_table])
 card = Card(title="ReorderTable", content=content)
 
 app = sly.Application(layout=card)
