@@ -1,12 +1,13 @@
 {
     "name": "Hello World!",
     "type": "app",
+    "instance_version": "6.15.60",
     "version": "2.0.0",
     "categories": [
       "development"
     ],
     "description": "Demonstrates how to use Supervisely widgets",
-    "docker_image": "supervisely/base-py-sdk:latest",
+    "docker_image": "supervisely/base-py-sdk:6.73.564",
     "entrypoint": "python -m uvicorn 000_hello_world.src.main:app --host 0.0.0.0 --port 8000",
     "port": 8000,
     "icon": "https://user-images.githubusercontent.com/12828725/182186256-5ee663ad-25c7-4a62-9af1-fbfdca715b57.png",
