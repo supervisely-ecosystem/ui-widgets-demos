@@ -10,3 +10,4 @@
 8. [Timeline](008_timeline/README.md)
 9. [Pagination](009_pagination/README.md)
 10. [CheckboxField](010_checkbox_field/README.md)
+11. [Hotkeys](011_hotkeys/README.md)
